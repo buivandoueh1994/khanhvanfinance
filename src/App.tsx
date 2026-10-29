@@ -1021,23 +1021,23 @@ export function App() {
             <figure
               onClick={() =>
                 setLightbox({
-                  src: '/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg',
-                  fig: 'FIG. 12 — TEAM CULTURE',
-                  title: 'Văn Hóa Đội Ngũ Gần Gũi & Chân Thành',
-                  subtitle: 'Gắn kết không khoảng cách từ những buổi trò chuyện sáng đời thường.',
+                  src: '/images/DoiNgu_ChiVan_TapTheQuanLyNuTinhHoa.jpg',
+                  fig: 'FIG. 12 — COLLECTIVE LEADERSHIP',
+                  title: 'Tập Thể Nữ Quản Lý & Cộng Sự Tinh Hoa',
+                  subtitle: 'Đội ngũ quản lý chuyên nghiệp, đồng điệu và gắn kết tại văn phòng Manulife.',
                 })
               }
               className="cursor-pointer group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
                 <img
-                  src="/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg"
-                  alt="Văn hóa đội ngũ gần gũi đời thường"
+                  src="/images/DoiNgu_ChiVan_TapTheQuanLyNuTinhHoa.jpg"
+                  alt="Tập thể nữ quản lý và cộng sự của chị Khánh Vân"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 12 &mdash; Văn hóa sẻ chia gần gũi đời thường
+                FIG. 12 &mdash; Đội ngũ quản lý kế cận chuyên nghiệp &amp; đồng lòng
               </figcaption>
             </figure>
           </div>
