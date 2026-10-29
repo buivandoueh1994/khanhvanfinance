@@ -5,64 +5,44 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #080C0A;
-    color: #F5F5F0;
+    background-color: #FFFFFF;
+    color: #111827;
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
   }
 
   body {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    background-color: #080C0A;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 167, 88, 0.11), transparent),
-      radial-gradient(ellipse 60% 40% at 85% 25%, rgba(201, 169, 110, 0.06), transparent);
+    background-color: #FFFFFF;
+    color: #111827;
   }
 }
 
 @layer components {
-  /* Architectural Private Banking Card */
-  .luxury-panel {
-    background: linear-gradient(180deg, rgba(18, 28, 23, 0.75) 0%, rgba(11, 17, 14, 0.9) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(201, 169, 110, 0.18);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  .clean-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .luxury-panel:hover {
-    border-color: rgba(201, 169, 110, 0.42);
+  .clean-card:hover {
+    border-color: #00A758;
+    box-shadow: 0 14px 32px -8px rgba(0, 56, 34, 0.08);
     transform: translateY(-2px);
-  }
-
-  .text-champagne-gradient {
-    background: linear-gradient(135deg, #F3E5AB 0%, #C9A96E 50%, #E2C792 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hairline-divider {
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(201, 169, 110, 0.35) 50%,
-      transparent 100%
-    );
   }
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080C0A;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C2A23;
-  border-radius: 3px;
+  background: #CBD5E1;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A96E;
+  background: #00A758;
 }

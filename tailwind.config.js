@@ -7,29 +7,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          DEFAULT: '#080C0A',
-          elevated: '#0D1411',
-          surface: '#121C17',
-        },
         manulife: {
           DEFAULT: '#00A758',
-          emerald: '#0B6E4F',
-          deep: '#06291B',
+          hover: '#008A47',
+          deep: '#003822',
+          forest: '#052E1E',
+          tint: '#F0F9F4',
+          soft: '#E6F5EC',
         },
-        champagne: {
-          DEFAULT: '#C9A96E',
-          light: '#E2C792',
-          muted: '#8C7040',
+        slate: {
+          ink: '#111827',
+          body: '#4B5563',
+          muted: '#6B7280',
+          line: '#E5E7EB',
+          surface: '#F8FAFC',
         },
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
-      transitionTimingFunction: {
-        'luxury': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      boxShadow: {
+        'subtle': '0 4px 20px -2px rgba(17, 24, 39, 0.05)',
+        'elevated': '0 16px 40px -8px rgba(17, 24, 39, 0.08)',
+        'emerald-sm': '0 8px 20px -4px rgba(0, 167, 88, 0.25)',
       },
     },
   },
