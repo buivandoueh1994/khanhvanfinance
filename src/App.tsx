@@ -3,43 +3,26 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowRight,
   ArrowUpRight,
-  Award,
-  BookOpen,
-  Briefcase,
-  Building2,
   Check,
-  CheckCircle2,
-  ChevronRight,
-  Clock,
-  Download,
-  ExternalLink,
-  FileText,
-  Globe2,
-  Heart,
   Menu,
-  Mic,
-  Send,
-  ShieldCheck,
-  TrendingUp,
-  Users,
   X,
 } from 'lucide-react';
 
 interface LightboxImage {
   src: string;
-  category: string;
+  fig: string;
   title: string;
   subtitle: string;
 }
 
 interface Article {
   id: string;
+  index: string;
   category: 'Tài chính & Gia sản' | 'Phát triển Sự nghiệp' | 'Bố Mẹ Đi Làm' | 'Kỷ luật Bản thân';
   date: string;
   readTime: string;
   title: string;
   excerpt: string;
-  image: string;
   content: string[];
   keyTakeaways: string[];
 }
@@ -47,150 +30,150 @@ interface Article {
 const ARTICLES: Article[] = [
   {
     id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
+    index: '01',
     category: 'Tài chính & Gia sản',
-    date: '18 Tháng 10, 2026',
+    date: 'Tháng 10, 2026',
     readTime: '5 phút đọc',
-    title: 'Bạn Cần Chuẩn Bị Gì Về Tài Chính Trước Khi Bước Ra Khỏi Vùng An Toàn Công Sở?',
+    title: 'Chuẩn bị gì về tài chính trước khi bước ra khỏi vùng an toàn công sở?',
     excerpt:
-      'Năm 2018, khi quyết định rời vị trí quản lý ổn định tại ngân hàng quốc tế ANZ, Vân không bước đi bằng sự cảm tính mà bằng một bảng kế hoạch dòng tiền rất kỷ luật.',
-    image: '/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg',
+      'Năm 2018, khi quyết định rời vị trí quản lý ổn định tại ngân hàng quốc tế ANZ, sự chuyển dịch không bắt đầu bằng cảm tính mà bằng một kế hoạch dòng tiền kỷ luật.',
     content: [
-      'Rất nhiều bạn trẻ và cả những anh chị quản lý cấp trung ở ngân hàng thường hỏi Vân: “Chị ơi, làm sao chị đủ can đảm rời bỏ mức lương cố định rất tốt ở ngân hàng ngoại để bắt đầu hành trình tự chủ?” Câu trả lời của Vân luôn là: Sự dũng cảm bền vững nhất phải được đặt trên nền tảng của sự chuẩn bị tài chính kỹ lưỡng.',
-      'Thứ nhất, hãy thiết lập Quỹ Dự Phòng Thanh Khoản tối thiểu từ 6 đến 12 tháng chi phí sinh hoạt thiết yếu của cả gia đình. Khi bạn biết chắc rằng dù 6 tháng tới thu nhập mới chưa về đều, con cái vẫn học hành bình thường, bữa cơm gia đình không bị ảnh hưởng, bạn sẽ giữ được sự điềm tĩnh và tự trọng nghề nghiệp — không bao giờ phải tư vấn bất chấp chỉ vì áp lực cơm áo.',
-      'Thứ hai, hãy tách bạch hoàn toàn dòng tiền sinh hoạt gia đình và dòng tiền đầu tư phát triển sự nghiệp. Thời điểm mới chuyển sang xây dựng đội ngũ, bạn sẽ cần đầu tư thời gian học tập, gặp gỡ đối tác và nâng cấp năng lực bản thân. Sự minh bạch về con số sẽ giúp người bạn đời của bạn hoàn toàn yên tâm và ủng hộ quyết định của bạn.',
-      'Cuối cùng, tài sản lớn nhất bạn mang theo khi rời công sở không phải là sổ tiết kiệm, mà là “Tài khoản Chữ Tín” bạn đã tích lũy với đồng nghiệp và khách hàng cũ. Hãy rời đi trong sự tử tế và chuyên nghiệp trọn vẹn nhất.',
+      'Nhiều anh chị quản lý cấp trung ở ngân hàng thường đặt câu hỏi: “Làm sao đủ can đảm rời bỏ mức thu nhập cố định rất tốt ở ngân hàng ngoại để bắt đầu hành trình tự chủ?” Câu trả lời nằm ở sự chuẩn bị tài chính kỹ lưỡng trước khi đưa ra quyết định.',
+      'Đầu tiên là Quỹ Dự Phòng Thanh Khoản tối thiểu từ 6 đến 12 tháng chi phí sinh hoạt thiết yếu của gia đình. Khi biết chắc rằng dù 6 tháng đầu thu nhập mới chưa ổn định, nhịp sống của con cái và gia đình không bị xáo trộn, người làm nghề sẽ giữ được sự điềm tĩnh và lòng tự trọng — không bao giờ phải tư vấn vội vàng vì áp lực ngắn hạn.',
+      'Tiếp theo là tách bạch dòng tiền sinh hoạt gia đình và nguồn lực đầu tư cho sự nghiệp mới. Sự minh bạch về con số giúp người bạn đời hoàn toàn an tâm và trở thành hậu phương vững chắc nhất.',
+      'Sau cùng, vốn liếng lớn nhất mang theo khi rời công sở không phải là số dư tài khoản, mà là chữ “Tín” đã tích lũy với đồng nghiệp và khách hàng cũ.',
     ],
     keyTakeaways: [
-      'Chuẩn bị quỹ dự phòng 6–12 tháng chi phí cố định trước khi chuyển hướng sự nghiệp.',
-      'Không để áp lực tài chính ngắn hạn làm ảnh hưởng đến chuẩn mực đạo đức tư vấn.',
-      'Xây dựng uy tín cá nhân ngay từ công việc hiện tại — đó là nguồn vốn quý nhất.',
+      'Thiết lập quỹ dự phòng 6–12 tháng chi phí cố định trước khi chuyển hướng.',
+      'Giữ vững chuẩn mực đạo đức tư vấn nhờ nền tảng tài chính chủ động.',
+      'Trân trọng uy tín cá nhân ngay từ công việc hiện tại.',
     ],
   },
   {
     id: 'xay-dung-chu-tin-trong-cong-viec',
+    index: '02',
     category: 'Phát triển Sự nghiệp',
-    date: '05 Tháng 10, 2026',
+    date: 'Tháng 10, 2026',
     readTime: '6 phút đọc',
-    title: 'Làm Sao Để Xây Dựng Chữ “Tín” Giúp Đồng Nghiệp Và Khách Hàng Chủ Động Giới Thiệu?',
+    title: 'Giá trị của chữ “Tín” và sức mạnh từ lời giới thiệu tự nhiên',
     excerpt:
-      '3 tháng đầu tiên chuyển sang làm Sales tại ANZ, Vân không có nổi một khách hàng. Chính cách làm việc chỉn chu từ những năm làm Vận hành đã cứu Vân khỏi nguy cơ bị cắt mã số.',
-    image: '/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg',
+      'Ba tháng đầu tiên chuyển sang bộ phận kinh doanh tại ANZ mà không có khách hàng đã dạy lại bài học sâu sắc nhất về sự tử tế từ những việc nhỏ nhất.',
     content: [
-      'Khi mới từ bộ phận Vận hành (Operations) chuyển sang bộ phận Kinh doanh (Sales) tại ANZ, Vân từng trải qua 90 ngày đầu tiên đầy áp lực vì không chốt được bất kỳ hồ sơ nào. Lúc đó, Vân nhận ra mình không có kỹ năng ăn nói khéo léo như nhiều bạn sales lâu năm.',
-      'Nhưng điều bất ngờ đã xảy ra từ tháng thứ 4: chính các anh chị đồng nghiệp ở bộ phận thẩm định, vận hành và các đối tác cũ bắt đầu chủ động giới thiệu khách hàng cho Vân. Lý do rất đơn giản: suốt những năm làm hậu cần trước đó, mỗi hồ sơ qua tay Vân đều được xử lý rõ ràng, đúng hẹn và hỗ trợ đồng nghiệp hết lòng.',
-      'Bài học đó đi theo Vân suốt gần 20 năm qua: Bạn không cần phải là người nói hay nhất trong phòng, nhưng hãy là người đáng tin cậy nhất. Khi khách hàng cảm nhận được bạn đặt lợi ích và sự an toàn của gia đình họ lên trên chỉ tiêu doanh số của bạn, họ sẽ trở thành người giới thiệu nhiệt thành nhất.',
+      'Khi mới từ bộ phận Vận hành (Operations) chuyển sang bộ phận Kinh doanh (Sales) tại ANZ, 90 ngày đầu tiên trôi qua trong áp lực nặng nề vì không có khách hàng mở mới. Bản thân lúc đó không có sự hoạt ngôn của một nhân viên bán hàng lâu năm.',
+      'Bước ngoặt đến vào tháng thứ tư, khi chính các đồng nghiệp ở bộ phận thẩm định, vận hành và các đối tác cũ bắt đầu chủ động giới thiệu khách hàng. Lý do đến từ những năm làm hậu cần trước đó: mỗi hồ sơ qua tay đều được xử lý rõ ràng, đúng hẹn và hỗ trợ đồng nghiệp tận tình.',
+      'Trải nghiệm đó định hình triết lý làm nghề suốt gần hai thập kỷ: Không cần là người nói hay nhất trong phòng, nhưng hãy là người đáng tin cậy nhất. Khi khách hàng cảm nhận được sự an toàn của gia đình họ được đặt lên trên chỉ tiêu doanh số, họ sẽ tự nguyện gắn bó dài lâu.',
     ],
     keyTakeaways: [
-      'Uy tín được xây dựng từ những việc nhỏ nhất khi chưa ai nhìn thấy.',
-      'Tỷ lệ duy trì hợp đồng và sự hài lòng sau bán hàng quan trọng hơn doanh số nhất thời.',
-      'Làm việc bằng sự chân thành sẽ tạo ra mạng lưới giới thiệu tự nhiên bền vững.',
+      'Uy tín được bồi đắp từ thái độ làm việc chỉn chu khi chưa ai chú ý.',
+      'Tỷ lệ duy trì hợp đồng phản ánh chính xác nhất đạo đức của người cố vấn.',
+      'Sự chân thành tạo nên mạng lưới giới thiệu bền vững hơn mọi kỹ thuật bán hàng.',
     ],
   },
   {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
+    index: '03',
     category: 'Phát triển Sự nghiệp',
-    date: '22 Tháng 09, 2026',
+    date: 'Tháng 09, 2026',
     readTime: '5 phút đọc',
-    title: '3 Biểu Hiện Của Một Người Quản Lý Giỏi Thực Sự Trong Công Việc',
+    title: 'Ba phẩm chất của người quản lý dẫn dắt bằng sự thấu cảm',
     excerpt:
-      'Dẫn dắt 64 Quản lý cấp cao và hơn 500 nhân sự, Vân nhận ra người lãnh đạo giỏi không phải là người làm thay hết mọi việc, mà là người giúp cộng sự tự tin tỏa sáng.',
-    image: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
+      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự, thước đo của người dẫn đầu không phải là làm thay mọi việc, mà là đánh thức thế mạnh riêng của từng cộng sự.',
     content: [
-      'Nhiều người khi mới thăng cấp lên vị trí Quản lý thường mắc một cái bẫy: cố gắng chứng tỏ mình là người giỏi nhất nhóm và áp đặt một công thức làm việc giống hệt mình lên tất cả nhân viên. Qua thực tế phát triển 64 Quản lý cấp cao, Vân đúc kết 3 phẩm chất của một người lãnh đạo bền vững:',
-      '1. Khả năng lắng nghe và đọc vị thế mạnh độc bản: Mỗi cộng sự có một xuất phát điểm và tính cách khác nhau. Có người mạnh về phân tích số liệu, có người mạnh về kết nối cảm xúc. Người quản lý giỏi biết đặt đúng người vào đúng vị trí để họ phát huy tự nhiên nhất.',
-      '2. Kỷ luật làm gương thay vì chỉ đạo bằng lời nói: Đội ngũ sẽ không làm theo những gì bạn nói, họ sẽ làm theo những gì họ thấy bạn làm mỗi ngày — từ tác phong đúng giờ, cách giải quyết khó khăn cho khách hàng đến việc không ngừng học hỏi.',
-      '3. Đo lường thành công bằng sự trưởng thành của cấp dưới: Niềm vui lớn nhất của Vân không còn là chiếc cúp của riêng mình, mà là khoảnh khắc đứng dưới sân khấu vỗ tay nhìn các quản lý kế cận của mình bước lên nhận giải.',
+      'Sai lầm phổ biến của những người mới bước lên vị trí quản lý là cố gắng áp đặt một khuôn mẫu làm việc giống hệt mình lên toàn bộ đội ngũ. Thực tế phát triển con người cho thấy mỗi cá nhân có một nhịp điệu và thế mạnh độc bản:',
+      'Thứ nhất, lắng nghe để đọc vị thế mạnh riêng: Có người sắc bén về phân tích cấu trúc tài chính, có người sâu sắc trong việc thấu cảm và chăm sóc khách hàng. Người quản lý tinh tế biết đặt đúng người vào đúng vị trí.',
+      'Thứ hai, kỷ luật làm gương: Một tập thể văn minh vận hành dựa trên những gì họ quan sát thấy từ người dẫn đầu mỗi ngày — từ sự chuẩn xác về giờ giấc đến thái độ điềm tĩnh trước thử thách.',
+      'Thứ ba, lấy sự trưởng thành của cộng sự làm thành tựu: Hạnh phúc lớn nhất của người làm công tác quản trị là chứng kiến những người đi cùng mình lần lượt bước lên những nấc thang cao hơn.',
     ],
     keyTakeaways: [
-      'Thấu hiểu từng cá nhân để kích hoạt thế mạnh riêng thay vì ép vào một khuôn mẫu.',
-      'Lãnh đạo bằng sự làm gương và đồng hành thực chiến.',
-      'Trao quyền đi đôi với đào tạo quy trình rõ ràng.',
+      'Tôn trọng cá tính và phát huy thế mạnh riêng biệt của từng nhân sự.',
+      'Truyền cảm hứng thông qua hành động và kỷ luật thực tế.',
+      'Trao quyền đi kèm hệ thống quy trình đào tạo bài bản.',
     ],
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
+    index: '04',
     category: 'Bố Mẹ Đi Làm',
-    date: '08 Tháng 09, 2026',
+    date: 'Tháng 09, 2026',
     readTime: '4 phút đọc',
-    title: 'Làm Sao Điều Hành Hệ Thống 500+ Nhân Sự Mà Vẫn Giữ Trọn Sự Hiện Diện Bên Chồng Con?',
+    title: 'Nghệ thuật “Hiện diện trọn vẹn” giữa sự nghiệp và tổ ấm',
     excerpt:
-      'Cân bằng cuộc sống không có nghĩa là chia đều 50/50 thời gian mỗi ngày, mà là sự hiện diện trọn vẹn 100% ở nơi mình đang đứng.',
-    image: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
+      'Cân bằng không có nghĩa là chia đôi quỹ thời gian một cách cơ học, mà là sự toàn tâm toàn ý cho nơi mình đang thuộc về ở từng khoảnh khắc.',
     content: [
-      'Là phụ nữ làm quản lý, chắc hẳn nhiều chị em từng có cảm giác có lỗi: khi ở văn phòng thì lo cho con ở nhà, khi về nhà chơi với con thì đầu óc lại nghĩ đến công việc. Bản thân Vân cũng từng trải qua giai đoạn đó trước khi tìm ra nguyên tắc “Sự hiện diện trọn vẹn”.',
-      'Khi ở văn phòng hoặc trong phòng đào tạo, Vân tập trung 100% năng lượng, làm việc theo lịch trình phân khối thời gian (Time-blocking) rất rõ ràng để giải quyết dứt điểm công việc. Và khi bước qua cánh cửa nhà vào buổi tối, Vân chủ động gác lại điện thoại để thực sự lắng nghe câu chuyện ở trường của hai con và trò chuyện cùng chồng.',
-      'Đặc biệt, đừng cố gắng làm một “siêu nhân” ôm đồm mọi thứ một mình. Hãy chia sẻ thẳng thắn mục tiêu công việc với chồng và biến các con thành những người bạn đồng hành hiểu chuyện. Khi gia đình hiểu ý nghĩa công việc bạn đang làm, tổ ấm sẽ trở thành trạm sạc năng lượng tuyệt vời nhất.',
+      'Phụ nữ ở vị trí quản lý thường đối diện với nỗi trăn trở vô hình: khi ở văn phòng lại nghĩ về con cái, khi ở bên con lại bận tâm chuyện công việc. Giải pháp thực sự nằm ở nguyên tắc “Hiện diện trọn vẹn”.',
+      'Trong khung giờ làm việc và đào tạo, toàn bộ sự tập trung được dành cho đội ngũ và khách hàng thông qua việc phân bổ thời gian (Time-blocking) nghiêm ngặt. Và khi trở về nhà vào buổi tối, việc chủ động gác lại thiết bị công việc để lắng nghe câu chuyện nhỏ của hai con giúp mỗi phút giây bên gia đình đều thực sự có chiều sâu.',
+      'Hơn hết, sự chia sẻ thẳng thắn với người bạn đời về mục tiêu và áp lực công việc giúp biến gia đình thành những người đồng hành thấu hiểu.',
     ],
     keyTakeaways: [
-      'Áp dụng kỷ luật quản lý thời gian (Time-blocking) để nâng cao hiệu suất giờ làm việc.',
-      'Chất lượng thời gian bên con quan trọng hơn số lượng giờ ngồi cạnh con nhưng vẫn nhìn điện thoại.',
-      'Sự chia sẻ và đồng lòng với người bạn đời là chìa khóa của bình an gia đình.',
+      'Quản trị thời gian theo khung giờ tập trung cao độ.',
+      'Đề cao chất lượng sự hiện diện bên chồng con thay vì số giờ hình thức.',
+      'Đồng thuận cùng người bạn đời để giữ gìn sự bình an trong gia đình.',
     ],
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
+    index: '05',
     category: 'Tài chính & Gia sản',
-    date: '25 Tháng 08, 2026',
+    date: 'Tháng 08, 2026',
     readTime: '5 phút đọc',
-    title: '3 Nguyên Tắc Quản Trị Rủi Ro Dòng Tiền Gia Đình Từ Góc Nhìn Cựu Banker',
+    title: 'Ba nguyên tắc bảo toàn dòng tiền gia đình từ góc nhìn cựu Banker',
     excerpt:
-      'Kiếm được nhiều tiền là năng lực tấn công, nhưng giữ được tiền và bảo vệ tương lai học vấn của con cái trước mọi biến cố mới là năng lực phòng thủ tối quan trọng.',
-    image: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
+      'Tạo ra thu nhập cao là năng lực kiến tạo, nhưng thiết lập cấu trúc bảo vệ tương lai học vấn của con cái trước biến cố mới là nền tảng của sự thịnh vượng bền vững.',
     content: [
-      'Trong 8 năm làm việc tại ngân hàng quốc tế ANZ, Vân có cơ hội tiếp xúc với hàng trăm hồ sơ tài chính của các gia đình có thu nhập cao và chủ doanh nghiệp. Điểm chung là nhiều người rất giỏi tạo ra dòng tiền, nhưng cấu trúc phòng thủ tài sản lại có nhiều khoảng trống.',
-      'Nguyên tắc thứ nhất: Luôn xây dựng “Lớp khiên bảo vệ thu nhập người trụ cột” trước khi nghĩ đến các kênh đầu tư mạo hiểm. Dù thị trường bất động sản hay chứng khoán có biến động ra sao, quỹ học vấn của con cái và chi phí y tế chất lượng cao của gia đình phải là khoản tiền bất khả xâm phạm.',
-      'Nguyên tắc thứ hai: Thiết kế giải pháp theo đúng nhu cầu và khả năng duy trì dài hạn (Đúng và Đủ). Một kế hoạch tài chính tốt nhất là kế hoạch được duy trì bền bỉ qua 10, 15, 20 năm chứ không phải một hợp đồng quá sức để rồi phải dừng lại giữa chừng.',
-      'Nguyên tắc thứ ba: Rà soát danh mục định kỳ hàng năm cùng một cố vấn có tâm và có chuyên môn sâu để điều chỉnh kịp thời theo từng cột mốc mới của gia đình.',
+      'Từ kinh nghiệm 8 năm làm việc tại ANZ, khi tiếp xúc với nhiều hồ sơ tài sản của các gia đình và chủ doanh nghiệp, một điểm dễ nhận thấy là nhiều người rất xuất sắc trong việc gia tăng tài sản nhưng lại để trống lớp phòng thủ rủi ro.',
+      'Nguyên tắc đầu tiên là xây dựng lớp bảo vệ thu nhập của người trụ cột trước khi mở rộng sang các danh mục đầu tư biến động cao. Quỹ học vấn của con cái và nguồn lực chăm sóc y tế gia đình cần được đặt ở vùng an toàn tuyệt đối.',
+      'Nguyên tắc thứ hai là tính vừa vặn: Một giải pháp hoạch định chuẩn mực phải phù hợp tự nhiên với dòng tiền dài hạn của gia đình (Đúng và Đủ), đảm bảo sự duy trì nhẹ nhàng qua 15–20 năm.',
+      'Nguyên tắc thứ ba là rà soát định kỳ hàng năm để điều chỉnh cấu trúc tài chính tương ứng với từng giai đoạn trưởng thành của gia đình.',
     ],
     keyTakeaways: [
-      'Ưu tiên bảo vệ dòng tiền của người trụ cột và quỹ học vấn của con cái.',
-      'Hoạch định theo nguyên tắc “Đúng – Đủ – Phù hợp dòng tiền dài hạn”.',
-      'Kỷ luật duy trì kế hoạch tài chính là yếu tố quyết định hiệu quả cuối cùng.',
+      'Ưu tiên thiết lập tầng bảo vệ dòng tiền trụ cột và tương lai học vấn của con.',
+      'Hoạch định dựa trên tỷ lệ cân đối, bền vững trong dài hạn.',
+      'Định kỳ đánh giá lại cấu trúc tài sản cùng cố vấn chuyên môn.',
     ],
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
+    index: '06',
     category: 'Kỷ luật Bản thân',
-    date: '10 Tháng 08, 2026',
+    date: 'Tháng 08, 2026',
     readTime: '4 phút đọc',
-    title: 'Kỷ Luật Phòng Tập Mỗi Sáng Và Bài Học Về Sự Bền Bỉ Trên Đường Dài',
+    title: 'Kỷ luật rèn luyện thể chất và bài học về sức bền của người lãnh đạo',
     excerpt:
-      'Muốn đi đường dài trong sự nghiệp lãnh đạo, một trí tuệ minh mẫn phải nằm trong một cơ thể khỏe mạnh và dẻo dai.',
-    image: '/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg',
+      'Một tư duy minh mẫn và khả năng ra quyết định điềm tĩnh luôn cần được nuôi dưỡng trong một cơ thể khỏe mạnh, dẻo dai.',
     content: [
-      'Lịch làm việc của một Giám đốc Vùng với các buổi đào tạo, họp chiến lược và gặp gỡ đối tác đòi hỏi nguồn thể lực rất lớn. Dù bận rộn đến đâu, Vân vẫn duy trì thói quen dành thời gian tại phòng tập gym mỗi tuần.',
-      'Rèn luyện thể thao dạy cho chúng ta một bài học rất thật về thành công: Không có kết quả nào đến sau một đêm. Bạn không thể tập một buổi mà khỏe ngay, cũng như không thể xây dựng một đội ngũ vững mạnh chỉ bằng vài khẩu hiệu ngắn hạn.',
-      'Mỗi sáng vượt qua sự lười biếng để hoàn thành bài tập là một chiến thắng nhỏ giúp rèn luyện ý chí. Khi bạn làm chủ được kỷ luật bản thân, bạn sẽ có nguồn năng lượng tích cực để truyền lửa cho hàng trăm con người xung quanh.',
+      'Cường độ làm việc của một Giám đốc Vùng với các lịch trình đào tạo, cố vấn và điều hành đòi hỏi nền tảng thể lực bền bỉ. Việc duy trì lịch tập luyện thể thao đều đặn mỗi tuần không chỉ là chăm sóc sức khỏe, mà là cách rèn luyện tính kỷ luật tự giác.',
+      'Thể thao và quản trị có cùng một quy luật: Không có kết quả bền vững nào được tạo ra chỉ sau một đêm. Sự tiến bộ đến từ việc lặp lại những thói quen đúng đắn ngay cả khi không có ai giám sát.',
+      'Khi làm chủ được nhịp sinh học và năng lượng cá nhân, người lãnh đạo mới có thể lan tỏa sự điềm tĩnh và nguồn cảm hứng tích cực cho tập thể.',
     ],
     keyTakeaways: [
-      'Sức khỏe thể chất là nền tảng của sự minh mẫn và bản lĩnh ra quyết định.',
-      'Sự đều đặn mỗi ngày luôn chiến thắng sự bùng nổ ngắn hạn.',
-      'Người lãnh đạo truyền năng lượng tốt nhất qua chính lối sống kỷ luật của mình.',
+      'Thể lực bền bỉ là điểm tựa cho sự minh mẫn trong quản trị.',
+      'Sự kiên trì đều đặn mỗi ngày tạo nên khác biệt lớn trong dài hạn.',
+      'Làm gương về lối sống cân bằng và kỷ luật tự giác.',
     ],
   },
 ];
 
 const BOOKS = [
   {
-    title: 'Good to Great (Từ Tốt Đến Vĩ Đại)',
+    num: '01',
+    title: 'Good to Great — Từ Tốt Đến Vĩ Đại',
     author: 'Jim Collins',
-    tag: 'Tư duy Quản trị & Đội ngũ',
-    review:
-      'Cuốn sách định hình tư duy của Vân về “Lãnh đạo Cấp độ 5” — sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ việc chọn đúng người lên chuyến xe trước khi quyết định lái xe về đâu.',
+    theme: 'Triết lý Lãnh đạo',
+    note: 'Hình mẫu “Lãnh đạo Cấp độ 5” — sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ việc chọn đúng người đồng hành.',
   },
   {
-    title: 'The Psychology of Money (Tâm Lý Học Về Tiền)',
+    num: '02',
+    title: 'The Psychology of Money — Tâm Lý Học Về Tiền',
     author: 'Morgan Housel',
-    tag: 'Quản trị Gia sản & Dòng tiền',
-    review:
-      'Quản lý tài chính thành công không chỉ nằm ở những bảng tính phức tạp, mà nằm ở hành vi, sự kiên nhẫn và việc chừa sẵn “biên độ an toàn” trước những rủi ro không thể đoán trước của cuộc sống.',
+    theme: 'Quản trị Gia sản',
+    note: 'Sự thịnh vượng dài hạn không nằm ở những công thức phức tạp, mà ở sự điềm tĩnh, kỷ luật hành vi và việc luôn giữ một biên độ an toàn cho gia đình.',
   },
   {
-    title: 'Atomic Habits (Thay Đổi Tí Hon, Hiệu Quả Bất Ngờ)',
+    num: '03',
+    title: 'Atomic Habits — Thay Đổi Tí Hon, Hiệu Quả Bất Ngờ',
     author: 'James Clear',
-    tag: 'Kỷ luật Bản thân',
-    review:
-      'Triết lý “tốt hơn 1% mỗi ngày” chính là cốt lõi của phương châm “Đi chắc để đi xa”. Mọi thành tựu Top 1 Châu Á đều được tạo nên từ hệ thống thói quen làm việc chuẩn mực hàng ngày.',
+    theme: 'Kỷ luật Bản thân',
+    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi cột mốc lớn đều được kiến tạo từ hệ thống những thói quen chuẩn mực được lặp lại mỗi ngày.',
   },
 ];
 
@@ -201,33 +184,31 @@ export function App() {
   const [activeArticle, setActiveArticle] = useState<Article | null>(null);
   const [lightbox, setLightbox] = useState<LightboxImage | null>(null);
 
-  // Lead magnet state
   const [leadEmail, setLeadEmail] = useState('');
   const [leadSent, setLeadSent] = useState(false);
 
-  // Main consultation form state
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
     email: '',
-    topic: 'Đồng hành Phát triển Sự nghiệp Quản lý (Mentorship F1)',
-    background: 'Cựu Banker / Chuyên viên Ngân hàng',
+    topic: 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)',
+    background: 'Ngân hàng / Tài chính (Banker)',
     note: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 16);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { label: 'Về Khánh Vân', href: '#ve-khanh-van' },
-    { label: 'Góc Nhìn & Lời Khuyên', href: '#goc-nhin' },
-    { label: 'Tủ Sách & Tài Liệu', href: '#tu-sach' },
-    { label: 'Cuộc Sống & Gia Đình', href: '#gia-dinh' },
-    { label: 'Hợp Tác', href: '#hop-tac' },
+    { label: 'Câu chuyện', href: '#cau-chuyen' },
+    { label: 'Góc nhìn', href: '#goc-nhin' },
+    { label: 'Tủ sách', href: '#tu-sach' },
+    { label: 'Cuộc sống', href: '#cuoc-song' },
+    { label: 'Đồng hành', href: '#dong-hanh' },
   ];
 
   const categories = [
@@ -243,141 +224,90 @@ export function App() {
       ? ARTICLES
       : ARTICLES.filter((a) => a.category === selectedCategory);
 
-  const authorityMetrics = [
-    {
-      figure: '8+ Năm',
-      label: 'Kinh Nghiệm ANZ Bank',
-      desc: 'Nền tảng chuyên môn Quản lý tài sản, Tín dụng và Vận hành ngân hàng quốc tế.',
-    },
-    {
-      figure: 'Top 1',
-      label: 'Toàn Quốc ANZ (2017)',
-      desc: 'Dẫn đầu doanh số mảng Tín dụng & Cho vay thế chấp mua nhà toàn hệ thống.',
-    },
-    {
-      figure: 'Top 1',
-      label: 'Quản Lý Châu Á (2021)',
-      desc: 'Giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á (Asia Trusted Life Agent & Advisers Awards).',
-    },
-    {
-      figure: '64',
-      label: 'Quản Lý Cấp Cao',
-      desc: 'Đội ngũ quản lý kế cận được đào tạo và chuyển giao quy trình làm việc thực chiến.',
-    },
-    {
-      figure: '500+',
-      label: 'Nhân Sự Hệ Thống',
-      desc: 'Tập thể làm việc kỷ luật, chuyên nghiệp, đoàn kết và lấy chữ Tín làm gốc.',
-    },
-    {
-      figure: 'Top 1',
-      label: 'Tỷ Lệ Duy Trì Hợp Đồng',
-      desc: 'Minh chứng thực tế cho chất lượng tư vấn chuẩn mực và sự tin tưởng dài hạn từ khách hàng.',
-    },
+  const metrics = [
+    { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản & Tín dụng quốc tế' },
+    { figure: 'Top 1', unit: 'Toàn Quốc ANZ', detail: 'Vô địch doanh số thế chấp năm 2017' },
+    { figure: 'Top 1', unit: 'Lãnh Đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
+    { figure: '64', unit: 'Quản Lý Cấp Cao', detail: 'Đội ngũ lãnh đạo kế cận trực tiếp' },
+    { figure: '500+', unit: 'Nhân Sự Hệ Thống', detail: 'Vận hành chuẩn mực & gắn kết' },
+    { figure: 'Top 1', unit: 'Tỷ Lệ Duy Trì', detail: 'Bảo chứng niềm tin khách hàng dài hạn' },
   ];
 
-  const handleLeadSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (leadEmail.trim()) {
-      setLeadSent(true);
-    }
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <div className="min-h-screen bg-white text-[#111827]">
-      {/* 1. HEADER NAVIGATION — CLEAN LIGHT MANULIFE THEME */}
+    <div className="min-h-screen bg-[#FAF9F5] text-[#181F1C]">
+      {/* 1. MINIMALIST EDITORIAL HEADER */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 py-3.5 shadow-subtle'
-            : 'bg-white border-b border-gray-100 py-4'
+            ? 'bg-[#FAF9F5]/92 backdrop-blur-md border-b border-[#E4E1D8] py-4'
+            : 'bg-[#FAF9F5] border-b border-[#E4E1D8]/60 py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-3 shrink-0 whitespace-nowrap group">
-            <div className="flex items-end gap-1">
-              <span className="w-1.5 h-6 bg-[#00A758] rounded-xs" />
-              <span className="w-1.5 h-6 bg-[#00A758] rounded-xs" />
-              <span className="w-1.5 h-6 bg-[#00A758] rounded-xs" />
-            </div>
-            <div>
-              <span className="text-base sm:text-lg font-bold tracking-tight text-[#111827] block leading-none">
-                NGUYỄN THỊ KHÁNH VÂN
-              </span>
-              <span className="text-[11px] font-medium text-[#00A758] tracking-wide block mt-1">
-                Lãnh đạo • Cố vấn Gia sản • Người Mẹ
-              </span>
-            </div>
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-3.5 shrink-0 whitespace-nowrap group">
+            <span className="w-[3px] h-5 bg-[#008746] inline-block" />
+            <span className="font-serif text-xl sm:text-2xl font-medium tracking-[0.14em] uppercase text-[#181F1C]">
+              Khánh Vân
+            </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-[#4B5563] hover:text-[#00A758] transition-colors"
+                className="whitespace-nowrap text-[12px] uppercase tracking-[0.18em] text-[#56605B] hover:text-[#0A3622] transition-colors font-normal"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden sm:flex items-center shrink-0">
             <a
-              href="#hop-tac"
-              className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-[#00A758] hover:bg-[#008A47] text-white shadow-emerald-sm transition-all"
+              href="#lien-he"
+              className="whitespace-nowrap inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
             >
-              <span>Liên Hệ Hợp Tác</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <span>Kết nối riêng</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+            className="lg:hidden p-1.5 text-[#181F1C]"
             aria-label="Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile Drawer */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-b border-gray-200 overflow-hidden"
+              className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden"
             >
-              <div className="px-6 py-5 flex flex-col gap-3">
+              <div className="px-6 py-8 flex flex-col gap-5">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-base font-medium text-gray-800 hover:text-[#00A758] py-2 border-b border-gray-100 flex items-center justify-between"
+                    className="text-xs uppercase tracking-[0.2em] text-[#181F1C] py-1.5 border-b border-[#E4E1D8]/60"
                   >
-                    <span>{item.label}</span>
-                    <ChevronRight className="w-4 h-4 text-[#00A758]" />
+                    {item.label}
                   </a>
                 ))}
                 <a
-                  href="#hop-tac"
+                  href="#lien-he"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-2 py-3 rounded-lg text-center font-semibold text-sm bg-[#00A758] text-white"
+                  className="pt-2 text-xs uppercase tracking-[0.2em] text-[#008746] font-medium"
                 >
-                  Liên Hệ Hợp Tác
+                  Kết nối riêng &rarr;
                 </a>
               </div>
             </motion.div>
@@ -385,115 +315,72 @@ export function App() {
         </AnimatePresence>
       </header>
 
-      {/* 2. HERO SECTION — INSPIRED BY THAI VAN LINH'S 4-ROLE POSITIONING + MANULIFE HERITAGE */}
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 bg-gradient-to-b from-[#F4FAF7] via-white to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* Left Column */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* 4 Roles Pill (Like Thái Vân Linh: Doanh nhân - Nhà đầu tư - Cố vấn - Người mẹ) */}
-              <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E6F5EC] text-[#003822] text-xs sm:text-sm font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#00A758]" />
-                <span>Nhà Lãnh Đạo • Cố Vấn Gia Sản • Người Truyền Lửa • Người Mẹ</span>
-              </div>
-
-              {/* Clean Modern Title */}
-              <div className="space-y-3">
-                <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-[#111827] leading-[1.15]">
-                  Nguyễn Thị <span className="text-[#00A758]">Khánh Vân</span>
+      {/* 2. EDITORIAL HERO — GENEROUS NEGATIVE SPACE, SLENDER SERIF, UNBOXED PHOTOGRAPHY */}
+      <section className="pt-36 sm:pt-44 lg:pt-48 pb-24 lg:pb-32">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-end">
+            {/* Left 7 Cols */}
+            <div className="lg:col-span-7 space-y-10">
+              <div className="space-y-4">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium">
+                  Nhà Lãnh Đạo &bull; Cố Vấn Gia Sản &bull; Người Truyền Lửa &bull; Người Mẹ
+                </p>
+                <h1 className="font-serif text-5xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-[#181F1C] leading-[1.06]">
+                  Nguyễn Thị Khánh Vân
                 </h1>
-                <p className="text-lg sm:text-xl font-medium text-[#374151] leading-snug">
-                  Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam &bull; Nhà Quản lý Xuất sắc nhất Châu Á (2021)
-                </p>
               </div>
 
-              {/* Core Motto */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border-l-4 border-[#00A758] space-y-2">
-                <p className="text-base sm:text-lg font-semibold text-[#111827]">
-                  “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
-                </p>
-                <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
-                  Khởi đầu từ 8 năm quản lý tài sản và tín dụng tại ngân hàng quốc tế ANZ đến hành trình xây dựng đội ngũ hơn 500 nhân sự tại Manulife, Vân luôn tin rằng sự tử tế, minh bạch và kỷ luật bản thân là con đường ngắn nhất để tạo dựng sự nghiệp bền vững.
-                </p>
-              </div>
+              <p className="font-serif italic text-2xl sm:text-[28px] text-[#3B443F] font-normal leading-[1.4] max-w-xl">
+                “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
+              </p>
 
-              {/* Quick Credentials */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gray-200">
-                  <Building2 className="w-5 h-5 text-[#00A758] shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 block">
-                      Nền tảng Ngân hàng Quốc tế
-                    </span>
-                    <span className="text-sm font-semibold text-[#111827]">
-                      8+ Năm ANZ Bank (Top 1 Toàn Quốc 2017)
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gray-200">
-                  <Award className="w-5 h-5 text-[#00A758] shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 block">
-                      Dấu ấn Khu vực Châu Á
-                    </span>
-                    <span className="text-sm font-semibold text-[#111827]">
-                      Asia Trusted Awards Winner 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <div className="h-[1px] w-20 bg-[#0A3622]/30" />
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <p className="text-[15px] sm:text-base text-[#56605B] leading-[1.9] font-light max-w-xl">
+                Khởi đầu từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến vị thế Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam và giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á (2021). Hành trình gần hai thập kỷ của Khánh Vân được dẫn dắt bởi niềm tin rằng sự minh bạch, kỷ luật và lòng thấu cảm là nền tảng bền vững nhất của mọi di sản.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-10">
                 <a
-                  href="#goc-nhin"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#00A758] hover:bg-[#008A47] text-white shadow-emerald-sm transition-all"
+                  href="#cau-chuyen"
+                  className="inline-flex items-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-normal transition-colors duration-300"
                 >
-                  <span>Đọc Góc Nhìn &amp; Lời Khuyên</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Hành trình sự nghiệp</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="#hop-tac"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-white hover:bg-gray-50 text-[#111827] border border-gray-300 transition-all"
+                  href="#goc-nhin"
+                  className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#181F1C] hover:text-[#008746] border-b border-[#181F1C]/40 hover:border-[#008746] pb-1.5 transition-colors"
                 >
-                  <span>Phương Thức Hợp Tác</span>
+                  <span>Đọc góc nhìn &amp; chia sẻ</span>
                 </a>
               </div>
             </div>
 
-            {/* Right Column: Clean Portrait Frame */}
+            {/* Right 5 Cols: Unboxed Editorial Portrait */}
             <div className="lg:col-span-5">
               <figure
                 onClick={() =>
                   setLightbox({
                     src: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
-                    category: 'DẤU ẤN LÃNH ĐẠO',
-                    title: 'Gặp Gỡ & Giao Lưu Cùng Tổng Giám Đốc (CEO) Manulife',
+                    fig: 'FIG. 01 — LEADERSHIP',
+                    title: 'Tiệc Tối Cùng Tổng Giám Đốc (CEO) Manulife',
                     subtitle:
-                      'Chị Nguyễn Thị Khánh Vân cùng CEO Manulife tại sự kiện Tiệc tối cùng CEO.',
+                      'Chị Nguyễn Thị Khánh Vân cùng CEO Manulife trong buổi gặp gỡ chiến lược.',
                   })
                 }
-                className="bg-white p-3 rounded-2xl border border-gray-200 shadow-elevated cursor-pointer group"
+                className="cursor-pointer group"
               >
-                <div className="overflow-hidden rounded-xl aspect-[4/4.8] bg-gray-100">
+                <div className="overflow-hidden aspect-[4/4.9] bg-[#EAE7DF]">
                   <img
                     src="/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg"
                     alt="Chị Nguyễn Thị Khánh Vân cùng CEO Manulife"
-                    className="w-full h-full object-cover object-[50%_82%] group-hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover object-[50%_82%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
-                <figcaption className="pt-3.5 px-1 flex items-center justify-between gap-4">
-                  <div>
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#00A758] block">
-                      Tiệc Tối Cùng CEO Manulife
-                    </span>
-                    <p className="text-sm font-medium text-[#111827] mt-0.5">
-                      Đồng hành cùng Ban Lãnh Đạo Cấp Cao kiến tạo chuẩn mực tư vấn bền vững
-                    </p>
-                  </div>
-                  <span className="text-xs font-medium text-gray-500 group-hover:text-[#00A758] shrink-0">
-                    Xem ảnh &rarr;
-                  </span>
+                <figcaption className="mt-4 pt-3 border-t border-[#E4E1D8] flex items-baseline justify-between gap-4 text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
+                  <span>FIG. 01 &mdash; Cùng Tổng Giám Đốc (CEO) Manulife</span>
+                  <span className="group-hover:text-[#0A3622] transition-colors">Xem ảnh</span>
                 </figcaption>
               </figure>
             </div>
@@ -501,290 +388,244 @@ export function App() {
         </div>
       </section>
 
-      {/* 3. PROOF OF AUTHORITY BAR — DEEP MANULIFE FOREST GREEN CORPORATE STRIP */}
-      <section className="bg-[#003822] text-white py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#34D399] block mb-2">
-                THÀNH TỰU &amp; CON SỐ THỰC TẾ
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Hành Trình Được Chứng Minh Bằng Kết Quả
-              </h2>
-            </div>
-            <p className="text-sm text-emerald-100/80 max-w-md">
-              Mỗi con số là kết quả của sự kỷ luật, minh bạch và niềm tin từ khách hàng cũng như đội ngũ cộng sự.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {authorityMetrics.map((item, idx) => (
+      {/* 3. ARCHITECTURAL HAIRLINE METRICS (NO CHUNKY BOXES) */}
+      <section className="border-t border-b border-[#E4E1D8] bg-[#F2EFE9]/60 py-16 lg:py-20">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8">
+            {metrics.map((m, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00A758] transition-colors"
+                className={`${
+                  idx !== 0 ? 'lg:border-l lg:border-[#DCD8CE] lg:pl-7' : ''
+                } space-y-2`}
               >
-                <div className="text-3xl sm:text-4xl font-bold text-[#34D399] tracking-tight">
-                  {item.figure}
+                <div className="font-serif text-4xl sm:text-[44px] font-normal text-[#0A3622] leading-none tracking-tight">
+                  {m.figure}
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-white mt-2">
-                  {item.label}
-                </h3>
-                <p className="text-xs sm:text-sm text-emerald-100/75 mt-2 leading-relaxed">
-                  {item.desc}
-                </p>
+                <div className="text-[11px] uppercase tracking-[0.16em] text-[#181F1C] font-medium pt-1">
+                  {m.unit}
+                </div>
+                <p className="text-xs text-[#56605B] font-light leading-relaxed">{m.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. VỀ KHÁNH VÂN — CÂU CHUYỆN SỰ NGHIỆP (INSPIRED BY THAI VAN LINH'S /PAGES/VE-THAI-VAN-LINH) */}
-      <section id="ve-khanh-van" className="py-20 lg:py-28 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Opening Statement like Shark Linh's "Hôm nay tôi sẽ làm..." */}
-          <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20 space-y-4">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#E6F5EC] text-[#00A758] text-xs font-semibold uppercase tracking-wider">
-              VỀ THÁI ĐỘ SỐNG &amp; SỰ NGHIỆP
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-bold text-[#111827] leading-tight">
-              “Làm tốt nhất từ những việc nhỏ nhất mỗi ngày. Khi bạn đủ chân thành, cơ hội lớn sẽ tự mở ra.”
-            </h2>
-            <p className="text-base text-[#4B5563] leading-relaxed">
-              Nguyễn Thị Khánh Vân được biết đến với vai trò là Giám đốc Vùng Cấp cao tại Manulife Việt Nam, một nhà cố vấn hoạch định tài chính, người thầy dẫn dắt đội ngũ và là một người mẹ của hai con.
-            </p>
+      {/* 4. CÂU CHUYỆN SỰ NGHIỆP — EDITORIAL ESSAY & GALLERY LAYOUT */}
+      <section id="cau-chuyen" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          {/* Section Intro */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-24 lg:mb-32 items-end">
+            <div className="lg:col-span-4">
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
+                01 / HÀNH TRÌNH SỰ NGHIỆP
+              </span>
+              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+                Từ Chuẩn Mực Ngân Hàng Quốc Tế Đến Đỉnh Cao Châu Á
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <p className="font-serif italic text-2xl sm:text-[26px] text-[#3B443F] leading-[1.5]">
+                “Làm tốt nhất từ những việc nhỏ nhất mỗi ngày. Khi bạn đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
+              </p>
+            </div>
           </div>
 
-          {/* 3 Chapters with Clean Uncovered Stage Photos */}
-          <div className="space-y-20">
-            {/* Chapter 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              <div className="lg:col-span-6 space-y-4">
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  <span>Giai đoạn 2009 – 2017</span>
-                  <span>&bull;</span>
-                  <span>Ngân hàng Quốc tế ANZ</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-                  Đi Lên Từ Con Số 0 &amp; Bài Học Để Đời Về Chữ “Tín”
-                </h3>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Trước khi đạt danh hiệu <strong className="text-[#111827]">Top 1 Toàn Quốc ANZ năm 2017</strong> mảng Tín dụng &amp; Thế chấp mua nhà, Vân từng trải qua 3 tháng đầu tiên chuyển sang bộ phận Sales mà không có nổi một khách hàng, đứng trước nguy cơ bị cắt mã số.
-                </p>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Thay vì nản lòng hay chạy theo doanh số bằng mọi giá, Vân nhận được sự giúp đỡ từ chính các đồng nghiệp và đối tác cũ — những người đã chứng kiến sự cẩn trọng, tận tâm và trách nhiệm của Vân suốt những năm làm Vận hành (Operations). Họ chủ động giới thiệu những khách hàng đầu tiên, giúp Vân lội ngược dòng ngoạn mục và thấu hiểu sức mạnh của <strong className="text-[#111827]">The Power of Referral &amp; Integrity</strong>.
-                </p>
-              </div>
-
-              <div className="lg:col-span-6">
-                <figure
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg',
-                      category: 'VINH DANH TOÀN QUỐC • 2024',
-                      title: 'Top 1 Quản Lý Cấp Cao DRD+ Hoàn Thành Chỉ Tiêu Năm 2024',
-                      subtitle: 'Dấu ấn lãnh đạo dẫn đầu tại sự kiện vinh danh Manulife Việt Nam.',
-                    })
-                  }
-                  className="clean-card rounded-2xl p-3 cursor-pointer group"
-                >
-                  <div className="overflow-hidden rounded-xl aspect-[16/10] bg-gray-100">
-                    <img
-                      src="/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg"
-                      alt="Vinh danh Top 1 Quản lý cấp cao DRD+ Nguyễn Thị Vân 2024"
-                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                  </div>
-                  <figcaption className="pt-3 px-1 flex items-center justify-between text-xs text-[#4B5563]">
-                    <span>
-                      <strong className="text-[#111827]">Vinh danh năm 2024:</strong> Top 1 Quản lý Cấp cao DRD+ dẫn đầu tỷ lệ hoàn thành chỉ tiêu.
-                    </span>
-                    <span className="text-[#00A758] font-semibold shrink-0 ml-2">Phóng to &rarr;</span>
-                  </figcaption>
-                </figure>
-              </div>
+          {/* Chapter I */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28 lg:mb-36">
+            <div className="lg:col-span-5 space-y-6">
+              <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
+                CHƯƠNG I &mdash; 2009 ĐẾN 2017
+              </span>
+              <h3 className="font-serif text-3xl sm:text-[34px] font-normal text-[#181F1C] leading-[1.22]">
+                Nền tảng ANZ Bank và bài học để đời về chữ “Tín”
+              </h3>
+              <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                Trước khi vươn lên vị trí Top 1 Toàn Quốc ANZ năm 2017 mảng Tín dụng &amp; Thế chấp mua nhà, Khánh Vân từng trải qua 3 tháng đầu tiên chuyển sang bộ phận kinh doanh mà không có nổi một khách hàng, đứng trước nguy cơ bị cắt mã số.
+              </p>
+              <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                Không chọn cách bán hàng bất chấp, chính uy tín, sự cẩn trọng và tận tâm suốt những năm làm Vận hành (Operations) trước đó đã khiến đồng nghiệp và đối tác chủ động giới thiệu khách hàng cho chị. Bài học về sức mạnh của sự tử tế trở thành kim chỉ nam xuyên suốt sự nghiệp của Vân.
+              </p>
             </div>
 
-            {/* Chapter 2 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              <div className="lg:col-span-6 order-2 lg:order-1">
-                <figure
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
-                      category: 'CHẤT LƯỢNG TƯ VẤN • 2025',
-                      title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
-                      subtitle: 'Thước đo cao nhất cho sự hài lòng và gắn bó dài hạn của khách hàng.',
-                    })
-                  }
-                  className="clean-card rounded-2xl p-3 cursor-pointer group"
-                >
-                  <div className="overflow-hidden rounded-xl aspect-[16/10] bg-gray-100">
-                    <img
-                      src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
-                      alt="Top 1 DRD+ dẫn đầu tỷ lệ duy trì hợp đồng năm 2025"
-                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                  </div>
-                  <figcaption className="pt-3 px-1 flex items-center justify-between text-xs text-[#4B5563]">
-                    <span>
-                      <strong className="text-[#111827]">Vinh danh năm 2025:</strong> Top 1 DRD+ dẫn đầu Tỷ lệ duy trì hợp đồng năm 2.
-                    </span>
-                    <span className="text-[#00A758] font-semibold shrink-0 ml-2">Phóng to &rarr;</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div className="lg:col-span-6 space-y-4 order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  <span>Bước ngoặt 2018</span>
-                  <span>&bull;</span>
-                  <span>Tái định nghĩa nghề Tư vấn Tài chính</span>
+            <div className="lg:col-span-7">
+              <figure
+                onClick={() =>
+                  setLightbox({
+                    src: '/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg',
+                    fig: 'FIG. 02 — HALL OF EXCELLENCE',
+                    title: 'Vinh Danh Top 1 Quản Lý Cấp Cao DRD+ (2024)',
+                    subtitle: 'Dẫn đầu tỷ lệ hoàn thành chỉ tiêu toàn hệ thống.',
+                  })
+                }
+                className="cursor-pointer group"
+              >
+                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF]">
+                  <img
+                    src="/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg"
+                    alt="Vinh danh Top 1 Quản lý cấp cao DRD+ Nguyễn Thị Vân"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-                  Bước Ra Khỏi Vùng An Toàn &amp; Lấy Tỷ Lệ Duy Trì Làm Thước Đo Danh Dự
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  <span>FIG. 02 &mdash; Vinh danh Top 1 Quản lý Cấp cao DRD+ (2024)</span>
+                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          {/* Chapter II & III Asymmetric Editorial Spread */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Column: Landscape Retention Photo + Chapter II Text */}
+            <div className="lg:col-span-6 space-y-12">
+              <figure
+                onClick={() =>
+                  setLightbox({
+                    src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
+                    fig: 'FIG. 03 — CLIENT TRUST',
+                    title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
+                    subtitle: 'Minh chứng cao nhất cho chất lượng tư vấn chuẩn mực và dài hạn.',
+                  })
+                }
+                className="cursor-pointer group"
+              >
+                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF]">
+                  <img
+                    src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
+                    alt="Top 1 DRD+ Tỷ lệ duy trì hợp đồng 2025"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  />
+                </div>
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  <span>FIG. 03 &mdash; Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (2025)</span>
+                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                </figcaption>
+              </figure>
+
+              <div className="space-y-5 pt-2">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
+                  CHƯƠNG II &mdash; BƯỚC NGOẶT 2018
+                </span>
+                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
+                  Bước ra khỏi vùng an toàn &amp; lấy tỷ lệ duy trì làm thước đo danh dự
                 </h3>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Năm 2018, Vân quyết định rời môi trường ngân hàng nước ngoài để bắt đầu hành trình xây dựng đội ngũ tại Manulife Việt Nam với mong muốn làm chủ thời gian và tạo ra giá trị rộng lớn hơn cho cộng đồng.
-                </p>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Mang tư duy kiểm soát rủi ro chặt chẽ của một cựu Banker vào công việc mới, Vân định hướng toàn bộ hệ thống không chạy theo doanh số ngắn hạn mà tập trung vào <strong className="text-[#111827]">giải pháp đúng – đủ và khả năng đồng hành đường dài</strong>. Giải thưởng <strong className="text-[#00A758]">Top 1 DRD+ về Tỷ lệ Duy trì Hợp đồng</strong> chính là kết quả tự hào nhất cho triết lý làm nghề tử tế đó.
+                <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                  Rời môi trường ngân hàng nước ngoài năm 2018 để kiến tạo sự nghiệp độc lập tại Manulife Việt Nam, Khánh Vân mang theo kỷ luật kiểm soát rủi ro của một Banker: tư vấn đúng và đủ, lấy sự gắn bó dài hạn của khách hàng làm danh dự nghề nghiệp.
                 </p>
               </div>
             </div>
 
-            {/* Chapter 3 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              <div className="lg:col-span-7 space-y-4">
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  <span>2018 – Hiện tại</span>
-                  <span>&bull;</span>
-                  <span>Vươn tầm Châu Á &amp; Phát triển Con người</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-                  Nhà Quản Lý Xuất Sắc Nhất Châu Á &amp; Hệ Sinh Thái 500+ Cộng Sự
+            {/* Right Column: Chapter III Text + Vertical Trophy Portrait */}
+            <div className="lg:col-span-5 lg:col-start-8 space-y-12">
+              <div className="space-y-5">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] block">
+                  CHƯƠNG III &mdash; 2018 ĐẾN NAY
+                </span>
+                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
+                  Nhà Quản lý Xuất sắc nhất Châu Á &amp; hệ sinh thái 500+ nhân sự
                 </h3>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Năm 2021, Nguyễn Thị Khánh Vân vinh dự trở thành đại diện duy nhất của Việt Nam đạt giải thưởng <strong className="text-[#111827]">“Nhà Quản lý Xuất sắc nhất Châu Á”</strong> (Asia Trusted Life Agent &amp; Advisers Awards 2021).
-                </p>
-                <p className="text-[#4B5563] text-base leading-relaxed">
-                  Đến nay, niềm tự hào lớn nhất của Vân là đã trực tiếp ươm mầm, đào tạo và đồng hành cùng <strong className="text-[#111827]">64 Quản lý cấp cao và hơn 500 nhân sự</strong> — giúp nhiều bạn trẻ từ cựu nhân viên ngân hàng, nhân sự văn phòng thay đổi hoàn toàn chất lượng cuộc sống và làm chủ sự nghiệp riêng.
+                <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                  Năm 2021, chị trở thành đại diện duy nhất tại Việt Nam đoạt giải thưởng “Nhà Quản lý Xuất sắc nhất Châu Á” (Asia Trusted Life Agent &amp; Advisers Awards), đồng thời trực tiếp ươm mầm 64 Quản lý cấp cao và hơn 500 cộng sự.
                 </p>
               </div>
 
-              <div className="lg:col-span-5">
-                <figure
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg',
-                      category: 'DẤU ẤN DẪN ĐẦU • 2025',
-                      title: 'Top 1 DRD+ Quản Lý Cấp Cao Dẫn Đầu Hoàn Thành Chỉ Tiêu FYP 2025',
-                      subtitle: 'Khoảnh khắc nhận cúp Top 1 trên sân khấu vinh danh cùng tập thể quản lý.',
-                    })
-                  }
-                  className="clean-card rounded-2xl p-3 cursor-pointer group"
-                >
-                  <div className="overflow-hidden rounded-xl aspect-[3/3.6] bg-gray-100">
-                    <img
-                      src="/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg"
-                      alt="Chị Khánh Vân nhận cúp Top 1 DRD+ năm 2025"
-                      className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                  </div>
-                  <figcaption className="pt-3 px-1 flex items-center justify-between text-xs text-[#4B5563]">
-                    <span>
-                      <strong className="text-[#111827]">Top 1 DRD+ (2025):</strong> Dẫn đầu hoàn thành chỉ tiêu FYP.
-                    </span>
-                    <span className="text-[#00A758] font-semibold shrink-0 ml-2">Phóng to &rarr;</span>
-                  </figcaption>
-                </figure>
-              </div>
+              <figure
+                onClick={() =>
+                  setLightbox({
+                    src: '/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg',
+                    fig: 'FIG. 04 — PINNACLE 2025',
+                    title: 'Top 1 DRD+ Quản Lý Cấp Cao Dẫn Đầu Chỉ Tiêu FYP (2025)',
+                    subtitle: 'Khoảnh khắc giơ cao cúp vinh danh cùng tập thể lãnh đạo.',
+                  })
+                }
+                className="cursor-pointer group"
+              >
+                <div className="overflow-hidden aspect-[3/3.7] bg-[#EAE7DF]">
+                  <img
+                    src="/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg"
+                    alt="Chị Khánh Vân nhận cúp Top 1 DRD+ năm 2025"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  />
+                </div>
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  <span>FIG. 04 &mdash; Top 1 DRD+ Dẫn đầu toàn hệ thống (2025)</span>
+                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. GÓC NHÌN & LỜI KHUYÊN THỰC CHIẾN (BLOG / INSIGHTS HUB — INSPIRED BY THAI VAN LINH) */}
-      <section id="goc-nhin" className="py-20 lg:py-28 bg-[#F7FAF8] border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+      {/* 5. GÓC NHÌN & LỜI KHUYÊN — MINIMALIST EDITORIAL JOURNAL (NO REPEATED PHOTO THUMBNAILS!) */}
+      <section id="goc-nhin" className="py-28 lg:py-36 bg-[#F2EFE9]/50 border-b border-[#E4E1D8]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#00A758] block mb-2">
-                CHIA SẺ KINH NGHIỆM &amp; GÓC NHÌN THỰC TẾ
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
+                02 / GÓC NHÌN &amp; BÀI VIẾT
               </span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-[#111827]">
-                Lời Khuyên Về Tài Chính, Sự Nghiệp &amp; Cuộc Sống
+              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C]">
+                Chia Sẻ Về Tài Chính, Sự Nghiệp &amp; Cuộc Sống
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#4B5563] max-w-md">
-              Những bài học thực tế được đúc kết từ hơn 17 năm làm việc trong ngành ngân hàng, quản trị đội ngũ và làm mẹ.
-            </p>
+
+            {/* Minimalist Filter Tabs — Single Crisp Row */}
+            <div className="flex flex-wrap lg:flex-nowrap items-center gap-6 border-b border-[#DCD8CE] pb-2 shrink-0">
+              {categories.map((cat) => {
+                const active = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`whitespace-nowrap text-[11px] uppercase tracking-[0.16em] pb-2 -mb-[9px] transition-colors ${
+                      active
+                        ? 'text-[#0A3622] border-b-2 border-[#0A3622] font-medium'
+                        : 'text-[#858E89] hover:text-[#181F1C] font-light'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2.5 mb-10">
-            {categories.map((cat) => {
-              const active = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                    active
-                      ? 'bg-[#00A758] text-white shadow-emerald-sm'
-                      : 'bg-white text-[#4B5563] border border-gray-200 hover:border-[#00A758] hover:text-[#00A758]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Articles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Clean Editorial Index Rows (Like Harvard Business Review / Kinfolk) */}
+          <div className="border-t border-[#DCD8CE]">
             {filteredArticles.map((article) => (
               <article
                 key={article.id}
                 onClick={() => setActiveArticle(article)}
-                className="clean-card rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
+                className="group py-9 sm:py-11 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 transition-colors px-2 sm:px-4"
               >
-                <div>
-                  <div className="overflow-hidden aspect-[16/10] bg-gray-100 relative">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/95 text-[#003822] shadow-xs">
-                      {article.category}
-                    </span>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-2.5">
-                      <span>{article.date}</span>
-                      <span>&bull;</span>
-                      <span className="inline-flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" />
-                        {article.readTime}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-[#111827] group-hover:text-[#00A758] transition-colors leading-snug">
-                      {article.title}
-                    </h3>
-
-                    <p className="text-sm text-[#4B5563] mt-3 leading-relaxed line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                  </div>
+                <div className="lg:col-span-2 flex items-center gap-4">
+                  <span className="font-serif text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
+                    {article.index}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746]">
+                    {article.category}
+                  </span>
                 </div>
 
-                <div className="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#00A758]">
-                  <span>Đọc bài viết chi tiết</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="lg:col-span-5">
+                  <h3 className="font-serif text-2xl sm:text-[28px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.25] transition-colors">
+                    {article.title}
+                  </h3>
+                </div>
+
+                <div className="lg:col-span-4">
+                  <p className="text-sm text-[#56605B] font-light leading-[1.8] line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                </div>
+
+                <div className="lg:col-span-1 flex lg:justify-end items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746]">
+                  <span>Đọc</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </article>
             ))}
@@ -792,150 +633,145 @@ export function App() {
         </div>
       </section>
 
-      {/* 6. TỦ SÁCH QUẢN TRỊ & CẨM NANG MIỄN PHÍ (BOOK CLUB & LEAD MAGNET — INSPIRED BY THAI VAN LINH) */}
-      <section id="tu-sach" className="py-20 lg:py-28 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left 7 Cols: Khánh Vân's Book Club */}
-            <div className="lg:col-span-7 space-y-6">
+      {/* 6. TỦ SÁCH QUẢN TRỊ & ẤN PHẨM CẨM NANG (BOOK CLUB & EDITORIAL LEAD MAGNET) */}
+      <section id="tu-sach" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+            {/* Left 7 Cols: Book Club */}
+            <div className="lg:col-span-7 space-y-12">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00A758] mb-2">
-                  <BookOpen className="w-4 h-4" />
-                  <span>KHÁNH VÂN&apos;S BOOK CLUB</span>
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-                  Những Cuốn Sách Định Hình Tư Duy Quản Trị &amp; Tài Chính
+                <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
+                  03 / TỦ SÁCH QUẢN TRỊ
+                </span>
+                <h2 className="font-serif text-4xl sm:text-[44px] font-normal text-[#181F1C]">
+                  Những Cuốn Sách Định Hình Tư Duy
                 </h2>
-                <p className="text-sm sm:text-base text-[#4B5563] mt-2">
-                  Kiến thức từ sách là người thầy thầm lặng giúp Vân thay đổi góc nhìn về quản lý dòng tiền, xây dựng thói quen và phát triển con người.
-                </p>
               </div>
 
-              <div className="space-y-4">
-                {BOOKS.map((book, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-2xl bg-[#F8FAFC] border border-gray-200 hover:border-[#00A758] transition-colors"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-[#E6F5EC] text-[#003822]">
-                        {book.tag}
-                      </span>
-                      <span className="text-xs font-medium text-gray-500">
-                        Tác giả: {book.author}
+              <div className="divide-y divide-[#E4E1D8] border-t border-b border-[#E4E1D8]">
+                {BOOKS.map((book) => (
+                  <div key={book.num} className="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4">
+                    <div className="sm:col-span-3">
+                      <span className="font-serif text-xl text-[#858E89] block">{book.num}</span>
+                      <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746] mt-1 block">
+                        {book.theme}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-[#111827]">{book.title}</h3>
-                    <p className="text-sm text-[#4B5563] mt-2 leading-relaxed">{book.review}</p>
+                    <div className="sm:col-span-9 space-y-2">
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
+                        <h3 className="font-serif text-2xl font-normal text-[#181F1C]">
+                          {book.title}
+                        </h3>
+                        <span className="text-xs text-[#858E89] italic">{book.author}</span>
+                      </div>
+                      <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                        {book.note}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right 5 Cols: Free PDF Cẩm Nang Lead Magnet */}
-            <div className="lg:col-span-5">
-              <div className="p-7 sm:p-8 rounded-3xl bg-[#003822] text-white shadow-elevated space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#34D399] text-xs font-semibold">
-                  <FileText className="w-3.5 h-3.5" />
-                  <span>TÀI LIỆU MIỄN PHÍ TỪ KHÁNH VÂN</span>
-                </div>
-
-                <h3 className="text-2xl font-bold leading-snug">
-                  Nhận Bộ Cẩm Nang PDF: Hoạch Định Dòng Tiền Gia Đình &amp; Lộ Trình Chuyển Dịch Sự Nghiệp
+            {/* Right 5 Cols: Understated Architectural Lead Magnet */}
+            <div className="lg:col-span-5 lg:mt-16 bg-[#F2EFE9] p-8 sm:p-12 border border-[#E4E1D8] space-y-8">
+              <div className="space-y-3">
+                <span className="text-[10px] uppercase tracking-[0.24em] text-[#008746] block">
+                  ẤN PHẨM ĐỘC QUYỀN &bull; MIỄN PHÍ
+                </span>
+                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
+                  Cẩm Nang Hoạch Định Dòng Tiền Gia Đình &amp; Chuyển Dịch Sự Nghiệp
                 </h3>
-
-                <p className="text-sm text-emerald-100/85 leading-relaxed">
-                  Bộ tài liệu đúc kết kinh nghiệm thực tế dành cho những ai muốn tự kiểm tra sức khỏe tài chính gia đình và khám phá lộ trình phát triển từ nhân sự văn phòng/ngân hàng lên vị trí Quản lý độc lập.
-                </p>
-
-                <ul className="space-y-2.5 text-xs sm:text-sm text-emerald-50">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                    <span>Checklist 5 tầng tháp bảo vệ và phân bổ tài sản gia đình chuẩn ngân hàng quốc tế.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                    <span>Bản đồ 90 ngày đầu tiên chuyển dịch sự nghiệp sang vị trí Quản lý Tài chính mà không bị sốc thu nhập.</span>
-                  </li>
-                </ul>
-
-                {leadSent ? (
-                  <div className="p-4 rounded-xl bg-white/10 border border-[#34D399]/40 text-sm text-emerald-100">
-                    <strong className="text-white block mb-1">Đăng ký thành công!</strong>
-                    Bộ tài liệu PDF và bản tin chia sẻ hàng tháng sẽ được gửi tới <span className="underline">{leadEmail}</span>.
-                  </div>
-                ) : (
-                  <form onSubmit={handleLeadSubmit} className="space-y-3 pt-1">
-                    <input
-                      type="email"
-                      required
-                      placeholder="Nhập địa chỉ Email của bạn..."
-                      value={leadEmail}
-                      onChange={(e) => setLeadEmail(e.target.value)}
-                      className="w-full px-4 py-3.5 rounded-xl bg-white text-[#111827] placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A758]"
-                    />
-                    <button
-                      type="submit"
-                      className="w-full py-3.5 px-5 rounded-xl bg-[#00A758] hover:bg-[#008A47] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Tôi Muốn Nhận Tài Liệu Miễn Phí</span>
-                    </button>
-                  </form>
-                )}
               </div>
+
+              <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                Tài liệu tổng hợp bảng kiểm tra cấu trúc bảo vệ tài sản gia đình chuẩn ngân hàng quốc tế và lộ trình 90 ngày đầu tiên chuyển sang vị trí Quản lý Tài chính độc lập.
+              </p>
+
+              <div className="space-y-3 border-t border-[#DCD8CE] pt-6 text-xs text-[#3B443F] font-light">
+                <p>I. Năm tầng tháp bảo toàn dòng tiền và quỹ học vấn cho con cái.</p>
+                <p>II. Lộ trình chuyển dịch sự nghiệp dành cho cựu Banker &amp; Quản lý.</p>
+              </div>
+
+              {leadSent ? (
+                <div className="pt-4 border-t border-[#008746]/40 text-sm text-[#0A3622]">
+                  Cảm ơn bạn. Ấn phẩm PDF đã được ghi nhận gửi tới địa chỉ{' '}
+                  <span className="underline">{leadEmail}</span>.
+                </div>
+              ) : (
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (leadEmail.trim()) setLeadSent(true);
+                  }}
+                  className="space-y-6 pt-2"
+                >
+                  <input
+                    type="email"
+                    required
+                    placeholder="Địa chỉ Email nhận tài liệu..."
+                    value={leadEmail}
+                    onChange={(e) => setLeadEmail(e.target.value)}
+                    className="editorial-input"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] transition-colors"
+                  >
+                    Nhận ấn phẩm qua Email
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. NGƯỜI PHỤ NỮ TRONG GIA ĐÌNH & PHONG CÁCH SỐNG (INSPIRED BY THAI VAN LINH'S FAMILY SECTION) */}
-      <section id="gia-dinh" className="py-20 lg:py-28 bg-[#F7FAF8] border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-14">
-            <div className="lg:col-span-5 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#00A758] block">
-                NGƯỜI PHỤ NỮ TRONG GIA ĐÌNH
+      {/* 7. ĐIỂM TỰA GIA ĐÌNH & PHONG CÁCH SỐNG (UNBOXED EDITORIAL GALLERY) */}
+      <section id="cuoc-song" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
+            <div className="lg:col-span-5">
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
+                04 / ĐIỂM TỰA CUỘC SỐNG
               </span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-[#111827] leading-tight">
-                Điểm Tựa Tổ Ấm &amp; Người Bạn Đời Đồng Hành
+              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+                Người Phụ Nữ Trong Gia Đình &amp; Sự Cân Bằng
               </h2>
             </div>
-            <div className="lg:col-span-7 space-y-4 text-[#4B5563] text-base leading-relaxed">
-              <p>
-                Bên cạnh vai trò là một người lãnh đạo quyết đoán trong công việc, Khánh Vân trước hết là một người vợ và người mẹ của hai con. Thấu hiểu niềm đam mê công việc và khát vọng phát triển của vợ, chồng chị luôn là người bạn đời tâm lý, đứng phía sau ủng hộ và san sẻ để chị yên tâm dấn thân ở những cột mốc thử thách nhất.
+            <div className="lg:col-span-6 lg:col-start-7 space-y-4">
+              <p className="font-serif italic text-2xl text-[#3B443F] leading-[1.5]">
+                “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp vinh danh, mà là sự bình an khi trở về nhà bên chồng và hai con.”
               </p>
-              <p className="italic text-[#111827] font-medium border-l-4 border-[#00A758] pl-4">
-                “Với Vân, đỉnh cao sự nghiệp không nằm ở những chiếc cúp vinh danh, mà là sự bình an khi trở về nhà bên chồng và hai con. Chính gia đình giúp Vân thấu hiểu sâu sắc giá trị của sự an tâm tài chính mà mình trao gửi đến mỗi khách hàng.”
+              <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
               </p>
             </div>
           </div>
 
-          {/* 2 Family Photos with Equal Height */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+          {/* Family Diptych — Unboxed, Equal Height */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20">
             <figure
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
-                  category: 'TỔ ẤM GIA ĐÌNH',
-                  title: 'Khoảnh Khắc Sum Vầy Bên Chồng Và Hai Con',
-                  subtitle: 'Gia đình nhỏ luôn là nguồn động lực lớn nhất của chị Khánh Vân mỗi ngày.',
+                  fig: 'FIG. 05 — FAMILY SANCTUARY',
+                  title: 'Tổ Ấm Bình Yên Bên Chồng Và Hai Con',
+                  subtitle: 'Điểm tựa tinh thần lớn nhất phía sau hành trình sự nghiệp.',
                 })
               }
-              className="lg:col-span-7 clean-card rounded-2xl p-3 cursor-pointer group"
+              className="lg:col-span-7 cursor-pointer group"
             >
-              <div className="overflow-hidden rounded-xl h-[300px] sm:h-[380px] lg:h-[420px] w-full bg-gray-100">
+              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
                 <img
                   src="/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg"
-                  alt="Gia đình chị Khánh Vân quây quần tại phòng khách"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  alt="Gia đình chị Khánh Vân tại phòng khách"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="pt-3 px-1 flex items-center justify-between text-xs text-[#4B5563]">
-                <span>
-                  <strong className="text-[#111827]">Tổ ấm nhỏ:</strong> Nơi nạp lại năng lượng bình yên sau những giờ làm việc hết mình.
-                </span>
-                <span className="text-[#00A758] font-semibold shrink-0 ml-2">Xem ảnh &rarr;</span>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                <span>FIG. 05 &mdash; Tổ ấm bên người bạn đời và hai con</span>
+                <span className="group-hover:text-[#0A3622]">Xem ảnh</span>
               </figcaption>
             </figure>
 
@@ -943,56 +779,49 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg',
-                  category: 'BỐ MẸ ĐI LÀM',
-                  title: 'Trọn Vẹn Yêu Thương Cùng Các Con',
-                  subtitle: 'Làm chủ thời gian để đồng hành cùng con trong từng chặng đường khôn lớn.',
+                  fig: 'FIG. 06 — MOTHERHOOD',
+                  title: 'Trọn Vẹn Từng Khoảnh Khắc Bên Con',
+                  subtitle: 'Làm chủ thời gian để đồng hành cùng tuổi thơ của các con.',
                 })
               }
-              className="lg:col-span-5 clean-card rounded-2xl p-3 cursor-pointer group"
+              className="lg:col-span-5 cursor-pointer group"
             >
-              <div className="overflow-hidden rounded-xl h-[300px] sm:h-[380px] lg:h-[420px] w-full bg-gray-100">
+              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
                 <img
                   src="/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg"
-                  alt="Gia đình chị Khánh Vân yêu thương bên sân vườn"
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                  alt="Gia đình chị Khánh Vân bên sân vườn"
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="pt-3 px-1 flex items-center justify-between text-xs text-[#4B5563]">
-                <span>
-                  <strong className="text-[#111827]">Bố mẹ đi làm:</strong> Dành thời gian chất lượng bên hai con mỗi ngày.
-                </span>
-                <span className="text-[#00A758] font-semibold shrink-0 ml-2">Xem ảnh &rarr;</span>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                <span>FIG. 06 &mdash; Khoảnh khắc yêu thương ngày thường</span>
+                <span className="group-hover:text-[#0A3622]">Xem ảnh</span>
               </figcaption>
             </figure>
           </div>
 
-          {/* 3 Lifestyle & Discipline Photos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* 3 Lifestyle Photographs — Clean Unboxed Triptych */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <figure
               onClick={() =>
                 setLightbox({
                   src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg',
-                  category: 'TRẢI NGHIỆM THẾ GIỚI',
-                  title: 'Khám Phá Những Chân Trời Mới',
-                  subtitle: 'Tận hưởng sự tự do và mở rộng tầm nhìn qua những chuyến đi quốc tế.',
+                  fig: 'FIG. 07 — PERSPECTIVE',
+                  title: 'Tầm Nhìn Rộng Mở & Khát Vọng Tự Do',
+                  subtitle: 'Đón bình minh trên khinh khí cầu tại Cappadocia.',
                 })
               }
-              className="clean-card rounded-2xl p-3 cursor-pointer group"
+              className="cursor-pointer group"
             >
-              <div className="overflow-hidden rounded-xl aspect-[4/4.6] bg-gray-100">
+              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
                   src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg"
-                  alt="Chị Khánh Vân trải nghiệm bay khinh khí cầu lúc bình minh"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  alt="Chị Khánh Vân đón bình minh trên khinh khí cầu"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="pt-3 px-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00A758] block">
-                  Tầm Nhìn &amp; Tự Do
-                </span>
-                <p className="text-sm font-semibold text-[#111827] mt-0.5">
-                  Mở rộng thế giới quan qua những hành trình trải nghiệm quốc tế
-                </p>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 07 &mdash; Tầm nhìn rộng mở &amp; trải nghiệm thế giới
               </figcaption>
             </figure>
 
@@ -1000,27 +829,22 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg',
-                  category: 'SỐNG KỶ LUẬT & KHỎE MẠNH',
-                  title: 'Rèn Luyện Thể Thao Đều Đặn Mỗi Tuần',
-                  subtitle: 'Duy trì sức bền thể chất và tinh thần minh mẫn cho công việc.',
+                  fig: 'FIG. 08 — DISCIPLINE',
+                  title: 'Kỷ Luật Rèn Luyện Thể Lực Bền Bỉ',
+                  subtitle: 'Duy trì nguồn năng lượng dẻo dai thông qua luyện tập mỗi tuần.',
                 })
               }
-              className="clean-card rounded-2xl p-3 cursor-pointer group"
+              className="cursor-pointer group"
             >
-              <div className="overflow-hidden rounded-xl aspect-[4/4.6] bg-gray-100">
+              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
                   src="/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg"
-                  alt="Chị Khánh Vân rèn luyện tại phòng tập gym"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  alt="Chị Khánh Vân rèn luyện thể thao"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="pt-3 px-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00A758] block">
-                  Kỷ Luật Sức Khỏe
-                </span>
-                <p className="text-sm font-semibold text-[#111827] mt-0.5">
-                  Rèn luyện thể lực bền bỉ để luôn giữ nguồn năng lượng tích cực
-                </p>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 08 &mdash; Kỷ luật bản thân &amp; rèn luyện thể chất
               </figcaption>
             </figure>
 
@@ -1028,443 +852,399 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg',
-                  category: 'NGƯỜI BẠN ĐỜI ĐỒNG HÀNH',
-                  title: 'Sánh Bước Cùng Chồng Trên Mọi Chặng Đường',
-                  subtitle: 'Sự thấu hiểu của người bạn đời là hậu phương vững chắc nhất.',
+                  fig: 'FIG. 09 — COMPANIONSHIP',
+                  title: 'Đồng Hành Bền Vững Cùng Người Bạn Đời',
+                  subtitle: 'Sánh bước bên nhau trên mọi hành trình trong và ngoài nước.',
                 })
               }
-              className="clean-card rounded-2xl p-3 cursor-pointer group"
+              className="cursor-pointer group"
             >
-              <div className="overflow-hidden rounded-xl aspect-[4/4.6] bg-gray-100">
+              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
                   src="/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg"
-                  alt="Chị Khánh Vân cùng chồng du lịch bên cảng biển"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  alt="Chị Khánh Vân cùng chồng du lịch quốc tế"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="pt-3 px-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00A758] block">
-                  Hậu Phương Vững Chắc
-                </span>
-                <p className="text-sm font-semibold text-[#111827] mt-0.5">
-                  Đồng hành cùng người bạn đời trong cả sự nghiệp lẫn cuộc sống
-                </p>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 09 &mdash; Người bạn đời tri kỷ đồng hành
               </figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      {/* 8. PHƯƠNG THỨC HỢP TÁC (WORK WITH ME — INSPIRED BY THAI VAN LINH'S /PAGES/WORK-WITH-ME-VN) */}
-      <section id="hop-tac" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#E6F5EC] text-[#00A758] text-xs font-semibold uppercase tracking-wider">
-              PHƯƠNG THỨC HỢP TÁC &amp; ĐỒNG HÀNH
+      {/* 8. ĐỒNG HÀNH & PHÁT TRIỂN ĐỘI NGŨ (WORK WITH ME + MENTORSHIP GALLERY + CONCIERGE FORM) */}
+      <section id="dong-hanh" className="py-28 lg:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="max-w-4xl mb-20 space-y-4">
+            <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
+              05 / HỢP TÁC &amp; ĐỒNG HÀNH
             </span>
-            <h2 className="text-2xl sm:text-4xl font-bold text-[#111827]">
-              Kết Nối &amp; Làm Việc Cùng Khánh Vân
+            <h2 className="font-serif text-4xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
+              Ba Phương Thức Kết Nối Cùng Khánh Vân
             </h2>
-            <p className="text-base text-[#4B5563]">
-              Dù bạn đang tìm kiếm một cố vấn hoạch định gia sản cho gia đình hay một người Mentor dẫn dắt sự nghiệp quản lý, Vân và đội ngũ luôn sẵn sàng lắng nghe.
-            </p>
           </div>
 
-          {/* 3 Ways to Work Together (Like Thái Vân Linh's Work With Me page) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            <div className="clean-card rounded-2xl p-7 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#E6F5EC] text-[#00A758] flex items-center justify-center mb-5">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  01 &bull; DÀNH CHO KHÁCH HÀNG &amp; GIA ĐÌNH
+          {/* 3 Architectural Hairline Columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-b border-[#DCD8CE] divide-y lg:divide-y-0 lg:divide-x divide-[#DCD8CE] mb-28">
+            <div className="py-10 lg:pr-10 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
+                  I &bull; PRIVATE WEALTH ADVISORY
                 </span>
-                <h3 className="text-xl font-bold text-[#111827] mt-2 mb-3">
-                  Cố Vấn Hoạch Định Tài Chính &amp; Bảo Vệ Gia Sản
+                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
+                  Hoạch Định Tài Chính &amp; Bảo Vệ Gia Sản
                 </h3>
-                <p className="text-sm text-[#4B5563] leading-relaxed">
-                  Phân tích cấu trúc dòng tiền, kiểm soát rủi ro và thiết kế kế hoạch bảo vệ thu nhập, quỹ học vấn cho con cái và hưu trí an nhàn theo chuẩn mực minh bạch của ngân hàng quốc tế.
+                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                  Thiết kế cấu trúc bảo vệ dòng tiền trụ cột, quỹ học vấn cho con cái và kế hoạch hưu trí an nhàn theo chuẩn mực kiểm soát rủi ro của ngân hàng quốc tế.
                 </p>
               </div>
               <a
-                href="#form-lien-he"
+                href="#lien-he"
                 onClick={() =>
                   setFormData({
                     ...formData,
                     topic: 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
                   })
                 }
-                className="mt-6 pt-4 border-t border-gray-100 inline-flex items-center gap-2 text-sm font-semibold text-[#00A758] hover:text-[#003822]"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
               >
-                <span>Đặt lịch cố vấn 1:1</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Đặt lịch cố vấn riêng</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
-            <div className="clean-card rounded-2xl p-7 flex flex-col justify-between border-2 border-[#00A758] relative">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#00A758] text-white flex items-center justify-center mb-5">
-                  <Users className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  02 &bull; DÀNH CHO CỰU BANKER &amp; QUẢN LÝ
+            <div className="py-10 lg:px-10 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
+                  II &bull; EXECUTIVE MENTORSHIP (F1)
                 </span>
-                <h3 className="text-xl font-bold text-[#111827] mt-2 mb-3">
-                  Phát Triển Nhà Quản Lý Tài Chính Kế Cận (Mentorship F1)
+                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
+                  Ươm Mầm Nhà Quản Lý Kế Cận
                 </h3>
-                <p className="text-sm text-[#4B5563] leading-relaxed">
-                  Vân trực tiếp kèm cặp 1-1, chuyển giao quy trình xây dựng và vận hành đội ngũ chuyên nghiệp dành cho Cựu Banker, Cấp quản lý kinh doanh và Chủ doanh nghiệp muốn bứt phá thu nhập.
+                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                  Dành riêng cho Cựu Banker, Quản lý kinh doanh và Chủ doanh nghiệp. Trực tiếp kèm cặp 1-1 và chuyển giao quy trình xây dựng đội ngũ chuyên nghiệp.
                 </p>
               </div>
               <a
-                href="#form-lien-he"
+                href="#lien-he"
                 onClick={() =>
                   setFormData({
                     ...formData,
-                    topic: 'Đồng hành Phát triển Sự nghiệp Quản lý (Mentorship F1)',
+                    topic: 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)',
                   })
                 }
-                className="mt-6 pt-4 border-t border-gray-100 inline-flex items-center gap-2 text-sm font-semibold text-[#00A758] hover:text-[#003822]"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
               >
-                <span>Ứng tuyển chương trình Quản lý F1</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Tìm hiểu lộ trình Quản lý F1</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
-            <div className="clean-card rounded-2xl p-7 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#E6F5EC] text-[#00A758] flex items-center justify-center mb-5">
-                  <Mic className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A758]">
-                  03 &bull; ĐÀO TẠO &amp; SỰ KIỆN
+            <div className="py-10 lg:pl-10 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
+                  III &bull; CORPORATE SHARING
                 </span>
-                <h3 className="text-xl font-bold text-[#111827] mt-2 mb-3">
-                  Huấn Luyện Đội Ngũ, Hội Nghị &amp; Chia Sẻ Nghề Nghiệp
+                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
+                  Đào Tạo Đội Ngũ &amp; Diễn Giả Sự Kiện
                 </h3>
-                <p className="text-sm text-[#4B5563] leading-relaxed">
-                  Chia sẻ thực tế tại các hội thảo, sự kiện doanh nghiệp về nghệ thuật xây dựng chữ “Tín” trong kinh doanh, kỹ năng lãnh đạo thấu cảm và nâng cao hiệu suất đội ngũ.
+                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                  Giao lưu, chia sẻ thực tế tại các sự kiện và chương trình đào tạo doanh nghiệp về văn hóa dịch vụ bằng chữ “Tín” và nghệ thuật lãnh đạo thấu cảm.
                 </p>
               </div>
               <a
-                href="#form-lien-he"
+                href="#lien-he"
                 onClick={() =>
                   setFormData({
                     ...formData,
                     topic: 'Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp',
                   })
                 }
-                className="mt-6 pt-4 border-t border-gray-100 inline-flex items-center gap-2 text-sm font-semibold text-[#00A758] hover:text-[#003822]"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
               >
-                <span>Liên hệ lịch đào tạo &amp; sự kiện</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Liên hệ lịch đào tạo</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
 
-          {/* Team Ecosystem Photos + Contact Form */}
-          <div id="form-lien-he" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-6">
-            {/* Left 6 Cols: 3 Mentorship & Team Culture Photos */}
-            <div className="lg:col-span-6 space-y-6">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111827]">
-                  Môi Trường Đào Tạo Bài Bản &amp; Văn Hóa Đội Ngũ Gắn Kết
-                </h3>
-                <p className="text-sm sm:text-base text-[#4B5563] mt-2 leading-relaxed">
-                  Khi đồng hành cùng hệ thống của Vân, bạn không bao giờ phải đi một mình. Chúng tôi kết hợp kỷ luật chuyên môn với văn hóa sẻ chia gần gũi như một gia đình.
-                </p>
+          {/* 3 Mentorship & Team Culture Photos (Each Appears Only Once on the Page) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-28">
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg',
+                  fig: 'FIG. 10 — EXECUTIVE TRAINING',
+                  title: 'Trực Tiếp Đứng Lớp Đào Tạo & Truyền Lửa',
+                  subtitle: 'Chia sẻ kiến thức chuyên môn và kỹ năng quản trị tại văn phòng Manulife.',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+                <img
+                  src="/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg"
+                  alt="Chị Khánh Vân đứng lớp đào tạo"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
               </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 10 &mdash; Trực tiếp đứng lớp đào tạo thực chiến
+              </figcaption>
+            </figure>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <figure
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg',
-                      category: 'ĐÀO TẠO THỰC CHIẾN',
-                      title: 'Trực Tiếp Đứng Lớp Đào Tạo Chuyên Môn',
-                      subtitle: 'Chuyển giao kỹ năng tư vấn và quản trị đội ngũ tại văn phòng Manulife.',
-                    })
-                  }
-                  className="clean-card rounded-xl p-2 cursor-pointer group"
-                >
-                  <div className="overflow-hidden rounded-lg aspect-[4/3]">
-                    <img
-                      src="/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg"
-                      alt="Chị Khánh Vân đứng lớp đào tạo"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <figcaption className="pt-2 px-1 text-xs font-medium text-[#111827]">
-                    Đào tạo và truyền lửa thực chiến hàng tuần
-                  </figcaption>
-                </figure>
-
-                <figure
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
-                      category: 'PHÁT TRIỂN QUẢN LÝ',
-                      title: 'Vinh Danh Các Quản Lý Cấp Cao Mới Thăng Cấp',
-                      subtitle: 'Đồng hành cùng cộng sự chinh phục các nấc thang quản lý SM, DRD.',
-                    })
-                  }
-                  className="clean-card rounded-xl p-2 cursor-pointer group"
-                >
-                  <div className="overflow-hidden rounded-lg aspect-[4/3]">
-                    <img
-                      src="/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg"
-                      alt="Chúc mừng thăng cấp Quản lý SM"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <figcaption className="pt-2 px-1 text-xs font-medium text-[#111827]">
-                    Chúc mừng các Quản lý (SM) thăng cấp
-                  </figcaption>
-                </figure>
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
+                  fig: 'FIG. 11 — SUCCESSION',
+                  title: 'Vinh Danh Các Quản Lý Cấp Cao Mới Thăng Cấp',
+                  subtitle: 'Niềm tự hào khi đồng hành cùng cộng sự vươn lên vị trí Quản lý (SM).',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+                <img
+                  src="/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg"
+                  alt="Chúc mừng các Quản lý SM thăng cấp"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
               </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 11 &mdash; Chúc mừng các Quản lý cấp cao thăng cấp
+              </figcaption>
+            </figure>
 
-              <figure
-                onClick={() =>
-                  setLightbox({
-                    src: '/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg',
-                    category: 'VĂN HÓA ĐỘI NGŨ',
-                    title: 'Gắn Kết Chân Thành Trong Đời Thường',
-                    subtitle: 'Không khoảng cách giữa sếp và nhân sự, luôn lắng nghe và chia sẻ cùng nhau.',
-                  })
-                }
-                className="clean-card rounded-xl p-2.5 cursor-pointer group"
-              >
-                <div className="overflow-hidden rounded-lg aspect-[16/9]">
-                  <img
-                    src="/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg"
-                    alt="Chị Khánh Vân cà phê sáng giản dị cùng cộng sự"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <figcaption className="pt-2.5 px-1 text-xs text-[#4B5563]">
-                  <strong className="text-[#111827]">Văn hóa gần gũi:</strong> Sếp và cộng sự thân thiết, sẻ chia từ những buổi cà phê sáng đời thường.
-                </figcaption>
-              </figure>
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg',
+                  fig: 'FIG. 12 — TEAM CULTURE',
+                  title: 'Văn Hóa Đội Ngũ Gần Gũi & Chân Thành',
+                  subtitle: 'Gắn kết không khoảng cách từ những buổi trò chuyện sáng đời thường.',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+                <img
+                  src="/images/DoiThuong_ChiVanCungDoiNgu_CaPheViaHe.jpg"
+                  alt="Văn hóa đội ngũ gần gũi đời thường"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
+              </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 12 &mdash; Văn hóa sẻ chia gần gũi đời thường
+              </figcaption>
+            </figure>
+          </div>
+
+          {/* Minimalist Concierge Contact Section (Underline Inputs, No Heavy Boxes) */}
+          <div
+            id="lien-he"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-14 pt-16 border-t border-[#DCD8CE] items-start"
+          >
+            <div className="lg:col-span-5 space-y-5">
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
+                PRIVATE CONCIERGE &amp; INQUIRY
+              </span>
+              <h3 className="font-serif text-4xl font-normal text-[#181F1C] leading-[1.2]">
+                Gửi Lời Nhắn Kết Nối Riêng Cùng Khánh Vân
+              </h3>
+              <p className="text-sm text-[#56605B] font-light leading-[1.9]">
+                Mọi thông tin trao đổi về hoạch định tài chính gia đình hoặc định hướng chuyển dịch sự nghiệp của bạn đều được cam kết bảo mật tuyệt đối.
+              </p>
             </div>
 
-            {/* Right 6 Cols: Clean Light Contact Form */}
-            <div className="lg:col-span-6">
-              <div className="p-7 sm:p-10 rounded-3xl bg-[#F8FAFC] border border-gray-200 shadow-elevated">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A758] block">
-                  KẾT NỐI TRỰC TIẾP &amp; BẢO MẬT
-                </span>
-                <h3 className="text-2xl font-bold text-[#111827] mt-1 mb-2">
-                  Gửi Thông Tin Liên Hệ Cùng Khánh Vân
-                </h3>
-                <p className="text-sm text-[#4B5563] mb-6">
-                  Vui lòng để lại thông tin bên dưới. Mọi chia sẻ về công việc hiện tại của bạn đều được giữ kín 100%.
-                </p>
-
-                {submitted ? (
-                  <div className="p-8 rounded-2xl bg-white border border-[#00A758] text-center space-y-4">
-                    <div className="w-12 h-12 rounded-full bg-[#E6F5EC] text-[#00A758] mx-auto flex items-center justify-center">
-                      <Check className="w-6 h-6" />
-                    </div>
-                    <h4 className="text-xl font-bold text-[#111827]">
-                      Cảm ơn {formData.fullName} đã kết nối!
-                    </h4>
-                    <p className="text-sm text-[#4B5563] leading-relaxed">
-                      Khánh Vân và trợ lý đã nhận được thông tin của bạn và sẽ liên hệ trực tiếp qua số điện thoại <strong className="text-[#111827]">{formData.phone}</strong> trong vòng 24 giờ làm việc.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => setSubmitted(false)}
-                      className="px-5 py-2.5 rounded-lg text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-gray-800 transition-colors"
-                    >
-                      Gửi thêm thông tin khác
-                    </button>
+            <div className="lg:col-span-6 lg:col-start-7">
+              {submitted ? (
+                <div className="py-12 border-t border-b border-[#0A3622] space-y-4">
+                  <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#008746]">
+                    <Check className="w-4 h-4" />
+                    <span>Đã ghi nhận thông tin</span>
                   </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                  <h4 className="font-serif text-3xl text-[#181F1C]">
+                    Cảm ơn {formData.fullName} đã gửi lời nhắn.
+                  </h4>
+                  <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                    Khánh Vân và trợ lý sẽ liên hệ trực tiếp qua số điện thoại{' '}
+                    <span className="text-[#181F1C] font-normal">{formData.phone}</span> trong vòng 24 giờ làm việc.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSubmitted(false)}
+                    className="text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 pt-2"
+                  >
+                    Gửi lời nhắn khác
+                  </button>
+                </div>
+              ) : (
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    setSubmitted(true);
+                  }}
+                  className="space-y-8"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        Họ và Tên của bạn <span className="text-[#00A758]">*</span>
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                        Họ và Tên *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Ví dụ: Nguyễn Minh Anh"
+                        placeholder="Nguyễn Minh Anh"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] placeholder-gray-400 text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758]"
+                        className="editorial-input"
                       />
                     </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                          Số điện thoại / Zalo <span className="text-[#00A758]">*</span>
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="090x xxx xxx"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] placeholder-gray-400 text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758]"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                          Địa chỉ Email <span className="text-[#00A758]">*</span>
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          placeholder="email@domain.com"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] placeholder-gray-400 text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758]"
-                        />
-                      </div>
-                    </div>
-
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        Nội dung bạn muốn kết nối
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                        Số điện thoại / Zalo *
                       </label>
-                      <select
-                        value={formData.topic}
-                        onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758]"
-                      >
-                        <option value="Đồng hành Phát triển Sự nghiệp Quản lý (Mentorship F1)">
-                          Tìm hiểu Chương trình Phát triển Quản lý Kế cận (Mentorship F1)
-                        </option>
-                        <option value="Cố vấn Hoạch định Tài chính & Gia sản Gia đình">
-                          Tư vấn Hoạch định Tài chính &amp; Bảo vệ Gia sản Gia đình
-                        </option>
-                        <option value="Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp">
-                          Mời Đào tạo / Giao lưu Chia sẻ Nghề nghiệp
-                        </option>
-                      </select>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="090x xxx xxx"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="editorial-input"
+                      />
                     </div>
+                  </div>
 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        Lĩnh vực hiện tại của bạn
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                        Địa chỉ Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="email@domain.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="editorial-input"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                        Lĩnh vực hiện tại
                       </label>
                       <select
                         value={formData.background}
                         onChange={(e) => setFormData({ ...formData, background: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758]"
+                        className="editorial-input"
                       >
-                        <option value="Cựu Banker / Chuyên viên Ngân hàng">
-                          Nhân sự / Quản lý Ngân hàng (Banker)
+                        <option value="Ngân hàng / Tài chính (Banker)">
+                          Ngân hàng / Tài chính (Banker)
                         </option>
-                        <option value="Quản lý Kinh doanh / Văn phòng">
-                          Quản lý Kinh doanh / Nhân sự Văn phòng
+                        <option value="Quản lý Kinh doanh / Điều hành">
+                          Quản lý Kinh doanh / Điều hành
                         </option>
-                        <option value="Chủ Doanh nghiệp / Kinh doanh tự do">
-                          Chủ Doanh nghiệp / Kinh doanh tự do
+                        <option value="Chủ Doanh nghiệp / Founder">
+                          Chủ Doanh nghiệp / Founder
                         </option>
                         <option value="Khác">Lĩnh vực khác</option>
                       </select>
                     </div>
+                  </div>
 
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                        Lời nhắn cho Khánh Vân (Tùy chọn)
-                      </label>
-                      <textarea
-                        rows={3}
-                        placeholder="Chia sẻ ngắn gọn về mong muốn hoặc câu hỏi của bạn..."
-                        value={formData.note}
-                        onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-[#111827] placeholder-gray-400 text-sm focus:outline-none focus:border-[#00A758] focus:ring-1 focus:ring-[#00A758] resize-none"
-                      />
-                    </div>
+                  <div>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                      Chủ đề bạn quan tâm
+                    </label>
+                    <select
+                      value={formData.topic}
+                      onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
+                      className="editorial-input"
+                    >
+                      <option value="Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)">
+                        Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)
+                      </option>
+                      <option value="Cố vấn Hoạch định Tài chính & Gia sản Gia đình">
+                        Cố vấn Hoạch định Tài chính &amp; Gia sản Gia đình
+                      </option>
+                      <option value="Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp">
+                        Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp
+                      </option>
+                    </select>
+                  </div>
 
+                  <div>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
+                      Chia sẻ thêm (Tùy chọn)
+                    </label>
+                    <textarea
+                      rows={2}
+                      placeholder="Mong muốn hoặc câu hỏi của bạn dành cho Khánh Vân..."
+                      value={formData.note}
+                      onChange={(e) => setFormData({ ...formData, note: e.target.value })}
+                      className="editorial-input resize-none"
+                    />
+                  </div>
+
+                  <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-xl bg-[#00A758] hover:bg-[#008A47] text-white font-semibold text-sm shadow-emerald-sm transition-all flex items-center justify-center gap-2"
+                      className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3"
                     >
-                      <Send className="w-4 h-4" />
-                      <span>Gửi Thông Tin Kết Nối</span>
+                      <span>Gửi lời nhắn bảo mật</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
-                  </form>
-                )}
-              </div>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 9. FOOTER — CLEAN CORPORATE MANULIFE FOOTER */}
-      <footer className="bg-[#002818] text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
-            <div className="md:col-span-6 space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="flex items-end gap-1">
-                  <span className="w-1.5 h-5 bg-[#00A758]" />
-                  <span className="w-1.5 h-5 bg-[#00A758]" />
-                  <span className="w-1.5 h-5 bg-[#00A758]" />
-                </div>
-                <span className="text-lg font-bold tracking-tight text-white">
-                  NGUYỄN THỊ KHÁNH VÂN
-                </span>
-              </div>
-              <p className="text-sm text-emerald-100/75 max-w-md leading-relaxed">
-                Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam &bull; Nhà Quản lý Xuất sắc nhất Châu Á (2021). Chia sẻ kiến thức hoạch định tài chính, phát triển sự nghiệp và cân bằng cuộc sống.
-              </p>
+      {/* 9. MINIMALIST EDITORIAL FOOTER */}
+      <footer className="border-t border-[#DCD8CE] bg-[#F2EFE9] py-16">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pb-12 border-b border-[#DCD8CE]">
+            <div>
+              <span className="font-serif text-2xl tracking-[0.14em] uppercase text-[#181F1C] block">
+                Nguyễn Thị Khánh Vân
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] mt-1 block">
+                Executive Wealth &amp; Leadership &mdash; Manulife Vietnam
+              </span>
             </div>
 
-            <div className="md:col-span-3 space-y-2.5">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#34D399]">
-                Chuyên Mục
-              </h4>
-              <ul className="space-y-2 text-sm text-emerald-100/80">
-                {navItems.map((item) => (
-                  <li key={item.href}>
-                    <a href={item.href} className="hover:text-white transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="md:col-span-3 space-y-2.5">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#34D399]">
-                Mạng Xã Hội
-              </h4>
-              <div className="flex flex-col gap-2 text-sm text-emerald-100/80">
-                <a
-                  href="https://www.facebook.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
-                >
-                  <span>Facebook Cá Nhân</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#34D399]" />
-                </a>
-                <a
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
-                >
-                  <span>LinkedIn Profile</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#34D399]" />
-                </a>
-              </div>
+            <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-[#56605B]">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#0A3622] transition-colors"
+              >
+                Facebook
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#0A3622] transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-100/60">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#858E89] font-light">
             <p>© 2026 Nguyen Thi Khanh Van. All Rights Reserved. khanhvanfinance.com</p>
             <a
               href="https://eod.khanhvanfinance.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition-colors"
+              className="text-[11px] uppercase tracking-[0.16em] hover:text-[#0A3622] transition-colors"
             >
               [Cổng Báo Cáo Nội Bộ EOD]
             </a>
@@ -1472,7 +1252,7 @@ export function App() {
         </div>
       </footer>
 
-      {/* ARTICLE READER MODAL (FOR BLOG POSTS) */}
+      {/* EDITORIAL ARTICLE READER MODAL */}
       <AnimatePresence>
         {activeArticle && (
           <motion.div
@@ -1480,75 +1260,55 @@ export function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveArticle(null)}
-            className="fixed inset-0 z-50 bg-gray-900/70 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#181F1C]/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-8"
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-3xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 my-8 max-h-[90vh] flex flex-col"
+              className="max-w-2xl w-full bg-[#FAF9F5] border border-[#DCD8CE] p-8 sm:p-14 max-h-[88vh] overflow-y-auto relative"
             >
-              <div className="relative h-56 sm:h-64 bg-gray-100 shrink-0">
-                <img
-                  src={activeArticle.image}
-                  alt={activeArticle.title}
-                  className="w-full h-full object-cover"
-                />
-                <button
-                  type="button"
-                  onClick={() => setActiveArticle(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/90 text-gray-800 hover:bg-white shadow-md"
-                  aria-label="Đóng"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setActiveArticle(null)}
+                className="absolute top-6 right-6 p-2 text-[#56605B] hover:text-[#181F1C]"
+                aria-label="Đóng"
+              >
+                <X className="w-5 h-5" />
+              </button>
 
-              <div className="p-6 sm:p-10 overflow-y-auto space-y-5">
-                <div className="flex flex-wrap items-center gap-3 text-xs">
-                  <span className="px-3 py-1 rounded-full bg-[#E6F5EC] text-[#003822] font-semibold">
-                    {activeArticle.category}
-                  </span>
-                  <span className="text-gray-500">{activeArticle.date}</span>
-                  <span className="text-gray-400">&bull;</span>
-                  <span className="text-gray-500">{activeArticle.readTime}</span>
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#008746]">
+                  <span>{activeArticle.category}</span>
+                  <span>&bull;</span>
+                  <span className="text-[#858E89]">{activeArticle.readTime}</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] leading-snug">
+                <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#181F1C] leading-[1.2]">
                   {activeArticle.title}
                 </h3>
 
-                <div className="space-y-4 text-[#374151] text-base leading-relaxed">
+                <div className="h-[1px] w-16 bg-[#0A3622]/30" />
+
+                <div className="space-y-5 text-[15px] text-[#3B443F] font-light leading-[1.95]">
                   {activeArticle.content.map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#F4FAF7] border border-[#00A758]/25 space-y-2.5 mt-6">
-                  <h4 className="text-sm font-bold text-[#003822] uppercase tracking-wider">
-                    Điểm Cốt Lõi Cần Nhớ:
-                  </h4>
-                  <ul className="space-y-2 text-sm text-[#374151]">
-                    {activeArticle.keyTakeaways.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#00A758] shrink-0 mt-0.5" />
-                        <span>{point}</span>
+                <div className="mt-8 pt-6 border-t border-[#DCD8CE] space-y-3">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#008746] block">
+                    ĐÚC KẾT CỐT LÕI
+                  </span>
+                  <ul className="space-y-2 text-sm text-[#181F1C] font-light">
+                    {activeArticle.keyTakeaways.map((pt, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className="text-[#008746]">&mdash;</span>
+                        <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="pt-4 border-t border-gray-200 flex items-center justify-between">
-                  <span className="text-xs text-gray-500">Tác giả: Nguyễn Thị Khánh Vân</span>
-                  <a
-                    href="#hop-tac"
-                    onClick={() => setActiveArticle(null)}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00A758] hover:text-[#003822]"
-                  >
-                    <span>Đặt câu hỏi hoặc kết nối cùng chị Vân</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
                 </div>
               </div>
             </motion.div>
@@ -1556,7 +1316,7 @@ export function App() {
         )}
       </AnimatePresence>
 
-      {/* IMAGE LIGHTBOX MODAL */}
+      {/* GALLERY LIGHTBOX MODAL */}
       <AnimatePresence>
         {lightbox && (
           <motion.div
@@ -1564,16 +1324,16 @@ export function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightbox(null)}
-            className="fixed inset-0 z-50 bg-gray-900/85 backdrop-blur-xs flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-50 bg-[#181F1C]/90 backdrop-blur-xs flex items-center justify-center p-4 sm:p-10"
           >
             <motion.div
-              initial={{ scale: 0.96, opacity: 0 }}
+              initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
+              exit={{ scale: 0.97, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
+              className="max-w-4xl w-full bg-[#FAF9F5] p-4 sm:p-6"
             >
-              <div className="relative bg-gray-950 flex items-center justify-center max-h-[75vh]">
+              <div className="relative bg-[#181F1C] flex items-center justify-center max-h-[75vh]">
                 <img
                   src={lightbox.src}
                   alt={lightbox.title}
@@ -1582,20 +1342,22 @@ export function App() {
                 <button
                   type="button"
                   onClick={() => setLightbox(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/90 text-gray-900 hover:bg-white"
+                  className="absolute top-4 right-4 p-2 bg-[#FAF9F5] text-[#181F1C]"
                   aria-label="Đóng"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
-              <div className="p-5 sm:p-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A758] block">
-                  {lightbox.category}
-                </span>
-                <h4 className="text-lg sm:text-xl font-bold text-[#111827] mt-1">
-                  {lightbox.title}
-                </h4>
-                <p className="text-sm text-[#4B5563] mt-1">{lightbox.subtitle}</p>
+              <div className="pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+                <div>
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#008746] block">
+                    {lightbox.fig}
+                  </span>
+                  <h4 className="font-serif text-2xl font-normal text-[#181F1C] mt-0.5">
+                    {lightbox.title}
+                  </h4>
+                </div>
+                <p className="text-xs text-[#56605B] font-light">{lightbox.subtitle}</p>
               </div>
             </motion.div>
           </motion.div>

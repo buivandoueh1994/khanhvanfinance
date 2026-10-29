@@ -5,44 +5,53 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #FFFFFF;
-    color: #111827;
+    background-color: #FAF9F5;
+    color: #181F1C;
     font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #111827;
+    background-color: #FAF9F5;
+    color: #181F1C;
+    font-weight: 300;
   }
 }
 
-@layer components {
-  .clean-card {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+/* Minimalist Luxury Underline Input */
+.editorial-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #D5D1C7;
+  padding: 0.85rem 0;
+  font-size: 0.925rem;
+  color: #181F1C;
+  font-weight: 400;
+  transition: border-color 0.3s ease;
+}
 
-  .clean-card:hover {
-    border-color: #00A758;
-    box-shadow: 0 14px 32px -8px rgba(0, 56, 34, 0.08);
-    transform: translateY(-2px);
-  }
+.editorial-input::placeholder {
+  color: #949B96;
+  font-weight: 300;
+}
+
+.editorial-input:focus {
+  outline: none;
+  border-bottom-color: #0A3622;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #FAF9F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
+  background: #D5D1C7;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00A758;
+  background: #0A3622;
 }
