@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# OS & Editor files
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Backup image folders (all standardized images are already tracked in public/images/)
+Anh_Goc/
+Anh_Da_Phan_Tich/*.jpg
+Anh_Da_Phan_Tich/*.jpeg
