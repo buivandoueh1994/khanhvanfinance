@@ -5,81 +5,64 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #0B1118;
-    color: #F8FAFC;
+    background-color: #080C0A;
+    color: #F5F5F0;
   }
 
   body {
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    background-image: 
-      radial-gradient(circle at 15% 10%, rgba(0, 167, 88, 0.08) 0%, transparent 38%),
-      radial-gradient(circle at 85% 22%, rgba(212, 175, 55, 0.07) 0%, transparent 35%),
-      radial-gradient(circle at 50% 65%, rgba(0, 56, 34, 0.18) 0%, transparent 45%);
-    background-attachment: fixed;
+    background-color: #080C0A;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 167, 88, 0.11), transparent),
+      radial-gradient(ellipse 60% 40% at 85% 25%, rgba(201, 169, 110, 0.06), transparent);
   }
 }
 
 @layer components {
-  .glass-card {
-    background: rgba(30, 41, 59, 0.68);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(100, 116, 139, 0.35);
-    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Architectural Private Banking Card */
+  .luxury-panel {
+    background: linear-gradient(180deg, rgba(18, 28, 23, 0.75) 0%, rgba(11, 17, 14, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 169, 110, 0.18);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .glass-card:hover {
-    border-color: rgba(212, 175, 55, 0.45);
-    box-shadow: 0 22px 50px -12px rgba(0, 0, 0, 0.7), 0 0 28px -8px rgba(212, 175, 55, 0.2);
-    transform: translateY(-4px);
+  .luxury-panel:hover {
+    border-color: rgba(201, 169, 110, 0.42);
+    transform: translateY(-2px);
   }
 
-  .emerald-glass-card {
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 56, 34, 0.42) 100%);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 167, 88, 0.3);
-    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .emerald-glass-card:hover {
-    border-color: rgba(0, 167, 88, 0.65);
-    box-shadow: 0 22px 50px -12px rgba(0, 0, 0, 0.75), 0 0 32px -6px rgba(0, 167, 88, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .text-gold-gradient {
-    background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 45%, #E5C07B 75%, #B38728 100%);
+  .text-champagne-gradient {
+    background: linear-gradient(135deg, #F3E5AB 0%, #C9A96E 50%, #E2C792 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .text-emerald-gradient {
-    background: linear-gradient(135deg, #34D399 0%, #00A758 60%, #059669 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .gold-border-glow {
-    box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.28), inset 0 0 15px -8px rgba(212, 175, 55, 0.2);
+  .hairline-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(201, 169, 110, 0.35) 50%,
+      transparent 100%
+    );
   }
 }
 
-/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B1118;
+  background: #080C0A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
-  border-radius: 9999px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #1C2A23;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #C9A96E;
 }
