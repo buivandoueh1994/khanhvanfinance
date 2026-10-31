@@ -39,13 +39,13 @@ const MessengerBrandSvg: React.FC<{ className?: string }> = ({ className = 'w-6 
     />
     <path
       d="M15.15 16.688l-2.955-3.15-5.765 3.15 6.34-6.726 3.025 3.15 5.695-3.15-6.34 6.726z"
-      fill="url(#messenger-floating-grad)"
+      fill="url(#messenger-manulife-grad)"
     />
     <defs>
-      <linearGradient id="messenger-floating-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#0099FF" />
-        <stop offset="55%" stopColor="#006AFF" />
-        <stop offset="100%" stopColor="#5B37EB" />
+      <linearGradient id="messenger-manulife-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#00A758" />
+        <stop offset="55%" stopColor="#008746" />
+        <stop offset="100%" stopColor="#0A3622" />
       </linearGradient>
     </defs>
   </svg>
@@ -1135,11 +1135,11 @@ export function App() {
                     className="py-4 flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3.5">
-                      <span className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#0084FF] to-[#0052CC] text-white flex items-center justify-center border-2 border-white shadow-[0_3px_10px_rgba(0,104,255,0.28)] group-hover:scale-105 transition-transform duration-300">
+                      <span className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white flex items-center justify-center border-2 border-white shadow-[0_3px_12px_rgba(0,167,88,0.28)] group-hover:scale-105 transition-transform duration-300">
                         <span className="font-sans font-extrabold tracking-tight text-[11px] leading-none">
                           Zalo
                         </span>
-                        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 border-[1.5px] border-white rounded-full" />
+                        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-[#22C55E] border-[1.5px] border-white rounded-full" />
                       </span>
                       <div>
                         <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
@@ -1163,9 +1163,9 @@ export function App() {
                     className="py-4 flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3.5">
-                      <span className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#00B2FF] via-[#006AFF] to-[#6B39F4] text-white flex items-center justify-center border-2 border-white shadow-[0_3px_10px_rgba(0,106,255,0.28)] group-hover:scale-105 transition-transform duration-300">
+                      <span className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white flex items-center justify-center border-2 border-white shadow-[0_3px_12px_rgba(10,54,34,0.28)] group-hover:scale-105 transition-transform duration-300">
                         <MessengerBrandSvg className="w-5 h-5" />
-                        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 border-[1.5px] border-white rounded-full" />
+                        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-[#22C55E] border-[1.5px] border-white rounded-full" />
                       </span>
                       <div>
                         <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
@@ -1351,7 +1351,7 @@ export function App() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors"
               >
-                <span className="w-2 h-2 rounded-full bg-[#0068FF]" />
+                <span className="w-2 h-2 rounded-full bg-[#00A758]" />
                 <span>Zalo: {PHONE_DISPLAY}</span>
               </a>
               <a
@@ -1360,7 +1360,7 @@ export function App() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors"
               >
-                <FacebookBrandIcon className="w-3.5 h-3.5 text-[#006AFF]" />
+                <FacebookBrandIcon className="w-3.5 h-3.5 text-[#008746]" />
                 <span>Facebook Cá Nhân</span>
               </a>
             </div>
@@ -1380,15 +1380,15 @@ export function App() {
         </div>
       </footer>
 
-      {/* FLOATING QUICK CONTACT BUTTONS (REFINED ZALO & FACEBOOK/MESSENGER CIRCLES) */}
+      {/* FLOATING QUICK CONTACT BUTTONS — MANULIFE EMERALD STYLE + GENTLE BREATHING HALO */}
       <aside
         aria-label="Kênh kết nối trực tiếp Khánh Vân"
-        className="fixed bottom-6 right-5 sm:right-6 z-40 flex flex-col gap-3.5 items-end pointer-events-auto select-none"
+        className="fixed bottom-6 right-5 sm:right-6 z-40 flex flex-col gap-4 items-end pointer-events-auto select-none"
       >
-        {/* 1. NÚT ZALO CHÍNH THỨC */}
+        {/* 1. NÚT ZALO CHÍNH THỨC (MANULIFE EMERALD) */}
         <div className="group relative flex items-center justify-end">
-          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3 rounded-full bg-[#181F1C]/92 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(0,0,0,0.18)] border border-white/10 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
             <span className="font-light text-white/85">Chat Zalo trực tiếp:</span>
             <strong className="font-medium tracking-wide text-white">{PHONE_DISPLAY}</strong>
           </div>
@@ -1398,19 +1398,24 @@ export function App() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Chat trực tiếp qua Zalo với Nguyễn Thị Khánh Vân: ${PHONE_DISPLAY}`}
-            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0084FF] to-[#0052CC] text-white shadow-[0_6px_20px_rgba(0,104,255,0.34)] hover:shadow-[0_8px_26px_rgba(0,104,255,0.5)] hover:scale-108 active:scale-95 transition-all duration-300 border-2 border-white ring-4 ring-sky-500/15"
+            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:shadow-[0_10px_28px_rgba(0,167,88,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
-            <span className="font-sans font-extrabold tracking-tight text-[13px] sm:text-[13.5px] text-white leading-none select-none">
+            {/* Gentle breathing halo ring (controlled scale, never overlaps) */}
+            <span className="manulife-halo absolute -inset-1 rounded-full bg-[#00A758]/35 pointer-events-none" />
+
+            <span className="relative z-10 font-sans font-extrabold tracking-tight text-[13px] sm:text-[13.5px] text-white leading-none select-none">
               Zalo
             </span>
-            <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full shadow-xs" />
+            <span className="
+              absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs
+            " />
           </a>
         </div>
 
-        {/* 2. NÚT FACEBOOK / MESSENGER CHÍNH THỨC */}
+        {/* 2. NÚT FACEBOOK / MESSENGER CHÍNH THỨC (MANULIFE DEEP FOREST EMERALD) */}
         <div className="group relative flex items-center justify-end">
-          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3 rounded-full bg-[#181F1C]/92 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(0,0,0,0.18)] border border-white/10 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
             <span className="font-light text-white/85">Facebook chính thức:</span>
             <strong className="font-medium tracking-wide text-white">Nguyễn Thị Vân</strong>
           </div>
@@ -1420,10 +1425,13 @@ export function App() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Kết nối Facebook Nguyễn Thị Khánh Vân"
-            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00B2FF] via-[#006AFF] to-[#6B39F4] text-white shadow-[0_6px_20px_rgba(0,106,255,0.34)] hover:shadow-[0_8px_26px_rgba(0,106,255,0.5)] hover:scale-108 active:scale-95 transition-all duration-300 border-2 border-white ring-4 ring-indigo-500/15"
+            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:shadow-[0_10px_28px_rgba(0,135,70,0.48)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
+            {/* Gentle breathing halo ring (staggered) */}
+            <span className="manulife-halo-delayed absolute -inset-1 rounded-full bg-[#008746]/32 pointer-events-none" />
+
             <MessengerBrandSvg className="w-6 h-6 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
-            <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full shadow-xs" />
+            <span className="absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs" />
           </a>
         </div>
       </aside>
