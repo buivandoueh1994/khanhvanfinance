@@ -8,6 +8,41 @@ import {
   X,
 } from 'lucide-react';
 
+const FACEBOOK_URL = 'https://www.facebook.com/nguyen.t.van.9250?locale=vi_VN';
+const ZALO_URL = 'https://zalo.me/0931579771';
+const PHONE_DISPLAY = '0931 579 771';
+
+const FacebookEditorialIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const ZaloEditorialIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    <path d="M9.5 9.5h5l-5 5h5" strokeWidth="1.6" />
+  </svg>
+);
+
 interface LightboxImage {
   src: string;
   fig: string;
@@ -263,7 +298,29 @@ export function App() {
             ))}
           </nav>
 
-          <div className="hidden sm:flex items-center shrink-0">
+          <div className="hidden sm:flex items-center gap-5 shrink-0">
+            <div className="flex items-center gap-3.5 pr-5 border-r border-[#DCD8CE]">
+              <a
+                href={ZALO_URL}
+                target="_blank"
+                rel="noreferrer"
+                title={`Nhắn tin Zalo: ${PHONE_DISPLAY}`}
+                aria-label="Zalo Nguyễn Thị Khánh Vân"
+                className="p-1.5 text-[#56605B] hover:text-[#008746] transition-colors"
+              >
+                <ZaloEditorialIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                title="Facebook Nguyễn Thị Khánh Vân"
+                aria-label="Facebook Nguyễn Thị Khánh Vân"
+                className="p-1.5 text-[#56605B] hover:text-[#008746] transition-colors"
+              >
+                <FacebookEditorialIcon className="w-4 h-4" />
+              </a>
+            </div>
             <a
               href="#lien-he"
               className="whitespace-nowrap inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
@@ -302,13 +359,35 @@ export function App() {
                     {item.label}
                   </a>
                 ))}
-                <a
-                  href="#lien-he"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="pt-2 text-xs uppercase tracking-[0.2em] text-[#008746] font-medium"
-                >
-                  Kết nối riêng &rarr;
-                </a>
+                <div className="pt-3 flex items-center justify-between">
+                  <a
+                    href="#lien-he"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs uppercase tracking-[0.2em] text-[#008746] font-medium"
+                  >
+                    Kết nối riêng &rarr;
+                  </a>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={ZALO_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622]"
+                    >
+                      <ZaloEditorialIcon className="w-4 h-4" />
+                      <span>Zalo</span>
+                    </a>
+                    <a
+                      href={FACEBOOK_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622]"
+                    >
+                      <FacebookEditorialIcon className="w-4 h-4" />
+                      <span>Facebook</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
@@ -1047,7 +1126,7 @@ export function App() {
             id="lien-he"
             className="grid grid-cols-1 lg:grid-cols-12 gap-14 pt-16 border-t border-[#DCD8CE] items-start"
           >
-            <div className="lg:col-span-5 space-y-5">
+            <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
                 PRIVATE CONCIERGE &amp; INQUIRY
               </span>
@@ -1057,6 +1136,65 @@ export function App() {
               <p className="text-sm text-[#56605B] font-light leading-[1.9]">
                 Mọi thông tin trao đổi về hoạch định tài chính gia đình hoặc định hướng chuyển dịch sự nghiệp của bạn đều được cam kết bảo mật tuyệt đối.
               </p>
+
+              {/* Direct Executive Channels (Zalo & Facebook) */}
+              <div className="pt-4 border-t border-[#DCD8CE] space-y-4">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#858E89] block">
+                  KÊNH KẾT NỐI TRỰC TIẾP
+                </span>
+
+                <div className="divide-y divide-[#E4E1D8] border-t border-b border-[#E4E1D8]">
+                  <a
+                    href={ZALO_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="py-4 flex items-center justify-between group"
+                  >
+                    <div className="flex items-center gap-3.5">
+                      <span className="w-9 h-9 border border-[#DCD8CE] group-hover:border-[#0A3622] group-hover:bg-[#0A3622] group-hover:text-white flex items-center justify-center text-[#181F1C] transition-colors">
+                        <ZaloEditorialIcon className="w-4 h-4" />
+                      </span>
+                      <div>
+                        <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
+                          Zalo Trực Tiếp &bull; Điện Thoại
+                        </span>
+                        <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
+                          {PHONE_DISPLAY}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-[#56605B] group-hover:text-[#0A3622] transition-colors">
+                      <span>Nhắn Zalo</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </a>
+
+                  <a
+                    href={FACEBOOK_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="py-4 flex items-center justify-between group"
+                  >
+                    <div className="flex items-center gap-3.5">
+                      <span className="w-9 h-9 border border-[#DCD8CE] group-hover:border-[#0A3622] group-hover:bg-[#0A3622] group-hover:text-white flex items-center justify-center text-[#181F1C] transition-colors">
+                        <FacebookEditorialIcon className="w-4 h-4" />
+                      </span>
+                      <div>
+                        <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
+                          Mạng Xã Hội Chính Thức
+                        </span>
+                        <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
+                          Facebook Nguyễn Thị Vân
+                        </span>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-[#56605B] group-hover:text-[#0A3622] transition-colors">
+                      <span>Mở trang</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="lg:col-span-6 lg:col-start-7">
@@ -1218,22 +1356,24 @@ export function App() {
               </span>
             </div>
 
-            <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-[#56605B]">
+            <div className="flex flex-wrap items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-[#56605B]">
               <a
-                href="https://www.facebook.com"
+                href={ZALO_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#0A3622] transition-colors"
+                className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors"
               >
-                Facebook
+                <ZaloEditorialIcon className="w-4 h-4 text-[#008746]" />
+                <span>Zalo: {PHONE_DISPLAY}</span>
               </a>
               <a
-                href="https://www.linkedin.com"
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#0A3622] transition-colors"
+                className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors"
               >
-                LinkedIn
+                <FacebookEditorialIcon className="w-4 h-4 text-[#008746]" />
+                <span>Facebook Cá Nhân</span>
               </a>
             </div>
           </div>
@@ -1251,6 +1391,34 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {/* MINIMALIST EDITORIAL FLOATING CONCIERGE DOCK (ZALO & FACEBOOK) */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col bg-[#FAF9F5]/95 backdrop-blur-md border border-[#CFCBC0] shadow-[0_10px_30px_-10px_rgba(24,31,28,0.14)] divide-y divide-[#E4E1D8]">
+        <a
+          href={ZALO_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Nhắn tin Zalo ${PHONE_DISPLAY}`}
+          className="group relative flex items-center justify-center w-11 h-11 text-[#181F1C] hover:bg-[#0A3622] hover:text-white transition-colors duration-300"
+        >
+          <ZaloEditorialIcon className="w-4 h-4" />
+          <span className="pointer-events-none absolute right-full mr-3 px-3 py-1.5 bg-[#181F1C] text-[#FAF9F5] text-[10px] uppercase tracking-[0.2em] whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+            Zalo &bull; {PHONE_DISPLAY}
+          </span>
+        </a>
+        <a
+          href={FACEBOOK_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Facebook Nguyễn Thị Khánh Vân"
+          className="group relative flex items-center justify-center w-11 h-11 text-[#181F1C] hover:bg-[#0A3622] hover:text-white transition-colors duration-300"
+        >
+          <FacebookEditorialIcon className="w-4 h-4" />
+          <span className="pointer-events-none absolute right-full mr-3 px-3 py-1.5 bg-[#181F1C] text-[#FAF9F5] text-[10px] uppercase tracking-[0.2em] whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+            Facebook Cá Nhân
+          </span>
+        </a>
+      </div>
 
       {/* EDITORIAL ARTICLE READER MODAL */}
       <AnimatePresence>
