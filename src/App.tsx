@@ -343,27 +343,47 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
 ];
 
-const BOOKS = [
+interface BookItem {
+  num: string;
+  title: string;
+  author: string;
+  theme: string;
+  note: string;
+  reflection: string;
+}
+
+const BOOKS: BookItem[] = [
   {
     num: '01',
     title: 'Good to Great — Từ Tốt Đến Vĩ Đại',
     author: 'Jim Collins',
     theme: 'Triết lý Lãnh đạo',
-    note: 'Hình mẫu “Lãnh đạo Cấp độ 5” — sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ việc chọn đúng người đồng hành.',
+    note: 'Hình mẫu “Lãnh đạo Cấp độ 5” — sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ nguyên tắc “Ai trước, cái gì sau”.',
+    reflection: 'Khi bắt đầu kiến tạo đội ngũ, bài học lớn nhất tôi mang theo từ Jim Collins là không vội mở rộng số lượng, mà chọn đúng những cộng sự có chung chữ “Tín” và sự tử tế. Đó là lý do hệ thống quản lý của chúng tôi đạt tỷ lệ gắn kết bền vững hàng đầu thị trường suốt nhiều năm qua.',
   },
   {
     num: '02',
     title: 'The Psychology of Money — Tâm Lý Học Về Tiền',
     author: 'Morgan Housel',
     theme: 'Quản trị Gia sản',
-    note: 'Sự thịnh vượng dài hạn không nằm ở những công thức phức tạp, mà ở sự điềm tĩnh, kỷ luật hành vi và việc luôn giữ một biên độ an toàn cho gia đình.',
+    note: 'Sự thịnh vượng bền vững không nằm ở những công thức tính toán phức tạp, mà ở kỷ luật kiểm soát hành vi và việc luôn giữ một biên độ an toàn dự phòng cho gia đình.',
+    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ngân hàng ANZ đến Manulife củng cố trong tôi một nguyên tắc cốt tử: Quản trị gia sản không phải là cố gắng thắng thị trường trong ngắn hạn, mà là đảm bảo gia đình bạn không bao giờ bị loại khỏi cuộc chơi khi biến cố ập đến.',
   },
   {
     num: '03',
     title: 'Atomic Habits — Thay Đổi Tí Hon, Hiệu Quả Bất Ngờ',
     author: 'James Clear',
-    theme: 'Kỷ luật Bản thân',
-    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi cột mốc lớn đều được kiến tạo từ hệ thống những thói quen chuẩn mực được lặp lại mỗi ngày.',
+    theme: 'Kỷ luật Thói quen',
+    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi thành quả lớn đều bắt nguồn từ một hệ thống các thói quen chuẩn mực được kiên trì lặp lại mỗi ngày.',
+    reflection: 'Ba tháng đầu tiên chuyển sang làm Sales không có nổi một hợp đồng không làm tôi nản lòng, bởi tôi tin vào sức mạnh của sự tích lũy: mỗi ngày kết nối chân thành, mỗi tuần kỷ luật rèn luyện thể lực. Thành quả Top 1 toàn quốc chỉ là kết quả tất yếu của những mắt xích nhỏ được làm chỉn chu mỗi ngày.',
+  },
+  {
+    num: '04',
+    title: 'Servant Leadership — Phụng Sự Để Dẫn Đầu',
+    author: 'Robert K. Greenleaf',
+    theme: 'Tâm thức Phụng sự',
+    note: 'Lãnh đạo đích thực không bắt đầu bằng mong muốn quyền lực, mà bắt nguồn từ khát khao tự nhiên muốn được chăm sóc, nâng đỡ và phụng sự người khác.',
+    reflection: 'Người thủ lĩnh không đứng trên đỉnh tháp để ra lệnh, mà là người sẵn sàng đồng hành ở tuyến đầu cùng cộng sự. Sự trưởng thành của 64 nhà quản lý F1 hôm nay chính là minh chứng: bạn chỉ thực sự dẫn đầu khi giúp những người tin tưởng đi cùng bạn chạm tới thành công của riêng họ.',
   },
 ];
 
@@ -437,9 +457,6 @@ export function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Tất cả');
   const [activeArticle, setActiveArticle] = useState<Article | null>(null);
   const [lightbox, setLightbox] = useState<LightboxImage | null>(null);
-
-  const [leadEmail, setLeadEmail] = useState('');
-  const [leadSent, setLeadSent] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -1117,96 +1134,60 @@ export function App() {
         </div>
       </section>
 
-      {/* 6. TỦ SÁCH QUẢN TRỊ & ẤN PHẨM CẨM NANG (BOOK CLUB & EDITORIAL LEAD MAGNET) */}
+      {/* 6. TỦ SÁCH QUẢN TRỊ & GÓC NHÌN ĐỒNG HÀNH (CURATED EXECUTIVE READING & PERSONAL REFLECTIONS) */}
       <section id="tu-sach" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
-            {/* Left 7 Cols: Book Club */}
-            <div className="lg:col-span-7 space-y-12">
-              <div>
-                <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                  03 / TỦ SÁCH QUẢN TRỊ
-                </span>
-                <h2 className="font-serif text-4xl sm:text-[44px] font-normal text-[#181F1C]">
-                  Những Cuốn Sách Định Hình Tư Duy
-                </h2>
-              </div>
+          <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
+            <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
+              03 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+              Những Cuốn Sách Định Hình Tư Duy &amp; Triết Lý Hành Động
+            </h2>
+            <p className="text-[15px] sm:text-base text-[#56605B] font-light leading-[1.85] pt-1">
+              Sách là người thầy thầm lặng định hình nên nhân sinh quan, bản lĩnh điều hành và nguyên tắc sống của Khánh Vân. Dưới đây là 4 tác phẩm gối đầu giường cùng những bài học thực chiến rút ra từ gần hai thập kỷ làm nghề.
+            </p>
+          </div>
 
-              <div className="divide-y divide-[#E4E1D8] border-t border-b border-[#E4E1D8]">
-                {BOOKS.map((book) => (
-                  <div key={book.num} className="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4">
-                    <div className="sm:col-span-3">
-                      <span className="font-serif text-xl text-[#858E89] block">{book.num}</span>
-                      <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746] mt-1 block">
-                        {book.theme}
-                      </span>
-                    </div>
-                    <div className="sm:col-span-9 space-y-2">
-                      <div className="flex flex-wrap items-baseline justify-between gap-2">
-                        <h3 className="font-serif text-2xl font-normal text-[#181F1C]">
-                          {book.title}
-                        </h3>
-                        <span className="text-xs text-[#858E89] italic">{book.author}</span>
-                      </div>
-                      <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                        {book.note}
-                      </p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+            {BOOKS.map((book) => (
+              <div
+                key={book.num}
+                className="bg-[#FAF9F5] p-7 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.08)] group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
+                    <span className="font-serif text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
+                      {book.num}
+                    </span>
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#008746] font-medium px-2.5 py-1 bg-[#008746]/[0.06] rounded-[2px]">
+                      {book.theme}
+                    </span>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Right 5 Cols: Understated Architectural Lead Magnet */}
-            <div className="lg:col-span-5 lg:mt-16 bg-[#F2EFE9] p-8 sm:p-12 border border-[#E4E1D8] space-y-8">
-              <div className="space-y-3">
-                <span className="text-[10px] uppercase tracking-[0.24em] text-[#008746] block">
-                  ẤN PHẨM ĐỘC QUYỀN &bull; MIỄN PHÍ
-                </span>
-                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
-                  Cẩm Nang Hoạch Định Dòng Tiền Gia Đình &amp; Chuyển Dịch Sự Nghiệp
-                </h3>
-              </div>
+                  <div>
+                    <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                      {book.title}
+                    </h3>
+                    <p className="text-xs text-[#858E89] italic mt-1 font-light">Tác giả: {book.author}</p>
+                  </div>
 
-              <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                Tài liệu tổng hợp bảng kiểm tra cấu trúc bảo vệ tài sản gia đình chuẩn ngân hàng quốc tế và lộ trình 90 ngày đầu tiên chuyển sang vị trí Quản lý Tài chính độc lập.
-              </p>
-
-              <div className="space-y-3 border-t border-[#DCD8CE] pt-6 text-xs text-[#3B443F] font-light">
-                <p>I. Năm tầng tháp bảo toàn dòng tiền và quỹ học vấn cho con cái.</p>
-                <p>II. Lộ trình chuyển dịch sự nghiệp dành cho cựu Banker &amp; Quản lý.</p>
-              </div>
-
-              {leadSent ? (
-                <div className="pt-4 border-t border-[#008746]/40 text-sm text-[#0A3622]">
-                  Cảm ơn bạn. Ấn phẩm PDF đã được ghi nhận gửi tới địa chỉ{' '}
-                  <span className="underline">{leadEmail}</span>.
+                  <p className="text-sm text-[#56605B] font-light leading-[1.8]">
+                    {book.note}
+                  </p>
                 </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    if (leadEmail.trim()) setLeadSent(true);
-                  }}
-                  className="space-y-6 pt-2"
-                >
-                  <input
-                    type="email"
-                    required
-                    placeholder="Địa chỉ Email nhận tài liệu..."
-                    value={leadEmail}
-                    onChange={(e) => setLeadEmail(e.target.value)}
-                    className="editorial-input"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] transition-colors"
-                  >
-                    Nhận ấn phẩm qua Email
-                  </button>
-                </form>
-              )}
-            </div>
+
+                {/* Personal Reflection Quote Box */}
+                <div className="mt-6 pt-5 border-t border-[#EAE7DF] bg-[#F2EFE9]/70 -mx-3 -mb-3 p-5 sm:p-6 rounded-[3px] border-l-2 border-l-[#008746]">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-medium block mb-2">
+                    GÓC NHÌN TỪ KHÁNH VÂN
+                  </span>
+                  <p className="text-xs sm:text-[13px] text-[#2F3833] font-light italic leading-[1.8]">
+                    “{book.reflection}”
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1361,96 +1342,186 @@ export function App() {
       {/* 8. ĐỒNG HÀNH & PHÁT TRIỂN ĐỘI NGŨ (WORK WITH ME + MENTORSHIP GALLERY + CONCIERGE FORM) */}
       <section id="dong-hanh" className="py-28 lg:py-36">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="max-w-4xl mb-20 space-y-4">
-            <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
-              05 / HỢP TÁC &amp; ĐỒNG HÀNH
+          <div className="max-w-4xl mb-16 sm:mb-20 space-y-4">
+            <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
+              05 / HỢP TÁC &amp; ĐỒNG HÀNH &bull; WORK WITH ME
             </span>
             <h2 className="font-serif text-4xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
-              Ba Phương Thức Kết Nối Cùng Khánh Vân
+              Ba Trục Hợp Tác Chiến Lược Cùng Khánh Vân
             </h2>
+            <p className="text-[15px] sm:text-base text-[#56605B] font-light leading-[1.85] pt-1">
+              Dù bạn là chủ gia đình mong muốn thiết lập cơ chế chuyển giao tài sản an tâm, một chuyên viên quản lý tài chính khát khao bứt phá sự nghiệp, hay một tổ chức tìm kiếm diễn giả truyền cảm hứng — Khánh Vân luôn sẵn sàng đồng hành với sự chuẩn mực và tận tâm cao nhất.
+            </p>
           </div>
 
-          {/* 3 Architectural Hairline Columns */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-b border-[#DCD8CE] divide-y lg:divide-y-0 lg:divide-x divide-[#DCD8CE] mb-28">
-            <div className="py-10 lg:pr-10 flex flex-col justify-between space-y-8">
-              <div className="space-y-4">
-                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
-                  I &bull; PRIVATE WEALTH ADVISORY
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
-                  Hoạch Định Tài Chính &amp; Bảo Vệ Gia Sản
-                </h3>
+          {/* 3 Architectural Enhanced Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 mb-28">
+            {/* Pillar I: Private Wealth Advisory */}
+            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
+                    TRỤC I &bull; PRIVATE WEALTH
+                  </span>
+                  <span className="font-serif text-lg text-[#858E89]">01</span>
+                </div>
+
+                <div>
+                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                    Hoạch Định Dòng Tiền &amp; Chuyển Giao Gia Sản
+                  </h3>
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#858E89] mt-2 font-medium">
+                    Phù hợp: Chủ doanh nghiệp &bull; Gia đình tài sản lớn &bull; C-Level
+                  </span>
+                </div>
+
                 <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                  Thiết kế cấu trúc bảo vệ dòng tiền trụ cột, quỹ học vấn cho con cái và kế hoạch hưu trí an nhàn theo chuẩn mực kiểm soát rủi ro của ngân hàng quốc tế.
+                  Thiết kế cơ chế tích lũy tài sản dài hạn đến 99 tuổi, bảo đảm đường đi pháp lý rõ ràng để gia sản được tiếp nối êm thấm giữa các thế hệ mà không đánh đổi bằng tranh chấp tình thân.
                 </p>
+
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Lập trình sẵn quyền thừa kế hợp pháp qua hợp đồng tích lũy dài hạn.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Tối ưu hóa cấu trúc phí và bảo toàn dòng tiền sinh lời lãi kép liên tục.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Quỹ bảo vệ trụ cột và lộ trình học vấn quốc tế vững chắc cho con cái.</span>
+                  </div>
+                </div>
               </div>
-              <a
-                href="#lien-he"
-                onClick={() =>
-                  setFormData({
-                    ...formData,
-                    topic: 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
-                  })
-                }
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
-              >
-                <span>Đặt lịch cố vấn riêng</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+
+              <div className="pt-8">
+                <a
+                  href="#lien-he"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      topic: 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
+                    })
+                  }
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
+                >
+                  <span>Đặt lịch cố vấn riêng</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
 
-            <div className="py-10 lg:px-10 flex flex-col justify-between space-y-8">
-              <div className="space-y-4">
-                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
-                  II &bull; EXECUTIVE MENTORSHIP (F1)
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
-                  Ươm Mầm Nhà Quản Lý Kế Cận
-                </h3>
+            {/* Pillar II: Executive Mentorship F1 */}
+            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#0A3622]/30 rounded-[4px] flex flex-col justify-between shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] relative group">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
+                    TRỤC II &bull; EXECUTIVE MENTORSHIP
+                  </span>
+                  <span className="font-serif text-lg text-[#008746] font-medium">02</span>
+                </div>
+
+                <div>
+                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                    Đồng Hành Phát Triển Quản Lý Kế Cận (F1)
+                  </h3>
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#008746] mt-2 font-medium">
+                    Phù hợp: Cựu Banker &bull; Quản lý tài chính &bull; Quản lý kinh doanh
+                  </span>
+                </div>
+
                 <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                  Dành riêng cho Cựu Banker, Quản lý kinh doanh và Chủ doanh nghiệp. Trực tiếp kèm cặp 1-1 và chuyển giao quy trình xây dựng đội ngũ chuyên nghiệp.
+                  Chương trình kèm cặp 1-1 trực tiếp cùng Khánh Vân. Chuyển giao toàn bộ quy trình vận hành và nghệ thuật xây dựng hệ sinh thái kinh doanh độc lập đạt chuẩn Top 1 Châu Á.
                 </p>
+
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Lộ trình chuyển dịch an toàn 90 ngày từ bàn giấy ngân hàng sang thị trường.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Phương pháp tuyển dụng, đào tạo và giữ chân đội ngũ gắn kết bền vững.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Xây dựng thương hiệu cá nhân uy tín cao cấp dựa trên chữ “Tín”.</span>
+                  </div>
+                </div>
               </div>
-              <a
-                href="#lien-he"
-                onClick={() =>
-                  setFormData({
-                    ...formData,
-                    topic: 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)',
-                  })
-                }
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
-              >
-                <span>Tìm hiểu lộ trình Quản lý F1</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+
+              <div className="pt-8">
+                <a
+                  href="#lien-he"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      topic: 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)',
+                    })
+                  }
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#008746] hover:bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
+                >
+                  <span>Ứng tuyển Mentorship F1</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
 
-            <div className="py-10 lg:pl-10 flex flex-col justify-between space-y-8">
-              <div className="space-y-4">
-                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] block">
-                  III &bull; CORPORATE SHARING
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#181F1C]">
-                  Đào Tạo Đội Ngũ &amp; Diễn Giả Sự Kiện
-                </h3>
+            {/* Pillar III: Corporate Sharing & Keynote */}
+            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
+                    TRỤC III &bull; CORPORATE SHARING
+                  </span>
+                  <span className="font-serif text-lg text-[#858E89]">03</span>
+                </div>
+
+                <div>
+                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                    Diễn Giả Sự Kiện &amp; Đào Tạo Doanh Nghiệp
+                  </h3>
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#858E89] mt-2 font-medium">
+                    Phù hợp: Doanh nghiệp &bull; Ngân hàng &bull; Diễn đàn phụ nữ lãnh đạo
+                  </span>
+                </div>
+
                 <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                  Giao lưu, chia sẻ thực tế tại các sự kiện và chương trình đào tạo doanh nghiệp về văn hóa dịch vụ bằng chữ “Tín” và nghệ thuật lãnh đạo thấu cảm.
+                  Chia sẻ thực chiến tại các hội nghị, hội thảo lãnh đạo và chương trình đào tạo nội bộ về nghệ thuật bán hàng bằng sự tử tế, văn hóa dịch vụ chuẩn mực và lãnh đạo thấu cảm.
                 </p>
+
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Keynote Speaker tại các ngày hội tài chính, ngân hàng và tuyển dụng.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Workshop truyền lửa: Bứt phá giới hạn và xây dựng kỷ luật bền bỉ.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#008746] font-bold">&bull;</span>
+                    <span>Chia sẻ góc nhìn cân bằng: Phụ nữ trong gia đình và đỉnh cao sự nghiệp.</span>
+                  </div>
+                </div>
               </div>
-              <a
-                href="#lien-he"
-                onClick={() =>
-                  setFormData({
-                    ...formData,
-                    topic: 'Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp',
-                  })
-                }
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] hover:text-[#008746]"
-              >
-                <span>Liên hệ lịch đào tạo</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+
+              <div className="pt-8">
+                <a
+                  href="#lien-he"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      topic: 'Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp',
+                    })
+                  }
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#181F1C] hover:bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
+                >
+                  <span>Liên hệ lịch đào tạo</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 
