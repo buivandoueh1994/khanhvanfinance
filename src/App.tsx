@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -469,6 +469,124 @@ export function App() {
     };
   }, [activeArticle, lightbox, mobileMenuOpen]);
 
+  // Helper to read article ID from query param (?article=... or ?bai-viet=... or ?id=...), path (/bai-viet/... or /article/...) or hash (#bai-viet-... or #article-...)
+  const getArticleIdFromUrl = useCallback((): string | null => {
+    if (typeof window === 'undefined') return null;
+    const searchParams = new URLSearchParams(window.location.search);
+    const fromQuery = searchParams.get('article') || searchParams.get('bai-viet') || searchParams.get('id');
+    if (fromQuery) return fromQuery;
+
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if ((pathParts[0] === 'bai-viet' || pathParts[0] === 'article') && pathParts[1]) {
+      return pathParts[1];
+    }
+
+    const hash = window.location.hash;
+    if (hash.startsWith('#bai-viet-')) return hash.replace('#bai-viet-', '');
+    if (hash.startsWith('#article-')) return hash.replace('#article-', '');
+
+    return null;
+  }, []);
+
+  const updateMetaTags = (title?: string, description?: string, image?: string) => {
+    if (typeof document === 'undefined') return;
+    if (title) {
+      document.title = title;
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', title);
+    }
+    if (description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', description);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', description);
+    }
+    if (image) {
+      const ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage) ogImage.setAttribute('content', image);
+    }
+  };
+
+  const openArticle = useCallback((article: Article, pushHistory = true) => {
+    setActiveArticle(article);
+    if (pushHistory && typeof window !== 'undefined') {
+      const newUrl = `${window.location.origin}/?article=${encodeURIComponent(article.id)}`;
+      window.history.pushState({ articleId: article.id }, '', newUrl);
+    }
+    updateMetaTags(
+      `${article.title} — Khánh Vân`,
+      article.excerpt,
+      article.image ? (article.image.startsWith('http') ? article.image : `${window.location.origin}${article.image}`) : undefined
+    );
+  }, []);
+
+  const closeArticle = useCallback((pushHistory = true) => {
+    setActiveArticle(null);
+    if (pushHistory && typeof window !== 'undefined') {
+      const cleanUrl = `${window.location.origin}/#goc-nhin`;
+      window.history.pushState({}, '', cleanUrl);
+    }
+    updateMetaTags(
+      'Khánh Vân — Executive Wealth & Leadership',
+      'Khánh Vân — Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
+      typeof window !== 'undefined' ? `${window.location.origin}/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg` : undefined
+    );
+  }, []);
+
+  const shareArticle = useCallback(async (article: Article) => {
+    if (typeof window === 'undefined') return;
+    const shareUrl = `${window.location.origin}/?article=${encodeURIComponent(article.id)}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: article.title,
+          text: article.excerpt,
+          url: shareUrl,
+        });
+      } catch {
+        // User cancelled share dialog or native share not completed
+      }
+    } else if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        alert('Đã sao chép liên kết bài viết:\n' + shareUrl);
+      } catch {
+        prompt('Sao chép liên kết bài viết:', shareUrl);
+      }
+    } else {
+      prompt('Sao chép liên kết bài viết:', shareUrl);
+    }
+  }, []);
+
+  // Deep-link check on initial mount
+  useEffect(() => {
+    const targetId = getArticleIdFromUrl();
+    if (targetId) {
+      const found = ARTICLES.find((a) => a.id === targetId);
+      if (found) {
+        openArticle(found, false);
+      }
+    }
+  }, [getArticleIdFromUrl, openArticle]);
+
+  // Handle browser back / forward navigation (popstate)
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      const articleId = event.state?.articleId || getArticleIdFromUrl();
+      if (articleId) {
+        const found = ARTICLES.find((a) => a.id === articleId);
+        if (found) {
+          openArticle(found, false);
+          return;
+        }
+      }
+      closeArticle(false);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [getArticleIdFromUrl, openArticle, closeArticle]);
+
   const navItems = [
     { label: 'Câu chuyện', href: '#cau-chuyen' },
     { label: 'Góc nhìn', href: '#goc-nhin' },
@@ -901,7 +1019,7 @@ export function App() {
                 {featuredArticles.map((article) => (
                   <article
                     key={article.id}
-                    onClick={() => setActiveArticle(article)}
+                    onClick={() => openArticle(article)}
                     className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-5 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 active:scale-[0.99] hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
                   >
                     <div>
@@ -963,7 +1081,7 @@ export function App() {
                 {archiveArticles.map((article) => (
                   <article
                     key={article.id}
-                    onClick={() => setActiveArticle(article)}
+                    onClick={() => openArticle(article)}
                     className="group py-6 sm:py-9 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 active:bg-[#F2EFE9] transition-colors px-2 sm:px-4"
                   >
                     <div className="lg:col-span-2 flex items-center gap-4">
@@ -1817,7 +1935,7 @@ export function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActiveArticle(null)}
+            onClick={() => closeArticle()}
             className="fixed inset-0 z-50 bg-[#181F1C]/75 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-6 lg:p-8"
           >
             <motion.div
@@ -1832,7 +1950,7 @@ export function App() {
               <div className="sticky top-0 z-30 bg-[#FAF9F5]/96 backdrop-blur-md border-b border-[#E4E1D8] px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between shrink-0">
                 <button
                   type="button"
-                  onClick={() => setActiveArticle(null)}
+                  onClick={() => closeArticle()}
                   className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] min-h-[44px] min-w-[44px] -ml-2 px-2.5 transition-colors active:text-[#0A3622]"
                   aria-label="Quay lại danh mục bài viết"
                 >
@@ -1850,20 +1968,7 @@ export function App() {
                 <div className="flex items-center gap-1">
                   <button
                     type="button"
-                    onClick={() => {
-                      if (navigator.share) {
-                        navigator
-                          .share({
-                            title: activeArticle.title,
-                            text: activeArticle.excerpt,
-                            url: window.location.href,
-                          })
-                          .catch(() => {});
-                      } else {
-                        navigator.clipboard?.writeText(window.location.href);
-                        alert('Đã sao chép liên kết bài viết vào bộ nhớ tạm.');
-                      }
-                    }}
+                    onClick={() => shareArticle(activeArticle)}
                     className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-[#008746] hover:text-[#0A3622] min-h-[44px] min-w-[44px] justify-center px-2 transition-colors font-medium active:scale-95"
                     aria-label="Chia sẻ bài viết"
                   >
@@ -1873,7 +1978,7 @@ export function App() {
 
                   <button
                     type="button"
-                    onClick={() => setActiveArticle(null)}
+                    onClick={() => closeArticle()}
                     className="hidden sm:flex items-center justify-center min-h-[44px] min-w-[44px] text-[#56605B] hover:text-[#181F1C] transition-colors -mr-2"
                     aria-label="Đóng"
                   >
@@ -1942,7 +2047,7 @@ export function App() {
                   </div>
                   <a
                     href="#dong-hanh"
-                    onClick={() => setActiveArticle(null)}
+                    onClick={() => closeArticle()}
                     className="inline-flex items-center justify-center px-5 py-3.5 sm:py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] active:scale-[0.98] transition-all rounded-[2px] shrink-0 text-center font-medium min-h-[44px]"
                   >
                     Đặt Lịch Tham Vấn 1-1
