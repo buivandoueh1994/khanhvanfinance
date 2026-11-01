@@ -877,23 +877,23 @@ export function App() {
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg',
-                    fig: 'FIG. 02 — HALL OF EXCELLENCE',
-                    title: 'Vinh Danh Top 1 Quản Lý Cấp Cao DRD+ (2024)',
-                    subtitle: 'Dẫn đầu tỷ lệ hoàn thành chỉ tiêu toàn hệ thống.',
+                    src: '/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg',
+                    fig: 'FIG. 02 — EXECUTIVE GOVERNANCE',
+                    title: 'Tác Phong Chuẩn Mực & Văn Hóa Vận Hành Tại Bàn Họp Chiến Lược',
+                    subtitle: 'Bài học từ 8 năm làm ngân hàng quốc tế: Lấy uy tín và sự cẩn trọng làm nền tảng.',
                   })
                 }
                 className="cursor-pointer group"
               >
-                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF]">
+                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
-                    src="/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg"
-                    alt="Vinh danh Top 1 Quản lý cấp cao DRD+ Khánh Vân"
+                    src="/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg"
+                    alt="Khánh Vân hướng dẫn đội ngũ bên bàn họp chiến lược"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 02 &mdash; Vinh danh Top 1 Quản lý Cấp cao DRD+ (2024)</span>
+                  <span>FIG. 02 &mdash; Tác phong chuẩn mực &amp; Bài học về chữ “Tín” từ nền tảng Banker</span>
                   <span className="group-hover:text-[#0A3622]">Phóng to</span>
                 </figcaption>
               </figure>
@@ -915,7 +915,7 @@ export function App() {
                 }
                 className="cursor-pointer group"
               >
-                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF]">
+                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
                     src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
                     alt="Top 1 DRD+ Tỷ lệ duy trì hợp đồng 2025"
@@ -923,7 +923,7 @@ export function App() {
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 03 &mdash; Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (2025)</span>
+                  <span>FIG. 03 &mdash; Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (Bảo chứng niềm tin khách hàng)</span>
                   <span className="group-hover:text-[#0A3622]">Phóng to</span>
                 </figcaption>
               </figure>
@@ -958,23 +958,23 @@ export function App() {
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg',
-                    fig: 'FIG. 04 — PINNACLE 2025',
-                    title: 'Top 1 DRD+ Quản Lý Cấp Cao Dẫn Đầu Chỉ Tiêu FYP (2025)',
-                    subtitle: 'Khoảnh khắc giơ cao cúp vinh danh cùng tập thể lãnh đạo.',
+                    src: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
+                    fig: 'FIG. 04 — C-LEVEL DIPLOMACY',
+                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) Manulife',
+                    subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất.',
                   })
                 }
                 className="cursor-pointer group"
               >
-                <div className="overflow-hidden aspect-[3/3.7] bg-[#EAE7DF]">
+                <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
-                    src="/images/SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg"
-                    alt="Chị Khánh Vân nhận cúp Top 1 DRD+ năm 2025"
-                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                    src="/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg"
+                    alt="Chị Khánh Vân cùng CEO Manulife trong tiệc tối thân mật"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 04 &mdash; Top 1 DRD+ Dẫn đầu toàn hệ thống (2025)</span>
+                  <span>FIG. 04 &mdash; Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) Manulife</span>
                   <span className="group-hover:text-[#0A3622]">Phóng to</span>
                 </figcaption>
               </figure>
