@@ -527,7 +527,7 @@ export function App() {
       window.history.pushState({}, '', cleanUrl);
     }
     updateMetaTags(
-      'Khánh Vân — Executive Wealth & Leadership',
+      'Khánh Vân — Giám đốc Vùng Cấp cao',
       'Khánh Vân — Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
       typeof window !== 'undefined' ? `${window.location.origin}/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg` : undefined
     );
@@ -1830,7 +1830,7 @@ export function App() {
                 Khánh Vân
               </span>
               <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] mt-1 block">
-                Executive Wealth &amp; Leadership &mdash; Manulife Vietnam
+                Giám đốc Vùng Cấp cao &mdash; Manulife Vietnam
               </span>
             </div>
 
