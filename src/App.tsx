@@ -739,75 +739,85 @@ export function App() {
         </AnimatePresence>
       </header>
 
-      {/* 2. EDITORIAL HERO — GENEROUS NEGATIVE SPACE, SLENDER SERIF, UNBOXED PHOTOGRAPHY */}
-      <section className="pt-36 sm:pt-44 lg:pt-48 pb-24 lg:pb-32">
+      {/* 2. EDITORIAL HERO — GENEROUS NEGATIVE SPACE, SLENDER SERIF, FULL-WIDTH PANORAMIC TEAM SHOWCASE */}
+      <section className="pt-32 sm:pt-40 lg:pt-44 pb-20 lg:pb-28">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* Left 7 Cols */}
-            <div className="lg:col-span-7 space-y-10">
-              <div className="space-y-4">
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium">
-                  Nhà Lãnh Đạo &bull; Cố Vấn Gia Sản &bull; Người Truyền Lửa &bull; Người Mẹ
-                </p>
-                <h1 className="font-serif text-5xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-[#181F1C] leading-[1.06]">
-                  Khánh Vân
-                </h1>
-              </div>
-
-              <p className="font-serif italic text-2xl sm:text-[28px] text-[#3B443F] font-normal leading-[1.4] max-w-xl">
+          {/* TẦNG 1: EDITORIAL HEADER & NARRATIVE (2-COLUMN BALANCED SPREAD) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            {/* Left 6 Cols: Name & Signature Statement */}
+            <div className="lg:col-span-6 space-y-4 sm:space-y-6">
+              <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium">
+                Nhà Lãnh Đạo &bull; Cố Vấn Gia Sản &bull; Người Truyền Lửa &bull; Người Mẹ
+              </p>
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-normal tracking-tight text-[#181F1C] leading-[1.05]">
+                Khánh Vân
+              </h1>
+              <p className="font-serif italic text-2xl sm:text-[28px] text-[#3B443F] font-normal leading-[1.4] pt-1">
                 “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
               </p>
+            </div>
 
-              <div className="h-[1px] w-20 bg-[#0A3622]/30" />
-
-              <p className="text-[15px] sm:text-base text-[#56605B] leading-[1.9] font-light max-w-xl">
+            {/* Right 6 Cols: Bio Summary & Quick Actions */}
+            <div className="lg:col-span-6 space-y-6 lg:pt-2 flex flex-col justify-between h-full">
+              <div className="h-[1px] w-16 bg-[#0A3622]/30 lg:hidden" />
+              <p className="text-[15px] sm:text-base text-[#56605B] leading-[1.9] font-light">
                 Khởi đầu từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến vị thế Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam và giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á (2021). Hành trình gần hai thập kỷ của Khánh Vân được dẫn dắt bởi niềm tin rằng sự minh bạch, kỷ luật và lòng thấu cảm là nền tảng bền vững nhất của mọi di sản.
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-10">
+              <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-8">
                 <a
                   href="#cau-chuyen"
-                  className="inline-flex items-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-normal transition-colors duration-300"
+                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-colors duration-300 min-h-[44px] rounded-[2px]"
                 >
                   <span>Hành trình sự nghiệp</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
                   href="#goc-nhin"
-                  className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#181F1C] hover:text-[#008746] border-b border-[#181F1C]/40 hover:border-[#008746] pb-1.5 transition-colors"
+                  className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#181F1C] hover:text-[#008746] border-b border-[#181F1C]/40 hover:border-[#008746] pb-1.5 transition-colors font-medium min-h-[44px]"
                 >
                   <span>Đọc góc nhìn &amp; chia sẻ</span>
                 </a>
               </div>
             </div>
+          </div>
 
-            {/* Right 5 Cols: Unboxed Editorial Portrait */}
-            <div className="lg:col-span-5">
-              <figure
-                onClick={() =>
-                  setLightbox({
-                    src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
-                    fig: 'FIG. 01 — ĐỘI NGŨ TINH HOA',
-                    title: 'Khánh Vân Cùng Đội Ngũ Quản Lý Tinh Hoa',
-                    subtitle:
-                      'Chị Khánh Vân cùng hơn 35 quản lý và chuyên viên cấp cao tại sảnh văn phòng Manulife Việt Nam.',
-                  })
-                }
-                className="cursor-pointer group"
-              >
-                <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[3px] shadow-sm ring-1 ring-inset ring-[#181F1C]/[0.06]">
-                  <img
-                    src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
-                    alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
-                  />
+          {/* TẦNG 2: FULL-WIDTH PANORAMIC TEAM FRAME (HƠN 35 QUẢN LÝ TINH HOA & HỆ THỐNG 500+ NHÂN SỰ) */}
+          <div className="mt-14 sm:mt-18 lg:mt-20">
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
+                  fig: 'FIG. 01 — ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
+                  title: 'Khánh Vân Cùng Hơn 35 Quản Lý Cấp Cao & Hệ Thống 500+ Nhân Sự',
+                  subtitle:
+                    'Chị Khánh Vân (Vest Trắng) ngồi trung tâm cùng dàn nữ tướng quản lý và chuyên viên tinh hoa tại sảnh văn phòng Manulife Việt Nam.',
+                })
+              }
+              className="cursor-pointer group relative block"
+            >
+              <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[4px] shadow-[0_16px_40px_-20px_rgba(10,54,34,0.18)] ring-1 ring-inset ring-[#181F1C]/[0.08]">
+                <img
+                  src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
+                  alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
+                  className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-700 ease-editorial"
+                />
+                {/* Visual affordance: Pill button on image */}
+                <div className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 bg-[#181F1C]/75 backdrop-blur-md text-white text-[10px] sm:text-[11px] uppercase tracking-[0.18em] px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] opacity-90 group-hover:opacity-100 group-hover:bg-[#0A3622] transition-all flex items-center gap-1.5 shadow-md">
+                  <span>Phóng to toàn cảnh</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
-                <figcaption className="mt-4 pt-3 border-t border-[#E4E1D8] flex items-baseline justify-between gap-4 text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
-                  <span>FIG. 01 &mdash; Khánh Vân cùng Đội ngũ Quản lý Tinh hoa</span>
-                  <span className="group-hover:text-[#0A3622] transition-colors">Xem ảnh</span>
-                </figcaption>
-              </figure>
-            </div>
+              </div>
+
+              <figcaption className="mt-3.5 sm:mt-4 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.14em] uppercase text-[#858E89]">
+                <span className="font-medium text-[#181F1C]">
+                  FIG. 01 &mdash; Khánh Vân cùng Đội ngũ Quản lý Tinh hoa Manulife Việt Nam
+                </span>
+                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
+                  Trụ sở Manulife &bull; Hệ thống 64 Quản lý &amp; 500+ Nhân sự
+                </span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
