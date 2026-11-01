@@ -389,7 +389,7 @@ export function App() {
                   Nhà Lãnh Đạo &bull; Cố Vấn Gia Sản &bull; Người Truyền Lửa &bull; Người Mẹ
                 </p>
                 <h1 className="font-serif text-5xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-[#181F1C] leading-[1.06]">
-                  Nguyễn Thị Khánh Vân
+                  Khánh Vân
                 </h1>
               </div>
 
@@ -429,7 +429,7 @@ export function App() {
                     fig: 'FIG. 01 — LEADERSHIP',
                     title: 'Tiệc Tối Cùng Tổng Giám Đốc (CEO) Manulife',
                     subtitle:
-                      'Chị Nguyễn Thị Khánh Vân cùng CEO Manulife trong buổi gặp gỡ chiến lược.',
+                      'Chị Khánh Vân cùng CEO Manulife trong buổi gặp gỡ chiến lược.',
                   })
                 }
                 className="cursor-pointer group"
@@ -437,7 +437,7 @@ export function App() {
                 <div className="overflow-hidden aspect-[4/4.9] bg-[#EAE7DF]">
                   <img
                     src="/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg"
-                    alt="Chị Nguyễn Thị Khánh Vân cùng CEO Manulife"
+                    alt="Chị Khánh Vân cùng CEO Manulife"
                     className="w-full h-full object-cover object-[50%_82%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
@@ -527,7 +527,7 @@ export function App() {
                 <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF]">
                   <img
                     src="/images/SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg"
-                    alt="Vinh danh Top 1 Quản lý cấp cao DRD+ Nguyễn Thị Vân"
+                    alt="Vinh danh Top 1 Quản lý cấp cao DRD+ Khánh Vân"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
@@ -1172,7 +1172,7 @@ export function App() {
                           Mạng Xã Hội Chính Thức
                         </span>
                         <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
-                          Facebook Nguyễn Thị Vân
+                          Facebook Khánh Vân
                         </span>
                       </div>
                     </div>
@@ -1337,7 +1337,7 @@ export function App() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pb-12 border-b border-[#DCD8CE]">
             <div>
               <span className="font-serif text-2xl tracking-[0.14em] uppercase text-[#181F1C] block">
-                Nguyễn Thị Khánh Vân
+                Khánh Vân
               </span>
               <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] mt-1 block">
                 Executive Wealth &amp; Leadership &mdash; Manulife Vietnam
@@ -1367,7 +1367,7 @@ export function App() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#858E89] font-light">
-            <p>© 2026 Nguyen Thi Khanh Van. All Rights Reserved. khanhvanfinance.com</p>
+            <p>© 2026 Khanh Van. All Rights Reserved. khanhvanfinance.com</p>
             <a
               href="https://eod.khanhvanfinance.com"
               target="_blank"
@@ -1397,7 +1397,7 @@ export function App() {
             href={ZALO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Chat trực tiếp qua Zalo với Nguyễn Thị Khánh Vân: ${PHONE_DISPLAY}`}
+            aria-label={`Chat trực tiếp qua Zalo với Khánh Vân: ${PHONE_DISPLAY}`}
             className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:shadow-[0_10px_28px_rgba(0,167,88,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
             {/* Gentle breathing halo ring (controlled scale, never overlaps) */}
@@ -1417,14 +1417,14 @@ export function App() {
           <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
             <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
             <span className="font-light text-white/85">Facebook chính thức:</span>
-            <strong className="font-medium tracking-wide text-white">Nguyễn Thị Vân</strong>
+            <strong className="font-medium tracking-wide text-white">Khánh Vân</strong>
           </div>
 
           <a
             href={FACEBOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Kết nối Facebook Nguyễn Thị Khánh Vân"
+            aria-label="Kết nối Facebook Khánh Vân"
             className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:shadow-[0_10px_28px_rgba(0,135,70,0.48)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
             {/* Gentle breathing halo ring (staggered) */}
