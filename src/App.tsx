@@ -529,7 +529,7 @@ export function App() {
     updateMetaTags(
       'Khánh Vân — Giám đốc Vùng Cấp cao',
       'Khánh Vân — Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
-      typeof window !== 'undefined' ? `${window.location.origin}/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg` : undefined
+      typeof window !== 'undefined' ? `${window.location.origin}/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` : undefined
     );
   }, []);
 
@@ -725,7 +725,7 @@ export function App() {
       {/* 2. EDITORIAL HERO — GENEROUS NEGATIVE SPACE, SLENDER SERIF, UNBOXED PHOTOGRAPHY */}
       <section className="pt-36 sm:pt-44 lg:pt-48 pb-24 lg:pb-32">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left 7 Cols */}
             <div className="lg:col-span-7 space-y-10">
               <div className="space-y-4">
@@ -769,24 +769,24 @@ export function App() {
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
-                    fig: 'FIG. 01 — LEADERSHIP',
-                    title: 'Tiệc Tối Cùng Tổng Giám Đốc (CEO) Manulife',
+                    src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
+                    fig: 'FIG. 01 — ĐỘI NGŨ TINH HOA',
+                    title: 'Khánh Vân Cùng Đội Ngũ Quản Lý Tinh Hoa',
                     subtitle:
-                      'Chị Khánh Vân cùng CEO Manulife trong buổi gặp gỡ chiến lược.',
+                      'Chị Khánh Vân cùng hơn 35 quản lý và chuyên viên cấp cao tại sảnh văn phòng Manulife Việt Nam.',
                   })
                 }
                 className="cursor-pointer group"
               >
-                <div className="overflow-hidden aspect-[4/4.9] bg-[#EAE7DF]">
+                <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[3px] shadow-sm ring-1 ring-inset ring-[#181F1C]/[0.06]">
                   <img
-                    src="/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg"
-                    alt="Chị Khánh Vân cùng CEO Manulife"
-                    className="w-full h-full object-cover object-[50%_82%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                    src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
+                    alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-4 pt-3 border-t border-[#E4E1D8] flex items-baseline justify-between gap-4 text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
-                  <span>FIG. 01 &mdash; Cùng Tổng Giám Đốc (CEO) Manulife</span>
+                  <span>FIG. 01 &mdash; Khánh Vân cùng Đội ngũ Quản lý Tinh hoa</span>
                   <span className="group-hover:text-[#0A3622] transition-colors">Xem ảnh</span>
                 </figcaption>
               </figure>

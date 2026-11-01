@@ -24,7 +24,7 @@ Hiện tại website đang sử dụng chính thức **18 bức ảnh tinh hoa (
 
 | Mã Fig | Tên File Trong `public/images/` | Vị trí trên Website | Nguồn gốc | Tên file gốc ban đầu | Ý nghĩa & Thông điệp truyền tải |
 | :---: | :--- | :--- | :---: | :--- | :--- |
-| **FIG. 01** | `SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg` | **Hero Section** (Chân dung mở đầu) | Đợt 1 | `chup cung CEO manulife.jpg` | Khẳng định vị thế ngoại giao C-Level; khoảnh khắc thân tình cùng Tổng Giám đốc Manulife. |
+| **FIG. 01** | `VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` | **Hero Section** (Ảnh mở đầu trang web) | **Đợt 2** | `1793511781173...48d5bc65.jpg` (Số 60) | Thủ lĩnh Khánh Vân ngồi ghế trung tâm trong trang phục vest trắng thanh lịch cùng hơn 35 nữ quản lý & chuyên viên tinh hoa trong trang phục vest xanh đồng bộ tại sảnh văn phòng Manulife; khẳng định quy mô, tầm vóc và uy tín của Giám đốc Vùng Cấp cao. |
 | **FIG. 02** | `SanKhau_ChiVan_VinhDanhTop1DRDFYP2024.jpg` | **Section 4 — Chương I** (2009–2017) | Đợt 1 | `a3_2024.jpeg` | Bảo chứng thành tích Top 1 Quản lý cấp cao DRD+ FYP 2024 trên màn hình LED lớn. |
 | **FIG. 03** | `SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg` | **Section 4 — Chương II** (Bước ngoặt 2018) | Đợt 1 | `a2.jpg` | Minh chứng cho cam kết giữ trọn chữ "Tín" với giải thưởng Top 1 Tỷ lệ duy trì hợp đồng 2025. |
 | **FIG. 04** | `SanKhau_ChiVan_NhanGiaiTop1FYP2025.jpg` | **Section 4 — Chương III** (2018–nay) | Đợt 1 | `a1.jpg` | Đỉnh cao dẫn đầu toàn quốc chỉ tiêu FYP năm 2025 cùng cúp vàng vinh danh. |
@@ -46,6 +46,8 @@ Hiện tại website đang sử dụng chính thức **18 bức ảnh tinh hoa (
 ---
 
 ## III. QUY TẮC CẬP NHẬT & ĐIỀU PHỐI HÌNH ẢNH TRONG TƯƠNG LAI
+
+* **Ảnh lưu trữ chất lượng cao sẵn sàng sử dụng:** `SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg` (ảnh cùng Tổng Giám Đốc CEO Manulife) được lưu trữ an toàn trong `public/images/` và `Anh_Da_Phan_Tich/`, sẵn sàng dùng cho các bài viết chuyên sâu về ngoại giao C-Level.
 
 1. **Nguyên tắc "1 Bối cảnh = 1 Ảnh duy nhất trên Web":**
    - Tuyệt đối không đăng lặp lại 2 ảnh cùng một góc chụp/trang phục để giữ cho giao diện website luôn thanh thoát chuẩn tạp chí thượng lưu.
