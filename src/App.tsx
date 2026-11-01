@@ -66,14 +66,179 @@ interface Article {
   readTime: string;
   title: string;
   excerpt: string;
-  content: string[];
+  content: string | string[];
   keyTakeaways: string[];
+  image?: string;
+  imageCaption?: string;
+  featured?: boolean;
 }
 
 const ARTICLES: Article[] = [
   {
-    id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
+    id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
     index: '01',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '6 phút đọc',
+    featured: true,
+    image: '/images/VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg',
+    imageCaption: 'Chị Khánh Vân chủ trì buổi làm việc chuyên sâu về cơ chế bảo vệ và chuyển giao gia sản.',
+    title: 'Khi Tài Sản Thừa Kế Trở Thành Vết Nứt Gia Đình: Bài Học Từ Một Cơ Chế Chuyển Giao Văn Minh',
+    excerpt:
+      'Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản. Đứng từ góc nhìn quản trị tài sản, câu chuyện này đặt ra một vấn đề lớn hơn: làm sao để gia sản được chuyển giao êm thấm giữa các thế hệ mà không đánh đổi bằng tình thân.',
+    content: `*Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản - loại tài sản khó phân chia và dễ phát sinh mâu thuẫn nhất. Đứng từ góc nhìn quản trị tài sản, câu chuyện này đặt ra một vấn đề lớn hơn: làm sao để gia sản được chuyển giao êm thấm giữa các thế hệ mà không đánh đổi bằng tình thân.*
+
+## Khi Tài Sản Vật Chất Trở Thành Nguồn Cơn Chia Rẽ
+
+Số liệu từ Tòa án Nhân dân Trung cấp số 2 Bắc Kinh cho thấy một xu hướng đáng suy ngẫm: tỷ lệ án phân chia tài sản của người cao tuổi tăng từ 4,4% năm 2021 lên 15,5% năm 2025, trong đó bất động sản chiếm đến 94,6% giá trị tài sản tranh chấp. Những con số này không đơn thuần phản ánh lòng tham, mà cho thấy một lỗ hổng mang tính cấu trúc: tài sản được tích lũy qua nhiều năm nhưng không có cơ chế chuyển giao rõ ràng ngay từ đầu.
+
+Những vụ việc được dẫn chứng đều có điểm chung. Hai anh em tranh giành ba tòa nhà vì không có văn bản nào ghi nhận tỷ lệ đóng góp tài chính. Bảy anh chị em kiện nhau vì cổ phần công ty hợp tác nông thôn, trong đó bốn người chị từng trực tiếp chăm sóc cha mẹ lại bị gạt ra ngoài chỉ vì đã lập gia đình riêng. Một người đàn ông 60 tuổi phải khởi kiện toàn bộ 12 người thân chỉ để bảo vệ quyền thừa kế căn nhà trị giá 700.000 USD. Tất cả đều xuất phát từ một điểm chung: tài sản tồn tại ở dạng "một cục" - nhà đất, cổ phần, tiền mặt - không có cơ chế phân bổ minh bạch, dễ bị diễn giải theo nhiều hướng khi người để lại tài sản không còn.
+
+## Gốc Rễ Vấn Đề: Thiếu Một "Kế Hoạch Chuyển Giao" Minh Bạch
+
+Trong ngành tài chính - ngân hàng, đây gọi là rủi ro chuyển giao thế hệ (generational transfer risk). Tài sản càng lớn, càng tập trung vào bất động sản hay cổ phần không thể chia nhỏ, thì rủi ro xung đột khi chuyển giao càng cao. Thực tế xét xử tại Trung Quốc cũng cho thấy điều này: tòa án đang dần ưu tiên người trực tiếp chăm sóc thay vì chia theo huyết thống thuần túy - như vụ người em trai chăm chị gái bệnh tâm thần suốt 30 năm được hưởng 70% tài sản, trong khi người con ruột đứt liên lạc nhiều năm chỉ nhận 30%. Điều này cho thấy công lý đang cố gắng vá lại những lỗ hổng mà bản thân gia đình đã không chủ động thiết lập từ trước.
+
+Vấn đề không nằm ở việc ai xứng đáng hơn ai, mà nằm ở việc gia đình thiếu một công cụ pháp lý - tài chính đủ linh hoạt để phân định ý chí của người để lại tài sản một cách rõ ràng, minh bạch và được bảo vệ ngay từ lúc còn sống, chứ không phải chờ đến khi mọi chuyện đã muộn và chỉ còn biết trông cậy vào tòa án.
+
+## Bài Học Từ Cơ Chế Chuyển Giao Quyền Lợi Trong Hợp Đồng Tích Lũy Dài Hạn
+
+Một hướng tiếp cận đáng tham khảo trong hoạch định tài chính gia đình hiện đại là: thay vì dồn toàn bộ tài sản vào bất động sản hay tiền mặt - vốn dễ bị phân mảnh, tranh chấp hoặc mất giá trị theo thời gian - các hợp đồng tích lũy tài sản dài hạn (bảo vệ đến 99 tuổi) cho phép thiết lập sẵn cơ chế chuyển giao quyền lợi giữa các thế hệ ngay từ ban đầu.
+
+Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi con trưởng thành, quyền sở hữu hợp đồng được chuyển giao một cách hợp pháp, có ghi nhận rõ ràng. Tương tự, ông bà có thể mua cho con, sau đó thay đổi người được bảo hiểm sang cháu khi cần. Toàn bộ quá trình chuyển giao này diễn ra trong khuôn khổ hợp đồng đã ký kết, không phải tranh luận hay thỏa thuận lại từ đầu như với bất động sản hay cổ phần. Điều quan trọng hơn cả là dòng vốn tích lũy không bị gián đoạn - lãi kép tiếp tục sinh lời xuyên suốt qua các lần chuyển giao, giống như một dòng chảy tài chính được nối liền từ đời này sang đời khác thay vì bị chia cắt, rút ra giữa chừng mỗi khi có biến cố trong gia đình.
+
+Đây chính là điểm khác biệt căn bản so với việc để lại một căn nhà hay một khoản tiền mặt: tài sản được "lập trình" sẵn đường đi, thay vì để ngỏ cho sự diễn giải và tranh cãi của người ở lại.
+
+## Đúc Kết Thực Tế
+
+- Minh bạch hóa đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để lại cho tòa án phán xét sau này.
+- Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, nhằm giảm áp lực tranh chấp khi tài sản khó chia nhỏ.
+- Chủ động thiết lập lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được tiếp nối liên tục mà không đứt gãy lãi kép hay tình thân.`,
+    keyTakeaways: [
+      'Minh bạch hóa đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để lại cho tòa án phán xét sau này.',
+      'Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, nhằm giảm áp lực tranh chấp khi tài sản khó chia nhỏ.',
+      'Chủ động thiết lập lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được tiếp nối liên tục mà không đứt gãy lãi kép hay tình thân.',
+    ],
+  },
+  {
+    id: 'phi-nam-dau-boc-hoi-toi-uu-dong-tien',
+    index: '02',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/VanPhong_NhomQuanLy_ThaoLuanTaiLieuThucChien.jpg',
+    imageCaption: 'Phân tích bảng minh họa dòng tiền thực chiến và cấu trúc phí cùng các cộng sự chuyên môn.',
+    title: 'Phí Năm Đầu “Bốc Hơi”: Hiểu Đúng Để Không Đánh Mất Cơ Hội Tối Ưu Dòng Tiền',
+    excerpt:
+      'Có lần một người bạn làm trong ngành tài chính hỏi Vân một câu rất thẳng: “Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?”. Câu hỏi này không mới, nhưng cách trả lời thì cần nhìn lại cho đúng với bối cảnh hiện tại.',
+    content: `*Có lần một người bạn làm trong ngành tài chính hỏi Vân một câu rất thẳng: "Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?". Câu hỏi này không mới, nhưng cách trả lời thì cần nhìn lại cho đúng với bối cảnh hiện tại.*
+
+## Khi "mất trắng" chỉ là ấn tượng cũ
+
+Định kiến về việc năm đầu đóng bảo hiểm gần như "bay sạch" vào phí không phải tự nhiên mà có. Ở các thế hệ sản phẩm liên kết đơn vị trước đây, tỷ lệ phí ban đầu từng ở mức 80-90%, nghĩa là trong 100 đồng khách hàng đóng vào, chỉ có 10-20 đồng thực sự được đưa vào quỹ đầu tư để sinh lời. Phần còn lại dùng để chi trả cho các cấu phần vận hành của hợp đồng.
+
+Với một người quen nhìn dòng tiền theo logic "bỏ vào bao nhiêu, làm việc ngay bấy nhiêu" như dân tài chính, con số 80-90% phí ban đầu rõ ràng là một cú sốc. Nhưng nếu dừng lại ở ấn tượng đó mà không cập nhật cấu trúc sản phẩm thế hệ mới, câu chuyện sẽ bị nhìn lệch.
+
+## Cấu trúc phí thế hệ mới: Tiền "lăn bánh" sớm hơn
+
+Ở dòng liên kết đơn vị thế hệ mới, ví dụ như Xanh Phú Quý Flex, tỷ lệ phí ban đầu được thiết kế lại theo hướng giảm dần và giảm sâu ngay từ năm đầu tiên:
+
+- Năm 1: phí ban đầu chỉ 30%, tức 70% dòng tiền được đưa thẳng vào quỹ đầu tư để sinh lời ngay.
+- Năm 2: phí ban đầu còn 20%.
+- Năm 3 đến năm 5: phí ban đầu chỉ còn 10%.
+- Từ năm thứ 6 trở đi: phí ban đầu bằng 0%.
+
+Nhìn vào bảng tỷ lệ này, điều đáng chú ý nhất không phải là con số 30% ở năm đầu, mà là tốc độ giảm. Chỉ sau ba năm, phần lớn dòng tiền khách hàng đóng vào đã được "lăn bánh" trong quỹ đầu tư thay vì bị giữ lại ở phần chi phí. Đây là sự khác biệt căn bản so với cấu trúc cũ, nơi phải mất nhiều năm hơn mới đạt được tỷ lệ tương tự.
+
+## Tài Khoản Tri Ân: Phí ban đầu không hẳn là "mất"
+
+Điểm khiến nhiều người bạn làm tài chính khi tìm hiểu kỹ thường thay đổi góc nhìn, chính là cơ chế Tài Khoản Tri Ân. Toàn bộ khoản phí ban đầu được khấu trừ qua các năm không biến mất khỏi hệ thống, mà được ghi nhận vào một tài khoản riêng để tính lãi cam kết, và khoản này sẽ được hoàn trả lại cho khách hàng.
+
+Nói cách khác, phần phí ban đầu không hoàn toàn là một khoản chi ra không quay lại. Nó được "giữ hộ" dưới một hình thức khác, vẫn sinh lãi theo cam kết, và trở về với khách hàng ở một thời điểm nhất định trong hành trình hợp đồng. Đây là lý do khiến việc gọi phí ban đầu là "mất trắng" trở nên thiếu chính xác khi áp dụng cho các sản phẩm thế hệ mới.
+
+## Vì sao điều này quan trọng với người lập kế hoạch tài chính dài hạn
+
+Với những ai quen làm việc với dòng tiền và lãi kép, ba năm đầu tiên của một kênh tích lũy dài hạn mang ý nghĩa đặc biệt. Đó là giai đoạn mà khoản tiền đầu tư cần thời gian dài nhất để tích lũy lợi nhuận, nên tỷ lệ tiền thực sự được đưa vào quỹ đầu tư sớm hay muộn sẽ ảnh hưởng trực tiếp đến hiệu quả cuối chặng đường.
+
+Khi phí ban đầu giảm từ 80-90% xuống còn 30% ngay năm đầu, và tiếp tục giảm nhanh trong các năm kế tiếp, bài toán không còn đơn thuần là "đóng bảo hiểm có lợi hay không", mà trở thành "cấu trúc phí này cho phép dòng tiền làm việc sớm đến mức nào". Đó mới là câu hỏi đúng khi đánh giá một sản phẩm tích lũy dài hạn.
+
+## Nhìn vào bản chất thay vì cảm giác ban đầu
+
+Câu chuyện phí năm đầu, nếu chỉ nhìn qua con số phần trăm đầu tiên, dễ khiến người ta vội kết luận. Nhưng khi đặt trong toàn cảnh: tốc độ giảm phí qua các năm, tỷ lệ tiền vào quỹ đầu tư sớm, và cơ chế hoàn lại qua Tài Khoản Tri Ân, bức tranh trở nên đầy đủ hơn rất nhiều.
+
+Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải là con số phí ở năm đầu tiên trông "xấu" hay "đẹp", mà là tỷ lệ tiền thực tế được đưa vào quỹ đầu tư trong ba năm đầu, và liệu phần phí đã khấu trừ có được ghi nhận, tính lãi và hoàn lại hay không. Đó mới là cách đọc đúng "luật chơi" của một sản phẩm tài chính dài hơi.
+
+## Đúc kết thực tế
+
+- Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.
+- Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.
+- Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.`,
+    keyTakeaways: [
+      'Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.',
+      'Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.',
+      'Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.',
+    ],
+  },
+  {
+    id: 'ba-thang-trang-tay-von-lieng-khong-nam-trong-so-sach',
+    index: '03',
+    category: 'Phát triển Sự nghiệp',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/Studio_ChiVanCungDoiNgu_KhoanhKhacVuiVe.jpg',
+    imageCaption: 'Khoảnh khắc chân thành cùng các cộng sự thân thiết — minh chứng cho giá trị của sự tử tế và chữ Tín bền lâu.',
+    title: 'Ba Tháng Trắng Tay Và Bài Học Về Vốn Liếng Không Nằm Trong Sổ Sách',
+    excerpt:
+      'Có những giai đoạn sự nghiệp mà mọi nỗ lực dường như không mang lại kết quả gì. Với Vân, đó là ba tháng đầu tiên rời bàn giấy để bước ra làm Sales - những ngày tháng mà bài học lớn nhất lại không đến từ kỹ năng bán hàng, mà từ những gì mình đã gieo từ rất lâu trước đó.',
+    content: `*Có những giai đoạn sự nghiệp mà mọi nỗ lực dường như không mang lại kết quả gì. Với Vân, đó là ba tháng đầu tiên rời bàn giấy để bước ra làm Sales - những ngày tháng mà bài học lớn nhất lại không đến từ kỹ năng bán hàng, mà từ những gì mình đã gieo từ rất lâu trước đó.*
+
+## Bước Ra Khỏi Vùng An Toàn
+
+Thời còn làm việc tại ngân hàng ANZ, Vân từng có một vị trí ổn định ở bộ phận hỗ trợ (support). Công việc đều đặn, ít áp lực doanh số, và quan trọng nhất là an toàn. Nhưng đến một lúc nào đó, cảm giác muốn thử thách bản thân lớn hơn nỗi sợ thất bại. Vân quyết định chuyển sang làm Sales vay thế chấp - một lĩnh vực hoàn toàn khác, nơi kết quả được đo đếm bằng những con số cụ thể, không có chỗ cho sự mơ hồ.
+
+Ngày đầu tiên bước vào vai trò mới, Vân mang theo sự hào hứng của người muốn chứng minh năng lực. Nhưng thực tế nhanh chóng dội một gáo nước lạnh.
+
+## Khi Mọi Nỗ Lực Dường Như Vô Nghĩa
+
+Ba tháng đầu tiên, Vân không chốt được một khách hàng nào. Không phải vì thiếu cố gắng, mà vì thế giới Sales vận hành theo những quy luật mà một người mới hoàn toàn chưa nắm được. Áp lực càng lúc càng lớn, đến mức Vân đứng trước nguy cơ bị ngân hàng cắt code - nói cách khác, là bị đào thải khỏi cuộc chơi trước khi kịp bắt đầu.
+
+Đó là một trong những giai đoạn cô đơn nhất trong sự nghiệp. Mỗi buổi sáng thức dậy là một câu hỏi: liệu mình có đang đi sai đường? Liệu quyết định rời khỏi vùng an toàn có phải là một sai lầm?
+
+Nhưng giữa những ngày tháng mờ mịt ấy, một điều bất ngờ đã xảy ra.
+
+## Bước Ngoặt Đến Từ Những Điều Tưởng Như Nhỏ Bé
+
+Những đồng nghiệp cũ ở chi nhánh - những người từng làm việc cùng Vân trong suốt những năm ở vị trí back-office - bắt đầu giới thiệu khách hàng. Không phải vì họ có nghĩa vụ, cũng không phải vì một thỏa thuận nào. Đơn giản là họ thương và tin tưởng.
+
+Nhìn lại, Vân nhận ra: những năm tháng làm công việc hỗ trợ, những lần giúp đỡ đồng nghiệp xử lý hồ sơ, những buổi trò chuyện chân thành, những lần sẵn sàng hỗ trợ dù không phải trách nhiệm của mình - tất cả tưởng như là những việc nhỏ nhặt, không ai ghi nhận, lại trở thành thứ cứu Vân trong thời khắc khó khăn nhất.
+
+Khách hàng đầu tiên đến từ sự giới thiệu ấy đã mở ra một chuỗi kết quả tiếp theo. Và đến năm 2017, Vân đạt vị trí Top 1 doanh số toàn quốc - một hành trình mà nếu nhìn vào ba tháng đầu tiên, không ai có thể đoán trước được.
+
+## Vốn Liếng Thật Sự Không Nằm Trong Kỹ Xảo
+
+Nhiều người nghĩ rằng thành công trong Sales đến từ kỹ năng thuyết phục, từ chiến lược tiếp cận khách hàng, hay từ sự khéo léo trong đàm phán. Những điều đó quan trọng, nhưng với Vân, bài học lớn nhất từ giai đoạn ấy lại khác: uy tín cá nhân - thứ được tích lũy âm thầm qua từng hành động nhỏ, từng mối quan hệ được xây dựng bằng sự chân thành - mới chính là vốn liếng bền vững nhất.
+
+Chẳng có thành quả nào tự nhiên trải hoa hồng. Những hạt mầm tử tế mình gieo ở những việc nhỏ nhất hôm nay, có khi phải rất lâu sau mới nở hoa, nhưng khi cần đến, chúng chính là chiếc phao cứu sinh giúp mình vượt qua những thử thách tưởng chừng không lối thoát.
+
+Giai đoạn chuyển mình nào cũng có vùng tối của nó. Nhưng nếu nhìn kỹ, thứ giúp ta đi qua vùng tối ấy không phải là sự may mắn ngẫu nhiên, mà là những gì ta đã âm thầm xây dựng từ rất lâu trước khi vùng tối ấy xuất hiện.
+
+Mỗi người đều có một "ba tháng trắng tay" của riêng mình - những giai đoạn mà kết quả chưa đến, mà niềm tin bị thử thách. Câu hỏi đặt ra không phải là làm sao để tránh những giai đoạn ấy, mà là: trước khi bước vào vùng tối, mình đã gieo đủ những hạt mầm tử tế để có thể dựa vào khi cần hay chưa?
+
+## Đúc Kết Thực Tế
+
+- Uy tín cá nhân được xây dựng qua năm tháng, không phải qua một vài hành động nhất thời, nhưng lại là thứ bền vững nhất khi đối mặt với khó khăn.
+- Những việc tử tế tưởng chừng nhỏ bé, không ai ghi nhận ngay, thường là nền tảng âm thầm cho những bước ngoặt lớn trong sự nghiệp.
+- Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật, đôi khi điều cần nhất là nhìn lại những mối quan hệ và giá trị mình đã dày công vun đắp.`,
+    keyTakeaways: [
+      'Uy tín cá nhân được xây dựng qua năm tháng, không phải qua một vài hành động nhất thời, nhưng lại là thứ bền vững nhất khi đối mặt với khó khăn.',
+      'Những việc tử tế tưởng chừng nhỏ bé, không ai ghi nhận ngay, thường là nền tảng âm thầm cho những bước ngoặt lớn trong sự nghiệp.',
+      'Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật, đôi khi điều cần nhất là nhìn lại những mối quan hệ và giá trị mình đã dày công vun đắp.',
+    ],
+  },
+  {
+    id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
+    index: '04',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 10, 2026',
     readTime: '5 phút đọc',
@@ -93,28 +258,8 @@ const ARTICLES: Article[] = [
     ],
   },
   {
-    id: 'xay-dung-chu-tin-trong-cong-viec',
-    index: '02',
-    category: 'Phát triển Sự nghiệp',
-    date: 'Tháng 10, 2026',
-    readTime: '6 phút đọc',
-    title: 'Giá trị của chữ “Tín” và sức mạnh từ lời giới thiệu tự nhiên',
-    excerpt:
-      'Ba tháng đầu tiên chuyển sang bộ phận kinh doanh tại ANZ mà không có khách hàng đã dạy lại bài học sâu sắc nhất về sự tử tế từ những việc nhỏ nhất.',
-    content: [
-      'Khi mới từ bộ phận Vận hành (Operations) chuyển sang bộ phận Kinh doanh (Sales) tại ANZ, 90 ngày đầu tiên trôi qua trong áp lực nặng nề vì không có khách hàng mở mới. Bản thân lúc đó không có sự hoạt ngôn của một nhân viên bán hàng lâu năm.',
-      'Bước ngoặt đến vào tháng thứ tư, khi chính các đồng nghiệp ở bộ phận thẩm định, vận hành và các đối tác cũ bắt đầu chủ động giới thiệu khách hàng. Lý do đến từ những năm làm hậu cần trước đó: mỗi hồ sơ qua tay đều được xử lý rõ ràng, đúng hẹn và hỗ trợ đồng nghiệp tận tình.',
-      'Trải nghiệm đó định hình triết lý làm nghề suốt gần hai thập kỷ: Không cần là người nói hay nhất trong phòng, nhưng hãy là người đáng tin cậy nhất. Khi khách hàng cảm nhận được sự an toàn của gia đình họ được đặt lên trên chỉ tiêu doanh số, họ sẽ tự nguyện gắn bó dài lâu.',
-    ],
-    keyTakeaways: [
-      'Uy tín được bồi đắp từ thái độ làm việc chỉn chu khi chưa ai chú ý.',
-      'Tỷ lệ duy trì hợp đồng phản ánh chính xác nhất đạo đức của người cố vấn.',
-      'Sự chân thành tạo nên mạng lưới giới thiệu bền vững hơn mọi kỹ thuật bán hàng.',
-    ],
-  },
-  {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
-    index: '03',
+    index: '05',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 09, 2026',
     readTime: '5 phút đọc',
@@ -135,7 +280,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
-    index: '04',
+    index: '06',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
     readTime: '4 phút đọc',
@@ -155,7 +300,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
-    index: '05',
+    index: '07',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 08, 2026',
     readTime: '5 phút đọc',
@@ -176,7 +321,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
-    index: '06',
+    index: '08',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
     readTime: '4 phút đọc',
@@ -219,6 +364,70 @@ const BOOKS = [
     note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi cột mốc lớn đều được kiến tạo từ hệ thống những thói quen chuẩn mực được lặp lại mỗi ngày.',
   },
 ];
+
+function renderArticleContent(content: string | string[]) {
+  const blocks = Array.isArray(content)
+    ? content
+    : content
+        .split(/\n\s*\n/)
+        .map((b) => b.trim())
+        .filter(Boolean);
+
+  return (
+    <div className="space-y-5 text-[15px] sm:text-base text-[#3B443F] font-light leading-[1.95]">
+      {blocks.map((block, idx) => {
+        // Heading 2
+        if (block.startsWith('## ')) {
+          return (
+            <h4
+              key={idx}
+              className="font-serif text-2xl sm:text-[26px] text-[#181F1C] pt-6 pb-2 border-b border-[#E4E1D8] font-normal leading-snug"
+            >
+              {block.replace(/^##\s*/, '')}
+            </h4>
+          );
+        }
+
+        // Italic lead paragraph / quote
+        if (block.startsWith('*') && block.endsWith('*')) {
+          const innerText = block.slice(1, -1);
+          return (
+            <div
+              key={idx}
+              className="font-serif italic text-base sm:text-lg text-[#26312B] leading-[1.75] pl-5 border-l-2 border-[#008746] bg-[#F2EFE9]/60 py-3 px-4 rounded-r-xs my-4"
+            >
+              {innerText}
+            </div>
+          );
+        }
+
+        // Bullet list
+        if (block.includes('\n- ') || block.startsWith('- ')) {
+          const items = block
+            .split('\n')
+            .map((line) => line.trim())
+            .filter((line) => line.startsWith('- '));
+          return (
+            <ul key={idx} className="space-y-2.5 my-3 pl-1">
+              {items.map((item, itemIdx) => (
+                <li
+                  key={itemIdx}
+                  className="flex items-start gap-3 text-[15px] text-[#3B443F] font-light leading-[1.8]"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#008746] mt-2.5 shrink-0" />
+                  <span>{item.replace(/^-\s*/, '')}</span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+
+        // Standard paragraph
+        return <p key={idx}>{block}</p>;
+      })}
+    </div>
+  );
+}
 
 export function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -266,6 +475,9 @@ export function App() {
     selectedCategory === 'Tất cả'
       ? ARTICLES
       : ARTICLES.filter((a) => a.category === selectedCategory);
+
+  const featuredArticles = filteredArticles.filter((a) => a.featured);
+  const archiveArticles = filteredArticles.filter((a) => !a.featured);
 
   const metrics = [
     { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản & Tín dụng quốc tế' },
@@ -622,16 +834,16 @@ export function App() {
         </div>
       </section>
 
-      {/* 5. GÓC NHÌN & LỜI KHUYÊN — MINIMALIST EDITORIAL JOURNAL (NO REPEATED PHOTO THUMBNAILS!) */}
+      {/* 5. GÓC NHÌN & BÀI VIẾT — ARCHITECTURAL EDITORIAL JOURNAL */}
       <section id="goc-nhin" className="py-28 lg:py-36 bg-[#F2EFE9]/50 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
             <div>
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                02 / GÓC NHÌN &amp; BÀI VIẾT
+                02 / GÓC NHÌN &amp; BÀI VIẾT CHUYÊN SÂU
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C]">
-                Chia Sẻ Về Tài Chính, Sự Nghiệp &amp; Cuộc Sống
+                Chia Sẻ Về Tài Chính, Quản Trị &amp; Cuộc Sống
               </h2>
             </div>
 
@@ -657,42 +869,117 @@ export function App() {
             </div>
           </div>
 
-          {/* Clean Editorial Index Rows (Like Harvard Business Review / Kinfolk) */}
-          <div className="border-t border-[#DCD8CE]">
-            {filteredArticles.map((article) => (
-              <article
-                key={article.id}
-                onClick={() => setActiveArticle(article)}
-                className="group py-9 sm:py-11 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 transition-colors px-2 sm:px-4"
-              >
-                <div className="lg:col-span-2 flex items-center gap-4">
-                  <span className="font-serif text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
-                    {article.index}
-                  </span>
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746]">
-                    {article.category}
-                  </span>
-                </div>
+          {/* Featured Spotlight Grid (Top 3 New Articles with Curated Photography) */}
+          {featuredArticles.length > 0 && (
+            <div className="mb-20">
+              <div className="flex items-center justify-between mb-8 pb-3 border-b border-[#DCD8CE]">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
+                  TIÊU ĐIỂM BÀI VIẾT MỚI &bull; SPOTLIGHT
+                </span>
+                <span className="text-xs text-[#858E89] font-light">
+                  {featuredArticles.length} bài viết nổi bật
+                </span>
+              </div>
 
-                <div className="lg:col-span-5">
-                  <h3 className="font-serif text-2xl sm:text-[28px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.25] transition-colors">
-                    {article.title}
-                  </h3>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredArticles.map((article) => (
+                  <article
+                    key={article.id}
+                    onClick={() => setActiveArticle(article)}
+                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-6 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
+                  >
+                    <div>
+                      {/* Photo Thumbnail */}
+                      {article.image && (
+                        <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] ring-1 ring-inset ring-[#181F1C]/[0.06] mb-5">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-editorial"
+                          />
+                        </div>
+                      )}
 
-                <div className="lg:col-span-4">
-                  <p className="text-sm text-[#56605B] font-light leading-[1.8] line-clamp-2">
-                    {article.excerpt}
-                  </p>
-                </div>
+                      {/* Category & Read Time */}
+                      <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.16em] mb-3">
+                        <span className="text-[#008746] font-medium">{article.category}</span>
+                        <span className="text-[#858E89]">{article.readTime}</span>
+                      </div>
 
-                <div className="lg:col-span-1 flex lg:justify-end items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746]">
-                  <span>Đọc</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
-              </article>
-            ))}
-          </div>
+                      {/* Title */}
+                      <h3 className="font-serif text-xl sm:text-[22px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.3] transition-colors mb-3.5">
+                        {article.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-xs sm:text-sm text-[#56605B] font-light leading-[1.8] line-clamp-3 mb-6">
+                        {article.excerpt}
+                      </p>
+                    </div>
+
+                    {/* Footer Row */}
+                    <div className="pt-4 border-t border-[#EAE7DF] flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746] transition-colors">
+                      <span className="font-serif text-sm text-[#858E89]">{article.index}</span>
+                      <span className="inline-flex items-center gap-1.5 font-medium">
+                        Đọc toàn văn
+                        <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </span>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Archive Index Rows */}
+          {archiveArticles.length > 0 && (
+            <div>
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#DCD8CE]">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#858E89] font-medium">
+                  DANH MỤC LƯU TRỮ &bull; ARCHIVE INDEX
+                </span>
+                <span className="text-xs text-[#858E89] font-light">
+                  {archiveArticles.length} bài viết
+                </span>
+              </div>
+
+              <div className="border-t border-[#DCD8CE]">
+                {archiveArticles.map((article) => (
+                  <article
+                    key={article.id}
+                    onClick={() => setActiveArticle(article)}
+                    className="group py-8 sm:py-9 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 transition-colors px-2 sm:px-4"
+                  >
+                    <div className="lg:col-span-2 flex items-center gap-4">
+                      <span className="font-serif text-xl sm:text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
+                        {article.index}
+                      </span>
+                      <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746]">
+                        {article.category}
+                      </span>
+                    </div>
+
+                    <div className="lg:col-span-5">
+                      <h3 className="font-serif text-xl sm:text-[24px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.3] transition-colors">
+                        {article.title}
+                      </h3>
+                    </div>
+
+                    <div className="lg:col-span-4">
+                      <p className="text-sm text-[#56605B] font-light leading-[1.8] line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                    </div>
+
+                    <div className="lg:col-span-1 flex lg:justify-end items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746]">
+                      <span>Đọc</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1520,48 +1807,81 @@ export function App() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full bg-[#FAF9F5] border border-[#DCD8CE] p-8 sm:p-14 max-h-[88vh] overflow-y-auto relative"
+              className="max-w-3xl w-full bg-[#FAF9F5] border border-[#DCD8CE] p-6 sm:p-12 max-h-[90vh] overflow-y-auto relative rounded-[4px] shadow-2xl"
             >
               <button
                 type="button"
                 onClick={() => setActiveArticle(null)}
-                className="absolute top-6 right-6 p-2 text-[#56605B] hover:text-[#181F1C]"
+                className="absolute top-6 right-6 p-2 text-[#56605B] hover:text-[#181F1C] z-10 transition-colors"
                 aria-label="Đóng"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="space-y-6">
-                <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#008746]">
+                <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#008746]">
                   <span>{activeArticle.category}</span>
+                  <span>&bull;</span>
+                  <span>{activeArticle.date}</span>
                   <span>&bull;</span>
                   <span className="text-[#858E89]">{activeArticle.readTime}</span>
                 </div>
 
-                <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#181F1C] leading-[1.2]">
+                <h3 className="font-serif text-2xl sm:text-4xl font-normal text-[#181F1C] leading-[1.25]">
                   {activeArticle.title}
                 </h3>
 
+                {activeArticle.image && (
+                  <figure className="my-6">
+                    <div className="overflow-hidden aspect-[16/9] sm:aspect-[16/8] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
+                      <img
+                        src={activeArticle.image}
+                        alt={activeArticle.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {activeArticle.imageCaption && (
+                      <figcaption className="mt-2.5 text-[11px] uppercase tracking-[0.12em] text-[#858E89] text-right font-light italic">
+                        {activeArticle.imageCaption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+
                 <div className="h-[1px] w-16 bg-[#0A3622]/30" />
 
-                <div className="space-y-5 text-[15px] text-[#3B443F] font-light leading-[1.95]">
-                  {activeArticle.content.map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))}
-                </div>
+                {renderArticleContent(activeArticle.content)}
 
-                <div className="mt-8 pt-6 border-t border-[#DCD8CE] space-y-3">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#008746] block">
-                    ĐÚC KẾT CỐT LÕI
+                <div className="mt-10 pt-6 pb-6 px-6 bg-[#0A3622]/[0.04] border border-[#0A3622]/15 rounded-[4px] space-y-4">
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium block">
+                    ĐÚC KẾT THỰC TẾ &bull; BÀI HỌC CỐT LÕI
                   </span>
-                  <ul className="space-y-2 text-sm text-[#181F1C] font-light">
+                  <ul className="space-y-3 text-sm text-[#181F1C] font-light leading-[1.75]">
                     {activeArticle.keyTakeaways.map((pt, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
-                        <span className="text-[#008746]">&mdash;</span>
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="text-[#008746] font-serif font-bold text-base leading-none mt-0.5">&mdash;</span>
                         <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F2EFE9]/50 p-5 rounded-[4px]">
+                  <div>
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-[#008746] block mb-1">
+                      CỐ VẤN RIÊNG TƯ &bull; KHÁNH VÂN
+                    </span>
+                    <p className="text-xs text-[#56605B] font-light">
+                      Bạn quan tâm đến cơ chế chuyển giao gia sản hoặc tối ưu dòng tiền dài hạn?
+                    </p>
+                  </div>
+                  <a
+                    href="#dong-hanh"
+                    onClick={() => setActiveArticle(null)}
+                    className="inline-flex items-center justify-center px-4 py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] transition-colors rounded-[2px] shrink-0"
+                  >
+                    Đặt Lịch Tham Vấn 1-1
+                  </a>
                 </div>
               </div>
             </motion.div>
