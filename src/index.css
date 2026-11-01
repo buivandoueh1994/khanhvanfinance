@@ -8,26 +8,31 @@
     background-color: #FAF9F5;
     color: #181F1C;
     font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     background-color: #FAF9F5;
     color: #181F1C;
     font-weight: 300;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Minimalist Luxury Underline Input */
+/* Minimalist Luxury Underline Input — Optimized for Mobile (prevents iOS auto-zoom) */
 .editorial-input {
   width: 100%;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #D5D1C7;
   padding: 0.85rem 0;
-  font-size: 0.925rem;
+  font-size: 16px; /* 16px minimum prevents iOS Safari from automatically zooming into form fields */
   color: #181F1C;
   font-weight: 400;
   transition: border-color 0.3s ease;
+  border-radius: 0;
 }
 
 .editorial-input::placeholder {
@@ -40,8 +45,23 @@
   border-bottom-color: #0A3622;
 }
 
+/* Mobile App Smooth Scrolling & Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Native App Feel Utilities */
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -50,6 +70,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: #D5D1C7;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

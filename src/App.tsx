@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Check,
   Menu,
+  Share2,
   X,
 } from 'lucide-react';
 
@@ -374,14 +376,14 @@ function renderArticleContent(content: string | string[]) {
         .filter(Boolean);
 
   return (
-    <div className="space-y-5 text-[15px] sm:text-base text-[#3B443F] font-light leading-[1.95]">
+    <div className="space-y-6 text-[16px] sm:text-[17px] text-[#2F3833] font-light leading-[1.85] sm:leading-[1.95] tracking-[0.01em]">
       {blocks.map((block, idx) => {
         // Heading 2
         if (block.startsWith('## ')) {
           return (
             <h4
               key={idx}
-              className="font-serif text-2xl sm:text-[26px] text-[#181F1C] pt-6 pb-2 border-b border-[#E4E1D8] font-normal leading-snug"
+              className="font-serif text-xl sm:text-[26px] text-[#181F1C] pt-6 pb-2.5 border-b border-[#E4E1D8] font-normal leading-snug mt-2"
             >
               {block.replace(/^##\s*/, '')}
             </h4>
@@ -394,7 +396,7 @@ function renderArticleContent(content: string | string[]) {
           return (
             <div
               key={idx}
-              className="font-serif italic text-base sm:text-lg text-[#26312B] leading-[1.75] pl-5 border-l-2 border-[#008746] bg-[#F2EFE9]/60 py-3 px-4 rounded-r-xs my-4"
+              className="font-serif italic text-[16px] sm:text-lg text-[#222E27] leading-[1.75] pl-4 sm:pl-5 border-l-[3px] border-[#008746] bg-[#F2EFE9]/70 py-3.5 px-4 rounded-r-[4px] my-5"
             >
               {innerText}
             </div>
@@ -408,11 +410,11 @@ function renderArticleContent(content: string | string[]) {
             .map((line) => line.trim())
             .filter((line) => line.startsWith('- '));
           return (
-            <ul key={idx} className="space-y-2.5 my-3 pl-1">
+            <ul key={idx} className="space-y-3 my-4 pl-1">
               {items.map((item, itemIdx) => (
                 <li
                   key={itemIdx}
-                  className="flex items-start gap-3 text-[15px] text-[#3B443F] font-light leading-[1.8]"
+                  className="flex items-start gap-3 text-[15px] sm:text-[16px] text-[#343F39] font-light leading-[1.8]"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#008746] mt-2.5 shrink-0" />
                   <span>{item.replace(/^-\s*/, '')}</span>
@@ -454,6 +456,18 @@ export function App() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent background scroll when modal or mobile menu is open (Native App UX)
+  useEffect(() => {
+    if (activeArticle || lightbox || mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeArticle, lightbox, mobileMenuOpen]);
 
   const navItems = [
     { label: 'Câu chuyện', href: '#cau-chuyen' },
@@ -531,7 +545,7 @@ export function App() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 text-[#181F1C]"
+            className="lg:hidden p-2 text-[#181F1C] min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
             aria-label="Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -546,22 +560,22 @@ export function App() {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden"
             >
-              <div className="px-6 py-8 flex flex-col gap-5">
+              <div className="px-6 py-6 flex flex-col gap-2">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs uppercase tracking-[0.2em] text-[#181F1C] py-1.5 border-b border-[#E4E1D8]/60"
+                    className="text-xs uppercase tracking-[0.2em] text-[#181F1C] py-2.5 min-h-[44px] flex items-center border-b border-[#E4E1D8]/60 active:text-[#008746] transition-colors"
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="pt-3 flex items-center justify-between">
+                <div className="pt-4 flex items-center justify-between">
                   <a
                     href="#lien-he"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs uppercase tracking-[0.2em] text-[#008746] font-medium"
+                    className="text-xs uppercase tracking-[0.2em] text-[#008746] font-medium min-h-[44px] flex items-center"
                   >
                     Kết nối riêng &rarr;
                   </a>
@@ -570,7 +584,7 @@ export function App() {
                       href={ZALO_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622]"
+                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622] min-h-[44px] px-2"
                     >
                       <span>Zalo</span>
                     </a>
@@ -578,7 +592,7 @@ export function App() {
                       href={FACEBOOK_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622]"
+                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#0A3622] min-h-[44px] px-2"
                     >
                       <span>Facebook</span>
                     </a>
@@ -847,32 +861,34 @@ export function App() {
               </h2>
             </div>
 
-            {/* Minimalist Filter Tabs — Single Crisp Row */}
-            <div className="flex flex-wrap lg:flex-nowrap items-center gap-6 border-b border-[#DCD8CE] pb-2 shrink-0">
-              {categories.map((cat) => {
-                const active = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    type="button"
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`whitespace-nowrap text-[11px] uppercase tracking-[0.16em] pb-2 -mb-[9px] transition-colors ${
-                      active
-                        ? 'text-[#0A3622] border-b-2 border-[#0A3622] font-medium'
-                        : 'text-[#858E89] hover:text-[#181F1C] font-light'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
+            {/* Minimalist Filter Tabs — Swipeable Rail on Mobile, Crisp Row on Desktop */}
+            <div className="w-full lg:w-auto -mx-6 px-6 sm:mx-0 sm:px-0 overflow-x-auto no-scrollbar border-b border-[#DCD8CE] pb-2 shrink-0">
+              <div className="flex items-center gap-5 sm:gap-6 min-w-max">
+                {categories.map((cat) => {
+                  const active = selectedCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`whitespace-nowrap text-[11px] sm:text-xs uppercase tracking-[0.16em] py-2 sm:py-1 pb-2 -mb-[9px] transition-colors min-h-[44px] flex items-center ${
+                        active
+                          ? 'text-[#0A3622] border-b-2 border-[#0A3622] font-semibold'
+                          : 'text-[#858E89] hover:text-[#181F1C] font-light'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Featured Spotlight Grid (Top 3 New Articles with Curated Photography) */}
           {featuredArticles.length > 0 && (
-            <div className="mb-20">
-              <div className="flex items-center justify-between mb-8 pb-3 border-b border-[#DCD8CE]">
+            <div className="mb-16 sm:mb-20">
+              <div className="flex items-center justify-between mb-6 sm:mb-8 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
                   TIÊU ĐIỂM BÀI VIẾT MỚI &bull; SPOTLIGHT
                 </span>
@@ -881,12 +897,12 @@ export function App() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {featuredArticles.map((article) => (
                   <article
                     key={article.id}
                     onClick={() => setActiveArticle(article)}
-                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-6 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
+                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-5 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 active:scale-[0.99] hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
                   >
                     <div>
                       {/* Photo Thumbnail */}
@@ -918,7 +934,7 @@ export function App() {
                     </div>
 
                     {/* Footer Row */}
-                    <div className="pt-4 border-t border-[#EAE7DF] flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746] transition-colors">
+                    <div className="pt-4 border-t border-[#EAE7DF] flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746] transition-colors min-h-[44px]">
                       <span className="font-serif text-sm text-[#858E89]">{article.index}</span>
                       <span className="inline-flex items-center gap-1.5 font-medium">
                         Đọc toàn văn
@@ -948,7 +964,7 @@ export function App() {
                   <article
                     key={article.id}
                     onClick={() => setActiveArticle(article)}
-                    className="group py-8 sm:py-9 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 transition-colors px-2 sm:px-4"
+                    className="group py-6 sm:py-9 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 active:bg-[#F2EFE9] transition-colors px-2 sm:px-4"
                   >
                     <div className="lg:col-span-2 flex items-center gap-4">
                       <span className="font-serif text-xl sm:text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
@@ -1739,7 +1755,9 @@ export function App() {
       {/* FLOATING QUICK CONTACT BUTTONS — MANULIFE EMERALD STYLE + GENTLE BREATHING HALO */}
       <aside
         aria-label="Kênh kết nối trực tiếp Khánh Vân"
-        className="fixed bottom-6 right-5 sm:right-6 z-40 flex flex-col gap-4 items-end pointer-events-auto select-none"
+        className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col gap-3.5 sm:gap-4 items-end pointer-events-auto select-none transition-all duration-300 ${
+          activeArticle || lightbox ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'
+        }`}
       >
         {/* 1. NÚT ZALO CHÍNH THỨC (MANULIFE EMERALD) */}
         <div className="group relative flex items-center justify-end">
@@ -1792,7 +1810,7 @@ export function App() {
         </div>
       </aside>
 
-      {/* EDITORIAL ARTICLE READER MODAL */}
+      {/* EDITORIAL ARTICLE READER MODAL — NATIVE MOBILE APP FULLSCREEN SHEET & DESKTOP LUXURY MODAL */}
       <AnimatePresence>
         {activeArticle && (
           <motion.div
@@ -1800,26 +1818,73 @@ export function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveArticle(null)}
-            className="fixed inset-0 z-50 bg-[#181F1C]/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-50 bg-[#181F1C]/75 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-6 lg:p-8"
           >
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 20, opacity: 0 }}
+              exit={{ y: 40, opacity: 0 }}
+              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-3xl w-full bg-[#FAF9F5] border border-[#DCD8CE] p-6 sm:p-12 max-h-[90vh] overflow-y-auto relative rounded-[4px] shadow-2xl"
+              className="w-full h-[100dvh] sm:h-auto sm:max-h-[88vh] sm:max-w-3xl bg-[#FAF9F5] sm:border sm:border-[#DCD8CE] flex flex-col overflow-hidden sm:rounded-[6px] shadow-2xl relative"
             >
-              <button
-                type="button"
-                onClick={() => setActiveArticle(null)}
-                className="absolute top-6 right-6 p-2 text-[#56605B] hover:text-[#181F1C] z-10 transition-colors"
-                aria-label="Đóng"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              {/* STICKY TOP APP HEADER BAR */}
+              <div className="sticky top-0 z-30 bg-[#FAF9F5]/96 backdrop-blur-md border-b border-[#E4E1D8] px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setActiveArticle(null)}
+                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] min-h-[44px] min-w-[44px] -ml-2 px-2.5 transition-colors active:text-[#0A3622]"
+                  aria-label="Quay lại danh mục bài viết"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="font-medium text-[11px] sm:text-xs">Quay lại</span>
+                </button>
 
-              <div className="space-y-6">
-                <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#008746]">
+                <div className="flex items-center gap-2 max-w-[170px] xs:max-w-[220px] sm:max-w-sm truncate text-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#008746] shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#0A3622] font-medium truncate">
+                    {activeArticle.category}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator
+                          .share({
+                            title: activeArticle.title,
+                            text: activeArticle.excerpt,
+                            url: window.location.href,
+                          })
+                          .catch(() => {});
+                      } else {
+                        navigator.clipboard?.writeText(window.location.href);
+                        alert('Đã sao chép liên kết bài viết vào bộ nhớ tạm.');
+                      }
+                    }}
+                    className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-[#008746] hover:text-[#0A3622] min-h-[44px] min-w-[44px] justify-center px-2 transition-colors font-medium active:scale-95"
+                    aria-label="Chia sẻ bài viết"
+                  >
+                    <Share2 className="w-4 h-4" />
+                    <span className="hidden sm:inline text-[11px]">Chia sẻ</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveArticle(null)}
+                    className="hidden sm:flex items-center justify-center min-h-[44px] min-w-[44px] text-[#56605B] hover:text-[#181F1C] transition-colors -mr-2"
+                    aria-label="Đóng"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* SCROLLABLE ARTICLE BODY (OVERSCROLL-CONTAIN NATIVE TOUCH) */}
+              <div className="flex-1 overflow-y-auto px-5 sm:px-12 py-6 sm:py-10 space-y-6 overscroll-contain">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746]">
                   <span>{activeArticle.category}</span>
                   <span>&bull;</span>
                   <span>{activeArticle.date}</span>
@@ -1827,13 +1892,13 @@ export function App() {
                   <span className="text-[#858E89]">{activeArticle.readTime}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-4xl font-normal text-[#181F1C] leading-[1.25]">
+                <h3 className="font-serif text-2xl sm:text-[34px] lg:text-4xl font-normal text-[#181F1C] leading-[1.25] tracking-tight">
                   {activeArticle.title}
                 </h3>
 
                 {activeArticle.image && (
                   <figure className="my-6">
-                    <div className="overflow-hidden aspect-[16/9] sm:aspect-[16/8] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
+                    <div className="overflow-hidden aspect-[16/10] sm:aspect-[16/8] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
                       <img
                         src={activeArticle.image}
                         alt={activeArticle.title}
@@ -1841,7 +1906,7 @@ export function App() {
                       />
                     </div>
                     {activeArticle.imageCaption && (
-                      <figcaption className="mt-2.5 text-[11px] uppercase tracking-[0.12em] text-[#858E89] text-right font-light italic">
+                      <figcaption className="mt-2.5 text-[11px] uppercase tracking-[0.12em] text-[#858E89] text-left sm:text-right font-light italic">
                         {activeArticle.imageCaption}
                       </figcaption>
                     )}
@@ -1852,11 +1917,11 @@ export function App() {
 
                 {renderArticleContent(activeArticle.content)}
 
-                <div className="mt-10 pt-6 pb-6 px-6 bg-[#0A3622]/[0.04] border border-[#0A3622]/15 rounded-[4px] space-y-4">
+                <div className="mt-10 pt-6 pb-6 px-5 sm:px-6 bg-[#0A3622]/[0.04] border border-[#0A3622]/15 rounded-[4px] space-y-4">
                   <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium block">
                     ĐÚC KẾT THỰC TẾ &bull; BÀI HỌC CỐT LÕI
                   </span>
-                  <ul className="space-y-3 text-sm text-[#181F1C] font-light leading-[1.75]">
+                  <ul className="space-y-3 text-sm sm:text-[15px] text-[#181F1C] font-light leading-[1.75]">
                     {activeArticle.keyTakeaways.map((pt, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <span className="text-[#008746] font-serif font-bold text-base leading-none mt-0.5">&mdash;</span>
@@ -1866,19 +1931,19 @@ export function App() {
                   </ul>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F2EFE9]/50 p-5 rounded-[4px]">
+                <div className="mt-8 pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F2EFE9]/60 p-5 sm:p-6 rounded-[4px] mb-8">
                   <div>
                     <span className="text-[11px] uppercase tracking-[0.18em] text-[#008746] block mb-1">
                       CỐ VẤN RIÊNG TƯ &bull; KHÁNH VÂN
                     </span>
-                    <p className="text-xs text-[#56605B] font-light">
+                    <p className="text-xs sm:text-sm text-[#56605B] font-light leading-relaxed">
                       Bạn quan tâm đến cơ chế chuyển giao gia sản hoặc tối ưu dòng tiền dài hạn?
                     </p>
                   </div>
                   <a
                     href="#dong-hanh"
                     onClick={() => setActiveArticle(null)}
-                    className="inline-flex items-center justify-center px-4 py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] transition-colors rounded-[2px] shrink-0"
+                    className="inline-flex items-center justify-center px-5 py-3.5 sm:py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] active:scale-[0.98] transition-all rounded-[2px] shrink-0 text-center font-medium min-h-[44px]"
                   >
                     Đặt Lịch Tham Vấn 1-1
                   </a>
@@ -1897,40 +1962,42 @@ export function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightbox(null)}
-            className="fixed inset-0 z-50 bg-[#181F1C]/90 backdrop-blur-xs flex items-center justify-center p-4 sm:p-10"
+            className="fixed inset-0 z-50 bg-[#181F1C]/92 backdrop-blur-xs flex items-center justify-center p-2 sm:p-8"
           >
             <motion.div
               initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.97, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-4xl w-full bg-[#FAF9F5] p-4 sm:p-6"
+              className="max-w-4xl w-full bg-[#FAF9F5] p-3 sm:p-6 rounded-[4px] overflow-hidden"
             >
-              <div className="relative bg-[#181F1C] flex items-center justify-center max-h-[75vh]">
+              <div className="relative bg-[#181F1C] flex items-center justify-center max-h-[70vh] sm:max-h-[75vh] rounded-[2px] overflow-hidden">
                 <img
                   src={lightbox.src}
                   alt={lightbox.title}
-                  className="max-h-[75vh] w-auto object-contain"
+                  className="max-h-[70vh] sm:max-h-[75vh] w-auto object-contain"
                 />
                 <button
                   type="button"
                   onClick={() => setLightbox(null)}
-                  className="absolute top-4 right-4 p-2 bg-[#FAF9F5] text-[#181F1C]"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 rounded-full bg-black/60 sm:bg-[#FAF9F5] text-white sm:text-[#181F1C] flex items-center justify-center backdrop-blur-xs z-20 min-h-[44px] min-w-[44px]"
                   aria-label="Đóng"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
-              <div className="pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.22em] text-[#008746] block">
                     {lightbox.fig}
                   </span>
-                  <h4 className="font-serif text-2xl font-normal text-[#181F1C] mt-0.5">
+                  <h4 className="font-serif text-xl sm:text-2xl font-normal text-[#181F1C] mt-0.5">
                     {lightbox.title}
                   </h4>
                 </div>
-                <p className="text-xs text-[#56605B] font-light">{lightbox.subtitle}</p>
+                <p className="text-xs text-[#56605B] font-light max-w-sm sm:text-right">
+                  {lightbox.subtitle}
+                </p>
               </div>
             </motion.div>
           </motion.div>
