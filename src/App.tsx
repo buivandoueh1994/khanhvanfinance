@@ -1033,7 +1033,7 @@ export function App() {
             </div>
           </div>
 
-          {/* 3 Mentorship & Team Culture Photos (Each Appears Only Once on the Page) */}
+          {/* 6 Curated Mentorship, Culture & Leadership Photos in 2x3 Architectural Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-28">
             <figure
               onClick={() =>
@@ -1046,7 +1046,7 @@ export function App() {
               }
               className="cursor-pointer group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg"
                   alt="Chị Khánh Vân đứng lớp đào tạo"
@@ -1069,7 +1069,7 @@ export function App() {
               }
               className="cursor-pointer group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg"
                   alt="Chúc mừng các Quản lý SM thăng cấp"
@@ -1084,23 +1084,92 @@ export function App() {
             <figure
               onClick={() =>
                 setLightbox({
-                  src: '/images/DoiNgu_ChiVan_TapTheQuanLyNuTinhHoa.jpg',
-                  fig: 'FIG. 12 — COLLECTIVE LEADERSHIP',
-                  title: 'Tập Thể Nữ Quản Lý & Cộng Sự Tinh Hoa',
-                  subtitle: 'Đội ngũ quản lý chuyên nghiệp, đồng điệu và gắn kết tại văn phòng Manulife.',
+                  src: '/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg',
+                  fig: 'FIG. 12 — STRATEGIC SANCTUARY',
+                  title: 'Cố Vấn Chiến Lược & Hệ Sinh Thái Quản Lý F1',
+                  subtitle: 'Chị Khánh Vân cùng các nữ quản lý nòng cốt tại khu sofa thư giãn view thành phố cao tầng.',
                 })
               }
               className="cursor-pointer group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
-                  src="/images/DoiNgu_ChiVan_TapTheQuanLyNuTinhHoa.jpg"
-                  alt="Tập thể nữ quản lý và cộng sự của chị Khánh Vân"
+                  src="/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg"
+                  alt="Không gian cố vấn chiến lược F1 của chị Khánh Vân"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 12 &mdash; Đội ngũ quản lý kế cận chuyên nghiệp &amp; đồng lòng
+                FIG. 12 &mdash; Không gian cố vấn chiến lược quản lý F1
+              </figcaption>
+            </figure>
+
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg',
+                  fig: 'FIG. 13 — DIGITAL WORKSPACE',
+                  title: 'Chuyển Giao Quy Trình Thực Chiến Trên Nền Tảng Số',
+                  subtitle: 'Đào tạo và kèm cặp 1-1 các quản lý trẻ khai thác công cụ kỹ thuật số trong tư vấn gia sản.',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+                <img
+                  src="/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg"
+                  alt="Chuyển giao quy trình thực chiến trên iPad"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
+              </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 13 &mdash; Chuyển giao quy trình thực chiến trên nền tảng số
+              </figcaption>
+            </figure>
+
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg',
+                  fig: 'FIG. 14 — HUMAN CONNECTION',
+                  title: 'Sự Đồng Lòng & Tình Cảm Gắn Kết Chân Thành',
+                  subtitle: 'Hơn 30 cộng sự trong đội ngũ nồng nhiệt chào đón và chúc mừng người thủ lĩnh.',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+                <img
+                  src="/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg"
+                  alt="Văn hóa gắn kết và sự đồng lòng của đội ngũ"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
+              </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 14 &mdash; Văn hóa gắn kết &amp; sự đồng lòng của đội ngũ
+              </figcaption>
+            </figure>
+
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
+                  fig: 'FIG. 15 — PINNACLE LEADERSHIP',
+                  title: 'Bản Lĩnh Đỉnh Cao Của Nhà Quản Lý Xuất Sắc',
+                  subtitle: 'Khoảnh khắc nâng cao cúp vàng ManPower trong đầm dạ hội xanh lục bảo quyền lực.',
+                })
+              }
+              className="cursor-pointer group"
+            >
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+                <img
+                  src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
+                  alt="Đỉnh cao vinh danh bản lĩnh quản lý C-Level"
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                />
+              </div>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                FIG. 15 &mdash; Đỉnh cao vinh danh bản lĩnh quản lý C-Level
               </figcaption>
             </figure>
           </div>
