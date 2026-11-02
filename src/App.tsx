@@ -7,6 +7,7 @@ import {
   Check,
   Menu,
   Share2,
+  ShieldCheck,
   X,
 } from 'lucide-react';
 
@@ -174,7 +175,11 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
 
 - Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.
 - Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.
-- Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.`,
+- Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.
+
+---
+
+*(*) Lưu ý tham chiếu & cảnh báo rủi ro đầu tư: Cơ cấu phân bổ tỷ lệ phí ban đầu nêu trên được trích dẫn tham chiếu theo Quy tắc & Điều khoản sản phẩm Bảo hiểm Liên kết Đơn vị Xanh Phú Quý Flex đã được Bộ Tài chính phê chuẩn. Bảo hiểm liên kết đơn vị là sản phẩm bảo hiểm kết hợp đầu tư; giá trị tài khoản hợp đồng và kết quả đầu tư thực tế dao động theo thị trường và không được cam kết cố định. Bên mua bảo hiểm chịu các rủi ro đầu tư theo quy định pháp luật và nên tham khảo kỹ Bảng minh họa quyền lợi chính thức do Manulife phát hành trước khi tham gia.*`,
     keyTakeaways: [
       'Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.',
       'Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.',
@@ -1876,14 +1881,18 @@ export function App() {
                     />
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-2 space-y-3">
                     <button
                       type="submit"
-                      className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3"
+                      className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3 min-h-[44px]"
                     >
                       <span>Gửi lời nhắn bảo mật</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
+                    <p className="text-[11px] text-[#858E89] font-light leading-relaxed flex items-center gap-1.5 pt-1">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#008746] shrink-0" />
+                      <span>Thông tin của bạn được cam kết bảo mật 100% theo Nghị định 13/2023/NĐ-CP và chỉ sử dụng cho mục đích liên hệ tư vấn cá nhân.</span>
+                    </p>
                   </div>
                 </form>
               )}
@@ -1925,6 +1934,17 @@ export function App() {
                 <span>Facebook Cá Nhân</span>
               </a>
             </div>
+          </div>
+
+          {/* COMPLIANCE & REGULATORY DISCLAIMER */}
+          <div className="py-8 border-b border-[#DCD8CE]/70 text-[11px] text-[#858E89] leading-[1.85] font-light space-y-2">
+            <p>
+              <strong className="text-[#56605B] font-medium uppercase tracking-[0.1em]">Tuyên bố miễn trừ trách nhiệm &amp; Tuân thủ:</strong>{' '}
+              Website <span className="text-[#56605B]">khanhvanfinance.com</span> là trang thông tin và thương hiệu cá nhân của bà Nguyễn Thị Khánh Vân — Giám đốc Vùng Cấp cao (Đại lý bảo hiểm độc lập thuộc Manulife Việt Nam). Các nội dung và góc nhìn chia sẻ trên website mang tính chất tham khảo chuyên môn và hoạch định tài chính cá nhân, không đại diện cho phát ngôn chính thức của Công ty TNHH Manulife (Việt Nam).
+            </p>
+            <p>
+              Mọi quyền lợi, điều khoản và điều kiện sản phẩm bảo hiểm được áp dụng theo Quy tắc và Điều khoản hợp đồng do Manulife Việt Nam phát hành và được Bộ Tài chính phê chuẩn. Các nhãn hiệu, logo và tên thương mại liên quan thuộc quyền sở hữu trí tuệ hợp pháp của Công ty TNHH Manulife (Việt Nam) và các tổ chức liên quan.
+            </p>
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#858E89] font-light">
