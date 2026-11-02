@@ -788,13 +788,13 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
-                  fig: 'FIG. 01 — ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
+                  fig: 'ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
                   title: 'Khánh Vân Cùng Hơn 35 Quản Lý Cấp Cao & Hệ Thống 500+ Nhân Sự',
                   subtitle:
                     'Chị Khánh Vân (Vest Trắng) ngồi trung tâm cùng dàn nữ tướng quản lý và chuyên viên tinh hoa tại sảnh văn phòng Manulife Việt Nam.',
                 })
               }
-              className="cursor-pointer group relative block"
+              className="cursor-zoom-in group relative block"
             >
               <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[4px] shadow-[0_16px_40px_-20px_rgba(10,54,34,0.18)] ring-1 ring-inset ring-[#181F1C]/[0.08]">
                 <img
@@ -802,16 +802,11 @@ export function App() {
                   alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
                   className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-700 ease-editorial"
                 />
-                {/* Visual affordance: Pill button on image */}
-                <div className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 bg-[#181F1C]/75 backdrop-blur-md text-white text-[10px] sm:text-[11px] uppercase tracking-[0.18em] px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] opacity-90 group-hover:opacity-100 group-hover:bg-[#0A3622] transition-all flex items-center gap-1.5 shadow-md">
-                  <span>Phóng to toàn cảnh</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </div>
               </div>
 
               <figcaption className="mt-3.5 sm:mt-4 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.14em] uppercase text-[#858E89]">
                 <span className="font-medium text-[#181F1C]">
-                  FIG. 01 &mdash; Khánh Vân cùng Đội ngũ Quản lý Tinh hoa Manulife Việt Nam
+                  Khánh Vân cùng Đội ngũ Quản lý Tinh hoa Manulife Việt Nam
                 </span>
                 <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
                   Trụ sở Manulife &bull; Hệ thống 64 Quản lý &amp; 500+ Nhân sự
@@ -888,12 +883,12 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg',
-                    fig: 'FIG. 02 — EXECUTIVE GOVERNANCE',
+                    fig: 'EXECUTIVE GOVERNANCE',
                     title: 'Tác Phong Chuẩn Mực & Văn Hóa Vận Hành Tại Bàn Họp Chiến Lược',
                     subtitle: 'Bài học từ 8 năm làm ngân hàng quốc tế: Lấy uy tín và sự cẩn trọng làm nền tảng.',
                   })
                 }
-                className="cursor-pointer group"
+                className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
@@ -902,9 +897,8 @@ export function App() {
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
-                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 02 &mdash; Tác phong chuẩn mực &amp; Bài học về chữ “Tín” từ nền tảng Banker</span>
-                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  Tác phong chuẩn mực &amp; Bài học về chữ “Tín” từ nền tảng Banker
                 </figcaption>
               </figure>
             </div>
@@ -918,12 +912,12 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
-                    fig: 'FIG. 03 — CLIENT TRUST',
+                    fig: 'CLIENT TRUST',
                     title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
                     subtitle: 'Minh chứng cao nhất cho chất lượng tư vấn chuẩn mực và dài hạn.',
                   })
                 }
-                className="cursor-pointer group"
+                className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
@@ -932,9 +926,8 @@ export function App() {
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
-                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 03 &mdash; Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (Bảo chứng niềm tin khách hàng)</span>
-                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (Bảo chứng niềm tin khách hàng)
                 </figcaption>
               </figure>
 
@@ -969,12 +962,12 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
-                    fig: 'FIG. 04 — C-LEVEL DIPLOMACY',
+                    fig: 'C-LEVEL DIPLOMACY',
                     title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) Manulife',
                     subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất.',
                   })
                 }
-                className="cursor-pointer group"
+                className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
@@ -983,9 +976,8 @@ export function App() {
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
-                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  <span>FIG. 04 &mdash; Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) Manulife</span>
-                  <span className="group-hover:text-[#0A3622]">Phóng to</span>
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) Manulife
                 </figcaption>
               </figure>
             </div>
@@ -1230,12 +1222,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
-                  fig: 'FIG. 05 — FAMILY SANCTUARY',
+                  fig: 'FAMILY SANCTUARY',
                   title: 'Tổ Ấm Bình Yên Bên Chồng Và Hai Con',
                   subtitle: 'Điểm tựa tinh thần lớn nhất phía sau hành trình sự nghiệp.',
                 })
               }
-              className="lg:col-span-7 cursor-pointer group"
+              className="lg:col-span-7 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
                 <img
@@ -1244,9 +1236,8 @@ export function App() {
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                <span>FIG. 05 &mdash; Tổ ấm bên người bạn đời và hai con</span>
-                <span className="group-hover:text-[#0A3622]">Xem ảnh</span>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                Tổ ấm bên người bạn đời và hai con
               </figcaption>
             </figure>
 
@@ -1254,12 +1245,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg',
-                  fig: 'FIG. 06 — MOTHERHOOD',
+                  fig: 'MOTHERHOOD',
                   title: 'Trọn Vẹn Từng Khoảnh Khắc Bên Con',
                   subtitle: 'Làm chủ thời gian để đồng hành cùng tuổi thơ của các con.',
                 })
               }
-              className="lg:col-span-5 cursor-pointer group"
+              className="lg:col-span-5 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
                 <img
@@ -1268,9 +1259,8 @@ export function App() {
                   className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex justify-between text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                <span>FIG. 06 &mdash; Khoảnh khắc yêu thương ngày thường</span>
-                <span className="group-hover:text-[#0A3622]">Xem ảnh</span>
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                Khoảnh khắc yêu thương ngày thường
               </figcaption>
             </figure>
           </div>
@@ -1281,12 +1271,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg',
-                  fig: 'FIG. 07 — PERSPECTIVE',
+                  fig: 'PERSPECTIVE',
                   title: 'Tầm Nhìn Rộng Mở & Khát Vọng Tự Do',
                   subtitle: 'Đón bình minh trên khinh khí cầu tại Cappadocia.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
@@ -1296,7 +1286,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 07 &mdash; Tầm nhìn rộng mở &amp; trải nghiệm thế giới
+                Tầm nhìn rộng mở &amp; trải nghiệm thế giới
               </figcaption>
             </figure>
 
@@ -1304,12 +1294,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg',
-                  fig: 'FIG. 08 — DISCIPLINE',
+                  fig: 'DISCIPLINE',
                   title: 'Kỷ Luật Rèn Luyện Thể Lực Bền Bỉ',
                   subtitle: 'Duy trì nguồn năng lượng dẻo dai thông qua luyện tập mỗi tuần.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
@@ -1319,7 +1309,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 08 &mdash; Kỷ luật bản thân &amp; rèn luyện thể chất
+                Kỷ luật bản thân &amp; rèn luyện thể chất
               </figcaption>
             </figure>
 
@@ -1327,12 +1317,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg',
-                  fig: 'FIG. 09 — COMPANIONSHIP',
+                  fig: 'COMPANIONSHIP',
                   title: 'Đồng Hành Bền Vững Cùng Người Bạn Đời',
                   subtitle: 'Sánh bước bên nhau trên mọi hành trình trong và ngoài nước.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
                 <img
@@ -1342,7 +1332,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 09 &mdash; Người bạn đời tri kỷ đồng hành
+                Người bạn đời tri kỷ đồng hành
               </figcaption>
             </figure>
           </div>
@@ -1541,12 +1531,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg',
-                  fig: 'FIG. 10 — EXECUTIVE TRAINING',
+                  fig: 'EXECUTIVE TRAINING',
                   title: 'Trực Tiếp Đứng Lớp Đào Tạo & Truyền Lửa',
                   subtitle: 'Chia sẻ kiến thức chuyên môn và kỹ năng quản trị tại văn phòng Manulife.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1556,7 +1546,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 10 &mdash; Trực tiếp đứng lớp đào tạo thực chiến
+                Trực tiếp đứng lớp đào tạo thực chiến
               </figcaption>
             </figure>
 
@@ -1564,12 +1554,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
-                  fig: 'FIG. 11 — SUCCESSION',
+                  fig: 'SUCCESSION',
                   title: 'Vinh Danh Các Quản Lý Cấp Cao Mới Thăng Cấp',
                   subtitle: 'Niềm tự hào khi đồng hành cùng cộng sự vươn lên vị trí Quản lý (SM).',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1579,7 +1569,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 11 &mdash; Chúc mừng các Quản lý cấp cao thăng cấp
+                Chúc mừng các Quản lý cấp cao thăng cấp
               </figcaption>
             </figure>
 
@@ -1587,12 +1577,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg',
-                  fig: 'FIG. 12 — STRATEGIC SANCTUARY',
+                  fig: 'STRATEGIC SANCTUARY',
                   title: 'Cố Vấn Chiến Lược & Hệ Sinh Thái Quản Lý F1',
                   subtitle: 'Chị Khánh Vân cùng các nữ quản lý nòng cốt tại khu sofa thư giãn view thành phố cao tầng.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1602,7 +1592,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 12 &mdash; Không gian cố vấn chiến lược quản lý F1
+                Không gian cố vấn chiến lược quản lý F1
               </figcaption>
             </figure>
 
@@ -1610,12 +1600,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg',
-                  fig: 'FIG. 13 — DIGITAL WORKSPACE',
+                  fig: 'DIGITAL WORKSPACE',
                   title: 'Chuyển Giao Quy Trình Thực Chiến Trên Nền Tảng Số',
                   subtitle: 'Đào tạo và kèm cặp 1-1 các quản lý trẻ khai thác công cụ kỹ thuật số trong tư vấn gia sản.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1625,7 +1615,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 13 &mdash; Chuyển giao quy trình thực chiến trên nền tảng số
+                Chuyển giao quy trình thực chiến trên nền tảng số
               </figcaption>
             </figure>
 
@@ -1633,12 +1623,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg',
-                  fig: 'FIG. 14 — HUMAN CONNECTION',
+                  fig: 'HUMAN CONNECTION',
                   title: 'Sự Đồng Lòng & Tình Cảm Gắn Kết Chân Thành',
                   subtitle: 'Hơn 30 cộng sự trong đội ngũ nồng nhiệt chào đón và chúc mừng người thủ lĩnh.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1648,7 +1638,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 14 &mdash; Văn hóa gắn kết &amp; sự đồng lòng của đội ngũ
+                Văn hóa gắn kết &amp; sự đồng lòng của đội ngũ
               </figcaption>
             </figure>
 
@@ -1656,12 +1646,12 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
-                  fig: 'FIG. 15 — PINNACLE LEADERSHIP',
+                  fig: 'PINNACLE LEADERSHIP',
                   title: 'Bản Lĩnh Đỉnh Cao Của Nhà Quản Lý Xuất Sắc',
                   subtitle: 'Khoảnh khắc nâng cao cúp vàng ManPower trong đầm dạ hội xanh lục bảo quyền lực.',
                 })
               }
-              className="cursor-pointer group"
+              className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
@@ -1671,7 +1661,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                FIG. 15 &mdash; Đỉnh cao vinh danh bản lĩnh quản lý C-Level
+                Đỉnh cao vinh danh bản lĩnh quản lý C-Level
               </figcaption>
             </figure>
           </div>
@@ -2174,10 +2164,7 @@ export function App() {
               </div>
               <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#008746] block">
-                    {lightbox.fig}
-                  </span>
-                  <h4 className="font-serif text-xl sm:text-2xl font-normal text-[#181F1C] mt-0.5">
+                  <h4 className="font-serif text-xl sm:text-2xl font-normal text-[#181F1C]">
                     {lightbox.title}
                   </h4>
                 </div>
