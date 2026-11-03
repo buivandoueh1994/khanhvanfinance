@@ -14,7 +14,8 @@
   body {
     background-color: #FAF9F5;
     color: #181F1C;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

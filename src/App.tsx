@@ -401,14 +401,14 @@ function renderArticleContent(content: string | string[]) {
         .filter(Boolean);
 
   return (
-    <div className="space-y-6 text-[16px] sm:text-[17px] text-[#2F3833] font-light leading-[1.85] sm:leading-[1.95] tracking-[0.01em]">
+    <div className="space-y-6 text-[16px] sm:text-[17px] text-[#242D28] font-normal leading-[1.85] sm:leading-[1.95] tracking-[0.01em]">
       {blocks.map((block, idx) => {
         // Heading 2
         if (block.startsWith('## ')) {
           return (
             <h4
               key={idx}
-              className="font-serif text-xl sm:text-[26px] text-[#181F1C] pt-6 pb-2.5 border-b border-[#E4E1D8] font-normal leading-snug mt-2"
+              className="font-sans font-semibold text-xl sm:text-[23px] text-[#181F1C] pt-6 pb-2.5 border-b border-[#E4E1D8] leading-snug mt-2 tracking-tight"
             >
               {block.replace(/^##\s*/, '')}
             </h4>
@@ -421,7 +421,7 @@ function renderArticleContent(content: string | string[]) {
           return (
             <div
               key={idx}
-              className="font-serif italic text-[16px] sm:text-lg text-[#222E27] leading-[1.75] pl-4 sm:pl-5 border-l-[3px] border-[#008746] bg-[#F2EFE9]/70 py-3.5 px-4 rounded-r-[4px] my-5"
+              className="font-serif italic text-[16px] sm:text-lg text-[#181F1C] leading-[1.75] pl-4 sm:pl-5 border-l-[3px] border-[#008746] bg-[#F2EFE9]/70 py-3.5 px-4 rounded-r-[4px] my-5"
             >
               {innerText}
             </div>
@@ -439,7 +439,7 @@ function renderArticleContent(content: string | string[]) {
               {items.map((item, itemIdx) => (
                 <li
                   key={itemIdx}
-                  className="flex items-start gap-3 text-[15px] sm:text-[16px] text-[#343F39] font-light leading-[1.8]"
+                  className="flex items-start gap-3 text-[15px] sm:text-[16px] text-[#242D28] font-normal leading-[1.8]"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#008746] mt-2.5 shrink-0" />
                   <span>{item.replace(/^-\s*/, '')}</span>
@@ -757,7 +757,7 @@ export function App() {
               <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-normal tracking-tight text-[#181F1C] leading-[1.05]">
                 Khánh Vân
               </h1>
-              <p className="font-serif italic text-2xl sm:text-[28px] text-[#3B443F] font-normal leading-[1.4] pt-1">
+              <p className="font-serif italic text-2xl sm:text-[28px] text-[#181F1C] font-normal leading-[1.4] pt-1">
                 “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
               </p>
             </div>
@@ -765,7 +765,7 @@ export function App() {
             {/* Right 6 Cols: Bio Summary & Quick Actions */}
             <div className="lg:col-span-6 space-y-6 lg:pt-2 flex flex-col justify-between h-full">
               <div className="h-[1px] w-16 bg-[#0A3622]/30 lg:hidden" />
-              <p className="text-[15px] sm:text-base text-[#56605B] leading-[1.9] font-light">
+              <p className="text-[15px] sm:text-base text-[#28322D] leading-[1.85] font-normal">
                 Khởi đầu từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến vị thế Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam và giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á (2021). Hành trình gần hai thập kỷ của Khánh Vân được dẫn dắt bởi niềm tin rằng sự minh bạch, kỷ luật và lòng thấu cảm là nền tảng bền vững nhất của mọi di sản.
               </p>
 
@@ -839,7 +839,7 @@ export function App() {
                 <div className="text-[11px] uppercase tracking-[0.16em] text-[#181F1C] font-medium pt-1">
                   {m.unit}
                 </div>
-                <p className="text-xs text-[#56605B] font-light leading-relaxed">{m.detail}</p>
+                <p className="text-xs text-[#28322D] font-normal leading-relaxed">{m.detail}</p>
               </div>
             ))}
           </div>
@@ -860,7 +860,7 @@ export function App() {
               </h2>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="font-serif italic text-2xl sm:text-[26px] text-[#3B443F] leading-[1.5]">
+              <p className="font-serif italic text-2xl sm:text-[26px] text-[#181F1C] leading-[1.5]">
                 “Làm tốt nhất từ những việc nhỏ nhất mỗi ngày. Khi bạn đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
               </p>
             </div>
@@ -872,13 +872,13 @@ export function App() {
               <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
                 CHƯƠNG I &mdash; 2009 ĐẾN 2017
               </span>
-              <h3 className="font-serif text-3xl sm:text-[34px] font-normal text-[#181F1C] leading-[1.22]">
+              <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
                 Nền tảng ANZ Bank và bài học để đời về chữ “Tín”
               </h3>
-              <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+              <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                 Trước khi vươn lên vị trí Top 1 Toàn Quốc ANZ năm 2017 mảng Tín dụng &amp; Thế chấp mua nhà, Khánh Vân từng trải qua 3 tháng đầu tiên chuyển sang bộ phận kinh doanh mà không có nổi một khách hàng, đứng trước nguy cơ bị cắt mã số.
               </p>
-              <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+              <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                 Không chọn cách bán hàng bất chấp, chính uy tín, sự cẩn trọng và tận tâm suốt những năm làm Vận hành (Operations) trước đó đã khiến đồng nghiệp và đối tác chủ động giới thiệu khách hàng cho chị. Bài học về sức mạnh của sự tử tế trở thành kim chỉ nam xuyên suốt sự nghiệp của Vân.
               </p>
             </div>
@@ -940,10 +940,10 @@ export function App() {
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
                   CHƯƠNG II &mdash; BƯỚC NGOẶT 2018
                 </span>
-                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
+                <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
                   Bước ra khỏi vùng an toàn &amp; lấy tỷ lệ duy trì làm thước đo danh dự
                 </h3>
-                <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                   Rời môi trường ngân hàng nước ngoài năm 2018 để kiến tạo sự nghiệp độc lập tại Manulife Việt Nam, Khánh Vân mang theo kỷ luật kiểm soát rủi ro của một Banker: tư vấn đúng và đủ, lấy sự gắn bó dài hạn của khách hàng làm danh dự nghề nghiệp.
                 </p>
               </div>
@@ -955,10 +955,10 @@ export function App() {
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] block">
                   CHƯƠNG III &mdash; 2018 ĐẾN NAY
                 </span>
-                <h3 className="font-serif text-3xl font-normal text-[#181F1C] leading-[1.25]">
+                <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
                   Nhà Quản lý Xuất sắc nhất Châu Á &amp; hệ sinh thái 500+ nhân sự
                 </h3>
-                <p className="text-[15px] text-[#56605B] leading-[1.9] font-light">
+                <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                   Năm 2021, chị trở thành đại diện duy nhất tại Việt Nam đoạt giải thưởng “Nhà Quản lý Xuất sắc nhất Châu Á” (Asia Trusted Life Agent &amp; Advisers Awards), đồng thời trực tiếp ươm mầm 64 Quản lý cấp cao và hơn 500 cộng sự.
                 </p>
               </div>
@@ -1065,12 +1065,12 @@ export function App() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-serif text-xl sm:text-[22px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.3] transition-colors mb-3.5">
+                      <h3 className="font-sans font-semibold text-lg sm:text-xl text-[#181F1C] group-hover:text-[#0A3622] leading-[1.35] transition-colors mb-3.5 tracking-tight">
                         {article.title}
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-xs sm:text-sm text-[#56605B] font-light leading-[1.8] line-clamp-3 mb-6">
+                      <p className="text-xs sm:text-sm text-[#28322D] font-normal leading-[1.75] line-clamp-3 mb-6">
                         {article.excerpt}
                       </p>
                     </div>
@@ -1118,13 +1118,13 @@ export function App() {
                     </div>
 
                     <div className="lg:col-span-5">
-                      <h3 className="font-serif text-xl sm:text-[24px] font-normal text-[#181F1C] group-hover:text-[#0A3622] leading-[1.3] transition-colors">
+                      <h3 className="font-sans font-semibold text-base sm:text-lg text-[#181F1C] group-hover:text-[#0A3622] leading-[1.4] transition-colors tracking-tight">
                         {article.title}
                       </h3>
                     </div>
 
                     <div className="lg:col-span-4">
-                      <p className="text-sm text-[#56605B] font-light leading-[1.8] line-clamp-2">
+                      <p className="text-sm text-[#28322D] font-normal leading-[1.75] line-clamp-2">
                         {article.excerpt}
                       </p>
                     </div>
@@ -1151,7 +1151,7 @@ export function App() {
             <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
               Những Cuốn Sách Định Hình Tư Duy &amp; Triết Lý Hành Động
             </h2>
-            <p className="text-[15px] sm:text-base text-[#56605B] font-light leading-[1.85] pt-1">
+            <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
               Sách là người thầy thầm lặng định hình nên nhân sinh quan, bản lĩnh điều hành và nguyên tắc sống của Khánh Vân. Dưới đây là 4 tác phẩm gối đầu giường cùng những bài học thực chiến rút ra từ gần hai thập kỷ làm nghề.
             </p>
           </div>
@@ -1173,13 +1173,13 @@ export function App() {
                   </div>
 
                   <div>
-                    <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                    <h3 className="font-sans font-semibold text-lg sm:text-xl text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
                       {book.title}
                     </h3>
-                    <p className="text-xs text-[#858E89] italic mt-1 font-light">Tác giả: {book.author}</p>
+                    <p className="text-xs text-[#6A756F] italic mt-1 font-normal">Tác giả: {book.author}</p>
                   </div>
 
-                  <p className="text-sm text-[#56605B] font-light leading-[1.8]">
+                  <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
                     {book.note}
                   </p>
                 </div>
@@ -1189,7 +1189,7 @@ export function App() {
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-medium block mb-2">
                     GÓC NHÌN TỪ KHÁNH VÂN
                   </span>
-                  <p className="text-xs sm:text-[13px] text-[#2F3833] font-light italic leading-[1.8]">
+                  <p className="font-serif italic text-base sm:text-[17px] text-[#181F1C] leading-[1.65]">
                     “{book.reflection}”
                   </p>
                 </div>
@@ -1212,12 +1212,14 @@ export function App() {
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 space-y-4">
-              <p className="font-serif italic text-2xl text-[#3B443F] leading-[1.5]">
-                “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp vinh danh, mà là sự bình an khi trở về nhà bên chồng và hai con.”
-              </p>
-              <p className="text-sm text-[#56605B] font-light leading-[1.85]">
-                Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
-              </p>
+              <div className="border-l-2 border-l-[#008746] pl-5 sm:pl-6 space-y-3">
+                <p className="font-serif italic text-xl sm:text-2xl text-[#181F1C] leading-[1.5]">
+                  “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp vinh danh, mà là sự bình an khi trở về nhà bên chồng và hai con.”
+                </p>
+                <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
+                  Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -1354,7 +1356,7 @@ export function App() {
             <h2 className="font-serif text-4xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
               Ba Trục Hợp Tác Chiến Lược Cùng Khánh Vân
             </h2>
-            <p className="text-[15px] sm:text-base text-[#56605B] font-light leading-[1.85] pt-1">
+            <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
               Dù bạn là chủ gia đình mong muốn thiết lập cơ chế chuyển giao tài sản an tâm, một chuyên viên quản lý tài chính khát khao bứt phá sự nghiệp, hay một tổ chức tìm kiếm diễn giả truyền cảm hứng — Khánh Vân luôn sẵn sàng đồng hành với sự chuẩn mực và tận tâm cao nhất.
             </p>
           </div>
@@ -1372,19 +1374,19 @@ export function App() {
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                  <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
                     Hoạch Định Dòng Tiền &amp; Chuyển Giao Gia Sản
                   </h3>
-                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#858E89] mt-2 font-medium">
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#6A756F] mt-2 font-medium">
                     Phù hợp: Chủ doanh nghiệp &bull; Gia đình tài sản lớn &bull; C-Level
                   </span>
                 </div>
 
-                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
                   Thiết kế cơ chế tích lũy tài sản dài hạn đến 99 tuổi, bảo đảm đường đi pháp lý rõ ràng để gia sản được tiếp nối êm thấm giữa các thế hệ mà không đánh đổi bằng tranh chấp tình thân.
                 </p>
 
-                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
                     <span>Lập trình sẵn quyền thừa kế hợp pháp qua hợp đồng tích lũy dài hạn.</span>
@@ -1428,7 +1430,7 @@ export function App() {
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                  <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
                     Đồng Hành Phát Triển Quản Lý Kế Cận (F1)
                   </h3>
                   <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#008746] mt-2 font-medium">
@@ -1436,11 +1438,11 @@ export function App() {
                   </span>
                 </div>
 
-                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
                   Chương trình kèm cặp 1-1 trực tiếp cùng Khánh Vân. Chuyển giao toàn bộ quy trình vận hành và nghệ thuật xây dựng hệ sinh thái kinh doanh độc lập đạt chuẩn Top 1 Châu Á.
                 </p>
 
-                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
                     <span>Lộ trình chuyển dịch an toàn 90 ngày từ bàn giấy ngân hàng sang thị trường.</span>
@@ -1484,19 +1486,19 @@ export function App() {
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-[26px] font-normal text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors">
+                  <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
                     Diễn Giả Sự Kiện &amp; Đào Tạo Doanh Nghiệp
                   </h3>
-                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#858E89] mt-2 font-medium">
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#6A756F] mt-2 font-medium">
                     Phù hợp: Doanh nghiệp &bull; Ngân hàng &bull; Diễn đàn phụ nữ lãnh đạo
                   </span>
                 </div>
 
-                <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
                   Chia sẻ thực chiến tại các hội nghị, hội thảo lãnh đạo và chương trình đào tạo nội bộ về nghệ thuật bán hàng bằng sự tử tế, văn hóa dịch vụ chuẩn mực và lãnh đạo thấu cảm.
                 </p>
 
-                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#2F3833] font-light">
+                <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
                     <span>Keynote Speaker tại các ngày hội tài chính, ngân hàng và tuyển dụng.</span>
@@ -1680,10 +1682,10 @@ export function App() {
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
                 PRIVATE CONCIERGE &amp; INQUIRY
               </span>
-              <h3 className="font-serif text-4xl font-normal text-[#181F1C] leading-[1.2]">
+              <h3 className="font-sans font-semibold text-2xl sm:text-3xl text-[#181F1C] leading-[1.25] tracking-tight">
                 Gửi Lời Nhắn Kết Nối Riêng Cùng Khánh Vân
               </h3>
-              <p className="text-sm text-[#56605B] font-light leading-[1.9]">
+              <p className="text-sm text-[#28322D] font-normal leading-[1.8]">
                 Mọi thông tin trao đổi về hoạch định tài chính gia đình hoặc định hướng chuyển dịch sự nghiệp của bạn đều được cam kết bảo mật tuyệt đối.
               </p>
 
@@ -1761,7 +1763,7 @@ export function App() {
                   <h4 className="font-serif text-3xl text-[#181F1C]">
                     Cảm ơn {formData.fullName} đã gửi lời nhắn.
                   </h4>
-                  <p className="text-sm text-[#56605B] font-light leading-[1.85]">
+                  <p className="text-sm text-[#28322D] font-normal leading-[1.85]">
                     Khánh Vân và trợ lý sẽ liên hệ trực tiếp qua số điện thoại{' '}
                     <span className="text-[#181F1C] font-normal">{formData.phone}</span> trong vòng 24 giờ làm việc.
                   </p>
@@ -2117,7 +2119,7 @@ export function App() {
                   <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium block">
                     ĐÚC KẾT THỰC TẾ &bull; BÀI HỌC CỐT LÕI
                   </span>
-                  <ul className="space-y-3 text-sm sm:text-[15px] text-[#181F1C] font-light leading-[1.75]">
+                  <ul className="space-y-3 text-sm sm:text-[15px] text-[#181F1C] font-normal leading-[1.75]">
                     {activeArticle.keyTakeaways.map((pt, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <span className="text-[#008746] font-serif font-bold text-base leading-none mt-0.5">&mdash;</span>
@@ -2132,7 +2134,7 @@ export function App() {
                     <span className="text-[11px] uppercase tracking-[0.18em] text-[#008746] block mb-1">
                       CỐ VẤN RIÊNG TƯ &bull; KHÁNH VÂN
                     </span>
-                    <p className="text-xs sm:text-sm text-[#56605B] font-light leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#28322D] font-normal leading-relaxed">
                       Bạn quan tâm đến cơ chế chuyển giao gia sản hoặc tối ưu dòng tiền dài hạn?
                     </p>
                   </div>
@@ -2188,7 +2190,7 @@ export function App() {
                     {lightbox.title}
                   </h4>
                 </div>
-                <p className="text-xs text-[#56605B] font-light max-w-sm sm:text-right">
+                <p className="text-xs sm:text-[13px] text-[#28322D] font-normal max-w-sm sm:text-right">
                   {lightbox.subtitle}
                 </p>
               </div>
