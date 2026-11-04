@@ -308,10 +308,57 @@ function buildGeminiContents(history = [], cleanMsg = '') {
   return merged;
 }
 
+function diceSimilarity(setA, setB) {
+  if (!setA || !setB || setA.size === 0 || setB.size === 0) return 0;
+  let intersection = 0;
+  for (const item of setA) {
+    if (setB.has(item)) intersection++;
+  }
+  return (2 * intersection) / (setA.size + setB.size);
+}
+
+function getWordSet(str = '') {
+  const words = normalizeVi(str)
+    .split(' ')
+    .filter((w) => w.length >= 2 && !STOP_WORDS.has(w));
+  return new Set(words);
+}
+
+// Check if a suggested question candidate has already been asked by the user in this conversation
+function wasAlreadyAsked(candidate = '', userQueries = []) {
+  const normCand = normalizeVi(candidate);
+  if (!normCand) return false;
+  const candSet = getWordSet(candidate);
+
+  for (const query of userQueries) {
+    const normQ = normalizeVi(query);
+    if (!normQ) continue;
+
+    // 1. Direct equality or full containment
+    if (normQ === normCand) return true;
+    if (normQ.includes(normCand)) return true;
+    if (normQ.length >= 25 && normCand.includes(normQ)) return true;
+
+    // 2. High semantic word overlap via Dice coefficient (captures paraphrased versions)
+    const qSet = getWordSet(query);
+    const score = diceSimilarity(candSet, qSet);
+    if (score >= 0.55) return true;
+  }
+  return false;
+}
+
 // Smart context-aware single follow-up question selector (High-probability next question based on dialogue)
 function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', detectedPhone = null) {
   // If user already provided a phone number, no follow-up question needed!
   if (detectedPhone) return null;
+
+  // Extract all user queries asked across the conversation
+  const userQueries = [
+    ...history
+      .filter((h) => h && (h.role === 'user' || h.role === 'client'))
+      .map((h) => h.content || ''),
+    cleanMsg,
+  ].filter(Boolean);
 
   const fullContext = [
     ...history.map((h) => h.content || ''),
@@ -321,18 +368,34 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     .join(' ')
     .toLowerCase();
 
+  // Helper to pick the first unasked candidate from a list
+  function pickNext(candidates) {
+    for (const cand of candidates) {
+      if (!wasAlreadyAsked(cand, userQueries)) {
+        return cand;
+      }
+    }
+    return null;
+  }
+
   // 1. Withdrawal, cash value, duration, cancellation, surrender
   if (
     fullContext.includes('rút tiền') ||
     fullContext.includes('10 năm') ||
     fullContext.includes('hủy hợp đồng') ||
     fullContext.includes('đóng phí bao lâu') ||
-    fullContext.includes('giá trị tài khoản')
+    fullContext.includes('giá trị tài khoản') ||
+    fullContext.includes('tạm ngưng') ||
+    fullContext.includes('đáo hạn') ||
+    fullContext.includes('dòng tiền')
   ) {
-    if (cleanMsg.toLowerCase().includes('hủy') || cleanMsg.toLowerCase().includes('ngưng')) {
-      return 'Nếu kẹt dòng tiền thì có phương án nào duy trì hợp đồng không Vân?';
-    }
-    return 'Sau 10 năm nếu rút một phần tiền thì quyền lợi bảo vệ có còn không?';
+    const nextQ = pickNext([
+      'Sau 10 năm nếu rút một phần tiền thì quyền lợi bảo vệ có còn không?',
+      'Nếu kẹt dòng tiền đột xuất thì có được tạm ngưng đóng phí linh hoạt không?',
+      'Thủ tục rút tiền từ Giá trị tài khoản hợp đồng cần những giấy tờ gì?',
+      'Vân gửi giúp mình bảng minh họa dòng tiền cụ thể qua Zalo nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
   // 2. Client provided age & budget (e.g. 32 tuổi, 20 triệu/năm, nam)
@@ -340,25 +403,36 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     (/\b\d{2}\s*tuổi\b/i.test(fullContext) || /\btuổi\s*\d{2}\b/i.test(fullContext)) &&
     (/\b\d+\s*(?:tr|triệu)\b/i.test(fullContext) || /ngân sách/i.test(fullContext))
   ) {
-    if (!fullContext.includes('rút')) {
-      return 'Gói này sau bao nhiêu năm thì tôi có thể rút tiền linh hoạt?';
-    }
-    return 'Thủ tục tham gia gói này cần chuẩn bị những giấy tờ gì?';
+    const nextQ = pickNext([
+      'Với ngân sách này thì quyền lợi nằm viện và tai nạn được bảo vệ bao nhiêu?',
+      'Gói này sau bao nhiêu năm thì tôi có thể rút tiền linh hoạt?',
+      'Thủ tục tham gia gói này cần chuẩn bị những giấy tờ gì?',
+      'Vân gửi phương án chi tiết kèm mức phí qua Zalo cho mình nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
-  // 3. Health card, hospital fee, inpatient
+  // 3. Health card, hospital fee, inpatient, cancer, titan, diamond
   if (
     fullContext.includes('thẻ sức khỏe') ||
     fullContext.includes('nằm viện') ||
     fullContext.includes('viện phí') ||
     fullContext.includes('kim cương') ||
     fullContext.includes('titan') ||
-    fullContext.includes('bảo lãnh')
+    fullContext.includes('bảo lãnh') ||
+    fullContext.includes('ngoại trú') ||
+    fullContext.includes('nha khoa') ||
+    fullContext.includes('bệnh hiểm nghèo') ||
+    fullContext.includes('ung thư')
   ) {
-    if (fullContext.includes('kim cương') || fullContext.includes('2 tỷ')) {
-      return 'Thẻ sức khỏe này có bảo lãnh viện phí tại Vinmec và Pháp Việt không?';
-    }
-    return 'Thẻ sức khỏe này có chi trả khám ngoại trú và nha khoa không Vân?';
+    const nextQ = pickNext([
+      'Thẻ sức khỏe này có bảo lãnh viện phí tại Vinmec và Pháp Việt không?',
+      'Thẻ sức khỏe này có chi trả khám ngoại trú và nha khoa không Vân?',
+      'Nếu đã có tiền sử bệnh từ trước thì có được tham gia thẻ sức khỏe không?',
+      'Hạn mức bồi thường tối đa 1 năm của thẻ sức khỏe là bao nhiêu?',
+      'Vân gửi mình bảng so sánh các hạng mức thẻ sức khỏe qua Zalo nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
   // 4. Children fund, education, future planning
@@ -366,9 +440,16 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     fullContext.includes('cho con') ||
     fullContext.includes('cho bé') ||
     fullContext.includes('học vấn') ||
-    fullContext.includes('cho cháu')
+    fullContext.includes('cho cháu') ||
+    fullContext.includes('đại học')
   ) {
-    return 'Gói tích lũy cho con này khi nào bé có thể rút tiền học đại học?';
+    const nextQ = pickNext([
+      'Gói tích lũy cho con này khi nào bé có thể rút tiền học đại học?',
+      'Nếu cha mẹ có rủi ro bất ngờ thì hợp đồng của con có được miễn đóng phí không?',
+      'Nên mua gói tích lũy đứng tên bố mẹ hay đứng tên bé sẽ lợi hơn?',
+      'Vân thiết kế giúp mình dự trù quỹ học vấn cho bé đến năm 18 tuổi nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
   // 5. Safety, Ministry of Finance, where money goes, bankruptcy
@@ -377,9 +458,16 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     fullContext.includes('phá sản') ||
     fullContext.includes('an toàn') ||
     fullContext.includes('bộ tài chính') ||
-    fullContext.includes('lừa đảo')
+    fullContext.includes('lừa đảo') ||
+    fullContext.includes('uy tín')
   ) {
-    return 'Nếu công ty bảo hiểm phá sản thì quyền lợi khách hàng giải quyết ra sao?';
+    const nextQ = pickNext([
+      'Nếu công ty bảo hiểm phá sản thì quyền lợi khách hàng giải quyết ra sao?',
+      'Bộ Tài chính và Quỹ bảo vệ người được bảo hiểm giám sát như thế nào?',
+      'Quy trình và thời gian thanh toán quyền lợi bảo hiểm khi có sự kiện ra sao?',
+      'Vân giải thích thêm giúp mình về các điều khoản loại trừ cần lưu ý nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
   // 6. Career, transition from bank, Manulife management
@@ -388,22 +476,41 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     fullContext.includes('banker') ||
     fullContext.includes('lộ trình') ||
     fullContext.includes('quản lý') ||
-    fullContext.includes('chuyển nghề')
+    fullContext.includes('chuyển nghề') ||
+    fullContext.includes('tuyển dụng')
   ) {
-    return 'Chính sách hỗ trợ tài chính ban đầu cho Quản lý chuyển từ Ngân hàng thế nào?';
+    const nextQ = pickNext([
+      'Chính sách hỗ trợ tài chính ban đầu cho Quản lý chuyển từ Ngân hàng thế nào?',
+      'Lộ trình đào tạo và thăng tiến cấp Quản lý tại Manulife diễn ra như thế nào?',
+      'Môi trường làm việc và cơ chế thưởng của khu vực Chị Vân ra sao?',
+      'Mình muốn hẹn trao đổi trực tiếp hoặc online 15 phút với Vân để hiểu rõ hơn',
+    ]);
+    if (nextQ) return nextQ;
   }
 
-  // 7. General inquiry / early stage
+  // 7. General inquiry / early stage / quote
   if (
     fullContext.includes('sản phẩm nào') ||
     fullContext.includes('gói phù hợp') ||
     fullContext.includes('tư vấn') ||
-    fullContext.includes('nên mua')
+    fullContext.includes('nên mua') ||
+    fullContext.includes('bảo hiểm nhân thọ')
   ) {
-    return 'Với ngân sách khoảng 20 triệu/năm thì nên phân bổ thế nào tối ưu nhất?';
+    const nextQ = pickNext([
+      'Với ngân sách khoảng 15-20 triệu/năm thì nên phân bổ bảo vệ như thế nào?',
+      'Độ tuổi 30-35 nên ưu tiên gói bảo vệ sức khỏe hay tích lũy hưu trí?',
+      'Để thiết kế bảng minh họa chuẩn nhất cho gia đình thì cần thông tin gì?',
+      'Vân gửi giúp mình bảng minh họa mẫu qua Zalo nhé',
+    ]);
+    if (nextQ) return nextQ;
   }
 
-  return 'Để thiết kế bảng minh họa chuẩn nhất cho gia đình thì cần thông tin gì?';
+  // Fallback (safe, unasked questions)
+  return pickNext([
+    'Để thiết kế bảng minh họa chuẩn nhất cho gia đình thì cần thông tin gì?',
+    'Quy trình bồi thường và thanh toán viện phí của Manulife mất bao lâu?',
+    'Vân gửi giúp mình phương án mẫu qua Zalo để tham khảo nhé',
+  ]);
 }
 
 // Generate a detailed executive summary of the customer's profile, needs, and questions for Telegram Lead Alert
