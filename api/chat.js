@@ -348,33 +348,37 @@ export default async function handler(req, res) {
     });
 
     let botReply = '';
+    const geminiModels = ['gemini-1.5-flash', 'gemini-2.0-flash'];
     for (const key of GEMINI_KEYS) {
-      try {
-        const geminiRes = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${key}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              systemInstruction: {
-                parts: [{ text: systemPrompt }],
-              },
-              contents,
-              generationConfig: {
-                temperature: 0.45,
-                maxOutputTokens: 650,
-              },
-            }),
+      if (botReply) break;
+      for (const model of geminiModels) {
+        try {
+          const geminiRes = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                systemInstruction: {
+                  parts: [{ text: systemPrompt }],
+                },
+                contents,
+                generationConfig: {
+                  temperature: 0.45,
+                  maxOutputTokens: 650,
+                },
+              }),
+            }
+          );
+          if (geminiRes.ok) {
+            const data = await geminiRes.json();
+            botReply =
+              data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+            if (botReply) break;
           }
-        );
-        if (geminiRes.ok) {
-          const data = await geminiRes.json();
-          botReply =
-            data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
-          if (botReply) break;
+        } catch (err) {
+          console.error(`Gemini call error (${model}):`, err);
         }
-      } catch (err) {
-        console.error('Gemini call error:', err);
       }
     }
 
