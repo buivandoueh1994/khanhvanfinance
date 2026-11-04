@@ -308,6 +308,104 @@ function buildGeminiContents(history = [], cleanMsg = '') {
   return merged;
 }
 
+// Smart context-aware single follow-up question selector (High-probability next question based on dialogue)
+function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', detectedPhone = null) {
+  // If user already provided a phone number, no follow-up question needed!
+  if (detectedPhone) return null;
+
+  const fullContext = [
+    ...history.map((h) => h.content || ''),
+    cleanMsg,
+    botReply,
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  // 1. Withdrawal, cash value, duration, cancellation, surrender
+  if (
+    fullContext.includes('rút tiền') ||
+    fullContext.includes('10 năm') ||
+    fullContext.includes('hủy hợp đồng') ||
+    fullContext.includes('đóng phí bao lâu') ||
+    fullContext.includes('giá trị tài khoản')
+  ) {
+    if (cleanMsg.toLowerCase().includes('hủy') || cleanMsg.toLowerCase().includes('ngưng')) {
+      return 'Nếu kẹt dòng tiền thì có phương án nào duy trì hợp đồng không Vân?';
+    }
+    return 'Sau 10 năm nếu rút một phần tiền thì quyền lợi bảo vệ có còn không?';
+  }
+
+  // 2. Client provided age & budget (e.g. 32 tuổi, 20 triệu/năm, nam)
+  if (
+    (/\b\d{2}\s*tuổi\b/i.test(fullContext) || /\btuổi\s*\d{2}\b/i.test(fullContext)) &&
+    (/\b\d+\s*(?:tr|triệu)\b/i.test(fullContext) || /ngân sách/i.test(fullContext))
+  ) {
+    if (!fullContext.includes('rút')) {
+      return 'Gói này sau bao nhiêu năm thì tôi có thể rút tiền linh hoạt?';
+    }
+    return 'Thủ tục tham gia gói này cần chuẩn bị những giấy tờ gì?';
+  }
+
+  // 3. Health card, hospital fee, inpatient
+  if (
+    fullContext.includes('thẻ sức khỏe') ||
+    fullContext.includes('nằm viện') ||
+    fullContext.includes('viện phí') ||
+    fullContext.includes('kim cương') ||
+    fullContext.includes('titan') ||
+    fullContext.includes('bảo lãnh')
+  ) {
+    if (fullContext.includes('kim cương') || fullContext.includes('2 tỷ')) {
+      return 'Thẻ sức khỏe này có bảo lãnh viện phí tại Vinmec và Pháp Việt không?';
+    }
+    return 'Thẻ sức khỏe này có chi trả khám ngoại trú và nha khoa không Vân?';
+  }
+
+  // 4. Children fund, education, future planning
+  if (
+    fullContext.includes('cho con') ||
+    fullContext.includes('cho bé') ||
+    fullContext.includes('học vấn') ||
+    fullContext.includes('cho cháu')
+  ) {
+    return 'Gói tích lũy cho con này khi nào bé có thể rút tiền học đại học?';
+  }
+
+  // 5. Safety, Ministry of Finance, where money goes, bankruptcy
+  if (
+    fullContext.includes('đi về đâu') ||
+    fullContext.includes('phá sản') ||
+    fullContext.includes('an toàn') ||
+    fullContext.includes('bộ tài chính') ||
+    fullContext.includes('lừa đảo')
+  ) {
+    return 'Nếu công ty bảo hiểm phá sản thì quyền lợi khách hàng giải quyết ra sao?';
+  }
+
+  // 6. Career, transition from bank, Manulife management
+  if (
+    fullContext.includes('ngân hàng') ||
+    fullContext.includes('banker') ||
+    fullContext.includes('lộ trình') ||
+    fullContext.includes('quản lý') ||
+    fullContext.includes('chuyển nghề')
+  ) {
+    return 'Chính sách hỗ trợ tài chính ban đầu cho Quản lý chuyển từ Ngân hàng thế nào?';
+  }
+
+  // 7. General inquiry / early stage
+  if (
+    fullContext.includes('sản phẩm nào') ||
+    fullContext.includes('gói phù hợp') ||
+    fullContext.includes('tư vấn') ||
+    fullContext.includes('nên mua')
+  ) {
+    return 'Với ngân sách khoảng 20 triệu/năm thì nên phân bổ thế nào tối ưu nhất?';
+  }
+
+  return 'Để thiết kế bảng minh họa chuẩn nhất cho gia đình thì cần thông tin gì?';
+}
+
 // Generate a detailed executive summary of the customer's profile, needs, and questions for Telegram Lead Alert
 async function generateLeadSummary(history = [], cleanMsg = '', detectedPhone = '') {
   const transcriptLines = [];
@@ -491,6 +589,7 @@ export default async function handler(req, res) {
         reply:
           'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!',
         matchedVideos: [],
+        suggestedQuestion: 'Tôi muốn tìm hiểu gói bảo hiểm phù hợp cho gia đình',
         detectedPhone: null,
       });
     }
@@ -687,9 +786,12 @@ export default async function handler(req, res) {
       ]);
     }
 
+    const suggestedQuestion = getSmartSuggestedQuestion(cleanMsg, history, botReply, detectedPhone);
+
     return res.status(200).json({
       reply: botReply,
       matchedVideos: matchedVideoCodes,
+      suggestedQuestion: suggestedQuestion || null,
       detectedPhone: detectedPhone || null,
     });
   } catch (err) {

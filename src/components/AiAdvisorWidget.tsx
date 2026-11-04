@@ -14,6 +14,7 @@ interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
   matchedVideos?: MatchedVideoRef[];
+  suggestedQuestion?: string | null;
   timestamp: string;
 }
 
@@ -111,6 +112,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
           role: 'assistant',
           content: data.reply || 'Vân đã nhận được tin nhắn và sẽ phản hồi bạn ngay nhé!',
           matchedVideos: data.matchedVideos || [],
+          suggestedQuestion: data.suggestedQuestion || null,
           timestamp: new Date().toLocaleTimeString('vi-VN', {
             hour: '2-digit',
             minute: '2-digit',
@@ -297,6 +299,25 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                             </div>
                           </button>
                         ))}
+                      </div>
+                    )}
+
+                    {/* 1 SMART CONTEXTUAL SUGGESTED FOLLOW-UP QUESTION */}
+                    {isBot && msg.suggestedQuestion && idx === messages.length - 1 && !isLoading && (
+                      <div className="mt-2 w-full max-w-[92%]">
+                        <button
+                          type="button"
+                          onClick={() => sendMessage(msg.suggestedQuestion!)}
+                          className="w-full text-left p-2.5 rounded-[8px] bg-white hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#00A758]/50 hover:border-[#0A3622] shadow-2xs hover:shadow-xs transition-all duration-200 flex items-center justify-between gap-2 group cursor-pointer active:scale-98"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Sparkles className="w-3.5 h-3.5 text-[#008746] group-hover:text-[#6EE7B7] shrink-0" />
+                            <span className="text-xs sm:text-[12.5px] font-medium line-clamp-2">
+                              {msg.suggestedQuestion}
+                            </span>
+                          </div>
+                          <Send className="w-3 h-3 text-[#008746] group-hover:text-[#6EE7B7] opacity-60 group-hover:opacity-100 shrink-0 transition-opacity" />
+                        </button>
                       </div>
                     )}
                   </div>
