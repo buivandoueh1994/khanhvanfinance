@@ -128,7 +128,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-14 items-end">
             <div className="lg:col-span-7 space-y-3">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-                03 / THƯ VIỆN VIDEO &amp; HỎI ĐÁP THỰC CHIẾN &bull; VIDEO ARCHIVE
+                02 / THƯ VIỆN VIDEO &amp; HỎI ĐÁP THỰC CHIẾN &bull; VIDEO ARCHIVE
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
                 109 Video Giải Mã Bảo Hiểm, Dòng Tiền &amp; Nghề Tư Vấn

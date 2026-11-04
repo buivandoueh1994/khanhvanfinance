@@ -685,8 +685,8 @@ export function App() {
 
   const navItems = [
     { label: 'Câu chuyện', href: '#cau-chuyen' },
-    { label: 'Góc nhìn', href: '#goc-nhin' },
     { label: 'Thư viện Video', href: '#thu-vien-video' },
+    { label: 'Góc nhìn', href: '#goc-nhin' },
     { label: 'Tủ sách', href: '#tu-sach' },
     { label: 'Cuộc sống', href: '#cuoc-song' },
     { label: 'Đồng hành', href: '#dong-hanh' },
@@ -1065,13 +1065,21 @@ export function App() {
         </div>
       </section>
 
+      {/* 4B. THƯ VIỆN VIDEO & HỎI ĐÁP THỰC CHIẾN (109 CATEGORIZED VIDEOS & SEARCH HUB) */}
+      <VideoLibrarySection
+        activeVideo={activeVideo}
+        onOpenVideo={(video) => openVideo(video)}
+        onCloseVideo={() => closeVideo()}
+        onAskQuestion={(video) => handleAskVideoQuestion(video)}
+      />
+
       {/* 5. GÓC NHÌN & BÀI VIẾT — ARCHITECTURAL EDITORIAL JOURNAL */}
       <section id="goc-nhin" className="py-28 lg:py-36 bg-[#F2EFE9]/50 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
             <div>
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                02 / GÓC NHÌN &amp; BÀI VIẾT CHUYÊN SÂU
+                03 / GÓC NHÌN &amp; BÀI VIẾT CHUYÊN SÂU
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C]">
                 Chia Sẻ Về Tài Chính, Quản Trị &amp; Cuộc Sống
@@ -1215,14 +1223,6 @@ export function App() {
           )}
         </div>
       </section>
-
-      {/* 5B. THƯ VIỆN VIDEO & HỎI ĐÁP THỰC CHIẾN (109 CATEGORIZED VIDEOS & SEARCH HUB) */}
-      <VideoLibrarySection
-        activeVideo={activeVideo}
-        onOpenVideo={(video) => openVideo(video)}
-        onCloseVideo={() => closeVideo()}
-        onAskQuestion={(video) => handleAskVideoQuestion(video)}
-      />
 
       {/* 6. TỦ SÁCH QUẢN TRỊ & GÓC NHÌN ĐỒNG HÀNH (CURATED EXECUTIVE READING & PERSONAL REFLECTIONS) */}
       <section id="tu-sach" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
