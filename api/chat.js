@@ -2,58 +2,6 @@
 // Hybrid AI Advisor (Core Persona + Master Playbook + Smart Retrieval + Multi-turn Memory + Conditional Telegram Lead Alert)
 
 import fs from 'fs';
-import pg from 'pg';
-const { Pool } = pg;
-
-let smartAssistantPool = null;
-function getSmartAssistantPool() {
-  if (!smartAssistantPool) {
-    smartAssistantPool = new Pool({
-      host: process.env.LOGS_PG_HOST || 'aws-0-ap-south-1.pooler.supabase.com',
-      port: Number(process.env.LOGS_PG_PORT) || 6543,
-      user: process.env.LOGS_PG_USER || 'postgres.lmnrvfuleaoknkegtuku',
-      password: process.env.LOGS_PG_PASSWORD || 'Goodcat!121800',
-      database: process.env.LOGS_PG_DATABASE || 'postgres',
-      ssl: { rejectUnauthorized: false },
-      max: 2,
-      idleTimeoutMillis: 30000,
-      connectionTimeoutMillis: 5000,
-    });
-  }
-  return smartAssistantPool;
-}
-
-// Log directly into Smart Assistant project's web_chat_logs table (https://lmnrvfuleaoknkegtuku.supabase.co)
-async function logToSmartAssistantDb({
-  sessionId = '',
-  visitorName = '',
-  visitorPhone = '',
-  cleanMsg = '',
-  botReply = '',
-  matchedVideoCodes = [],
-  pageUrl = '',
-}) {
-  try {
-    const p = getSmartAssistantPool();
-    await p.query(
-      `INSERT INTO web_chat_logs (session_id, visitor_name, visitor_phone, user_message, bot_reply, matched_videos, page_url)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-      [
-        sessionId || 'anon',
-        visitorName || null,
-        visitorPhone || null,
-        cleanMsg,
-        botReply,
-        JSON.stringify(matchedVideoCodes || []),
-        pageUrl || 'https://www.khanhvanfinance.com/',
-      ]
-    );
-    return true;
-  } catch (err) {
-    console.error('Error inserting into web_chat_logs (Smart Assistant DB):', err.message);
-    return false;
-  }
-}
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
 
@@ -66,6 +14,42 @@ const BUILTIN_G_KEY = [
 ].join('');
 
 const SUPABASE_KEY = BUILTIN_SB_KEY || (process.env.SUPABASE_KEY || '').trim();
+
+// Log directly into Project Chị Vân's dedicated web_chat_logs table (https://paaphwfpoiiowmthxtlp.supabase.co)
+async function logToChiVanChatLogs({
+  sessionId = '',
+  visitorName = '',
+  visitorPhone = '',
+  cleanMsg = '',
+  botReply = '',
+  matchedVideoCodes = [],
+  pageUrl = '',
+}) {
+  if (!SUPABASE_KEY) return false;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/web_chat_logs`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        session_id: sessionId || 'anon',
+        visitor_name: visitorName || null,
+        visitor_phone: visitorPhone || null,
+        user_message: cleanMsg,
+        bot_reply: botReply,
+        matched_videos: matchedVideoCodes || [],
+        page_url: pageUrl || 'https://www.khanhvanfinance.com/',
+      }),
+    });
+    return res.ok;
+  } catch (err) {
+    console.error('Error inserting into web_chat_logs (Chi Van DB):', err.message);
+    return false;
+  }
+}
 
 const GEMINI_KEYS = Array.from(
   new Set(
@@ -836,8 +820,8 @@ export default async function handler(req, res) {
         'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!';
       const suggestedQ = 'Tôi muốn tìm hiểu gói bảo hiểm phù hợp cho gia đình';
 
-      // Ensure even initial greetings are logged in both Smart Assistant (web_chat_logs) and Chị Vân DB
-      logToSmartAssistantDb({
+      // Ensure even initial greetings are logged in Project Chị Vân's web_chat_logs and post_history
+      logToChiVanChatLogs({
         sessionId,
         visitorName,
         visitorPhone,
@@ -1005,12 +989,12 @@ export default async function handler(req, res) {
     // 6. Compute smart contextual suggested follow-up question
     const suggestedQuestion = getSmartSuggestedQuestion(cleanMsg, history, botReply, detectedPhone);
 
-    // 7. Save full multi-turn conversation history to both Smart Assistant (web_chat_logs) & Chị Vân DB, and Telegram Lead Alert in parallel
+    // 7. Save chat log to Project Chị Vân (web_chat_logs + post_history) & Telegram Lead Alert in parallel
     const sideEffectTasks = [];
 
-    // Always log to Smart Assistant's web_chat_logs table
+    // Always log directly to Project Chị Vân's web_chat_logs table
     sideEffectTasks.push(
-      logToSmartAssistantDb({
+      logToChiVanChatLogs({
         sessionId,
         visitorName,
         visitorPhone,
