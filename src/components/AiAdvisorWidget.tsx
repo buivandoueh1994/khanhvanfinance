@@ -80,6 +80,13 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       }),
     };
 
+    const priorMessages = messages
+      .filter((m) => m.id !== 'welcome-msg')
+      .map((m) => ({
+        role: m.role,
+        content: m.content,
+      }));
+
     const nextHistory = [...messages, userMsg];
     setMessages(nextHistory);
     setInputValue('');
@@ -92,10 +99,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
         body: JSON.stringify({
           sessionId,
           message: text,
-          history: nextHistory.map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
+          history: priorMessages,
           pageUrl: typeof window !== 'undefined' ? window.location.href : '',
         }),
       });
