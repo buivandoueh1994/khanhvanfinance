@@ -661,6 +661,94 @@ function buildSystemPrompt(retrievedAngles = []) {
 ${contextBlocks ? `=========================================\n4. TÀI LIỆU THAM KHẢO BỔ SUNG:\n=========================================\n${contextBlocks}` : ''}`;
 }
 
+// Save full multi-turn conversation history & structured transcript to Project Chị Vân's Supabase DB
+async function saveConversationToDb({
+  sessionId = '',
+  visitorName = '',
+  visitorPhone = '',
+  cleanMsg = '',
+  botReply = '',
+  history = [],
+  detectedPhone = null,
+  matchedVideoCodes = [],
+  matchedAngles = [],
+  pageUrl = '',
+  suggestedQuestion = null,
+}) {
+  if (!SUPABASE_KEY) return false;
+
+  const cleanHistory = (history || []).filter(
+    (h) =>
+      h &&
+      h.content &&
+      !String(h.content).startsWith('Chào bạn! Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm') &&
+      !String(h.content).startsWith('Chào bạn! Để thiết kế gói giải pháp tài chính tối ưu')
+  );
+
+  const fullHistory = [
+    ...cleanHistory,
+    { role: 'user', content: cleanMsg },
+    { role: 'assistant', content: botReply },
+  ];
+
+  const fullTurnCount = Math.floor(fullHistory.length / 2);
+
+  const transcriptLines = fullHistory.map((m) => {
+    const isUser = m.role === 'user' || m.role === 'client';
+    const speaker = isUser ? (visitorName ? `Khách (${visitorName})` : 'Khách hàng') : 'Khánh Vân';
+    return `${speaker}: ${m.content}`;
+  });
+  const fullTranscript = transcriptLines.join('\n\n');
+
+  const logPayload = {
+    client_slug: 'khanh-van-chat',
+    topic_key: `${sessionId || 'anon'}-${Date.now()}`,
+    category: detectedPhone ? `LEAD_PHONE: ${detectedPhone}` : 'CHAT_LOG',
+    angle_summary: `[Khách: ${visitorName || 'Ẩn danh'} | SĐT: ${detectedPhone || 'Chưa có'}] Lượt ${fullTurnCount}: ${cleanMsg.slice(0, 140)}`,
+    facebook_post: cleanMsg,
+    website_article: {
+      bot_reply: botReply,
+      user_message: cleanMsg,
+      session_id: sessionId || null,
+      turn_count: fullTurnCount,
+      detected_phone: detectedPhone || null,
+      visitor_name: visitorName || null,
+      suggested_question: suggestedQuestion || null,
+      full_transcript: fullTranscript,
+      full_history: fullHistory,
+      updated_at: new Date().toISOString(),
+    },
+    linkedin_post: JSON.stringify({
+      sessionId,
+      visitorName,
+      visitorPhone: detectedPhone,
+      turnCount: fullTurnCount,
+      matchedVideoCodes,
+      matchedAngles: (matchedAngles || []).map((a) => (typeof a === 'string' ? a : a.angle_code)),
+      pageUrl,
+      suggestedQuestion,
+      fullTranscript,
+    }),
+    post_mode: 'advisory',
+  };
+
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(logPayload),
+    });
+    return res.ok;
+  } catch (e) {
+    console.error('Error saving chat conversation to Supabase:', e.message);
+    return false;
+  }
+}
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -689,14 +777,34 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Empty message' });
     }
 
-    // 1. Instant Smart Greeting (0ms latency for pure greetings)
+    // 1. Instant Smart Greeting (0ms latency for pure greetings, saved to DB)
     const normMsg = cleanMsg.toLowerCase().trim();
     if (/^(hello|hi|chào|chao|alo|xin chào|hey|hé lô|chào bạn|chào chị|chào chị vân)$/i.test(normMsg)) {
+      const greetingReply =
+        'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!';
+      const suggestedQ = 'Tôi muốn tìm hiểu gói bảo hiểm phù hợp cho gia đình';
+
+      // Ensure even initial greetings are logged in Project Chị Vân's Supabase DB
+      if (SUPABASE_KEY) {
+        saveConversationToDb({
+          sessionId,
+          visitorName,
+          visitorPhone,
+          cleanMsg,
+          botReply: greetingReply,
+          history: [],
+          detectedPhone: null,
+          matchedVideoCodes: [],
+          matchedAngles: [],
+          pageUrl,
+          suggestedQuestion: suggestedQ,
+        }).catch(() => {});
+      }
+
       return res.status(200).json({
-        reply:
-          'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!',
+        reply: greetingReply,
         matchedVideos: [],
-        suggestedQuestion: 'Tôi muốn tìm hiểu gói bảo hiểm phù hợp cho gia đình',
+        suggestedQuestion: suggestedQ,
         detectedPhone: null,
       });
     }
@@ -832,37 +940,26 @@ export default async function handler(req, res) {
     // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
     botReply = cleanReplyText(botReply);
 
-    // 7. Save chat log to Supabase & send Telegram lead alert ONLY when phone is present
-    const logPayload = {
-      client_slug: 'khanh-van-chat',
-      topic_key: `${sessionId}-${Date.now()}`,
-      category: detectedPhone ? `LEAD_PHONE: ${detectedPhone}` : 'CHAT_LOG',
-      angle_summary: `[Khách: ${visitorName || 'Ẩn danh'} | SĐT: ${detectedPhone || 'Chưa có'}] Hỏi: ${cleanMsg.slice(0, 180)}`,
-      facebook_post: cleanMsg,
-      website_article: botReply,
-      linkedin_post: JSON.stringify({
-        sessionId,
-        visitorName,
-        visitorPhone: detectedPhone,
-        matchedVideoCodes,
-        matchedAngles: matchedAngles.map((a) => a.angle_code),
-        pageUrl,
-      }),
-      post_mode: 'advisory',
-    };
+    // 6. Compute smart contextual suggested follow-up question
+    const suggestedQuestion = getSmartSuggestedQuestion(cleanMsg, history, botReply, detectedPhone);
 
+    // 7. Save full multi-turn conversation history to Supabase (Project Chị Vân) & Telegram Lead Alert in parallel
     const sideEffectTasks = [];
     if (SUPABASE_KEY) {
       sideEffectTasks.push(
-        fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
-          method: 'POST',
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: `Bearer ${SUPABASE_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(logPayload),
-        }).catch(() => {})
+        saveConversationToDb({
+          sessionId,
+          visitorName,
+          visitorPhone,
+          cleanMsg,
+          botReply,
+          history,
+          detectedPhone,
+          matchedVideoCodes,
+          matchedAngles,
+          pageUrl,
+          suggestedQuestion,
+        })
       );
     }
 
@@ -889,11 +986,9 @@ export default async function handler(req, res) {
     if (sideEffectTasks.length > 0) {
       await Promise.race([
         Promise.allSettled(sideEffectTasks),
-        new Promise((resolve) => setTimeout(resolve, 2000)),
+        new Promise((resolve) => setTimeout(resolve, 2500)),
       ]);
     }
-
-    const suggestedQuestion = getSmartSuggestedQuestion(cleanMsg, history, botReply, detectedPhone);
 
     return res.status(200).json({
       reply: botReply,

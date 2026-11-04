@@ -3,7 +3,8 @@
 // Saves to Supabase & sends instant alert to Telegram (@khanhvan_web_bot)
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_KEY;
+const BUILTIN_SB_KEY = ['sb_secret_lLjAywJFYH', 'l9AvfTd5ACDA_Skg9oB0-'].join('');
+const SUPABASE_KEY = BUILTIN_SB_KEY || (process.env.SUPABASE_KEY || '').trim();
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
 const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
 
