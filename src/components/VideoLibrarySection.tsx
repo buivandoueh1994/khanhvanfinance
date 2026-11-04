@@ -125,7 +125,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
       >
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           {/* SECTION HEADER */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-14 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-10 items-end">
             <div className="lg:col-span-7 space-y-3">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
                 02 / THƯ VIỆN VIDEO &amp; HỎI ĐÁP THỰC CHIẾN &bull; VIDEO ARCHIVE
@@ -136,82 +136,13 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             </div>
             <div className="lg:col-span-5 space-y-3">
               <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.8]">
-                Hệ thống thư viện phân loại theo <strong>04 thư mục chuyên đề</strong> giúp Khách hàng và hơn 500 cộng sự tra cứu nhanh mọi tình huống thực tế: từ bản chất dòng phí, quy tắc bồi thường đến lộ trình phát triển sự nghiệp.
+                Tra cứu nhanh các tình huống thực tế cùng Khánh Vân: từ bản chất dòng phí, quy tắc bồi thường, thẻ chăm sóc sức khỏe đến lộ trình phát triển sự nghiệp.
               </p>
             </div>
           </div>
 
-          {/* 4 STRUCTURED FOLDER CARDS (THƯ MỤC CHUYÊN ĐỀ) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10">
-            {VIDEO_FOLDERS.filter((f) => f.id !== 'all').map((folder) => {
-              const isSelected = selectedFolder === folder.id;
-              const count = folderCounts[folder.id] || 0;
-              return (
-                <button
-                  key={folder.id}
-                  type="button"
-                  onClick={() =>
-                    handleSelectFolder(isSelected ? 'all' : folder.id)
-                  }
-                  className={`text-left p-5 sm:p-6 rounded-[4px] border transition-all duration-300 flex flex-col justify-between group ${
-                    isSelected
-                      ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] shadow-[0_14px_34px_-12px_rgba(10,54,34,0.28)]'
-                      : 'bg-[#F2EFE9]/60 hover:bg-[#FAF9F5] text-[#181F1C] border-[#DCD8CE] hover:border-[#0A3622]/40'
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-current/10">
-                      <span
-                        className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-medium ${
-                          isSelected ? 'text-[#6EE7B7]' : 'text-[#008746]'
-                        }`}
-                      >
-                        <FolderOpen className="w-3.5 h-3.5" />
-                        <span>THƯ MỤC {folder.code}</span>
-                      </span>
-                      <span
-                        className={`text-[11px] px-2 py-0.5 rounded-[2px] font-medium ${
-                          isSelected
-                            ? 'bg-white/15 text-white'
-                            : 'bg-[#0A3622]/[0.06] text-[#0A3622]'
-                        }`}
-                      >
-                        {count} video
-                      </span>
-                    </div>
-                    <h3
-                      className={`font-sans font-semibold text-base sm:text-[17px] leading-[1.35] mb-2 ${
-                        isSelected ? 'text-white' : 'text-[#181F1C] group-hover:text-[#0A3622]'
-                      }`}
-                    >
-                      {folder.shortName}
-                    </h3>
-                    <p
-                      className={`text-xs leading-[1.65] line-clamp-2 ${
-                        isSelected ? 'text-[#EAE7DF]/90' : 'text-[#56605B]'
-                      }`}
-                    >
-                      {folder.desc}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-current/10 flex items-center justify-between text-[11px] uppercase tracking-[0.16em]">
-                    <span className={isSelected ? 'text-[#6EE7B7] font-medium' : 'text-[#0A3622] font-medium'}>
-                      {isSelected ? 'Đang mở thư mục này' : 'Mở thư mục'}
-                    </span>
-                    <ArrowRight
-                      className={`w-3.5 h-3.5 transition-transform ${
-                        isSelected ? 'translate-x-0.5 text-[#6EE7B7]' : 'group-hover:translate-x-1 text-[#0A3622]'
-                      }`}
-                    />
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* SEARCH BAR + SUB-TAG FILTER PILLS */}
-          <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 mb-14 space-y-4">
+          {/* SEARCH BAR + TOPIC FILTER PILLS */}
+          <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 mb-12 space-y-4">
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-stretch md:items-center justify-between">
               <div className="relative flex-1">
                 <Search className="w-4 h-4 text-[#6A756F] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -254,10 +185,10 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               </div>
             </div>
 
-            {/* Sub-tag Filter Rail */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1">
+            {/* Topic Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
               <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] shrink-0 mr-1">
-                Chủ đề nhánh:
+                Chủ đề:
               </span>
               {availableSubtags.map((tag) => {
                 const active = selectedSubtag === tag;
