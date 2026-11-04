@@ -2,6 +2,62 @@
 // Captures Leads from both the Chatbot Quick Lead Form and the Main Website Contact Form (#lien-he)
 // Saves to Supabase & sends instant alert to Telegram (@khanhvan_web_bot)
 
+import pg from 'pg';
+const { Pool } = pg;
+
+let smartAssistantPool = null;
+function getSmartAssistantPool() {
+  if (!smartAssistantPool) {
+    smartAssistantPool = new Pool({
+      host: process.env.LOGS_PG_HOST || 'aws-0-ap-south-1.pooler.supabase.com',
+      port: Number(process.env.LOGS_PG_PORT) || 6543,
+      user: process.env.LOGS_PG_USER || 'postgres.lmnrvfuleaoknkegtuku',
+      password: process.env.LOGS_PG_PASSWORD || 'Goodcat!121800',
+      database: process.env.LOGS_PG_DATABASE || 'postgres',
+      ssl: { rejectUnauthorized: false },
+      max: 2,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 5000,
+    });
+  }
+  return smartAssistantPool;
+}
+
+async function logLeadToSmartAssistantDb({
+  sessionId = '',
+  fullName = '',
+  phone = '',
+  email = '',
+  topic = '',
+  background = '',
+  note = '',
+  source = '',
+  telegramNotified = false,
+}) {
+  try {
+    const p = getSmartAssistantPool();
+    await p.query(
+      `INSERT INTO web_leads (session_id, full_name, phone, email, topic, background, note, source, telegram_notified)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+      [
+        sessionId || null,
+        fullName,
+        phone,
+        email || null,
+        topic || null,
+        background || null,
+        note || null,
+        source || null,
+        telegramNotified,
+      ]
+    );
+    return true;
+  } catch (err) {
+    console.error('Error inserting into web_leads (Smart Assistant DB):', err.message);
+    return false;
+  }
+}
+
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
 const BUILTIN_SB_KEY = ['sb_secret_lLjAywJFYH', 'l9AvfTd5ACDA_Skg9oB0-'].join('');
 const SUPABASE_KEY = BUILTIN_SB_KEY || (process.env.SUPABASE_KEY || '').trim();
@@ -113,34 +169,57 @@ export default async function handler(req, res) {
       }
     }
 
-    // 2. Save Lead to Chị Vân's Supabase DB (`paaphwfpoiiowmthxtlp`)
+    // 2. Save Lead to both Smart Assistant DB (web_leads) and Chị Vân DB (post_history)
+    const dbTasks = [];
+
+    // Always log to Smart Assistant's web_leads table
+    dbTasks.push(
+      logLeadToSmartAssistantDb({
+        sessionId,
+        fullName,
+        phone,
+        email,
+        topic,
+        background,
+        note,
+        source,
+        telegramNotified,
+      })
+    );
+
     if (SUPABASE_KEY) {
-      await fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
-        method: 'POST',
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          client_slug: 'khanh-van-lead',
-          topic_key: `${phone}-${Date.now()}`,
-          category: 'WEB_LEAD',
-          angle_summary: `${fullName} | ${phone} | ${topic}`,
-          facebook_post: note || topic,
-          website_article: JSON.stringify({
-            fullName,
-            phone,
-            email,
-            topic,
-            background,
-            note,
-            source,
-            telegramNotified,
+      dbTasks.push(
+        fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            client_slug: 'khanh-van-lead',
+            topic_key: `${phone}-${Date.now()}`,
+            category: 'WEB_LEAD',
+            angle_summary: `${fullName} | ${phone} | ${topic}`,
+            facebook_post: note || topic,
+            website_article: JSON.stringify({
+              fullName,
+              phone,
+              email,
+              topic,
+              background,
+              note,
+              source,
+              telegramNotified,
+            }),
+            post_mode: 'advisory',
           }),
-          post_mode: 'advisory',
-        }),
-      }).catch((e) => console.error('Save lead error:', e));
+        }).catch((e) => console.error('Save lead error to Chi Van DB:', e))
+      );
+    }
+
+    if (dbTasks.length > 0) {
+      await Promise.allSettled(dbTasks);
     }
 
     return res.status(200).json({
