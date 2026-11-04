@@ -71,15 +71,13 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
       const inTitle = v.title.toLowerCase().includes(q);
       const inSummary = v.summary.toLowerCase().includes(q);
       const inSubtag = v.subtag.toLowerCase().includes(q);
-      const inTranscript = v.paragraphs.some((p) => p.toLowerCase().includes(q));
-      return inTitle || inSummary || inSubtag || inTranscript;
+      return inTitle || inSummary || inSubtag;
     });
   }, [selectedFolder, selectedSubtag, searchQuery]);
 
   // Curated 6 spotlight videos when viewing 'all' with no search, otherwise top 6 of filtered
   const spotlightVideos = useMemo(() => {
     if (selectedFolder === 'all' && selectedSubtag === 'Tất cả' && !searchQuery.trim()) {
-      // Pick a balanced, ultra-high-view showcase across the 4 folders
       const preferredIds = [
         '1047431547259894', // 108K - Tiền đóng vào công ty bảo hiểm sẽ đi về đâu?
         '1530853344747478', // 73K - Kinh tế khó khăn: Do thời thế hay do chưa chuẩn bị quỹ dự phòng?
@@ -119,14 +117,6 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     }, 2500);
   };
 
-  // Related videos inside modal
-  const relatedVideos = useMemo(() => {
-    if (!activeVideo) return [];
-    return VIDEO_LIBRARY.filter(
-      (v) => v.folderId === activeVideo.folderId && v.id !== activeVideo.id
-    ).slice(0, 3);
-  }, [activeVideo]);
-
   return (
     <>
       <section
@@ -146,7 +136,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             </div>
             <div className="lg:col-span-5 space-y-3">
               <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.8]">
-                Hệ thống thư viện phân loại theo <strong>04 thư mục chuyên đề</strong> giúp Khách hàng và hơn 500 cộng sự tra cứu tức thì mọi tình huống thực tế: từ bản chất dòng phí, quy tắc bồi thường đến lộ trình phát triển sự nghiệp.
+                Hệ thống thư viện phân loại theo <strong>04 thư mục chuyên đề</strong> giúp Khách hàng và hơn 500 cộng sự tra cứu nhanh mọi tình huống thực tế: từ bản chất dòng phí, quy tắc bồi thường đến lộ trình phát triển sự nghiệp.
               </p>
             </div>
           </div>
@@ -223,7 +213,6 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
           {/* SEARCH BAR + SUB-TAG FILTER PILLS */}
           <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 mb-14 space-y-4">
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-stretch md:items-center justify-between">
-              {/* Instant Search Input */}
               <div className="relative flex-1">
                 <Search className="w-4 h-4 text-[#6A756F] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
@@ -245,7 +234,6 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                 )}
               </div>
 
-              {/* Reset / Status Counter */}
               <div className="flex items-center justify-between md:justify-end gap-3 shrink-0">
                 <span className="text-xs text-[#56605B]">
                   Hiển thị <strong className="text-[#0A3622]">{filteredVideos.length}</strong> / {VIDEO_LIBRARY.length} video
@@ -291,7 +279,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             </div>
           </div>
 
-          {/* TIER 1: 6 SPOTLIGHT VIDEO CARDS */}
+          {/* TIER 1: 6 SPOTLIGHT VIDEO CARDS WITH VISUAL THUMBNAILS */}
           {spotlightVideos.length > 0 ? (
             <div className="mb-16">
               <div className="flex items-center justify-between mb-6 sm:mb-8 pb-3 border-b border-[#DCD8CE]">
@@ -304,60 +292,78 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   </span>
                 </div>
                 <span className="text-xs text-[#858E89] font-light">
-                  Bấm vào từng chủ đề để xem Video &amp; Bản đúc kết chi tiết
+                  Bấm vào video để xem trực tiếp
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {spotlightVideos.map((video, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {spotlightVideos.map((video) => (
                   <article
                     key={video.id}
                     onClick={() => onOpenVideo(video)}
-                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-6 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/50 hover:shadow-[0_14px_34px_-15px_rgba(10,54,34,0.14)] transition-all duration-300 rounded-[4px]"
+                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] border border-[#DCD8CE] hover:border-[#0A3622]/50 hover:shadow-[0_16px_38px_-15px_rgba(10,54,34,0.16)] transition-all duration-300 rounded-[4px] overflow-hidden"
                   >
                     <div>
-                      {/* Top Meta Row: Folder Badge + Views */}
-                      <div className="flex items-center justify-between gap-2 pb-3.5 mb-4 border-b border-[#EAE7DF]">
-                        <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#008746] font-medium truncate">
-                          {video.folderShort}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-[11px] text-[#56605B] bg-[#F2EFE9] px-2.5 py-0.5 rounded-[2px] shrink-0 font-medium">
-                          <Eye className="w-3 h-3 text-[#008746]" />
-                          {video.views} lượt xem
-                        </span>
+                      {/* VIDEO THUMBNAIL CONTAINER */}
+                      <div className="relative aspect-[4/4.6] w-full bg-[#121715] overflow-hidden">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-editorial"
+                        />
+                        {/* Subtle gradient for badge legibility */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40 group-hover:via-black/20 transition-colors" />
+
+                        {/* Top Overlay: Folder Badge + Views */}
+                        <div className="absolute top-3.5 inset-x-3.5 flex items-center justify-between gap-2">
+                          <span className="text-[10px] uppercase tracking-[0.16em] text-white bg-[#0A3622]/90 backdrop-blur-xs px-2.5 py-1 rounded-[2px] font-medium">
+                            {video.folderShort}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-[11px] text-white bg-black/65 backdrop-blur-xs px-2.5 py-1 rounded-[2px] font-medium">
+                            <Eye className="w-3 h-3 text-[#4ADE80]" />
+                            {video.views} lượt xem
+                          </span>
+                        </div>
+
+                        {/* Center Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-14 h-14 rounded-full bg-[#0A3622]/90 group-hover:bg-[#008746] text-white flex items-center justify-center shadow-[0_8px_24px_rgba(0,0,0,0.45)] ring-2 ring-white/80 group-hover:scale-110 transition-all duration-300">
+                            <Play className="w-6 h-6 fill-current ml-0.5" />
+                          </div>
+                        </div>
+
+                        {/* Bottom Subtag inside thumbnail */}
+                        <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between">
+                          <span className="text-[10px] uppercase tracking-[0.16em] text-[#EAE7DF] bg-black/55 backdrop-blur-xs px-2.5 py-0.5 rounded-[2px]">
+                            {video.subtag}
+                          </span>
+                        </div>
                       </div>
 
-                      {/* Subtag */}
-                      <div className="mb-2">
-                        <span className="text-[10px] uppercase tracking-[0.16em] text-[#858E89]">
-                          {video.subtag}
-                        </span>
+                      {/* CARD BODY: TITLE & SHORT NOTE */}
+                      <div className="p-5 sm:p-6 pb-4">
+                        <h3 className="font-sans font-semibold text-base sm:text-[18px] text-[#181F1C] group-hover:text-[#0A3622] leading-[1.38] transition-colors mb-2.5 tracking-tight line-clamp-2">
+                          {video.title}
+                        </h3>
+
+                        <p className="text-xs sm:text-[13px] text-[#56605B] font-normal leading-[1.65] line-clamp-2">
+                          {video.summary}
+                        </p>
                       </div>
-
-                      {/* Editorial Headline */}
-                      <h3 className="font-sans font-semibold text-lg sm:text-[19px] text-[#181F1C] group-hover:text-[#0A3622] leading-[1.38] transition-colors mb-3.5 tracking-tight">
-                        {video.title}
-                      </h3>
-
-                      {/* Key Takeaway Summary */}
-                      <p className="text-xs sm:text-[13.5px] text-[#28322D] font-normal leading-[1.7] line-clamp-3 mb-6 bg-[#F2EFE9]/60 p-3.5 rounded-[3px] border-l-2 border-l-[#008746]/70">
-                        {video.summary}
-                      </p>
                     </div>
 
                     {/* Footer Action Bar */}
-                    <div className="pt-3.5 border-t border-[#EAE7DF] flex items-center justify-between gap-2">
-                      <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#0A3622] group-hover:text-[#008746] font-medium transition-colors">
-                        <span className="w-7 h-7 rounded-full bg-[#0A3622] group-hover:bg-[#008746] text-white flex items-center justify-center transition-colors">
-                          <Play className="w-3 h-3 fill-current ml-0.5" />
-                        </span>
-                        <span>Xem Video &amp; Đúc kết</span>
+                    <div className="px-5 sm:px-6 py-3.5 border-t border-[#EAE7DF] bg-[#F2EFE9]/40 flex items-center justify-between gap-2">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#0A3622] group-hover:text-[#008746] font-semibold transition-colors">
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                        <span>Xem Video</span>
                       </span>
 
                       <button
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
-                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1.5 rounded-[2px] hover:bg-[#F2EFE9] transition-colors"
+                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1 rounded-[2px] hover:bg-[#EAE7DF] transition-colors"
                         title="Sao chép link video này để gửi cho khách hàng hoặc đồng đội"
                       >
                         {copiedId === video.id ? (
@@ -388,12 +394,12 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             </div>
           )}
 
-          {/* TIER 2: STRUCTURED ARCHIVE DIRECTORY OF REMAINING VIDEOS */}
+          {/* TIER 2: STRUCTURED ARCHIVE DIRECTORY OF REMAINING VIDEOS WITH MINI THUMBNAILS */}
           {archiveVideos.length > 0 && (
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#0A3622] font-medium">
-                  DANH MỤC TRA CỨU NHANH &bull; {archiveVideos.length} CHỦ ĐỀ TIẾP THEO
+                  DANH MỤC TRA CỨU NHANH &bull; {archiveVideos.length} VIDEO TIẾP THEO
                 </span>
                 <span className="text-xs text-[#6A756F] font-light">
                   Tối ưu cho Đội ngũ tư vấn &amp; Khách hàng tra cứu theo tình huống
@@ -401,62 +407,76 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               </div>
 
               <div className="border-t border-[#DCD8CE] divide-y divide-[#DCD8CE]">
-                {visibleArchiveVideos.map((video, index) => (
+                {visibleArchiveVideos.map((video) => (
                   <article
                     key={video.id}
                     onClick={() => onOpenVideo(video)}
-                    className="group py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-4 lg:gap-6 items-center cursor-pointer hover:bg-[#F2EFE9]/70 transition-colors px-2 sm:px-4"
+                    className="group py-3.5 sm:py-4 grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center cursor-pointer hover:bg-[#F2EFE9]/70 transition-colors px-2 sm:px-3"
                   >
-                    {/* Folder & Views */}
-                    <div className="lg:col-span-3 flex items-center gap-3">
-                      <span className="font-serif text-base text-[#858E89] w-6 shrink-0">
-                        {String(index + 7).padStart(2, '0')}
-                      </span>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] uppercase tracking-[0.15em] text-[#008746] font-medium bg-[#008746]/[0.07] px-2 py-0.5 rounded-[2px]">
-                          {video.folderShort}
-                        </span>
-                        <span className="text-[11px] text-[#6A756F] inline-flex items-center gap-1">
-                          <Eye className="w-3 h-3" />
-                          {video.views}
-                        </span>
+                    {/* Thumbnail + Folder + Views */}
+                    <div className="lg:col-span-8 flex items-center gap-3.5 sm:gap-4">
+                      <div className="relative w-14 h-[74px] sm:w-16 sm:h-20 rounded-[3px] overflow-hidden bg-[#121715] shrink-0 ring-1 ring-black/10">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-full bg-[#0A3622]/90 text-white flex items-center justify-center">
+                            <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1 min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[10px] uppercase tracking-[0.15em] text-[#008746] font-medium bg-[#008746]/[0.08] px-2 py-0.5 rounded-[2px]">
+                            {video.folderShort}
+                          </span>
+                          <span className="text-[10px] uppercase tracking-[0.14em] text-[#858E89]">
+                            {video.subtag}
+                          </span>
+                          <span className="text-[11px] text-[#56605B] inline-flex items-center gap-1 font-medium">
+                            <Eye className="w-3 h-3 text-[#008746]" />
+                            {video.views}
+                          </span>
+                        </div>
+
+                        <h4 className="font-sans font-semibold text-sm sm:text-[15px] text-[#181F1C] group-hover:text-[#0A3622] leading-[1.38] transition-colors line-clamp-1">
+                          {video.title}
+                        </h4>
+
+                        <p className="text-xs text-[#56605B] line-clamp-1 leading-[1.5]">
+                          {video.summary}
+                        </p>
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <div className="lg:col-span-5">
-                      <h4 className="font-sans font-semibold text-sm sm:text-[15px] text-[#181F1C] group-hover:text-[#0A3622] leading-[1.4] transition-colors">
-                        {video.title}
-                      </h4>
-                      <span className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] block mt-0.5">
-                        {video.subtag}
-                      </span>
-                    </div>
-
-                    {/* Core Takeaway Preview */}
-                    <div className="lg:col-span-3 hidden lg:block">
-                      <p className="text-xs text-[#56605B] line-clamp-2 leading-[1.6]">
-                        {video.summary}
-                      </p>
-                    </div>
-
                     {/* Action Buttons */}
-                    <div className="lg:col-span-1 flex items-center justify-end gap-2">
+                    <div className="lg:col-span-4 flex items-center justify-end gap-3">
                       <button
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
-                        className="p-2 text-[#6A756F] hover:text-[#0A3622] rounded-[2px] hover:bg-[#EAE7DF]/60 transition-colors"
+                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2.5 py-1.5 rounded-[2px] border border-transparent hover:border-[#DCD8CE] hover:bg-[#FAF9F5] transition-colors"
                         title="Copy link gửi khách hàng / đồng đội"
                       >
                         {copiedId === video.id ? (
-                          <Check className="w-3.5 h-3.5 text-[#008746]" />
+                          <>
+                            <Check className="w-3.5 h-3.5 text-[#008746]" />
+                            <span className="text-[#008746]">Đã chép</span>
+                          </>
                         ) : (
-                          <Copy className="w-3.5 h-3.5" />
+                          <>
+                            <Copy className="w-3.5 h-3.5" />
+                            <span>Copy Link</span>
+                          </>
                         )}
                       </button>
-                      <span className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.15em] text-[#0A3622] group-hover:text-[#008746] font-medium">
+
+                      <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-[#0A3622] group-hover:text-[#008746] font-semibold">
                         <Play className="w-3 h-3 fill-current" />
-                        <span className=" lg:hidden xl:inline">Xem</span>
+                        <span>Xem Video</span>
                       </span>
                     </div>
                   </article>
@@ -492,7 +512,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
         </div>
       </section>
 
-      {/* LUXURY 2-COLUMN CINEMA VIDEO & TRANSCRIPT MODAL */}
+      {/* VIDEO-FIRST CINEMA MODAL (OPTIMAL 9:16 RATIO + SHORT NOTE BELOW) */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -500,214 +520,99 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onCloseVideo}
-            className="fixed inset-0 z-50 bg-[#181F1C]/85 backdrop-blur-sm flex items-end sm:items-center justify-center sm:p-4 lg:p-8"
+            className="fixed inset-0 z-50 bg-[#121715]/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
           >
             <motion.div
-              initial={{ y: 28, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 28, opacity: 0 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full h-[100dvh] sm:h-auto sm:max-h-[90vh] max-w-5xl bg-[#FAF9F5] sm:border sm:border-[#DCD8CE] flex flex-col overflow-hidden sm:rounded-[6px] shadow-2xl"
+              className="w-full max-w-[430px] bg-[#FAF9F5] border border-[#DCD8CE] rounded-[6px] shadow-2xl overflow-hidden flex flex-col my-auto"
             >
-              {/* MODAL TOP HEADER BAR */}
-              <div className="sticky top-0 z-30 bg-[#FAF9F5]/96 backdrop-blur-md border-b border-[#E4E1D8] px-4 sm:px-7 py-3 flex items-center justify-between shrink-0">
+              {/* TOP BAR */}
+              <div className="px-4 py-2.5 bg-[#FAF9F5] border-b border-[#E4E1D8] flex items-center justify-between gap-2">
                 <button
                   type="button"
                   onClick={onCloseVideo}
-                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] min-h-[40px] -ml-1 px-2 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] font-medium py-1"
                 >
-                  <ArrowLeft className="w-4 h-4" />
-                  <span className="font-medium text-[11px] sm:text-xs">Quay lại thư viện</span>
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Đóng</span>
                 </button>
 
-                <div className="flex items-center gap-2 truncate max-w-[200px] sm:max-w-md">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#008746] shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#0A3622] font-medium truncate">
-                    {activeVideo.folderName}
-                  </span>
-                </div>
+                <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-medium truncate">
+                  {activeVideo.folderShort} &bull; {activeVideo.views} views
+                </span>
 
-                <div className="flex items-center gap-1.5">
-                  <button
-                    type="button"
-                    onClick={(e) => copyVideoLink(activeVideo, e)}
-                    className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-[#008746] hover:text-[#0A3622] px-2.5 py-1.5 rounded-[2px] bg-[#008746]/[0.08] font-medium transition-colors"
-                  >
-                    {copiedId === activeVideo.id ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Đã chép Link</span>
-                      </>
-                    ) : (
-                      <>
-                        <Share2 className="w-3.5 h-3.5" />
-                        <span className="hidden sm:inline">Sao chép Link</span>
-                      </>
-                    )}
-                  </button>
+                <button
+                  type="button"
+                  onClick={(e) => copyVideoLink(activeVideo, e)}
+                  className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] bg-[#008746]/[0.08] px-2.5 py-1 rounded-[2px] font-medium transition-colors"
+                >
+                  {copiedId === activeVideo.id ? (
+                    <>
+                      <Check className="w-3 h-3 text-[#008746]" />
+                      <span>Đã chép</span>
+                    </>
+                  ) : (
+                    <>
+                      <Share2 className="w-3 h-3" />
+                      <span>Copy Link</span>
+                    </>
+                  )}
+                </button>
+              </div>
 
-                  <button
-                    type="button"
-                    onClick={onCloseVideo}
-                    className="p-2 text-[#56605B] hover:text-[#181F1C] transition-colors"
-                    aria-label="Đóng"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
+              {/* MAIN FOCUS: EXACT 9:16 VERTICAL VIDEO PLAYER (288x512 = 9:16, NEVER CLIPPED) */}
+              <div className="bg-[#0B0E0D] w-full flex items-center justify-center py-3">
+                <div className="w-[288px] h-[512px] bg-black rounded-[4px] overflow-hidden shadow-xl ring-1 ring-white/10 shrink-0">
+                  <iframe
+                    src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+                      activeVideo.url
+                    )}&show_text=false&width=288&height=512`}
+                    width="288"
+                    height="512"
+                    style={{ border: 'none', overflow: 'hidden', width: '288px', height: '512px' }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    title={activeVideo.title}
+                  />
                 </div>
               </div>
 
-              {/* MODAL 2-COLUMN BODY */}
-              <div className="flex-1 overflow-y-auto overscroll-contain grid grid-cols-1 lg:grid-cols-12">
-                {/* LEFT COLUMN: VERTICAL REEL CINEMA PLAYER (5 COLS ON DESKTOP) */}
-                <div className="lg:col-span-5 bg-[#121715] flex flex-col items-center justify-between p-4 sm:p-6 lg:sticky lg:top-0 lg:h-full border-b lg:border-b-0 lg:border-r border-[#DCD8CE]">
-                  <div className="w-full max-w-[320px] mx-auto my-auto flex flex-col items-center">
-                    <div className="w-full aspect-[9/16] max-h-[520px] bg-black rounded-[4px] overflow-hidden ring-1 ring-white/15 shadow-xl relative">
-                      <iframe
-                        src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                          activeVideo.url
-                        )}&show_text=false&width=320`}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 'none', overflow: 'hidden' }}
-                        scrolling="no"
-                        frameBorder="0"
-                        allowFullScreen={true}
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        title={activeVideo.title}
-                        className="w-full h-full"
-                      />
-                    </div>
-
-                    <div className="w-full mt-3.5 flex items-center justify-between text-[11px] text-[#A0ABA5] px-1">
-                      <span className="inline-flex items-center gap-1.5">
-                        <Eye className="w-3.5 h-3.5 text-[#00A758]" />
-                        {activeVideo.views} lượt xem thực tế
-                      </span>
-                      <a
-                        href={activeVideo.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-[#6EE7B7] hover:underline"
-                      >
-                        <span>Mở trên Facebook</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* RIGHT COLUMN: EXECUTIVE SUMMARY, FULL TRANSCRIPT & CTAs (7 COLS ON DESKTOP) */}
-                <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 space-y-6 bg-[#FAF9F5]">
-                  {/* Badges */}
-                  <div className="flex flex-wrap items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.18em]">
-                    <span className="text-[#008746] font-medium">{activeVideo.folderShort}</span>
-                    <span className="text-[#858E89]">&bull;</span>
-                    <span className="text-[#56605B]">{activeVideo.subtag}</span>
-                    <span className="text-[#858E89]">&bull;</span>
-                    <span className="text-[#858E89]">{activeVideo.views} views</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-normal text-[#181F1C] leading-[1.25]">
+              {/* COMPACT SHORT SUMMARY NOTE BELOW VIDEO */}
+              <div className="p-4 sm:p-5 bg-[#FAF9F5] space-y-3 border-t border-[#E4E1D8]">
+                <div className="space-y-1.5">
+                  <h3 className="font-sans font-semibold text-sm sm:text-[15px] text-[#181F1C] leading-[1.35]">
                     {activeVideo.title}
                   </h3>
+                  <p className="text-xs text-[#28322D] leading-[1.6] bg-[#F2EFE9]/90 p-2.5 rounded-[3px] border-l-2 border-l-[#008746]">
+                    <strong className="text-[#0A3622]">Tóm tắt:</strong> {activeVideo.summary}
+                  </p>
+                </div>
 
-                  {/* Executive Summary Box */}
-                  <div className="p-4 sm:p-5 bg-[#F2EFE9]/90 border-l-2 border-l-[#008746] rounded-[3px] space-y-1.5">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
-                      ĐÚC KẾT CỐT LÕI TỪ KHÁNH VÂN
-                    </span>
-                    <p className="font-serif italic text-base sm:text-lg text-[#181F1C] leading-[1.6]">
-                      “{activeVideo.summary}”
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between gap-2 pt-1">
+                  <a
+                    href={activeVideo.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] text-[#56605B] hover:text-[#0A3622] underline underline-offset-4"
+                  >
+                    <span>Mở trên Facebook</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
 
-                  {/* Full Spoken Transcript */}
-                  <div className="space-y-4 pt-2">
-                    <div className="flex items-center justify-between border-b border-[#E4E1D8] pb-2">
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] font-medium">
-                        NỘI DUNG CHIA SẺ CHI TIẾT (BẢN ĐỌC)
-                      </span>
-                      <span className="text-[11px] text-[#858E89]">
-                        Tiện tra cứu nhanh không cần bật âm thanh
-                      </span>
-                    </div>
-
-                    <div className="space-y-3.5 text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
-                      {activeVideo.paragraphs.map((p, idx) => (
-                        <p key={idx}>{p}</p>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Box for Team & Clients */}
-                  <div className="pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#F2EFE9]/60 p-4 sm:p-5 rounded-[4px]">
-                    <div className="space-y-1">
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-medium block">
-                        ĐỒNG HÀNH &amp; THAM VẤN 1-1
-                      </span>
-                      <p className="text-xs sm:text-[13px] text-[#28322D]">
-                        {activeVideo.cta}
-                      </p>
-                    </div>
-                    <div className="flex flex-col xs:flex-row gap-2.5 shrink-0">
-                      <button
-                        type="button"
-                        onClick={(e) => copyVideoLink(activeVideo, e)}
-                        className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 border border-[#0A3622] text-[#0A3622] hover:bg-[#0A3622]/5 text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-colors"
-                      >
-                        {copiedId === activeVideo.id ? (
-                          <>
-                            <Check className="w-3.5 h-3.5 text-[#008746]" />
-                            <span>Đã Sao Chép Link</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3.5 h-3.5" />
-                            <span>Copy Link Gửi Khách</span>
-                          </>
-                        )}
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => onAskQuestion(activeVideo)}
-                        className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-colors"
-                      >
-                        <span>Đặt Câu Hỏi Riêng</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Related Videos in Same Folder */}
-                  {relatedVideos.length > 0 && (
-                    <div className="pt-6 border-t border-[#E4E1D8] space-y-3">
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#858E89] font-medium block">
-                        VIDEO CÙNG CHUYÊN MỤC ({activeVideo.folderShort})
-                      </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {relatedVideos.map((rel) => (
-                          <button
-                            key={rel.id}
-                            type="button"
-                            onClick={() => onOpenVideo(rel)}
-                            className="text-left p-3 rounded-[3px] border border-[#DCD8CE] hover:border-[#0A3622] bg-[#FAF9F5] transition-colors group flex flex-col justify-between"
-                          >
-                            <p className="text-xs font-medium text-[#181F1C] group-hover:text-[#008746] line-clamp-2 leading-[1.45] mb-2">
-                              {rel.title}
-                            </p>
-                            <span className="text-[10px] text-[#6A756F] inline-flex items-center gap-1">
-                              <Play className="w-2.5 h-2.5 fill-current text-[#008746]" />
-                              {rel.views} lượt xem
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => onAskQuestion(activeVideo)}
+                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[10px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-colors"
+                  >
+                    <span>Đặt câu hỏi riêng</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
                 </div>
               </div>
             </motion.div>

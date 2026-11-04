@@ -2257,7 +2257,7 @@ export function App() {
                           </p>
                           <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-[#0A3622] group-hover:text-[#008746] font-medium pt-1">
                             <Play className="w-3 h-3 fill-current" />
-                            <span>Xem Video &amp; Bản đọc</span>
+                            <span>Xem Video</span>
                           </span>
                         </button>
                       ))}

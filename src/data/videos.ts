@@ -2,6 +2,7 @@ export interface VideoItem {
   id: string;
   reelId: string;
   url: string;
+  thumbnail: string;
   title: string;
   views: string;
   viewsNum: number;
@@ -13,9 +14,46 @@ export interface VideoItem {
   tier: 'hero' | 'pillar' | 'deep';
   format: string;
   summary: string;
-  paragraphs: string[];
   cta: string;
 }
+
+[
+  {
+    id: 'all',
+    code: 'ALL',
+    name: 'Tất cả chuyên đề',
+    shortName: 'Tất cả (109)',
+    desc: 'Toàn bộ 109 video phân tích thực chiến và đúc kết từ Khánh Vân'
+  },
+  {
+    id: 'minh-bach-bao-hiem',
+    code: '01',
+    name: '01. Minh Bạch Bảo Hiểm',
+    shortName: 'Minh Bạch Bảo Hiểm',
+    desc: 'Bản chất hợp đồng, cơ chế dòng phí, giá trị hoàn lại và quy tắc bồi thường'
+  },
+  {
+    id: 'dong-tien-huu-tri',
+    code: '02',
+    name: '02. Hoạch Định Dòng Tiền & Hưu Trí',
+    shortName: 'Dòng Tiền & Hưu Trí',
+    desc: 'Thiết kế quỹ học vấn cho con, hưu trí an nhàn và kỷ luật tích sản dài hạn'
+  },
+  {
+    id: 'quan-tri-rui-ro',
+    code: '03',
+    name: '03. Quản Trị Rủi Ro & Sức Khỏe',
+    shortName: 'Rủi Ro & Sức Khỏe',
+    desc: 'Bảo vệ quỹ dự phòng y tế, bệnh hiểm nghèo và lá chắn tài chính trước biến cố'
+  },
+  {
+    id: 'chuyen-nghe-lanh-dao',
+    code: '04',
+    name: '04. Chuyện Nghề & Lãnh Đạo',
+    shortName: 'Chuyện Nghề & Lãnh Đạo',
+    desc: 'Đạo đức nghề tư vấn, quản trị đội ngũ 500+ nhân sự và triết lý sống tỉnh thức'
+  }
+] as const;
 
 export const VIDEO_FOLDERS = [
   {
@@ -71,25 +109,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Làm rõ dòng tiền của 1,5 triệu khách hàng tại Manulife đi đâu để giải tỏa tâm lý hoài nghi và tăng niềm tin vào quỹ bảo hiểm.",
-    "paragraphs": [
-      "Tiền đóng cho công ty bảo hiểm sẽ đi về đâu? Các anh chị xem Vân chia sẻ nha. Đây là công ty bảo hiểm.",
-      "Và công ty bảo hiểm thì có rất là nhiều khách hàng đóng tiền vào bảo hiểm. Khách hàng một nè, khách hàng hai nè, khách hàng ba nè, khách hàng bốn nè, và khách hàng thứ N. Và các anh chị biết là hiện nay Manulife có bao nhiêu khách hàng không ạ?",
-      "Có 1,5 triệu khách hàng luôn. Và đây là một con số rất là lớn luôn. Thì tiền của khách hàng đóng vào công ty bảo hiểm thì công ty bảo hiểm sẽ có tuần hoàn ha.",
-      "Đầu tiên con đường thứ nhất là trích lọc những cái phí và cái quỹ để mình đảm bảo được cái hợp đồng của mình. Thì cái này mình sẽ có những cái, đầu tiên là phí ban đầu. Thứ hai là phí rủi ro.",
-      "Thứ ba là phí quản lý hợp đồng. Thứ tư là phí quản lý quỹ. Đấy.",
-      "Như các anh chị nhìn thấy đây là bốn cái phí mà khách hàng sẽ được trích lập trong cái phần mà chi phí mà khách hàng phải bỏ vào. Thì như các anh chị biết đây là phí ban đầu, phí rủi ro, phí quản lý hợp đồng, thì mở cái hợp đồng sẽ có chắc chắn là có chi phí ban đầu rồi đó.",
-      "Rồi phí rủi ro là để chi trả đền bù cho khách hàng là tất cả mà những khách hàng một, khách hàng hai, khách hàng ba, khách hàng bốn này nè mà bị bệnh một cái là mình sẽ lấy từ cái phí rủi ro này ra trả chứ không phải lấy từ tiền công ty bảo hiểm nha.",
-      "Về công ty bảo hiểm tiền của công ty bảo hiểm chính là tiền của khách hàng và tiền của khách hàng đã được phân bổ vào những cái quỹ này rồi. Còn phần tiền còn lại là công ty sẽ bỏ vào một cái quỹ đầu tư. Và quỹ đầu tư này á mà khi mà sinh lợi sẽ đem quay lại trả tiền cho khách hàng một, khách hàng hai và khách hàng ba, khách hàng bốn này.",
-      "Và khi công ty bỏ vào những cái quỹ đầu tư thì cũng sẽ có nhiều dạng quỹ đầu tư và nhiều sản phẩm khác nhau. Nếu anh chị chọn cái sản phẩm đầu tư IOB đi, thì hiện nay có thể là đầu tư có thể mang lại là 7%, 8%, 9% và thậm chí là có thể nhiều hơn cái số đó nữa, thì cũng sẽ trả ngược lại cho khách hàng cao.",
-      "Nhưng nếu mà khách hàng chọn một cái dòng sản phẩm là UL là dòng sản phẩm mang tính là đảm bảo, ví dụ như gửi ngân hàng 5%, thì ở Manulife có những cái dòng đảm bảo thì trả 3%, 4%, 5% và mình cũng trả ngược lại cho khách hàng y chang khách hàng ngày đầu khách hàng đến với Manulife, lựa chọn sản phẩm nào thì công ty sẽ có chế độ của sản phẩm để mà chi trả cái tiền lãi suất cho khách hàng.",
-      "Thì tại sao mà các anh chị phải lo đúng không? Trong khi công ty rất là minh bạch, có kiểm toán, có audit hằng năm để mà xem công ty bảo hiểm sử dụng tiền của khách hàng như thế nào. Và đây là một trong những cái điều mà Vân rất là tâm huyết ở trong công ty bảo hiểm luôn.",
-      "Vì sao? Vì công ty bảo hiểm được có giấy phép kinh doanh, được hoạt động trên một cái nền tảng mà là một công ty nhận tiền của rất là nhiều khách hàng và đứng ở một cái vị thế là công ty bảo hiểm để giúp đỡ cho những cái hoàn cảnh mà khó khăn Vân ví dụ.",
-      "Khi mà khách hàng A gặp cái hoàn cảnh khó khăn là bị bệnh đi, hoặc là bị tai nạn đi, thì ngay lập tức là cái số tiền trong cái quỹ rủi ro này sẽ được trích lập xuống để trả cho khách hàng này liền. Thì những khách hàng này không bị gì, không có vấn đề gì thì sau này nhận cái tiền đầu tư xuống và về sống hưu trí an nhàn vui vẻ đúng không?",
-      "Còn nếu khách hàng nào chẳng may có vấn đề thì coi như mình đã có cái quỹ dự phòng từ rất là nhiều khách hàng bỏ vào đây. Và đây là cái câu chuyện mà Vân hay chia sẻ luôn là nếu mà mình không bị gì á, là xem như mình đang làm từ thiện mà làm từ thiện rất rất là có ý nghĩa luôn các anh chị.",
-      "Còn nếu mà mình có vấn đề gì là xem như mình được rất là nhiều người giúp đỡ. Trong một câu chuyện rất là win-win và bình đẳng và công bằng nha, chứ không phải rằng là à tôi giúp anh giúp tôi tôi phải cảm ơn không? Bây giờ anh đã làm một cái bài toán là đi mua bảo hiểm, có hợp đồng, có giấy tờ, tới ngày anh được nhận đền bù, anh cứ đưa hồ sơ tới là công ty bảo hiểm phải trả rồi.",
-      "Và đây là một cái câu chuyện mà Vân nghĩ là không phải ở Việt Nam, nó mở trên thế giới ai cũng hiểu, ai cũng biết và mỗi người nên có một cái hợp đồng cho riêng mình. À cảm ơn các anh chị đã lắng nghe phần chia sẻ của Vân."
-    ],
-    "cta": "Tìm hiểu ngay cơ chế bảo vệ tài chính an toàn cùng Khánh Vân"
+    "cta": "Tìm hiểu ngay cơ chế bảo vệ tài chính an toàn cùng Khánh Vân",
+    "thumbnail": "/images/reels/1047431547259894.jpg"
   },
   {
     "id": "video-003-747478",
@@ -106,20 +127,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Kinh tế khó khăn không phải là lý do từ bỏ bảo hiểm, mà là thời điểm quan trọng nhất để kiểm chứng sự cần thiết của quỹ dự phòng.",
-    "paragraphs": [
-      "Kinh tế khó khăn thì có cần mua bảo hiểm không? Theo cả nhà là có cần không? Cần quá đi chứ!",
-      "Bởi vì kinh tế khó khăn thì phải rất là cần bảo hiểm luôn. Cả nhà có biết là Vân đi làm cái đây 8 năm, xong rồi cái đến lúc mà bắt đầu làm á, mọi người nói trời ơi kinh tế khó khăn, em đi làm bán bảo hiểm ai mua? Mà Vân vẫn làm tới giờ luôn á cả nhà, 8 năm qua lúc nào cũng đông khách luôn á.",
-      "Thì đó là góc nhìn của một khách hàng nào đó thôi. Họ nhìn như thế là năm nào họ cũng nói kinh tế khó khăn hết á. 10 năm trước, Vân nhớ Vân đi học đại học nồi năm 2008, 2009 nói kinh tế khó khăn dữ lắm, mà lúc đó Vân đâu biết khó khăn là cái gì, là sinh viên ở trọ mà.",
-      "Xong rồi sau này đi làm cũng nói kinh tế khó khăn, xong bây giờ Vân nói kinh tế khó khăn, 5 năm trước Vân sinh viên cũng là kinh tế khó khăn luôn. Xong Vân thấy là do mọi người nói không à. Vân thấy đâu có khó khăn đâu.",
-      "Muốn làm là sẽ không khó khăn gì hết trơn á. Nên, thật ra Vân hay nói vậy nè, đó là suy nghĩ của mỗi người, còn mình có backup dự phòng là mình sẽ không thấy còn thấy khó khăn. Vân ví dụ như là bây giờ á bác sĩ bảo là cần 1 tỷ đi chữa bệnh, mình không có, nhưng bây giờ tư vấn viên bảo hiểm nói là cần 30 triệu để mua cái hợp đồng là mình có nha.",
-      "Mình cứ mua cái hợp đồng 30 triệu để mà khi mình có cái việc gì xảy ra cái hợp đồng đó phát huy sẽ phát sinh tiền tỷ ra để mình đi chữa trị bệnh. Thì đây là một trong những điều mà Vân nói là càng khó khăn, càng phải nên mua cái hợp đồng bảo hiểm cất đó, để lúc mà khó khăn quá đó, vừa bệnh mà vừa khổ mà vừa không có tiền á thì lúc đó mình lấy ra mình xài nó cũng hiệu quả lắm cả nhà.",
-      "Nên đừng có đợi kinh tế khấm khá, giàu có mới mua bảo hiểm. Vì nếu khi giàu có thì bạn không cần bảo hiểm mà bạn bị bệnh, bạn vô bệnh viện bạn vẫn có tiền nha, lúc mà giàu dư tiền 5 10 tỷ trong tài khoản rồi á thì lỡ mà có bệnh vô bệnh viện vẫn có tiền để trả.",
-      "Còn khi khó khăn, người ta hay nói cái nghèo nó hay gặp cái eo á. nên đừng có để mình gặp cái eo được không cả nhà. Mình nghèo nhưng mình có bảo hiểm và khi mình cần chữa bệnh, mình rút bảo hiểm ra xài ngay, được không?",
-      "Nên càng kinh tế khó khăn, càng nên sắm cái hợp đồng cho Vân đi. Đừng để tới lúc mà mình cần gọi là người thân của mình cần, mình cần, không có gì ngồi nước mắt. Và mình hãy có cái hợp đồng lận lưng để sau này có gì là có Manulife lo, có gì là có Khánh Vân lo nè, inbox Vân để tư vấn hợp đồng bảo hiểm.",
-      "Với mỗi tháng 1 triệu, 2 triệu, 3 triệu hay 4 triệu đều có thể mua được hợp đồng. Vân những cái hợp đồng mà mỗi năm đóng phí, có những khách hàng mua với Vân có khoảng 15 triệu, 16 triệu, có những khách hàng mua 100 triệu, có những khách hàng mua 500 triệu và cái hợp đồng mà lớn nhất Vân từng bán là hợp đồng tiền tỷ đó.",
-      "Nên là thực ra là bao nhiêu Vân cũng tư vấn giống vậy, nhưng quan trọng mỗi người nên có cái hợp đồng lận lưng nha. Inbox và follow kênh Khánh Vân nào."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1530853344747478.jpg"
   },
   {
     "id": "video-004-583419",
@@ -136,32 +145,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Chia sẻ chiến lược tìm kiếm nguồn khách hàng bền vững giúp tư vấn viên gắn bó và phát triển lâu dài trong ngành bảo hiểm.",
-    "paragraphs": [
-      "Đi làm bảo hiểm thì tìm khách hàng ở đâu? Hôm nay Vân sẽ chia sẻ cho các anh chị cái bài gọi là nguồn khách hàng. Vân tin rằng là sau cái bài này các anh chị sẽ có một cái góc nhìn mới về tìm kiếm khách hàng trong ngành bảo hiểm.",
-      "Tại sao Vân hay đồng đội của Vân làm rất nhiều năm và luôn luôn có khách hàng và khách hàng ngày càng nhiều lên và có thể làm 5 năm, 10 năm, 20 năm và thậm chí các anh chị đã làm được 26 năm rồi. Thì nguồn khách hàng tự nhiên đến từ đâu?",
-      "Thì trước khi bắt đầu cái bài khách hàng nguồn tự nhiên thì Vân cũng muốn chia sẻ là với các anh chị á, tại vì khi mà tụi Vân đi làm cái công việc này, à tụi Vân phải định hình được rằng là bảo hiểm quan trọng như thế nào, cần thiết ra sao cho người dân và đối tượng khách hàng là ai?",
-      "Ai là những người được cần bảo hiểm? À và nó có thực sự tốt cho xã hội này, cho người dân Việt hay không? Tất nhiên đó là một sản phẩm tốt cho rất là nhiều người và tốt cho xã hội Việt Nam bây giờ.",
-      "Nên tụi Vân mới học hỏi, tìm kiếm và làm việc một cách chăm chỉ và say mê. Nhưng rất là nhiều anh chị bắt đầu với cái công việc làm bảo hiểm này và họ lo lắng rằng, họ không biết là khách hàng ở đâu để họ có thể tư vấn nè, họ có thể chăm sóc, họ tạo ra được hợp đồng để họ có nguồn thu nhập và phát triển bền vững trong nghề này.",
-      "Thế thì ngày hôm nay Vân sẽ chia sẻ một cái bài gọi là khách hàng nguồn tự nhiên. Rồi đầu tiên ha. Tự nhiên mình được sinh ra trong cuộc đời này bởi bố và mẹ mình.",
-      "Đúng không? Thì tự nhiên mình đến với cuộc đời này thôi, chứ mình cũng đâu có biết rằng là ngày nào mình sẽ đến và mình đến với ai? Mình không được quyền lựa chọn bố mẹ mà phải không?",
-      "Thì tự nhiên mình được sinh ra trong một gia đình có bố mẹ. Thì có phải là mình à bản thân đầu tiên là có mình rồi mình không nói ha, nhưng mà có bố mẹ. Thế bố mẹ cũng có thể là những người khách hàng đầu tiên của anh chị vậy.",
-      "Xong rồi nhiều khi bố mẹ đâu phải xin các anh chị ra không đâu mà có thể bố mẹ xin theo anh mình nè, em mình nè. Ví dụ gia đình Vân là có tám anh chị em, trong 3 tháng đầu á là Vân bán phải mười mấy cái hợp đồng cho anh, anh rể, chị dâu, anh trai, chị gái, cháu.",
-      "Trời ơi các anh chị thấy nhiều chưa? Nhà Vân có tám anh chị em lận mà. Có phải mình sinh ra mình sẽ có tự nhiên mình có rất là nhiều anh chị em xung quanh mình.",
-      "Đó là mình có hai nguồn khách hàng rồi nha. Xong rồi các anh chị lớn lên thì các anh chị sẽ có bạn hàng xóm nè, à bạn xung quanh mình, một cái thời kỳ thơ ấu của mình mình sẽ có rất là nhiều bạn của tuổi thơ ấu và mình còn giữ những mối quan hệ đó, thì đó cũng có thể là khách hàng của mình, vì tất cả mọi người đều cần được bảo vệ mà đúng không?",
-      "Sau đó tự nhiên mình phải đi học luôn các anh chị, đúng không? Tự nhiên mình phải đi học à, đi học mẫu giáo nè, đi học cấp 1, đi học cấp 2, đi học cấp 3 và đi học đại học. Thế tự nhiên chúng ta có một nguồn bạn bè, những mối quan hệ từ nhỏ tới lớn luôn.",
-      "Xong rồi tự nhiên mình phải gặp một cái đối phương và kết bạn gọi là rồi làm người yêu, rồi có gia đình, rồi mình lại sinh ra à những cái đứa con khác. Và khi được mà mình sinh ra những cái đứa con nữa đó thì có phải con mình cũng là những cái khách hàng để mình có thể được bảo vệ hơn đúng không?",
-      "Và thực ra đây là một trong những cái cái nguồn mà Vân nói là nguồn tự nhiên rất rất là tốt luôn. Thì khi mà Vân hay nói với lại các anh chị em đồng đội á đã vào trong thì nguồn tự nhiên là một cái nguồn đầu tiên các anh chị đó là gọi là nguồn nóng.",
-      "Tại vì khi mình đi học đại học mình cũng có bạn học đại học, khi mình ra đường đời mình cũng có bạn trên đường đời và và khi mình đi làm nhiều công ty khác, mình cũng có bạn đồng nghiệp, bạn xã hội và mình ở trên một cái chung cư mình có rất là nhiều mối quan hệ.",
-      "Xong rồi con mình mình sinh con mình ra con mình tới trường, con mình đi học, cũng có rất là nhiều bạn bè phụ huynh chơi chung với mình. Và họ biết mình làm bảo hiểm, mình làm bảo hiểm chuyên nghiệp, tử tế và tự tin thì không có gì mà khách hàng không có tìm mình để mua bảo hiểm đúng không?",
-      "Và nhờ thế, từ 8 năm qua, Vân đồng đội của Vân đều luôn luôn có khách hàng, có cái nguồn tự nhiên trong cuộc đời từ lúc sinh ra tới lúc lớn lên và trưởng thành và cho tới ngày hôm nay. Mỗi khi mà con Vân chuyển cấp hay chuyển lớp học hay chuyển trường học thì Vân luôn luôn có rất là nhiều bạn bè phụ huynh và gần như các phụ huynh trong lớp của kem của Viu của hai đứa con Vân đều trở thành khách hàng của Vân.",
-      "Tại vì dần dần người ta cũng sẽ tìm mua bảo hiểm, người ta tìm những người uy tín, những người làm việc à chuyên nghiệp tận tâm, thì người ta thấy à và chị Vân là mẹ của bạn Biêu, mẹ của bạn Kem và chị Vân làm bảo hiểm thì em mong muốn mua bảo hiểm thì em tìm chị Vân thôi.",
-      "Đó các anh chị thấy công việc ở thật sự bắt đầu từ những cái chỉ gọi là bắt đầu từ những cái khách hàng đó, thì khi có những cái khách hàng đó rồi thì các anh chị chăm sóc gọi là chăm sóc hỗ trợ tốt á thì khách hàng đó sẽ tiếp tục giới thiệu nhiều khách hàng cho mình và mình tiếp tục xây nguồn mở nguồn từ những mối quan hệ đó.",
-      "Và dần dần dần dần dần nhiều năm tháng sau mình có rất nhiều khách hàng để mình làm. Và nếu các anh chị chọn làm trọn đời là cơ hội các anh chị cũng có luôn luôn có khách hàng và tới ngày hôm nay Vân sáng nay Vân vẫn có rất là nhiều anh chị giới thiệu cho Vân ba khách hàng nữa nè.",
-      "Ngày nào Vân cũng có khách hàng được giới thiệu và cứ như thế Vân tư vấn, bảo vệ khách hàng và phát triển công việc này dài lâu. Nên các anh chị à đã đang làm bảo hiểm rồi á các anh chị, hãy xem lại cái nguồn của mình để mình làm tiếp.",
-      "Và các anh chị nào đang chuẩn bị vào thì các anh chị có thể nghiên cứu thêm cái clip của Vân để chia sẻ về cái nguồn tự nhiên này và các anh chị có thể sử dụng nó như là một cái công cụ để tự tin hơn và bắt đầu khởi nghiệp trong cái công việc tư vấn viên bảo hiểm tại .",
-      "À chúc tất cả các anh chị à đã và đang tìm hiểu cơ hội tại , các anh chị sẽ có được một công việc rực rỡ và phải trở thành tư vấn viên MDT là tư vấn xuất sắc toàn cầu, nha. Theo dõi kênh Khánh Vân để tìm hiểu thêm thông tin về bảo hiểm Nhân Thọ và về và về văn hóa làm việc của khu vực Hồ Chí Minh 69 do Khánh Vân trực tiếp hỗ trợ nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/825944796583419.jpg"
   },
   {
     "id": "video-005-085284",
@@ -178,20 +163,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Cảnh báo hệ lụy và việc mất trắng khi hủy hợp đồng bảo hiểm sớm (3-4 năm đầu) do nhầm tưởng bảo hiểm giống như gửi tiết kiệm.",
-    "paragraphs": [
-      "Đóng phí bảo hiểm 3 năm, hủy hợp đồng, có nhận lại được gì không? Hôm nay Vân sẽ chia sẻ chủ đề à thời hạn đóng phí của một cái hợp đồng bảo hiểm cho các anh chị để mình biết, mình yên tâm với cái hợp đồng của mình nha. Vân hay nói với khách hàng là như thế này nè, các anh chị mà đóng hợp đồng mà 3 năm, 4 năm hay 2 năm á mà hủy hợp đồng là gần như là không nhận lại được gì luôn á.",
-      "Các anh chị biết vì sao không? Vì khi mà các anh chị vừa đặt bút ký hợp đồng với công ty bảo hiểm, các anh chị mua một gói hợp đồng 35 triệu đi thì ngay lập tức là các anh chị đã được bảo vệ hàng tỷ tỷ đồng tại Manulife và nếu có bất cứ vấn đề gì công ty có thể đền 2 tỷ, 3 tỷ, thậm chí là 5 tỷ cho khách hàng.",
-      "Thì đó là những cái khoản phí rủi ro mà những năm đầu công ty bảo hiểm sẽ phải chịu và để bảo vệ cho khách hàng. Thế nên là khách hàng nói là, \"Ôi em đóng 3 năm rồi giờ gì em không muốn tham gia hợp đồng với Manulife nữa, em muốn hủy.",
-      "Vậy em có rút được 3 năm đóng phí của em mỗi năm 35 triệu là 100 triệu, 105 triệu không?\" Không nha. Vì á, nguyên tắc của bảo hiểm là mới đóng một vài năm mình hủy hợp đồng, mình xác định là mình không nhận lại được gì hết.",
-      "Thì cái dòng sản phẩm mới của bên nhà mình á thì phí phí ban đầu khoảng tầm là 50% thì sau 3 năm các anh chị cũng nhận lại chút chút. Nhưng mà theo Vân á là Vân nghĩ là số đó nó cũng không ăn thua gì hết các anh chị. Nên mình tham gia bảo hiểm là tham gia bảo vệ dài lâu và đóng hợp đồng lâu là để bảo vệ các anh chị suốt cuộc đời.",
-      "Chứ không phải rằng là ôi em sợ lắm, em ngại đóng 12 năm, 20 năm lắm, em chỉ muốn có cái hợp đồng là đóng 5 năm. Dà ai mà hỏi vậy là Vân không có hợp đồng để bán đâu nha. Giờ mà ai nói là chị ơi có bán cái nào 5 năm em không bán được.",
-      "Xin lỗi, khúc này em từ chối khách hàng. Vì Vân sẽ tư vấn cho khách hàng là 15 20 năm để khách hàng có cơ hội được chọn lựa và bảo vệ lâu dài. Và bây giờ Manulife cũng chủ động lắm các anh chị.",
-      "Nghe khách hàng ới là bữa giờ là muốn đóng ngắn, đóng dài thì thật ra đối với sản phẩm chính ở Manulife giờ các anh chị có thể đóng 20 năm nhưng các sản phẩm bổ trợ các anh chị có thể lựa chọn đóng 5 năm, 10 năm, 20 năm thậm chí là 30 năm, 50 năm là tùy các anh chị.",
-      "Và bây giờ bảo hiểm đã linh hoạt rất là nhiều theo nhu cầu của mình. Mỗi năm là một mức phí phù hợp với lại tỉ lệ sức khỏe của mình. Nên là các anh chị yên tâm, các anh chị được sự lựa chọn từ các công ty bảo hiểm.",
-      "Và đó cũng là một trong những điểm nhấn trong những gói sản phẩm mới nhà mình. Các anh chị hãy inbox cho Vân để nhận cái gói tư vấn sản phẩm mới để các anh chị biết dòng sản phẩm mới trong tương lai hiện tại của bên Bảo hiểm Nhân thọ ở Việt Nam như thế nào nhé.",
-      "Cảm ơn cả nhà!"
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ của bạn ngay hôm nay"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ của bạn ngay hôm nay",
+    "thumbnail": "/images/reels/2757832901085284.jpg"
   },
   {
     "id": "video-006-809575",
@@ -208,20 +181,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Phân tích thiệt hơn và đưa ra lời khuyên thực tế về việc có nên rút giá trị tài khoản sau 10 năm tham gia bảo hiểm hay không.",
-    "paragraphs": [
-      "Đóng đủ hợp đồng 10 năm thì có nên rút giá trị tài khoản về không? Đây là cái câu hỏi mà rất là nhiều người quan tâm luôn. Ở đây khoảng 1 tháng thì Vân có một người bạn cũng là khách VIP của Manulife và một công ty bạn nữa.",
-      "Thì bạn đó đóng hợp đồng bảo hiểm và bên công ty bạn được hơn 10 năm rồi và bạn cũng hỏi Vân là có nên rút hợp đồng về không? Tại vì có một số tư vấn viên tư vấn là nên rút về mua vàng đi, nên rút về để mà mình tái đầu tư cái việc khác đi tại vì không còn mua nữa.",
-      "Vân mới đặt câu hỏi với bạn là bạn có biết là ban đầu bạn bắt đầu mua hợp đồng bảo hiểm bằng vì lý do gì không? Vì là được bảo vệ đúng không? Chứ đâu phải vì tới lúc mà nó có tiền trong giá trị tài khoản là mình đi rút.",
-      "Tại vì giá trị tài khoản của các anh chị là các anh chị yên tâm là nó còn nguyên đó, thậm chí công ty là đầu tư sinh lời và trả lãi và công ty chỉ lấy một phần phí rủi ro để nuôi cái hợp đồng đó tiếp thôi, còn tất cả tiền là công ty trả về cho các anh chị và đó là một con sổ tiết kiệm của mình mà.",
-      "Còn nếu mình quyết định mình rút hết mình không còn được bảo vệ gì hết thì ban đầu cái giá trị bảo vệ của mình là mình muốn mua 10 năm, mua 20 năm để mình được bảo vệ tới 99 tuổi mà cả nhà. Nên ai hỏi Vân rằng là nếu mà sau 10 năm có nên rút không thì Vân chỉ khuyên như thế này ha.",
-      "Nếu thực sự kinh tế lúc đó bạn quá khó khăn và bạn phải cần số tiền đó để làm vốn làm ăn hay lo cho con hay là những cái việc mà không còn cái kênh nào để kiếm tiền được nữa thì bạn lấy cái hợp đồng đó về và bạn lo cho gia đình.",
-      "Còn trong trường hợp bạn đang đủ điều kiện, đang có kinh tế, đang khá giả mọi thứ bình yên thì sau khi đóng 10 năm bạn có thể đóng thêm 5 năm nữa hoặc là để cái hợp đồng mình chạy tới sau này, tới khi nào mà cái tiền trong tài khoản vẫn còn và các anh chị vẫn còn được bảo vệ chứ không nên rút ngang.",
-      "Các anh chị tưởng tượng vậy nè, các anh chị trồng một cái cây thì 10 năm sau, các anh chị mới ra quả, các anh chị mới được hưởng nó đúng không? Tự nhiên mình đang trồng một cái hợp đồng bảo hiểm tới năm thứ 10, cái cancel mất không follow và không được bảo vệ và nó mất đi giá trị bảo hiểm.",
-      "Vẫn nhắc lại nha, bảo hiểm là để bảo vệ. Chứ cả nhà đừng có nghĩ là mua bảo hiểm không có lời, không có lời nhiều như mấy kênh đầu tư. Các anh chị quay lại nhớ lại giùm Vân đi.",
-      "Bảo hiểm là bảo vệ nên các anh chị hãy đóng hợp đồng bền bỉ và được bảo vệ trọn đời. Đó chính là bảo hiểm nhân thọ. Cảm ơn các anh chị đã follow kênh Khánh Vân.",
-      "À tất cả các anh chị mà có nhu cầu cần tư vấn bảo hiểm, liên hệ Vân nha."
-    ],
-    "cta": "Nhận tư vấn chuyên sâu về thời điểm rút giá trị tài khoản hợp đồng"
+    "cta": "Nhận tư vấn chuyên sâu về thời điểm rút giá trị tài khoản hợp đồng",
+    "thumbnail": "/images/reels/855860643809575.jpg"
   },
   {
     "id": "video-008-272371",
@@ -238,18 +199,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Đính chính thông tin truyền thông nửa vời về thời hạn đáo hạn năm 2086, giúp khách hàng hiểu đúng bản chất hợp đồng trọn đời.",
-    "paragraphs": [
-      "Đóng gần 1 tỷ 250 triệu đồng, bảo hiểm suốt 10 năm. Đến hạn rút tiền thì công ty thông báo, hợp đồng ghi rõ phải đợi đến năm 2086 mới nhận được tiền đáo hạn. Các anh chị ơi, các anh chị làm truyền thông phải truyền thông cho nó rõ, chứ không phải truyền thông nửa vời, đưa một câu giật tít lên như thế này.",
-      "Và rất là nhiều khách hàng họ không đủ kiến thức, đủ thông tin và họ mới đóng phí 1 năm, 2 năm, 3 năm, họ lên hội huyện ngang cái hợp đồng của họ. Thì các anh chị biết là cái hậu quả nó như thế nào rồi. Khách hàng hãy tỉnh táo khi mua hợp đồng, mình mua cái gì mình biết cái đó và mình đóng thời hạn bao nhiêu, mình cũng là người hiểu nhất.",
-      "Mình không thể nào lên mạng xã hội thấy người này, người kia nói xong đóng phí được 5 năm rồi tự nhiên năm thứ sáu hủy hợp đồng. Và năm thứ bảy mình có biến cố rồi lúc đó cái người mà viết câu truyền thông đó có trả tiền cho các anh chị không?",
-      "Chắc chắn là không. Và vẫn thấy cái chuyện này rất nhiều, Vân đi làm suốt 9 năm qua, có nhiều người đang mua hợp đồng rất bình thường, đang được đền bù chi trả bình thường luôn. Bỗng chốc lên mạng xã hội đọc một cái thông tin nào đó trái chiều, và họ chưa kịp tìm hiểu cái thông tin đó luôn.",
-      "Thì ngay lập tức về à không muốn đóng hợp đồng. Còn bảo là càng đóng càng lỗ, càng lo, không biết sau này công ty có trả tiền hay không? Khi mình mua mình phải tìm hiểu một kiến thức đủ đầy, công ty nó đến từ đâu?",
-      "Sản phẩm mình mua là cái gì? À nếu công ty này phá sản thì chuyện gì sẽ xảy ra? Đúng không?",
-      "Phải tìm hiểu những cái thông tin đó để khi mình có kiến thức đủ đầy thì mình mua một cái hợp, hợp đồng mình đóng 5 năm, 10 năm hay 20 năm là mình đã biết ngay ngày tư vấn viên làm việc với mình rồi. Ví dụ như bên Vân hiện tại có những cái sản phẩm đóng 5 năm thôi.",
-      "Thì mình đóng xong 5 năm và sau năm thứ 11 mình nhận tiền đúng không? Thì mình phải biết chuyện đó, chứ không phải rằng là mình đóng tới 1 năm 2 năm mà nghe có thông tin gì là mình đã ngưng hợp đồng lại rồi. Nên bài học của Vân á Vân rút ra rằng á là các anh chị phải làm rõ ngay ngày các anh chị mua hợp đồng.",
-      "Còn nếu mà các anh chị vẫn còn đang thắc mắc về cái hợp đồng của mình, hãy liên hệ Vân, Vân sẽ cho đội ngũ của Vân hỗ trợ các anh chị một cách chi tiết, bài bản để các anh chị hiểu được cái hợp đồng của mình được không? Follow kênh Khánh Vân để nhận thêm những cái thông tin giá trị về bảo hiểm nhé."
-    ],
-    "cta": "Kiểm tra kỹ điều khoản hợp đồng của bạn cùng chuyên gia Manulife"
+    "cta": "Kiểm tra kỹ điều khoản hợp đồng của bạn cùng chuyên gia Manulife",
+    "thumbnail": "/images/reels/862254653272371.jpg"
   },
   {
     "id": "video-009-389297",
@@ -266,19 +217,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Dùng số liệu thực tế về 12 triệu hợp đồng tại Việt Nam để đập tan định kiến 'bảo hiểm là lừa đảo' và lấy lại niềm tin ngành.",
-    "paragraphs": [
-      "Bạn có tin bảo hiểm là lừa đảo không? Chắc là các bạn mà nghe qua cái số liệu thống kê chuẩn bị Vân nói ra là các anh chị ngỡ ngàng luôn á. Hiện nay, toàn Việt Nam có 12 triệu hợp đồng được phát hành từ tất cả các công ty bảo hiểm.",
-      "Đây là một con số không hề nhỏ. 12 triệu hợp đồng nó tương đương với 12 triệu khách hàng. Thì chẳng lẽ có 12 triệu người dân Việt Nam đang bị cái công ty bảo hiểm lừa hả các anh chị?",
-      "Cứ 10 người dân Việt Nam là có một người đi mua hợp đồng bảo hiểm nhân thọ. Và cái con số thống kê này nó được Bộ Tài chính, nó được pháp luật, pháp chế nhà nước Việt Nam quản lý rất là chặt chẽ luôn. Và bản thân Khánh Vân là làm được 8 năm bảo vệ gần 1.000 gia đình từ cá nhân của Vân.",
-      "Và hàng ngàn gia đình từ tất cả cộng sự và những cái đồng đội của Vân làm việc với Vân bao nhiêu năm nay. Đi làm trên những cái điều đúng đắn theo luật được quy định bởi Bộ tài chính. Quản lý rất là chặt chẽ về bảo hiểm ha.",
-      "Thì Vân cũng nói cho các anh chị biết rằng là khi mà đã tham gia một cái hợp đồng bảo hiểm, các anh chị cứ tự tin vui vẻ tìm hiểu với công ty bảo hiểm đó. Và cảm thấy tự tin rồi mình hãy mua. Cái khách hàng mà đã mua của Manulife vậy nè.",
-      "Họ bị lừa mà họ rất là vui vẻ, họ đóng phí 100 triệu và hạnh phúc họ nói là được công ty Manulife bảo vệ. Và họ đã từng nhận tiền hàng tỷ tỷ đồng và cái mà đỉnh điểm nhất mà Manulife chi trả tới hiện tại là 67 tỷ đồng vào năm ngoái.",
-      "Con số này là con số biết nói đó các anh chị, bảo hiểm nhân thọ là một công cụ trên toàn thế giới và đã đưa về Việt Nam được 26 năm. Nếu ai biết và sử dụng nó, tài dự phòng tài chính cho gia đình thì nó là một cái sự bảo vệ cho mỗi gia đình đó.",
-      "Còn nếu mình không biết thì mình hãy đi tìm hiểu nha cả nhà. Đừng có nói bảo hiểm lừa đảo tội bảo hiểm lắm. Mà trong khi bảo hiểm mang lại rất là nhiều giá trị nhân văn cho xã hội, cho người dân Việt Nam.",
-      "Nếu mà các anh chị có bị những cái trường hợp nào mà gọi là lừa đảo á, các anh chị hãy liên hệ Vân ngắn cho Vân, sẽ phân tích để nói lại cho các anh chị hiểu là vì sao cái trường hợp đó không được chi trả hay là vì sao cái trường hợp này có vấn đề để mình biết mình rút kinh nghiệm lần sau mình không có gặp phải vấn đề đó nữa.",
-      "Được không? Đấy, follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Trò chuyện trực tiếp với Khánh Vân để hiểu đúng về bảo hiểm nhân thọ"
+    "cta": "Trò chuyện trực tiếp với Khánh Vân để hiểu đúng về bảo hiểm nhân thọ",
+    "thumbnail": "/images/reels/1526322548389297.jpg"
   },
   {
     "id": "video-007-855658",
@@ -295,17 +235,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải đáp triệt để thắc mắc kinh điển của khách hàng về việc có nên rút tiền và đóng hợp đồng sau 15-20 năm tham gia.",
-    "paragraphs": [
-      "Đóng phí 15 năm, 20 năm rồi thì có nên rút cái hợp đồng này không? Đây là cái câu hỏi mà Vân và đồng đội của Vân nhận nhiều nhất trong nhiều năm Vân làm tại Manulife luôn. Thì hôm nay trong cái video này Vân sẽ chia sẻ rất rất là rõ để cho mình có thể có được một cái bức tranh trọn vẹn để sau này mình không có hỏi lại tư vấn viên câu này nữa nhé.",
-      "Có rất là nhiều dòng tham gia bảo hiểm đó 10 năm, 15, 20 năm và sau cái thời gian đóng phí á có thể là từ nó nuôi nó được rồi. Và nó trừ rủi ro trong cái khoản giá trị tài khoản trong cái hợp đồng đó đang có. Nhưng cũng có những cái sản phẩm á là mình phải đóng cái sản phẩm của phí bổ trợ thời vì mua theo hằng năm.",
-      "Thì mình đóng năm nào mình bảo vệ năm đó nên mình buộc phải đóng cái dòng sản phẩm đó. Còn những cái sản phẩm chính thì không cần đóng nữa. Nhưng mà trường hợp nào mình nên đóng tiếp và trường hợp nào mình nên rút cái hợp đồng.",
-      "Thì bây giờ Vân nói để các anh chị cân nhắc xem là nên làm như thế nào nha. Trường hợp thứ nhất là nếu chúng ta thấy rằng là cái tình trạng sức khỏe của mình trong quá trình mình xài 15 20 năm đó mà mình claim rất là nhiều quyền lợi, mình đã xài rất nhiều cái hợp đồng đó rồi.",
-      "Thì Vân khuyên thực lòng là nên giữ nguyên cái hợp đồng đó và xài tiếp. Thì vì khả năng mà để mua lại cái hợp đồng mới là cực kỳ khó. Trường hợp thứ hai á là mình thấy là mình có xài mà xài ít ít chút chút và mình ươm được là mình thấy là mình còn khả năng sức khỏe và mình có thể mua được nhiều cái hợp đồng khác và mình có bổ sung những cái quyền lợi hiện đại tốt hơn thì mình sẽ cân nhắc.",
-      "Và trường hợp còn lại á cuối cùng mà Vân hay gặp nhất luôn các anh chị, đều cân nhắc là rút hay không rút á thì Vân nói luôn ha, trong một cái hợp đồng bảo hiểm mình đã đóng được 10 15 20 năm rồi á thì lời khuyên của Vân á là vẫn nên giữ cái hợp đồng đó, vì rút sớm trong mọi trường hợp mình đều bất lợi hết và mình để có lợi nhất vẫn là theo lâu dài cái hợp đồng.",
-      "Bây giờ mình cũng đâu có đóng gì nữa đâu đúng không? Nhưng mà được bảo vệ và được cái hợp đồng này đồng hành với mình cho sự an tâm nhất định. Thời điểm cách đây 15 năm mà mấy bạn mua không có đầy đủ những quyền lợi về y tế.",
-      "Thì bây giờ mình cũng vẫn nên mua những cái hợp đồng thêm về y tế, về giáo dục, về sức khỏe, về hưu trí ở Manulife có tất cả để bổ sung cái quyền lợi của mình càng tốt hơn. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nhân thọ nha."
-    ],
-    "cta": "Đặt lịch tư vấn tối ưu hóa quyền lợi hợp đồng dài hạn cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn tối ưu hóa quyền lợi hợp đồng dài hạn cùng Khánh Vân",
+    "thumbnail": "/images/reels/1573172987855658.jpg"
   },
   {
     "id": "video-010-548179",
@@ -322,23 +253,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ bản chất thời hạn đóng phí trong hợp đồng để dẹp bỏ nỗi sợ 'đóng bảo hiểm tới 99 tuổi' do hiểu lầm điều khoản.",
-    "paragraphs": [
-      "Mua bảo hiểm là đóng đến 99 năm, đúng hay sai? Các anh chị chắc nghe được nhiều thông tin truyền thông trên mạng xã hội đúng không? Là trời ơi cái hợp đồng nó đóng phí tới 99 tuổi lận.",
-      "Các anh chị nghe cái hết hồn luôn, cái xong nó suy nghĩ là không biết có nên mua bảo hiểm hay không luôn. Thực sự cái gì các anh chị cũng phải cần coi điều khoản và coi thông tin, không khéo là chúng ta bị nhầm tưởng những cái quyền lợi tưởng chừng như rất là đơn giản nhưng các anh chị đều nhầm lẫn hết.",
-      "Thời hạn bảo hiểm và thời hạn đóng phí là hai hạn mục rất khác nhau. Hiện nay Manulife và các công ty bảo hiểm trên toàn quốc ở Việt Nam thì rất là nhiều công ty bảo vệ tới 99 tuổi và đó là thời hạn bảo hiểm. Và đóng phí bao nhiêu năm là tùy thuộc vào quyết định, tùy thuộc vào sự lựa chọn và kế hoạch tài chính của mỗi khách hàng.",
-      "Nên đóng phí 3 năm, 10 năm, 12 năm, 20 năm là khi các anh chị được hiểu, các anh chị được tư vấn. Vâng, ví dụ ha, các dòng sản phẩm sẽ có các cái cách đóng phí khác nhau. Vân chắc chắn các anh chị là các anh chị mà hiểu được các anh chị thấy cái việc mà tham gia bảo hiểm rất là nhẹ nhàng luôn.",
-      "Có những cái dòng sản phẩm là dòng sản phẩm truyền thống trước đây của Manulife và một số công ty khác á là các anh chị ký kết trong hợp đồng là đóng 12 năm, 15 năm, 20 năm và các anh chị vui lòng đóng đúng giúp Vân, đóng đúng y chang trong hợp đồng.",
-      "Cam kết tới giống như hợp đồng lắm, cuộc sống thì đẹp nè, chắc chắn tương lai nè, Phúc Hậu Vu Thê nè, những dòng sản phẩm đó là cần đóng đúng hợp đồng ký kết ban đầu nha. Nhưng hiện nay có rất là nhiều dòng sản phẩm hiện đại hơn, dòng sản phẩm UL, IOB, là những dòng sản phẩm như là điểm từ đầu tư nè, món quà tương lai và hiện tại là sanh tương lai của Manulife á.",
-      "Thì bạn có thể đóng, chắc chắn là bạn phải đóng cố định 3 năm đầu tiên rồi, không gì thay đổi, nhưng từ năm thứ tư bạn hoàn toàn có quyền linh hoạt đóng phí. Thì linh hoạt đóng phí ở đây là các anh chị hoàn toàn lựa chọn được cái thời gian đóng phí cho mình.",
-      "Và cái thời gian đóng phí nó sẽ ảnh hưởng tới cái số lượng năm mà các anh chị được bảo vệ, quyền lợi mà các anh chị nhận. Có nhiều khách hàng họ chọn đóng phí 5 năm, 10 năm đối với sản phẩm chính, và sản phẩm hỗ trợ người ta vẫn đóng 10 năm, 20 năm, 30 năm, thế cho nên người ta phải được biết rõ, hiểu từ đầu và người ta sẽ chọn phương thức.",
-      "Còn có những anh chị là người ta muốn bảo đảm cái kế hoạch tài chính từ đầu của họ và đạt được cái mục tiêu, Mục tiêu người ta đã lên kế hoạch từ đầu là tôi sẽ đóng 20 năm để tôi được có cơ hội bảo vệ những cái năm sau dài hơn, vì có thể là bảo vệ tới 99 tuổi nhưng cũng có thể bảo vệ tới 70 hay 50 tuổi.",
-      "Tùy theo cái kết quả kinh doanh và cái số tiền của khách hàng còn trong tài khoản và công ty trích lập phí rủi ro phù hợp. Thì đây là câu chuyện mà nếu mà chúng ta hiểu, chúng ta sẽ biết là chúng ta cần phải đóng bảo hiểm bao nhiêu năm đúng không?",
-      "Thì thông thường mà Vân tư vấn cho khách hàng thì Vân hay tư vấn là từ 15 tới 20 năm. Thì như thế ít nhiều là khách hàng đã an toàn trong cái dòng tiền cũng như an toàn trong những quá trình được bảo vệ dài lâu chứ không phải là đóng có 3 năm cái nhiều khi khách hàng không nhớ để đóng hợp đồng, rồi lỡ năm thứ sáu, thứ bảy khách hàng xảy ra sự cố, khách hàng không đúng quyền lợi thì sao?",
-      "Nên các anh chị hãy chọn cho mình cái người tư vấn viên chuyên nghiệp, hiểu thật là kỹ và làm một cái hợp đồng phù hợp để khi mà mình biết được là mình sẽ đóng bao nhiêu năm cái hợp đồng này, được bảo vệ những quyền lợi gì và bảo vệ bao nhiêu năm?",
-      "Được không các anh chị? Nên à các anh chị cố gắng mình à tìm cho mình một cái người tư vấn viên chuyên nghiệp nha. Và chắc chắn Vân tin rằng là khi đã tìm được người tư vấn viên chuyên nghiệp là các anh chị sẽ có cái hợp đồng dài lâu.",
-      "Follow kênh Khánh Vân để nhận nhiều giá trị về bảo hiểm nhân thọ nha."
-    ],
-    "cta": "Tải cẩm nang giải mã điều khoản bảo hiểm cùng Khánh Vân"
+    "cta": "Tải cẩm nang giải mã điều khoản bảo hiểm cùng Khánh Vân",
+    "thumbnail": "/images/reels/4157714254548179.jpg"
   },
   {
     "id": "video-012-489082",
@@ -355,21 +271,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải thích điều khoản ân hạn đóng phí vô cùng nhân văn của công ty bảo hiểm khi khách hàng gặp khó khăn tài chính tạm thời.",
-    "paragraphs": [
-      "không đóng phí đúng hạn, thì công ty bảo hiểm có bảo vệ tiếp không? Mà nghe cái câu mà không đóng phí đúng hạn á, là đã thấy mệt mệt rồi đúng không? Thì cả nhà nghĩ là công ty bảo hiểm có còn bảo vệ tiếp không?",
-      "Thật sự á, trong bảo hiểm và trong luật á có một cái điều khoản rất là nhân văn luôn. Tới cái kỳ đóng phí của mình rồi ha, ví dụ như hôm nay là tháng 10, thì tới cái kỳ của mình là 25 tháng 10. Thì mình chưa có đóng ngày 25 tháng 10 này thì mình sẽ được bảo vệ thêm 60 ngày gia hạn.",
-      "Và 60 ngày này không cần đóng phí vẫn được bảo vệ và mình được công ty chờ phí 60 ngày. Nên các anh chị lưu ý nha, khi tới hạn đóng phí, nếu các anh chị có tài chính, các anh chị nên đóng ngay lập tức và nếu được các anh chị sẽ sử dụng thẻ tín dụng là tiện nhất để đóng rồi sau đó các anh chị trả lại.",
-      "Nhưng có những cái trường hợp không đóng phí và bị quá hạn sau 60 ngày hợp đồng sẽ mất hiệu lực, hoặc là những cái hợp đồng dòng sản phẩm trước đây, ví dụ như điểm tựa đầu tư, món quà tương lai, hay là những cái dòng sản phẩm AOB hay QL đều như vậy hết.",
-      "Có nghĩa rằng là anh chị đã đóng qua 3 năm rồi và mình được linh hoạt đóng phí rồi á, thì cái sản phẩm chính mình được linh hoạt nhưng mà chưa chắc sản phẩm bổ trợ mình được linh hoạt đâu. Nên mình phải kiểm tra cái loại sản phẩm mình đang mua là gì và không đóng phí thì có được bảo vệ hay không.",
-      "Vì có một số dòng sản phẩm á, sau khi đóng phí 7 năm, 10 năm và có thể linh động toàn bộ hợp đồng luôn, nhưng có những cái dòng sản phẩm, nếu mình không đóng xong hỗ trợ nó sẽ mất hiệu lực. Thì mình phải kiểm tra nếu mà cần đóng những sản phẩm nào để duy trì thì mình phải kiểm tra với công ty và công ty báo mình để mình đóng đầy đủ, hoặc là mình biết điều chỉnh lại cái hợp đồng của mình khi mình gặp khó khăn về tài chính, đừng để trôi một cách trôi vụt qua tầm tay, cho tới lúc gặp tay nạn hay bệnh quay lại tìm cái hợp đồng thì không còn thấy đâu nữa.",
-      "Nên không đóng phí, đúng hạn thì chỉ được bảo vệ 60 ngày trong thời gian chờ đóng phí thôi nha cả nhà. Còn lại là sẽ không có được bảo vệ đâu. Nên mình lưu ý về cái kỳ hạn phí.",
-      "Rất nhiều khách hàng đang trong những cái thời điểm thay kỳ á, cái đó mới oan ủi nhất luôn. Tại vì thay kỳ là lúc nào cũng thời gian chờ là 270 ngày vẫn có khách hàng luôn, năm ngoái có một khách hàng của Vân luôn ha. Là Vân đã nhắc, công ty đã nhắc, nhưng bạn quên đóng phí, và bạn bị hết hiệu lực và bạn ngay lập tức đóng tiền lại để khôi phục hiệu lực luôn.",
-      "Thì cũng được khôi phục luôn, nhưng mà thời gian chờ bạn phải chờ là 270 ngày, và tới lúc mà đi sinh mà không được clame, thì bạn mới báo cho Vân thì lúc đó Vân mới giật mình Vân báo là, chị đã bị mất hiệu lực cái thời điểm đó, và chị phải cộng lại 270 ngày từ cái ngày khôi phục hợp đồng, nên cái việc sinh em bé này sẽ không được chi trả.",
-      "Và chị đó cũng vui vẻ và chấp nhận chuyện đó. Vì cái chuyện này mình đã được nhắc rồi, nhưng mà mình vẫn bị quên đó cả nhà. Tại vì các anh chị yên tâm nha, có tư vấn viên nhắc, có tin nhắn công ty gửi qua Zalo, có cuộc gọi nếu trễ qua 45 ngày, công ty nhắc bằng rất là nhiều đường luôn, nếu không có cách này là đã có cách khác.",
-      "Nhưng tốt nhất mình vừa thấy tin nhắn á, lời khuyên của Vân là nên ra đóng liền luôn. Chứ đừng có để, bởi vì để nó sẽ quên, bởi vì mình có rất là nhiều khoản phí phải đóng, nên hãy bảo vệ hợp đồng của mình trọn vẹn nha cả nhà.",
-      "Và ai có thắc mắc về những cái việc à đóng phí trễ phí, bản thân cái hợp đồng này cứ liên hệ Vân, Vân sẽ hỗ trợ cho nhé. Cảm ơn cả nhà đã theo dõi kênh của mình nha."
-    ],
-    "cta": "Kiểm tra thời hạn đóng phí và trạng thái hợp đồng của bạn"
+    "cta": "Kiểm tra thời hạn đóng phí và trạng thái hợp đồng của bạn",
+    "thumbnail": "/images/reels/831932759489082.jpg"
   },
   {
     "id": "video-011-956373",
@@ -386,21 +289,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Phân tích sự thật pháp lý và rủi ro đạo đức qua vụ việc trục lợi bảo hiểm để nhấn mạnh tầm quan trọng của sự minh bạch.",
-    "paragraphs": [
-      "Sự thật về câu chuyện là hiện nay là công ty bảo hiểm sợ khách hàng hay khách hàng sợ công ty bảo hiểm. Chắc là mấy ngày hôm nay thông tin rất là hót trên mạng xã hội, có một cái vụ án xảy ra đúng không? Là một cái anh Cường nhân viên y tế rất là hiểu về y khoa và anh ấy đã sử dụng những cái kỹ thuật, những cái kỹ thuật nào đó bạn đã từng biết ha.",
-      "Đục xương để cho nó gãy để công ty bảo hiểm đền. Thì Vân cũng chia sẻ cho cả nhà mình biết ha, Vân đã từng làm công việc này 8 năm rồi và Vân biết là bảo hiểm là 20 năm nay từ cái lúc Vân vào Sài Gòn đến giờ. Thì Vân thấy là khi mà làm đúng hợp đồng, khách hàng có xảy ra vấn đề và nằm trong đúng điều khoản là công ty chi trả rất bình thường và chính xác luôn.",
-      "Và điển hình như khách của Vân có một khách đã từng ngã trong nhà tắm, đập cái thanh xương sườn này này, nó vào cái bồn cầu á, té trượt đập vô nè, gãy liền ba cái xương sườn. Và chị đó chị hiền lắm, chị mua cái hợp đồng gần 30 triệu, xong rồi chị cũng không báo vân luôn, mà chị ở chung cư Ecogreen với Vân ở quận 7 á.",
-      "Cái vân xuống sảnh cái một ngày nọ vân xuống sảnh, vân thấy chị đi cứ đi chậm chậm chậm chậm, ủa sao dạo này chị khỏe không anh? Sao chị đi chậm chậm vậy? Không, chị không khỏe, chị bị ngã.",
-      "xong cái vân Ờ bị ngã sao không kêu em để em làm hồ sơ về về đền bù gãy xương cho chị. Thì chị ấy bảo là thôi, chị nghĩ là hợp đồng chị mua có hai mấy triệu à chắc cũng không có nhiều quyền lợi để mà nhận hết chi tiết như vậy đâu vì xương sườn chị nghĩ là gãy thôi rồi nó tự lành, chứ nên nó nó không có phải là chị phải phẫu thuật nên chị nghĩ là công ty em không có trả.",
-      "Trời ơi không được, em đã dặn chị rồi, em tư vấn chị rồi mà chị không nhớ, chị có quyền lợi gãy xương đó. Bây giờ chị đưa hồ sơ cho em, em tiến hành làm thủ tục cho chị nhé. Sau khi mà nhận cái báo cáo tiến trình á thì khách hàng tới cái bệnh viện ngay gần cầu ông lãnh á thì khách hàng chụp X quang này cái CT lại để thấy được cái xương của mình lại có gãy thực sự và nó đang đợi lành.",
-      "Thì khách hàng vẫn đi hỗ trợ Vân sau khi có cái kết quả từ cái bệnh viện đó chuyển về cho công ty Manulife và bệnh viện này là liên kết với Manulife nha các anh chị. Vì công ty phải muốn xác minh lại thông tin và sau đó là khách hàng nhận được 150 triệu và khách hàng giật cả mình luôn.",
-      "Xong chị này chị nói là chị sẽ dùng một khoảng tiền để đi làm từ thiện. Thật ra Vân rất là là bất ngờ, chị nói là chị không nghĩ là chị nhận chị mới đóng phí có 2 năm mà mà chị đã nhận lại cái quyền lợi 150 triệu rồi. Và thực sự đây là một trong những cái vấn đề mà Vân hay nói là công ty bảo hiểm liên quan tới gãy xương, mình coi trong hợp đồng của mình có quyền lợi đó, và khi xảy ra là công ty đều chi trả bình thường.",
-      "Nên những cái trường hợp nào mà có dấu hiệu trục lợi gian lận là công ty sẽ điều tra và công ty bảo hiểm bây giờ cũng bắt đầu sợ khách hàng rồi đó các anh chị. Sợ lâu nay nhiều năm rồi, tại vì cách đây 1 năm cũng bắt một cái đường dây là khoảng 258 người mà liên quan tới đường đường dây lừa đảo á và thực ra trong ngành nghề nào, trong câu chuyện nào cũng có những cái cái cái câu chuyện mà mình phải đáng suy ngẫm.",
-      "Nhưng mà thực ra Vân hay nói với khách hàng ở đâu cũng có người này, người kia. Nên khi Vân chọn lựa, Vân tư vấn những khách hàng chuẩn chỉnh thì cứ đúng sao hồ sơ ra như vậy, còn cái gì mà nó không đúng pháp luật thì sẽ có pháp luật xử lý những cái hành vi không đúng đó.",
-      "Nên yên tâm nha, công ty bảo hiểm á cũng không có lừa khách hàng nào đâu. Và đặc biệt á là khách hàng mà đã mua bởi tư vấn viên chuyên nghiệp nhà Man và đặc biệt của Hồ Chí Minh 69 á thì khách hàng rất là chuẩn chỉnh luôn và mình cứ làm sao đúng việc, đúng người là mọi thứ ok hết.",
-      "Được không cả nhà? Follow xem kênh Vân để nhận những cái thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Tham vấn quy trình bồi thường minh bạch và chuẩn mực cùng Manulife"
+    "cta": "Tham vấn quy trình bồi thường minh bạch và chuẩn mực cùng Manulife",
+    "thumbnail": "/images/reels/841324271956373.jpg"
   },
   {
     "id": "video-014-997828",
@@ -417,27 +307,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải mã các quyền lợi tai nạn đặc biệt trong hợp đồng bảo hiểm và hướng dẫn khách hàng tự kiểm tra lại quyền lợi thực tế của mình.",
-    "paragraphs": [
-      "Không phải ai cũng biết, tất cả các quyền lợi có trong bảo hiểm tai nạn. Hôm nay Vân sẽ chia sẻ cho các anh chị nghe những cái điều rất là đặc biệt trong sản phẩm tai nạn mà rất nhiều công ty bảo hiểm có và kể cả Manulife.",
-      "Và cái điều này nếu nhiều người biết rồi thì sau này mình kiểm tra lại hợp đồng bảo hiểm của mình, nếu có mình lưu ý khi xảy ra nhé. Vân sẽ kể câu chuyện thực tế luôn. Cái đây hơn 1 tháng thì có một vụ lật xe dừng nằm các anh chị, ở ngoài Hà Tĩnh.",
-      "Thì trong cái câu chuyện này, theo Vân được biết là có khoảng hơn 10 người ra đi mãi mãi không về và trong đó có một khách hàng của Manulife. Bạn này khá là trẻ thôi thì bạn là một trong những cái nạn nhân trong cái vụ lật xe này.",
-      "Và Vân cũng gọi là vô tình thôi, Vân không trực tiếp bán hợp đồng cho bạn này, nhưng qua những cái mối lương duyên và Vân nhận hỗ trợ để mà bạn đó nhận đền bù thanh toán. Thì khi gia đình bổ sung hồ sơ cho Vân là Vân ngay lập tức hỗ trợ và đưa về công ty những hồ sơ đầy đủ để công ty tiến hành chi trả cho bạn 2,5 tỷ.",
-      "Và đây là trong đây có 1 tỷ 250 là sản phẩm về tử vong sinh mệnh. Và 1 tỷ 250 là về phần tai nạn. Thì nếu mà theo lý thuyết á thì công ty Manulife đã chi trả tất cả các quyền lợi mà khách hàng yêu cầu rồi đúng không ạ?",
-      "Nhưng à khách hàng không biết rằng mình có một cái quyền lợi khá là đặc biệt và đây là coi như là một cái quyền lợi tặng thêm trong hợp đồng mà khách hàng được hiểu và nếu mà có phải rơi vào tình huống đó, khách hàng sẽ sử dụng nó rất là hữu ích, vì nó có chế độ là nhân hai nhân ba phần tai nạn luôn ạ.",
-      "Nếu mà đi xe bus mà mình có vé thì mình được nhân đôi. Mà đi máy bay á mà có vé thì đi máy bay chắc chắn phải có vé đúng không cả nhà? Thì mình được nhân ba.",
-      "Nhưng nhớ đi vé máy bay ở đây á là phải bước lên máy bay và có chuyện gì trên máy bay nha. Còn các anh chị mà có vấn đề gì ngay ở mặt đất á nó không gọi là là khi mình ra sân bay, được không? Các anh chị phải hiểu rất là rõ.",
-      "Thì hôm nay Vân kể cái câu chuyện này là câu chuyện đi xe bus có vé. Thì sau khi mà khách hàng đã được chi trả 2 tỷ rưỡi rồi á thì Vân nhớ tại vì Vân Vân là cái người có trí nhớ cũng khá là kỉ và hiểu hết tất cả các sản phẩm của công ty Manulife bán.",
-      "Thì Vân biết là dòng sản phẩm gia đình tử yêu là dòng sản phẩm UL. Thì anh chị khách hàng nào có mua dòng sản phẩm này, hãy mở ra xem mình có một cái quyền lợi gọi là quyền lợi tai nạn. Thì trong quyền lợi này nếu mà đi xe bus có vé là mình được nhân đôi.",
-      "Và Vân mau chóng gọi về cho người mẹ ở ngoài Hà Tĩnh. Vân chưa gặp cô ấy bao giờ luôn các anh chị, Vân toàn liên hệ bằng điện thoại không, mà cô ấy cũng rất là vui vẻ để mà hỗ trợ hợp tác để mà cùng làm với Vân. Vân nói á theo lý thuyết là anh chị đã được nhận xong hết rồi.",
-      "À nhưng à Vân thấy là anh chị có thêm một cái quyền lợi thì cho Vân hỏi là gia đình anh chị có biết rằng đi cái xe đó có vé hay không? Vì lúc mà mà mà đi đi nộp hồ sơ đền bù về á là không ai biết phải nộp cái vé đó và cũng không ai nghĩ tới cái chuyện câu chuyện cái vé đó luôn.",
-      "Tại vì vì về về nguyên tắc á các anh chị ha, công ty bảo hiểm sẽ nhận hồ sơ gì và sẽ chi trả đầy đủ đúng luật cho khách hàng. Nhưng cái trường hợp này đặc biệt là do có vé nhưng người nhà lại không biết để mà nộp hồ sơ. Và Vân đã hỏi là liên hệ với nhà xe, tìm cho ra cái vé đó giùm Vân.",
-      "Thì tìm khi mà tìm ra vé này Vân có nói là khách hàng đợi Vân, Vân sẽ đi kiểm tra với công ty xem cái vé này có hợp lệ với yêu cầu của công ty hay không? Thì tất nhiên là các cái công ty mà xây dựng nằm á, họ sẽ đăng ký với hợp tác xã và với nhà nước đóng thế đầy đủ nên nó đều xuất trình vé được.",
-      "Và may mắn cái vé đó hợp lệ các anh chị. Và mau chóng công ty Menulife đã chuyển thêm cho khách hàng 1 tỷ 250 là nhân đôi cái số tiền tai nạn và tổng khách hàng nhận được là 3 tỷ 750. Thì thì các anh chị thấy là câu chuyện này rõ ràng là nó rất rất là là là đặc biệt đúng không?",
-      "May mắn thay là mình hiểu được, mình nắm được mọi thứ thì khi mà xảy ra vấn đề thì khách hàng được lấy trọn vẹn và được hơn cả mong đợi của khách hàng nữa. Và đây cũng là một câu chuyện mà Vân hay chia sẻ với các anh chị khách hàng là khi mình mua hợp đồng, hãy dành thời gian nghiên cứu sản phẩm, điều khoản, còn cái gì thắc mắc thì mình sẽ hỏi và mình luôn luôn liên hệ tư vấn viên của mình nè, liên hệ công ty để review hợp đồng hằng năm để mình hiểu có quyền lợi gì để khi mà có vấn đề xảy ra thì mình được sử dụng tối đa hóa cái quyền lợi đó.",
-      "Và nếu các anh chị nào khi cần thắc mắc về trong các quyền lợi liên quan tới chi trả hay là hồ sơ chi trả thì các anh chị có thể inbox Vân để Vân có thể tư vấn hỗ trợ các anh chị để tìm những hồ sơ đầy đủ để hợp thức hóa cái hồ sơ của mình một cách đúng pháp luật chuẩn nhất để mình lấy được cái quyền lợi mà mình vốn có.",
-      "Cảm ơn các anh chị đã follow kênh Khánh Vân. Hẹn các anh chị trong những bài chia sẻ sau nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/2248098998997828.jpg"
   },
   {
     "id": "video-016-917000",
@@ -454,15 +325,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ bản chất tham gia bảo hiểm là có lợi hay có lời, giúp khách hàng nhìn nhận đúng đắn về giá trị bảo vệ tài chính.",
-    "paragraphs": [
-      "Ủa, tham gia bảo hiểm là có lợi hay có lời? Mấy bạn mà đóng phí 4, 5 năm mà không xài gì á, nghe thì cũng không thấy có lợi gì lắm ha. Cứ toàn đi đóng tiền thôi à, chứ có nhận được quyền lợi gì đâu.",
-      "Nhưng mà cả nhà ơi, cả nhà mà nhận được quyền lợi á là lời dữ lắm đó. Cái này mình nói lời là lời thực sự nha. Ví dụ như đóng cái hợp đồng có 30 triệu, đóng 5 năm mới có 150 triệu à.",
-      "Mà lỡ có biến cố một cái thôi là nhận mấy tỷ mà. Mà ví dụ như có khách hàng của Vân á mới mua có một tháng à, mới vô qua 21 ngày chờ à thì khách hàng chẳng may là đi qua đường vào buổi tối á cả nhà, khách hàng ở dưới Tây Ninh á thì chẳng may là bị xe đụng và bạn không qua khỏi.",
-      "Và cuối cùng công ty bảo hiểm chuyển tổng tất cả các khoản luôn là 2,7 tỷ cho ba mẹ của bạn. Bạn này còn độc thân nên số tiền này coi như là báo hiếu bố mẹ bạn. Thì tham gia bảo hiểm nó chỉ có lợi thôi chứ nó không có lời.",
-      "Các bạn mà thấy lời là nó kinh khủng lắm. Lời là các anh chị phải đầu tư chứng khoán, bất động sản, mua vàng, Bitcoin đúng không? Nhưng mà tham gia bảo hiểm là một cái kênh không nên so sánh với bất cứ kênh nào hết á.",
-      "Tham gia bảo hiểm là có lời, không có lời. Follow kênh Thanh Vân để nhận những thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/25137432125917000.jpg"
   },
   {
     "id": "video-018-069383",
@@ -479,24 +343,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Chuyển hóa cảm giác bất an thành sự bình an cho tổ ấm thông qua việc sở hữu một hợp đồng bảo hiểm đúng và đủ.",
-    "paragraphs": [
-      "Bất an khi tham gia hợp đồng bảo hiểm hay là bình an khi có hợp đồng bảo hiểm trong nhà mình? Các anh chị đã trải qua cái cảm giác mà đi mua một hợp đồng bảo hiểm trong một cái cảnh rất là bất an hoặc là mua xong cái hợp đồng mà không yên tâm và cứ mỗi lần tới cái kỳ đóng phí là muốn hủy hợp đồng .",
-      "Có ai bị giống như vậy không? Để Vân kể cho các anh chị nghe một câu chuyện này nha. Tại vì á Vân có một cái chị khách hàng, cứ mỗi tới kỳ đóng phí là chị đều nhắn một cái câu vậy nè, \"Bà em ơi, chắc là chị không biết chị có xoay xở được tiền không?",
-      "Tại chị có đóng được tiếp cái hợp đồng này không hay cho chị hủy?\" Thôi chị về đi, đi đi đi. Xong bắt đầu Vân phải ngồi, Vân giải thích lại rất là nhiều thông tin luôn. Vân nói, \"Chị ơi, chị có nhớ lại lý do chị bắt đầu mua cái hợp đồng này không?",
-      "À là vì lý do là chị bảo vệ gia đình chị, bảo vệ con cái và bố mẹ chị đúng không? Thế tại sao bây giờ tới cái lúc mà chị đang duy trì đến năm thứ hai, năm thứ ba, chị vẫn suy nghĩ là có cái gọi là cái mong muốn là đóng nó.",
-      "Vì 3 năm qua chị rất khỏe mạnh, rất bình an, vì chị không có xài nên chị không có thấy giá trị của nó đúng không?\" \nXong cái Vân nói chị như vậy thì chị nói, \"Ừ đúng, chị chưa mua bảo hiểm lâu nay mà không có xài gì hết trơn.\" \nNên cảm thấy có mỗi năm 30 năm chục triệu này nó nhiều với gia đình chị.",
-      "Thế xong Vân nói, \"Chứ thế anh chị muốn gì trong hợp đồng bảo hiểm? Muốn sự bình an đúng không? Mình hãy bình an trên chính cái hợp đồng của mình, nó không có gì thì mình nhận tiền hoàn lại, chứ không phải rằng là mình không thấy xài nên mình cảm thấy lãng phí cái số tiền mà mình đóng vài năm đó mình chưa xài.",
-      "Vì kinh nghiệm của Vân là có những anh chị luôn, khi đóng hợp đồng 5 năm không có vấn đề gì hết và vẫn bình thường, năm thứ sáu hủy hợp đồng cái tự nhiên bị tai nạn. Nó kinh khủng không các anh chị? Và điều này á Vân hay nói là thường á khi mà có trong những cái giai đoạn mà nó xảy ra, tại vì trong cuộc đời nó sẽ có những cái năm hạt à năm năm được năm mất các anh chị.",
-      "Thì khi mà cái năm mà nó hạn rồi á thì cái gì nó cũng có thể tới với mình, đặc biệt là những cái rủi ro à cho bản thân, cho gia đình. Và những điều đó thì lúc đó mình cần cái gì để là lá chắn che chở cho gia đình mình. Đó là chính là một cái hợp đồng bảo hiểm.",
-      "Thì theo Vân nói á là tham gia hợp đồng bảo hiểm chính là sự bình an trong tâm trí trong suy nghĩ của mình và trong cái hành trình mình đang tiếp chuyển trong gia đình, có một cái hợp đồng là mình yên tâm lắm các anh chị.",
-      "Cần cái gì là mình được bảo vệ ngay, à có vấn đề gì là gọi cho Meline, gọi cho tư vấn viên, tại vì các anh chị được tư vấn bởi những người tư vấn chuyên nghiệp, hiểu rõ mình đang mua gì, muốn gì, và mình có gì trong hợp đồng, thì khi mà phát sinh là mình hiểu được quyền lợi, mình mua cái gì, mình sử dụng cái đó, và mình biết được cái hợp đồng bảo hiểm mình đóng 15 năm, 20 năm hay 10 năm, mình phải hiểu được cái hợp đồng bảo hiểm đó.",
-      "Thì Vân tin rằng là các anh chị sẽ luôn luôn bình an để mình lâu dài với cái hợp đồng của mình, và mỗi năm mình đóng phí mình chỉ suy nghĩ là mình đóng một lần, chứ không có phải suy nghĩ là nên duy trì cái hợp đồng này hay hay không.",
-      "Nên các anh chị hãy bình an để tham gia một cái hợp đồng. Và khi mà các anh chị thấy không xài gì trong cái hợp đồng đó, chính là sự bình an đã hiện diện trong gia đình các anh chị. Còn khi mà các anh chị phải đem hợp đồng ra, khi gọi Vân ơi, anh chị có chuyện rồi làm hồ sơ cho anh chị.",
-      "Các anh chị muốn lúc đó không? Không nghe, đừng có muốn như vậy. Và Vân cũng không có muốn nhận điện thoại đó đâu.",
-      "Vân chỉ muốn nhận điện thoại là, \"Vân ơi, đúng uống cà phê, Vân ơi đi ăn trưa.\" \n\"Vân ơi nhà anh chị có sinh nhật, có đám cưới, đám hỏi em tới thăm dự với anh chị nha.\" \nChứ Vân không có muốn nhận hồ sơ để claim đâu. Nên chúc tất cả các anh chị đã tham gia hợp đồng bảo hiểm sẽ bình an và yên tâm với nó.",
-      "Và cần tư vấn thêm nâng hạng giá bảo hiểm nè, nâng hạng mức và những quyền lợi cần thêm á, các anh chị liên hệ Vân nha. Follow kênh Kệ của Vân để được hiểu hơn những cái giá trị về bảo hiểm."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1091779363069383.jpg"
   },
   {
     "id": "video-017-939011",
@@ -513,20 +361,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải đáp nỗi lo công ty bảo hiểm phá sản dựa trên khung pháp lý minh bạch và sự quản lý chặt chẽ của Bộ Tài chính.",
-    "paragraphs": [
-      "Khi công ty bảo hiểm phá sản thì sao? Có rất là nhiều khách hàng lo lắng là, nếu tôi đóng hợp đồng 3 năm, 5 năm, 10 năm rồi lỡ công ty mang hết tiền về nước rồi không có chi trả cho tôi thì sao? Ôi trời ơi, cả nhà có nghĩ là nó dễ dàng như vậy không cả nhà?",
-      "Không thể nào dễ dàng muốn phá sản là phá sản được đâu. Tất cả đều dựa trên luật pháp và đặc biệt là Bộ Tài chính quản lý hết những cái hoạt động của công ty bảo hiểm. Và cái gì cũng có luật đúng không?",
-      "Thì các anh chị có thể tham khảo cái điều luật 83 của luật kinh doanh bảo hiểm. Cái điều luật này chia sẻ về cái rất là rõ về câu chuyện phá sản. Có hai trường hợp nha, một là công ty đó làm ăn thua lỗ và muốn tuyên bố phá sản để bán lại cái công ty này cho một công ty khác.",
-      "Hoặc là công ty đó không muốn làm ăn tại thị trường Việt Nam thôi, chứ họ không có phải là làm ăn phá sản gì hết á. Thì tất cả đều sẽ bán lại cho một cái công ty. Và công ty này có thể là từ thỏa thuận hoặc là do nhà nước chỉ định.",
-      "Thì khi mà bán lại qua cho công ty khác thì cái hợp đồng bảo hiểm của khách hàng, quyền lợi nó như thế nào? Là cái công ty tiếp nhận phải xử lý và đền bù y chang như thế đó. Vân ví dụ, công ty Aviva vào 2 năm trước, công ty không có muốn kinh doanh tại thị trường Việt Nam và đã thỏa thuận được với Manulife.",
-      "Manulife đã mua lại công ty Aviva và tất cả các hợp đồng khách hàng của Aviva hiện tại Manulife vẫn bảo đảm được quyền lợi cho Aviva. Và đó là một minh chứng trải qua bao nhiêu năm tại thị trường bảo hiểm của Việt Nam rồi.",
-      "Thì có rất là nhiều công ty bảo hiểm đến Việt Nam và cũng có vài công ty rời Việt Nam ra đi. Nhưng hiện tại là công ty những công ty có vốn điều lệ to như Manulife. Lớn nhất thị trường như Manulife thì không có lý do gì mà công ty lại không tiếp tục làm ăn kinh doanh và đầu tư.",
-      "Và đặc biệt là kết quả kinh doanh của công ty Manulife rất là tốt và các anh chị có thể coi báo cáo tài chính được kiểm toán, được định phí, định giá và được kiểm tra chặt chẽ tức bởi nhà nước nha các anh chị. Nên cái việc công ty phá sản là điều gần như rất khó luôn.",
-      "Và khi mà các anh chị hiểu được điều này thì các anh chị đi tham gia vào các hợp đồng bảo hiểm các anh chị rất yên tâm hoàn toàn. Nếu mà công ty to làm ăn uy tín lâu dài thì các anh chị cứ yên tâm là công ty sẽ bảo vệ chúng ta dài lâu nha.",
-      "Ai mà có thắc mắc nhiều hơn nữa về hợp đồng của mình, có những khách hàng nào mà nằm trong các cái công ty mà được thay đổi mà cần Vân hỗ trợ, hướng dẫn về cái điều khoản nữa thì các anh chị có thể inbox gửi hợp đồng cho Vân để Vân hỗ trợ nha.",
-      "Follow kênh kênh Vân để nhận những cái giá trị thông tin bảo hiểm tốt nhất nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/666882872939011.jpg"
   },
   {
     "id": "video-019-633480",
@@ -543,22 +379,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Cung cấp 4 điều cốt lõi cần nắm rõ trước khi quyết định tham gia bất kỳ hợp đồng bảo hiểm nhân thọ nào.",
-    "paragraphs": [
-      "Bốn điều cần biết trước khi tham gia hợp đồng bảo hiểm. Thấy một điều rằng là rất là nhiều người mua bảo hiểm nhưng lại chưa thực sự hiểu về cái mình đang mua luôn. Mua xong không nhớ gì hết trơn á.",
-      "Nên hôm nay Vân chia sẻ rất là đơn giản bốn điều mà Vân nghĩ là mọi người cần biết để trước khi quyết định tham gia một cái hợp đồng bảo hiểm và nhớ về nó nha. Điều thứ nhất, Mua bảo hiểm là không phải để kiếm lời. Nhớ dùm Vân nha, mua bảo hiểm chỉ có lợi, thôi không có lợi gì hết trơn á.",
-      "Nếu mục tiêu chính của anh chị là đầu tư và kiếm lợi nhuận cao, thì bảo hiểm không phải là công cụ phù hợp để mình đặt mục tiêu đó. Bảo hiểm sinh ra trước hết là để bảo vệ mình và gia đình mình trước những cái rủi ro. Ví dụ như không may mình phải bệnh hiểm nghèo, tai nạn hoặc là rủi ro nghiêm trọng nào đó, lúc đó mình có một khoảng tiền từ bảo hiểm để giảm bớt cái áp lực chi phí điều trị, sinh hoạt thì những cái khoản phát sinh khác nó cũng rất là đỡ đúng không?",
-      "Điều số hai, phải hiểu là tiền của mình đóng rồi đã đi về đâu rồi. Trong một cái hợp đồng thường có sản phẩm chính và các sản phẩm hỗ trợ, anh chị cần nhớ phí của các sản phẩm hỗ trợ như thể sức khỏe, bệnh hiểm nghèo, tai nạn là phí bảo vệ hàng năm và có một số sản phẩm mà những năm về trước là có tích lũy, còn từ năm ngoái trở về đây là sản phẩm hỗ trợ là không có tích lũy luôn nha.",
-      "Mình đóng phí là để được bảo vệ trong năm đó, còn những cái sản phẩm nhân thọ mà chính là phần giá trị tích lũy sẽ theo quy định của từng sản phẩm. Có những cái quy định sản phẩm đầu tư thì nó sinh lợi nhiều hơn, hoặc là có những cái dòng có cam kết thì sinh lợi ít hơn.",
-      "Trung quy lại á là mình đóng bao nhiêu năm mình cũng phải biết là mình đóng mua đã bao nhiêu năm luôn. Và trước khi mua á hãy hỏi tư vấn viên thật là rõ đi nè, trong số tiền tôi đóng á phần nào là phí bảo vệ, phần nào là phí của sản phẩm chính và phần nào được tích lũy đầu tư vậy?",
-      "Mình hiểu xong là hôm sau mình không có thắc mắc nữa. Điều số ba nè, nếu đã xác định cần bảo hiểm á thì nên tham gia khi mình còn đủ điều kiện sức khỏe. Vì bảo hiểm nhân thọ là phải thẩm định sức khỏe nè, có mức phí phù hợp nè, sức khỏe mà tốt trẻ á thì phí nó rất là rẻ, còn ngược lại là các anh chị hiểu rồi đó.",
-      "Đã xác định tới lúc nào mua thì mình chốt sức khỏe lúc đó. Bây giờ mình không nói là biết vậy năm ngoái mua có phải ngon không, bây giờ là sức khỏe hay phí nó đều rẻ lại. Nhưng nếu biết trước là giao hết rồi, không có ai nghèo nữa hết, sao bây giờ mình thấy được là mình cần mua bảo hiểm lúc nào mình đi mua thôi cả nhà.",
-      "Các anh chị á đừng có nghĩ là thôi để vậy năm nữa có tiền rồi mua. Điều quan trọng không chỉ là lúc mình có tiền đâu, mà phải lúc đó mình có đủ điều kiện về sức khỏe và thế chấp của mình còn không? Và điều số bốn, Vân nghĩ rất là quan trọng luôn, hãy chọn đúng tư vấn viên, có tâm, có tầm và chuyên nghiệp thực sự như các anh chị.",
-      "Các anh chị thử nghĩ xem một hợp đồng của mình á kéo dài 10 15 20 năm, mà trong thời gian đó có thể thay đổi công việc, thay đổi thu nhập, kết hôn, con cái, phát sinh những cái vấn đề về sức khỏe. Đến lúc cần cập nhật hợp đồng, thay đổi hợp đồng, hồ sơ các thứ á là cực kỳ cần người hiểu và hỗ trợ mình đúng không?",
-      "Nên Vân luôn nghĩ rằng mua đúng sản phẩm là quan trọng, nhưng chọn đúng người đồng hành của mình còn quan trọng hơn nữa đó các anh chị. Và bản thân Vân, Vân cũng không có muốn để khách hàng có những trải nghiệm không tốt. Có vấn đề gì Vân đều xin lỗi khách hàng là đầu tiên luôn và để hỗ trợ khách hàng và chính năm qua Vân đồng hành, Vân hỗ trợ và cống hiến cho cả ngành bảo hiểm.",
-      "Nên bây giờ không phải là ai đã mua hàng của Vân mới nhiệt tình. Các anh chị thử đi, các anh chị không mua hàng của Vân các anh chị ăn được hỗ trợ, có cơ hội hỗ trợ không là biết liền à. Và các anh chị cứ cần cái gì nhắn cho Vân nha, chắc chắn Vân sẽ hỗ trợ, thậm chí còn được nhận quà của Vân đó.",
-      "Cảm ơn cả nhà đã follow Vân."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1068035375633480.jpg"
   },
   {
     "id": "video-021-090462",
@@ -575,20 +397,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Phân tích lý do vì sao bảo hiểm y tế nhà nước là chưa đủ khi đối mặt với chi phí điều trị các bệnh hiểm nghèo lớn.",
-    "paragraphs": [
-      "Có bảo hiểm y tế thì đã đủ chưa? Rất là nhiều người ngồi kia đang nghĩ rằng là có bảo hiểm y tế là đủ hết rồi. Thế tại sao có rất là nhiều người đi điều trị ung thư phải trả thêm 100 triệu, 200 triệu, thậm chí 500 triệu, 1 tỷ, vài tỷ?",
-      "Các anh chị có đặt ra câu hỏi này không? Vân thấy rất là lạ luôn. Người ta mua bảo hiểm y tế rất rất là nhiều luôn, nhưng vẫn rất là nhiều người đi điều trị ung thư còn đều trả thêm rất là nhiều tiền.",
-      "Người mọi người quên rằng là bảo hiểm y tế là một cái bảo hiểm nhà nước và mỗi năm các anh chị mua cái bảo hiểm này chỉ từ 800 tới 1 triệu đồng một năm thôi. Thì các anh chị nghĩ dịch vụ bảo hiểm y tế nhà nước thì có thể là mình được trả hết tất cả chi phí không?",
-      "Đương nhiên là không nha. Bảo hiểm y tế chỉ giải quyết những cái điều liên quan tới tuyến công và phải nằm trong danh sách được chi trả. Nhớ rõ giúp Vân điều đó nha.",
-      "Cái gì liên quan tới hai từ dịch vụ và những cái thuốc ngoại hay những cái thuốc xịn là chắc chắn không được trả rồi đó. Và đây là cái vấn đề mà rất là nhiều người đang hiểu lầm. Vào những cái bệnh viện mà có liên kết với sử dụng bảo hiểm y tế và không có nói bệnh viện nhà nước đâu nha.",
-      "Thì các anh chị thấy mỗi lần bảo hiểm y tế chi trả được nhiều không? Rất là ít luôn, chỉ 10 tới 20%. Còn đối với những cái tuyến công sử dụng hết tất cả bệnh viện à cái dịch vụ công luôn cũng được khoảng 80%.",
-      "Bảo hiểm y tế quá tốt không? Vân khẳng định là rất tốt nha. Nhưng mà nó chưa đủ đâu cả nhà ơi.",
-      "Và đó là lý do tại sao hàng chục công ty bảo hiểm Phi Nhân thọ và công ty Nhân thọ đang phát triển rất là mạnh tại Việt Nam và trên thế giới. Vì người ta để giải quyết dịch vụ tư, những cái yêu cầu, những cái nhu cầu thoải mái hơn khi điều trị.",
-      "Và đó là lý do tại sao mà khách hàng cần phải mua thêm bảo hiểm dịch vụ tư ở bên ngoài để mình có thể đi điều trị một cách thoải mái trong các bệnh viện quốc tế, đi nước ngoài, đi Singapore, đi Pháp, đi Anh, đi Mỹ để điều trị, rất là thoải mái luôn.",
-      "Do Vân là nên có bảo hiểm y tế là chắc chắn, và cũng nên mua cho mình một cái hợp đồng bảo hiểm nhân thọ, để mình có thể đáp ứng được các tiêu chí là vừa có bảo hiểm nhà nước trả mà còn vừa có bảo hiểm dịch vụ trả nữa, yên tâm về lâu về dài và tiết kiệm tiền cho tương lai của chúng ta nha.",
-      "Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/2300186437090462.jpg"
   },
   {
     "id": "video-020-770346",
@@ -605,24 +415,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Chứng thực chi trả quyền lợi y tế thực tế hơn 171 triệu đồng cho khách hàng gặp sự cố hóc xương cá phẫu thuật ruột non.",
-    "paragraphs": [
-      "Xin chào cả nhà. Hôm nay là Vân thời gian để đi một cái sự kiện rất là đặc biệt, đó là cái buổi ý lễ chi trả cho khách hàng mắc một cái sương cá thôi mà công ty đã chi trả 171 triệu bằng chứng sống nha. Vân đã xin phép khách hàng và được chia sẻ lan tỏa thông tin để cho khách hàng hiểu và an tâm hơn khi sử dụng bảo hiểm của Meline.",
-      "Chúc tên là Trần Thị Thu Trúc thì chúc mua hợp đồng bảo hiểm cách đây 3 năm về trước. Thực ra là lúc mua thì cũng không có hiệu rõ về cái hợp đồng đâu nhưng mà ờ khi mà mình gặp chuyện thì mình mới cảm thấy là cái giá trị hợp đồng nó rất là ý nghĩa đối với mình.",
-      "Chúc có thể chia sẻ cụ thể cái trường hợp mà mắc sương cá của mình và mình bị như thế nào mà mình nhận được cái số tiền bồi thường này? Thì thực ra là mình bị đau bụng rồi mình có đi mua thuốc ở bên ngoài uống để cho nó đỡ đau bụng á thì nghĩ là chắc anh bị bà rồi đau bụng thôi.",
-      "Nhưng mà uống thuốc thì thấy không hết và cảm thấy đau cái đường ruột, cảm thấy cái cơn đau nó khá là lạ sợ đau ruột thừa. Cho nên là em mới ừ bình thường á là sẽ đi mua thêm thuốc chỗ khác để uống nhưng mà mình cũng tự tin là mình có bảo hiểm nên mình cứ vô cấp cứu mình mình mình kiểm tra thôi thì họ cho chụp CT thì siêu âm thì nghi có dị vật thì mình cảm thấy rất là lạ.",
-      "Mình lớn vậy sao mình nuốt tùm bậy bà vô để mà có dị vật được, đâu phải em bé đâu. Thế rồi người ta mới cho chụp CT thì người ta nghi cái dị vật là dị vật là xương cá. Thì bác sĩ mới hỏi mình là có ăn cá không?",
-      "Mình cũng ngờ ngợ mình không biết mình có ăn cá không? Tại vì cũng khá lâu rồi chưa ăn, chắc cũng hơn một tuần. Tại vì cái quá trình mình nuốt trúng cá là do lúc nãy là mình mắc chăm con nhỏ nên là mình sợ bé nó té nên là mình phải vội mình ăn thật là lẹ để mà lên giữ em bé.",
-      "Cho nên là trong quá trình có nuốt khá là vội và ăn cùng với rau á nên là có thể là nó nó nó nó xui á mình mình nuốt nhanh lắm. Mình nuốt xong thì mới cảm thấy là nó vướng vướng gì nhẹ thôi à, nó chỉ là hơi hình như mình vừa nuốt trúng cái gì nhưng mà chẳng quan tâm tại vì lúc đó chỉ nghĩ đến con rồi chạy lên với con thôi.",
-      "Thì đó thì thì khi mà bác sĩ hỏi như vậy thì mình mới mới ngờ ngợ là mình ủa mình có ăn cá hay sao? Cũng nhớ là có nuốt không nữa, tại vì cũng không nhớ rõ. Đó thì khi mà siêu âm thì thấy là có xương cá thì bác sĩ chỉ định là mổ nên rất là lo lắng, bởi vì bác sĩ báo là bị rụng lủng ruột non rồi cho nên là phải đi mổ cấp cứu luôn.",
-      "Qua cái trường hợp tại Vân đang ở nhà khách hàng, Vân có con khách hàng luôn. Thì đây là một trong những cái trường hợp mà Vân cũng chia sẻ là rất hi hữu đúng không ạ? Nhiều khi mắc xương cá mình vướng ở cổ thì mình phát hiện và mình gắp ra nó rất là dễ.",
-      "Nhưng mà rất luôn cái xương cá vô bụng mà đâm lủng ruột là mình không phát hiện được mà thấy đau bụng rồi cuối cùng mới tìm hiểu ra. Thì đây là một cái trường hợp gọi là tai nạn thì Meline chi trả cho khách hàng theo cái mục là tai nạn và tổng quyền lợi khách hàng nằm ở chi phí nằm viện, phẫu thuật và trợ cấp y tế cộng với tiền tai nạn của cái xương cá này đâm lủng ruột á thì tổng cộng là 171 triệu thì Trúc có thể chia sẻ một chút cảm nhận cho khách hàng hiểu là khi mà Trúc nhận cái khoản tiền bồi thường này thì Trúc sẽ cảm nhận như thế nào về bảo hiểm á?",
-      "Thì khi mà mình nhận rồi thì mình mới biết được là cái hợp đồng của mình nó có cái quyền lợi đó thì mình mới mới phát hiện ra là à mua bảo hiểm là phải mua quyền lợi. Tại vì em lúc mà em mua là em cũng không có tài chính cũng không có thoải mái cho nên là khi mà mua thì chỉ mua làm sao mình chỉ lo là những lúc mình nằm viện thôi, cho nên là mình không có biết được là cái hợp đồng của mình nó có cái quyền lợi đó và đồng thời mình mới phát hiện ra là cái thẻ sức khỏe của con mình á nó cũng chỉ có được nằm viện thôi, lúc đó mình mới phát hiện ra là hai đứa con trai của mình chưa có cái quyền lợi tai nạn đó nên là chắc sắp tới mình phải gắn thêm cái quyền lợi tai nạn.",
-      "mình mới mua cho hai bé cái quyền lợi nằm viện thôi. Ừ, sau khi được chi trả một cái trường hợp bảo hiểm thì khách hàng cũng cảm thấy rằng là mình phải xem lại các quyền lợi để mình xem mình thiếu đủ cho các thành viên của mình.",
-      "Thì đây là một trong những cái mà Vân nghĩ là rất là quan trọng cho những khách hàng đã mua rồi thì mình cũng nên review lại hợp đồng của mình hoặc là chưa mua thì mình tự tin để mình chuẩn bị một cái hợp đồng bảo hiểm để mình trang bị.",
-      "Và cảm ơn Trúc đã tin tưởng, đã tạo điều kiện cho team của nhà Vân xuống làm một cái lễ chi trả cho Trúc, chia sẻ cho rất là nhiều anh chị, có rất là nhiều anh chị đăng ký để tư vấn, bảo vệ quyền lợi của gia đình của khách hàng.",
-      "Cảm thấy rất là biết ơn, và hi vọng là Meline sẽ giúp bảo vệ thêm thật là nhiều khách hàng, cảm ơn Trúc đã đồng hành cùng Meline. Chúc Trúc luôn có nhiều sức khỏe, bình an và hợp đồng bảo hiểm sẽ theo mình chọn đời. Dạ cảm ơn chị."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/4271139669770346.jpg"
   },
   {
     "id": "video-022-354903",
@@ -639,24 +433,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Làm rõ vai trò và sự cần thiết của bảo hiểm gắn liền với các khoản vay ngân hàng qua câu chuyện thực tế của khách hàng VIP.",
-    "paragraphs": [
-      "Vay ngân hàng thì không có cần mua bảo hiểm. Để Vân kể cho các anh chị một câu chuyện, để sau đó các anh chị tự kết luận lại là vay ngân hàng thì có cần mua bảo hiểm hay không ha. À gần đây Vân có tư vấn cho một cái anh khách hàng, anh khách hàng này cũng là khách hàng VIP của các ngân hàng.",
-      "Và bây giờ anh cũng là khách hàng VIP của Meli. Thì trước đó thì các cái khoản vay của anh á thì có những cái ngân hàng thì sẽ yêu cầu mua bảo hiểm và anh sẽ mua. Có những ngân hàng nào không yêu cầu thì anh sẽ không mua.",
-      "Và anh mua xong một năm là anh vứt hết. Và anh cũng không giữ lại và không có một cái cảm nhận hay một cái giá trị nào đọng lại trong người anh hết. Cho tới lúc anh gặp Vân.",
-      "Và ngồi Vân phân tích lại câu chuyện là anh có thể tổng kết lại trong ba ngân hàng đó anh vay bao nhiêu được không? Ờ có ngân hàng thì anh vay 3 tỷ, có ngân hàng vay 5 tỷ và có ngân hàng vay 2 tỷ. Thì tổng lại đâu đó cũng gần khoảng 10 tỷ tiền khoản vay của ba ngân hàng khác nhau, thế chấp bởi ba tài sản khác nhau luôn.",
-      "Và Vân ngồi Vân phân tích cho anh là bây giờ anh có phải là người trụ cột không? Và anh vay cái khoản tiền này là anh đứng ra vay để làm ăn, kinh doanh và lo cho cả gia đình anh, đúng không? Bây giờ nếu lỡ có việc gì mà ông bà gọi đi chơi sớm á, không có ở nhà nữa, thì bây giờ chẳng lẽ vợ anh sẽ phải hối hả, phải rối lên để đi tìm hồ sơ để tới ngân hàng xem anh đang nợ bao nhiêu.",
-      "Để xoay ra được một 10 tỷ tiền mặt khi anh không còn nữa thì vợ anh có đủ khả năng không? Vì nếu vợ anh có đủ khả năng thì anh không cần phải đi vay ngày hôm nay. Em chắc chắn điều đó luôn.",
-      "Vì đa số các anh làm rất là vất vả thì thường vợ sẽ nội trợ hoặc làm những công việc rất nhẹ nhàng để cho người ta có thể tính toán ra 10 tỷ tiền mặt là rất khó. Thế mà để cho đừng có nỗi lo đó nó nó nó khỏi ý phải lo lắng á, thì nếu mà có 10 tỷ của công ty bảo hiểm chuyển xuống cho anh và anh chuyển về ba ngân hàng và cái chị vợ chuyển về ba ngân hàng và đi rút sổ hồng, sổ đỏ của mình về nhà, có phải rằng là những căn nhà đó vẫn tiếp tục được cho thuê, à những căn nhà đó vẫn tiếp tục sở hữu trong tay vợ con anh và cuộc sống mong bảo đảm trong tương lai.",
-      "Thay vì, có khi tài sản của anh là 5 tỷ, lúc đó vợ anh chỉ cần bán và 3 tỷ để trả nợ và cuối cùng cái tài sản nó mất luôn. Thì anh có muốn không? Không đúng không?",
-      "Sao anh khách hàng của mình nghe anh giật mình luôn, nên đôi khi anh thấy trong ngân hàng mà mà bây giờ sao phải mua cái hợp đồng đó, mọi người khó chịu lắm, là do mọi người chưa có hiểu cảm giác à là được bảo an tâm từ bảo hiểm nó quan trọng như thế nào, nên mọi người mua chỉ để đối phó và sau năm đầu là hủy hết.",
-      "Thì điều này là rất là đáng tiếc luôn. Nếu các anh chị đã hiểu và đã được mua trong ngân hàng thì các anh chị nên mua và phải khai bệnh cho cẩn thận để cái hợp đồng nó xài dài lâu và nên đóng tái tục tiếp hàng năm để mình được bảo vệ cái khoản vay đó, bảo vệ bản thân mình.",
-      "Sau này mình không vay nữa, mình rút cái khoản vay ra, nhưng hợp đồng vẫn còn đó và hiện diện trong tương lai của cuộc đời mình mà. Thế các anh chị thấy rằng có cần mua bảo hiểm khi vay cho cần lắm nha, cần để khi đó vợ con mình có vấn đề gì hay là vợ đứng vay chồng có vấn đề gì, thì mỗi một gia đình đều có những cái khoản dự phòng và đặc biệt khi vay mà có khoản backup ngay lập tức tiền mặt luôn, chỉ như ngân hàng rút sổ về rất khỏe luôn, còn phải đi thanh toán tất toán là cực kỳ cực.",
-      "Nên và cũng khuyên các anh chị là cần có hợp đồng bảo hiểm khi vay. Cứ vay 3 tỷ là mua 3 tỷ bảo vệ sinh mạng, nếu được thì mua 5 tỷ để có 2 tỷ để dự phòng, trả 3 tỷ ngân hàng thì còn 2 tỷ cho mấy mẹ con xài, chứ chả hết luôn, ngân hàng thì không còn đồng nào cũng không.",
-      "Nên nên trừ hao ra một phần và nếu mà ai mà vay nhiều thì cũng nên mua giật giật cái hạng mức của mình tới 10, 20 tỷ là bình thường nha các anh chị. Còn ai vay 1, 2 tỷ mua nhà mà có một cái nhà để ở thì càng phải mua bảo hiểm để dự phòng nha, để lỡ mà có chuyện gì chẳng vợ con mình ra đường ở rồi đưa cái nhà cho ngân hàng siết đúng không?",
-      "Đâu có được vậy cái nhà, nên mua bảo hiểm đi, cứ vay ngân hàng là mua giùm Vân có bảo hiểm, vay nhiều, mua bảo hiểm, vay nhiều, được chưa? Follow kênh Khánh Vân để à biết thêm những cái thông tin giá trị từ bảo hiểm nhân thọ.",
-      "Cảm ơn cả nhà."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1543446270354903.jpg"
   },
   {
     "id": "video-023-321745",
@@ -673,18 +451,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Giới thiệu giải pháp tài chính toàn diện tích hợp học vấn, hưu trí và di sản lần đầu xuất hiện tại thị trường Việt Nam.",
-    "paragraphs": [
-      "Cả nhà biết tin gì chưa? Manulife mới ra mắt một siêu phẩm. Tại sao Vân nói là siêu phẩm?",
-      "Đời mà làm bảo hiểm của Vân được chín năm nay á, Vân chưa bao giờ gặp một cái sản phẩm như vậy. Vân hỏi mấy anh chị ở Việt Nam á làm được 27 năm, người ta có gặp sản phẩm như vậy chưa? Cũng chưa luôn.",
-      "Và hiện nay trên thị trường Việt Nam chỉ có duy nhất công ty bảo hiểm Nhân thọ Manulife phát hành một sản phẩm đầu tư siêu xịn mịn, giúp cho khách hàng có được một kế hoạch tài chính hưu trí, một kế hoạch học vấn bền vững và một dòng tiền rất là tốt về tương lai luôn.",
-      "Và đây cái sản phẩm này á Vân đã tìm hiểu ba ngày hôm nay, và thực sự Vân thấy nó quá ấn tượng luôn. Và sản phẩm này hứa hẹn là một sản phẩm bom tấn tại Việt Nam và người người nhà nhà ở Việt Nam sẽ sở hữu nó. Sản phẩm này là một sản phẩm chiến lược nha các anh chị.",
-      "Tập đoàn Manulife muốn đầu tư vào Việt Nam và người dân Việt Nam sẽ sở hữu một cái dòng tài sản hưu trí an nhàn, bình an tới trọn đời luôn. Và Vân tin rằng là cái khối tài sản mà di sản có thể để lại cho con là của một điều rất nhiều khách hàng quan tâm.",
-      "Nên hi vọng là các anh chị em nhà mình chuẩn bị sẵn sàng đón chào cái sản phẩm này và ai mà tò mò thì nhắn tin cho Vân. Vân sẽ gửi một chút thông tin về sản phẩm này để các anh chị biết qua và mình có thể hiểu hơn được để mình chuẩn bị cái khoản tiền để có thể mua được cái sản phẩm này nha.",
-      "Mọi người hỏi đây có phải là sản phẩm bảo hiểm không? Bí mật, bí mật. Nhưng chắc chắn đây là một sản phẩm đầu tư xịn mịn nhất của Manulife từ trước đến nay.",
-      "Tranh thủ cơ hội. Tập đoàn Manulife đầu tư về Việt Nam nha và phải sử dụng ngay cái sản phẩm này, có cho đời, có cho gia đình mình, để yên tâm dài lâu tài chính của mình, của con mình, của bố mẹ mình và của thế hệ tương lai nữa.",
-      "Hẹn gặp lại các anh chị trong sản phẩm mới nào."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/3485023858321745.jpg"
   },
   {
     "id": "video-024-840936",
@@ -701,23 +469,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải thích nguyên lý và cách xử lý khi gặp điều khoản loại trừ bệnh có sẵn trước khi tham gia bảo hiểm.",
-    "paragraphs": [
-      "Mua bảo hiểm mà bệnh có sẵn bị loại trừ thì mua làm gì nữa? Nhiều khách hàng nói lắm các anh chị. Hôm trước có một chị khách hàng nhắn cho Vân nè: \"Em ơi, tư vấn cho chị mua một gói bảo hiểm nhân thọ, kết hợp với thẻ sức khỏe nha\".",
-      "Trong lúc tư vấn á thì Vân có hỏi chị khá kỹ luôn. Chị có bệnh lý bẩm sinh, chuẩn đoán bị tổn thương hay là những cái bệnh có trước rồi, chị từng nằm viện hay điều trị gì không? Chị nói là chị có u xơ, sắp tới chắc là phải điều trị nên chị tranh thủ mua bảo hiểm để đi điều trị.",
-      "Máy mà chị nói với em á chị giấu cái này là em không biết sao luôn á. Rất là đồng cảm với chị, vì mình hiểu là khi mà quan tâm nhiều hơn sức khỏe, mình có bệnh trong người thì mình muốn được ai đó bảo vệ là chuyện bình thường thôi đúng không cả nhà?",
-      "Nhưng mà mình cũng phải nói thật với chị là chị ơi, nếu mà mình tham gia ở cái thời điểm mà mình đã có cái bệnh lý đó xảy ra rồi thì chắc chắn là sẽ bị loại trừ và áp dụng những cái điều kiện tùy theo trường hợp kết quả thẩm định của từng cái hồ sơ đó chị.",
-      "Có thể là chị bị loại trừ nhưng thậm chí có thể chị bị tăng phí nữa. Thì đó là cái câu chuyện mà thực tế em đang muốn nói cho em không có thể không khai bệnh và và bán cho chị được. Chị nghe xong thì chị mới hỏi là: \"Ủa vậy chị mua bảo hiểm để làm gì em?",
-      "Để có tiền đi chữa bệnh thì chị mới mua chứ không thì chị mua để làm gì?\" Vân nghĩ đây là một trong những điều mà rất là nhiều người hiểu nhầm luôn. Bảo hiểm là một sản phẩm mua khi chưa có bệnh và để phòng hờ những cái lúc xảy ra bệnh, bởi nếu mà mình đã biết trước rủi ro nào chắc chắn đến thì việc tham gia bảo hiểm cho rủi ro đó sẽ không còn giống như nguyên tắc của bảo hiểm nữa.",
-      "Nhưng điều đó không có nghĩa là đã bị loại trừ cái bệnh đó thì mua bảo hiểm chẳng còn ý nghĩa gì nữa. Không đúng đâu cả nhà, vì ngoài cái bệnh đó, công ty còn bảo hiểm hàng trăm cái bệnh mà phát sinh sắp tới mà, bởi vì trên cơ thể con người của mình nhiều bệnh lắm, đúng không cả nhà?",
-      "Nếu một tình trạng sức khỏe bị loại trừ thì tùy vào sản phẩm và điều khoản có những cái rủi ro sức khỏe khác vẫn được xem xét bảo vệ bình thường luôn. Thế là mình mua bảo hiểm mình không được bảo vệ cái A nhưng cái B, cái C mình vẫn được bảo vệ mà.",
-      "Và bởi vì trong cuộc sống có rất nhiều chuyện mình không thể nào biết trước được ngày mai chuyện gì. Nhiều người nghĩ là bỏ một đồng mua bảo hiểm, nếu có chuyện gì thì mình được trả 10 đồng, vậy khách hàng luôn là người có lợi đúng không?",
-      "Thì thực tế không có đơn giản như vậy được. Bảo hiểm là một hoạt động kinh doanh và dựa trên việc phân tán và quản lý rủi ro. Công ty bảo hiểm thu phí từ những khách hàng để thực hiện những cái nghĩa vụ chi trả trên những cái trường hợp phát sinh thuộc phạm vi bảo hiểm.",
-      "Nên là thay vì hỏi mua bảo hiểm để làm gì, nếu tư bệnh rồi bị loại trừ á thì Vân nghĩ là câu trả lời phù hợp bây giờ á là với tình trạng sức khỏe của anh chị hiện tại thì anh chị có thể mua được những quyền lợi nào và mới phức phí ra sao thì đó là câu trả lời Vân nghĩ là xuất sắc nhất.",
-      "Và đó mới là điều mà người tư vấn viên bảo hiểm cần giải thích rõ cho khách hàng. Cuối cùng, Vân chỉ muốn nhắn nhủ với cả nhà hai điều thôi. Một là nếu đang khỏe mạnh, hãy tìm hiểu bảo hiểm sớm, không phải vì mình nghĩ chắc chắn là sẽ có chuyện mà là vì lúc mình khỏe mạnh, bình thường, tài chính tốt thì mình có nhiều sự lựa chọn hơn.",
-      "Đúng không? Câu này rất là xuất sắc luôn á. Hai, khi mua bảo hiểm hãy đọc kỹ điều khoản khai báo sức khỏe trung thực và hỏi rõ những gì được bảo hiểm, những gì bị loại trừ và hiểu đúng ngay từ đầu thì sau này mình sẽ đỡ thất vọng hơn rất là nhiều luôn.",
-      "Nếu các anh chị chưa tìm được người tư vấn phù hợp cho bản thân mình, hãy nhắn Vân Vân sẽ hỗ trợ các anh chị nghe tư vấn miễn phí và các anh chị có quyền mua hay không mua, không có ràng buộc gì cả. Cảm ơn cả nhà đã xem video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/999454989840936.jpg"
   },
   {
     "id": "video-025-202946",
@@ -734,25 +487,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Chỉ rõ 5 điều 'không' cần tránh khi mua bảo hiểm để đảm bảo quyết định tài chính sáng suốt và bền vững.",
-    "paragraphs": [
-      "Tốt nhất là nói không với bảo hiểm nhân thọ, nhưng không phải chỉ có một cái không, mà có năm cái không lận. Cái không thứ nhất là không mua vì cả nể người quen. Rất nhiều người mua bảo hiểm vì người tư vấn là bạn bè, người thân, vì anh chị em, rồi ngại từ chối nên ký đại thôi.",
-      "Cả nhà nhớ, bảo hiểm là khoản tiền mà mình có thể phải đóng trong rất nhiều năm, nên là mình phải suy nghĩ quyết định và mình chọn lựa nó một cách rất là cẩn thận. Mình đóng bao nhiêu năm, được bảo vệ cái gì, khi nào được chi trả, khi nào không được chi trả và có phù hợp với khả năng tài chính của mình hay không thì mình hãy nên mua ha.",
-      "Mình chưa hiểu chỗ nào thì cứ mạnh dạn hỏi lại tư vấn viên, hỏi tới khi nào hiểu hết thì các anh chị hãy quyết định. Đó là một trong những sự lựa chọn sáng suốt nhất. Thứ hai á là không mua chỉ vì lãi suất.",
-      "Nhiều người tìm hiểu bảo hiểm và hỏi ngay là sau này mình nhận lại được bao nhiêu và lãi suất đang bao nhiêu. Sau này không sai, nhưng nếu chỉ quan tâm tới lợi nhuận bao nhiêu thì rất là dễ hiểu sai về bản chất của bảo hiểm.",
-      "Vì bảo hiểm là bảo vệ những cái rủi ro đến với gia đình, đặc biệt là bảo hiểm là mang giải pháp dự phòng đến cho người dân chứ không phải là mình đi so lãi suất với nhau. Ví dụ như mình đang có một cái khoản vay 1 tỷ, nếu chẳng may có chuyện gì xảy ra, khoản nợ đó đâu tự mất đi đâu cả nhà.",
-      "Nó vẫn phải còn đó và có thể sẽ trở thành gánh nặng cho cả gia đình thậm chí á, ngân hàng thu mất cái nhà và gia đình con cái mình không có chỗ ở luôn. Đừng chỉ nghĩ là bao lâu rồi thì mình lại lấy được tiền, rồi lấy được bao nhiêu mà hãy suy nghĩ thêm một chút nữa.",
-      "Nếu rủi ro xảy ra thì gia đình mình sẽ được bảo vệ như thế nào. Thứ ba, không có chọn tư vấn viên chỉ vì họ hứa chia lại hoa hồng. Có nhiều người sẽ hỏi là chị mua bên này thì chị được chia lại bao nhiêu.",
-      "Nhưng mọi người đừng có thấy rằng là họ chia hoa hồng trước mắt này á là việc đúng nha, mà cái này là đang trái với quy định của Bộ tài chính luôn. Và cái này công ty mà biết được là đuổi việc luôn đó. Và quan trọng hơn nữa là một cái hợp đồng bảo hiểm là có thể kéo dài rất là nhiều năm.",
-      "Lúc mua thì được tư vấn rất là nhiệt tình đúng không? Nhưng sau vài năm mình hỏi thăm về hợp đồng, mình cập nhật thông tin á, cần hỗ trợ thì tư vấn viên lại không có nhiệt tình nữa. Vậy nên khi chọn tư vấn viên phải chọn đúng nè, chọn người có trách nhiệm, làm lâu dài và có chuyên môn kiến thức vững chắc nha.",
-      "Chứ nhiều đôi khi là các anh chị sẽ bị hiểu sai, hiểu nhầm khi mình mua. Thứ tư, không có qua loa khi kê khai sức khỏe, đừng có nghĩ là bệnh này nhỏ nhỏ, chắc không cần khai đâu, không nhớ thì bỏ qua. Mình không cẩn thận với cái việc kê khai là sau này mình sẽ phải là người chịu trách nhiệm với hồ sơ của mình.",
-      "Khai đúng, khai đầy đủ, có hồ sơ khám bệnh, thuốc đang sử dụng, tiền sử gia đình, và những cái việc này là cực kỳ quan trọng trong cái hợp đồng để mà công ty đánh giá sức khỏe của mình. Và mình nhớ phải đọc lại các quyền lợi, điều khoản và các trường hợp loại trừ.",
-      "Mình cứ không hiểu là phải hỏi nha. Chứ mình đừng có nói ủa, cái này không được chi trả hả? Lúc đó thì đã muộn rồi.",
-      "Vì cả nhà biết sao không? Khi mà tới phát hiện ra bệnh rồi á là rối dữ lắm, mà lúc đó mình không có rành lắm, mình sẽ rất là bị rối. Mình mua hợp đồng đóng nhiều tiền mà cả nhà tại sao mình không có quyền để mình tham khảo cho nó chính xác, lựa chọn tư vấn viên cho phù hợp đúng không?",
-      "Và cuối cùng là không trì hoãn để tháng sau tính, để có tiền rồi mua, rảnh rồi tìm hiểu. Đến năm sau cũng được, nhưng có một thứ mình không biết đó chính là rủi ro sẽ đến vào lúc nào. Vẫn không nói là có nhu cầu thì phải mua ngay, nhưng nếu đã quan tâm thì hãy tìm hiểu thật sự và một cách nghiêm túc về bảo hiểm nhân thọ để mình hiểu được cái nhu cầu và những cái gì mình cần bảo vệ và mình sắp xếp khả năng tài chính của mình phù hợp để mình theo một cái hợp đồng dài lâu.",
-      "Mua bảo hiểm là để an tâm chứ không để lo lắng. Cảm ơn cả nhà. Nếu mà bạn đang có những cái thắc mắc về bảo hiểm mà mãi vẫn chưa hiểu và thật sự đang cần một cái chuyên gia để giải đáp thắc mắc thì hãy nhắn cho Vân.",
-      "Vân và team sẽ hỗ trợ các anh chị có được một cái góc nhìn tốt về bảo hiểm. Cảm ơn cả nhà đã xem video của Vân."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1755404226202946.jpg"
   },
   {
     "id": "video-026-770680",
@@ -769,23 +505,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Chia sẻ các lưu ý cốt lõi khi tham gia bảo hiểm để khách hàng yên tâm, tránh rủi ro mất tiền oan do thiếu hiểu biết.",
-    "paragraphs": [
-      "Những cái lưu ý khi tham gia bảo hiểm để không bị mất tiền. Trên đây là một cái chủ đề mà rất là nhiều bạn quan tâm và thắc mắc tại vì có nhiều bạn á khi tham gia bảo hiểm là sợ mất tiền lắm. Thì bây giờ nghe qua những cái thông tin của Vân để khi mình có tham gia bảo hiểm với bạn tư vấn viên một công ty bảo hiểm nào đó để mình yên tâm hoàn toàn nha.",
-      "Đầu tiên khi tham gia bảo hiểm á là phải chuẩn bị một cái khoản ngân sách đóng đều đặn trong vòng 15 năm, 20 năm, chứ không phải rằng là các anh chị đóng 1 năm, 2 năm rồi thôi không mua nữa. Vì nếu mà khách hàng mà gặp Vân nói là chỉ mua hợp đồng bảo hiểm 1 năm là Vân cũng không có bán luôn, vì bán xong là Vân sẽ bị phạt rất là nặng về cái tội mà khách hàng không hiểu hết hợp đồng mà mua.",
-      "Nên các anh chị yên tâm ha, mua bảo hiểm là cần phải có chuyện lâu dài và xác định cái khoản tiền đó mình sẽ đầu tư 5 năm, 10 năm, 20 năm. Một câu chuyện rất là dài hạn. Tham gia bảo hiểm là phải hiểu những cái nhu cầu mình đang cần và mình mua đúng hạn mức, đúng quyền lợi và đặc biệt là đúng túi tiền của mình.",
-      "Ví dụ như một bạn làm lương tháng 20 triệu thì mỗi tháng bạn tiết kiệm 2 triệu và một năm bạn đóng 24 triệu cái hợp đồng đó rất là bình thường đó, là hợp lý rồi đó. Còn tự nhiên đi làm lương thu nhập có 15 triệu mua cái hợp đồng 50 triệu là không hợp lý rồi đúng không?",
-      "Hoặc là thu nhập thì 100 triệu mua cái hợp đồng 30 triệu là càng không hợp lý vì không có đúng nhu cầu của khách hàng. Thì sai nhu cầu thì dẫn tới sau này các anh chị bỏ hợp đồng, bỏ hợp đồng là mất tiền thôi. Tham gia bảo hiểm nhớ khai bệnh, hồ sơ kỹ khi làm hợp đồng để khi phát sinh ra mà lỡ bệnh có sẵn mình không có khai, công ty sẽ hủy hợp đồng và mình cũng mất tiền.",
-      "Đó, tham gia bảo hiểm là phải hiểu những cái loại trừ mà các anh chị được biết trước. Ví dụ như là bệnh có sẵn nè, di truyền, bệnh bẩm sinh hoặc là những cái loại trừ liên quan tới vi phạm pháp luật, hoặc là những yếu tố nào liên quan trong cái hợp đồng sản phẩm được loại trừ, thì công ty sẽ báo trong hợp đồng và các anh chị sẽ phải nắm điều này.",
-      "Tham gia hợp đồng bảo hiểm là phải biết được thời gian chờ. Ví dụ như tai nạn là không có chờ ngày nào hết á, hợp đồng được cấp là ngày mai được tính. Nhưng những cái bệnh thông thường là phải chờ 30 ngày, bệnh đặc biệt là chờ 90 ngày.",
-      "Và khi tham gia bệnh lý nghiêm trọng á thì các anh chị phải đợi 14 ngày thì mình mới được, khi mà phát sinh ra cái bệnh thì phải còn sống được 94 ngày thì mới được nhận cái bệnh. Tiền bệnh lý nghiêm trọng thì điều này các anh chị cũng phải cần biết luôn.",
-      "Đó, rồi tham gia hợp đồng bảo hiểm á là phải cần biết được hợp đồng của mình có những quyền lợi nào, đóng phí bao nhiêu năm và vận hành ra sao. Nếu trong trường hợp mình không có tiền đóng tiếp thì mình liên hệ tư vấn viên để mình hỏi là giờ mình không có nhiều tiền đóng tiếp thì mình có thể đóng thành cái quý phí nửa năm được không?",
-      "Hay là mình có thể thay đổi giảm bớt hẳn mức được không? Nghĩa là các anh chị phải hiểu những điều đó, để khi mình nắm được thông tin là mình sẽ không có lo lắng về hợp đồng của mình. Và tham gia hợp đồng bảo hiểm là nhất định phải hiểu về hệ thống công ty nha, luật pháp, những cái áp, những cái công cụ để mà công ty phục vụ khách hàng.",
-      "Các anh chị phải đăng ký đăng nhập áp rồi, hiểu biết cái hợp đồng của mình có gì. Và mình sẽ sử dụng nó khi mình có những cái quyền lợi liên quan tới claim. Ví dụ như mình cần chi trả đền bù thì mình up hồ sơ lên đâu, cần những thông tin hồ sơ bệnh án là cái gì, mình nộp vào cho công ty đền bù cho mình.",
-      "Tại vì hồ sơ mà các anh chị chuẩn bị không đủ thì công ty sẽ yêu cầu các anh chị phải đi tìm thêm hồ sơ. Thì các anh chị sẽ nói ôi mất công quá, tốn thời gian quá, nhiều khi các anh chị lười quá bỏ luôn, tôi không thèm claim nữa.",
-      "Và đó là một trong những cái mà Vân nghĩ là rất là nhiều khách hàng cần quan tâm và biết về những cái thông tin về bảo hiểm nhân thọ. Nếu các anh chị biết rồi thì các anh chị sẽ không bao giờ bị mất tiền đâu và các anh chị sẽ có một cái hợp đồng sinh mịn nhất và lâu dài để mình có thể bảo vệ mình dài lâu.",
-      "Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nhân thọ nhé. Cảm ơn cả nhà."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/807436631770680.jpg"
   },
   {
     "id": "video-027-675748",
@@ -802,25 +523,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Bảo hiểm không ngăn được bệnh tật nhưng mang lại nguồn tài chính để mua sự sống và giữ lại quyền lựa chọn trong cơn hoạn nạn.",
-    "paragraphs": [
-      "Vân mới ngủ một đêm với một đại gia, nên hôm nay Vân có nhiều cảm xúc lắm, nhất định là Vân phải chia sẻ lại cho cả nhà. Đại gia mà Vân ngủ chung là một tháng uống có 80 triệu tiền thuốc thôi. Bạn nó làm chung team của Vân luôn, vì bệnh cũng được 11 tháng rồi.",
-      "Mấy nay tụi Vân có việc cần phải ra Hà Nội chung nên mình ở khách sạn và ngủ chung. Xong mình tâm sự nhiều với cô này lắm, là Vân cũng muốn tâm sự lại với mọi người. Vân nghĩ là giữa sự sống và cái chết là một điều gì đó nó rất là mong manh.",
-      "Thật ra là ngủ một đêm tới sáng và không thức kèm với thì nó quá đơn giản phải không? Như cuộc đời nó đâu như là mơ cả nhà. Việc mà người ta mong cầu một ngày để sống nữa người ta cũng cần.",
-      "Và người ta khát khao cái chuyện đó là cháy bỏng. Trước đây Vân đã từng chứng kiến chị dâu Vân khát khao cái sự sống, nên bằng mọi cách tốn bao nhiêu tiền cũng phải đi điều trị để cùng sống với con mình. Cái bạn đại gia mà Vân nói và Vân ngủ hôm trước, là bạn này là bạn có hai đứa con nhỏ, mà một đứa là mới 3 tuổi, cái sự khát khao á mà bạn cần sống trong cuộc đời này là quá lớn.",
-      "Bạn nói là bạn sống thêm một ngày, một tháng, một năm thì bạn cũng mong muốn. Bạn đã trải qua 7 tháng uống thuốc và trọn vía là nó cũng có cơ hội để được đáp ứng. Bảo hiểm thì vừa trả tiền cho bạn một tỷ, bệnh lý nghiêm trọng và bạn xài khoảng 700 triệu rồi.",
-      "Bạn còn có 300 triệu nữa thôi thì 300 triệu này bạn chỉ xài tính bằng tháng nữa thôi. Là còn vài tháng là bạn đã hết tiền rồi. Ngồi bạn suy nghĩ là giờ làm sao để bạn được sống tiếp.",
-      "Đó là cái câu chuyện Vân thấy nó nó kinh khủng lắm cả nhà. Ví dụ như là, ok mình down, mình không có khả năng sống nữa và mình đi ra khỏi thế giới này. Nhưng bây giờ nó có một sự lựa chọn khác là mình phườn phải có tiền, để mình uống thuốc, mình điều trị thì mình sẽ sống.",
-      "Thì nếu là các anh chị, các anh chị nghĩ như thế nào? Nhưng mà nếu là Vân, cũng sẽ hoang mang đó các anh chị. Suy nghĩ rằng là bây giờ mình rất là muốn sống với con mình nhưng mình không có đủ tiền.",
-      "Ai trong cuộc đời mình cũng cần sự sống hơn. Ở nhà cổ có một căn nhà đó và một cái căn chung cư đang ở bên Thanh đa nhưng mà cái căn này là sắp bị giải tỏa đền bù rồi. Và cũng còn một căn nhà thôi mà bạn quyết định bán, tại vì bạn nghĩ rằng là bán căn nhà này thì khoảng được gần 3 tỷ rưỡi thì sẽ sống thêm từ khoảng 3 năm rưỡi nữa.",
-      "Nhưng muốn sống nhiều hơn nữa thì làm gì? Cho nên thế thôi bây giờ cổ ráng cổ làm việc thật là tốt để có thêm tiền lương để có thể dùng để uống thuốc. Trong cuộc đời có những cái lúc người ta chỉ cần qua cái nỗ lực và chỉ sống sót trong cuộc đời này người ta đã mừng lắm rồi.",
-      "Nhưng Vân nghĩ là để sống sót trong cuộc đời này với số tiền lớn mỗi tháng là không hề đơn giản. Và đó là lý do mà Vân tha thiết, Vân khao khát để mình làm cái ngành này để giúp rất là nhiều người có cơ hội được ô vệ, được có tiền để chữa bệnh trong cái lúc cần thiết, trong cái lúc mà họ có những cái điều mà người ta cần trong cuộc đời.",
-      "Và bảo hiểm mang lại những cái điều đó. Nên là riêng mà bệnh lý nghiêm trọng liên quan tới ung thư á, là Vân mua hạn mức 8 tỷ lận cả nhà. Khi nếu có vấn đề gì, công ty Manulife sẽ chuyển 8 tỷ đồng về cho Vân và 8 tỷ đồng này Vân có thể sử dụng cho những việc cá nhân của mình.",
-      "Và Vân có một cái thẻ kim cương và thẻ này sẽ tái mỗi năm nha các anh chị. Ví dụ như là 2 tỷ đó được quyền sử dụng thuốc điều trị trúng đích hoàn toàn luôn. Ví dụ như một tháng 100 triệu thì cái này 2 tỷ một năm có 12 tháng thôi thì vẫn còn 800 triệu cho những cái việc điều trị khác.",
-      "Thì cả nhà thấy cái điều này nó quan trọng không ạ? Vân đã trang bị cho bản thân Vân là một cái thẻ kim cương 2 tỷ đó để Vân có 40 tỷ trong vòng 20 năm để điều trị và có 8 tỷ tiền mặt thì mình sẽ thoải mái hơn. Nếu có điều kiện thì mình nên bổ sung những cái quyền lợi để an tâm cuộc đời cho mình.",
-      "Và đó là lý do tại sao Vân muốn tâm sự trong cái buổi sáng ngày hôm nay. Nên hi vọng những cái bạn mà đối nghe những cái video này của Vân á thì có thể ra những cái quyết định để bảo vệ chính bản thân mình, để khi có một ngày để sống nữa mình cũng phải sống tốt và có tiền để sống.",
-      "Nghe cả nhà, bye bye."
-    ],
-    "cta": "Đặt lịch tư vấn giải pháp bảo vệ sức khỏe cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn giải pháp bảo vệ sức khỏe cùng Khánh Vân",
+    "thumbnail": "/images/reels/1135262889675748.jpg"
   },
   {
     "id": "video-028-137301",
@@ -837,17 +541,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Bài học thực tế về việc kê khai và chuẩn bị hồ sơ minh bạch giúp khách hàng nhận trọn vẹn 1 tỷ đồng quyền lợi bảo hiểm.",
-    "paragraphs": [
-      "Ranh giới giữa việc suýt mất trắng một tỷ đồng và được công ty đền bù một tỷ đồng chỉ cách nhau là một tờ giấy. Chuyện là chị khách hàng của team Vân có tham gia một sản phẩm điểm tựa đầu tư vào năm 2018. Sau 8 năm chị trải qua cuộc sống rất êm đềm và bình an, gần như không có claim bất cứ quyền lợi gì luôn.",
-      "Thì hôm nay chị ấy nhận được một tờ giấy đó chính là bệnh ung thư vú xâm nhiễm. Khi mà hỗ trợ thủ tục claim cho cái trường hợp bồi thường này ấy, cái quá trình mà thu thập ấy, chị ấy bị thiếu một cái tờ, đó chính là kết quả sinh thiết.",
-      "Và đây là chứng từ mà giải phẫu bệnh cực kỳ quan trọng để xác định được điều kiện để chi trả. Nếu không có giấy tờ này ấy, hồ sơ không có đủ căn cứ để thẩm định và nguy cơ là chị sẽ mất trắng 1 tỷ đồng. Vân phải trực tiếp hỗ trợ đồng hành để khách quay lại bệnh viện, tìm giấy tờ hồ sơ và để quay lại mình có một bộ hồ sơ đầy đủ.",
-      "Vân và đồng đội Vân đã hỗ trợ nộp vào công ty. Và sau đó là công ty đã chi trả trọn vẹn cho khách hàng nhận được một 1 tỷ đồng. Và sau khi nhận được 1 tỷ đồng này, khách hàng an tâm chữa bệnh rồi đúng không?",
-      "Thì khách hàng còn nhận thêm một cái quyền lợi rất là đặc biệt đó chính là quyền lợi miễn đóng phí. Các quyền lợi mà như sinh mạng này, tai nạn, trợ cấp y tế của khách hàng này vẫn được tiếp tục bảo vệ bình thường luôn. Những khách hàng không phải đóng ngàn phí nào hết, để sức để tiền để đi điều trị ổn đúng không ạ?",
-      "Và Mai Lan lo tiếp cái hợp đồng này cho khách hàng. Mua bảo hiểm thì dễ, nhưng người tư vấn sẵn sàng đồng hành, song xáo cùng khách hàng đến tận bệnh viện để bảo vệ từng đồng quyền lợi của khách hàng, đó mới là giá trị thực sự mà Vân muốn chia sẻ ngày hôm nay.",
-      "Dù là hợp đồng do Vân hay là đồng nghiệp thì Vân vẫn có quy trình hỗ trợ claim như nhau. Nếu mà bạn khách hàng nào cần hỗ trợ cứ gọi Vân và Vân luôn luôn sẵn sàng hỗ trợ quyền lợi cho các anh chị. Bất cứ nhà toàn quốc ở Hà Nội, miền Trung, miền Bắc mà cần hỗ trợ quyền lợi là Vân vẫn hỗ trợ bình thường luôn.",
-      "Và nếu bạn nào đang có hợp đồng bảo hiểm Mai Lan và các công ty khác mà chưa rõ quyền lợi của mình á, comment cho Vân, Vân sẽ hỗ trợ để mà giúp các anh chị được giải đáp thắc mắc. Còn anh chị nào có những cái vướng mắc mà về hồ sơ bồi thường á thì nhắn cho Vân, Vân sẽ hỗ trợ các anh chị để các anh chị có được quyền lợi tốt nhất nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1483427437137301.jpg"
   },
   {
     "id": "video-029-123384",
@@ -864,17 +559,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Phân tích bài toán tài chính khi đóng bảo hiểm 15 năm, rút 80% giá trị tài khoản và giữ lại 20% bảo vệ trọn đời.",
-    "paragraphs": [
-      "Anh chị cứ đóng 15 năm thôi, sau đó rút 80% giá trị tài khoản còn 20% còn lại để được bảo vệ tới 99 tuổi. Lấy một ví dụ cho mình dễ hình dung nha. Giả sử tổng số tiền anh chị đã đóng trong vòng 15 năm là 1 tỷ đồng.",
-      "Nếu rút 80% là có nghĩa là anh chị nhận về 800 triệu và còn trong tài khoản là 200 triệu đó. Trong quá trình hợp đồng tiếp tục duy trì, các khoản chi phí vẫn được khấu trừ bình thường từ giá trị tài khoản, có nghĩa là các khoản chi phí này vẫn trừ vào cái 200 triệu đó đó.",
-      "Chi phí quản lý hợp đồng nè, chi phí rủi ro nè và những cái khoản chi phí khác đã được quy định trong hợp đồng. Điều quan trọng là những cái chi phí này vẫn tiếp tục phát sinh chứ không phải là sau khi mình rút giá trị tài khoản 80% là tất cả mọi thứ đều dừng lại, hoàn toàn không phải như vậy.",
-      "Đặc biệt là khi tuổi của mình càng cao thì chi phí rủi ro của mình càng cao và tăng lên hàng ngày đó các anh chị. Trong khi đó, tài khoản của mình lúc này chỉ có 200 triệu đồng. Nếu giá trị tài khoản giảm xuống đến cái mức mà không đủ để duy trì hợp đồng thì hợp đồng sẽ tự động mất hiệu lực nha các anh chị.",
-      "Và khi đó, quyền lợi bảo hiểm cũng sẽ không còn được duy trì như mình kỳ vọng lúc ban đầu. Cho nên, đừng có mặc định rằng để lại 20% là chắc chắn được bảo hiểm cho đến năm 99 tuổi. Muốn biết có thực sự duy trì được hay không phải nhìn vào dòng tiền cụ thể của từng hợp đồng và các khoản chi phí khấu trừ theo từng giai đoạn.",
-      "Nếu anh chị đang được tư vấn cho một phương án kiểu đóng 15 năm, rút 80%, để lại 20% và được bảo vệ tới 99 tuổi thì hãy yêu cầu người tư vấn đó cho mình xem cái bản minh họa dòng tiền, các cái khoản chi phí điều khoản duy trì, hiệu lực hợp đồng nhé.",
-      "Bảo hiểm không có đáng sợ, điều đáng sợ là khi mình sở hữu một cái hợp đồng nhưng lại không hiểu nó đang vận hành ra sao. Nếu anh chị đang có cái hợp đồng mà muốn biết quyền lợi thực tế của mình như thế nào, những cái khoản phí nào đang phát sinh và hợp đồng của mình có điểm nào cần lưu ý đặc biệt hay không thì hãy nhắn vân để vân hỗ trợ các anh chị nha.",
-      "Cảm ơn cả nhà."
-    ],
-    "cta": "Nhận bản tính toán dòng tiền cá nhân hóa cùng Khánh Vân"
+    "cta": "Nhận bản tính toán dòng tiền cá nhân hóa cùng Khánh Vân",
+    "thumbnail": "/images/reels/909121445123384.jpg"
   },
   {
     "id": "video-030-698768",
@@ -891,18 +577,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ cơ chế chi trả đồng thời giữa Bảo hiểm y tế (BHYT) và Bảo hiểm nhân thọ (BHNT) dựa trên danh mục thực tế.",
-    "paragraphs": [
-      "có bảo hiểm y tế chi trả 80% rồi ạ, thì có hiểm nhân thọ thanh toán thêm không? Câu trả lời là có, nhưng tùy thuộc vào việc trường hợp hợp đồng của anh chị đang có quyền lợi gì nha. Đầu tiên anh chị cần lưu ý, bảo hiểm y tế thanh toán 80% không phải trên tổng biều viện phí mà chi phí trên danh mục nhà nước quy định.",
-      "Những cái khoản chi phí nằm ngoài danh mục hay dịch vụ theo yêu cầu thì người bệnh phải tự thanh toán. Ví dụ như một cái khách hàng của Vân mới đây, phẫu thuật nạo VA cho bé tại bệnh viện Vinmec, tổng cộng viện phí là hết 31 triệu.",
-      "Tuy nhiên phần chi phí thuộc danh mục bảo hiểm y tế chi trả 80% vốn dĩ có 2,5 triệu, nghĩa là bảo hiểm y tế chỉ trả 2,5 triệu, còn lại 28 triệu đồng gia đình bé phải tự bỏ tiền túi. Rất là may là trong cái hợp đồng bảo hiểm Melife, khách hàng này có tham gia thêm một cái thẻ chăm sóc sức khỏe.",
-      "Nên toàn bộ cái chi phí 28 triệu đó được thanh toán bởi Melife trọn vẹn. Ngược lại, nếu hợp đồng bảo hiểm nhân thọ mà anh chị không mua thêm dịch vụ thể sức khỏe, chỉ mua bảo hiểm sinh mạng hoặc là bệnh lý nghiêm trọng, đây này, đính kèm, thì các anh chị cũng không được chi trả cái khoản này đâu nha.",
-      "Mình phải làm rất là rõ những cái việc này, để mình biết mua bảo hiểm là mua những cái gì và được cái gì. Và đặc biệt là đối với những cái trường hợp không may mắc bệnh hiểm nghèo, như ung thư vú, ung thư phổi, ung thư gan.",
-      "Nếu trong hợp đồng mình có cả hai quyền lợi, thể sức khỏe là thanh toán những cái chi phí điều trị thực tế trên biều mà bảo hiểm y tế không trả. Bảo hiểm bệnh hiểm nghèo trên hợp đồng bảo hiểm nhân thọ, sẽ chi trả thêm cái khoản tiền mặt cố định.",
-      "Ví dụ khách hàng có mua thêm 500 triệu, 1 tỷ, 2 tỷ bệnh lý nghiêm trọng, thì công ty sẽ chuyển khoản cái mọc 2 tỷ này vào tài khoản và khách hàng chủ động sử dụng cái tiền này cho những cái khoản chi phí khác. Ví dụ như một chuyến du lịch cho gia đình, ăn uống hoặc là đầu tư những cái tiền ít để bổ trợ cho cái người bệnh họ điều trị tốt hơn.",
-      "Còn nếu như mà anh chị mà chưa rõ về hợp đồng mà đang có, mình còn thiếu cái quyền lợi nào thì hãy nhắn cho Vân để Vân hỗ trợ review và xem lại miễn phí cho các anh chị. Các bạn team Vân thì cực kỳ là chuyên nghiệp, các bạn team Vân có thể hỗ trợ cho các anh chị xem lại hợp đồng, để mình biết mình thiếu gì, đủ gì và cần mua thêm cái gì.",
-      "Nhắn cho Vân và Vân sẽ hỗ trợ nhiệt tình cho các anh chị nha."
-    ],
-    "cta": "Đặt lịch tư vấn tối ưu quyền lợi y tế cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn tối ưu quyền lợi y tế cùng Khánh Vân",
+    "thumbnail": "/images/reels/1394822378698768.jpg"
   },
   {
     "id": "video-031-533691",
@@ -919,20 +595,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Minh chứng thực tế về quyền lợi tai nạn trong hợp đồng bảo hiểm giúp khách hàng nhận bồi thường 270 triệu từ tai nạn nhỏ.",
-    "paragraphs": [
-      "Dắt cái xe bị ngã mà cũng nhận được 270 triệu bồi thường bảo hiểm hai sao. Khách hàng của Vân mua một cái hợp đồng bảo hiểm 22 triệu. Anh khách hàng này dùng 10 triệu để mua sản phẩm chính, bảo vệ được 900 triệu về sinh mạng.",
-      "Thì trong sản phẩm món quà tương lai mà anh mua thì có một cái quyền lợi tặng kèm đó chính là quyền lợi tai nạn. Thì trong cái quyền lợi tai nạn này cũng được 100% y chang đó là 900 triệu. Và khi mà phát sinh gãy xương hay là tổn thương nội tạng hay là bị bỏng thì công ty Manulife sẽ chiếu theo điều khoản để chi trả.",
-      "Trường hợp thực tế của anh khách hàng này là gì? À anh dắt xe ra trước cửa và bị trượt ngã. Và khi ngã thì cái xe đè lên chân và anh bị tổn thương phần mềm.",
-      "Và thấy đau thôi nên nghĩ cũng không cần đi bệnh viện khám mà từ từ nó sẽ khỏi. Nhưng mà mãi tới một tuần vẫn không thấy hết đau và anh đã đi bệnh viện khám và chụp phim. Sau đó bác sĩ kết luận là anh đã gãy một cái xương đùi.",
-      "Khách hàng mới mua hợp đồng có hai năm và khách hàng đã gọi điện lên cho tụi mình, nói rằng là khách hàng bị tai nạn, bây giờ khách hàng phải làm sao? Khách hàng cũng không nhớ kỹ hết được quyền lợi mình đã mua. Thì thông thường là như vậy đó các anh chị.",
-      "Đa số khách hàng khi đi mua hợp đồng hỏi rất là kỹ, hỏi rất nhiều và nhớ rất là nhiều thứ. Nhưng bẵng đi chừng 3 tháng, 1 năm, 2 năm là hỏi lại khách hàng không nhớ gì hết. Và cái chuyện này rất là bình thường nên tụi Vân cũng rất là quen rồi.",
-      "Nên khách hàng hỏi lại là bây giờ á thì anh bị như vậy thì được như thế nào? Nhà Vân mới gửi cái hồ sơ này về nhà Manulife. Và khi Manulife coi xem xét và chi trả cho anh là 30% cái xương đùi là 270 triệu của 900 triệu bảo vệ.",
-      "Thế nên là anh nhận được 270 triệu anh rất là bất ngờ luôn. Và anh còn hỏi là tư vấn viên có thật không? Gãy một cái xương đùi thôi mà đè tới 270 triệu luôn à.",
-      "Anh đã nhận tiền vào tài khoản và đã biết là Manulife chi trả rất là nhanh chóng và gọn gàng. Đây là một cái rất là trải nghiệm của khách hàng về cái mục tai nạn. Thì Vân cũng chia sẻ luôn là trong cái sản phẩm món quà tương lai thì cái tai nạn nó rất là xịn.",
-      "Nó được chi trả đền bù rất là lớn. Ví dụ như khách hàng của Vân bị gãy xương sườn mà gãy một lúc ba cái thì cứ một cái là đền 50 triệu. Thì khách hàng đã nhận được 150 triệu cho cái dòng sản phẩm này.",
-      "Và cái bản quyền lợi mà chi trả thương tật bên Vân ghi rất là chi tiết trên hợp đồng, tỷ lệ thương tật bao nhiêu thì sẽ chi trả bấy nhiêu. Nên khách hàng nào mà có thắc mắc hay chưa hiểu về trong hợp đồng của mình có quyền lợi này hay chưa, hay là có rồi nhưng mà chưa biết hiểu hết quyền lợi thì nhắn Vân Vân sẽ hỗ trợ để review và thăm khám hợp đồng của mình miễn phí nhé."
-    ],
-    "cta": "Kiểm tra gói bảo vệ tai nạn của bạn ngay hôm nay"
+    "cta": "Kiểm tra gói bảo vệ tai nạn của bạn ngay hôm nay",
+    "thumbnail": "/images/reels/1579005710533691.jpg"
   },
   {
     "id": "video-032-901614",
@@ -949,18 +613,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Hành trình truyền cảm hứng từ tư vấn viên trở thành Giám đốc Kinh doanh top đầu Manulife Việt Nam.",
-    "paragraphs": [
-      "Hành trình từ một tư vấn viên trở thành một giám đốc kinh doanh, có thể không? Có đó, là cái người mà đang đứng trước mặt các anh chị nè, là Vân trở thành một tư vấn viên tại Manulife vào tháng 2 năm 2018. Và từ một tư vấn viên được lốt code tại Manulife sau đó làm việc và phát triển.",
-      "Hôm nay Vân đã trở thành một giám đốc kinh doanh xuất sắc, top 1 toàn quốc của Manulife Việt Nam. Và cũng là một trong những cái giám đốc đạt giải quản lý xuất sắc nhất châu Á năm 2021 và những năm về sau Vân có rất là nhiều danh hiệu.",
-      "Và hiện nay là danh hiệu của Vân tại Manulife là Manulife Cap. Thì đây là cũng là một trong những điều mà Vân tin rằng là nó cũng là một cái hành trình lan tỏa cảm hứng đến rất là nhiều người luôn. À, hành trình bắt đầu từ một chiếc code bé nhỏ thôi, là các anh chị được đi học một cái khóa học tại Manulife, được bộ tài chính thi xong, được bộ tài chính cấp một chiếc code.",
-      "Và từ cái code đó, bắt đầu mình mở hệ thống ra, mình bảo vệ từng khách hàng và nó bắt đầu phát triển là có nhiều khách hàng, tuyển dụng nhiều nhân sự, phát triển và trở thành một cái người giám đốc tại Manulife. Tất nhiên, hành trình này nó đi từng bước, từng quá trình, từ một người tư vấn đến một người quản lý, đến một người trưởng phòng và đến một cái người trưởng nhánh kinh doanh, trưởng khu vực kinh doanh.",
-      "Thì nó đi qua những cái quá trình như vậy thì Vân tin rằng là khi mà mình có được cái quá trình á, thì mình sẽ thấy rằng là cái hành trình hoàn toàn có thể, chứ không phải là tự nhiên từ A sang B được, mà nó phải có một quá trình bước đi.",
-      "Nên là khi mà các anh chị vào Manulife, Vân luôn luôn truyền cảm hứng rằng là, các anh chị hãy bắt đầu bằng từ chiếc code nhỏ bé để trở thành một cái hành trình đặc biệt trong ngành bảo hiểm và đặc biệt là tại Manulife Việt Nam.",
-      "À và mọi thứ đều có thể, mọi chuyện đều có thể. Và chúng ta hoàn toàn có thể làm được những cái điều chúng ta mơ ước, thu nhập không giới hạn, môi trường rất là thăng tiến, cơ hội được đi du lịch vòng quanh thế giới và đặc biệt nữa là được làm những cái ý tưởng sáng tạo mà mình thích trong một môi trường vô cùng yêu thương nhau.",
-      "Thì tại sao không? Nên Vân luôn luôn chào đón tất cả các anh chị hãy lốt một cái code tại Manulife, học cái khóa học về bảo hiểm về luật. Và sau đó, trở thành một nhân sự của Hồ Chí Minh 69 trong team Khánh Vân Quản lý.",
-      "Và Khánh Vân sẽ hỗ trợ tất cả các anh chị em cùng nhau đồng lòng làm việc với Vân, làm việc với tất cả các anh chị em để cùng nhau phát triển. À cảm ơn cả nhà đã lắng nghe cái chia sẻ của Vân. Hy vọng gặp các anh chị ở Manulife cùng với team Khánh Vân phát triển ngành bảo hiểm Nhân thọ nhé."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/4239889922901614.jpg"
   },
   {
     "id": "video-033-702796",
@@ -977,19 +631,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải thích nguyên nhân vì sao hủy hợp đồng bảo hiểm sớm (sau 4 năm) dẫn đến việc giá trị nhận lại thấp do đã trừ chi phí rủi ro.",
-    "paragraphs": [
-      "Đóng phí bốn năm hết 120 triệu mà hủy hợp ngang hợp đồng nhận lại 24 triệu. Chuyện thật mà tưởng như đùa ha. Thì bây giờ Vân sẽ giải thích cái vấn đề này cho các anh chị khách hàng mà đang thắc mắc vì sao đóng hợp đồng bảo hiểm sau 4 năm thì hủy ra được có từng đó tiền.",
-      "Vì đầu tiên các anh chị hiểu là các anh chị đang đi mua bảo hiểm và cái phí bảo vệ rủi ro cũng nằm trong hợp đồng bảo hiểm này. Và đặc biệt trong 3 năm đầu là phí rủi ro trừ rất là cao. Vì sao các anh chị biết không?",
-      "Ví dụ như các anh chị vừa mua cái hợp đồng đó xong là đóng phí 30 triệu một năm đúng không? Và nếu mà sinh mạng bảo hiểm 2 tỷ đi Vân ví dụ vậy ha. Hồi trước mà mua món quà tương lai nữa và trong món quà tương lai á nó lại có thêm cái mục tai nạn nữa, thì lỡ mà dấp cục đá ngã thôi mà không đi thăm ông bà sớm luôn á, thì các anh chị biết các anh chị nhận được mấy tỷ không?",
-      "Bốn tỷ. Đồng nghĩa với việc rằng là những cái năm đầu tiên công ty bảo hiểm dùng cái phần tiền phí đóng vào để sử dụng cho cái việc phí rủi ro rất là cao luôn. Tới 4 năm là các anh chị hủy ngang hợp đồng chứ không có gọi là là đáo hạn gì ở đây được hết á.",
-      "Thì khi như vậy thì các anh chị rút ra cái phần tiền có 24 triệu là chuyện bình thường thôi. Phí rủi ro, phí quản lý, phí vận hành và rất là nhiều cái khoản phí trong vòng 3 năm đầu. Nên mua bảo hiểm là các anh chị phải lưu ý, phải biết rằng mình mua cái dòng sản phẩm nào và mình đóng phí ra sao.",
-      "Có những dòng sản phẩm mình chỉ cần đóng phí 15 năm nó mới huề vốn. 20 năm nó bắt đầu xin lời. Hoặc là có những dòng sản phẩm anh chị chỉ cần đóng 12 năm thôi.",
-      "Có những dòng sản phẩm bây giờ Manulife đang ra những cái dòng sản phẩm là mình có thể đóng phí 3 năm bảo vệ 10 năm nữa luôn á. Nhưng mà các anh chị phải hiểu các anh chị đang mua là cái gì? Nên bây giờ anh chị nào còn thắc mắc là mình mua cái hợp đồng này, mình hủy ngang hoặc là mình tất toán thì mình nhận được bao nhiêu tiền á thì nhắn cho Vân nha.",
-      "Vân sẽ hỗ trợ đọc từng hợp đồng lại cho các anh chị để các anh chị không có lo lắng nên mua hợp đồng thì thường lời khuyên của Vân là phải nên đóng từ 12 năm, 15 năm và 20 năm và thường khách hàng của Vân là đóng 20 năm. Ai mà là khách hàng của Vân có nghe clip này thì vào xác nhận giùm Vân nha.",
-      "Là Vân tư vấn là thường là 20 năm không à. Còn những khách hàng mua hợp đồng 8 năm về trước, một số dòng sản phẩm như cuộc sống tươi đẹp nè, gia đình tôi yêu á thì Vân tư vấn là 12 15. Nên cứ theo cái cái hợp đồng mà các anh chị mua thì các anh chị sẽ chiếu theo những cái điều khoản để mình thực hiện.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Đọc thêm cẩm nang minh bạch hợp đồng bảo hiểm"
+    "cta": "Đọc thêm cẩm nang minh bạch hợp đồng bảo hiểm",
+    "thumbnail": "/images/reels/820731530702796.jpg"
   },
   {
     "id": "video-034-323600",
@@ -1006,14 +649,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hướng dẫn phụ huynh cách kê khai trung thực và lưu ý quan trọng khi tham gia bảo hiểm cho trẻ em mắc chứng tự kỷ.",
-    "paragraphs": [
-      "Bị tự kỷ thì có mua được bảo hiểm hay không? Vân chia sẻ một cái vấn đề mà đang là một trong những cái hiện trạng báo động trong xã hội hiện nay. Các em bé nhỏ mà bị tự kỷ, bị rối loạn ngôn ngữ và những cái rối loạn vận động á bị rất là nhiều luôn.",
-      "Thì khi bố mẹ mà đi tham gia hợp đồng bảo hiểm cho con phải hết sức lưu ý và kê khai tình trạng sức khỏe của con đúng với hiện tại của con. Nếu con đã có dấu hiệu bị tự kỷ mà được chuẩn đoán bởi bác sĩ chuyên khoa thì mình sẽ phải báo ngay với tư vấn viên là con tôi bị như vậy.",
-      "Tôi mua được bảo hiểm hay không? Và Vân cũng trả lời cho các anh chị biết trước luôn là không mua được. Hiện tại Manulife và tất cả các công ty bảo hiểm đều không bán cho trẻ em bị tự kỷ.",
-      "Và các anh chị lưu ý điều này để mình tránh những cái rắc rối vì sau. Thì các anh chị cũng biết mà khi bị tự kỷ thì con sẽ không còn kiểm soát được mình và rất là dễ làm hại và gây tai nạn cho chính các con. Nên các công ty bảo hiểm sẽ không cung cấp sản phẩm cho các em bé này.",
-      "Nên các anh chị lưu ý để mình không gọi là phạm phải những cái sai lầm khi mình mua hợp đồng bảo hiểm cho con mình nhé. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nhân thọ."
-    ],
-    "cta": "Nhận tư vấn bảo hiểm cho con cùng chuyên gia"
+    "cta": "Nhận tư vấn bảo hiểm cho con cùng chuyên gia",
+    "thumbnail": "/images/reels/2875323149323600.jpg"
   },
   {
     "id": "video-035-442780",
@@ -1030,17 +667,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Cách xử lý các sai sót hoặc thông tin bệnh lý phát sinh ngoài ý muốn trên hệ thống VSSID khi làm hồ sơ bảo hiểm.",
-    "paragraphs": [
-      "Khi đi bị cái SID của các bạn có rất là nhiều bệnh nhưng mà trên thực tế là bạn không bị những cái bệnh này, có bạn nào gặp cái hoàn cảnh này chưa? Tại vì á khách hàng của Vân là gặp cái hoàn cảnh này rất là nhiều luôn. Có nghĩa là hoàn toàn khách hàng không hề có những cái bệnh đó nhưng mà không hiểu vì lý do nào.",
-      "Thì á trên cái hệ thống lưu giữ rất là nhiều thông tin bệnh thì cái này các anh chị phải đi kiểm tra ngay lập tức xem là trước đây mình có đi khám à sức khỏe hay khám bệnh hay điều trị bệnh và mình bị những cái bệnh A, B nhưng mà tại sao mình có thấy cái bệnh C, D nữa đúng không?",
-      "Thì cái điều này mình phải quay lại cơ sở y tế gần nhất để mình kiểm tra rằng là lúc trước tôi bị những cái bệnh nào và tôi được kê khai những cái bệnh nào. Thì để sau khi mà nếu đúng là các anh chị có cái bệnh đó thì các anh chị phải chấp nhận.",
-      "Còn nếu các anh chị không có cái bệnh đó trên VSSID thì ngay lập tức các anh chị phải quay lại cái cơ sở y tế đó để xin giấy xác nhận lại là mình không bị cái bệnh đó để mình chứng minh với bảo hiểm sau này mình đi mua bảo hiểm mà mình thấy trên VSSID mình có rất là nhiều bệnh rồi thì công ty bảo hiểm người ta sẽ loại trừ thôi và thậm chí họ không có bán luôn cho cái hợp đồng này nữa và đó là sự thiệt thòi với khách hàng đúng không?",
-      "Và có một cái trường hợp nữa là các anh chị cũng phải lưu ý luôn. Có những khách hàng đã làm mất cái thẻ y tế hoặc là vô tình đưa cho một cái người quen nào đó sử dụng cái thẻ đó cho một cái việc nào đó cá nhân của họ và cuối cùng là trên cái lịch sử y tế của họ có rất là nhiều bệnh mà trong khi họ không có bị bệnh gì cả.",
-      "Và ở Manulife cũng gặp rất là nhiều trường hợp là đã không mua được hợp đồng bảo hiểm vì họ không chứng minh được rằng là họ không có cái bệnh đó. Nhưng cũng có một số trường hợp là khi khách hàng chứng minh được rằng là tôi không có bệnh thì những cái thông tin này vì những cái sự cố, những cái lý do bất cập nào đó nó hiển thị lên thì họ có thể đi khám sức khỏe lại tổng quát nè, đi kiểm định hết tất cả các tình trạng những cái bệnh đó trên giấy trắng mực đen lại, trên bệnh viện, trên bác sĩ xác nhận lại là à khách hàng này khỏe mạnh thì cũng có thể là đem lại quay lại công ty Manulife để mình tường trình lại sự việc là lý do vì sao mà hệ thống VSSID của tôi lại có những bệnh này và tôi đi giải quyết việc này như thế nào để công ty bảo hiểm có cơ sở để xem xét và thẩm định hồ sơ cho các anh chị nhé.",
-      "Nên à việc mà thẻ sức khỏe bảo hiểm y tế nó cực kỳ quan trọng à của mình thì mình xài, mình không có để cho ai mượn đâu nha các anh chị. Và cái thứ nhất, cái thứ hai rằng là à khi mình đi khám bệnh mình phải kiểm tra lại trên đó là bác sĩ đã kê đúng cho mình chưa?",
-      "Mình có một bệnh thì kê một bệnh đó, có hai bệnh thì kê hai bệnh, đừng có hai bệnh mà tự nhiên trên đó mình thấy bốn năm bệnh là mình phải đặt lại câu hỏi liền nha. À cảm ơn các anh chị đã theo dõi kênh Khánh Vân. Follow kênh Hít Khánh Vân để nhận thêm những cái thông tin giá trị về bảo hiểm nhân thọ."
-    ],
-    "cta": "Liên hệ Khánh Vân để được hỗ trợ rà soát hồ sơ y tế"
+    "cta": "Liên hệ Khánh Vân để được hỗ trợ rà soát hồ sơ y tế",
+    "thumbnail": "/images/reels/1148949060442780.jpg"
   },
   {
     "id": "video-036-556953",
@@ -1057,27 +685,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Lắng nghe câu chuyện từ đa dạng ngành nghề cùng chọn gắn bó và thành công lâu dài tại Manulife.",
-    "paragraphs": [
-      "Xin chào cả nhà. Thành phần khám phá là đội ngũ của Vân là ai nha? Là những bạn như thế nào?",
-      "Và các bạn đó làm ở Manulife được bao nhiêu năm, đến từ ngành nghề nào nha? Xin chào, mình là Huyền Trang. Hiện tại năm nay là năm thứ sáu của mình, mình làm ngân hàng.",
-      "Xin chào, trước đây Phương là kế toán. Hiện tại là Phương làm ở Manulife được năm năm rồi. Bây giờ Phương là vị trí nào và có bao nhiêu nhân sự rồi Phương?",
-      "Hiện tại Phương Lan là trưởng chi nhánh kinh doanh của Manulife Việt Nam và nhân sự của Phương có đến 54 thành viên. À xin chào cả nhà, mình là Nguyễn Ngọc Dương Quỳnh. Thì hiện tại mình đang làm Manulife được 6 năm.",
-      "Trước đây em làm gì? Dạ trước đây là em làm ngân hàng. Vì sao mà em ở lại Manulife lâu quá vậy?",
-      "Tại vì em thấy công việc này nó rất là thú vị và nó sẽ có cho em được nhiều trải nghiệm thật tuyệt vời. Ví dụ như là bây giờ em đang đi Thượng Hải cùng với 500 anh em của Manulife. À cảm ơn em, quá là tuyệt vời luôn ha.",
-      "Xin chào Lim, Lim có thể giới thiệu Lim làm ở Manulife được mấy năm và trước đây Lim làm gì không? Dạ Lim làm trước đây Lim làm kiểm toán và hiện tại đang làm ở năm ở Manulife rồi. Quá!",
-      "Tại sao Lim lại làm ở Manulife được lâu như vậy 5 năm rồi? À vì công ty công việc này cho Lim được cái sự chủ động để mà có thể chăm sóc gia đình và chủ động về tài chính, cũng như là được đi du lịch khắp nơi như vậy nè. Quá tuyệt vời luôn.",
-      "Cảm ơn Lim. Huyền có thể giới thiệu sơ đôi nét về Huyền giùm chị được không? Em là Huyền, em là luật sư và em là Manulife 7 tháng mọi người.",
-      "Quá, mới 7 tháng mà đã được đi du lịch như thế này rồi, rất là xuất sắc lắm ha. Em có thể chia sẻ về cảm nhận của em được không? Manulife mang đến cho Huyền rất nhiều trải nghiệm, đặc biệt là Huyền được làm một công việc à mang rất nhiều giá trị đến cho mọi người và à và chủ động linh hoạt thời gian để chăm sóc con nhỏ.",
-      "Đặc biệt là có rất nhiều những cơ hội được trải nghiệm đi khắp nơi trên thế giới cùng Manulife. Quá, quá là tuyệt vời luôn. Xin chào Minh Phượng.",
-      "À Minh Phượng làm ở đây được mấy năm rồi? Cần làm được 6 năm. Trước đây là Minh Phượng có làm gì ở trước khi vào Manulife không?",
-      "Đây chị là sinh viên thôi. Từ năm 3 đã đi vô đây làm rồi nha cả nhà. Wow, từ một bạn sinh viên cũng có thể làm tại Manulife ha.",
-      "Chị em làm rất là nhiều à đến từ nhiều ngành nghề, làm nhiều công việc khác nhau nhưng cuối cùng là tụ họp lại tại Manulife và làm rất là thành công luôn. Và Thúy ơi, em có thể chia sẻ a đôi nét về bản thân em được không Thúy?",
-      "Xin chào cả nhà, mình tên là Thúy, mình làm Manulife được à hơn 5 năm rồi và mình cũng xuất thân là một à kiểm soát viên ở ngân hàng. Thì à hôm nay rất là vui được à cùng à chị Vân và các anh chị em trong team à đi đến Thượng Hải và Manulife là một môi trường rất là tuyệt vời cho chúng ta hả khám phá được cái giới hạn năng lực của mình ở đâu.",
-      "Và các bạn cũng đừng có ngại ngần, cứ hãy tham gia vào mà Manulife thử sức mình để biết năng lực của mình đến đâu nha các bạn. Cảm ơn các bạn. À các anh chị thấy không?",
-      "Nãy giờ Vân chia sẻ rất là nhiều bạn làm từ nhiều ngành nghề khác nhau ha, ai cũng hội tụ về con đường là mọi người được thời gian linh hoạt nè, có cơ hội làm một công việc nhân văn, có thu nhập, được đi khám phá thế giới khắp nơi luôn.",
-      "Vân là thay được hai Nguyễn PassPort rồi và Vân cũng hy vọng á là Vân có cơ hội được giúp nhiều anh chị em đạt được những cái cơ hội trong sự nghiệp trong nghề nghiệp của mình một cách tốt nhất. Hẹn gặp lại các bạn trong các video tiếp theo nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1183720620556953.jpg"
   },
   {
     "id": "video-038-921985",
@@ -1094,18 +703,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Kê khai thông tin sức khỏe trung thực, chính xác và đầy đủ là yếu tố quan trọng nhất để đảm bảo hợp đồng bảo hiểm có hiệu lực lâu dài và bảo vệ quyền lợi tối đa cho khách hàng.",
-    "paragraphs": [
-      "Kê khai sức khỏe như thế nào để đảm bảo được quyền lợi của các anh chị khi tham gia hợp đồng bảo hiểm lâu dài? À việc này là việc quan trọng nhất luôn mà Vân hay nói với khách hàng và đồng đội của mình. Để đảm bảo được một cái hợp đồng lâu dài á, việc quan trọng nhất đó chính là lấy thông tin sức khỏe của khách hàng và kê khai cho đúng chính, để bảo đảm rằng là phát hành ra là sau này các anh chị khách hàng claim hay là muốn chi trả đền bù dịch đều tất cả các hóa đơn đều được đền bù hết.",
-      "Thì kê khai như thế nào là đúng? Đầu tiên, à Vân dặn các anh chị mà khi đi mua hợp đồng bảo hiểm là phải đưa toàn bộ hồ sơ khám sức khỏe định kỳ của mình nhiều năm qua cho tư vấn viên. Thứ hai là các anh chị phải mở VSID ra, check tất cả thông tin y tế trước giờ mình có khám cái bịch gì, à để mình đưa cho tư vấn viên luôn.",
-      "Và thứ ba là các anh chị có đi khám à hắc hơi, sổ mũi luôn á, ho, sốt, cảm hay là đi điều trị hay là đi nằm viện hay là uống toa thuốc nào quá năm ngày, hai ngày là mình khai hết và tất cả những hồ sơ y tế mình sẽ phải đưa cho tư vấn viên.",
-      "Và sau khi tư vấn viên sẽ nhìn lại lịch hồ sơ, ví dụ như anh chị đó có từng nhập viện do sốt siêu vi cách đây 5 năm rồi thì có khai không? À cái việc này á là không cần khai. Ví dụ như những cái việc đơn giản như vậy á thì mình sẽ giải thích cho khách hàng là vì sao những cái việc đó mình không cần.",
-      "Còn những ha, đã bị tiêm cách đây 3 năm, 5 năm, 6 năm thì việc này có khai không các anh chị? Chắc chắn là phải khai rồi. Thế thì việc khai cái gì, không khai cái gì thì phải kê khai đầy đủ thông tin ra cho tư vấn viên từ đầu và có hồ sơ y tế.",
-      "Và kinh nghiệm của tất cả các bạn nhà vân á là đều lấy hết hồ sơ của khách hàng và nộp về công ty và công ty sẽ đi nhìn vào những cái trường hợp nào sẽ loại trừ, trường hợp nào tăng phí, trường hợp nào bỏ qua được và sẽ đưa ra một cái thư thỏa thuận để cho khách hàng hiểu được rằng là với cái sức khỏe của mình để cấp được một cái hợp đồng thì mình cần phải chấp nhận loại trừ những điểm nào là những cái bịch có sẵn của mình hay là mình được bảo vệ sạch sẽ vì mình không có bệnh gì hết.",
-      "Thì khi mà không có bệnh gì hết là gần như là khách hàng rất là an tâm luôn, chỉ bị loại trừ những cái bệnh ví dụ như là bệnh bẩm sinh, bệnh di truyền hay là những cái liên quan tới mà vi phạm pháp luật thôi. Còn tất cả những cái vấn đề còn lại là khách hàng hoàn toàn yên tâm khi mà tham gia bảo hiểm nếu khách hàng khai đủ nên việc mà kê khai hồ sơ y tế là rất quan trọng và cần thiết.",
-      "Nên khi mà các anh chị đã xác định đi mua với tư vấn viên nào cũng được, đi mua với Vân hay với đồng đội của Vân hay là với tất cả các anh chị ở công ty bạn thì các anh chị cũng nên nhớ, việc đầu tiên là phải lấy hết hồ sơ sức khỏe của mình ra, kê khai đầu đủ để bảo đảm được rằng là sau này hợp đồng của mình sẽ được an toàn và bền vững đúng giá trị pháp lý trong vòng 20 năm, 30 năm, 50 năm và cái yên tâm về sự bảo vệ mãi về sau luôn.",
-      "Nên chúc tất cả các anh chị có một cái hợp đồng đầy đủ bởi cái sự hiểu biết của mình chi tiết đúng đắn thì mình sẽ kê khai đầy đủ luôn. Follow kênh Khánh Vân để nhận nhiều giá trị thông tin về bảo hiểm nhân thọ nha."
-    ],
-    "cta": "Kiểm tra lại sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra lại sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1508566573921985.jpg"
   },
   {
     "id": "video-039-876950",
@@ -1122,21 +721,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Hiểu đúng bản chất và cách sử dụng các loại thẻ bảo hiểm sức khỏe trên thị trường giúp người tham gia đi viện thực tế không lo gánh nặng viện phí.",
-    "paragraphs": [
-      "làm sao để sử dụng thẻ bảo hiểm một cách đúng cách nhất? Ờ Vân nghĩ là hầu hết ở Việt Nam của mình á, ai ít nhiều gì cũng có một cái thẻ bảo hiểm sức khỏe. Nhưng cái thẻ đó được mua như thế nào, sử dụng như thế nào để đúng cách á thì không phải ai cũng biết.",
-      "Đầu tiên các cả nhà biết là thẻ bảo hiểm y tế giấy nhà nước của mình á, thì bây giờ nó tích hợp vào cái căn cứ công dân. Thì theo Vân nha, 100% người dân nên có cái thẻ này nha. Và có một số anh chị đi làm công ty hoặc là em bé thì được được công ty mua hoặc là nhà nước cấp cho.",
-      "Nhưng có một số anh chị làm tự do á là cũng không có mua cái thẻ này. Và Vân khuyên rất rất là nên là mình phải cần mua cái thẻ đó. Để lúc ví dụ như mình vào những cái bệnh viện tuyến công nè, hoặc là vào những bệnh viện dịch vụ mà nó có liên kết với nhà nước á thì mình cũng được trả một phần á.",
-      "Nên là cái thẻ bảo hiểm y tế này cực kỳ quan trọng luôn. Và mình nên dự phòng để sau này có những cái bệnh đặc biệt như ung thư hay là tai nạn đột xuất. Và những cái bệnh viện tuyến công các anh chị phải được chi trả rất là tốt luôn.",
-      "Còn thứ hai mà cái mà Vân đang muốn nói và cái vấn đề mà thường xuyên mỗi ngày Vân đang giúp cho khách hàng luôn đó, chính là thẻ bảo hiểm y tế dịch vụ. À tại sao mà ngồi cái thẻ bảo hiểm y tế nhà nước mình cần bảo hiểm y tế dịch vụ?",
-      "Tại vì là khi xài dịch vụ thẻ bảo hiểm y tế nhà nước không có trả, mà là cần một cái thẻ dịch vụ. Ví dụ như thẻ tại thẻ bảo hiểm tại Menoline. Khi mà có một cái thẻ tại Menoline á là cực kỳ an tâm luôn.",
-      "Vì là thẻ Menoline giúp cho chúng ta trị bệnh Vân ví dụ nha, bị sốt xuất huyết, sốt siêu vi hoặc là mổ đục thừa hoặc là gãy tay hoặc là có những cái bệnh nó rất là đơn thuần thôi. Mình có thể nhập viện, điều trị, có thể đi khám bệnh để công ty được chi trả.",
-      "Thì đây là cũng một cái câu chuyện là rất là nhiều người quan tâm là đi khám bệnh, chữa bệnh, nằm viện thì có ai chi trả cho mình không? Khi các anh chị có được cái thẻ này, các anh chị xài đúng cách. Ví dụ như có một số anh chị có được thẻ dịch vụ nhưng cũng sợ và vẫn vô tiếng công xài, Vân thấy rất là phí luôn.",
-      "Tại vì nếu Vân mà có được thẻ dịch vụ trả với cái cái mức bảo vệ cao á thì mình cứ mạnh dạn đi vào Vinmec nè, mạnh dạn đi vào FV nè, Tâm Anh nè, mạnh dạn đi vào những bệnh viện quốc tế. Thì đó là lý do tại sao là thẻ sức khỏe cần phải hiểu đúng, biết đúng mình đang có hạng mức gì, mua thẻ gì, giờ mình đang xài ở bệnh viện nào với hạng mức là bao nhiêu để mình biết là mình sẽ có thể tự trả bao nhiêu, công ty bảo hiểm trả bao nhiêu, nhà nước trả bao nhiêu.",
-      "Thì cái gói mà bảo vệ của mình nó sẽ tối đa hơn. Vì khi mà mình vô một bệnh viện, mình xài một cái bill 30 triệu nhưng mình phải trả 5 triệu, nhà nước trả 5 triệu, công ty bảo hiểm trả 20 triệu. Lợi quá đúng không cả nhà?",
-      "Nên mỗi người cần phải có ít nhất từ một tới hai hoặc là ba thẻ bảo hiểm để khi mỗi trong mỗi trường hợp mình cần dùng, nó sẽ tiết kiệm cho các anh chị và nó sẽ mang lại giá trị lâu dài cho mình. Nên là chúc các anh chị sẽ sở hữu được những cái thẻ sức khỏe xịn.",
-      "Follow kênh Vân để còn biết nhiều thông tin về bảo hiểm nha."
-    ],
-    "cta": "Nhận tư vấn giải pháp thẻ sức khỏe tối ưu cùng Khánh Vân"
+    "cta": "Nhận tư vấn giải pháp thẻ sức khỏe tối ưu cùng Khánh Vân",
+    "thumbnail": "/images/reels/727017536876950.jpg"
   },
   {
     "id": "video-041-835145",
@@ -1153,21 +739,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Không nhận được tiền bồi thường khi đi viện thường xuất phát từ việc mua sai quyền lợi, chưa hiểu rõ điều khoản hoặc sản phẩm bảo hiểm đã chọn.",
-    "paragraphs": [
-      "Ủa, mua bảo hiểm mà đi viện vẫn không được thanh toán sao? Vậy là bảo hiểm lừa mình hay là do mình chưa hiểu hợp đồng bảo hiểm? Hôm nay Vân sẽ chia sẻ cho các bạn bốn lý do phổ biến nhất mà mình hay gặp phải.",
-      "Lý do số một, bạn không mua đúng quyền lợi. Và đây là trường hợp mình gặp rất là nhiều luôn. Ví dụ như bạn chỉ mua sản phẩm bảo hiểm về sinh mạng, tức là chi trả khi không may bị tử vong hoặc là thương tật toàn bộ vĩnh viễn.",
-      "Nếu sau này bạn nhập viện vì bệnh thì sẽ không có quyền lợi viện phí, là chuyện tất nhiên nha. Hoặc bạn chỉ mua bảo hiểm tai nạn thì chỉ được chi trả khi sự kiện xảy ra do tai nạn. Còn bệnh thông thường thì sẽ không được chi trả nha.",
-      "Hay bạn mua quyền lợi bệnh hiểm nghèo nhưng lại không mua thẻ sức khỏe. Lúc đó chỉ mắc bệnh hiểm nghèo theo quy định mới được chi trả. Còn những bệnh nhẹ tự đi viện khám, nằm viện thì cũng không được chi trả này.",
-      "Một trường hợp nữa là bạn có thẻ sức khỏe nhưng bạn chỉ mua quyền lợi nội trú mà không mua quyền lợi ngoại trú. Nghĩa là phải nhập viện điều trị mới được thanh toán. Nếu chỉ đi khám, mua thuốc rồi về thì sẽ không được chi trả đâu.",
-      "Cho nên không phải cứ có bảo hiểm là đi viện sẽ được thanh toán mà bạn mua quyền lợi nào mình sẽ được sử dụng, hưởng đúng cái quyền lợi đó. Lý do số hai, đưa qua hết thời gian chờ. Ví dụ hôm nay bạn mua thẻ sức khỏe được khoảng 25 ngày, không may phải nhập viện vì bệnh thông thường, lúc này bảo hiểm vẫn chưa chi trả, vì quyền lợi đó còn trong thời gian chờ.",
-      "Bởi vì bệnh thông thường sẽ có thời gian chờ là 30 ngày. Một số bệnh đặc biệt hoặc là bệnh hiểm nghèo sẽ có thời gian chờ là 90 ngày. Thường dài hơn theo quy định của từng sản phẩm.",
-      "Lý do số ba, rơi vào điều khoản loại trừ và đây là một trong những cái rất nhiều khách hàng thường mắc phải. Bất kỳ hợp đồng bảo hiểm nào cũng có những trường hợp không được chi trả vì thuộc điều khoản loại trừ. Ví dụ, điều khiển xe sau khi đã sử dụng bia rượu rồi xảy ra tai nạn sẽ không được chi trả.",
-      "Hoặc một số quyền lợi, ví dụ như là về sức khỏe sẽ không được chi trả cho các trường hợp thuộc điều khoản loại trừ, như điều trị rối loạn tâm thần nè, trầm cảm nè, lo âu nè, vân vân. Theo cái quy định của hợp đồng. Vì vậy, trước khi tham gia, hãy dành thời gian đọc thật kỹ hợp đồng và nhờ tư vấn viên giải thích thật là kỹ về điều khoản loại trừ để tránh hiểu nhầm sau này.",
-      "Lý do số bốn, có bệnh từ trước nhưng không có kê khai và lại đây là lý do cực kỳ đáng tiếc luôn. Khi mua bảo hiểm, nếu công ty hỏi về tiền sử bệnh, hãy kê khai trung thực, kể cả bệnh đã điều trị ổn hay là chỉ từng đi khám một lần về cái bệnh đó.",
-      "Nếu bạn cố tình không kê khai, sau này khi yêu cầu bồi thường phát sinh á, công ty bảo hiểm phát hiện được bệnh đã có từ trước, sẽ ta từ chối chi trả, thậm chí công ty còn có thể là hủy hợp đồng theo quy định nha. Vậy nên, nếu bạn hoặc là người thân có hợp đồng bảo hiểm nhưng đi viện lại không được thanh toán, hãy thử xem lại mình đang rơi vào cái trường hợp nào trong bốn trường hợp trên.",
-      "Hoặc nếu thắc mắc và không hiểu về hợp đồng của mình, cứ để lại bình luận cho Vân và nhắn tin cho Vân, Vân sẽ hỗ trợ tư vấn miễn phí và review hợp đồng lại giúp tất cả các anh chị kiểm tra để tránh mất quyền lợi khi cần sử dụng và hiểu đúng về quyền lợi trong hợp đồng bảo hiểm của mình nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/2121080828835145.jpg"
   },
   {
     "id": "video-040-152454",
@@ -1184,19 +757,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Khách hàng từng mắc ung thư tuyến giáp sau khi điều trị ổn định hoàn toàn có thể xem xét tham gia lại bảo hiểm tùy theo đánh giá thực tế của công ty.",
-    "paragraphs": [
-      "Bị ung thư rồi thì có mua được bảo hiểm nữa không? Hôm nay Vân sẽ chia sẻ cho các anh chị một câu chuyện trải nghiệm thực tế của khách hàng của mình. Chị khách hàng này đã bị ung thư tuyến giáp cách đây hơn 3 năm và chị ấy phẫu thuật rồi.",
-      "Thì sau một năm cái thời gian mà chị điều trị ổn rồi á, chị có nộp lại cho công ty bảo hiểm. Nhưng lúc đó công ty bảo hiểm lại tạm hoãn và yêu cầu khách hàng đợi thêm một thời gian nữa để theo dõi tình hình sức khỏe. Tiến triển như thế nào thì công ty sẽ cân nhắc.",
-      "Và năm thứ hai chị tiếp tục nộp lại hợp đồng. Thì năm này cũng rất tiếc là chị bị tạm hoãn và lúc này chị rất là buồn luôn. Và chị nói là chị rất là tha thiết để được mua một cái hợp đồng vì chị hiểu hợp đồng bảo hiểm.",
-      "Và trước đây là bản thân chị cũng là cái người được mua hợp đồng bảo hiểm rồi nha các anh chị. Chị có trải nghiệm sâu sắc lắm. Và sau này chị muốn mua thêm một cái hợp đồng bổ sung vì chị hiểu được cái bệnh lý nghiêm trọng cực kỳ quan trọng vì chính chị là người mắc mà.",
-      "Thế gần đây nhất, thì nộp lần thứ ba thì cánh cửa đã mở ra và tin vui thật là bất ngờ. Công ty MetLife đã chính thức cấp hợp đồng cho chị ấy. Và gần như chị ấy được bảo vệ đến 80% tất cả các quyền lợi.",
-      "Thì đây là một tin mà Vân nghĩ là chị là cái người vui nhất luôn vì được bảo vệ về sinh mệnh nè, về bệnh lý nghiêm trọng. Nhưng mà chị bị loại trừ một chút xíu thôi, đó chính là loại trừ chính cái tuyến giáp của chị thôi. Công ty thì rất tiếc là không bán thẻ cho chị.",
-      "Nhưng mà có phải là về căn bản là chị đã mua được bệnh lý nghiêm trọng, được bảo vệ tất cả các bệnh ung thư còn lại. Đó là một điều rất là hạnh phúc luôn. Nên đây là một cái tin vui cho rất là nhiều anh chị đã từng bị ung thư tuyến giáp và đã có kết quả điều trị ổn.",
-      "Thì các anh chị cứ mạnh dạn, tự tin, nộp thử lại hồ sơ nha. Nếu anh chị nào đang trong trường hợp này, các anh chị có thể liên hệ Vân. Vân sẽ nhờ team Vân hỗ trợ nộp lại hợp đồng, xem các anh chị có được bảo vệ hay không.",
-      "Biết đâu chúng ta sẽ trở thành người may mắn như chị khách hàng của mình. Và thật sự là khi là bảo hiểm là một trong những niềm vui lớn nhất của tụi Vân đó chính là nhìn thấy khách hàng được bảo vệ, nhìn thấy khách hàng được an tâm và đặc biệt là những người mà họ đã trải nghiệm qua sinh tử, trải nghiệm qua bảo hiểm và trải nghiệm qua những cái khó khăn trong cuộc đời về sức khỏe, về tài chính á.",
-      "Họ thấu hiểu được hợp đồng bảo hiểm quan trọng như thế nào. Và Vân tin là Vân cũng sẽ giúp được nhiều người có cơ hội được bảo vệ đúng nghĩa. Cảm ơn cả nhà đã theo dõi video của Vân."
-    ],
-    "cta": "Đặt lịch tư vấn trường hợp sức khỏe đặc biệt cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn trường hợp sức khỏe đặc biệt cùng Khánh Vân",
+    "thumbnail": "/images/reels/1458318636152454.jpg"
   },
   {
     "id": "video-042-117310",
@@ -1213,14 +775,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Sản phẩm 'Xanh Phú Quý' của Manulife tạo sự đổi mới lớn khi cho phép ông bà dễ dàng mua bảo hiểm tích lũy tương lai cho cháu mà không cần làm thủ tục giám hộ phức tạp.",
-    "paragraphs": [
-      "Ông bà thấy có mua được \"Xanh Phú Quý\" tại Manulife cho cháu của mình không? Để Vân chia sẻ cho các anh chị đây là một điều rất là đặc biệt từ trước đến nay luôn. Mua một sản phẩm bảo hiểm tại Manulife thường là bố mẹ mua cho con, và nếu mà ông bà mua cho cháu thì trong trường hợp là bố mẹ không còn nữa hoặc là có những vấn đề phát sinh thì phải làm giấy giám hộ thì ông bà mới mua được cho cháu, đúng không?",
-      "Nhưng tại ngày hôm nay tại Manulife ra mắt dòng sản phẩm \"Xanh Phú Quý\", dòng sản phẩm chuyên về đầu tư, học vấn, đầu tư về hưu trí cho mọi người và đã có một cái việc thay đổi rất là lớn, đó chính là đồng ý cho ông bà mua cho cháu.",
-      "Thì cái việc này hỗ trợ rất là lớn cho một số gia đình là có ông bà muốn tặng quà là cho cháu và để sau này cho cháu lớn lên, chuyển lại cho con cháu của mình. Và Vân thấy đây là một cái việc vô cùng ý nghĩa và nhân văn luôn.",
-      "Việc mà chứng minh về hồ sơ nó rất là đơn giản. thủ tục như thế nào thì Vân sẽ hướng dẫn các anh chị, nếu các anh chị mong muốn là mình chia sẻ với ông bà để mà có thể mua hợp đồng này cho cháu mình thì liên hệ với Vân, Vân sẽ hướng dẫn thủ tục cực kỳ đơn giản để ông bà có thể sở hữu những cái sản phẩm này để tặng cho cháu nhà mình nha.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm Nhân thọ."
-    ],
-    "cta": "Tìm hiểu giải pháp quỹ tương lai cho con cháu cùng Khánh Vân"
+    "cta": "Tìm hiểu giải pháp quỹ tương lai cho con cháu cùng Khánh Vân",
+    "thumbnail": "/images/reels/1243243361117310.jpg"
   },
   {
     "id": "video-044-116751",
@@ -1237,17 +793,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Hiểu lầm chi phí viện phí thực tế do chỉ mua bảo hiểm hỗ trợ nằm viện thay vì thẻ chăm sóc sức khỏe toàn diện dẫn đến việc bảo hiểm chi trả ít hơn mong đợi.",
-    "paragraphs": [
-      "Tại sao nằm viện Vimec hết 30 triệu mà bảo hiểm chỉ chi trả có 2 triệu thôi? Khi Vân kiểm tra lại hợp đồng của khách hàng này thì mới phát hiện ra là điều mà mọi người đang hiểu lầm. Vì chị khách hàng này đóng phí bảo hiểm là hơn 30 triệu đồng trên một năm, nhưng trong hợp đồng lại không có quyền lợi chăm sóc sức khỏe mà chỉ có quyền lợi hỗ trợ viện phí khi nằm viện là 500.000 một ngày thôi.",
-      "Khi chị nằm viện 4 ngày thì hồ sơ số tiền chị claim tổng là 500.000 này nhưng đó 4 ngày thì chỉ có 2 triệu. Hợp đồng này á là mình chỉ có quyền lợi trợ cấp y tế mà không có quyền lợi chăm sóc sức khỏe nên cái biều viện phí người ta không có được trả.",
-      "Trong khi đó thì có một khách hàng khác của Vân, hai mẹ con tham gia tổng phí khoảng 18 triệu một năm thôi, có quyền lợi chăm sóc sức khỏe khi bé mình đi điều trị ở bệnh viện Nhi Đồng 2 khoảng 31 triệu. Sau khi mình được bảo hiểm y tế chi trả 16 triệu thì phần còn lại thì đã chi trả hoàn toàn cho khách hàng.",
-      "Đó là sự khác biệt hoàn toàn đúng không ạ? Tại vì chi trả cái khoản 11,80 cho khách hàng á, tính ra là gia đình không mất nhiều cho một cái đợt điều trị của bé đúng không? Nên đó là đỡ và tiết kiệm cho con.",
-      "Và đây chính là điểm mà Vân nghĩ rất là nhiều khách hàng đang nhầm lẫn. Hỗ trợ viền phí và thẻ sức khỏe là hai phạm trù hoàn toàn khác nhau, không giống gì nha. Hỗ trợ viền phí hiểu đơn giản là nằm viện bao nhiêu ngày thì công ty sẽ trả bấy nhiêu ngày trên cái ngày nằm viện mà nằm trong cái điều khoản chia trả.",
-      "Còn thẻ chăm sóc sức khỏe thì tùy vào cái điều khoản thanh toán cũng như cái hạn mức khách hàng mua thì khách hàng sẽ nhận được quyền lợi chia trả rất là rõ ràng, có hạn mức như thế nào và thì công ty sẽ chi trả theo cái cam kết của hợp đồng.",
-      "Nên anh chị nào đang có cái hợp đồng mà chưa biết rằng là quyền lợi của mình thiếu đủ như thế nào và hạn mức như thế nào mới là đủ. Bây giờ có nhiều anh chị muốn nằm Vimex và FV nhưng mua cái thẻ bạc á, thẻ thấp chuỗi đó thì các anh chị biết là mình có thể là không có được trả đủ theo cái số tiền bill mà mình xài và mình phải bù số tiền rất là lớn nó cũng hơi uổng nha.",
-      "Nên á mình phải cân nhắc thật kỹ là mình mong muốn nằm viện ở bệnh viện nào và cái thẻ của mình đã đáp ứng được chưa. Nếu các anh chị không biết điều này nhắn cho Vân, Vân sẽ coi, Vân sẽ tư vấn lại cho cái thẻ đó nó đáp ứng được ở những bệnh viện nào, chứ nhiều khi mình mua xong tới lúc mình sử dụng mà cái số tiền hóa đơn mình cần phải bù nhiều quá nó rất là phí luôn."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1413794420116751.jpg"
   },
   {
     "id": "video-045-794222",
@@ -1264,21 +811,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Giá trị tài khoản sau nhiều năm tham gia bảo hiểm nhân thọ cao hay thấp phụ thuộc hoàn toàn vào cấu trúc sản phẩm, mức phí và mục tiêu bảo vệ của mỗi người.",
-    "paragraphs": [
-      "Đóng bảo hiểm nhân thọ 15 năm, vậy sau 15 năm mình có chắc là lấy lại đủ số tiền mình đã đóng không? Câu trả lời là chưa chắc nha. Có người sau 10 năm giá trị tài khoản đã cao hơn số tiền đã đóng rất là nhiều, nhưng có người đóng 20 năm mà giá trị nhận về vẫn thấp hơn tổng số tiền đã đóng.",
-      "Vậy tại sao cùng là bảo hiểm nhân thọ, cùng là trong nhiều năm nhưng kết quả của mỗi người lại khác nhau? Thực ra muốn biết chính xác khi xem một hợp đồng á, mình sẽ nhìn vào ba điểm chính như sau. Đầu tiên, bạn tham gia hợp đồng dòng sản phẩm nào?",
-      "Ví dụ như sản phẩm truyền thống, sản phẩm liên kết chung, hoặc là những sản phẩm có nhiều quỹ đầu tư. Mỗi dòng sản phẩm sẽ có cơ chế vận hành khác nhau. Và đương nhiên, quyền lợi là cũng sẽ khác nhau rồi đó.",
-      "Đối với một số dòng sản phẩm truyền thống và liên kết chung, phần lãi có thể được xác định theo cơ chế của sản phẩm, có nhiều khách hàng nhận được tiền về bằng với phần lãi cam kết được thể hiện trong bảng minh họa. Còn với dòng sản phẩm có nhiều quỹ đầu tư thì tỷ suất sinh lời không có được cam kết, nhưng đổi lại, nếu quỹ đầu tư của mình lựa chọn hoạt động tốt và giá trị tăng á thì cơ hội tăng trưởng của mình rất là cao luôn.",
-      "Tất nhiên trong đầu tư thì sẽ có những cái biến động thị trường nhưng mà kết quả thực tế sẽ phụ thuộc vào hiệu suất của các cái quỹ trong từng giai đoạn. Điểm thứ hai là hợp đồng của mình có tham gia nhiều quyền lợi bổ sung hay không?",
-      "Ví dụ như thẻ sức khỏe, bảo hiểm tai nạn, bệnh lý nghiêm trọng, hỗ trợ đóng phí và mình mua rất là nhiều sản phẩm hỗ trợ đính kèm. Mình cần hiểu một điều là không phải toàn bộ số tiền của mình đóng vào hợp đồng đều được đem đi tích lũy đâu.",
-      "Một phần phí sẽ được sử dụng để duy trì những quyền lợi bảo vệ các cái chi phí liên quan đến hợp đồng của mình. Nếu mà mình tham gia càng nhiều quyền lợi bổ sung, đặc biệt là những quyền lợi có mức bảo vệ cao thì chi phí bảo vệ cũng rất cao.",
-      "Và khi chi phí bảo vệ cao thì phần tiền còn lại dành cho tích lũy nó sẽ thấp xuống. Điểm thứ ba, mình cần xem hợp đồng có đóng phí thêm hay không? Ngoài phí bảo hiểm cơ bản để duy trì quyền lợi bảo vệ, một số sản phẩm cho phép mình đóng thêm tiền vào hợp đồng để tăng cái nguồn tiền đầu tư vào giá trị tài khoản.",
-      "Có khách hàng chỉ đóng phí cơ bản nhưng có những người mỗi năm đóng thêm 5 triệu, 10 triệu, thậm chí 20 triệu vào cái giá trị tài khoản. Việc mình đóng thêm này á nó cũng phụ thuộc vào sản phẩm. Có những sản phẩm á thì chỉ cho phép là đóng năm lần cái số tiền.",
-      "Ví dụ như mình mua 10 triệu sản phẩm chính thì mình được đóng 50 triệu tiền đóng thêm trong cái năm đó. Đây cũng là một trong những cái khách hàng phải cần lưu ý. Đối với những người tham gia nhiều quyền lợi bổ sung, không có đóng thêm trong khi hiệu quả đầu tư không có đủ để bù các cái chi phí để nhận cái giá trị hoàn lại của mình tốt.",
-      "Và thực tế là cái giá trị của họ nhận về nó thấp hơn số tiền đã đóng. Nên mấy bạn mà có thắc mắc cứ vâng á, hợp đồng mình đóng xong 15 năm sẽ được nhận bao nhiêu á thì đừng chỉ nhìn vào tổng số tiền đã đóng nha, mà phải xem được tiền của mình đang được phân bổ như thế nào, vô các quyền lợi nào, thì mình sẽ biết được cái kết quả của mình.",
-      "Nên nếu bạn nào mà đang có cái hợp đồng mà chưa biết rõ một hợp đồng của mình sẽ đóng bao nhiêu năm, nhận quyền lợi như thế nào á thì liên hệ Vâng, Vâng review lại hoặc để lại comment, Vâng sẽ chia sẻ thêm cho cả nhà mình nghe."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1566677681794222.jpg"
   },
   {
     "id": "video-047-175076",
@@ -1295,20 +829,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Khi tư vấn viên nghỉ việc, quyền lợi hợp đồng của khách hàng tại Manulife vẫn luôn được đảm bảo và chuyển giao phục vụ bởi đội ngũ chuyên nghiệp.",
-    "paragraphs": [
-      "Nếu mà đại lý bảo hiểm mà tư vấn cho các anh chị làm hợp đồng cho mình xong rồi, sau 1, 2 năm á mà các anh chị đó nghỉ việc, không còn làm ở Manulife nữa thì hợp đồng của anh chị sẽ ra sao? Hôm nay Vân làm cái video này, các anh chị dành 1, 2 phút để mình nghe và mình lấy kinh nghiệm ha.",
-      "Là không phải khách hàng nào cũng được có đại lý à phục vụ 5 năm, 10 năm, 20 năm, là vì các anh chị biết là trong quá trình công tác thì cũng có rất là nhiều sự thay đổi, nên việc đổi người là một chuyện rất bình thường. Nhưng không sao, đại lý của mình nghỉ việc thì sẽ có hai trường hợp xảy ra.",
-      "Một trường hợp là công ty sẽ chuyển lại cho một đại lý khác chăm sóc và có nhắn tin thông báo và cái bạn mà đại lý đó sẽ liên hệ với các anh chị để mà mình gặp à gửi trao đổi và các anh chị sẽ hỗ trợ cái hành trình hợp đồng của mình tiếp theo.",
-      "Hai là công ty sẽ chuyển về cái trung tâm dịch vụ khách hàng và có vấn đề gì thì trung tâm dịch vụ khách hàng này sẽ hỗ trợ các khách hàng của mình. Nhưng mà còn có một cái cách nữa, Vân hay nói á là nếu mà được các tư vấn viên chăm sóc dịch vụ thì quá là hạnh phúc rồi.",
-      "Nhưng nếu trong trường hợp mà mình chưa có được cái tư vấn viên ưng ý á, mình tự tìm hiểu luôn, đúng không? Mình tự tìm hiểu hết điều khoản và mình tự chăm sóc cái hợp đồng của mình được luôn. Vì hiện tại Manulife hệ thống cực kỳ chuyên nghiệp và thông minh.",
-      "Bây giờ chỉ cài app là mọi thứ biết hết trên app đó luôn và làm qua OTB điện thoại hết chứ không cần phải lên quầy nữa. Và điều đó nó giúp khách hàng tự chủ được hợp đồng của mình rất lớn. Tại vì thường khách hàng của Vân thế Vân vẫn hỗ trợ và khách hàng vẫn hay liên hệ của Vân lắm.",
-      "Nhưng có một số trường hợp là mình không biết thì mình tự chủ động. Còn nếu mình cần một tư vấn viên chuyên nghiệp nữa thì mình hãy tìm. Các bạn có danh hiệu MDRT, các bạn có danh hiệu COT, các bạn có những cái danh hiệu chuyên nghiệp như Man Pro, Vàng, Bạc, Bạch Kim và đặc biệt là những người mà đã làm rất uy tín như Vân lâu năm.",
-      "Thì không có lý do gì để mà mà lo lắng nữa đâu. Nên là những cái trường hợp nào mà anh chị nào mà đại lý à gọi là nghỉ việc rồi mà hợp đồng của mình chưa có ai chăm sóc á thì cứ mạnh dạn nhắn cho Vân nha. Vân sẽ hỗ trợ lại review lại hợp đồng và follow và chăm sóc hợp đồng của mình.",
-      "Vì à Vân cũng hay nói là mình trộm vía là hi vọng mình có được sức khỏe, mình sẽ cống hiến nghề này dài lâu tới sau này luôn. À có có Vân, có đội ngũ của Vân và có những anh chị luôn luôn tâm huyết với nghề. Nên cũng hi vọng các anh chị khách hàng yên tâm tiếp tục hợp đồng của mình để nhận cái giá trị dài lâu về sau này, về tương lai.",
-      "Và các anh chị khi mà mua hợp đồng bảo hiểm á, lúc nào cũng tự hào, tự tin và nói với con cháu của mình là mình có hợp đồng ở Manulife. Và tất cả cái cái ánh nhìn, cái người dân hay như cái gọi là những cái người chưa hiểu về bảo hiểm họ yên tâm hơn và lan tỏa được bảo hiểm và được bảo vệ rộng hơn và an toàn hơn với nhiều người.",
-      "Follow kênh Thiên Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/857226420175076.jpg"
   },
   {
     "id": "video-046-541794",
@@ -1325,15 +847,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hợp đồng bảo hiểm mất hiệu lực trong vòng 24 tháng vẫn có thể được xem xét khôi phục, nhưng cần cân nhắc kỹ về mặt tài chính và tình trạng sức khỏe hiện tại.",
-    "paragraphs": [
-      "Hợp đồng bảo hiểm bị mất hiệu lực, có nên khôi phục hay không? Đây chắc chắn là một băn khoăn của rất là nhiều người. Ngân đóng thì số tiền mà tiếp tục đóng thì lại lăn tăn.",
-      "Đầu tiên bạn cần nhớ con số 24 tháng, trong vòng 2 năm kể từ ngày hợp đồng mất hiệu lực, bạn hoàn toàn có thể làm thủ tục khôi phục hợp đồng này, nhưng câu hỏi lớn hơn là có nên khôi phục hợp đồng này hay không? Nếu bạn đã đóng phí nhiêu năm rồi, việc bỏ hợp đồng sẽ khiến bạn chịu tổn thất về tài chính rất là lớn luôn, vì giá trị hoàn lại ban đầu thường là rất là thấp.",
-      "Thứ hai, nếu hợp đồng cũ của bạn là dòng sản phẩm tối ưu, quyền lợi đã đảm bảo và bảo vệ rộng thì chẳng tội gì mình phải bỏ hết cả nhà. Thứ ba, tuổi càng cao thì phí bảo hiểm mua mới càng đắt, khôi phục hợp đồng cũ giúp bạn giữ nguyên mức phí theo độ tuổi ban đầu của bạn.",
-      "Quy trình thẩm định sức khỏe cũng nhẹ nhàng hơn. Tuy nhiên, có một điều cực kỳ quan trọng bạn cần biết, khôi phục hợp đồng đồng nghĩa với việc bạn mất toàn bộ tiền thưởng duy trì hợp đồng tích lũy lâu nay. Với nhiều sản phẩm, khoản thưởng này có thể lên tới hàng chục triệu, hàng trăm triệu, tương đương với từ 3 đến 5 năm đóng phí là chuyện rất là bình thường ạ.",
-      "Vậy nên, bài toán ở đây là phải tính toán thật kỹ giữa cái được và cái mất. Nếu hợp đồng mới đóng 1 - 2 năm, quyền lợi chưa tối ưu, hãy cân nhắc lại từ đầu. Nhưng hãy chọn một tư vấn viên thật sự có tâm, người sẵn sàng ngồi xuống cùng bạn phân tích lại chi tiết toàn bộ hợp đồng để bạn có cái nhìn rõ ràng nhất, chứ không phải là chăm chăm xúi bạn hủy cái hợp đồng đó đi, rồi mua lại cái hợp đồng mới để bạn chạy chỉ tiêu, và điều này Vân không ủng hộ tí nào.",
-      "Bạn đang gặp những cái vướng mắc về hợp đồng nè, về những cái điều khoản mà mình còn lăn tăn và đặc biệt ai có hợp đồng đã mất hiệu lực, đang cân nhắc xem nên có khôi phục lại hay không? Comment cho Vân, Vân sẽ review và đọc lại để hỗ trợ các anh chị biết là mình nên quyết định như thế nào nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/907282948541794.jpg"
   },
   {
     "id": "video-048-664714",
@@ -1350,19 +865,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Ba lỗi phổ biến khiến khách hàng bức xúc khi tham gia bảo hiểm là không hiểu điều khoản, bỏ qua loại trừ và không nắm rõ thời gian chờ.",
-    "paragraphs": [
-      "Ba lỗi mà khiến bạn vừa bực mình vừa tức giận khi mua bảo hiểm nhân thọ đó là ba lỗi nào? Đầu tiên, đó chính là việc bạn không có hiểu gì về điều khoản hết á. Thì tại sao mà không hiểu điều khoản là không có biết là mình sẽ mua cái gì hết trơn á?",
-      "Đầu tiên là không có đọc về những cái loại trừ nè. Lộ trừ về bệnh, về bẩm sinh, về các thứ đúng không? Thứ hai là không có coi về cái thời gian chờ.",
-      "Thời gian chờ. À thứ ba, không có hiểu những cái quyền lợi cho một cái hợp đồng. Nghĩa rằng là mình không nắm được những cái thông tin là sẽ bị loại trừ cái gì, sẽ phải chờ thời gian như thế nào và đặc biệt là các cái quyền lợi mà hợp đồng mình mua.",
-      "Đây là cái lỗi lớn nhất ha. Lỗi thứ nhì là khi đi mua là mua theo cảm tính. Thấy bạn bè mua là mua, ai kêu mua thì mua cho có với người ta.",
-      "là mua theo cảm tính ha. Thứ ba là các anh chị, anh chị biết là cái gì không? Là không biết phân bổ tài chính của mình để mua quyền lợi cho hợp lý đúng nhu cầu của mình.",
-      "Mình cũng bỏ ra 20% thu nhập để mua bảo hiểm nhân thọ, nhưng mà mình không biết là nên dùng để mua bệnh lý nhiều hay mua tai nạn nhiều hay tích lũy hưu trí nhiều. Mình không hiểu vì mình không hiểu về cái bức tranh tài chính và cái lỗi này rất nhiều người thường gặp.",
-      "Đó là không phân bổ ha. Không phân bổ ah 20% vào đúng cái mình cần. Và nếu mà gặp ba lỗi này á mà dẫn ra đi mua một cái hợp đồng bảo hiểm á nó không có đúng.",
-      "Thì khi mà phát sinh ra mình không được đền bù, qua năm sau mình không có đủ tài chính để mình đóng tiếp, mình bỏ nè là mình cũng buồn là mình thất vọng về bảo hiểm lắm, rồi mình không phân bổ đủ cái số tiền vào cái quyền lợi mình đang cần, thì tới lúc á cái mình cần á thì không được bảo vệ, cái không cần thì nó còn trong hợp đồng.",
-      "Và cuối cùng là anh chị rất là hối tiếc khi mua một cái hợp đồng, nên Vân cũng nói đây các anh chị rút kinh nghiệm, khi gặp bất cứ một cái tư vấn viên nào, mình đều phải nhận diện được ba cái lỗi này. Nếu mà mình vượt qua nó và mình không phải đi gặp những cái lỗi này thì mình có một cái hợp đồng hoàn hảo, thì các anh chị sẽ có một cái sự an tâm nhất định trong việc mà các anh chị tạo tạo dựng quỹ dự phòng.",
-      "Nên hãy để ý cái lỗi này và à làm cho mình những cái hợp đồng thật là xịn nha. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nhân thọ."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/810453428664714.jpg"
   },
   {
     "id": "video-049-630344",
@@ -1379,21 +883,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Thời điểm rút tiền bảo hiểm có lợi nhất phụ thuộc vào việc phân bổ dòng tiền ban đầu giữa mục tiêu bảo vệ thuần túy hay tích lũy đầu tư.",
-    "paragraphs": [
-      "Đóng bảo hiểm lúc khi nào thì có lợi nhất? Đây là cái câu hỏi mà ai cũng thắc mắc hết á. Có nhiều khách hàng á người ta đóng 25 triệu thì người ta chỉ bảo vệ cho bản thân và phần lớn tiền người ta dùng để tích lũy, nên giá trị hoàn lại của người ta rất là cao.",
-      "Nhưng có những người sử dụng 25 triệu bảo vệ bản thân, mua thêm thẻ sức khỏe cho vợ, cho con hay là mua thêm những cái dịch vụ khác và cuối cùng tổng cái mức mà hoàn lại của khách hàng nó sẽ thấp hơn rất là nhiều. Nhưng mà không phải ai cũng hiểu được điều đó.",
-      "Thì trước tiên là anh chị phải biết là tiền của mình đang được phân bổ vào đâu. Ví dụ như trong một cái hợp đồng là anh chị cần quan tâm đến ba khoản phí thôi. Thứ nhất là phí bảo hiểm rủi ro.",
-      "Đây là cái khoản được khấu trừ khi duy trì quyền lợi hợp đồng. Khi tuổi tăng, khoản phí này thường cũng tăng theo. Phí quản lý hợp đồng.",
-      "Đây là cái khoản phí mà duy trì và quản lý cái hợp đồng theo quy định của sản phẩm và điều khoản và thường thì cái khoản phí này nó ít lúc nó có mấy chục ngàn cho cái hợp đồng thôi, nó không có đáng kể đâu. Và phần thứ ba đó là giá trị tài khoản và phần sinh lời.",
-      "Khoản tiền này thường biến động theo cơ chế của sản phẩm và kết quả đầu tư thực tế của cái dòng sản phẩm mình mua. Nếu mà phần giá trị tài khoản tăng đủ để bù các cái khoản phí khấu trừ á thì giá trị tài khoản có thể tăng.",
-      "Nhưng nếu cái giá trị tài khoản mà không đủ để bù cái khoản phí thì giá trị tài khoản có thể giảm là chuyện rất bình thường nha. Khi mà cái giá trị tài khoản không còn đủ để duy trì hợp đồng theo các điều khoản theo các quy định ban đầu á thì hợp đồng sẽ mất hiệu lực.",
-      "Và đây là những cái điều mà khách hàng cần phải quan tâm nha. Nên là khách hàng nào mà có hợp đồng rồi mà muốn biết mình rút ở thời điểm nào là hợp lý hoặc là mình hiểu được cái dòng tiền, cái giá trị sản phẩm của mình nó chạy như thế nào á thì có thể comment vô cái video này thì Vân sẽ chia sẻ kỹ hơn.",
-      "Lưu ý cho cả nhà một điều là không có cái cột mốc thời gian nào là cố định, kiểu đóng 10 năm thì rút ra có lời, áp dụng cho tất cả các hợp đồng. Nó phụ thuộc vào cách thiết kế hợp đồng, mức phí, quyền lợi, thời gian tham gia và các khoản phí được khấu trừ.",
-      "Và đặc biệt là kết quả thực tế của mỗi sản phẩm khác nhau. Nếu các anh chị đang có hợp đồng bảo hiểm, hãy mở cái hợp đồng của mình ra và kiểm tra ba thứ nha. Phí bảo hiểm rủi ro đang được khấu trừ bao nhiêu, các cái khoản phí đang được khấu trừ như thế nào, giá trị tài khoản hiện tại của bạn đang là bao nhiêu.",
-      "Và khi hiểu ba con số này thì Vân tin là các anh chị sẽ hiểu cái hợp đồng của mình và hiểu cách vận hành và mình tự tin cái hợp đồng của mình. Chúc các anh chị có được hợp đồng bảo hiểm và luôn luôn hiểu và thấy quý giá, quý trọng nó để đồng hành với mình lâu dài nha.",
-      "Anh chị nào còn đang thắc mắc về hợp đồng của mình vận hành ra sao thì inbox cho Vân để Vân giải thích cho các anh chị hiểu nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1101715575630344.jpg"
   },
   {
     "id": "video-050-174274",
@@ -1410,24 +901,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Giải thích lý do thời gian chi trả bồi thường bảo hiểm nhanh hay chậm phụ thuộc vào tính đầy đủ và hợp lệ của hồ sơ thực tế.",
-    "paragraphs": [
-      "Tại sao có người làm hồ sơ bồi thường một, hai ngày là nhận được tiền rồi, nhưng có người phải chờ đến một, hai tháng, thậm chí lâu hơn mới có thể nhận được tiền? Câu hỏi này nhiều người thắc mắc lắm. Có phải công ty bảo hiểm cố tình làm khó khách hàng không?",
-      "Vân ở đây 9 năm rồi nè. Để Vân coi thử khách hàng có bị làm khó không nha. Thực ra thì không hẳn đâu cả nhà.",
-      "Để Vân giải thích đơn giản như thế này để cho các anh chị dễ hiểu nè. Khi mình gửi hồ sơ yêu cầu bồi thường, không phải cứ nộp hồ sơ vào công ty là được chi trả ngay. Hồ sơ sẽ được kiểm tra dựa trên điều khoản hợp đồng và quy trình thẩm định bồi thường.",
-      "Cái này là có quy trình hết chứ không phải tự nhiên bộ này được trả nhanh, bộ kia trả chậm đâu cả nhà. Thông thường sẽ có ba trường hợp chính xảy ra. Trường hợp một, hồ sơ đầy đủ và thông tin rõ ràng thì công ty sẽ kiểm tra những cái giấy tờ mà có liên quan như giấy ra viện, hóa đơn, bản kê hoặc là các giấy tờ liên quan.",
-      "Nếu hồ sơ đầy đủ thông tin rõ ràng, đúng quyền lợi nữa ha, thì sẽ xử lý rất nhanh luôn. Có những bộ hồ sơ 2, 3 ngày là nhận được tiền luôn rồi. Trường hợp thứ hai là trường hợp cũng hay gặp nè.",
-      "Hồ sơ liên quan đến bạn cần xác minh thêm. Thường gặp lắm, tại vì có những bệnh công ty cần phải coi lại, ví dụ như những cái bệnh tình trạng sức khỏe của mình có điều trị kéo dài nè, lúc này công ty bảo hiểm có thể cần kiểm tra thêm, ví dụ.",
-      "Trước khi tham gia hợp đồng bảo hiểm, khách hàng đã từng mắc cái bệnh này chưa, đã từng đi khám và điều trị ở nơi nào hay chưa? Và lúc tham gia hợp đồng thì tình trạng sức khỏe đã được kê khai đầy đủ hay chưa? Nếu mà cần những xác minh những thông tin này á, thì thời gian xử lý nó sẽ lâu hơn.",
-      "Và trường hợp ba á là hồ sơ có chi phí điều trị lớn, với những hồ sơ có số tiền yêu cầu bồi thường lớn, công ty bảo hiểm thường sẽ kiểm tra rất là kỹ nha. Vì à các anh chị biết rồi ha, có những khách hàng thì làm rất đúng nhưng có những trường hợp trục lợi của công ty bảo hiểm rất là nhiều.",
-      "Có thể là cần xác minh thêm về thông tin từ bệnh viện nè, hồ sơ điều trị nè, để đảm bảo những cái chi trả này là hoàn toàn đúng và hợp lệ. Vì công ty cũng có Audit mà các anh chị khi làm là được kiểm tra lại rất là chi tiết ha.",
-      "Nên các anh chị đừng có nghĩ rằng bồi thường nhanh là công ty tốt, còn bồi thường chậm là công ty không có muốn trả, không có phải vậy đâu các anh chị. Mà tùy theo bộ hồ sơ nó sẽ có cái thời hạn trả phù hợp. Quan trọng nhất vẫn là hồ sơ được xem xét đúng quy trình nè, đúng điều khoản hợp đồng và đúng quyền lợi.",
-      "Và hiện nay các công ty bảo hiểm đang đẩy mạnh à quy trình số hóa và công nghệ vào cái quy trình xử lý hồ sơ claim rất mạnh luôn. Điển hình như Manulife là đang có hệ thống claim online rất hiện đại, chỉ chụp hình và gửi lên hệ thống của công ty thôi.",
-      "Vậy thì khách hàng cần làm gì để hồ sơ được xử lý thuận lợi nè? Nhớ giúp Vân ba điều nha. Một là kê khai trung thực tình trạng sức khỏe ngày mà mình tham gia hợp đồng.",
-      "Hai là khi cần yêu cầu bồi thường, chuẩn bị hồ sơ phải đầy đủ ngay từ ban đầu. Và nếu mình chưa chắc thì nhờ tư vấn viên kiểm tra lại hết để xem đủ hay chưa. Và ba là nắm rõ quyền lợi của mình, quy trình bồi thường của mình mất bao nhiêu thời gian.",
-      "Vì mình biết là mình có cái quyền lợi đó mới đi claim nha, chứ nhiều khi không có claim công ty nó không trả đâu. Bảo hiểm là một ngành nghề dịch vụ và điều mà khách hàng quan tâm nhất đó chính là quyền lợi chi trả đúng không?",
-      "Nên các anh chị cứ yên tâm, quyền lợi chi trả là cái công ty bảo hiểm nó phải làm đúng dữ lắm thì công ty mới phát triển được các anh chị. Và nếu mà anh chị muốn Vân chia sẻ kĩ hơn cái quy trình về chi trả quyền lợi á thì các anh chị có thể để lại comment để Vân có thể chia sẻ sâu hơn về những cái quyền lợi mà anh chị đang đi claim mà còn thắc mắc, hay là những cái vấn đề gì mà chưa hiểu, hoặc là cái hợp đồng của mình mà claim tới giờ mà nó quá hạn đi, Vân ví dụ vậy, mà cần phải hỗ trợ thì nhắn cho Vân nha, vì có những trường hợp chưa bổ sung hồ sơ kịp thời và nó dẫn tới quá hạn đó các anh chị, nên cần cái gì comment lên, nhắn cho Vân và sẽ hỗ trợ cho các anh chị."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1121824397174274.jpg"
   },
   {
     "id": "video-051-189693",
@@ -1444,25 +919,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Phân tích sự khác biệt cốt lõi giữa thẻ sức khỏe rời và bảo hiểm nhân thọ để khách hàng hiểu vì sao cần kết hợp cả hai.",
-    "paragraphs": [
-      "Có thể bảo hiểm rời rồi thì có cần mua bảo hiểm nhân thọ không? Ai mà còn thắc mắc vấn đề này thì hãy xem hết cái clip này nha. Nghe xong cái clip này là các anh chị hiểu là mình nên mua cái gì luôn.",
-      "Thì đầu tiên, có nhiều người tìm hiểu về bảo hiểm á, người ta chỉ biết tới thẻ sức khỏe rời thôi, là được chi trả viện phí dựa theo hóa đơn thực tế. Và chắc chắn có một cái quan trọng là dựa theo hạn mức mà các anh chị mua.",
-      "Ví dụ có một số công ty mà mua cho nhân viên á, hạn mức là khoảng 3.000 đô, khoảng 70 80 triệu gì đó. Có một số công ty thì mua được 120 triệu, có một những anh chị mà làm giám đốc cấp cao được công ty mua khoảng 250 triệu.",
-      "Đó là hạn mức của cái thẻ sức khỏe rời. Và cái thẻ sức khỏe rời này có hai cách, một là mình tự mua, hai là mình đi làm một công ty và mình được mua. Thì khi mình tự mua thì mình chủ động hơn một tí, mình được lựa chọn và mình được chủ động về cái việc mua bán.",
-      "Nhưng mà công ty bảo hiểm cũng sẽ chủ động ngược lại với mình, là mình mua theo hàng năm và công ty bảo hiểm Phi Nhân Thọ đó có thể là bán hoặc không bán cho mình là tùy theo sức khỏe, cũng như cái tính chất sản phẩm của mỗi công ty tại thời điểm lúc đó.",
-      "Còn khi mà được công ty mua thì mình còn làm việc ở đó thì người ta mới mua. Còn hết làm việc thì cũng chưa chắc được. Ví dụ như Vân làm ở Manulife, hiện nay vị trí của Vân là giám đốc vùng.",
-      "Thì Vân được công ty mua cho cả gia đình Vân, ba mẹ Vân, ba mẹ chồng Vân nữa. Đó. Thì nhưng mà Vân còn ở đây với vị trí đương vị ở đây thì Vân mới được mua nha.",
-      "Chứ nếu mà sau này có những cái lý do thay đổi về sức khỏe như thế nào, Vân không còn làm vị trí này nữa thì Vân cũng không được mua. Là mình không chủ động được gì luôn. Những cái ngày mà mình khỏe thì không nói gì, ngày mình không khỏe mình nghỉ khỏi công ty, rồi ai lo cho mình và gia đình mình.",
-      "Phát Vân nói vậy là các anh chị tự suy luận được rồi ha. Bảo hiểm nhân thọ là một cái hình thức khác hơn. Đầu tiên, Vân nói về hình thức thôi ha.",
-      "Bảo hiểm nhân thọ là trả tiền mặt. Vân ví dụ như là mua bệnh lý nghiêm trọng, mua một tỷ đồng, lỡ mắc bị ung thư gan, được chi trả một tỷ đồng vào tài khoản, còn mình đi chữa trị ở đâu là việc của mình. Được không?",
-      "Rồi tiếp theo là mình có những quyền lợi di trợ cấp y tế, hay có tai nạn cũng tương tự là nhận tiền mặt theo hạng mức mình mua. Và bảo hiểm nhân thọ được kèm theo một cái thẻ bảo hiểm sức khỏe nếu các anh chị muốn mua nữa.",
-      "Và được mua đồng hành trong cái hợp đồng đó xuyên suốt 20 năm. Ở Manulife là các anh chị được mua 20 năm, thì cái độ an toàn nó cao hơn rất nhiều, vì công ty thẩm định sức khỏe một lần từ đầu. Để mà công ty bảo hiểm đảm bảo bán trong vòng 20 năm, công ty chỉ không bán trong những cái trường hợp là khách hàng có bằng chứng, và những cái trường hợp mà Vân nói là sai với những cái luật này kia kia nọ thì công ty mới ngưng thôi, còn tất cả những trường hợp còn lại là công ty vẫn tiếp tục bán và cái mức giá thay đổi thì nó có trong hợp đồng bảo hiểm ngay từ đầu và được kiểm soát hết mọi chuyện.",
-      "Khác hẳn đúng không? Các anh chị thấy hai câu chuyện rất khác hẳn. Nên khi mua hợp đồng bảo hiểm là mình sẽ nghĩ là bây giờ mình mua thẻ rời hay là mua hợp đồng nhân thọ.",
-      "Cái nào nó được quyền lợi nhiều hơn mình mua thôi. Mình đi là khách hàng mà, cái gì lợi hơn là mình mua nha các anh chị. Cái gì anh chị không thấy lợi thì thôi.",
-      "Vân là tư vấn viên, Vân rất là gọi là minh bạch và công khai như vậy. Nhưng chắc chắn một người mà thông thái là nhìn vô người ta sẽ hiểu được rằng cái nào quan trọng và cần thiết hơn. Nên qua cái câu chuyện này Vân nghĩ là các anh chị đã tự đưa cho mình quyết định rồi đúng không?",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1522149942189693.jpg"
   },
   {
     "id": "video-053-102774",
@@ -1479,19 +937,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hướng dẫn cách chỉ định người thụ hưởng trong hợp đồng bảo hiểm chuẩn xác để bảo vệ tài sản tối ưu cho gia đình.",
-    "paragraphs": [
-      "Người được thụ hưởng trong hợp đồng nên để là ai? Vân nghĩ là cái vấn đề này cực kỳ quan trọng và rất nhiều khách hàng quan tâm luôn. Hợp đồng bảo hiểm là một cái loại tài sản rất là đặc biệt, khi mà đã chỉ định để cho một ai đó rồi, ví dụ như để cho mẹ Vân đi, thì chỉ có mẹ Vân mới được sử dụng số tiền đó thôi, chứ còn ngồi ra không có ai được sử dụng hết.",
-      "Còn nếu trong trường hợp mà mẹ Vân không còn nữa, thì mình sẽ làm thừa luật thừa kế. Khởi đầu khởi điểm mà để làm một cái hợp đồng bảo hiểm thì ai cũng sẽ nghĩ tới câu chuyện là hợp đồng bảo hiểm của mình nên để cho ai? Thì đầu tiên, mình sẽ nói đúng theo pháp luật là phải để người có huyết thống và có đủ mối quan hệ của công ty và luật pháp cho phép.",
-      "Vân ví dụ như vợ chồng, con cái hoặc là bố mẹ hoặc là anh chị em ruột. Còn ngoài ra thì gần như là mình rất là khó để cho ai ha. Tại sao Vân nói cái câu chuyện là nên để cho ai là phù hợp?",
-      "Tại vì có một số gia đình mình tin tưởng vợ hoặc là chồng mình tuyệt đối thì để hết tất cả cho đối phương thì nó quá là dễ dàng rồi. Nhưng có những cái gia đình thì nó 50 50 đó cả nhà. Mà 50 50 đó thì sao?",
-      "Hay có phải rằng là ví dụ như mình bây giờ mình có hai cái hợp đồng thì mình phải nghiên cứu. Một là mình để cho chồng mình, cái thứ hai là mình để cho bà chị ruột mình, ví dụ vậy. Nên cái việc mà phân bổ lại cái tài sản cho anh chị em ruột hoặc là bố mẹ mình, những cái trường hợp này mình sẽ phải cần cân nhắc thật là cẩn thận.",
-      "Anh chị cũng biết rằng là có một số anh chị đã cứ để người thụ hưởng là con chị nha. Nhưng mà các anh chị biết là con cái mà dưới 18 tuổi thì các anh chị nói câu đó là đồng nghĩa để lại cho vợ hoặc chồng. Ví dụ như Vân mà để lại cho hai đứa con thì mặc nhiên là ba nó quản lý đó.",
-      "Có nghĩa là để lại cho ba nó đó chứ không phải để lại cho nó đâu. Tại vì dưới 18 tuổi là mình có những cái bảo hộ. Thì bảo hộ hợp pháp nhất lúc đó chỉ còn là bố hoặc là mẹ.",
-      "Nên khi làm hợp đồng bảo hiểm hoặc là mua nhiều cái hợp đồng bảo hiểm mình hết sức cân nhắc. Có nhiều anh chị không có đủ điều kiện mua nhiều hợp đồng thì có thể mua một hợp đồng mà cũng có thể chia tỷ lệ người thụ hưởng được luôn.",
-      "Có thể mình để 30% cho mẹ mình, 30% cho chồng và 30% cho chị gái mình, Vân ví dụ vậy đi ha. Thì cái hợp đồng bảo hiểm đó hoàn toàn hợp pháp và vẫn chấp nhận như bình thường luôn. Và có một số anh chị thì cũng mua nhiều hợp đồng và chia ra các cái người thụ hưởng khác nhau thì cũng là một cái giải pháp.",
-      "Nên là khi mà các anh chị tham gia hợp đồng bảo hiểm thì nên làm việc rõ với tư vấn viên rằng là tôi muốn ai là người thụ hưởng và như thế nào là hợp lý. Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm và đặc biệt là những thông tin để hỏi thì có thể inbox nhắn cho Vân nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/2363525894102774.jpg"
   },
   {
     "id": "video-054-746701",
@@ -1508,15 +955,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Case study thực tế về cơ chế giá trị tài khoản duy trì hiệu lực hợp đồng giúp khách hàng nhận bồi thường 2 tỷ dù đã ngưng đóng phí 5 năm.",
-    "paragraphs": [
-      "Bỏ quên hợp đồng bảo hiểm chăm sóc tủ 5 năm, không đóng một đồng phí nào, liệu khi mắc bệnh hiểm nghèo có được bồi thường hay không? Đây là một câu chuyện của một chị khách hàng mà Vân vừa hỗ trợ. Chị ấy tham gia một cái hợp đồng gia đình tôi yêu, có kèm sản phẩm bệnh lý nghiêm trọng của Manulife nhiều năm trước.",
-      "Đóng được 5 năm thì gia đình gặp biến cố về tài chính và chị đã ngưng đóng phí và vẫn tiếp tục để hợp đồng tại Manulife, không có hủy hợp đồng. Sau 5 năm sóng gió ập tới gia đình chị và chị không may phát hiện ra căn bệnh ung thư.",
-      "Thời điểm đó thì chị nghĩ hợp đồng bảo hiểm đã ngưng đóng phí rất là lâu rồi thì chắc cũng đã hết hiệu lực và không còn giá trị nữa. Nhưng điều kỳ diệu đã xảy ra nhờ cơ chế vượt trội của cái dòng sản phẩm UL gia đình tôi yêu thì tự động công ty để trích phí rủi ro và tiếp tục bảo vệ trọn vẹn cái hợp đồng cho tới ngày bây giờ.",
-      "Chị không có tiếp tục đóng phí nữa nên số tiền tích lũy trong hợp đồng của chị vẫn âm thầm gánh vác và duy trì hiệu lực cái hợp đồng này cho chị suốt 5 năm qua. Và bây giờ là Vân đã hỗ trợ chị ấy lấy đầy đủ các quyền lợi. Công ty đã chi trả trọn vẹn 2 tỷ đồng quyền lợi bệnh lý nghiêm trọng có nguồn tài chính để chị điều trị kịp thời.",
-      "Một con số mà không chỉ giúp được chỉ chữa bệnh mà còn gánh vác được cả tương lai của các đứa trẻ trong gia đình. Mà các anh chị biết không? Cái hợp đồng gia đình tôi yêu là riêng nhà Vân là có năm hợp đồng, Vân mua từ 11 năm về trước.",
-      "Nó rất là xịn luôn. Nếu nhà bạn đang có cuốn hợp đồng bảo hiểm nào bị bỏ quên lâu ngày chưa đóng phí, tuyệt đối là đừng có tự ý hủy hợp đồng nha. Hãy nhắn ngay cho Vân, Vân sẽ giúp kiểm tra lại quyền lợi, giá trị tài khoản, hiệu lực hợp đồng hoàn toàn miễn phí và comment lên video này những cái điều bạn thắc mắc và lo lắng về hợp đồng, Vân sẽ lên video tiếp tục để giải thích cho mọi người nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1228391072746701.jpg"
   },
   {
     "id": "video-055-173204",
@@ -1533,15 +973,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Minh chứng chất lượng dịch vụ đỉnh cao với tỷ lệ tái tục 97% từ Vùng kinh doanh Khánh Vân.",
-    "paragraphs": [
-      "Cả nhà biết tin gì chưa? Vân mới vừa được nhận thư chúc mừng của CEO Manulife là Phó Tổng Giám Đốc của kênh điều hành Đại lý Manulife Việt Nam đó các anh chị. Giờ xem có chúc mừng Vân là một trong những thành viên là rất là xuất sắc trong cái việc chăm sóc, hỗ trợ khách hàng, cũng như đồng hành với đội ngũ của mình để chăm sóc khách hàng một cách rất là bền vững.",
-      "Tỷ lệ tái tục hợp đồng năm 2 của Hồ Chí Minh 69 là các anh chị biết là bao nhiêu không? 97%. Có nghĩa là có 100 khách hàng đến với Manulife với Hồ Chí Minh 69 là có 97 khách hàng ở lại đồng hành.",
-      "Và cái trường hợp mà cái tỷ lệ còn nhỏ xíu đó là cái trường hợp là bất khả kháng thôi. Thì khách hàng mới không theo được cái hợp đồng của mình. Nên các anh chị yên tâm nha, đã được tư vấn viên của khu vực Vân Quản lý tư vấn chăm sóc hỗ trợ thì luôn luôn sẽ trở thành khách hàng VIP, được chăm sóc, được hướng dẫn và được tư vấn rất là kỹ luôn.",
-      "Đây là một cái chỉ số đáng tự hào trong ngành bảo hiểm. Nếu mà Vân nghĩ rằng là các anh chị ở bên ngoài nhiều khi không hiểu được cái chỉ số này là cái chỉ số quan trọng như thế nào. Nhưng Vân nghĩ ai đã làm trong ngành bảo hiểm K2, B13 tỷ lệ mà tái tục năm 2 mà đạt 97%, đây là một trong những khu vực kinh doanh top của top của top luôn.",
-      "Và kinh doanh về chất lượng, kinh doanh về giá trị và đặc biệt là sự chăm sóc khách hàng dài lâu nên được khách hàng tin tưởng đó cả nhà. Nên Vân cũng hi vọng là khách hàng yên tâm với sự chăm sóc và bảo vệ từ Manulife, cũng như có thể ủng hộ thêm nè, cũng thấy được cái giá trị và đồng hành cùng với Manulife và vùng Khánh Vân lâu dài hơn nha.",
-      "Và qua cái clip này, Vân cũng muốn gửi lời cảm ơn tới tất cả các anh chị khách hàng và đội ngũ đã luôn đồng hành cùng Vân tạo ra những cái giá trị tốt đẹp cho mãi về sau luôn. Cảm ơn cả nhà rất nhiều. Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1575825077173204.jpg"
   },
   {
     "id": "video-056-108972",
@@ -1558,19 +991,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ sự khác biệt dễ gây hiểu lầm giữa thời hạn đóng phí và thời hạn bảo vệ trong hợp đồng bảo hiểm nhân thọ.",
-    "paragraphs": [
-      "Thì mua 10 năm mà, cứ mua 10 năm mà sao bán lại cho tôi là 74 năm mà tôi không hề biết. Đóng phí 10 năm, sao hợp đồng ghi là 74 năm, nghe hết hồn liền và bao nhiêu sự cố xảy ra từ câu này rồi đúng không cả nhà? Đây chính là một trong những cái kiểu mà, kiểu làm khiến rất là nhiều khách hàng lo lắng khi tham gia hợp đồng bảo hiểm nhân thọ.",
-      "Hai khái niệm mà rất là nhiều người đang nhầm lẫn đó là thời hạn bảo vệ và thời hạn đóng phí nha. Đầu tiên là thời hạn bảo vệ, ví dụ như người tham gia bảo hiểm ở tuổi 23 và được bảo vệ đến 99. Thì thời hạn bảo hiểm có thể lên đến 76 năm nha.",
-      "Điều này có nghĩa rằng công ty bảo hiểm có thể cung cấp quyền lợi bảo vệ trong cái khoảng thời gian đó và theo điều kiện của hợp đồng. Anh chị nhớ nha, thời hạn bảo hiểm dài không đồng nghĩa với việc mình phải đóng phí liên tục cho đến suốt cái thời hạn đó luôn.",
-      "Và cũng không có nghĩa rằng cứ đóng đủ 10 năm là mình mặc nhiên được bảo vệ tất cả số năm còn lại là đến 99 tuổi là cũng không có luôn nha. Thứ hai là đó là thời hạn đóng phí. Đây là khoảng thời gian mà anh chị dự kiến hoặc là cam kết đóng phí theo thỏa thuận của hợp đồng.",
-      "Ví dụ như hợp đồng có thời hạn đóng phí dự kiến là 10 năm, nhưng thời hạn bảo hiểm có thể kéo dài đến 99 tuổi. Vậy sau đó 10 năm thì sao? Tùy từng cái sản phẩm thôi anh chị, ví dụ như là tiếp tục đóng phí điều chỉnh về phí hoặc là duy trì hợp đồng thì mình sẽ có một cái khoản bảo vệ phù hợp tùy hợp đồng nha các anh chị, không phải hợp đồng nào cũng giống hợp đồng nào đâu.",
-      "Tuy nhiên là nếu là sản phẩm liên kết đầu tư á, các khoản phí bảo hiểm và các chi phí bảo vệ khấu trừ vẫn có thể tiếp tục phát sinh. Nếu giá trị tài khoản không đủ để duy trì hợp đồng thì hợp đồng đó có thể mất hiệu lực. Vì vậy mình cần phải hiểu rõ điều kiện của sản phẩm mình đang tham gia nè.",
-      "Anh chị cứ hình dung là đơn giản thế này nha. Thời hạn đóng phí giống như một khoảng thời gian mà mình dự kiến đóng tiền vậy đó, còn thời hạn bảo hiểm là khoảng thời gian mình được công ty bảo hiểm có thể cung cấp quyền lợi bảo vệ cho mình trong suốt cái hợp đồng đó.",
-      "Hai khái niệm này hoàn toàn khác nhau. Thế nên là khi mà mình cân nhắc hay mình đọc á, mình phải hiểu được hai cái bản chất của nó. Và quan trọng nhất vẫn là mình xem rõ quyền lợi của mình, nghĩa vụ đóng phí của mình và điều kiện duy trì hợp đồng của mình là như thế nào.",
-      "Khi mình hiểu cái điều kiện rồi thì mình biết là mình của mình đóng bao nhiêu năm bảo vệ bao nhiêu năm liền à. Đừng có vì thấy mà con số 74 năm mà mình đã vội vàng hiểu sai và nghĩ sai về bảo hiểm nhân thọ nha cả nhà. Anh chị nào đang có hợp đồng mà hiểu chưa đúng hoặc là chưa có hiểu rõ, các anh chị có thể nhắn cho Vân.",
-      "Vân sẽ cho team Vân kiểm tra lại hết hợp đồng của mình để tư vấn cái hợp đồng của mình một cách bài bản nhất nha. Cảm ơn cả nhà đã theo dõi video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1129936336108972.jpg"
   },
   {
     "id": "video-057-675083",
@@ -1587,19 +1009,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Góc nhìn chuyên gia về các vụ trục lợi bảo hiểm và cách quy định pháp luật quản lý chặt chẽ các tình huống gian lận.",
-    "paragraphs": [
-      "Tại sao mà công ty bảo hiểm dễ bị lừa như vậy? Khi đọc những cái bài báo mà mấy hôm nay cứ hót trên mạng xã hội đó, khách hàng hỏi chứ, ủa sao công ty tụi em dễ bị lừa như vậy? Vâng cũng nói cho các anh chị biết ha, công ty bảo hiểm làm theo đúng luật.",
-      "Và khi khách hàng đủ tinh vi, như cái trường hợp mà giải chết 5 năm để nhận trục lời bảo hiểm rồi sau đó, quay về làm giấy tờ và khi đó mới bị phát hiện và tố cáo và bị bắt đó các anh chị. Thì để Vân kể cho các anh chị nghe một cái câu chuyện tương tự như vậy ha.",
-      "Vân ví dụ như có những cái trường hợp là người ta không giải chết nữa mà người ta liên quan tới gãy xương á. Có những người khách hàng gãy luôn cả 24 cái xương sườn. Cả nhà thấy dễ sợ không?",
-      "Trước đây là cái dòng sản phẩm mà cũ của Manulife bảo vệ cứ một cái cộng xương sườn là đề 50 triệu, gãy ba cộng đề 150, gãy năm cộng á thì đền 250. Nên nói chung là gãy liên tục, gãy hoài luôn. Họ liên kết được với các bệnh viện và bác sĩ sẵn sàng làm khống làm sai hồ sơ luôn, đưa một cái khung xương gãy của một khách hàng khác, đưa một cái bộ hồ sơ y tế hợp lý hoàn toàn luôn.",
-      "Thì khi mà mọi thứ mà nó hợp thức hóa hoàn toàn như vậy thì công ty bảo hiểm không thể nào nhận biết được đâu các anh chị. Và công ty bảo hiểm cũng chi trả theo đúng hồ sơ giấy tờ. Anh chị nói là công ty bảo hiểm làm khó, đâu có làm khó.",
-      "Khi mà thấy những cái cơ quan ngân bệnh viện y tế giấy trắng mực đen rõ ràng công ty bảo hiểm phải trả mà. Nhưng Vân tin rằng là sự thật nó mãi là sự thật và những điều gian dối sẽ bị pháp luật đưa ra ánh sáng. Một cái bệnh viện nó liên tục cung cấp những cái hồ sơ sai trái như vậy thì công ty bảo hiểm tới một ngày sẽ đặt ra câu hỏi và họ sẽ cho người đi điều tra để kiểm soát và sẽ khui ra tất cả những cái trường hợp mà khách hàng lừa dối công ty và chắc chắn phải chịu tội trước pháp luật.",
-      "Nên mình phải luôn luôn làm đúng để mình được sống trong một cái môi trường hòa bình thượng tôn pháp luật ha. Có thể bỏ qua một trường hợp hai trường hợp, nhưng từ trường hợp thứ ba trở đi Vân nghĩ là không có chuyện mà chốt hồ một cách dễ dàng vậy được đâu.",
-      "Nên là các anh chị cũng đừng có nói là công ty bảo hiểm sao mà dễ dàng bị lừa, tại vì công ty bảo hiểm đang làm theo đúng luật pháp đó các anh chị. Khách hàng á mà cứ tiếp tục làm những điều sai trái với công ty bảo hiểm thì công ty bảo hiểm cũng sẽ có cách để mà đưa về pháp luật à trừng trị những cái trường hợp đó.",
-      "Nên các anh chị yên tâm nha, à vì ngành nào hay công việc nào cũng có việc bất cập của nó. Nhưng Vân tin rồi, xã hội sẽ phát triển, môi trường sẽ thay đổi những cái quy trình rõ ràng thì sẽ không có chuyện à dễ dàng làm những cái việc mà không đúng nữa đâu.",
-      "Cứ làm không đúng là được gặp công an ngay lập tức đó. À follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1223750929675083.jpg"
   },
   {
     "id": "video-058-848709",
@@ -1616,23 +1027,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Chia sẻ kinh nghiệm thực chiến 8 năm trong ngành về cách tiếp cận và thấu hiểu tâm lý khách hàng thực sự chủ động mua bảo hiểm.",
-    "paragraphs": [
-      "Khi mà khách hàng gọi cho tư vấn viên để tìm hiểu mua bảo hiểm á, chị chớ vội vui nha. Tại vì kinh nghiệm của Vân mà làm 8 năm á, chớp ngưng tính được số lượng mà tự chủ động inbox. Em ơi, chị cần mua cái hợp đồng bảo hiểm chất tính trên đầu ngón tay thôi.",
-      "Chứ tầm 10 đến 15 khách là quá nhiều rồi trong hành trình 8 năm. Mà đi làm Vân làm rất là đông khách, mọi người biết mà đúng không? Thì thường những khách hàng á mà Vân được ví dụ như là một là Vân sẽ tự chủ động tiếp cận chia sẻ thông tin, thấy chị là bảo hiểm và người ta thấy hay và người ta mua.",
-      "Hai là Vân được giới thiệu những cái người khách hàng mua uy tín và người ta đã tin tưởng giới thiệu Vân và cứ ngày một là Vân được giới thiệu rất là nhiều luôn. Thứ ba á là những cái nguồn khách á mà người ta đã bắt đầu quan tâm rồi, người ta đã bắt đầu quan tâm và tìm hiểu lâu nay rồi á và người ta đang tập trung mà để mà tìm hiểu sâu hơn để mua một cái hợp đồng bảo hiểm và người ta đi hỏi giá hay là hỏi về quyền lợi á thì những cái người khách đó là những người khách rất bình thường.",
-      "Nên là lâu lâu Vân nói là hãy để cho Vân á là người chủ động với khách hàng. Một khi khách hàng tự chủ động lại với Vân là Vân sợ lắm cả nhà. Vì tự nhiên có một cái cục gọi gọi vội vã, Vân ơi Vân, chị đang có nhu cầu cần mua gấp cái hợp đồng bảo hiểm, là gần như là Vân sẽ cũng gặp khách hàng nhưng khả năng là không bán được.",
-      "Thì Vân hỏi thật lòng luôn, tại sao chị muốn mua gấp vậy? Tại vì lúc nào Vân gặp khách hàng, Vân cũng sẽ hỏi là lý do anh chị muốn mua bảo hiểm? Tại vì có những khách hàng họ cũng nói rất là chân thật luôn, anh chị mới đi khám và xét nghiệm vì anh chị có chỉ số ung thư này này này, nên là anh chị muốn mua bảo hiểm và có những người rất ngây thơ như vậy luôn.",
-      "Ngây thơ là nghĩ là có bị bệnh rồi giờ đi mua vẫn được. Không, làm gì được nữa cả nhà, không thể được nữa. Thì cả nhà phải hiểu rồi, công ty bảo hiểm chỉ bảo vệ khi chúng ta chưa bệnh thôi.",
-      "Có bệnh rồi á mà đi mua thì Vân nói đó là không thể nào nha, nên là cứ mà khách hàng mà chủ động mà mua bảo hiểm rất là bồ vập là Vân sợ lắm, không dám cho em bán, rồi bán xong sau này đi giải quyết cái vấn đề phát sinh nó rất là mệt luôn.",
-      "Còn khách hàng nào mà đang nghiên cứu, tìm hiểu và cần thời gian để suy nghĩ là Vân rất là kiên nhẫn để đợi khách hàng đó luôn và để khách hàng thấy đã hiểu thấu đáo, cần bảo vệ bao nhiêu tiền, bảo vệ được bao nhiêu và có những khách hàng thì họ tìm hiểu rất là nhanh.",
-      "Họ hiểu và họ nghiên cứu và họ cảm thấy là cái hợp đồng này thực sự cần với họ thì họ quyết định mua trong một hai ngày là xong. Nhưng có những khách hàng hỏi rất là kỳ tính, thì Vân cũng follow, đợi chờ và đó là cái trách nhiệm và cái cái mà Vân nghĩ rằng là nó quan trọng để mà mình follow theo khách hàng.",
-      "Nên là và khách hàng nào á mà thấy mình đang còn khỏe, đang còn trẻ, đang mong muốn được mua bảo hiểm á thì nhắn cho Vân nha. Nhắn cho Vân một cách rất bình tĩnh thôi, không cần gấp gáp gì đâu chị ơi, gửi cho em cái báo giá, cái thiết kế, xong rồi lên hợp đồng cho rồi nghiên cứu.",
-      "Rồi á ok hết, tập Vân chia sẻ chi tiết hơn lúc ký hợp đồng, được không? Chứ đừng có vội vã là cần mua gấp nha, Vân rất là sợ cuộc gọi mua gấp, vì thường Vân không có bán được, vì Vân rất là trung thật với công ty. Vì có từng có khách hàng gọi nói với Vân rằng mới té xong mà chưa có đi mổ.",
-      "Bây giờ em mua xong rồi một hai tuần nữa em đi mổ, chị tính cho em là tai nạn được không? Dạ cũng không luôn, tại vì không phải vì một cái hợp đồng mà mất cái thương hiệu, cái uy tín của bản thân của công ty và đó là trục lợi bảo hiểm là không có tốt á.",
-      "Nên là nhà mình lưu ý ha, mình cứ cố gắng mua hợp đồng bảo hiểm còn lúc còn trẻ, còn khỏe và còn thực sự kiểm soát được tài chính của mình. Còn khi gặp khó khăn, bảo hiểm sẽ đứng bên cạnh để hỗ trợ cả nhà. À cả nhà có ai mà thắc mắc cần muốn mua bảo hiểm thì cứ nhắn cho Vân nha.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/837676288848709.jpg"
   },
   {
     "id": "video-059-986318",
@@ -1649,17 +1045,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Phân tích bảo hiểm nhân thọ là kênh chuyển giao tài sản thừa kế có tính thanh khoản nhanh và ưu việt nhất.",
-    "paragraphs": [
-      "Chuyển giao tài sản thừa kế bằng bảo hiểm nhân thọ thì liệu có nên? Thảo Vân trả lời là hoàn toàn có thể nhé. Tài sản thừa kế, nó có rất là nhiều cách để thiết lập, có thể là để lại nhà, tài sản giá trị ví dụ như vàng, kim cương, hoặc là rất là nhiều món về cổ phiếu, trái phiếu đều được hết.",
-      "Và bảo hiểm nhân thọ là một cái món hàng cực kỳ nên để lại. Chắc là các anh chị cũng biết là theo luật của Bộ Tài chính và nhà nước Việt Nam quy định. Bảo hiểm nhân thọ là sau này mà các con nhận ra khi mà có vấn đề gì phát sinh với bố mẹ á, các con không phải đóng một ngàn thuế nào hết.",
-      "Và đây là một trong những cái mà khách hàng cũng rất là quan tâm. Những cái tài sản khác ví dụ như tài sản về bất động sản, chuyển giao về cái gọi là tài sản thứ N đúng không? Thì cũng phải có đóng thuế hết.",
-      "Nhưng mà riêng về bảo hiểm nhân thọ thì hiện nay là nhà nước đang ưu đãi và sẽ không có áp dụng luật thuế khi nhận cái khoản tiền bảo hiểm nhân thọ ra. Bảo hiểm nhân thọ là một cái kênh thanh khoản rất là nhanh. Khi có vấn đề gì á là ngay lập tức là chuyển tiền về cho gia đình mình liền.",
-      "Có cần phải đợi khách hàng mua không ạ? Tại vì có một số anh chị khách hàng để lại một cái nhà cho con 10 tỷ, 20 tỷ, nhưng cái chắc rằng lúc đó con cần tiền con bán được ngay tài sản đó không? Vâng tin là không đâu, tại vì ngay bây giờ nè, ai muốn bán nhà, bán đất, có khi kêu 3 tháng, 6 tháng còn chưa bán được, nói đúng không?",
-      "Còn ở bảo hiểm nhân thọ, khi phát sinh ra vấn đề, có đủ hồ sơ giấy tờ, thì sẽ nhận quyền lợi cho trong vòng 30 ngày. Còn nếu trong trường hợp để tới lúc đáo hạn luôn và mình không có nhu cầu gọi là nhận tiền quyền lợi á thì mình sẽ nhận tiền hợp đồng.",
-      "Ví dụ như khách hàng muốn tất toán trước, muốn vay lại trước cái hợp đồng đó, hoặc là muốn là lấy trọn vẹn cái tiền đáo hạn luôn thì ngay lập tức lên công ty và nhận được tiền qua tài khoản, không phải đợi chờ. Ai mà tính cái kế hoạch dài lâu để mình để lại tài sản, mình lo cho con, cho cháu mình nhiều đời á, thì bảo hiểm nhân thọ là một trong những cái kế hoạch dài lâu mà mình nên có nha.",
-      "Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nhân thọ."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1497641367986318.jpg"
   },
   {
     "id": "video-060-221970",
@@ -1676,20 +1063,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ bản chất cơ chế dòng tiền của các dòng sản phẩm ngắn hạn và quyền lợi bảo vệ duy trì sau khi ngưng đóng phí.",
-    "paragraphs": [
-      "Em chỉ cần đóng bảo hiểm nhân thọ 3 năm, sau này nếu em không có khả năng đóng nữa thì em vẫn được rút ra toàn bộ số tiền đã đóng mà hợp đồng vẫn tiếp tục được bảo vệ miễn phí, đúng không? Đầu tiên, có một số dòng sản phẩm được thiết kế theo kiểu đóng phí trong thời gian ngắn, nhưng quyền lợi bảo vệ thì được kéo dài.",
-      "Những cái dòng sản phẩm này là ngay từ ban đầu đã có cơ chế và mức phí được thiết kế riêng rồi. Còn với những cái dòng sản phẩm có tính linh hoạt cao trên thị trường, khách hàng thường được thiết kế kế hoạch đóng phí dài hơn, có thể đóng 10 năm, 15 năm hoặc 20 năm.",
-      "Không phải tự nhiên mà người ta lại khuyến khích khách hàng đóng dài đâu, bởi vì nếu bạn chỉ xác định đóng hai ba năm rồi dừng á thì những năm đầu hợp đồng thường có nhiều loại chi phí. Nên giá trị tài khoản chưa chắc chắn đã bằng số tiền bạn đã đóng vào đâu.",
-      "Có thể bạn được tư vấn rằng, sau 3 năm em vẫn có thể rút tiền. Đúng, có thể rút theo điều kiện của hợp đồng. Nhưng câu quan trọng nhất phải hỏi tiếp là: rút được bao nhiêu?",
-      "Hai chuyện đó hoàn toàn khác nhau. Ví dụ một hợp đồng có mức phí chính khoảng 10 triệu một năm. Nếu khách hàng đóng 3 năm rồi dừng, giá trị tài khoản có thể chỉ còn khoảng 18,3 triệu.",
-      "Nếu lúc đó khách hàng muốn rút ra để chấm dứt hợp đồng, số tiền thực nhận có thể chỉ khoảng 15 triệu hơn. Tức là so với số tiền đã đóng, khách hàng có thể mất một khoản khá là lớn luôn. Vậy nếu ngay từ đầu mình đã biết mình chỉ có khả năng đóng 3 năm, thì mình có nên tham gia một hợp đồng như vậy không?",
-      "Nếu kinh tế hiện tại chưa ổn thì mình có thể cân nhắc nhiều phương án khác nhau. Ví dụ như giảm mức phí, lựa chọn bảo vệ phù hợp hơn với khả năng tài chính hoặc là với một số sản phẩm có cơ chế cho phép, mình có thể tạm thời dừng đóng phí trong một khoảng thời gian mà hợp đồng vẫn có khả năng duy trì.",
-      "Nhưng điều kiện là giá trị tài khoản bên trong hợp đồng vẫn phải đủ để khấu trừ cái các khoản phí duy trì hợp đồng. Và đây là điểm rất nhiều người hiểu nhầm luôn. Dừng đóng phí không có nghĩa được bảo vệ miễn phí.",
-      "Nếu hợp đồng vẫn còn hiệu lực và công ty bảo hiểm vẫn đang cung cấp quyền lợi bảo vệ cho bạn thì các khoản chi phí liên quan vẫn được khấu trừ theo quy định của hợp đồng. Ví dụ, có những cái khoản chi phí được khấu trừ định kỳ hàng năm như chi phí bảo hiểm và chi phí quản lý hợp đồng.",
-      "Số tiền này sẽ được trừ trực tiếp vào giá trị tài khoản của bạn. Có thể là mỗi năm là một triệu, hai triệu hoặc nhiều hơn, tùy vào tuổi của người được bảo hiểm, mức bảo vệ và thiết kế của hợp đồng. Cho nên, bạn không đóng thêm tiền nhưng hợp đồng vẫn đang bảo vệ bạn thì giá trị tài khoản bên trong vẫn đang được sử dụng để chi trả cho việc bảo vệ đó.",
-      "Bảo hiểm nhân thọ thực ra không phải là sản phẩm chỉ dành cho người giàu, cũng không phải là chỉ dành cho người thu nhập thấp, mà nó phù hợp hơn với những cái người có khả năng duy trì và có tính kỷ luật về tài chính. Mua bảo hiểm bằng số tiền mình nghĩ hôm nay mình có thể đóng phí, hãy tham gia bằng mức tiền mà mình có thể duy trì hợp đồng bảo vệ đó một cách dài lâu."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1753631509221970.jpg"
   },
   {
     "id": "video-062-783573",
@@ -1706,24 +1081,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Thẻ sức khỏe của công ty chỉ hỗ trợ viện phí ngắn hạn, trong khi bảo hiểm nhân thọ bảo vệ tài chính toàn diện trước các rủi ro lớn và dài hạn.",
-    "paragraphs": [
-      "Có một câu mà Vân nghe khách hàng của Vân nói rất là nhiều luôn. \"Em có thẻ sức khỏe của công ty rồi, nếu đi bệnh viện thì công ty thanh toán cho em, vậy em mua bảo hiểm nhân thọ để làm gì?\". Vân có một khách hàng cho một lần bị gãy hai cái xương sườn.",
-      "Nếu trong trường hợp này á mà mình chỉ có thẻ sức khỏe của công ty không á thì mình vào viện và thẻ sức khỏe đó sẽ hỗ trợ mình chi phí y tế nè, thuộc phạm vi quyền lợi như công ty đã mua cho mình nha. Thì khám, điều trị hoặc là nhập viện hoặc là băng bó gì đó đại loại là những cái chi phí về y tế liên quan tới cái phiếu của bệnh viện.",
-      "Vậy thì có tốt không? Tốt chứ, quá tốt. Nếu công ty á có mua thẻ sức khỏe cho mình thì cứ sử dụng.",
-      "Vì đó là một quyền lợi rất là tốt. Nhưng vấn đề nằm ở chỗ sau khi thanh toán tiền viện phí xong, cuộc sống của mình có quay lại bình thường như mình nghĩ không? Ví dụ như gãy hai cái xương sườn thì bạn của Vân nói là phải mất hơn 3 tháng để có thể là phục hồi và vận động lại cái hệ thống xương cũng như là những cái dáng đi dáng đứng của mình nó bình ổn lại á.",
-      "Nếu bạn là cái người đi làm mà tạo ra thu nhập á mà trong 3 tháng nghỉ ngơi đó mình không tạo ra thu nhập thì điều gì sẽ xảy ra? Tiền viện phí thì đã được thanh toán rồi, nhưng tiền sinh hoạt mỗi tháng cho gia đình, tiền nhà, tiền ăn uống, tiền điện, tiền nước, tiền học và những cái khoản chi tiêu khác rất là nhiều luôn.",
-      "Khoản đó đâu có biến mất đúng không? Đây chính là điểm mà Vân muốn nói để mọi người hiểu. Thẻ sức khỏe và bảo hiểm nhân thọ đang giải quyết hai vấn đề rất là khác nhau.",
-      "Thẻ sức khỏe chủ yếu là giúp mình giải quyết được bài toán chi phí về y tế đi khám và điều trị trong phạm vi giới hạn thôi. Còn bảo hiểm nhân thọ nếu mình tham gia những quyền lợi phù hợp sẽ giúp mình có một cái khoản chi phí bù đắp rủi ro rất là lớn luôn.",
-      "Cái trường hợp mà hai cái xương sườn mà bị gãy đó, nếu mà có bảo hiểm nhân thọ mà mua sản phẩm mà tai nạn nâng cao của được đền 100 triệu đó. Thế nên là khi mua bảo hiểm mà có liên quan tới tai nạn hay bệnh hiểm nghèo, hay tính mạng hay tùy theo cái quyền lợi của hợp đồng thì cái khoản tiền này rất là quan trọng, bởi vì nó có thể giúp gia đình mình một cái phần thu nhập bị mất mát trong cái thời gian mình bị tổn thương.",
-      "Có một số người chẳng may mắc bệnh hiểm nghèo nữa kìa, thì họ phải điều trị trong thời gian rất là dài và có thể hóa trị, xạ trị, phẫu thuật, lúc đó dù thẻ sức khỏe có hỗ trợ phần chi phí điều trị theo quyền lợi, thì mình vẫn phải đối mặt với một câu hỏi rất là lớn.",
-      "Nếu mình không đi làm được trong 6 tháng, 1 năm, thậm chí lâu hơn thì tiền đâu để gia đình tiếp tục sống? Con thì vẫn đi học, gia đình thì phải ăn uống, tiền nhà thì phải trả. Và bản thân người bệnh á cần thời gian phục hồi, mua chế độ chăm sóc và dinh dưỡng phù hợp.",
-      "Đó là lúc mình mới thấy một cái khoản tiền bồi thường bằng tiền mặt có giá trị như thế nào, bởi vì viện phí có thể được thanh toán, nhưng thu nhập thì đã mất và không có một tờ hóa đơn nào để thay thế cái phần thu nhập đó.",
-      "Và đó là lý do Vân luôn nói với khách hàng, đừng có đem thẻ sức khỏe và bảo hiểm nhân thọ ra để so sánh cái nào tốt hơn, vì hai điều này đang bổ trợ cho nhau và hai sản phẩm này có hai vai trò khác nhau. Thẻ sức khỏe thì giúp mình giảm áp lực về chi phí y tế, còn bảo hiểm nhân thọ với những quyền lợi phù hợp giúp mình chuẩn bị một cái nguồn tài chính để bảo vệ thu nhập và gia đình trước những cái rủi ro mà mình không lường trước được.",
-      "Nếu công ty đang mua bảo hiểm sức khỏe cho bạn, Vân rất là khuyến khích các bạn cứ duy trì và sử dụng quyền lợi đó. Nếu có bảo hiểm y tế thì cũng nên tham gia. Bảo hiểm xã hội nếu công ty đóng cho mình là một cái nền tảng rất tốt luôn, nhưng nếu có điều kiện, mình nên nhìn lại xem nếu một ngày mình không thể đi làm trong một thời gian dài, gia đình mình sẽ lấy nguồn thu nhập nào để sống tiếp?",
-      "Nếu câu trả lời vẫn chưa rõ và chưa chắc chắn, thì đó chính là một phần mình bổ sung trong kế hoạch tài chính của mình, bởi vì bảo hiểm không chỉ là chuyện trả tiền viện phí, điều quan trọng, nếu một ngày mình không còn khả năng tạo ra thu nhập nữa thì ai sẽ bảo vệ nguồn thu đó và bảo vệ những cái người mình yêu thương?",
-      "Đó mới là lý do Vân khuyên các bạn nên có một kế hoạch bảo vệ phù hợp với chính hoàn cảnh của mỗi người."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1370073081783573.jpg"
   },
   {
     "id": "video-063-027125",
@@ -1740,16 +1099,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Một tai nạn sinh hoạt hy hữu do hóc xương cá đã được Manulife chi trả quyền lợi tai nạn lên tới hơn 171 triệu đồng.",
-    "paragraphs": [
-      "Một chiếc xương cá có thể lấy được 171 triệu đồng tiền bảo hiểm. Team Vân vừa hỗ trợ một cái trường hợp khách hàng, mua hợp đồng năm 2022 và cách đây mấy tháng, khách hàng đã xảy ra một cái sự cố tai nạn hy hữu trong một lần ăn cơm bình thường, mắc một cái xương cá và vào ruột non và đâm thủng ruột non.",
-      "Và lúc đó bác sĩ chỉ định là phải nhập viện, phẫu thuật. Tổng cái chi phí phẫu thuật là khoảng 17 triệu cộng với vài triệu tiền hỗ trợ y tế nữa. Nhưng mà sau đó là trong cái mục tai nạn của hợp đồng thì có một cái mục là thủng ruột non và khi mà thủng ruột non á mà có phẫu thuật là nó nằm trong cái hạng mục về chi trả tai nạn.",
-      "Và cuối cùng là cái phần chi trả tai nạn lên tới 150 triệu. Và khoản tiền này khách hàng nhận tiền mặt về tài khoản nha các anh chị. Và đây là một cái câu chuyện mà chấn động trong một hai tuần này mà team Vân và tất cả các anh chị làm bảo hiểm đều nói về cái cây này.",
-      "Ví dụ như mình ngã xe hay mình bị tai nạn, bị bỏng mình nhận tiền bảo hiểm là bình thường đúng không? Nhưng chỉ là một cái chiếc xương cá, nó cũng được tính là một trong một cái trường hợp xảy ra tai nạn. Tai nạn là ăn phải mắc phải cái xương cá.",
-      "Và có nhiều anh chị không hiểu hết à. Như thế nào gọi là tai nạn? Tai nạn là một cái tình huống khách quan và cái tình huống không mong muốn.",
-      "Những cái trường hợp vi phạm pháp luật thì không được, còn những cái trường hợp còn lại nó gọi là tai nạn. Và khi mà gặp tai nạn như vậy á thì mình cứ bình tĩnh liên hệ với công ty bảo hiểm, mình kiểm tra lại cái quyền lợi này mình có được chi trả hay không và sau đó mình tiến hành làm hồ sơ bổ sung để claim quyền lợi bình thường.",
-      "Nên là khi nào mà các anh chị không hiểu hay thắc mắc hay không biết là mình có những quyền lợi đó hay không á, thì mình nên xem kỹ. Và nếu mà anh chị nào thắc mắc những cái quyền lợi trong hợp đồng của mình, thì có thể nhắn cho Vân, Vân có thể hỗ trợ các anh chị nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1910270197027125.jpg"
   },
   {
     "id": "video-065-347894",
@@ -1766,26 +1117,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hiểu rõ các loại thẻ bảo hiểm và hạn mức bệnh lý nghiêm trọng giúp khách hàng đi viện thực tế mà không lo bị thâm hụt tài chính.",
-    "paragraphs": [
-      "Sở hữu bệnh lý nghiêm trọng bao nhiêu là đủ? Không có bao nhiêu là đủ hết á cả nhà. Thật ra Vân hay nói về đó, mua bảo hiểm á, mình cần phải hiểu được rằng là cái giá trị và tầm quan trọng của mỗi sản phẩm đúng không?",
-      "Đặc biệt là các dịch vụ khác nhau. Thì bệnh lý nghiêm trọng là một trong những điều Vân lưu ý với khách hàng cần phải mua đủ hạng mức để sử dụng. À lúc nãy Vân có nói là bao nhiêu là đủ đúng không?",
-      "Thì Vân cũng nói lại một lần nữa nha là không bao nhiêu là đủ hết. Tại vì như các anh chị biết có những cái loại ung thư chỉ cần 1 tỷ, có những loại ung thư cần 3 tỷ và có những loại ung thư các anh chị phải cần 10 tỷ, 20 tỷ mới đủ.",
-      "Cái nên quan trọng là các anh chị cân đối được tài chính và phù hợp với cái nhu cầu của mình để mình sử dụng. Nhưng à theo Vân biết ha, theo thống kê của các tổ chức tại Việt Nam liên quan tới bệnh lý nghiêm trọng thì hiện nay á bệnh lý nghiêm trọng ở Việt Nam là một cái chỉ số rất là báo động luôn.",
-      "Rất là nhiều người rơi vào phải tình huống này. Và cái chi phí mà để trả tiền cho cái bệnh lý nghiêm trọng này á thì trung bình nó sẽ là bao nhiêu? Thì theo kinh nghiệm của Vân á, ít nhất phải có từ 500 triệu tới 1 tỷ thì mình mới chi trả được những cái căn bản cho bệnh lý nghiêm trọng.",
-      "Còn nếu muốn điều trị ở những cái phân khúc tốt hơn, điều trị theo phương pháp trúng đích nè, và những cái phương pháp mà mới hiện nay á, cách đây khoảng 3 4 tháng thì ở Việt Nam mình có nhập vào một cái phương pháp, một cái viên thuốc rất là mắc luôn.",
-      "Uống một viên mà 150 triệu luôn các anh chị. Thì có nghĩa là à khi mà rơi phải bệnh lý nghiêm trọng thì mình sẽ không biết bao nhiêu là đủ. Nhưng nếu mình có một cái hạn mức tốt thì mình sẽ đỡ cho cái việc chi trả, viện phí và mình chọn cái phương pháp tốt hơn.",
-      "À Vân cũng chia sẻ với các anh chị à cách đây một tuần thôi, trong team của Vân cũng có một câu chuyện khá là buồn. Thì bạn đó là đồng nghiệp của Vân là tim dưới Vân là một leader tại Hồ Chí Minh 69. Thì chẳng may bạn đó đã bị bác sĩ gọi một cái tên bệnh rất là đặc biệt thì chắc anh chị cũng nghe là các anh chị cũng hiểu ha.",
-      "Nó liên quan tới phổi và nó ở giai đoạn cuối. Và đây là một trong những cái việc rất là đáng buồn. Nhưng ngược lại bạn có bảo hiểm.",
-      "Thì khi bạn đi điều trị thì bây giờ bạn vào thì bác sĩ hỏi như này, tài chính em tới đâu? Thì bác sĩ sẽ tư vấn theo phương pháp tới đó. Và các anh chị thấy không?",
-      "Bệnh lý nghiêm trọng là điều trị theo khả năng tài chính, chứ không phải là phương pháp nữa rồi các anh chị. Tại vì á nếu mà các anh chị muốn phương pháp nào cũng được mà giá tiền nó rất là rẻ thì mọi hướng nó rất là đơn giản.",
-      "Còn bây giờ là phương pháp theo túi tiền của mình. Thế tại sao mình cần phải mua bảo hiểm? Tại vì là khi bây giờ mình có hai cái nhà, mỗi căn 5 tỷ người ta phải kêu là bán được liền cho cả nhà.",
-      "Mà bây giờ bệnh tới nơi là cần phải đi điều trị đúng không? Cần phải đi điều trị thì bảo hiểm sẽ trả liền, trả tiền ngay cho các anh chị đi điều trị. Và đó là tại sao mình cần phải chuẩn bị dự phòng.",
-      "Dù mình có giàu, dù mình có nhiều tiền đi chăng nữa, mình có nhiều đất đai, mình cũng vẫn cần có một cái bảo hiểm và đặc biệt là phải cần có bảo hiểm bệnh lý nghiêm trọng để khi mình lỡ bị ung thư thì mình có một cái khoản tiền mình rút ra ngay cầm trên tay tiền mặt.",
-      "Mình tới bệnh viện nào, mình muốn điều trị và tới gặp bác sĩ nào, mình muốn phương pháp nào và mình nói là em có một tỷ là bác sĩ sẽ chỉ cho em cách khác. Mẹ em có ba tỷ là cách khác, mà có sáu tỷ là cách khác. Thì Vân đã biết câu chuyện này rất là nhiều cái trải nghiệm của mình, đồng nghiệp, bạn bè mình bị và mình thấy rằng là nếu có khả năng mình nên sở hữu tối đa cái mức mình được bảo vệ.",
-      "Hiện nay ở Manulife đang có cái mức bảo vệ tối đa là 8 tỷ đồng và Vân Phả Thư Vân đã có 8 tỷ rồi, được bảo vệ trọn vẹn với bệnh lý nghiêm trọng nên vẫn rất là muốn khách hàng, bạn bè của mình được sở hữu bệnh lý nghiêm trọng này lên một cái hạng mức tối đa có thể nhất.",
-      "Nên hi vọng là ai đã nghe qua cái clip này, inbox kêu Vân gọi là tăng cái hạn mức bảo vệ bệnh lý nghiêm trọng lên nha. Follow kênh Vân để tìm hiểu điều khoản chi tiết sản phẩm của bảo hiểm Manulife."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1693017081347894.jpg"
   },
   {
     "id": "video-067-926419",
@@ -1802,16 +1135,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Công ty bảo hiểm không tự kiểm tra hồ sơ y tế trước khi thẩm định vì lý do bảo mật thông tin cá nhân và nghĩa vụ kê khai trung thực của khách hàng.",
-    "paragraphs": [
-      "Hôm nay Vân sẽ trả lời cái câu hỏi thắc mắc của hàng ngàn khách hàng khi đi tham gia bảo hiểm, tại sao công ty bảo hiểm không đi kiểm tra hồ sơ y tế trước khi thẩm định và cấp hợp đồng cho khách hàng, mà phải yêu cầu khách hàng cung cấp thông tin?",
-      "Đầu tiên thông tin y tế là thông tin bảo mật của từng cá nhân và không có ai có quyền xâm nhập hay kiểm tra thông tin cả. Thứ hai là hiện nay các anh chị cũng biết có hàng ngàn bệnh viện lớn nhỏ từ Bắc tới Nam và toàn quốc rất là nhiều.",
-      "Công ty sẽ không đủ nguồn lực và chi phí để đi kiểm tra hết thông tin về y tế trước khi cấp hợp đồng được, mà nó phải phụ thuộc 100% vào lời khai của cái người mua bảo hiểm. Và các anh chị yên tâm, khi các anh chị mua hợp đồng bảo hiểm, các anh chị có bệnh gì thì mình sẽ kê khai đầy đủ và công ty bảo hiểm sẽ có trách nhiệm xét lại là bệnh này là cái bệnh không quá quan trọng và nó đã khỏi hoàn toàn và thậm chí là công ty có thể bỏ qua cái bệnh đó.",
-      "Nhưng có những cái nhóm bệnh công ty sẽ loại trừ, có những nhóm bệnh công ty sẽ tăng phí và có rất nhiều hợp đồng công ty đã từ chối bán và trả tiền lại. Và lúc này khách hàng cũng không bị mất cái gì cả, nên các anh chị cứ yên tâm khi mà đi nộp tiền vào công ty bảo hiểm trong quá trình thẩm định.",
-      "Mình không được mua hợp đồng bảo hiểm thì mình được nhận lại 100% số tiền của mình đóng nha. Nguyên tắc phải kê khai bệnh và chúng ta là cái người chủ động trung thực kê khai 100% để tránh trường hợp phát sinh một cái vấn đề gì trong cái hợp đồng ra đền bù mà công ty nói a, anh đã tồn tại bệnh có sẵn nên tôi sẽ không đền và thậm chí là hủy hợp đồng thì như thế là thiệt thòi cơ hội và quyền lợi của mình.",
-      "Nên Vân luôn luôn khuyên khách hàng hãy kê khai trung thực tuyệt đối tất cả các hồ sơ y tế trước khi tham gia bảo hiểm. Có nhiều anh chị còn hỏi tiếp theo là lỡ tôi có kê khai số thì làm sao? Thì Vân hẹn các anh chị cái video tiếp theo.",
-      "Cảm ơn cả nhà đã follow kênh của mình."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/2022869871926419.jpg"
   },
   {
     "id": "video-068-977345",
@@ -1828,18 +1153,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quyền lợi miễn đóng phí giúp duy trì hiệu lực hợp đồng bảo hiểm ngay cả khi người tham gia không may mắc bệnh lý nghiêm trọng.",
-    "paragraphs": [
-      "Có một quyền lợi trong bảo hiểm mà rất là nhiều người mua rồi mà không biết mình có luôn, đó là quyền lợi hỗ trợ miễn đóng phí. Ví dụ như là anh chị mua bảo hiểm cho chính mình, sau này chẳng may có những lúc mà mình bị bệnh nghiêm trọng á được công ty chi trả bệnh lý rồi.",
-      "Nhưng mà mình phải tiếp tục cái hợp đồng đó đúng không? Thì có đóng cái hợp đồng đó tiếp cho mình mà mình không lo nghĩ. Mà anh chị thử nghĩ xem, lúc mình mà bệnh nặng á thì gia đình mình có nhiều khoản phải lo lắm, tiền điều trị, tiền thuốc, tiền chi phí sinh hoạt.",
-      "Nếu lúc đó mình không có thể làm việc thu nhập bị giảm thì ngay cả tiền mà phí bảo hiểm mỗi năm cũng có thể trở thành một cái áp lực cho mình. Và những cái quyền lợi này được thiết kế để hỗ trợ mình trong chính những cái lúc như vậy.",
-      "Còn nếu mà anh chị là cái người đóng phí cho người thân, ví dụ nha, bố mẹ mua cho con nè, vợ mua cho chồng, chồng mua cho vợ, hoặc là mình mua cho bố mẹ của mình luôn. Quyền lợi này là can đáng để quan tâm luôn. Ví dụ như Vân mua cho biu hay kem nhà Vân, Vân gắn quyền lợi là sau này hợp đồng của các con không có lo nếu mà Vân có phát sinh việc gì.",
-      "Thực sự á mà anh chị mua hợp đồng cho con, hợp đồng dài hạn tới 20 năm, làm gì biết chuyện gì xảy ra được các anh chị. Nhưng mới đóng được có 3 năm thì người đứng tên đóng phí cái hợp đồng này xảy ra sự kiện bảo hiểm. Và nó thuộc trong cái phạm vi được hỗ trợ.",
-      "Thì đáp ứng được đầy đủ điều kiện thì có phải công ty đã tiếp tục thay mặt bố mẹ đóng phí suốt 20 năm cái hợp đồng này quá là xuất sắc luôn đúng không? Mình thì đang lo cho tương lai của người thân. Nhưng nếu chẳng may mà cái người đóng phí là mình, là mình đang gặp vấn đề gì đó thì tất cả các kế hoạch đều phải dừng lại.",
-      "Và đây là một trong những cái điều mà không phải ai cũng biết tại vì có nhiều anh chị đi mua hợp đồng mà chỉ mua cho con vậy thôi chứ không có nghĩ là gắm quyền lợi miễn đóng phí này vào. Hãy hỏi thêm là nếu tôi gặp rủi ro thì ai phải thay tôi đóng phí.",
-      "Và lưu ý giùm Vân nha, không phải hợp đồng nào cũng có quyền lợi này, mỗi sản phẩm có điều kiện và phạm vi và thời gian hỗ trợ khác nhau. Nên khi được tư vấn anh chị phải hỏi kỹ và nói về cái nhu cầu của mình luôn để cho tư vấn viên set up thiết kế cho mình một cái sản phẩm phù hợp với mình.",
-      "Còn bạn nào vẫn lo lắng về gia đình chưa biết nên mua như thế nào, nhắn cho Vân, Vân sẽ hỗ trợ cho các anh chị để tư vấn là bạn nên mua quyền lợi này ở những cái hợp đồng nào và nó sẽ phát huy tác dụng ra sao để mình hiểu rõ từ đầu và mình không có bị bối rối cũng như là những cái khó khăn về sau này."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1773329283977345.jpg"
   },
   {
     "id": "video-069-847309",
@@ -1856,12 +1171,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Nội lực đi đường dài trong nghề tư vấn tài chính được tôi luyện qua những va vấp, trải nghiệm thực tế và giá trị nghề nghiệp cốt lõi.",
-    "paragraphs": [
-      "Có những điều trong nghề mình không hiểu ngay từ những ngày đầu tiên, có những bài học phải đi qua đủ va chạm, đủ khách hàng, đủ lần đúng sai, rồi mình mới thật sự thấm. Tôi cũng vậy, tôi không bắt đầu từ bảo hiểm và tôi cũng không bắt đầu vào nghề này với tất cả câu trả lời.",
-      "Nhưng qua từng giai đoạn, tôi dần hiểu rõ hơn điều gì giúp một người đi đường dài, cách mình nhìn khách hàng, cách mình giữ niềm tin, cách mình trưởng thành và cách mình lựa chọn những cái giá trị làm nghề. Trong series này, tôi muốn chia sẻ lại những điều như vậy, không phải như là một công thức để bạn làm theo, mà như những trải nghiệm để bạn có thể soi lại hành trình của chính mình.",
-      "Và nếu sau mỗi tập bạn mang theo được một điều gì đó nhỏ để làm tốt hơn ngày hôm qua, thì với tôi đó là sự khởi đầu rất đáng giá. Tôi là Nguyễn Thị Vân, Giám đốc Kinh doanh Vùng Kênh Đại lý Manulife Việt Nam. Rất vui được đồng hành cùng bạn trong series chia sẻ của tôi trên M Rise."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1373691314847309.jpg"
   },
   {
     "id": "video-070-483196",
@@ -1878,16 +1189,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Gửi tiết kiệm và mua bảo hiểm nhân thọ là hai công cụ tài chính hoàn toàn khác biệt, trong đó bảo hiểm đóng vai trò bảo vệ dự phòng rủi ro dài hạn.",
-    "paragraphs": [
-      "Gửi tiết kiệm còn hơn mua bảo hiểm. Câu nói này cả nhà nghe có quen không? Quen ha, rất là quen luôn.",
-      "Gửi tiết kiệm và mua bảo hiểm là hai cái phạm trù hoàn toàn khác nhau luôn, không có giống nhau được. Gửi tiết kiệm là mình có một cái khoản tiền mặt, mình bỏ vào và khi cần mình rút ra. Mình gửi 50 triệu là mình chỉ rút được 50 triệu, mình gửi 200 triệu chỉ rút được 200 triệu còn tiền lãi thôi.",
-      "Bảo hiểm á, mình dùng vậy một cái sổ tiết kiệm, một cái sổ bảo hiểm đi. Thì sổ bảo hiểm thì hoàn toàn khác. Các anh chị gửi 10 triệu là công ty bảo hiểm đã nợ mình một tỷ đồng rồi.",
-      "Và đó là quỹ dự phòng, đã bảo vệ cho những cái tài sản mình đang có. Để khi mình xảy ra những cái sự cố mình không cần dùng tới tài sản mà mình lấy bảo hiểm ra mình dùng trước. Vân nghĩ rằng Vân chia sẻ để các anh chị hiểu.",
-      "Đây là những kênh đầu tư khác nhau. Ví dụ như bây giờ mình có nhiều kênh đầu tư, nhưng những kênh đầu tư nào mà thanh khoản được nhanh, tiền mặt chính là tiết kiệm với lại bảo hiểm thôi, tại vì đó là tiền mặt đều gửi vào. Nhưng mà các anh chị phải phân rõ hai cái câu chuyện này để mình không nhầm lẫn thì mình có thể phân bổ lại cái kênh tài chính của mình.",
-      "Đầu tiên mình có thể dùng một phần để gửi tiết kiệm, phần còn lại để mình mua bảo hiểm, mình bảo vệ tương lai gia đình, cuộc sống của mình. Và đó mới là cái sự lựa chọn khôn ngoan và có giá trị. Nếu anh chị nào còn đang phân vân, chưa biết là nên gửi tiết kiệm bao nhiêu tiền, mua bảo hiểm bao nhiêu tiền thì nhắn cho Vân, Vân sẽ có một cái bài phân tích tài chính giúp các anh chị sẽ đo lường được là mình kiếm được bao nhiêu tiền, chi phí bao nhiêu và sử dụng cho việc nào bao nhiêu phần.",
-      "Vân Vân sẽ gửi cái công cụ này để mình tính toán được cái công cụ tài chính của mình nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1562229885483196.jpg"
   },
   {
     "id": "video-071-228665",
@@ -1904,13 +1207,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Sự hỗ trợ kịp thời từ chuyên gia giúp khách hàng tránh bỏ lỡ 1,25 tỷ đồng quyền lợi bảo hiểm tai nạn trong tình huống thực tế.",
-    "paragraphs": [
-      "Sơ suất nhỏ cũng có thể làm mất hàng tỷ đồng tiền bảo hiểm. Vân kể cho cả nhà nghe một trường hợp mà Vân là người trải nghiệm thực tế cùng người khách hàng này. Nếu mà khách hàng không biết tới vấn đề này, không tìm hiểu và cũng như là không quan tâm á thì gần như là đã mất 1,25 tỷ này rồi.",
-      "Vân có một cái trường hợp là bị tai nạn giao thông. Thế tai nạn giao thông này á mà đi trên một cái xe mà gọi là xe có vé á, hành khách đã mua vé, thì cái vé này nó tương đương với cái tiền mà chi phí tai nạn mà công ty bảo hiểm phải trả cho cái người khách hàng đó.",
-      "Và lúc mà khách hàng nộp hồ sơ về để mà claim lại cái tiền bảo hiểm trong hợp đồng á, là khách hàng chỉ claim có hai quyền lợi. Quyền lợi đầu tiên là quyền lợi về sinh mạng, quyền lợi thứ hai là quyền lợi về tai nạn. Và hai cái quyền lợi này đã được công ty bảo hiểm chi trả xong hết rồi.",
-      "Khi mà khách hàng có biết tới Vân và Vân có chia sẻ là \"Anh chị hãy về lại cái nhà xe đó,"
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/857561100228665.jpg"
   },
   {
     "id": "video-072-047198",
@@ -1927,19 +1225,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hợp đồng bảo hiểm nhân thọ dài hạn chứa nhiều quyền lợi linh hoạt ít biết như thay đổi số tiền bảo hiểm theo điều kiện tài chính thực tế.",
-    "paragraphs": [
-      "Bảy quyền lợi rất là hữu ích mà nhiều người tham gia bảo hiểm lâu năm vẫn chưa có biết. Hôm nay Vân chia sẻ cho mọi người nha. Vì bảo hiểm nhân thọ là một tài sản dài hạn nha.",
-      "Nên trong cái quá trình mà tham gia tùy theo cái điều khoản của từng hợp đồng khách hàng có thể có một số quyền lợi linh hoạt như sau. Một là có thể thay đổi số tiền bảo hiểm theo cái điều kiện và quy định của hợp đồng. Số này rất là quan trọng luôn.",
-      "Hai là có thể điều chỉnh mức phí bảo hiểm trong một số trường hợp phù hợp. Có nghĩa là nhiều khi tăng lên hay hạ xuống. Ba là có thể rút một phần giá trị tài khoản theo quy định.",
-      "Bốn là có thể thay đổi định kỳ đóng phí. Phí quý nè, nửa năm nè, hàng năm nè, tùy theo cái sản phẩm và điều khoản của hợp đồng. Năm là một số sản phẩm á có thời gian đóng phí dài giúp mình chủ động hơn trong cái kế hoạch tài chính sau này.",
-      "Nếu mấy mình hiểu được các cái vấn đề này á nó dễ lắm cả nhà. Rồi sáu là có thể thêm hoặc là bớt hoặc là điều chỉnh các cái sản phẩm bổ trợ để đáp ứng được cái điều kiện của công ty hoặc là nhu cầu của mình tại thời điểm lúc đó.",
-      "Bảy là nếu hợp đồng chẳng may mất hiệu lực, bạn có thể có quyền khôi phục cái hợp đồng này trong cái thời gian quy định của nó. Và thật ra là ngày hôm qua Vân mới hỗ trợ cho một khách hàng khôi phục lại cái hợp đồng của mình.",
-      "Một số hợp đồng cho phép khôi phục trong vòng thời hạn là hai năm kể từ ngày mất hiệu lực đúng không? Tuy nhiên khi khôi phục thì bạn phải cân nhắc lại xem những cái khoản phí còn thiếu hoặc là cái điều kiện để đáp ứng về sức khỏe để quy định lại để thẩm định lại cái hợp đồng, nên là mình cũng phải rất là cân nhắc nha, vì nó sẽ liên quan tới rất là nhiều quyền lợi của mình, nên khi nào mà khôi phục quyền lợi mà mình không rành thì cứ liên hệ Vân ha.",
-      "Các anh chị hãy kiểm tra lại cái hợp đồng của mình, liên hệ lại tư vấn viên hoặc là công ty bảo hiểm của mình á để mình xem là mình đang có những cái lựa chọn phù hợp chưa và có cần điều chỉnh gì trong cái thời điểm ngày hôm nay hay không.",
-      "Nên là Vân hay luôn nói là thăm khám cái quyền lợi hợp đồng hàng năm để cho khách hàng nắm được là mình mua tại thời điểm đó thì mình thấy nó cũng tốt rồi, nhưng mà thời điểm này mình cần hãng mức cao hơn thì mình có thể nâng hoặc là điều chỉnh.",
-      "Nên cứ nhắn cho Vân, comment cho Vân, Vân sẽ hỗ trợ để mà review lại hợp đồng của mình một cách tốt nhất nha. Cảm ơn cả nhà đã xem video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "thumbnail": "/images/reels/1478080051047198.jpg"
   },
   {
     "id": "video-076-451334",
@@ -1956,16 +1243,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Sự ổn định thực sự không đến từ công việc bên ngoài mà đến từ năng lực và tư duy làm chủ bản thân.",
-    "paragraphs": [
-      "Nghề gì là ổn định nhất hiện nay? Theo các bạn là nghề gì có thể là giúp các bạn ổn định về tương lai lâu dài? À theo Vân, Vân chia sẻ với các anh chị là trên đời này không có cái nghề gì là ổn định hết.",
-      "Đối với Vân là không có chuyện gì có thể ổn định được đâu. Vì Vân nghĩ là ổn định nó chỉ nằm ở chỗ năng lực của mình thôi, tại vì khi mà chọn một công việc, mình chọn một nghề nghiệp à ổn định là ổn định trong năng lực của mình làm, tạo ra kết quả công việc đó.",
-      "Nỡ công ty đó đóng cửa thì sao? À nỡ ngành nghề đó không còn à phù hợp với xã hội bây giờ, à nỡ là cái công việc của mình nó không còn phù hợp xu hướng thì nó thay đổi. Nếu mà năng lực của mình, khả năng của mình không thích nghi, không thay đổi, thì cũng chẳng có cái gì ổn định.",
-      "Vì có một số bạn á vào Manulife, chọn nghề tư vấn viên bảo hiểm, người ta hỏi Vân là công việc này làm có ổn định không chị? Vân trả lời là không, không có ổn định gì nha, ở đây không có ổn định gì hết á. Mà thu nhập sẽ tùy vào năng lực, tùy vào khả năng của mình và sự cố gắng của mình, thì theo năm tháng cái sự phát triển của mình.",
-      "Và ổn định ở đây á là sự phát triển, chứ không phải ổn định là đi đều, mỗi tháng 30 triệu là đi đều 30 triệu, như vậy là không có gọi là ổn định, mà như vậy là thụt lùi đó cả nhà, vì mọi thứ nó được thay đổi và phát triển.",
-      "Và nếu các anh chị mong muốn sự ổn định thì hãy tìm sự phát triển nhé, tại vì công việc gì muốn có sự phát triển là sẽ có sự ổn định theo định nghĩa của các anh chị. Còn đối với Vân Vân nghĩ là không có cái gì ổn định được đâu.",
-      "Nên à hãy chọn cho mình một cái năng lực mình có được và phải học hỏi, phải cố gắng, phải bồi đắp cái năng lực của mình lên để mình có một cái cơ hội nghề nghiệp tốt. Chúc các anh chị lúc nào cũng có thể tìm ra cái khả năng của mình và tìm ra cái năng lực để phát triển tối đa, để làm được cái công việc tốt nhất."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1363266331451334.jpg"
   },
   {
     "id": "video-075-929481",
@@ -1982,22 +1261,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Cơ hội nghề nghiệp tại Manulife rộng mở cho những ai có khát khao tạo ra thu nhập không giới hạn.",
-    "paragraphs": [
-      "Hôm nay Vân sẽ chia sẻ cách trở thành một tư vấn viên tại Manulife nhé. Công ty Manulife của mình thì chào đón những ứng viên nào, khách hàng bảo hiểm nha, khách hàng bảo hiểm. Đặc biệt là công ty Manulife rất là mong muốn tìm những cái bạn có cái khát khao, mong muốn sự thay đổi nè, mong muốn những cái cơ hội lớn và tạo ra thu nhập không giới hạn.",
-      "Tìm việc, thu nhập tốt ha. Sẽ khách hàng apply vào Manulife với cái quy trình rất là đơn giản. Các anh chị sẽ liên hệ với một bạn quản lý tại Manulife.",
-      "Thì bạn quản lý này sẽ cung cấp cái quy trình bao gồm hồ sơ giấy tờ để mình nộp vào Manulife. Nên tiến hành đi học một cái khóa học. Đó là cái khóa học bảo hiểm này trải qua 5 ngày, 2 ngày online, 2 ngày offline, 1 ngày đi thi.",
-      "Thì đi thi ở Bộ Tài chính sẽ rất là rõ ràng, lương rồi sau đó mình được cấp một cái code. Mình học 5 ngày này mình học về thông tin về kiến thức bảo hiểm nè, thông tin về luật nè, thông tin về sản phẩm rất là nhiều thứ. Và sau đó mình được thi ở Bộ Tài chính để ra một cái mã code của mình.",
-      "Thì hệ thống Manulife chính thức load code các anh chị lên. Thì anh chị bắt đầu có hai con đường để các anh chị lựa chọn cái cơ hội kinh doanh của mình. Các anh chị có thể trở thành một FA là một tư vấn viên, Final Advisor ha, một tư vấn viên tài chính bình thường.",
-      "Và song song đó các anh chị có thể trở thành một UM cộng. UM cộng là viết tắt của từ Unit Manager là trở thành quản lý á. Nếu các anh chị bán hàng thì các anh chị chỉ cần đi gặp khách hàng thôi và bảo vệ khách hàng, mình có những cái danh hiệu ví dụ như là MDRT, danh hiệu COT.",
-      "Đó, đây là những cái danh hiệu mà cho một người tư vấn viên xuất sắc. Còn nếu các anh chị trở thành một quản lý, các anh chị có thêm một cái nguồn thu nhập nữa, các anh chị đi gặp các ứng viên. À những cái ứng viên này mong muốn trở thành đồng đội của các anh chị để xây ra một cái team xịn mịn á.",
-      "Hay mình vừa đi gặp ứng viên, mình vừa bán hàng nè, mình vừa đi gặp ứng viên nè. Sau đó mình xây ra một đội ngũ và mình trở thành những cái người quản lý, ví dụ như là MBA. MBA á là một cái danh hiệu rất là cao quý trong cái ngành Bảo hiểm nhân thọ về kiến tạo con người.",
-      "Khi đạt cái danh hiệu này, các anh chị sẽ có cái mức thu nhập rất là tốt luôn và giúp cho nhiều anh chị có sự nghiệp tại Manulife và cơ hội của mình phát triển lên, ví dụ như là phát triển lên vị trí là DM là trưởng phòng nè, xong rồi tháp điểm lên AM là trưởng nhánh kinh doanh nè, và phát triển giống như Vân á là một SE, một giám đốc kinh doanh.",
-      "Thì cái con đường quản lý này sẽ giúp cho anh chị có thể thăng tiến và lâu dài tại Manulife rất là lớn. Còn cái con đường bán hàng thì các anh chị năm nào cũng đều đặn trở thành một cái người tư vấn viên xuất sắc toàn cầu thì thu nhập các anh chị tốt nè, cơ hội về kỹ năng, kiến thức và mối quan hệ rất là mở rộng luôn.",
-      "Nên là đây là toàn bộ cái bức tranh mà các anh chị vào Manulife và đường đi rất là rõ ràng, được định hướng, được giúp đỡ từ các quản lý. Nếu các anh chị nào mà hay xem kênh của Vân nè hay là của các anh chị trong team Hồ Chí Minh 69, Manulife Việt Nam thì cứ mạnh dạn inbox, tụi Vân sẽ tư vấn cơ hội nghề nghiệp tại Manulife một cách rất là đúng, đúng pháp luật nè, đúng sản phẩm nè, đúng quy định nè, nên mình làm xong á, mọi người hay ghẹo là công việc của Vân là mệt chút thôi chứ an yên vô cùng, rất là yên tâm tối về ngủ.",
-      "Không có suy nghĩ, tại vì mình đóng thuế đầy đủ, mình làm đúng pháp luật, sản phẩm cần thiết cho người dân. Sau này khách hàng nhận tiền lại tiền đáo hạn, mọi thứ nó rất là minh bạch nên các anh chị sẽ yên tâm khi làm công việc này.",
-      "Ai muốn thử, hãy nhắn cho Vân để tìm cơ hội tại Manulife nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1549795952929481.jpg"
   },
   {
     "id": "video-077-683634",
@@ -2014,18 +1279,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Sự kiên trì mới là chìa khóa quan trọng nhất giúp người mới thành công trong nghề tư vấn bảo hiểm.",
-    "paragraphs": [
-      "Người mới làm bảo hiểm á, cần nhất là điều gì? Rất là nhiều bạn mà mới vào nghề á, thường chia sẻ với Vân là: \"Chị ơi, muốn làm bảo hiểm tốt thì cần có kỹ năng bán hàng, giao tiếp giỏi, hay là có thật là nhiều mối quan hệ.\" Theo Vân á, những cái điều trên rất là quan trọng, cần có, nhưng có một thứ mà nhiều bạn cần hơn cả cái việc đó nữa, đó chính là sự kiên trì.",
-      "Bởi khi mới bắt đầu á, ai cũng có sự hào hứng nhất định, cũng đặt ra mục tiêu to lớn cho mình, nhưng trong quá trình gọi điện cho khách nè, đặt hẹn nè, nhận được lời từ chối nè, là các bạn chịu không có nổi, và cuối cùng từ từ bỏ cái công việc ngay từ những ngày tháng bắt đầu luôn.",
-      "Lúc đó, nhiều bạn bắt đầu nghĩ rằng là mình không phù hợp với cái nghề này, nhưng thực tế là không ai bước vào nghề mà giỏi ngay từ đầu được đâu cả nhà. Mình phải học, phải nghiên cứu, phải làm đúng cách thì nó mới tạo ra kết quả.",
-      "Bản thân mình á, phải học cách này giao tiếp nè, học cách lắng nghe, hiểu nhu cầu của khách hàng và quan trọng nhất là xây dựng niềm tin. Vì bảo hiểm nhân thọ không chỉ là câu chuyện bán hàng, ờ được một cái hợp đồng, đó là cả hành trình để khách hàng hiểu mình, tin mình và yên tâm giao cho mình một phần trách nhiệm để bảo vệ tài chính và gia đình họ.",
-      "Vậy nên là nếu các bạn mà mới vào nghề á, đừng có chỉ chăm chăm, hỏi là bao giờ mình có cái hợp đồng đầu tiên, hoặc là bao giờ mình về các cái chỉ số kinh doanh trong những cái tháng đầu tiên, mà hơn hết là Vân nghĩ là phải suy nghĩ, hỏi xem là hôm nay mình đã tiến bộ hơn ngày hôm qua bao nhiêu.",
-      "Hôm nay mình gặp được bao nhiêu khách, mình chia sẻ bảo hiểm bao nhiêu khách, và đặc biệt là mình coi thử mình học thêm được kiến thức, kỹ năng gì rồi, thì mình cần phải tích lũy những cái kinh nghiệm, những cái kiến thức để mình xây dựng, cần đủ kiên trì trong cái môi trường để phát triển.",
-      "Và hoàn toàn có thể tiến xa hơn rất là nhiều so với bạn nghĩ, nhưng mà khác nhau ở chỗ là kiên trì. Và nếu bạn đang thật sự tìm kiếm một môi trường học hỏi, phát triển và thử sức với một nghề tư vấn bảo hiểm á, thì hãy nhắn cho Vân nha.",
-      "Biết đâu trong hành trình này chúng ta sẽ được đồng hành cùng nhau. Vân không hứa là sẽ đưa bạn đi được bao xa, nhưng Vân hứa là sẽ cầm tay chỉ việc và có cả một hệ thống, một cái hệ sinh thái để giúp bạn tốt hơn mỗi ngày, và có thể là một cái công việc đặc biệt, giúp cho người, giúp cho đời và đặc biệt giúp cho chính bản thân mình có được một cái sự nghiệp bền lâu cùng Manulife.",
-      "Cảm ơn cả nhà đã theo dõi video của Vân."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1396299482683634.jpg"
   },
   {
     "id": "video-079-063720",
@@ -2042,15 +1297,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Góc nhìn và động lực chuyển đổi sự nghiệp thành công từ Giám đốc Ngân hàng sang ngành Bảo hiểm nhân thọ.",
-    "paragraphs": [
-      "Anh Khoa ơi có thể chia sẻ một vài thông tin và cảm nhận của anh sau thời gian làm Manulife cho các bạn biết được không? Sau thời gian làm Manulife thì mình rất vui và hạnh phúc khi làm việc ở đây, được thưởng xứng đáng của công ty.",
-      "Trước đây anh làm gì anh Khoa? Anh làm ngân hàng. Làm giám đốc ngân hàng đúng không?",
-      "Từ sao mà anh lại đốt thuyền qua Manulife vậy? Tại vì bên đây mình thích công việc chủ động về thời gian hơn và tự chủ về tài chính cũng như là mình thích đi du lịch khám phá mọi nơi và khi vào Manulife thì mình được đi nhiều nơi cũng như là tận hưởng các chiếc đi xứng đáng của Manulife, cẩn thưởng.",
-      "Rồi cả nhà thấy anh Khoa là anh mê đi du lịch lắm là anh vào đây là đúng rồi. Nhưng mà vào đây làm dễ hay khó vậy anh Khoa? Đối với ngành bảo hiểm thì theo các bạn nghĩ thì đối với mình cũng là khó nhưng mà mình cố gắng mình bám trụ và cũng như là mình quyết tâm thì mình sẽ làm được thôi.",
-      "Wow quá tuyệt vời, anh đã làm được mấy năm ta? Mình làm Manulife được 6 năm ha. 6 năm, Vân làm việc với anh Khoa làm được 6 năm.",
-      "Hồi đó Vân có từng tuyển anh Khoa luôn á, anh không có vô team Vân, anh vô team hàng xóm nhưng không sao hết, tất cả về Manulife là Vân vui dữ lắm. Nên bây giờ mới có anh đi làm chung nè, anh Khoa chào mọi người đi."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/4295582314063720.jpg"
   },
   {
     "id": "video-080-803998",
@@ -2067,20 +1315,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Bí quyết chuyển hóa áp lực duy trì vị trí Top 1 thành động lực phát triển bản thân và sự nghiệp.",
-    "paragraphs": [
-      "Vì trì cái vị trí top một như vậy nhiều năm á nó có áp lực không? Vân xác nhận là với các anh chị là nó rất là áp lực. Không thể nào không áp lực được với các anh chị.",
-      "Mọi người nói thế, đi làm sao mà cứ sống trong cảnh áp lực? Không, mọi người phải nghe kỹ. Nó áp lực nhưng Vân đã biến nó thành động lực rồi.",
-      "Nếu mình liên tục để cái áp lực đó, mình làm việc với cái trách nhiệm là phải hoàn thành target á, là mình sẽ cực kỳ áp lực và mệt mỏi luôn. Vân không chọn cái cách đó mà Vân chọn rằng là, nếu mình là tổ chức là team top một được bảo vệ khách hàng nhiều nhất, giúp duy trì cái chỉ số tái tục hằng năm, giúp khách hàng hưởng được quyền lợi nhiều nhất, đó là một cái động lực để mình đi làm.",
-      "Và khi mình có cái động lực đó thì mình không còn áp lực nữa. Và như vậy á, mình làm sẽ ngày một tốt lên. Và khi làm tốt thì mình có thu nhập tốt nè, có cơ hội nghề nghiệp tốt nè.",
-      "Và đặc biệt là mình thấy được cái năng lực của mình nó đi qua mỗi ngày theo năm tháng. Chứ không phải là, ôi mỗi năm được tăng thêm 40% doanh số đó là điều gì đó khủng khiếp. Vân thì nghĩ ngược lại, đó là một cái động lực tốt để giúp đội ngũ mình có tăng thêm cái thu nhập.",
-      "Còn khi target không thay đổi, có nghĩa đồng nghĩa với chuyện là lương của đội ngũ của mình không tăng. Khi đi làm mà tư duy của mình, cứ lúc nào cũng sợ target, sợ tăng á thì mình sẽ rất là khó làm luôn. Vân nghĩ đơn giản lại là, công ty nào cũng muốn phát triển và bản thân mình cũng phát triển, mà target mình tăng có nghĩa là lương của team mình rất là nhiều và tăng.",
-      "Thì mình nghĩ như thế thì mình có động lực để mình làm. Và qua nhiều năm tháng rồi, Vân dựa cái suy nghĩ đó mà Vân cứ tiến bước tiến bước, và mỗi ngày Vân không nghĩ về top một nữa mà Vân nghĩ là Vân sẽ làm tốt nhất có thể.",
-      "Và như thế nó vô hình chung và tạo thành một cái thói quen là mình không có được có cơ hội thất bại luôn á. Vì thế mình sẽ phải cực kỳ tập trung nghiêm túc vào công việc của mình. Mình phải là những người làm giỏi đều đặn và phát triển bền vững, đó mới là xu hướng và những cái điều mà Vân đang hướng tới.",
-      "Nên anh chị nào mong muốn tìm một cái cơ hội nghề nghiệp đi với những người có năng lực tích cực, đi với những người có những cái suy nghĩ tiến về phía trước, thì Vân tin là các anh chị sẽ dễ dàng có một cái sự nghiệp bền lâu.",
-      "Sắp tới là Team Vân có một cái chương trình tuyển dụng, dự án rất là đặc biệt, là Meprol ngoại lực, để tuyển các anh chị làm ngân hàng nè, bất động sản và chứng khoán, vào cùng với Vân có thể bán được xanh Phú Quý ngay. Nên Vân chào đón tất cả các anh chị, có mong muốn trở thành đồng đội của Vân đến với Hồ Chí Minh 69, đến với Manulife Việt Nam.",
-      "Vân tin là các anh chị sẽ rực rỡ trong sự nghiệp cùng Vân và team nha. Follow Team Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1019857483803998.jpg"
   },
   {
     "id": "video-083-714829",
@@ -2097,18 +1333,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Lý do thẻ sức khỏe Kim Cương quyền lợi lớn nhưng có mức phí hợp lý được giới VIP tin chọn.",
-    "paragraphs": [
-      "Vừa mới tư vấn xong cái thẻ kim cương cho khách hàng VIP của Vân, sau đó Vân có cảm xúc nên em quyết định là phải quay lại cái video này cho mọi người cùng nghe nha. Tại sao mà hầu hết những khách hàng mà được Vân tư vấn, Vân đều hay tư vấn thẻ kim cương.",
-      "Vì thẻ kim cương là cái thẻ lớn nhất tại Manulife. Nghe lớn nhất thì tưởng là mắc tiền nhất đúng không? Thật ra nó không có mắc tiền lắm đâu cả nhà.",
-      "Nó dao động tùy theo độ tuổi khoảng tầm mười mấy triệu tới hai mươi mấy triệu cho một cái thẻ thôi. Nhưng lý do sâu sắc mà muốn chuộng cái thẻ này, vì khi có cái thẻ kim cương là muốn vào bệnh viện nào cũng được, tại vì cái hạn mức cho cái thẻ này là 2 tỷ đồng.",
-      "Mình có tới 600 triệu đồng cho một lần nằm viện. Khi mà nằm viện mình được thoải mái trong chuyện chi phí tiền giường, ví dụ ha, một cái giường một ngày công ty cho 10 triệu, bạn có thể sử dụng 7 triệu, 6 triệu, 8 triệu. Thậm chí bạn xài hơn thì bạn buồn một tí nhưng mà thật ra theo Vân biết là bây giờ các cái giường phòng bình thường ở Việt Nam á, ở cái phòng vip thì trung bình là dưới 10 triệu chứ không thể trên 10 triệu được ha.",
-      "Rồi, tiếp theo là thẻ kim cương á, Vân nói đơn giản, chỉ là cái việc mà chạy thận là bên Vân được maximum hạn mức trong vòng 2 tỷ đó luôn, chi phí thực tế. Không có giới hạn gì, còn mấy cái thẻ khác á là đi lọc thận là không có được trả đâu, hoặc là trả rất là ít luôn.",
-      "Và hơn nữa cái thẻ kim cương là gần như chỉ cần bệnh tai nạn và những cái yếu tố mà liên quan tới sức khỏe mà cần phải điều trị tại bệnh viện, gần như là được chi trả 100%. Tại vì có một vài hạng mục nó phát sinh mà nó không nằm trong cái bảo lãnh á thì công ty mới không trả, còn hầu hết là công ty chi phí hết.",
-      "Có những cái trường hợp á chi phí nó lớn lắm, nằm bệnh viện vài trăm triệu một đợt nằm viện là rất bình thường luôn. Thậm chí là khi mình bị bệnh ung thư, thì cái chi phí điều trị rất là cao mà thẻ ung thư là mình cứ thoải mái 1 năm mình chi trả khoảng 2 tỷ, mỗi năm được tái mới.",
-      "Có nghĩa là Vân hay nói là mua cái thẻ kim cương á, mà mua trong 20 năm là mình có 40 tỷ rồi. Còn những khách hàng nào dưới 44 tuổi á thì khách hàng có thể mua được nhiều hơn 20 năm. Có nghĩa là cứ mỗi năm 2 tỷ, 30 năm là 60 tỷ rồi.",
-      "Mình có một cái khoản dự phòng tài chính như vậy để mình nằm viện thì tại sao không? Hãy liên hệ với Vân để tư vấn và hiểu thêm thẻ kim cương để mình có thể trang bị và sở hữu cho gia đình mình nha. Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nhân thọ."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/3769272586714829.jpg"
   },
   {
     "id": "video-078-877755",
@@ -2125,17 +1351,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hướng dẫn chi tiết thủ tục hồ sơ nhập viện để được bảo lãnh viện phí nhanh chóng và trọn vẹn.",
-    "paragraphs": [
-      "Chiều nay Vân đang làm việc nhưng có một chút lo lắng. Ngưng lại một chút và làm cái video này để hướng dẫn cả nhà cái cách đi nhập viện được không? Tại vì việc này cũng quan trọng lắm, mình cần biết trước.",
-      "Mình đi làm thủ tục hồ sơ nhập viện cho nó đơn giản và được bảo lãnh viện phí trọn vẹn nha. Lúc nãy Vân có nói tại sao Vân lo lắng, cháu ruột con của chị gái Vân á là đang trong phòng phẫu thuật và Vân rất là lo lắng. Hi vọng là bạn mổ ca phẫu thuật này thành công.",
-      "Bé bị cột sống 43 độ và bác sĩ yêu cầu phải mổ và lắp ốc để cho con xương thẳng lên và phát triển. Cả nhà đã đồng ý cái ca phẫu thuật này. Bây giờ Vân sẽ chia sẻ cái thủ tục nhập viện nha.",
-      "Thì mình cần phải chuẩn bị hồ sơ tất cả những cái lần khám trước đó, hồ sơ bệnh án, thứ hai là cần căn cước công dân, giấy khai sinh, thứ ba là cần cái thẻ bảo hiểm theo của Melia bây giờ là thẻ online rồi. Những cái thủ tục liên quan là mình có hết, mình đưa cho bệnh viện.",
-      "Và sau đó bệnh viện sẽ tiến hành là gửi mail về công ty Melia. Và sau đó công ty Melia sẽ xem xét hồ sơ. Và có một cái điểm rất quan trọng để được bảo lãnh nhanh gọn lẹ đó chính là hồ sơ bây giờ mình nộp vào cộng với hồ sơ ngày xưa mình khai cho tư vấn viên khi mua hợp đồng bảo hiểm phải khớp nhau.",
-      "Nếu hai hồ sơ này nó không khớp nhau là công ty bảo hiểm sẽ tạm ngưng và yêu cầu khách hàng thanh toán trước rồi sau đó công ty sẽ đi điều tra hay là kiểm tra lại hồ sơ thì mới bảo lãnh được. Nên các anh chị lưu ý chỗ này ha, mình khai hồ sơ với tư vấn viên như thế nào thì khai lại với bác sĩ và làm hồ sơ nhập viện y chang như vậy.",
-      "Nếu khác nhau thì nó sẽ rất là khó. Thì cháu mình chắc là khoảng 1 tiếng 2 tiếng nữa sẽ nằm trong phòng hồi sức xong, sẽ được gặp mẹ bạc. Nhưng Vân mong rằng mọi điều tốt đẹp sẽ đến với bạn và Vân cũng hi vọng rằng ai xem cái video này cũng luôn luôn có nhiều sức khỏe, không phải trải nghiệm những cái câu chuyện trong bệnh viện.",
-      "Nhưng nếu phải trải nghiệm mà đã có bảo hiểm rồi, thì nhớ cái quy trình hồ sơ đầy đủ nha, để được bảo ưu lãnh trọn vẹn và có những cái trải nghiệm tốt về bảo hiểm. Nếu mà ai mà còn thắc mắc thêm những cái thủ tục liên quan tới những cái hồ sơ trước khi nhập viện để được bảo lãnh á, thì có thể nhắn cho Vân, Vân sẽ hỗ trợ thêm nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1091536246877755.jpg"
   },
   {
     "id": "video-082-359675",
@@ -2152,17 +1369,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Giải pháp lập quỹ học vấn thông minh cho con chỉ với 5 năm chuẩn bị tài chính vững chắc.",
-    "paragraphs": [
-      "Tại sao phải lập quỹ học vấn cho con? Khi sinh con ra thì điều quan trọng nhất là phải nuôi con lớn, và sau đó chuẩn bị cái quỹ học vấn cho con yêu của mình, để có thể học cao, học xa và bay đến cái ước mơ của con mình muốn.",
-      "Khi lập quỹ học vấn thì Vân tin là có rất là nhiều kênh. Có những bố mẹ thì tiết kiệm ở ngân hàng cho con, có những bố mẹ thì mua bất động sản để dành để sau này bán lấy tiền cho con đi học. Có những bố mẹ mua vàng, tích góp cho con, để chuẩn bị được một cái kênh phù hợp và nó có tính lâu dài cho con, thì không phải bố mẹ nào cũng biết và chuẩn bị được một cách đầy đủ nhất.",
-      "Đối với Vân làm trong ngành bảo hiểm này được 9 năm, Vân và các bố mẹ đều có cái nỗi trăn trở giống nhau. Manulife cũng trăn trở cùng cái nỗi lo của người bố mẹ. Thì Manulife quyết định ra một cái sản phẩm đó chính là sản phẩm Sanh Phú Quý.",
-      "Một cái sản phẩm mà chúng ta có thể sử dụng nó để lập quỹ học vấn cho con là một điều vô cùng tuyệt vời. Sản phẩm mình chỉ cần đóng ngắn hạn trong vòng 5 năm. Nhưng sau đó mình sẽ có cái khoản tiền để rút cho con đi học đều đặn về tương lai.",
-      "Thì đây là một trong những cái điều mà bố mẹ nào cũng muốn để an toàn cho con mình nhất có thể. Và bản thân Vân cũng vừa lập một cái quỹ học vấn cho Bill, tiết kiệm mỗi năm 500 triệu và 5 năm Vân tiết kiệm 2 tỷ rưỡi tại Manulife để chuẩn bị cái quỹ học vấn này cho Bill đó cả nhà.",
-      "Và từ năm thứ 11 Vân đã bắt đầu rút 10% tổng giá trị Vân đóng vào. Và đây là cái khoản tiền mà sau đó Vân sẽ rút đều đặn cho Bill luôn. Và Vân tin rằng với kết quả đầu tư rất là ấn tượng của Manulife trong 18 năm qua cộng với cái bề dày lịch sử thì Manulife sẽ giúp Vân có thể tạo ra cái quỹ học vấn lâu dài cho con, thậm chí để lại một cái gia sản cho con.",
-      "Nên Vân rất là hi vọng được chia sẻ cái sản phẩm này đến với tất cả các anh chị em để mình có thể sở hữu nó và bảo vệ gia đình mình cũng như là chuẩn bị cái quỹ tài chính dài lâu để các con mình yên tâm học hành và phát triển nhé.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/2663477307359675.jpg"
   },
   {
     "id": "video-081-435509",
@@ -2179,17 +1387,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Công thức đạt thu nhập xuất sắc sau hành trình 9 năm kiên tâm với nghề tư vấn tài chính.",
-    "paragraphs": [
-      "Hôm nay nhân cái ngày mà mình được nhận bảng lương, mình có rất là nhiều cảm xúc nên mình quyết định quay một cái video nói về làm sao để có thu nhập tốt tại Manulife. Đi làm thì ai cũng mong muốn được có lương cao đúng không?",
-      "Và đặc biệt nữa cái bảng lương nhiều khi tới cuối tháng mình còn không hình dung được hết là mình sẽ được bao nhiêu tiền nữa. Giống như sáng hôm nay nè, mình nhận được cái bảng lương á thì mình thấy rằng là câu chuyện nó rất là wow.",
-      "Thì làm sao để lúc nào mình cũng có cái bảng lương wow như vậy? Vân sẽ chia sẻ cho các anh chị cái bí kíp này ha. Với Vân á từ 9 năm qua tới bây giờ, đi làm là không có được tính là 95%, 98% hay là 100%.",
-      "Vì tính như vậy là luôn luôn chúng ta sẽ trượt và không về được 100%. Vân chỉ có kinh nghiệm duy nhất thôi, khi coi một cái memo, một cái chính sách, một cái target nào đưa cho mình, mình cứ lấy target chuẩn cộng với 100% nữa là 200%.",
-      "Thì bây giờ có phải các bạn cần chạy 100 triệu, đi Vân ví dụ vậy, thì mình cứ nhớ tới con số 200. Bây giờ mình chạy quá trời chạy luôn, chạy tới nó rớt lên rớt xuống thì cũng còn được 1500 thì nó đã khác và cái câu chuyện mà khi một cái kết quả nào đó mà mình chạy trên 150% là gần như nó vào tất cả các khung tiền thưởng rồi.",
-      "Nên thường có nhiều anh chị hỏi làm sao mà Vân có thể tính để mình có kết quả và được nhận tối ưu cái năng suất kinh doanh của mình như vậy thì Vân đều chia sẻ là Vân luôn luôn cộng thêm 100% thành 200%. Nếu chạy giỏi thì sẽ đạt luôn mức đó và vượt mức đó.",
-      "Còn nếu chưa giỏi lắm thì mình cũng trượt xuống còn 150 160 là cũng rất là tốt rồi đúng không ạ? Và như thế thì chúng ta sẽ luôn luôn có bảng lương cao. Và cái công thức này Vân cứ áp dụng cho đội ngũ của Vân, cho các bạn làm với Vân nhiều năm qua.",
-      "Và ai áp dụng công thức này là luôn luôn thành công nha. Follow cánh Vân để nhận những thông tin giá trị về bảo hiểm về công việc tại Manulife nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/2216391312435509.jpg"
   },
   {
     "id": "video-084-473591",
@@ -2206,18 +1405,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quy trình và danh mục giấy tờ cần thiết để hoàn tất thủ tục chi trả bảo hiểm sức khỏe suôn sẻ.",
-    "paragraphs": [
-      "Đi viện có bảo hiểm sức khỏe, nhưng lúc làm hồ sơ lại thiếu giấy tờ linh tinh, phải quay lại bệnh viện để xin lại. Nếu bạn nào đang có bảo hiểm sức khỏe thì lưu ngay cái video này lại giùm Vân nha, để mà lúc mình cần mình sẽ sử dụng được.",
-      "Về cơ bản thì khi sử dụng bảo hiểm sức khỏe sẽ có hai cách mình được chi trả. Cách thứ nhất, bảo lãnh viện phí ngay tại bệnh viện luôn. Nếu bệnh viện và phòng khám đó có liên kết hồ sơ được duyệt bảo lãnh thì khi xuất viện á, công ty bảo hiểm sẽ thanh toán trực tiếp cho bệnh viện.",
-      "Mình không cần tự thanh toán rồi làm hồ sơ để hoàn lại nữa nha. Cái thứ hai, trường hợp mà mình khám ở cơ sở ngoài hệ thống bảo lãnh, hoặc chưa được duyệt bảo lãnh thì mình có thể thanh toán trước nè. Sau đó chuẩn bị lại hồ sơ để gửi lên công ty bảo hiểm để nhận quyền lợi.",
-      "Nếu là điều trị nội trú thì thường mình sẽ cần giữ lại những cái hồ sơ như sau: giấy ra viện, giấy chứng nhận phẫu thuật, đơn thuốc, hoặc là tất cả các chỉ định của bác sĩ, bảng kê chi phí điều trị, xuất hóa đơn đầy đủ. Còn tóm tắt bệnh án không phải là trường hợp nào cũng cần bắt buộc, nhưng hầu hết á thì Vân khuyên là nên xin luôn.",
-      "Một số trường hợp là công ty bảo hiểm có thể yêu cầu bổ sung nữa, việc mà khám ngoại trú thì hồ sơ cũng tương tự thôi. Sổ khám bệnh nè, phiếu khám bệnh chuẩn đoán nè, đơn thuốc nè, kết luận xét nghiệm siêu âm, hoặc là bảng kê chi tiết hóa đơn VAT.",
-      "Đừng đợi về nhà rồi mới kiểm tra hồ sơ, mọi người nhiều khi ôm xong cái hồ sơ về tới nhà kiểm tra ra khỏi bệnh viện rồi, quên có phải quay lại bệnh viện đi lấy mà mình có cảm giác nó không có thoải mái á. Nên là mình kiểm tra luôn và nếu có thiếu giấy tờ gì á thì mình lấy lại ngay lập tức lúc đó luôn.",
-      "Còn nếu mà mình đang có tư vấn viên phục vụ hợp đồng của mình á, mình gọi liên cho cái bạn tư vấn viên liền. Nói là bây giờ mình đang có hồ sơ A, B, C, X, Y, Z nè, đủ chưa, có thiếu chỗ nào không? Thiếu chỗ nào thì coi lại giùm mình để mình đỡ mất công lấy tới lấy lui.",
-      "Mua bảo hiểm không khó, nhưng biết cách sử dụng bảo hiểm mới thật sự là điều quan trọng. Nếu mà anh chị nào mà vẫn chưa có rành trong cái hợp đồng của mình á, cần phải làm những cái hồ sơ chứng từ nào, cứ để lại comment inbox cho Vân nha.",
-      "Vân sẽ hỗ trợ cả nhà để mình có được những cái trải nghiệm tốt về bảo hiểm."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1731096921473591.jpg"
   },
   {
     "id": "video-091-224409",
@@ -2234,18 +1423,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Lộ trình thăng tiến quản lý tại Manulife đòi hỏi sự nỗ lực bứt phá để trở thành tư vấn viên xuất sắc trước khi dẫn dắt đội ngũ.",
-    "paragraphs": [
-      "lộ trình thăng tiến trở thành một quản lý cấp cao tại Manulife có khó không nha. Thật ra là đi lên trở thành một cái vị trí quản lý á thì tất nhiên là khó rồi nhưng mà có khó lắm không thì Vân nghĩ là không đâu. Tại vì ở Manulife tạo điều kiện và cơ hội cho tất cả mọi người.",
-      "Bản thân Vân khi đi vào Manulife thì Vân cũng là một cái bạn tư vấn viên thông thường. Sau đó Vân tuyển dụng, phát triển, Vân hoàn thành các khóa học nè, các kỹ năng làm quản lý nè, số nè, các người nè, đầy đủ các tiêu chí là công ty sẽ bổ nhiệm vân lên làm quản lý tại Manulife.",
-      "Nên những tiêu chí đầu tiên, tiêu chí đầu tiên là bạn phải trở thành tư vấn viên tài chính tại Manulife, bạn phải được bộ tài chính cấp code và có code tại Manulife. Thứ hai là bạn phải trở thành một cái cá nhân có thể bán hàng xuất sắc.",
-      "Xuất sắc ở đây không phải là bạn bán rất là đông khách mới được ha, mà một tháng trung bình mà bán khoảng ba cái hợp đồng thì bạn sẽ đủ điều kiện cái này gọi là điều kiện FQC là first year commission á, thì bạn đủ cái điều kiện về chỉ số kinh doanh hoa hồng cá nhân á thì bắt đầu bạn sẽ thấy là à mình đã tự tin cho công việc này và bắt đầu là mình tiếp tục mình tuyển dụng các anh chị làm giống mình.",
-      "Thì khi mình tuyển dụng thêm khoảng ba nhân sự nữa là cộng với mình là bốn, và ba anh chị đó đều vào Manulife, đều tạo ra hợp đồng để giúp nhiều người được bảo vệ và ba anh chị đó cũng có hợp đồng, mỗi tháng các anh chị đó cũng có từ hai tới ba hợp đồng và bản thân mình nữa thì sau 3 tháng các anh chị có thể trở thành một cái quản lý tại Manulife bằng cách là ba anh chị đội ngũ mình tuyển vô đều có kết quả sản xuất, đều làm tốt và học tất cả những khóa học tại Manulife và tư vấn khách hàng xuất sắc thì các anh chị đó sẽ trở thành team member đồng đội của mình và tạo ra một cái team nhóm là khoảng bốn nhân sự.",
-      "Thì sau đó sẽ chính thức được bổ nhiệm là quản lý tại Manulife và từ cái vị trí quản lý này á, các anh chị hoàn toàn có thể phát triển thêm nhiều cái quản lý kế cận với mình. Ví dụ như là mình lên làm quản lý rồi thì phải cho đồng đội mình làm quản lý chứ, chẳng lẽ là quản lý có một mình đúng không?",
-      "Không được. Mình lên làm quản lý thì mình sẽ giúp đỡ những người đồng đội đi cùng mình trở thành những người quản lý. Sau đó các anh chị có thể có một đội ngũ phát triển như Vân nè, có 500 nhân sự và các anh chị em đi theo mình bây giờ là à trưởng nhóm nè, trưởng phòng nè, trưởng chi nhánh nè và các anh chị đang phát triển rất là tốt và đây là một cái công thức phát triển tại Manulife rất là hay luôn và có được bộ tài chính nhà nước mình gọi là thông qua các điều khoản và luật pháp.",
-      "Nên các anh chị cứ yên tâm. Phát triển tại Manulife là phát triển bền lâu và rất là vững mạnh nên là Vân chào đón tất cả các nhân sự muốn trở thành quản lý tại Manulife, hãy liên hệ với Vân và đồng đội của Vân tại hội sở 69.",
-      "Các anh chị hãy sẽ giúp cho các anh chị có được hành trình được trở thành tại Manulife nha. Yêu cả nhà."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân."
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân.",
+    "thumbnail": "/images/reels/2461455204224409.jpg"
   },
   {
     "id": "video-086-866235",
@@ -2262,19 +1441,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Hủy hợp đồng bảo hiểm ngang trong những năm đầu sẽ khiến số tiền nhận về thấp hơn số tiền đã đóng do các khoản phí ban đầu và rủi ro.",
-    "paragraphs": [
-      "Có năm điều mà bạn cần biết trước khi muốn hủy hợp đồng. Điều thứ nhất, tiền nhận về có thể thấp hơn số tiền đã đóng, vì mình hủy ngang mà các anh chị. Đặc biệt là trong những năm đầu tiên của hợp đồng, nếu mình hủy hoặc là rút toàn bộ giá trị à hợp đồng, thì số tiền nhận về có thể thấp hơn số tiền mình đã đóng vào, vì công ty đã phải khấu trừ những cái phí ban đầu, phí rủi ro hoặc là phí quản lý hợp đồng.",
-      "Phải kiểm tra xem giá trị hoàn lại của mình là bao nhiêu và mình quyết định sau khi mình kiểm tra nha. Điều thứ hai, muốn tham gia lại chưa chắc còn được như lúc ban đầu, vì sức khỏe mình đã thay đổi rồi. Ví dụ như hôm nay mình hủy hợp đồng, vài năm sau mình muốn mua lại, lúc đó công ty bảo hiểm sẽ đánh giá lại cái tuổi và tình trạng sức khỏe của mình.",
-      "Và lúc đó sẽ là bất lợi đó. Tuổi càng cao, nếu sức khỏe phát sinh thêm nhiều vấn đề thì phải đóng phí cao hơn và bị giới hạn loại trừ rất là nhiều, thậm chí không được mua nhiều quyền lợi. Thậm chí là công ty có thể từ chối không bán luôn.",
-      "Điều thứ ba, mất đi một lớp bảo vệ khi mình cần có và bảo hiểm là một cái phòng thân. Mình thường nghĩ là lúc trẻ, lúc khỏe bảo hiểm không có cần thiết. Đôi khi mình khỏe mình không xài tới 1, 2 năm luôn.",
-      "Nhưng mà đâu có biết được là những năm tiếp theo như thế nào ạ. Nên là càng lớn tuổi thì nguy cơ sức khỏe là càng tăng. À đến lúc thật sự muốn mua lại thì chưa chắc mình có thể đủ điều kiện để mình tham gia với những cái quyền lợi giống như trước đây.",
-      "Nên mình phải suy nghĩ thật kỹ nha các anh chị. Điều thứ tư, hủy hợp đồng rồi thì kế hoạch tài chính của mình cũng phải thay đổi. Chắc chắn rồi.",
-      "Ờ vì không có sự bảo vệ mà. Bảo hiểm không chỉ là một khoản mình đóng hàng tháng, nó còn là một phần trong cái kế hoạch tài chính dự phòng của mình cho những lúc không may xảy ra chuyện gì đó. Nếu hủy hợp đồng, mình cần tính lại.",
-      "Để sau này có vấn đề gì về sức khỏe, viện phí, về những cái rủi ro lớn xảy ra, thì mình lấy cái nguồn tiền dự phòng nào để mình chi trả khi mình vào viện. Và điều cuối cùng, đừng quyết định chỉ vì một vài lý do trước mắt, vì một ngoài người bạn của mình nói qua nói lại là không cần và cần.",
-      "Nhưng mà đâu có biết được lúc đó, nhưng sau này bạn bè mình cũng đâu cho mình mượn tiền được để mình chữa trị đúng không? Nếu mà bạn đang thấy cái phí quá cao hoặc tài chính khó khăn, không có thể đóng được cái hợp đồng này, thì các anh chị có thể liên hệ Vân.",
-      "Ờ Vân hỗ trợ mình xem lại hợp đồng để mình điều chỉnh cái hạn mức mình cho phù hợp. Nếu anh chị đang có một cái hợp đồng bảo hiểm và chưa biết nên giữ hay điều chỉnh, hay có nên hủy ý nó hay không, cứ comment hoặc là nhắn cho Vân, Vân sẽ nhờ team hỗ trợ xem lại từng cái trường hợp của các anh chị để rồi mình quyết định là mình có nên hủy hay không và tiếp tục hợp đồng của mình nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ trước khi quyết định hủy cùng Khánh Vân."
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ trước khi quyết định hủy cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1625829615866235.jpg"
   },
   {
     "id": "video-088-597158",
@@ -2291,15 +1459,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Chi phí cho một ca nằm viện tối thiểu từ 20 đến 30 triệu đồng, tạo áp lực tài chính lớn nếu không có sự chuẩn bị từ bảo hiểm.",
-    "paragraphs": [
-      "Một ca nằm viện tốn bao nhiêu tiền nếu không có bảo hiểm? Đầu tiên vào là sẽ có chi phí khám nè, nhập viện nè, tiền giường, tiền thuốc, tiền nước truyền, tiền kháng sinh, tiền chi phí phẫu thuật, chụp phim, xét nghiệm, X-quang, thậm chí có những bước chụp rất là chuyên sâu nữa.",
-      "Chi phí cho một cái ca nằm viện ít nhất bây giờ Vân biết nó phải tầm hai mươi mấy tới ba mươi mấy triệu là bình thường, còn nếu có dính phẫu thuật vào thì nó phải trên sáu mươi. Thậm chí mà phẫu thuật phức tạp là sao khoảng một trăm rưỡi đến hai trăm rưỡi.",
-      "Thế các anh chị thấy không? Chỉ cần một đợt nằm viện là mình mất ngay một quỹ sổ tiết kiệm rồi. Trong cái trường hợp mình có sổ tiết kiệm mới mất được nha, chứ không có là phải đi vay rồi đó.",
-      "Rồi thêm nữa có một số anh chị bảo giờ anh chị mua vàng, đợi cho nó lên giá rồi, nếu mà có gì nằm viện thì rút vàng ra. Thế Vân nói là bây giờ một chỉ vàng ra được là 16 triệu và mua được một cái hợp đồng bảo hiểm, trong khi mình có 30 chỉ vàng mình chích có một chỉ vàng mình mua cái hợp đồng bảo hiểm.",
-      "Để lúc mình bị bệnh á là mình không có lấy hết cái mớ vàng đó bỏ vào bệnh viện á mà chỉ lấy cái hợp đồng bảo hiểm người mua để sử dụng cho bệnh viện thôi thì có phải hay hơn không đúng không cả nhà? Nên hãy chuẩn bị bảo hiểm trước khi vào viện nha.",
-      "Follow kênh Phến Vân để nhận những cái thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Hoạch định quỹ dự phòng y tế và chăm sóc sức khỏe cùng Khánh Vân."
+    "cta": "Hoạch định quỹ dự phòng y tế và chăm sóc sức khỏe cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1821063878597158.jpg"
   },
   {
     "id": "video-089-651889",
@@ -2316,16 +1477,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Không trung thực khai báo bệnh tình trước khi mua là nguyên nhân chính khiến khách hàng bị từ chối chi trả quyền lợi bảo hiểm.",
-    "paragraphs": [
-      "Hôm nay Vân có gặp một khách hàng và khách hàng đó hỏi vào một cái câu chuyện, trước giờ người ta không mua bảo hiểm, tại vì người ta lăn tăn bởi những cái khúc mắc trong lòng và có một cái khúc mắc rất là lớn. Hỏi Vân là vì sao một người bạn, người quen mua một cái hợp đồng bảo hiểm mà tới lúc mà tử vong do tai nạn thì công ty bảo hiểm lại từ chối chi trả.",
-      "Vì là khách hàng không khai bệnh. Mà rõ ràng khách hàng bị tai nạn mà, tử vong chứ đâu phải là bị bệnh tử vong đâu mà sao công ty bảo hiểm không trả? Theo các anh chị là như thế nào?",
-      "Mà tại sao công ty bảo hiểm không trả? Khi mua hợp đồng bảo hiểm mình cần phải kê khai tất cả lịch sử bệnh của mình. Và mình phải bảo đảm rằng mình kê khai trung thực tuyệt đối.",
-      "Khi có phát sinh là công ty bảo hiểm đều thấy là có những cái bất thường trong một cái hợp đồng bảo hiểm là công ty đều điều tra lại tất cả. Và khi mà điều tra mà phát hiện ra trước đây khách hàng có huyết áp nè, có tim mạch, có tiểu đường mà không có khai và chưa bao giờ claim tiền sử bệnh gì nha, chưa bao giờ yêu cầu bồi thường về bệnh á.",
-      "Nhưng bỗng một ngày 1, 2 năm sau xảy ra một cái vụ tai nạn và tử vong và công ty cũng từ chối chi trả. Tại vì công ty nói là nếu lúc đó anh khai bệnh tim, huyết áp cao hay tiểu đường, những cái bệnh mà công ty từ chối cấp hợp đồng thì cái hợp đồng nó sẽ không bao giờ được cấp thì cái mục tai nạn mình sẽ không bao giờ được mua.",
-      "Thì không mua thì làm sao được chi trả và cái hợp đồng đó nó vô hiệu lực ngay lúc đó luôn. Nên các anh chị đảm bảo việc rằng khi đi mua hợp đồng bảo hiểm bắt buộc phải khai bệnh đầy đủ, khai chi tiết và công ty đồng ý bán thì công ty sẽ bảo vệ hết cả tai nạn, cả bệnh lý, những cái gì công ty cam kết.",
-      "Còn công ty đã loại trừ hay là từ chối bán thì các anh chị sẽ biết từ đầu luôn. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm Nhân thọ nha."
-    ],
-    "cta": "Được tư vấn trung thực và minh bạch hồ sơ sức khỏe cùng Khánh Vân."
+    "cta": "Được tư vấn trung thực và minh bạch hồ sơ sức khỏe cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1441613410651889.jpg"
   },
   {
     "id": "video-087-880083",
@@ -2342,17 +1495,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Thực tế hỗ trợ khách hàng nhận quyền lợi chi phí y tế hơn 104 triệu đồng khẳng định sự đồng hành tận tâm của chuyên gia.",
-    "paragraphs": [
-      "Vừa vừa giúp một khách hàng claim được một khoản tiền là hơn 104 triệu. Chị này là ngày xưa ở trọ chung với Vân, thời sinh viên cách đây 20 năm. Chị với Vân còn giữ liên hệ với nhau qua Facebook và chị thì bây giờ cũng đi làm việc ở công ty khác, còn Vân thì làm ở Manulife, nên khi mà có cái việc gì liên quan tới Manulife là chị nhắn tin cho Vân ngay.",
-      "Cái trường hợp mà của chị là chị được công ty mua một cái thẻ sức khỏe là bạch kim, và chị ấy phải đi phẫu thuật động mạch cảnh và chị ấy phẫu thuật hết một số tiền khá là lớn ha. Nên Vân claim được cho chị ấy 104 triệu. Vì sao là vậy?",
-      "Vân cũng chia sẻ rất là chi tiết ha. Cái thẻ bạch kim thì trung bình là khoảng 400 triệu một lần và tiền giường là 5 triệu một ngày. Cái tiền giường của chị thì được trả đầy đủ.",
-      "Phần chi phí phẫu thuật là công ty Vân trả khoảng 81 triệu, còn 85 triệu kia thì công ty không trả vì cái chi phí stand. Thì đây là một cái thiết bị mà đặt vào trong cơ thể mình và cố định luôn, và những cái thiết bị đó thì công ty Manulife không có chi trả.",
-      "Những cái vật tư y tế nào không được trả thì sẽ có trong điều khoản hết, nên là mình hiểu rõ, hiểu đúng thì mình sẽ có được cái trải nghiệm khách hàng tốt nhất. Và chiều hôm nay, chị ấy nhắn tin cho Vân rất là vui mừng vì đã nhận được cái khoản tiền này, và Vân cảm thấy cũng rất là biết ơn vì mình đã đi giúp được cho một khách hàng claim được cái khoản tiền từ Manulife.",
-      "là cái trường hợp là Vân không phải là người bán cái hợp đồng này nha, Vân claim hỗ trợ giùm cho chị thôi. Nhưng mà đối với Vân đây là một trong những cái sứ mệnh của Vân làm. Thì Vân biết có rất là nhiều anh chị mua hợp đồng nhưng không có hiểu hết quyền lợi.",
-      "Của mình có gì nè, claim được bao nhiêu tiền nè, thì nhân cái video này, nếu anh chị nào xem qua mà anh chị thấy cần tìm hiểu sâu về cái hợp đồng của mình, gồm có những quyền lợi nào, và claim chi trả mà có những cái khó khăn gì, có thể nhắn cho Vân.",
-      "Vân và đồng đội của Vân sẽ hỗ trợ các anh chị rất là chi tiết các cái điều khoản để mình tự tin về cái hợp đồng của mình nha. Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Đặt lịch review quyền lợi hợp đồng và giải đáp thắc mắc bồi thường cùng Khánh Vân."
+    "cta": "Đặt lịch review quyền lợi hợp đồng và giải đáp thắc mắc bồi thường cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1368157261880083.jpg"
   },
   {
     "id": "video-092-222361",
@@ -2369,16 +1513,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Khách hàng cần kiểm tra ngay ứng dụng VSSID để phát hiện và chỉnh sửa kịp thời những sai sót trong lịch sử hồ sơ bệnh án.",
-    "paragraphs": [
-      "Mở app VSSID của mình check ngay lập tức giúp Vân nào. Trong video này, Vân sẽ nói kĩ lý do tại sao phải cần check. Mình mở ra mình coi xem thử hồ sơ bệnh án của mình lưu giữ bao nhiêu năm nay có đúng không?",
-      "Có những khách hàng hồ sơ sức khỏe cực kì sạch, chưa bao giờ bị bệnh gì, cũng chưa bao giờ đi khám bệnh, nhưng tự nhiên trên VSSID của mình xuất hiện rất là nhiều bệnh: Bị tím, bị phổi, bị huyết áp cao, bị tiểu đường, bị mở máu rất là nhiều.",
-      "Ôi tại sao lại như vậy? Cả nhà có ai thắc mắc không ạ? Mình mở ra kiểm tra giúp Vân liền nha.",
-      "Nếu mà mình thấy thông tin nó không đúng là mình phải liên hệ về các cơ quan chức năng để được kiểm tra và xử lý để gỡ bỏ. Còn không á, mình phải kiểm tra lại mình có đang cho ai mượn cái thẻ bảo hiểm y tế của mình không? Còn một điều nữa, có chính là các anh chị làm rớt cái thẻ đó, ai nhận được và người ta đang sử dụng cái thẻ của mình.",
-      "Nên các anh chị vui lòng kiểm tra để không ảnh hưởng tới quyền lợi sau này. Khi các anh chị quyết định chuẩn bị tham gia một cái hợp đồng bảo hiểm nhân thọ, cũng hãy mở ngay cái VSSID ra, kiểm tra và chụp đầy đủ tất cả các màn hình có liên quan tới việc đi khám và điều trị và gửi ngay cho tư vấn viên để tư vấn viên đưa về công ty bảo hiểm tiến hành thẩm định và công ty sau khi thẩm định, chấp hợp đồng hoặc là loại trừ, hoặc là tăng phí, hoặc là những cái điều liên quan tới bệnh của mình thì mình được chấp nhận và mình cũng đồng ý thì công ty bảo hiểm sau này sẽ chi trả đầy đủ.",
-      "Còn nếu mà các anh chị không nộp từ đầu, sau này mình phát hiện ra bị bệnh và mình quay lại mình kê khai VSSID là gặp rất nhiều rắc rối khi bổ sung lại hồ sơ. Điều này rất là quan trọng nên chúng ta tuyệt đối phải lưu ý và ghi nhớ nha các anh chị nha.",
-      "Nên kiểm tra, theo dõi và mở cái app VSSID của mình định kỳ 6 tháng một lần để mình an tâm sau này mình có tham gia bảo hiểm cũng không gặp vấn đề gì liên quan tới VSSID. Ai có những cái thắc mắc, những cái trăn trở nào cần tìm hiểu hỏi đáp thêm thì nhắn cho Vân để Vân giải thích thêm cái mục VSSID này nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân."
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1549594260222361.jpg"
   },
   {
     "id": "video-093-686799",
@@ -2395,20 +1531,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Nghịch lý chi tiền bảo vệ tài sản vật chất nhưng tiếc tiền bảo vệ chính con người - nguồn gốc tạo ra tài sản.",
-    "paragraphs": [
-      "Bạn sẵn sàng bỏ ra 15 triệu mỗi năm bảo vệ chiếc ô tô mình mới mua đúng không? Nhưng lại tiếc tiền khi bỏ ra một cái khoản để bảo vệ chính bản thân mình, là người tạo ra rất là nhiều cái ô tô. Bạn có thấy điều này nó ngược đời không?",
-      "Một chiếc ô tô trị giá 1 tỷ đồng, bạn có thể bỏ ra 15 triệu mỗi năm để mua bảo hiểm cho xe đúng không? Nhưng nếu cả năm không gặp sự cố, hết năm bạn cũng không lấy lại được cái số tiền đó là điều chắc chắn. Nhưng mà bạn vẫn cảm thấy bình thường, không có vấn đề gì hết trơn á.",
-      "Vì bạn hiểu rằng mình đang bỏ tiền để phòng ngừa rủi ro cho cái xe của mình. Thế nhưng á, khi nói đến bảo hiểm nhân thọ, bảo hiểm về tinh mạc, bảo hiểm về con người của mình á, nhiều người lại nói rằng đóng tiền đâu xơi này, có lấy lại được không?",
-      "Và lấy lại như thế nào? Nên họ nghi ngờ và họ hoài nghi để họ không tham gia những cái sản phẩm cho bản thân mình. Vân nghĩ rằng điều này cũng dễ hiểu thôi.",
-      "Ai cũng muốn đồng tiền của mình bỏ ra phải có giá trị, phải sinh lời hay là phải mang những cái điều mà gọi là tốt nhất cho họ. Ô tô là tài sản do mình làm ra, ngôi nhà tiền tiết kiệm hay công việc kinh doanh cũng vậy là do mình hết đó các anh chị, tất cả đều được tạo ra từ thời gian, công sức và cả những cái năm tháng mình cố gắng.",
-      "Nhưng nếu một ngày mình không còn đủ sức khỏe để làm việc nè, hoặc là chẳng may mình gặp những cái chuyện không mong muốn thì ai sẽ tiếp tục cùng với gia đình mình thay mình làm những cái việc đó? Và những cái khoản chi phí đang chờ phía trước thì sao?",
-      "Thì ai sẽ lo chuyện đó đúng không ạ? Và cái mấy cái tiền này cũng cần phải bảo trì sửa chữa và bảo vệ nha. Vân không nói bảo hiểm nhân thọ là tốt hơn bảo hiểm ô tô vì mỗi loại có một mục đích riêng và chức năng riêng của nó.",
-      "Và bảo hiểm nhân thọ không giúp ngăn người cái rủi ro mà đến với mình đâu. Nhưng nếu chẳng may có biến cố xảy ra thì cái hợp đồng bảo hiểm thực sự nó phải có giá trị cho gia đình của mình. Và nó là một cái khoản tài chính lớn để chúng ta vượt qua cái khó khăn của mình.",
-      "Trong cuộc đời này thì có những cái thứ mất đi mình có thể cố gắng để kiếm lại được. nhưng trong lúc mình chưa có thể đứng dậy được á, những người mình yêu thương vẫn cần được sống, được học tập, vẫn tiếp tục những ước mơ của họ.",
-      "Bởi suy cho cùng tài sản quý giá nhất không chỉ là những gì mình đang có mà còn là khả năng tiếp tục tạo ra những điều tốt đẹp cho những người mình yêu thương nữa. Nên nếu anh chị thật sự muốn hiểu rõ về bảo hiểm nhân thọ, về lựa chọn những cái giải pháp tài chính cho gia đình của mình thì hãy nhắn cho Vân, Vân sẵn sàng lắng nghe, hỗ trợ để giúp cho các anh chị có những cái giải pháp phù hợp nhất.",
-      "Cảm ơn cả nhà đã theo dõi video của Vân."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền và bảo vệ bản thân cùng Khánh Vân."
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền và bảo vệ bản thân cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1333788788686799.jpg"
   },
   {
     "id": "video-094-647614",
@@ -2425,15 +1549,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quyền lợi bảo hiểm tai nạn có hiệu lực ngay lập tức không có thời gian chờ sau khi hợp đồng được cấp.",
-    "paragraphs": [
-      "Các bạn có biết á quyền lợi nào không có thời gian chờ sau khi cấp hợp đồng không? Đó chính là quyền lợi tai nạn. Vân sẽ chia sẻ một cái thông tin này rất là quan trọng mà không phải ai cũng biết.",
-      "Vân có một khách hàng đã mua hợp đồng bảo hiểm khoảng hơn một tháng thôi và chẳng may bạn bị tai nạn trong một cái lúc đi qua đường bạn ở Tây Ninh. Thì bạn được đền số tiền bảo hiểm chính là 1 tỷ. Bạn mua sản phẩm món quà tương lai và bạn có extra số tiền tai nạn nữa thêm một tỷ nữa là 2 tỷ.",
-      "Và trong đó là bạn có mua thêm 700 triệu về tai nạn tổng tất cả lại thì bạn được chi trả là 2 tỷ 7. Nhưng mà chỉ sau 30 ngày kể từ ngày bạn phát hành hợp đồng thôi. Và cái điều mà Vân muốn lưu ý trong cái câu chuyện là tai nạn không có thời gian chờ, nhưng nó là một câu chuyện bất ngờ và khi xảy ra á thì thường Vân sẽ khuyên các bạn là nên liên hệ ngay với tư vấn viên, hoặc là phải liên hệ với công an gần nhất để làm hiện trường và đặc biệt nếu mà khu vực đó có camera thì mình phải xin hàng xóm và người địa phương trích xuất cái camera đó lưu về thông tin của mình để khi mà có vấn đề gì á phát sinh mình có thể trình cho công ty bảo hiểm.",
-      "Và khi mà liên quan tới hồ sơ tai nạn thì mình cần làm rõ các bản tường trình nè, có công an nè, còn nếu không có công an thì trong bản tường trình đó mình sẽ phải ghi rất là rõ để tránh trường hợp là công ty nghĩ là à những cái trường hợp về tai nạn này á có thể phát sinh trước khi mua hợp đồng.",
-      "Thì những cái trường hợp mà vừa mua hợp đồng xảy ra sự cố thì Vân cần phải luôn luôn lưu ý với các anh chị làm rõ các cái yếu tố để mình được chi trả và đền bù một cách hợp lý nhất. Mình làm đúng làm chuẩn thì công ty sẽ chi trả đầy đủ nhé.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Nhận tư vấn giải pháp bảo vệ rủi ro tai nạn toàn diện cùng Khánh Vân."
+    "cta": "Nhận tư vấn giải pháp bảo vệ rủi ro tai nạn toàn diện cùng Khánh Vân.",
+    "thumbnail": "/images/reels/2896860660647614.jpg"
   },
   {
     "id": "video-095-582659",
@@ -2450,17 +1567,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
     "summary": "Nhận diện 3 lý do khiến 90% tư vấn viên mới không tìm được khách hàng thông qua chương trình huấn luyện chuẩn quốc tế LIMRA.",
-    "paragraphs": [
-      "Hôm nay Vân rất là tự hào vì Vân là một trong những lãnh đạo đầu tiên được lựa chọn để học chương trình Nâng cao Năng lực MDART 2026. Đây là khóa huấn luyện của Limra, Trustworthy Selling, một trong những khóa huấn luyện dành cho MDART dành cho những bạn tư vấn viên xuất sắc tại Manulife.",
-      "Và Vân là một trong những lãnh đạo đi học để nhận chuyển giao để sau này training và hỗ trợ cho đội ngũ của mình. Vân sẽ cố gắng hết mình để mà nốt lại những cái điều hay và bổ ích để chia sẻ cho cả nhà mình. Vân muốn chia sẻ về à chủ đề là 3 lý do khiến việc tìm kiếm khách hàng trở nên thất bại.",
-      "Những cái lý do mà các bạn hay gặp phải là, ví dụ như đơn giản là không hỏi, hoặc là ít nhất là không hỏi một cách thường xuyên với khách hàng của mình. Việc hỏi thăm, việc giao tiếp, việc tương tác, hoặc là một điểm chạm nào với khách hàng mình cực kỳ quan trọng.",
-      "Và nó dẫn tới là việc thiếu niềm tin vào bản thân này, à thiếu niềm tin vào sản phẩm của bạn hoặc là những quy trình mà đang làm. Vì có nhiều anh chị đi làm tại tổ chức đó nhưng vẫn chưa tin tổ chức đó. Đi làm cái công việc đó nhưng mà vẫn chưa có niềm tin thật sự về cái sản phẩm mình đang làm.",
-      "Và đặc biệt là không hiểu về quy trình, không tuân thủ quy trình cũng như không cảm nhận hết cái quy trình để mình có thể khiến mình thành công hơn. Tiếp tục đó chính là thiếu sự chuẩn bị. Không có chiến lược, không có sự chuẩn bị trước, không có một ngôn ngữ nội bộ nào để mình sử dụng cho cái công việc của mình thì nó cũng rất là khó để mình xây dựng được mình phát triển và mình tìm kiếm khách hàng thành công.",
-      "Vì cái việc mà chuẩn bị trước là một trong những việc cực kỳ quan trọng luôn. Tất cả mọi thứ cần phải có sự chuẩn bị, có sự à nỗ lực và đặc biệt có sự sắp xếp từ trước, có chiến lược từ trước thì công việc nó sẽ dễ hơn, sẽ hanh thông hơn và nó có kết quả nhanh chóng hơn.",
-      "Và đây là những lý do mà các bạn không nên mắc phải nha. Vân cũng có nhiều cái trải nghiệm và Vân rút kinh nghiệm ra và mình sẽ không để đội ngũ của mình hay những bạn tư vấn viên mới vào nghề hoặc là làm lâu năm mà xảy ra những cái tình huống này.",
-      "Nên hi vọng những cái thông tin này sẽ bổ ích và giúp ích cho các bạn xem cái video này. Cảm ơn cả nhà."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân."
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1481823693582659.jpg"
   },
   {
     "id": "video-096-579270",
@@ -2477,19 +1585,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Bảo hiểm nhân thọ có điều kiện tuyển chọn khắt khe và sức khỏe là yếu tố tiên quyết được công ty thẩm định trước khi chấp thuận.",
-    "paragraphs": [
-      "Bảo hiểm nhân thọ là không phải ai muốn mua cũng được đâu nha. Để công ty chấp thuận bảo vệ cho mình á thường sẽ cần xem xét bộ yếu tố sau đây. Yếu tố thứ nhất là đầu tiên phải có sức khỏe.",
-      "Vì bảo hiểm nhân thọ bảo vệ những cái rủi ro liên quan đến tính mạng này, đến sức khỏe thân thể của mình nè, nên công ty bảo hiểm sẽ cần đánh giá tình trạng sức khỏe của mình trước khi quyết định có chấp thuận được bảo vệ hay không.",
-      "Ví dụ nếu đang có một số bệnh lý nghiêm trọng hoặc là thuộc nhóm rủi ro cao, hồ sơ có thể bị từ chối vì loài trừ hoặc là chấp thuận có điều kiện. Ví dụ như tăng phí chẳng hạn nhưng mà vẫn bảo vệ. Nên là đừng có nghĩ là có bệnh rồi thì mới đi mua bảo hiểm nha.",
-      "Yếu tố thứ hai là yếu tố về nghề nghiệp. Vì có những khách hàng là yếu tố về sức khỏe rồi nhưng mà vẫn vướng về cái tính chất nghề nghiệp. Vì có một số nhóm ngành mức độ rủi ro rất là cao và đặc biệt nguy hiểm.",
-      "Vân ví dụ ha, một số công việc ví dụ như là liên quan đến chất cháy nổ nè, là quân nhân, đặc nhiệm, cảnh sát chống khủng bố, tội phạm hoặc là những cái môi trường nguy hiểm và các hoạt động mạo hiểm là công ty bảo hiểm không bán và từ chối ngay từ đầu.",
-      "Mỗi công ty, mỗi sản phẩm sẽ có quy định khác nhau về từng phân khúc, mức độ khác nhau. Yếu tố thứ ba là độ tuổi. Mỗi sản phẩm sẽ có độ tuổi tham gia và độ tuổi bảo vệ khác nhau.",
-      "Và thông thường khi tuổi tham gia càng cao thì chi phí bảo hiểm có thể càng lớn do mức độ rủi ro được đánh giá khác nhau. Vì vậy đừng có đợi đến lúc mà tuổi hoặc sức khỏe của mình có vấn đề đó thì mới bắt đầu tìm hiểu bảo hiểm thì lúc đó nó sẽ hơi muộn nha.",
-      "Cuối cùng là khả năng tài chính. Tài chính ở đây không có nghĩa là phải thật giàu mới có thể mua được bảo hiểm mà là phí bảo hiểm có thể được thiết kế khác nhau để phù hợp vào từng độ tuổi và nghề nghiệp, để mình có một cái sản phẩm phù hợp và mình theo lâu dài.",
-      "Vậy nên anh chị đang nghĩ là bảo hiểm nhân thọ chắc ai mua cũng được thì chưa hẳn. Trước khi tham gia hãy xem xét đủ các cái yếu tố về sức khỏe nè, nghề nghiệp, tuổi tác và tài chính để có một cái hợp đồng an tâm cho gia đình của mình.",
-      "Thì Vân nghĩ là chắc chắn là phải tìm một cái tư vấn viên chuyên nghiệp, tận tâm để họ thiết kế cho một cái hợp đồng phù hợp, phí rẻ nè, quyền lợi thì tốt nè, và đặc biệt là chăm sóc mình dài lâu. Anh chị nào mà cần tìm hiểu để mà trước khi ra một cái quyết định mua một cái hợp đồng á, thì các anh chị liên hệ Vân, Vân sẽ tư vấn để các anh chị có bức tranh trước, rồi sau đó các anh chị có thể thoải mái lựa chọn giải pháp của gia đình mình nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân."
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1740214740579270.jpg"
   },
   {
     "id": "video-097-988072",
@@ -2506,19 +1603,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Có thể gộp gia đình vào chung một hợp đồng bảo hiểm khi tài chính chưa cho phép, nhưng người trụ cột cần được ưu tiên bảo vệ cao nhất.",
-    "paragraphs": [
-      "Có nên gộp cả nhà vào chung một cái hợp đồng bảo hiểm hay không? Thực ra là nếu điều kiện kinh tế của gia đình mình mà chưa cho phép làm nhiều hợp đồng cho mỗi thành viên á, thì mình có thể gộp chung cũng được nha cả nhà. Nhưng có một điều mà Vân muốn lưu ý là nếu gia đình có người là trụ cột kinh tế, thì người đó nên được ưu tiên bảo vệ ở mức cao nhất nha.",
-      "Còn các cái thành viên khác nếu mà ngân sách chưa đủ thì mình có thể cân nhắc theo các quyền lợi về chăm sóc sức khỏe trước thôi. Còn những quyền lợi khác vẫn ưu tiên cho trụ cột gia đình nha. Thì tại sao mà Vân lại chia sẻ những cái điều này?",
-      "Vì nếu mình gom cả nhà vào một cái hợp đồng á mà không thiết kế kỹ và sau này có một số tình huống xảy ra á thì quyền lợi của những thành viên còn lại sẽ bị ảnh hưởng rất là nặng và lúc đó muốn mua lại cũng khó lắm cả nhà.",
-      "Để Vân kể cho cả nhà một cái trường hợp thực tế mà Vân mới gặp nha. Trường hợp này rất buồn luôn là Vân từng có một khách hàng tham gia chung cả gia đình trong một hợp đồng, không may sau đó khách hàng là cái người được bảo hiểm chính mắc bệnh và đột ngột qua đời.",
-      "Thì tất nhiên công ty bảo hiểm đã chi trả những cái gì liên quan tới người này rồi. Nhưng mà quyền lợi được tử vong mà giải quyết xong á đồng nghĩa với tất cả các quyền lợi trong cái hợp đồng đó sẽ được đóng hoàn toàn. Tất cả nha.",
-      "Ví dụ như vợ chồng, con trai, con gái gì mà lui theo cái hợp đồng đó là sẽ bị đóng hết. Lúc này thì vợ con cái người này muốn tiếp tục bảo vệ riêng thì đâu có được là phải tham gia hợp đồng mới. Và lúc đó tham gia hợp đồng mới chắc chắn điều đầu tiên phải cần sức khỏe.",
-      "Lỡ trước đó những năm đó vợ hay con cũng bị bệnh nhiều thì sao? Đã claim rất là nhiều rồi nghĩa là vấn đề về sức khỏe mà phát sinh sau nhiều năm rồi mình cũng không kiểm soát được. Và có khả năng bị loại trừ từ chối hoặc là hạng chế bảo vệ gì đấy.",
-      "Nhưng mà đại loại là nó sẽ không có được đảm bảo như mình mua từ sớm. Và đây chính là điều mà nhiều gia đình không nghĩ tới khi quyết định gom tất cả vào một cái hợp đồng. Cho nên là nếu mà tài chính hiện tại mà chưa đủ á, gom cả nhà vào một cái hợp đồng vẫn ok nhưng mà phương án bắt đầu á thì Vân nghĩ là các anh chị phải ưu tiên cho người trụ cột nha.",
-      "Thật kỹ và coi lại những quyền lợi và mình sẽ xác định quyền lợi luôn và chấp nhận những quyền lợi đó thì mình mới nên mua. Sau đó thì khi tài chính tốt hơn mình có thể từng bước tách riêng từng cái hợp đồng nhỏ cho từng thành viên.",
-      "Bảo vệ độc lập và đủ cái hạn mức mình mong muốn. Bảo hiểm quan trọng không chỉ có hợp đồng là đủ mà còn là có cả hợp đồng được thiết kế một cách phù hợp cho từng thành viên cũng như tài chính của chính gia đình đó. Nếu cả nhà mà đang phân vân về các cái quyền lợi hợp đồng gia đình mình và hoặc là muốn tham gia nhưng mà chưa biết nên bắt đầu là nên tham gia cho ai từ đâu và quyền lợi như thế nào á, thì có comment inbox á, Vân và team sẽ cùng hỗ trợ tư vấn một cách chi tiết, cẩn thận."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cho gia đình cùng Khánh Vân."
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cho gia đình cùng Khánh Vân.",
+    "thumbnail": "/images/reels/1014329744988072.jpg"
   },
   {
     "id": "video-099-074470",
@@ -2535,16 +1621,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quy trình và lộ trình đào tạo chuyên nghiệp cho các ứng viên muốn trở thành tư vấn viên tài chính tại Manulife.",
-    "paragraphs": [
-      "Hả? Em muốn tìm hiểu về khóa học tư vấn viên tài chính tại Manulife đúng không? Ok, để chị tư vấn cho.",
-      "Hiện nay á thì ở Manulife có rất là nhiều khóa học để cho giúp các anh chị trở thành tư vấn viên tài chính tại Manulife. Mỗi tháng sẽ có khoảng từ 3 tới 5 khóa học và Vân vẫn ưu tiên các anh chị học khóa học đầu tháng, vì một khóa học kéo dài khoảng 5 ngày.",
-      "Hai ngày đầu tiên là các anh chị đã học online trên hệ thống Academy của Manulife, 2 ngày tiếp theo các anh chị học trên lớp, thì học trên lớp có thể là tới văn phòng ở phòng học thành thật là Tôn Đức Thắng để có thể là học trực tiếp với tất cả các anh thầy cô giáo và có đủ kiến thức để mình có thể chuẩn bị thi ở Bộ tài chính.",
-      "Sau đó là mình nghỉ một ngày, và ngày tiếp theo là ngày thứ năm á là mình sẽ thi tại Bộ tài chính, sau khi thi thì mình phải cần đủ từ 30 điểm trên 40 điểm, 40 câu, nhưng mà mình cần làm đúng trên 30 câu thì mình mới đạt ở trên Bộ tài chính.",
-      "Sau đó mình sẽ phải quay về với hệ thống của Manulife và học tất cả các sản phẩm và các kỹ năng online, offline, sau đó các anh chị sẽ được load code tại Manulife. Khi thót code tại Manulife thì các anh chị đã chính thức trở thành một tư vấn viên tài chính, và ở đây các anh chị được tư vấn bảo hiểm và tư vấn các giải pháp dự phòng cho khách hàng.",
-      "Thì nghe thì có vẻ đơn giản phải không? Nhưng khi học 5 ngày và đi thi y chang đi thi đại học luôn các anh chị. Sau đó thì đó là cái bước khởi đầu thôi, rồi sau này các anh chị sẽ được học những cái kỹ năng mềm, những cái chương trình chính sách, sản phẩm về điều khoản và tất tần tật về Manulife, về hệ thống, về quy trình, về cách làm một cái hợp đồng, cách chăm sóc khách hàng, cách hỗ trợ khách hàng khi làm đền bù, thì những điều đó các anh chị sẽ được học sau.",
-      "Nên anh chị nào muốn có một cái chứng chỉ tư vấn viên tài chính hãy liên hệ với Vân nha. Chào cả nhà."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/748688371074470.jpg"
   },
   {
     "id": "video-102-242877",
@@ -2561,16 +1639,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Cơ hội bứt phá thu nhập và thăng tiến sự nghiệp ngành tài chính bảo hiểm cùng Manulife trong năm mới.",
-    "paragraphs": [
-      "Đầu năm mình nói về chuyện sự nghiệp được không cả nhà? Vân rất là quan tâm câu chuyện sự nghiệp, con đường phát triển trong tương lai của mỗi người. Ai cũng mong chờ một năm mới tới, cơ hội mới và mở ra những nấc tiếng mới đúng không?",
-      "Nhưng không phải ai cũng dám mạnh dạn thay đổi, mạnh dạn bước qua những cái suy nghĩ đó. Vân cảm thấy rằng là bản thân mình rất là may mắn luôn, vì mình bước qua được cái tôi của mình, mình bước qua được chính mình và mình làm những điều mình thích và mình tạo ra được những cái giá trị mình có tới ngày hôm nay.",
-      "Vân rất là tự hào luôn. Về cái quyết định ngày đó của mình là bước ra làm sale. Vì có nhiều anh chị cứ nghĩ rằng là làm sale nó khó lắm, khách ở đâu mà bán và làm sale rất là vất vả.",
-      "Nhưng thực ra trên đời này cái gì nó cũng có những cái giá trị của nó và thực sự làm sale cho mình học được rất là nhiều luôn, giúp đỡ cho mình có được rất là nhiều kiến thức, đặc biệt là có những cái mối quan hệ chất lượng.",
-      "Và Vân rất là hạnh phúc và tự hào khi mà Vân đã chọn con đường làm sale. Nên những anh chị nào mà đang suy nghĩ đang muốn tìm hiểu, đắn đo tìm một cái cơ hội cho năm mới thì Manulife là một sự lựa chọn. Vân sẽ chào đón rất là nhiều anh chị cộng sự đến từ nhiều ngành nghề và đặc biệt á là Vân á chào đón các anh chị làm back up fix nha.",
-      "Những anh chị mà chưa bao giờ làm sale, để muốn thử sức với ngành Bảo hiểm Nhân Thọ nè, để muốn học với kỹ năng làm sale và đặc biệt ở Manulife các anh chị có thể học được rất nhiều kỹ năng luôn. Và những cái điều này không phải ở nơi nào cũng vậy được, mà vừa học vừa thực hành nữa nó mới hay và thực hành xong nó còn tạo giá trị và các anh chị còn có thu nhập nữa đó.",
-      "Follow kênh Khánh Vân và cùng Vân đi làm bảo hiểm tại Manulife nha!"
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1170676325242877.jpg"
   },
   {
     "id": "video-100-222841",
@@ -2587,17 +1657,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Bảo hiểm nhân thọ bản chất là công cụ bảo vệ rủi ro, không phải là kênh tiết kiệm thuần túy để đòi hỏi lời lãi.",
-    "paragraphs": [
-      "Một trong những hiểu lầm lớn nhất khi mua bảo hiểm nhân thọ là, cứ đóng 100 triệu thì sau này phải lấy về hơn 100 triệu, nhưng thực tế là, điều đó còn phụ thuộc vào mục tiêu tham gia bảo hiểm của bạn là gì? Trước khi mua bảo hiểm, điều đầu tiên các bạn cần phải xác định ưu tiên là bảo vệ, hãy ưu tiên là tích lũy và hãy nhớ một điều rằng, bảo hiểm nhân thọ không phải là một kênh tiết kiệm đơn thuần, trong mỗi hợp đồng luôn có một phần chi phí để đổi lấy quyền lợi bảo vệ khi không may gặp rủi ro.",
-      "Không ai có thể bảo vệ mình miễn phí cả. Nếu bạn muốn có số tiền bảo vệ cao hơn, thêm quyền lợi sức khỏe, bệnh hiểm nghèo, tai nạn, nằm viện thì sẽ có thêm chi phí cho những quyền lợi đó. Và khi chi phí bảo vệ tăng lên thì phần tiền còn lại tích lũy sẽ ít hơn.",
-      "Ngược lại, nếu mục tiêu của bạn là muốn tối ưu cái giá trị tích lũy lên á thì hoàn toàn có những cái giải pháp phù hợp. Ví dụ như có một hợp đồng khác khách hàng đóng 10 triệu mỗi năm, trong 10 năm, tổng phí là 100 triệu, giá trị nhận về có thể cao hơn tổng số phí đã đóng, nhưng đổi lại quyền lợi bảo vệ khá là đơn giản và thấp.",
-      "Chủ yếu là bảo vệ về sinh mạng như tử vong nè, thương tật toàn bộ vĩnh viễn nè, quyền lợi như nằm viện nè, bệnh tật hay chăm sóc sức khỏe sẽ không có nếu khách hàng không tham gia thêm. Còn nếu bạn muốn khi ốm đau, nhập viện, mắc bệnh hiểm nghèo hay gặp tai nạn đều có quyền lợi chi trả thì mình cần bổ sung thêm các quyền lợi tương ứng.",
-      "Lúc này á, một phần chi phí sẽ được dùng để chi trả cho quyền lợi bảo vệ nên giá trị tích lũy sau này có thể sẽ thấp hơn so với trường hợp chỉ tập trung vào tích lũy. Thực tế có nhiều khách hàng ưu tiên sự an tâm, họ chọn tham gia đầy đủ các quyền lợi về sức khỏe, bệnh hiểm nghèo, tai nạn, chi phí mà người ta đầu tư cho việc bảo vệ này sẽ chiếm phần lớn trong hợp đồng.",
-      "Ngược lại cũng có khách hàng muốn vừa được bảo vệ đầy đủ, vừa gia tăng giá trị tích lũy, với nhóm khách hàng này mình thường tư vấn đóng thêm cái phần tích lũy để khách hàng có cái phần này cao hơn để sau này nhận được cái giá trị tốt hơn.",
-      "Không có hợp đồng nào là tốt nhất cho tất cả mọi người đâu, mà chỉ có hợp đồng phù hợp nhất cho nhu cầu khả năng tài chính của gia đình bạn lúc đó. Vì vậy, trước khi tham gia, hãy xác định rõ mục tiêu của mình là bảo vệ, tích lũy hay kết hợp cả hai, khi đó tư vấn viên mới có thể thiết kế một cái giải pháp thực sự phù hợp với bạn.",
-      "Nếu bạn chưa biết mình thuộc nhóm nào, hãy nhắn cho Vân để lại comment, Vân sẽ giúp bạn phân tích nhu cầu, thiết kế lại phương án phù hợp. Thay vì mua một hợp đồng theo cảm tính nha, thì mình phải mua hợp đồng có sự suy xét và phù hợp với gia đình của mình."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/2063307071222841.jpg"
   },
   {
     "id": "video-103-359089",
@@ -2614,17 +1675,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Sử dụng bảo hiểm nhân thọ như một giải pháp thông minh để tạo lập và chuyển giao di sản bền vững cho thế hệ sau.",
-    "paragraphs": [
-      "Dạ Vân hỏi nhỏ cái này nha. Các anh chị mà trả lời được câu này thì các anh chị comment trong cái video của mình nha. Các anh chị có nhớ bà cố các anh chị tên là gì không?",
-      "Tại sao mà Vân hỏi như vậy? Vân ghẹo các anh chị đó thực ra trong cái câu chuyện này á ghẹo nhưng mà nói là thật đó. Các anh chị mà được bà cố của mình là một cái tài sản đó 2 tỷ hay 20 tỷ hay 10 tỷ, thậm chí là một cái túi vàng, có 10 chỉ vàng đi, các anh chị sẽ nhớ bà cố tên gì?",
-      "Bà cố sinh vào ngày tháng năm nào, mất ngày nào và bà cố có ý nghĩa gì chứ trong cuộc đời của mình đúng không? Tại sao mà Vân nói như vậy? Tại vì thực sự là có rất là nhiều khách hàng người ta nghĩ là tại sao tôi phải để lại cho con?",
-      "Tôi đâu có lý do gì phải để lại cho ai cái gì đâu, đúng không? Vân nghĩ đó là cái cách mọi người nói cho xong chuyện thôi. Thật ra căn bản nếu chúng ta tạo lập và chúng ta còn tiền, còn tài sản và để lại di sản được cho con thì cái việc mà cái giá trị truyền đời nó sẽ rất là cao luôn.",
-      "Và đặc biệt là những cái đời con cháu của mình sẽ sống hạnh phúc hơn, bình an hơn trong cái điều kiện kinh tế nó tốt. Và đó là lý do tại sao năm 2026 Vân tập trung vào tạo lập di sản cho khách hàng của mình để để lại cho con cháu mai sau.",
-      "Ai cũng biết rằng là để một cái bất động sản 10 tỷ thì phải muốn bán lúc nào bán, để mà có tiền để sử dụng cho những cái việc cần thiết đúng không? Cái di sản nào mà nó có thể thanh khoản tốt nè, nó có thể làm giúp khách hàng ngay lập tức lúc đó.",
-      "Có thể là bảo hiểm thì mình có thể tạo ra được cái việc này. Nên năm 2026, ai mong muốn lựa chọn những cái giải pháp để lại di sản cho gia đình con cái và hiểu hơn được di sản là như thế nào và cách tạo lập nó, hãy liên hệ Khánh Vân nha.",
-      "Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1600032904359089.jpg"
   },
   {
     "id": "video-104-188741",
@@ -2641,21 +1693,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Phân tích chi tiết giá trị tài khoản và quyền lợi rút tiền sau 15 năm tham gia sản phẩm 'Gia đình tôi yêu' của Manulife.",
-    "paragraphs": [
-      "Số một, câu hỏi mà rất là nhiều khách khi tham gia hợp đồng bảo hiểm nhân thọ thường thắc mắc rằng, nếu tôi đóng phí 15 năm rồi thì có rút tiền ra được không? Và rồi hợp đồng có còn được bảo vệ nữa hay không? Hôm nay Vân lấy một cái sản phẩm, một sản phẩm gia đình tôi yêu để làm ví dụ nha.",
-      "Do sản phẩm này nhà Vân có sáu hợp đồng rồi đấy cả nhà. Tôi sẽ nói cho cả nhà một cách dễ hiểu ha. Đầu tiên, mọi người cần hiểu rằng rút tiền về chấm dứt hợp đồng là hai cái trường hợp hoàn toàn khác nhau.",
-      "Trên hợp đồng sẽ có phần thể hiện về giá trị hoàn lại, nhưng nếu muốn rút một phần tiền mà vẫn duy trì được cái hợp đồng của mình thì mình vẫn kiểm tra giá trị tài khoản để mình biết là thể là duy trì được hay không. Ví dụ như giả sử sau 15 năm tham gia, giá trị tài khoản của bạn là 227 triệu đồng.",
-      "Nếu bạn muốn rút một phần giá trị tài khoản của mình theo điều khoản hợp đồng mà khách hàng được quyền rút tối đa 80% á thì trong tài khoản thì có thể tiếp tục duy trì hợp đồng bình thường nha. Tuy nhiên, không có nghĩa là bạn cứ rút tiền rồi để lại 20% này, chắc chắn bảo vệ đến 99 tuổi là không phải nha cả nhà.",
-      "Cái việc này nhiều người suy nghĩ sai lắm. Vậy số tiền còn lại trong hợp đồng sẽ được duy trì như thế nào? Còn 20% đó thì công ty tiếp tục trích các cái loại phí trong phần tiền 20% đó và tiếp tục bảo vệ cái hợp đồng này.",
-      "Các loại phí như phí rủi ro, phí quản lý hợp đồng đó cả nhà. Những khoản phí này sẽ được khấu trừ theo quy định của sản phẩm. Ví dụ, giả sử tổng phí bị khấu trừ của một năm là 9,5 triệu, năm thứ 15 thì bạn đã để lại trong tài khoản là 100 triệu đi, thì công ty sẽ khấu trừ hàng năm 9,5 triệu đó vào cái 100 triệu này.",
-      "Nếu giá trị tài khoản đủ để duy trì các cái khoản phí này á thì hợp đồng hiệu lực sẽ luôn luôn được đảm bảo ha. Ngược lại, nếu số tiền còn lại không đủ để duy trì á thì hợp đồng mình sẽ có thể là bị mất hiệu lực. À có một thời điểm nữa, nó cũng rất là hay.",
-      "Ví dụ như gần hết tiền cái hợp đồng này mà muốn đóng thêm tiền vào để có tiền bảo vệ cái hợp đồng này tiếp thì được không? Được luôn nha cả nhà. Đây là một trong những quyền lợi siêu đỉnh của hợp đồng gia đình tôi yêu đó cả nhà.",
-      "Vân cũng muốn nói thêm một chút xíu nữa, để cho cả nhà tóm lại thông tin ha, sau 15 năm đóng phí á, bạn có thể cân nhắc là rút tiền hợp đồng khi mà đáp ứng đầy đủ điều kiện cho phép ha. Nhưng rút bao nhiêu để lại bao nhiêu hợp đồng thì mình phải cân nhắc và xem xét hợp đồng của mình.",
-      "Thật ra là nếu mà không có cần tiền thì đừng có rút cả nhà. Mình để dành đó rồi sau này mình có cái quỹ hưu trí. Còn nếu thực sự mình cần thì mình cứ xem xét là cần rút bao nhiêu để mình tính toán, mình rút cho hợp lý để cái hợp đồng mình được bảo vệ dài lâu nha.",
-      "Nếu mà cả nhà đang sở hữu cái hợp đồng gia đình tôi yêu và đang có ý định rút tiền hoặc là ngưng đóng phí thì hãy suy nghĩ kỹ, liên hệ Vân, Vân sẽ hướng dẫn, tại vì hợp đồng gia đình tôi yêu xịn lắm. Tới bây giờ Vân vẫn giữ nguyên sáu cái hợp đồng gia đình tôi yêu cho mình và một cách linh hoạt đóng phí để mình có thể vừa tiết kiệm và được bảo vệ tốt nhất.",
-      "Cảm ơn cả nhà đã theo dõi video của Vân. Vân tin rằng Vân sẽ giúp các anh chị hiểu thêm được nhiều sản phẩm trong những video sắp tới nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1114349671188741.jpg"
   },
   {
     "id": "video-101-245551",
@@ -2672,14 +1711,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quy định pháp luật hiện hành về việc chỉ định người thụ hưởng trong hợp đồng bảo hiểm nhân thọ để tránh tranh chấp.",
-    "paragraphs": [
-      "Người thụ hưởng thì có thể là bé A được không? Kinh nghiệm của Vân là có nhiều anh cũng có nhiều vợ. Và rất là mong muốn và rất là có trách nhiệm nha, thì có trách nhiệm mới mua hợp đồng bảo hiểm để lại cho các bạn.",
-      "Nhưng mà hiện nay thì pháp luật không có cho phép việc đó nữa. Cách đây khoảng hơn 1 năm rưỡi về trước thì tất cả khách hàng tại Manulife mà mua hợp đồng bảo hiểm muốn để người thụ hưởng cho ai cũng được, cho bạn gái, bạn trai, cho người yêu, cho bạn thân mình cũng được nữa, cho bố mẹ, con cái, những người mình muốn thôi.",
-      "Chứ không phải rằng là có mối quan hệ huyết thống. Và sau này luật có thay đổi thì phải là có mối quan hệ là bây giờ là các chị yên tâm lắm. Anh đi đâu để chứ mua hợp đồng bảo hiểm thì giá nào người vợ cũng nhận hoặc là con nhận thôi, chứ không có ai nhận được nữa đâu nha.",
-      "Mình cũng đem tìm hiểu về những quyền lợi trong cái hợp đồng bảo hiểm, vì cái quyền lợi mà người thụ hưởng á nhiều người quan tâm lắm. Follow những video tiếp theo để Vân có thể chia sẻ về người thụ hưởng trong hợp đồng bảo hiểm nên là ai nha.",
-      "À cảm ơn cả nhà đã follow kênh Khánh Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/2378549219245551.jpg"
   },
   {
     "id": "video-105-143380",
@@ -2696,29 +1729,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Lý do vì sao những năm đầu tham gia bảo hiểm chưa thấy giá trị tài khoản cao và tại sao không nên hủy hợp đồng sớm.",
-    "paragraphs": [
-      "Khi mà các bạn tham gia hợp đồng bảo hiểm Nhân Thọ mà chưa thấy được cái giá trị gì cảm thấy là hợp đồng này không có lợi và cứ chăm chăm muốn rút cái hợp đồng này sớm và hủy đi. Nhưng các bạn có biết rằng những năm đầu mà tham gia hợp đồng bảo hiểm Nhân Thọ là khách hàng chưa thể thấy về giá trị về mặt tài khoản được, vì hợp đồng những năm đầu trừ phí rủi ro rất là nhiều mà.",
-      "Nhưng nếu khách hàng biết cách duy trì hợp đồng dài lâu thì những năm về sau khách hàng có thể nhận được nhiều quyền lợi. Tuy nhiên trên hợp đồng không có quá nhiều người đủ kiên trì để giữ cái hợp đồng nó đến thời điểm đúng của nó.",
-      "Nếu khách hàng nào mà đang tham gia sản phẩm Tự do mơ ước an bình hoặc là Quà tặng con yêu thì đây là một trong những sản phẩm bảo vệ vừa có cơ chế rút tiền mặt siêu đỉnh tại Manulife luôn. Một cái điểm cực kỳ hay là cứ 3 năm một lần công ty sẽ chi trả phí tiền mặt kể từ năm thứ sáu trở đi.",
-      "Cả nhà thấy sản phẩm này hay chưa, hôm nay Vân review là cái sản phẩm đó đó nha. Ví dụ thực tế về hợp đồng chị khách hàng của Vân tham gia bảo hiểm với mức phí là 13 triệu hơn trên một năm, chị đóng phí trong vòng 12 năm thôi.",
-      "Bắt đầu từ năm thứ sáu trở đi thì cứ mỗi 3 năm á chị sẽ nhận được 5% số tiền bảo hiểm. Ví dụ như số tiền bảo hiểm của chị là 170 triệu đồng. Như vậy cứ 3 năm một lần chị sẽ nhận được 170 triệu nhân với 5% thì chị được 8,5 triệu đồng.",
-      "Khoản tiền này được chi trả định kỳ theo điều khoản hợp đồng và theo cách giải thích trong cái ví dụ này. Việc nhận phí tiền mặt không làm giảm đi giá trị tài khoản hợp đồng của chị đó luôn. Thì khách hàng này hỏi Vân là: \"Vậy chị có nên rút hết giá trị tài khoản hợp đồng luôn và đóng luôn hợp đồng?",
-      "Vì chị thấy dòng tiền trong tài khoản bảo vệ hơi thấp và chị muốn bổ sung hợp đồng khác.\" Cả nhà cũng biết là bây giờ Manulife ra những dòng sản phẩm bảo vệ tiền tỷ không đúng không ạ? Nhưng mà mỗi hợp đồng nó có những cái giá trị khác nhau, nên Vân nghĩ là mình sẽ cân nhắc ha.",
-      "Chị hoàn toàn có thể tham gia hợp đồng mới nhưng đừng có vội rút hợp đồng cũ. Cùng nhìn vào cái bảng dòng tiền với Vân như sau ha, chị đóng 13 triệu trên một năm. Nhưng đến năm thứ 12 chị vẫn chưa hòa vốn.",
-      "Thứ nhất giá trị tài khoản của chị là 102 triệu đồng. Khoản 102 triệu đồng này được dùng làm cơ sở để minh họa cái khả năng sinh lời của hợp đồng. Tiếp theo là một khoản phí tiền mặt chị đã bắt đầu nhận khoản tiền này từ năm thứ sáu và cứ 3 năm chị đã nhận 8,5 triệu đồng.",
-      "Đến năm thứ 12 chị đã nhận được ba lần, tương đương tổng là 25,5 triệu đồng đúng không ạ? Ngoài ra còn có những cái khoản bảo tức tích lũy, có thể hiểu đơn giản rằng công ty sử dụng nguồn vốn để đầu tư và nếu có kết quả kinh doanh phù hợp với cơ chế thì chia cái bảo tức của sản phẩm này khách hàng sẽ có thể được chia là một phần theo quy trình của hợp đồng.",
-      "Vì vậy đối với cái khoản giá trị hoàn lại 102 triệu đồng ở bảng minh họa này chị nên cân nhắc rất là kỹ trước khi rút nha. Đối với phiếu triệt tiền mặt và bảo tức tích lũy khi nhận được tiền chị có thể cân nhắc sử dụng khoản tiền đó để mình không lăn tăn là có cần phải rút giá trị hoàn lại kia nữa không.",
-      "Khi tham gia sản phẩm mới với cái nhu cầu của mình thay vì rút toàn bộ hợp đồng để mình mua hợp đồng mới thì chị có thể xem xét giữ lại hợp đồng hiện tại và sử dụng những cái quyền lợi nhận được để mình có thể tiếp tục những cái hợp đồng mới.",
-      "Là khi đã hoàn thành nghĩa vụ phí cho một cái hợp đồng nào đó rồi á thì khách hàng luôn được tiếp tục hưởng quyền lợi tiếp theo trong cái hợp đồng đó nên mình không có nên bỏ nha cả nhà. Chị khách hàng của Vân hiện là chưa đến 36 tuổi đâu, nghĩa là vẫn còn tới 63 năm nếu trên cái tinh thần một cột mốc 100 tuổi.",
-      "Cái ví dụ trong video chị có thể nhận thêm cái khoản là 21 lần rút phiếu tiền mặt. Các anh chị thử nhân 21 lần với cái số tiền 8,5 triệu đi ha. Tương đương với 178 triệu đồng.",
-      "Nếu đáp ứng đầy đủ các điều kiện chi trả trong những năm tiếp theo. Sau khi nhận phí tiền mặt này và bảo tức tích lũy giá trị còn lại trong hợp đồng tiếp tục được đầu tư và tăng lên. Và đây là một trong những cái nghỉ Vân nghĩ là cả nhà phải lưu ý vì quyền lợi bảo vệ mình vẫn còn nè, giá trị thì được tăng lên thì quá là lợi cho khách hàng rồi.",
-      "Nên mình vẫn duy trì hiệu lực cái hợp đồng này thì khách hàng sẽ được nhận cái điều kiện mà khách hàng có. Ngược lại nếu chị rút hợp đồng ở thời điểm hiện tại chỉ có thể nhận về được hơn 100 triệu đồng theo giá trị được đề cập trong cái ví dụ trên.",
-      "Tuy nhiên chị cũng có thể mất đi những cái quyền lợi bảo vệ trong cái phiếu tường mặt trong tương lai. Nên cái việc chấm dứt hợp đồng là anh chị phải rất là cần nhắc ha. Các anh chị nào đang tham gia sản phẩm quà tặng con yêu thì cũng kiểm tra xem hợp đồng của mình có quyền lợi phí tiền mặt tương tự hay không nhé.",
-      "Nếu mà cần tiền anh chị có thể tìm hiểu những phương án là rút một phần giá trị tài khoản, nếu sản phẩm của mình cho phép có thể thực hiện cái điều đó. Như vậy các anh chị có thể giải quyết được cái nhu cầu tài chính trước mắt của mình mà không nhất thiết phải chấm dứt hợp đồng của mình.",
-      "Anh chị có thể hoàn toàn thực hiện các cái thao tác rút tiền ngay trên ứng dụng của Manulife và không thể nhất thiết phải đến quầy giao dịch đâu nha các anh chị. Hoặc là các anh chị có thể liên hệ trực tiếp cho Khánh Vân để Khánh Vân có thể hỗ trợ thủ tục rút tiền một cách nhanh chóng và dễ hiểu nhất.",
-      "Cảm ơn cả nhà đã xem video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1858458845143380.jpg"
   },
   {
     "id": "video-106-073743",
@@ -2735,16 +1747,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Giải pháp chuẩn bị 'của hồi môn' và quỹ tài chính vững chắc cho con cái ngay từ khi còn nhỏ.",
-    "paragraphs": [
-      "Bạn đã chuẩn bị của hồi môn cho con mình chưa? Vân là chuẩn bị rồi nha. Vân có sanh phú quý để lại cho các con của mình rồi đó.",
-      "Tại sao Vân lại nói câu chuyện của hồi môn? Bản thân chúng ta là những người lập gia đình thì bố mẹ cũng để lại của hồi môn cho mình mà đúng không? Ví dụ như không có nhiều thì có chút chút, mỗi gia đình là một cái điều kiện, một hoàn cảnh khác nhau.",
-      "Khi mà các bạn tìm bạn đời cho mình, mà bạn có một chút tài sản trong tay á, thì bạn cũng tự tin với bạn đời của mình, tự tin với cuộc sống, với tương lai. Thực ra có một số bố mẹ nói với Vân á là chỉ cái lần sinh con ra và nuôi con đi học là xong.",
-      "Sau này các con tự lo thì đúng rồi. Nếu mà cứ để vậy thì các con cũng sẽ tự lo được, nhưng nếu thực sự mà chúng ta có sự chuẩn bị nhiều hơn á, thì con chúng ta sẽ tự tin hơn, đúng không cả nhà? Cả nhà có đồng ý với Vân như vậy không?",
-      "Thậm chí Vân có nghĩ Vân vơ như thế này nè, thời buổi của Vân á mà để mua được một căn nhà đã rất là khó rồi. Nhưng thời buổi các con mình là 20 năm nữa mà các con chuẩn bị tiền để mua một căn nhà á là không hề đơn giản. Nên nếu chúng ta có khả năng để đầu tư và để chuẩn bị cho các con mình, Vân nghĩ cũng là tốt mà.",
-      "Con của mình sẽ cảm thấy rất là biết ơn, trân trọng và hạnh phúc khi ở trong một gia đình có sự lo lắng của bố mẹ, ông bà. Và đây là cái sự văn hóa mình tạo ra luôn. Ai mà chưa chuẩn bị của hồi môn cho con mình mà không có nhiều tiền á thì mình có thể dành một khoảng tiền để mình đầu tư vào sanh phú quý, mình chuẩn bị cho con mình cũng là một phương án rất là hay đó cả nhà.",
-      "Bạn nào mà cần tìm hiểu thêm một cái món quà cho tương lai cho con của mình thì liên hệ với Vân để tìm hiểu sanh phú quý nha. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nhân thọ về sanh phú quý nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1676054700073743.jpg"
   },
   {
     "id": "video-107-271559",
@@ -2761,16 +1765,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Minh chứng thực tế về tốc độ chi trả quyền lợi bảo hiểm tai nạn nâng cao nhanh chóng cho khách hàng gặp chấn thương.",
-    "paragraphs": [
-      "Trưa nay, vào lúc 6:00 tối, Vân có một tin nhắn đặc biệt của một người khách hàng. Khách hàng nhắn là: \"Vân ơi, anh gửi em cái màn hình nè, sao công ty em lẹ quá vậy? Sao Vân mới hỏi là lẹ chuyện gì?\".",
-      "Anh nói là ảnh mới nhận được 100 triệu rồi. Các anh chị biết là khách hàng vừa nhận 100 triệu cho quyền lợi gì không ạ? Đó chính là quyền lợi tai nạn nâng cao của bên Vân.",
-      "Trước đây á khách hàng có mua những quyền lợi tai nạn nâng cao, chỉ cần gãy xương sườn là cứ một chiếc xương sườn là được 5 triệu. Và anh ấy đã bị gãy hai chiếc xương sườn. Thì cụ thể cái nội dung của cái trường hợp mà khách hàng bị như sau: Khách hàng đi làm việc từ công ty về nhà và khách hàng bước lên bậc tam cấp á, thì khách hàng bị trượt chân và ngã xuống là vì gãy hay cái xương sườn và gãy một cái xương đòn.",
-      "Thì sau đó là khách hàng về nhà và cũng chưa làm đền bù vì hết nghĩ là nó chưa tới cái mức phải đi bệnh viện đâu. Xong qua ngày mai là khách hàng thấy khó chịu trong người đau hơn và khách hàng đã đi tới C s để chụp phim. Về sau khi phát hiện là gãy xương sườn thì khách hàng cũng được bác sĩ tư vấn là về nhà theo dõi và từ từ nó sẽ liền lại.",
-      "Thì trong cái quá trình này thì anh khách hàng cũng không nghĩ là mình sẽ nhược nhận cái quyền lợi bảo hiểm, mà về nói với vợ và vợ nói thôi để em cứ làm clam thử rồi Manulife chi trả như thế nào. Thì sau khi đó thì người vợ đã liên hệ với Vân và Vân đã hướng dẫn để làm cái bản tường trình á là tai nạn như thế nào và có ai làm chứng là có hai chú bảo vệ làm chứng bảo cái bạn đó là ghi rất là rõ số điện thoại của chú bảo vệ trong cái bản tường trình luôn.",
-      "Thì sau khi công ty Manulife xem xét các thứ thì chưa đầy một tuần luôn là tiền đã chuyển vào tài khoản của anh rồi và anh rất là vui và anh nói là mỗi ngày anh đều đi chia sẻ giá trị bảo hiểm với rất nhiều người. Và anh nói là anh là người tự tìm tới bảo hiểm chứ không phải là bảo hiểm tìm anh nữa.",
-      "Thì sau cái chuyện này anh sẽ lan tỏa nhiều hơn nữa, mình có thể là chia sẻ cho nhiều người biết và sử dụng bảo hiểm một cách đúng đắn, chuyên nghiệp và yên tâm hơn. Follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm nhé!"
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/3925260364271559.jpg"
   },
   {
     "id": "video-108-323478",
@@ -2787,16 +1783,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Nguyên nhân khách hàng không được chi trả quyền lợi bệnh hiểm nghèo do thiếu sót khi thiết kế đúng gói sản phẩm bảo vệ.",
-    "paragraphs": [
-      "Mua hợp đồng bảo hiểm năm mươi triệu mà tới lúc bị ung thư không có được trả luôn. Ai mà đang thắc mắc những cái vấn đề tương tự như vậy, tại vì có nhiều lúc anh chị được kể, được nghe hay là trong hoàn cảnh luôn thì đừng có bỏ qua cái clip này nha.",
-      "Vì anh chị biết tại sao cái hợp đồng đó không được trả không? Vì là khi đi mua hợp đồng đó anh chị đâu có mua quyền lợi bệnh lý nghiêm trọng đâu. Năm mươi triệu mà anh chị dành 40 triệu mua sản phẩm chính bảo hiểm sinh mệnh và 10 triệu đi mua quyền lợi tai nạn và không có mua quyền lợi ví dụ như thẻ sức khỏe nè, hỗ trợ miễn đóng phí nè hay trợ cấp y tế hay là bệnh lý nghiêm trọng.",
-      "Thì khi bị bệnh ung thư hay là một cái bệnh bất kỳ nào phải nhập viện là đã không được trả chi phí rồi. Nên khi đi mua hợp đồng bảo hiểm là nên tìm hiểu hợp đồng của mình cẩn thận và đặc biệt là hãy liên hệ với các tư vấn viên chuyên nghiệp để họ hỗ trợ hợp đồng hiểu ý gia đình của mình.",
-      "Và đồng thời khi đi mua hợp đồng các anh chị phải có trách nhiệm đọc hiểu và thắc mắc gì phải hỏi lại cái người tư vấn viên đó, được không? Và những các anh chị nào mà đang gặp những hoàn cảnh mà mua hợp đồng mà không hiểu hợp đồng mình có gì và có đủ quyền lợi hay chưa?",
-      "Hay là đang còn thắc mắc về những cái hợp đồng của mình là khi tôi bị ung thư tôi được bao nhiêu, tôi có được chi trả không? Hay là những khi tôi nằm viện do mổ ruột thừa hay là tôi sinh em bé tôi có được trả trong cái hợp đồng này không?",
-      "Thì nhắn cho Vân hỗ trợ thêm được không? Tại vì bây giờ mỗi ý người là mua một cái hợp đồng một cái hoàn cảnh khác nhau nên là cũng không có biết được là các bạn đang mua quyền lợi gì. Nên là gửi thông tin inbox cho Vân để Vân review những cái hợp đồng cho các anh chị.",
-      "Để khi mình phát sinh quyền lợi gì mình cũng được nhận. Được không cả nhà? Follow kênh kênh Vân để nhận thêm nhiều cái thông tin giá trị nha."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/2070885720323478.jpg"
   },
   {
     "id": "video-109-243003",
@@ -2813,17 +1801,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Tầm quan trọng của việc trang bị kiến thức nền tảng trước khi gặp tư vấn viên để sở hữu bản hợp đồng tối ưu nhất.",
-    "paragraphs": [
-      "các kiến thức cần chuẩn bị trước khi gặp tư vấn viên. Vì sao mà Vân lại chia sẻ cái nội dung này? Và Vân thấy nó quan trọng lắm, khi mà mình không chuẩn bị cái thông tin sẵn á, thì mình gặp tư vấn viên á, là mình sẽ không có đủ hết các cái thông tin để mình hỏi tư vấn viên, cũng như là mình sẽ không tạo ra được cái bản thiết kế hợp đồng cho phù hợp với gia đình mình.",
-      "Vân nghĩ là cái kiến thức đầu tiên là các anh chị phải hình dung ra là gia đình mình đang cần bảo vệ cái gì. Ví dụ gia đình á thì họ có những nhu cầu về bảo vệ người trụ cột nè, bảo vệ về y tế nè, bảo vệ tai nạn nè, hay bảo vệ về quỷ về học vấn giáo dục nè, hay là quỷ hưu trí.",
-      "Thì đây là những cái mục tiêu ban đầu của khách hàng phải có. Sau đó là mình phải xác định được là cái mức phí mà mình dành cho cái hợp đồng bảo hiểm của gia đình mình là bao nhiêu. Thì cái đây là một cái công thức mà Vân chia sẻ luôn ha.",
-      "Nó là công thức chung trên toàn thế giới luôn á. Thì đa số khách hàng sẽ sử dụng từ 10 đến 20% thu nhập của mình để dành đầu tư vào kênh bảo hiểm để trang bị quỹ dự phòng cho gia đình. Rồi, cái tiếp theo á, khách hàng phải hiểu được gia đình mình ai là người cần mua bảo hiểm ưu tiên nhất.",
-      "Mục tiêu về mà ưu tiên cho người trụ cột là cực kỳ quan trọng. Mình phải biết là trong gia đình chỉ có một trụ cột hay có hai trụ cột. Nếu có hai trụ cột thì mình nhớ là chia cái tài chính ra cho hai trụ cột để làm hai cái hợp đồng.",
-      "Còn nếu mình có ít tài chính mà có một trụ cột thì mình phải đầu tư cho cái người trụ cột, đúng không ạ? Rồi, cái điều cuối cùng mà Vân luôn luôn nhấn nhủ với khách hàng là khi mình tham gia hợp đồng bảo hiểm là mình sẽ phải chuẩn bị những cái câu hỏi ví dụ như là tôi đóng cái hợp đồng này để bao nhiêu năm và tôi đóng được quyền lợi gì và sau bao nhiêu năm tôi được đấu hạng, chẳng hạn vậy.",
-      "Hợp đồng này mua thì phải đợi bao nhiêu thời gian chờ. Nó có những cái điều khoản loại trừ ra sao? Và chắc chắn một cái điều không thể thiếu đó chính là mình bị bệnh gì, mình phải khai hết với tư vấn viên và yêu cầu họ khai vào hồ sơ để hay là hợp đồng về công ty bảo hiểm á thì người ta làm chuẩn nhất, cả nhà mình lưu ý những cái điều Vân vừa chia sẻ nhé.",
-      "Nếu mà chuẩn bị đầy đủ rồi á thì các anh chị rất là tự tin gặp tư vấn viên của công ty nào cũng được hết. Chúc tất cả các anh chị tìm ra những cái tư vấn viên ưu tú, chất lượng để phục vụ gia đình mình nhé."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1391580676243003.jpg"
   },
   {
     "id": "video-111-151884",
@@ -2840,19 +1819,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Chỉ ra 3 thời điểm vàng để tham gia bảo hiểm cho con giúp tối ưu chi phí và trọn vẹn quyền lợi.",
-    "paragraphs": [
-      "Có ba thời điểm mua bảo hiểm mà rất là nhiều bố mẹ không biết. Rất nhiều gia đình thường đợi là khi con có bệnh nè, hoặc là bản thân có vấn đề về sức khỏe thì mình mới bắt đầu đi tìm hiểu về bảo hiểm. Nhưng lúc đó thường thì sẽ gặp hai trường hợp: Một là phí cao hơn, hai là không còn được tham gia đầy đủ các quyền lợi như mình mong muốn nữa.",
-      "Nếu mà muốn phí thấp hơn, quyền lợi tốt hơn, thì bố mẹ nhớ giúp Vân ba thời điểm này nha. Những cái thời điểm này rất là quan trọng á. Thứ nhất, mua khi còn trẻ, đặc biệt là với trẻ nhỏ, cứ xong đúng 30 ngày tuổi vừa sinh ra là mình mua bảo hiểm liền cho con.",
-      "Vì bảo hiểm á tính dựa trên cái mức độ rủi ro, tuổi càng nhỏ, sức khỏe càng tốt. Thông thường á tầm mức phí sẽ càng thấp, nên nếu mà bố mẹ mà đã có ý định mà chuẩn bị bảo hiểm cho con thì đừng có đợi con lớn rồi mới mua nha.",
-      "Thứ hai là mua khi còn khỏe, cái này là rất là quan trọng cho tất cả mọi người. Cái còn khỏe thì cái gì nó cũng dễ hơn cho mình. Bảo hiểm không phải là sản phẩm đợi mình tới lúc bệnh rồi mình mới đi mua cả nhà.",
-      "Ví dụ như bé đã từng bị viêm phổi, viêm phế quản, viêm amydan hoặc là những cái bệnh khác thì khi tham gia tùy tình trạng sức khỏe, hồ sơ bệnh thì công ty có thể phát sinh những cái loại trừ điều chỉnh mức phí hoặc là giới hạn những quyền lợi không được mua.",
-      "Còn khi sức khỏe của bé mà đang tốt, hồ sơ sức khỏe chưa có vấn đề gì hết á thì mình sẽ có nhiều cơ hội để lựa chọn cái quyền lợi cho mình phù hợp hơn. Thứ ba là mua trước ngày sinh nhật. Cái này là nhiều bố mẹ không có để ý đâu.",
-      "Trong bảo hiểm có khái niệm là tuổi bảo hiểm, nên khi qua sinh nhật mức phí có thể được tính theo cái độ tuổi thực tế. Thì ví dụ như là một tuần nữa mới tới sinh nhật mà hôm nay mình mua là rẻ hơn, là sau một tuần mua là qua một tuổi mới rồi.",
-      "Vì vậy mà đôi khi á khác nhau chỉ vài ngày thôi, nhưng mức phí nó đã có sự à khác biệt rõ ràng. Nên nếu bố mẹ đã xác định tham gia hợp đồng cho con á thì đừng để tới sát ngày sinh nhật mới chốt lại tìm hiểu nha. Thật ra là khi mua bảo hiểm á thông minh thì không cần phải đợi tới cái chuyện mình mới nghĩ tới bảo hiểm.",
-      "Mà mình chuẩn bị khi mọi thứ vẫn còn đang rất tốt, để phí nhẹ hơn, quyền lợi bảo vệ tốt hơn và quan trọng là mình có sự chủ động khi sức khỏe của mình đang có vấn đề. Nếu mà bố mẹ muốn biết hiện tại con mình à phù hợp với mức bảo vệ nào hay là mức phí như thế nào à thì các anh chị có thể nhắn Vân.",
-      "Vân sẽ làm những cái bản dự thảo để gửi cho các bác mẹ à tham khảo và mình có thể chuẩn bị cho con mình nhé."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1438797828151884.jpg"
   },
   {
     "id": "video-112-886842",
@@ -2869,12 +1837,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Sử dụng công cụ tài chính thông minh để để lại di sản tiền tỷ cho con cái ngay cả khi tài chính ban đầu hạn chế.",
-    "paragraphs": [
-      "Có nhiều tiền để lại di sản là bình thường, nhưng có ít tiền cũng để được lại di sản, đó mới là phi thường. Bằng cách nào mà chúng ta có thể để lại được di sản khi chúng ta không có nhiều tiền lắm? Ví dụ như là muốn để lại di sản cho con 3 tỷ, 5 tỷ hoặc là một cái nhà trị giá 10 tỷ chẳng hạn, mà mình không có nhiều tiền để có thể mua lại những cái tài sản đó hoặc để giá trị tiền mặt cho con, thì mình sẽ có cái cách này Vân nghĩ là rất là hợp lý.",
-      "Hiện nay với sản phẩm Xanh Tương Lai tại Manulife, chỉ cần trích 10 triệu thôi với tuổi của Vân nè, sẽ được bảo vệ 1 tỷ đồng rồi. Và khi cái giá trị di sản này để lại cho con á, thì các anh chị muốn để lại 5 tỷ đúng không?",
-      "Các anh chị chỉ cần đầu tư 50 triệu mỗi năm. Thì mình có ít tiền mà, chỉ có 50 triệu, mỗi năm mà mình có thể để lại một cái di sản 5 tỷ cho con thì tại sao không đúng không? À nếu mình chưa có quá nhiều tiền thì mình cũng có thể sử dụng những cái công cụ tài chính và đặc biệt là công cụ tài chính của bảo hiểm là một trong những công cụ rất hay luôn mà mình nên tận dụng nó để sử dụng cho những cái kế hoạch tài chính lâu dài cho gia đình, cho con và cho những người thân yêu của mình nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/849840667886842.jpg"
   },
   {
     "id": "video-114-650450",
@@ -2891,23 +1855,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Làm rõ bản chất thực sự của bảo hiểm nhân thọ là mua quỹ dự phòng tài chính trước những biến cố lớn về y tế.",
-    "paragraphs": [
-      "Bảo hiểm nhân thọ là mua cái gì mà tháng nào cũng phải đóng tiền vậy? Rồi đóng bao nhiêu năm cuối cùng cũng chẳng nhận được gì. Thử tưởng tượng nè, có một ngày bác sĩ nói với mình là ca này cần khoảng 100 triệu để tiếp tục điều trị nha người nhà.",
-      "Bạn có thể hoảng lên. Nhưng Vân nghĩ là bạn vẫn xoay xở được đó. Nhưng nếu con số đó là 500 triệu, một tỷ đồng.",
-      "Lúc đó bạn mới bắt đầu tính đủ thứ hết, suy nghĩ đủ thứ hết. Tiền tiết kiệm của mình còn bao nhiêu? Có phải bán tài sản không?",
-      "Có phải vay mượn không? Gia đình có thể hỗ trợ được bao nhiêu? Và điều đáng sợ nhất là chi phí điều trị không phải lúc nào cũng biết trước được.",
-      "Hôm nay vài chục triệu. Tháng sau lại thêm vài chục triệu nữa. Và có những trường hợp chi phí điều trị các anh chị biết không, lên đến hàng trăm triệu luôn, thậm chí hàng tỷ đồng.",
-      "Và đây là một trong những câu chuyện rất là nan giải của nhiều người. Và đây là cái giao dịch thanh toán lần gần nhất là 80 triệu đồng tại bệnh viện Ung Bướu nha. Chứ không phải bệnh viện quốc tế gì đâu.",
-      "Cho một tháng uống thuốc điều trị bệnh ung thư phổi giai đoạn cuối. Và gần 80 triệu đồng này cho chỉ trong một lần thanh toán thôi nha. Và nếu có những cái khoản chi phí như vậy cứ tiếp tục phát sinh hàng tháng đều đặn để điều trị á, thì gia đình mình sẽ xoay xở như thế nào cả nhà?",
-      "Đến lúc đó bạn mới nhận ra rằng mình không thiếu người thương mình, mình chỉ thiếu một khoản tiền đủ lớn để chống lại rủi ro bệnh tật đối với mình. Bạn bè có thể cho mình mượn vài triệu, người thân có thể cố gắng hỗ trợ giúp mình vài chục triệu, nhưng rất khó có người có thể đứng bên cạnh và nói bạn, \"Cứ yên tâm điều trị đi, một tỷ này là để tôi lo cho bạn.\" Có ai làm được việc đó không cả nhà?",
-      "Vân nghĩ là không luôn á. Và đó là một trong những lý do là bạn cần tham gia bảo hiểm để phòng ngừa rủi ro. Bảo hiểm không làm cho bạn không gặp rủi ro, nhưng nếu có quyền lợi phù hợp và sự kiện xảy ra đáp ứng được đúng cái điều kiện hợp đồng, nó có thể tạo thêm một cái nguồn tài chính rất là lớn để mà mình có thể yên tâm những cái lúc cần thiết nhất.",
-      "Vậy nên khi còn khỏe, bạn rất là khó cảm nhận được giá trị của bảo hiểm. Bởi vì thứ bạn mua không phải là một món đồ của ngày hôm nay, để ngày mai mình lấy ra dùng, mà bạn đang mua cho sự chuẩn bị cho ngày mai. Mình hy vọng cả đời này cũng không bao giờ phải dùng đến.",
-      "Cả nhà thấy bảo hiểm đặc biệt không? Đừng có mua bảo hiểm chỉ vì người tư vấn nói hay. Trước khi tham gia hãy hiểu thật là rõ, mình được bảo vệ quyền lợi gì, mình bảo vệ như thế nào?",
-      "Bảo vệ trong bao lâu, đóng phí như thế nào và điều kiện để được hưởng những quyền lợi chi trả? Vì khi mình hiểu những cái điều này rồi thì mình rất là tự tin khi mua hợp đồng bảo hiểm luôn. Tất nhiên, bạn sẽ có một kế hoạch dự phòng như ý muốn của bạn, phù hợp với tài chính của mình và bạn sẽ lâu dài với công ty bảo hiểm đó.",
-      "Và nếu bạn vẫn đang suy nghĩ tìm một cái người tư vấn phân tích giúp bạn, mình biết mình cần làm gì, mình cần bảo vệ ra sao á, thì đừng có ngần ngại, hãy nhắn cho Vân. Vân sẽ hỗ trợ đưa cho bạn một cái bức tranh tài chính riêng dành cho bạn, để bạn có thể hiểu được và ra quyết định dễ dàng hơn.",
-      "Và Vân sẽ giúp các anh chị hiểu rõ được cái sản phẩm mà các anh chị đang cần. Cảm ơn cả nhà đã xem video của Vân!"
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1140666971650450.jpg"
   },
   {
     "id": "video-113-963724",
@@ -2924,18 +1873,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hướng dẫn khách hàng cách kiểm tra và xử lý hợp đồng bảo hiểm khi đại lý cũ nghỉ việc.",
-    "paragraphs": [
-      "Hợp đồng bảo hiểm không còn tư vấn viên chăm sóc thì phải làm sao? Đây thật ra là một tình huống mà rất là nhiều khách hàng có thể gặp phải. Vậy khi tư vấn viên không còn làm nữa thì hợp đồng của mình sẽ được xử lý như thế nào?",
-      "Ví dụ như ở tại Manulife ha, khách hàng có thể kiểm tra thông tin đại lý đang phục vụ hợp đồng của mình là ai qua cái trang kiến thức của công ty luôn. Tùy theo quy trình và tình trạng phân bổ thì hợp đồng có thể được chuyển cho một tư vấn viên để tiếp tục hỗ trợ.",
-      "Trong trường hợp chưa có tư vấn viên phục vụ á, thì khách hàng vẫn có thể liên hệ bộ phận dịch vụ khách hàng của công ty. Khách hàng vẫn yên tâm được Manulife hỗ trợ phục vụ đầy đủ nên các anh chị yên tâm khoản này nha. Nếu hợp đồng của mình á hiện không có người trực tiếp chăm sóc á thì mình nên làm gì?",
-      "Theo Vân thì có ba điều mà mình nên biết để xử lý khi mà mình gặp phải cái trường hợp này. Thứ nhất á là hãy chủ động nắm cái thông tin hợp đồng của mình. Các bạn phải biết ngày đóng phí nè, thời hạn đóng phí nè, các quyền lợi bảo hiểm và những cái điều khoản quan trọng.",
-      "Khi cần tra cứu thì hãy sử dụng ứng dụng những cái kênh chính thức của công ty, các anh chị có thể đăng nhập vào app của công ty. Thứ hai là khi có vấn đề phát sinh á, hãy liên hệ đúng nơi. Ví dụ như là cần cập nhật thông tin đóng phí hay là tìm hiểu thêm về quyền lợi hoặc là có thay đổi về vấn đề về hợp đồng á thì bạn có thể liên hệ tới tổng đài nè, chăm sóc khách hàng để mình được hướng dẫn cụ thể để mình biết làm như thế nào.",
-      "Thứ ba, đừng để mình hoàn toàn phụ thuộc vào một cái người tư vấn viên nào hết á. Người tư vấn viên có chuyên môn, có trách nhiệm sẽ giúp bạn rất là nhiều. Nhưng bản thân mình cũng cần phải hiểu hợp đồng của mình khi mà người tư vấn viên thay đổi công việc á.",
-      "Nếu bạn có hợp đồng bảo hiểm mà chưa có hiểu rõ về quyền lợi nè, hiện tại chưa có người phục vụ á, đang gặp khó khăn trong cái quá trình mà mình sử dụng hợp đồng á thì đừng có ngại gì, cả nhà cứ nhắn cho Vân để Vân hỗ trợ.",
-      "Còn một cách nữa hay lắm, bên Vân có khóa học tư vấn viên tài chính miễn phí. Các anh chị có thể từ vào học, từ vào chăm sóc hợp đồng của mình, review hợp đồng và có thể tìm hiểu sâu hơn về quyền lợi hợp đồng của mình. Và biết đâu các anh chị có thể có thêm cơ hội nghề nghiệp tại Manulife, có thêm một cái cơ hội kiếm thêm thu nhập và đặc biệt là hiểu rõ về bảo hiểm để chia sẻ cho những người thân mình, có thể sử dụng bảo hiểm Nhân thọ một cách chuyên nghiệp nhất.",
-      "Cảm ơn cả nhà đã theo dõi video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1937541230963724.jpg"
   },
   {
     "id": "video-117-515211",
@@ -2952,16 +1891,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Làm rõ quy định thời điểm phát sinh hiệu lực bồi thường của hợp đồng bảo hiểm đối với từng loại rủi ro.",
-    "paragraphs": [
-      "Tham gia bảo hiểm là được dùng ngay, là ví dụ như hôm nay mình mua hợp đồng, ngày mai mình được phát hành, ngày mốt mình được dùng ngay, đúng không cả nhà? Cái này nó chỉ đúng với trường hợp tai nạn và những cái trường hợp mà mất đột ngột thôi và không có rõ nguyên nhân, và nó không liên đới tới những bệnh có trước nha các anh chị.",
-      "Còn nếu mà, là ví dụ như khách hàng á mà đã có bệnh rồi mà không có khai, xong tự nhiên mua xong mấy ngày sau cái có vấn đề về tim mạch và đột quỵ thì cũng không có được chi trả. Đây là những cái trường hợp mà Vân nghĩ rằng là mọi người phải cần lưu ý vì tham gia bảo hiểm là có thời gian chờ.",
-      "Đối với tai nạn thì không cần có thời gian chờ. Nhưng đối với những cái, ví dụ như thẻ sức khỏe là phải chờ những bệnh thông thường 30 ngày, nhưng mà đặc biệt là 90 ngày. Đối với bệnh ung thư là chờ 90 ngày.",
-      "Và tất nhiên là loại trừ bệnh có sẵn, ví dụ như di truyền, bẩm sinh, hoặc là khám tổng quát, khám định kỳ. Những cái đó, tiêm ngừa là những cái việc bảo hiểm nó sẽ không có trả luôn. Nên mình sẽ nhớ được những cái việc về thời gian chờ và loại trừ.",
-      "Nên là tham gia bảo hiểm thì sẽ phải hiểu là mình phải chờ bao nhiêu ngày cho loại bệnh nào. Thì thường Vân vẫn khuyên khách hàng là thôi chờ luôn 90 ngày luôn, khỏi quen cái mốc 30 ngày. Vì 30 ngày là cho bệnh nhẹ thôi, nên mình cứ chờ hẳn luôn tới 90 ngày, rồi đó mình có thể sử dụng thoải mái.",
-      "Nhưng mà thường khách hàng của Vân không có ai chờ để được sử dụng hết á, mà chỉ cần mới sử dụng thôi nha cả nhà. Và cái thời gian chờ mình phải cần lưu ý để mình không có phạm phải những cái cái việc mà nó ngồi ý muốn và lúc đó mình đã mua hợp đồng rồi nhưng mình lại không có xài được.",
-      "Cảm ơn cả nhà đã follow kênh Khánh Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1195294572515211.jpg"
   },
   {
     "id": "video-118-815957",
@@ -2978,15 +1909,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Chia sẻ hành trình chuyển dịch từ chuyên gia ngân hàng ANZ sang sự nghiệp gắn bó lâu dài và thành công tại Manulife.",
-    "paragraphs": [
-      "Tại sao Vân chọn Manulife mà không phải là một ngành nghề nào khác? Ra các anh chị mà follow nhiều cái video trước đây của Vân, đều biết Vân là dân ngân hàng, Vân làm ngân hàng ANZ được 7 năm rưỡi và sau đó mình có cơ hội chuyển qua Manulife.",
-      "Thực sự là cơ hội đến với Manulife nó là tình cờ, nhưng sau đó nó là một trong những cái hành trình đặc biệt trong cuộc đời của Vân. Vân đi làm, Vân cũng có gia đình và có con. Mình muốn tìm những cái công việc có thể dành thời gian nhiều hơn để mình nuôi dạy con cái của mình nè.",
-      "Mình tìm cái thời gian chủ động để cho bản thân mình và đặc biệt là mình có những cái thu nhập cao hơn và có cái hành trình phát triển rộng hơn. Đó Vân quyết định là chọn Manulife để tìm kiếm một cái cơ hội của mình. Cái lý do lớn nhất mà Vân muốn làm công việc này lâu dài và đến mãi về sau luôn, đó chính là giúp đỡ người khác, bảo vệ người yêu thương của họ.",
-      "Và khi Vân nhìn thấy cái hành động một ai đó bảo vệ cho người họ thương cảm thấy rất là tự hào vì mình mới giúp một người một ai đó để họ có thể cái việc ý nghĩa với gia đình, với con cái và với cuộc sống bản thân họ. Điều đó giúp Vân có động lực hơn, có niềm tin hơn và Vân thực sự tự hào khi mình đã chọn đúng Manulife, chọn ngành bảo hiểm nhân thọ.",
-      "Vân biết là có nhiều anh chị trước đây chưa biết bảo hiểm nhân thọ là gì, nhưng sau đó cũng đã tìm hiểu và đam mê như Vân. Nên Vân chào đón rất là nhiều anh chị và mong muốn tìm hiểu cơ hội Manulife để mà có thể đồng hành cùng Vân trong con đường phía trước.",
-      "Follow kênh Khánh Vân để cùng Vân trở thành một cộng sự của Manulife nha."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1194630552815957.jpg"
   },
   {
     "id": "video-120-271349",
@@ -3003,13 +1927,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Bật mí quy trình tuyển dụng và xây dựng văn hóa đội ngũ đoàn kết, phát triển vững mạnh tại Vùng kinh doanh lớn nhất nước.",
-    "paragraphs": [
-      "Quy trình để xây dựng được một đội ngũ vững chắc, đoàn kết và phát triển bền lâu. Và hôm nay Vân sẽ chia sẻ cho các anh chị là tại sao Hồ Chí Minh 69 có thể trở thành cái vùng kinh doanh mạnh và lớn nhất nước, cũng như là cái văn hóa của Hồ Chí Minh 69 là cực kỳ đoàn kết và yêu thương nhau.",
-      "Tại sao lại có điều đó? Vì đầu tiên, mỗi một anh chị đến với Hồ Chí Minh 69 sẽ được vân phỏng vấn một cách kỹ lưỡng để chia sẻ về văn hóa, về những thông tin cần biết tại khu vực. Vân hay nói với các anh chị ứng viên mới như thế này, Vân cũng cần biết rõ tính cách và đặc điểm của anh chị để xem chúng ta có phù hợp nhau hay không.",
-      "Sau khi chúng ta phù hợp nhau, chúng ta mới về thành một team được. Điểm chốt đầu vào của khu vực mình rất là chắc và gắt gao, để cho thấy rằng là mình tuyển chọn những nhân sự chất lượng. Về tâm, về tài, sự sâu sắc, sự thấu hiểu, sự đồng cảm và sự bao dung cho nhau, những tính cách đó cần có trước khi trở thành một tư vấn viên.",
-      "Và sau khi vào khu vực của Vân rồi ấy, họ được cảm nhận, được thấy tinh thần, được thấy văn hóa tận mắt, thì việc người ta thay đổi và thích nghi, cũng như học hỏi từ chút là một phần của Hồ Chí Minh 69. Follow kênh Thanh Vân để nhận những thông tin giá trị về cơ hội nghề nghiệp tại Menulife."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1303508521271349.jpg"
   },
   {
     "id": "video-119-512635",
@@ -3026,14 +1945,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Khách hàng bị gãy xương không nằm viện vẫn được chi trả viện phí và nhận tiền mặt từ quyền lợi tai nạn nâng cao.",
-    "paragraphs": [
-      "Khi bị gãy xương, không có nằm lại bệnh viện điều trị mà đi về nhà thì có được nhận quyền lợi của công ty bảo hiểm hay không? Vân muốn làm rõ cho các anh chị khi tham gia hợp đồng bảo hiểm ha. Khi mà bị gãy xương mà mình mua cái quyền lợi tai nạn mà tai nạn nâng cao thì nó luôn luôn có cái quyền lợi là gãy xương là đã được chi trả rồi.",
-      "Vân ví dụ như khách hàng của Vân vừa rồi có gãy ba cái xương sườn và mỗi cái xương sườn như vậy là được trả 50 triệu thì ba cái là 150 triệu, thì công ty chỉ cần biết là khách có gãy thôi. Còn cái việc mà khách có phẫu thuật hay là khách có điều trị hay không là công ty sẽ không quan tâm các anh chị.",
-      "Đây là một cái trường hợp mà mình chi trả cho cái quyền lợi tai nạn và nhận tiền mặt nha. Khi mà có vấn đề gì thì khách hàng sẽ được nhận đúng như trong quyền lợi. Nhưng Vân ví dụ, khách hàng khi bị gãy xương và cần phải phẫu thuật và có mua thêm cái thẻ y tế khi nằm bệnh viện, phẫu thuật cái ca phẫu thuật đã hết 100 triệu, công ty vẫn chuyển khoản trả 100 triệu đó và đồng thời vẫn trả ba cái xương sườn đó, tiền chi trả riêng.",
-      "Thì đây là một trong những cái quyền lợi mà rất là đặc biệt và ưu việt trong bảo hiểm luôn mà không phải ai cũng biết. Nên tùy theo trường hợp có những trường hợp mình đã có mua quyền lợi rồi thì nếu có gãy xương mà không cần phải điều trị tại bệnh viện thì vẫn được chi trả bình thường nha.",
-      "Follow kênh Khánh Vân để nhận những cái thông tin giá trị về bảo hiểm."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1300921268512635.jpg"
   },
   {
     "id": "video-121-165728",
@@ -3050,17 +1963,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Hướng dẫn cách kiểm tra giá trị tài khoản và rút tiền bảo hiểm minh bạch sau 10-15 năm tham gia.",
-    "paragraphs": [
-      "Đóng bảo hiểm 10 năm, 15 năm, muốn rút tiền thì làm như thế nào? Này Vân sẽ chỉ cho các anh chị nha. Rất là nhiều anh chị tham gia bảo hiểm Nhân thọ cả chục năm, đến khi cần tiền mới loay hoay là không biết giá trị tài khoản của mình còn bao nhiêu.",
-      "Mình rút ra bằng cách nào đúng không? Hỏi tư vấn viên thì lại nghe những câu như rút bây giờ mất nhiều lắm, thậm chí có thể mất trắng luôn. Vậy làm sao để mình chủ động kiểm tra được số tiền của mình trong tài khoản có là bao nhiêu?",
-      "Với những cái hợp đồng có giá trị hoàn lại và giá trị trong tài khoản anh chị hoàn toàn có thể chủ động kiểm tra cái thông tin này trên ứng dụng của công ty Bảo hiểm. Giả sử đối với công ty Bảo hiểm, anh chị có thể tải app ứng dụng Việt Nam về điện thoại.",
-      "Sau đó tìm đến cái phần hợp đồng của tôi và chọn danh mục giá trị tài khoản. Lúc này các anh chị có thể biết giá trị tài khoản của mình là bao nhiêu á, thì từ đó các anh chị có thể cân nhắc được số tiền mình muốn rút hay là để tiếp tục duy trì.",
-      "Khi mà các anh chị có số tiền trong tài khoản mà các anh chị thấy rồi á, mà các anh chị vẫn muốn duy trì hợp đồng mà rút một phần á, thì bây giờ Việt Nam cũng đã có tính năng rút giá trị tài khoản trên cái app của mình luôn.",
-      "Nếu rút một phần thì các anh chị có thể thao tác ở trên app điện thoại là được ha. Nếu anh chị còn muốn chấm dứt hợp đồng thì anh chị rút hết hợp đồng và đóng hợp đồng, nhận lại cái giá trị hợp đồng của mình ha. Thì các anh chị lại quầy giao dịch để mà tiến hành đóng và rút hoàn toàn số tiền này về.",
-      "Nhưng có một điều quan trọng là số tiền nhận về khi tất toán có thể thấp hơn cái tổng số tiền mình đã đóng nha. Và hợp đồng sẽ chấm dứt luôn, những cái quyền lợi bảo hiểm của mình sẽ không còn nữa. Vì vậy mà khi quyết định mình hãy kiểm tra lại thật kỹ nhé các anh chị.",
-      "Nếu mà anh chị nào chưa biết cách kiểm tra giá trị hợp đồng trên app thì hãy liên hệ với Vân, team nhà Vân sẽ hỗ trợ các anh chị để kiểm tra lại cái giá trị tài khoản của mình nha. Cảm ơn các anh chị đã theo dõi video của Vân."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1502145125165728.jpg"
   },
   {
     "id": "video-122-948815",
@@ -3077,19 +1981,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Phủ định tư duy sai lầm 'đợi có bệnh mới mua bảo hiểm' bằng châm ngôn mua khi còn khỏe mạnh để được bảo vệ.",
-    "paragraphs": [
-      "Ủa, có bệnh rồi mới cần mua bảo hiểm. Đang khỏe mạnh thì mua làm cái gì? Các anh chị có đang nghĩ vậy không?",
-      "Chứ đợi phát hiện bệnh rồi mới đi mua bảo hiểm á thì công ty bảo hiểm chỉ cần mở văn phòng ngay trước cửa bệnh viện. Bước ra khỏi bệnh viện là có tư vấn viên đứng ngay chờ sẵn tư vấn cho các anh chị luôn. Anh chị vừa phát hiện bệnh phải không?",
-      "Mua bảo hiểm đi chị. Em tư vấn cho em lên cái hợp đồng xong, tắp hợp đồng xong rồi chị quay vô bệnh viện chị điều trị được luôn. Nếu mà công ty bảo hiểm hoạt động như vậy á thì chắc là công ty bảo hiểm phá sản hết rồi không còn 17 công ty đang hoạt động như bây giờ đâu các anh chị.",
-      "Vì bản chất của bảo hiểm chính là mình chuẩn bị trước cho một rủi ro mà mình không biết trước nó xảy ra như thế nào và khi nào. Chứ không phải đợi biết mình có bệnh hay là xảy ra tai nạn thì lúc đó mình mới đi tìm hiểu một cái bảo hiểm cho bản thân của mình.",
-      "Một cái ví dụ rất là đơn giản cho các anh chị hình dung nha. Hôm nay anh chị đang khỏe, tham gia hợp đồng bảo hiểm và được công ty chấp nhận bảo hiểm đúng theo điều kiện và trọn vẹn các quyền lợi có trong hợp đồng. Một thời gian sau chẳng may mà mình bị bệnh và phải điều trị, nếu sự kiện đó mà thuộc phạm vi bảo hiểm không nằm trong cái khoản loại trừ nha, và đáp ứng đầy đủ các điều khoản trong hợp đồng thì tất nhiên là anh chị sẽ được chi trả một cách đầy đủ và được công ty bảo hiểm thanh toán tất cả những cái quyền lợi có liên quan.",
-      "Còn nếu mình đã biết mình bệnh đã có triệu chứng hoặc là đang điều trị rồi mới đi mua thì tình trạng sức khỏe đó phải được khai báo và các công ty bảo hiểm sẽ thẩm định, không phải cứ mua là được bảo hiểm cho cái căn bệnh mình đã biết trước đó.",
-      "Vì thỉnh thoảng có một số khách hàng mà bị một cái vài bệnh nhẹ nhẹ cũng khai báo và công ty loại trừ đúng cái bệnh đó thôi. Và đây cũng là lý do mà Vân thường nói với khách hàng, đừng có đợi đến khi mà cần bảo hiểm nhất mới bắt đầu đi tìm bảo hiểm.",
-      "Thì lúc mình còn khỏe, mình có nhiều sự lựa chọn, còn khi sức khỏe đã có vấn đề, có thể xảy ra nhiều trường hợp, mình không có lường trước được, thì lúc đó được chấp nhận hay là chấp nhận có điều kiện hoặc là tăng phí các thứ thì mình cũng phải chấp nhận theo đó các anh chị.",
-      "Anh chị hãy nhớ rằng chính vì mình đang khỏe, nên đây là lúc mình chủ động để chuẩn bị cái hợp đồng cho riêng bản thân của mình, mình sẽ không biết điều gì sẽ xảy ra trong tương lai. Nếu anh chị đang tìm hiểu một cái gói bảo hiểm nhưng chưa biết là mình nên chuẩn bị gì hay tình trạng sức khỏe hiện tại của mình có tham gia được hay không thì hãy comment vào bên dưới hoặc nhắn tin cho Vân.",
-      "Vân sẽ kiểm tra hồ sơ y tế để báo thẩm định sơ bộ cho các anh chị, hình dung là hợp đồng của mình được mua ra sao với mức phí như thế nào nhé."
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1739425513948815.jpg"
   },
   {
     "id": "video-124-593794",
@@ -3106,19 +1999,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
     "summary": "Làm rõ tính chất công việc tại Manulife theo kênh agency, kết hợp giữa quản lý và bán hàng cá nhân.",
-    "paragraphs": [
-      "Đi làm Manulife thì cần làm những cái công việc nào? Hôm nay thì cũng có nhiều bạn nhắn tin Vân hỏi về chi tiết công việc làm tại Manulife. Hôm nay Vân lên cái video này để chia sẻ cho các anh chị để mình hiểu rõ tính chất công việc tại Manulife ha.",
-      "Vân tuyển nhân sự theo kênh đại lý, kênh agency và tuyển nhân sự là làm sale. Làm sale ở đây mình có thể vừa làm quản lý vừa bán hàng cá nhân. Nếu mà các anh chị xác định ngay từ đầu là bán hàng cá nhân thì mình chỉ là tập trung cái kỹ năng làm sale, kỹ năng tư vấn khách hàng và chốt hợp đồng tiếp xúc khách hàng thôi.",
-      "Nhưng nếu mà mình xác định là mình lên quản lý, mình sẽ phải học thêm những cái kỹ năng về quản lý và tuyển dụng nhân sự để phát triển cái đội ngũ của mình. Nhưng công việc chính mà khi mà trở thành một cái chuyên viên tư vấn tại Manulife thì mình làm gì?",
-      "Thì chắc chắn rồi. Đầu tiên là mình sẽ phải xây dựng thương hiệu cá nhân của mình. Xây dựng thương hiệu cá nhân thì bằng cách nào?",
-      "Bằng cách là mình phải đi học kỹ sản phẩm, điều khoản, xây dựng uy tín những cái điều mình nói là mình phải làm và mình hiểu đúng, tư vấn đúng và chăm sóc khách hàng đầy đủ. Và khi mình làm hàng ngày thì mình sẽ có được cái kết quả tốt thì bắt đầu là cái thương hiệu của mình ngày một nó đi lên.",
-      "Và cái việc của mình là việc mở rộng nguồn khách hàng, tư vấn cho khách hàng nghe hiểu, làm hợp đồng cho khách hàng và chắc chắn là chăm sóc khách hàng về sau này. Thì đây là những cái công việc chính tại Manulife, nhưng 30% còn lại là các anh chị phải dành thời gian để đi học.",
-      "Học các khóa kỹ năng, học về tài chính, học rất là nhiều cái kiến thức và thi rất là nhiều cái bằng cấp nữa. Thì Vân nghĩ là đây là những cái việc chính yếu, nhưng mà thời gian thì có ràng buộc không? Thời gian Manulife chỉ ràng buộc những cái buổi nào liên quan tới học, tới họp, tới những cái chương trình yêu cầu bắt buộc.",
-      "Cái thời gian còn lại á thì các anh chị thoải mái, đi đâu về đâu là việc của mình. Cuối tháng mình có được kết quả, mình có được thu nhập và mình gắn kết được đội ngũ, đó là cái điều chính yếu nhất. Nên là đi làm Manulife hoàn toàn cái thời gian của mình để chủ động công việc, chủ động cơ hội và đặc biệt là mình chủ động với những cái điều mình mong muốn.",
-      "Mình muốn kiếm bao nhiêu lương là mình trả lương cho mình. Mình muốn có thu nhập tương xứng hoặc là muốn phát triển cái thu nhập lên tầm cao cũng là mình quyết định luôn. Được không các anh chị?",
-      "Thế nên là Vân hi vọng là các anh chị xem xong cái video này mà còn thắc mắc những thức thông tin về Manulife, inbox cho Vân nghe, follow kênh Khánh Vân để nhận những thông tin giá trị về bảo hiểm Nhân thọ."
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/1330083138593794.jpg"
   },
   {
     "id": "video-123-222733",
@@ -3135,16 +2017,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Giải đáp thắc mắc về việc được đền bù từ nhiều hợp đồng bảo hiểm khác nhau và phân biệt quyền lợi chi trả.",
-    "paragraphs": [
-      "tham gia nhiều hợp đồng bảo hiểm thì khi xảy ra sự cố thì có được nhận tiền hết từ các cái hợp đồng bảo hiểm này hay không? Câu trả lời Vân chia sẻ là chắc chắn là có nha. Nhưng mà mình phải phân biệt các cái quyền lợi để mình biết cái quyền lợi nào là có, là không.",
-      "Vân sẽ nói qua một cái vài cái quyền lợi mà mình sẽ được nhận được từ tất cả các hợp đồng, kể cả các công ty luôn. Ví dụ như quyền lợi về sinh mạng nè, quyền lợi về bệnh lý nghiêm trọng hoặc là tai nạn, hoặc là trợ cấp y tế.",
-      "Thực tế, một khách hàng mà có thể mua được nhiều hợp đồng ở nhiều công ty, thậm chí ở một công ty thì mua được rất nhiều hợp đồng. Khi mà có vấn đề gì xảy ra á, thì khách hàng hoàn toàn nhận được tiền độc lập trên mỗi hợp đồng.",
-      "Ví dụ như hợp đồng này mua 500 triệu, hợp đồng kia mua 500 triệu thì mỗi bên nhận được 500, có nghĩa là được 1 tỷ đồng. Nên cái việc này là chắc chắn, nhưng có một cái điều các anh chị cần lưu ý đó chính là thẻ sức khỏe. Thì thẻ sức khỏe sẽ chi trả hẳn mức tối đa.",
-      "Và khi sau hết hẳn mức đó, thì mình có thể dùng cái thẻ tiếp tục ở một công ty bạn để mình có thể chi trả cái phần tiền còn lại. không có phải gọi là lo lắng về trong cái câu chi phí. Còn những cái khoản tiền còn lại là mình được được nhận về trong hợp đồng của mình rồi.",
-      "Nên các anh chị yên tâm nha. Nên mua hợp đồng bảo hiểm thì nếu công ty bảo hiểm vẫn còn bán cho các anh chị, vẫn chứng minh được tài chính để mua thêm hợp đồng và vẫn chứng minh được khả năng về sức khỏe, thì mình hoàn toàn được cấp hợp đồng và mua nhiều hợp đồng bảo hiểm, để mình không có lo lắng là mình mua nhiều thì có được trả hay không.",
-      "Nếu anh chị nào có nhiều hợp đồng mà chưa có thống kê được hết tất cả các quyền lợi thì có thể inbox hay gửi thông tin cho Vân, Team Vân sẽ hỗ trợ các anh chị thống kê lại các quyền lợi để mình biết là tổng cái giá trị hợp đồng bảo hiểm của mình á, được bao nhiêu để mình yên tâm sống cho một cuộc sống rất là vui vẻ và bình an nha."
-    ],
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân"
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "thumbnail": "/images/reels/1424668426222733.jpg"
   },
   {
     "id": "video-125-250529",
@@ -3161,18 +2035,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Minh chứng thực tế về việc bảo hiểm chi trả chi phí phẫu thuật nạo VA hơn 31 triệu đồng cho khách hàng nhí 6 tuổi.",
-    "paragraphs": [
-      "Bé 6 tuổi phẫu thuật VA chi phí hơn 31 triệu thì công ty bảo hiểm Manulife chi trả như thế nào? Có những lúc các con mình đi bệnh viện nghĩ là những cái việc rất là đơn giản và tưởng chừng như là không có tốn nhiều chi phí.",
-      "Nhưng chi phí lại rất là cao và cái trường hợp này là hơn 30 triệu. À đây là một cái khách hàng của Vân và được hỗ trợ claim đã nhận tiền bảo hiểm rồi. Bé được chuẩn đoán là phì đại VA và bác sĩ cần phải phẫu thuật.",
-      "Và cái việc này nó ảnh hưởng tới cái đường thở của con, bé mới mua hợp đồng vào năm 2020 và vừa rồi là ngày 13 tháng 5 nhập viện thì nhập viện có một ngày 14 tháng 5 là bé đã ra viện rồi. May mắn là trước đó bố mẹ đã mua cho bé một cái thẻ sức khỏe vàng tại Manulife.",
-      "Cái hạn mức của sức khỏe vàng này là điều trị nội trú 500 triệu một năm và một đợt điều trị mà có phẫu thuật lên đến 200 triệu, rất là nhiều đúng không? Và cái trường hợp này á thì sau khi mà hoàn tất hồ sơ, claim các thứ xem xét chi trả quyền lợi cho cái hợp đồng này á thì Manulife chi trả 28 triệu.",
-      "À bảo hiểm y tế trả 2,5 triệu thì các anh chị biết rồi đó, bố mẹ không có tốn nhiều tiền nữa đúng không? Trẻ con á thì thường mọi người nghĩ là nằm viện nó sẽ không tốn nhiều tiền, nhưng trên thực tế những cái khoản chi phí y tế có thể lên tới một số tiền cao rất là bất ngờ luôn.",
-      "Mà mình không thể lường trước được là con mình bị bệnh khi nào và bị bệnh như thế nào và thậm chí có cần phải phẫu thuật hay không. Ít nhất á khi mà chẳng may có vấn đề xảy ra mà mình có một cái sự chuẩn bị về tài chính á thì bố mẹ sẽ yên tâm hơn rất là nhiều.",
-      "Như cái trường hợp này thì nếu không có sự chuẩn bị từ trước thì bố mẹ sẽ phải chuẩn bị tiền hơn 31 triệu để mà chi trả cho cái chi phí này. Còn khi đã có thẻ sức khỏe á thì mình có thể giảm bớt gánh nặng về tài chính. Tập trung vào công việc chăm sóc con nhiều hơn hoặc là lúc đó mình đi làm mình cũng không bị phân tán tư tưởng nữa.",
-      "Nuôi con thì chẳng ai mong có ngày phải dùng đến cái thẻ bảo hiểm, chẳng ai muốn con mình vào bệnh viện đâu cả nhà. Nhưng đôi khi chính những cái lúc như vậy mình mới thấy thực sự là có sự chuẩn bị trước nó vẫn quan trọng hơn rất là nhiều.",
-      "Nếu mà bạn nào á mà chưa chuẩn bị cái thẻ sức khỏe này cho con mình, Vân khuyên là nên chuẩn bị nha, mua công ty nào cũng được miễn sao là mình thấy phù hợp với chi phí của mình. Bạn nào mà cần hiểu sâu hơn các cái loại thẻ thì có thể inbox Vân, Vân sẽ hỗ trợ để hướng dẫn thêm để con cái mình yên tâm để có một cái sự bảo vệ trọn vẹn nhé!"
-    ],
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ"
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
+    "thumbnail": "/images/reels/1390792253250529.jpg"
   },
   {
     "id": "video-126-165531",
@@ -3189,12 +2053,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
     "summary": "Khẳng định văn hóa tổ chức dựa trên tình yêu thương và sự chân thành là yếu tố tiên quyết giữ chân nhân sự.",
-    "paragraphs": [
-      "Bất cứ khi minh sao hay chính lựa chọn phong cách nào để theo đuổi xây dựng văn hóa bền vững như ngày hôm nay, đó chính là dựa trên tình yêu thương. Như trong video này, Vân muốn chia sẻ về cách xây dựng văn hóa bằng tình yêu, hỗ trợ nhau trong những bước đầu tiên.",
-      "Thì các bạn sẽ cảm thấy được sự chân thành, sự ấm áp và các bạn sẽ ở lại cái khu vực này để học tập và phát triển. Thì khi có những cái khó khăn, thách thức xảy ra thì sẽ có người mình cầm tay kéo mình đi. Chứ không có để ai để mình lại trơn á các bạn.",
-      "Các anh chị vừa giỏi, vừa nhiệt tình, vừa dễ thương, vừa biết điều nữa. Đi làm sale mà như vậy là thích lắm. Môi trường mà các anh chị biết là chỉ có đoàn kết, không có quan tính, không có nói xấu lẫn nhau, không có bài trừ nhau mà luôn luôn là tìm những cái điểm tốt để học, thấy những cái được chỗ hạn chế thì mình góp ý để cùng sửa đổi và phát triển, tạo nên cái sự bền vững về văn hóa trong những cái tháng ngày mà Vân đang lãnh đạo.",
-      "Từ một cái tim chỉ có một mình Vân, Vân tuyển năm nhân sự đầu tiên xong 10, xong 20, xong 100 và 500 và vẫn luôn luôn quan hệ thương yêu nhau. Và chắc chắn đó chính là câu chuyện về văn hóa. Follow kênh Khánh Vân để nhận nhiều thông tin giá trị về cơ hội nghề nghiệp tại Manulife nhé!"
-    ],
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân"
+    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "thumbnail": "/images/reels/809064868165531.jpg"
   }
 ];
