@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { VIDEO_LIBRARY, VideoItem } from './data/videos';
 import { VideoLibrarySection } from './components/VideoLibrarySection';
+import { AiAdvisorWidget } from './components/AiAdvisorWidget';
 
 const FACEBOOK_URL = 'https://www.facebook.com/nguyen.t.van.9250?locale=vi_VN';
 const ZALO_URL = 'https://zalo.me/0931579771';
@@ -1863,6 +1864,19 @@ export function App() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     setSubmitted(true);
+                    fetch('/api/lead', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        fullName: formData.fullName,
+                        phone: formData.phone,
+                        email: formData.email,
+                        topic: formData.topic,
+                        background: formData.background,
+                        note: formData.note,
+                        source: 'contact_form',
+                      }),
+                    }).catch(() => {});
                   }}
                   className="space-y-8"
                 >
@@ -2046,11 +2060,17 @@ export function App() {
         </div>
       </footer>
 
+      {/* AI ADVISOR HYBRID CHATBOT WIDGET */}
+      <AiAdvisorWidget
+        onOpenVideo={(video) => openVideo(video)}
+        hidden={Boolean(activeArticle || activeVideo || lightbox)}
+      />
+
       {/* FLOATING QUICK CONTACT BUTTONS — MANULIFE EMERALD STYLE + GENTLE BREATHING HALO */}
       <aside
         aria-label="Kênh kết nối trực tiếp Khánh Vân"
         className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col gap-3.5 sm:gap-4 items-end pointer-events-auto select-none transition-all duration-300 ${
-          activeArticle || lightbox ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'
+          activeArticle || activeVideo || lightbox ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'
         }`}
       >
         {/* 1. NÚT ZALO CHÍNH THỨC (MANULIFE EMERALD) */}
