@@ -2066,21 +2066,15 @@ export function App() {
         hidden={Boolean(activeArticle || activeVideo || lightbox)}
       />
 
-      {/* FLOATING QUICK CONTACT BUTTONS — MANULIFE EMERALD STYLE + GENTLE BREATHING HALO */}
+      {/* FLOATING QUICK CONTACT BUTTONS — MOVED TO THE LEFT SIDE FOR A CLEAN & SPACIOUS LAYOUT */}
       <aside
         aria-label="Kênh kết nối trực tiếp Khánh Vân"
-        className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col gap-3.5 sm:gap-4 items-end pointer-events-auto select-none transition-all duration-300 ${
+        className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] left-4 sm:left-6 z-40 flex flex-col gap-3.5 sm:gap-4 items-start pointer-events-auto select-none transition-all duration-300 ${
           activeArticle || activeVideo || lightbox ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'
         }`}
       >
         {/* 1. NÚT ZALO CHÍNH THỨC (MANULIFE EMERALD) */}
-        <div className="group relative flex items-center justify-end">
-          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
-            <span className="font-light text-white/85">Chat Zalo trực tiếp:</span>
-            <strong className="font-medium tracking-wide text-white">{PHONE_DISPLAY}</strong>
-          </div>
-
+        <div className="group relative flex items-center justify-start">
           <a
             href={ZALO_URL}
             target="_blank"
@@ -2098,16 +2092,16 @@ export function App() {
               absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs
             " />
           </a>
+
+          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 ml-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
+            <span className="font-light text-white/85">Chat Zalo trực tiếp:</span>
+            <strong className="font-medium tracking-wide text-white">{PHONE_DISPLAY}</strong>
+          </div>
         </div>
 
         {/* 2. NÚT FACEBOOK / MESSENGER CHÍNH THỨC (MANULIFE DEEP FOREST EMERALD) */}
-        <div className="group relative flex items-center justify-end">
-          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 mr-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
-            <span className="font-light text-white/85">Facebook chính thức:</span>
-            <strong className="font-medium tracking-wide text-white">Khánh Vân</strong>
-          </div>
-
+        <div className="group relative flex items-center justify-start">
           <a
             href={FACEBOOK_URL}
             target="_blank"
@@ -2121,6 +2115,12 @@ export function App() {
             <MessengerBrandSvg className="w-6 h-6 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
             <span className="absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs" />
           </a>
+
+          <div className="hidden md:flex items-center gap-2 px-3.5 py-2 ml-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
+            <span className="font-light text-white/85">Facebook chính thức:</span>
+            <strong className="font-medium tracking-wide text-white">Khánh Vân</strong>
+          </div>
         </div>
       </aside>
 
