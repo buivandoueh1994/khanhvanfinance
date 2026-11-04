@@ -14,6 +14,7 @@ import {
   Search,
   Share2,
   Sparkles,
+  Volume2,
   X,
 } from 'lucide-react';
 import { VIDEO_FOLDERS, VIDEO_LIBRARY, VideoItem } from '../data/videos';
@@ -631,7 +632,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   key={`${activeVideo.id}-${playerDims.width}x${playerDims.height}`}
                   src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
                     activeVideo.url
-                  )}&show_text=false&autoplay=true&width=${playerDims.width}&height=${playerDims.height}`}
+                  )}&show_text=false&autoplay=false&mute=0&width=${playerDims.width}&height=${playerDims.height}`}
                   width={playerDims.width}
                   height={playerDims.height}
                   style={{
@@ -722,7 +723,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     </div>
                   )}
 
-                  {/* Category & Views */}
+                  {/* Category & Views & Audio Indicator */}
                   <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em]">
                     <span className="text-[#008746] font-semibold bg-[#008746]/[0.08] px-2 py-0.5 rounded-[2px]">
                       {activeVideo.folderShort}
@@ -731,10 +732,14 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       <Eye className="w-3 h-3 text-[#008746]" />
                       {activeVideo.views} lượt xem
                     </span>
+                    <span className="text-[#008746] inline-flex items-center gap-1 font-medium bg-[#008746]/[0.08] px-2 py-0.5 rounded-[2px]">
+                      <Volume2 className="w-3 h-3 text-[#008746]" />
+                      Âm thanh bật sẵn
+                    </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-[22px] font-normal text-[#181F1C] leading-[1.3]">
+                  <h3 className="font-sans font-semibold text-lg sm:text-xl text-[#181F1C] leading-[1.35] tracking-tight">
                     {activeVideo.title}
                   </h3>
 
