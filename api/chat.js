@@ -247,44 +247,63 @@ async function sendTelegramNotification(text) {
   return sent;
 }
 
+// Clean text: strip raw markdown artifacts (**bold**, headers, stray asterisks)
+function cleanReplyText(text = '') {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/#{1,6}\s+/g, '')
+    .replace(/`{1,3}[^`]*`{1,3}/g, '')
+    .replace(/^-\s+/gm, '• ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function extractPhoneNumber(str = '') {
+  if (!str) return null;
+  const clean = str.replace(/[\s.-]/g, '');
+  const match = clean.match(/(?:\+84|0)(?:3|5|7|8|9)\d{8}\b/);
+  return match ? match[0] : null;
+}
+
 // Build the System Prompt combining Layer 1 (Core Persona) + Layer 2 (Retrieved Knowledge Angles)
 function buildSystemPrompt(retrievedAngles = []) {
   const contextBlocks = retrievedAngles
     .map(
       (a, idx) =>
-        `[TÀI LIỆU THỰC CHIẾN #${idx + 1} | Mã: ${a.angle_code} | Nguồn: ${a.source_name}]\n` +
+        `[GÓC NHÌN #${idx + 1} | Mã: ${a.angle_code}]\n` +
         `- Chủ đề: ${a.hook_title}\n` +
-        `- Nội dung & Lập luận của Khánh Vân: ${a.core_insight}\n` +
-        `- Hướng gợi mở: ${a.soft_sell_prompt || ''}`
+        `- Luận điểm của Khánh Vân: ${a.core_insight}`
     )
     .join('\n\n');
 
-  return `Bạn là **Trợ lý Cố vấn AI của Chuyên gia Tài chính Khánh Vân** (hoặc đại diện trực tiếp cho góc nhìn của chị Khánh Vân trên website chính thức khanhvanfinance.com).
+  return `Bạn là Chuyên gia Tài chính Khánh Vân (trò chuyện trực tiếp với khách hàng trên website khanhvanfinance.com).
 
 =========================================
-TẦNG 1: HỒ SƠ & KHÍ CHẤT KHÁNH VÂN (CORE PERSONA)
+HỒ SƠ & PHONG THÁI KHÁNH VÂN:
 =========================================
-1. **Nhân thân & Uy tín:**
-   - Họ tên: Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao (Senior Regional Director) tại Manulife Việt Nam (từ 02/2018 đến nay).
-   - Nền tảng tài chính: 8 năm làm việc tại Ngân hàng Quốc tế ANZ (2009–2017) ở khối Quản lý tài sản (Wealth Management) & Tín dụng thế chấp (Vô địch doanh số thế chấp toàn quốc ANZ năm 2017).
-   - Thành tựu bảo hiểm & quản trị: Đại diện duy nhất tại Việt Nam đạt giải thưởng danh giá "Nhà Quản lý Xuất sắc nhất Châu Á 2021" (Asia Trusted Life Agent & Advisers Awards), trực tiếp ươm mầm 64 Quản lý cấp cao và dẫn dắt hệ thống hơn 500 nhân sự chuẩn mực, Top 1 tỷ lệ duy trì hợp đồng (K2).
-   - Gia đình & Lối sống: Người phụ nữ trân trọng sự cân bằng bên chồng và hai con, kỷ luật rèn luyện thể thao, đọc sách quản trị và sống tỉnh thức.
-   - Liên hệ trực tiếp: Zalo / Điện thoại **0931 579 771**.
-
-2. **Phong cách & Giọng văn trả lời:**
-   - Điềm đạm, sang trọng, minh bạch, sắc sảo về con số và pháp lý nhưng luôn ấm áp, thấu cảm như một người chị, một cố vấn gia sản tận tâm.
-   - Xưng **"Vân"** (hoặc **"Trợ lý của chị Khánh Vân"**) và gọi người đối thoại là **"bạn"** hoặc **"anh/chị"**.
-   - **Ngắn gọn, súc tích, dễ đọc trên điện thoại:** Trả lời khoảng 80–160 chữ, chia ý rõ ràng bằng gạch đầu dòng khi giải thích cơ chế tài chính/bồi thường. Không viết lan man dài dòng.
-
-3. **Nguyên tắc vàng (Guardrails):**
-   - Dựa chặt vào **[TẦNG 2: DỮ LIỆU THỰC CHIẾN TRích XUẤT TỪ SUPABASE]** bên dưới để trả lời đúng bằng số liệu, ví dụ thực tế (như quỹ dự phòng, thẻ sức khỏe Kim Cương 2 tỷ/năm, quy tắc kê khai trung thực VssID, cơ chế phí ban đầu giảm về 0% từ năm thứ 6, rút tiền linh hoạt sau 10-15 năm...).
-   - Tuyệt đối KHÔNG hứa hẹn lãi suất đầu tư cam kết ảo, KHÔNG nói xấu công ty bảo hiểm khác, KHÔNG chẩn đoán y khoa thay bác sĩ.
-   - Cuối câu trả lời, nếu khách hàng đang có tình huống cá nhân (muốn kiểm tra hợp đồng cũ, tính phí cho gia đình, hoặc tìm hiểu chuyển nghề từ Ngân hàng sang Manulife), hãy khéo léo mời họ **bấm nút "Đặt lịch tham vấn 1-1" hoặc để lại Số điện thoại / Zalo ngay trong khung chat** để Khánh Vân hỗ trợ trực tiếp.
+- Họ tên: Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao tại Manulife Việt Nam, nguyên Quản lý Tài sản & Tín dụng thế chấp ANZ Bank (8 năm), Nhà Quản lý Xuất sắc nhất Châu Á 2021.
+- Xưng "Vân" và gọi khách là "bạn" hoặc "anh/chị". Giọng văn điềm đạm, ấm áp, chân thành, sắc sảo và tin cậy như một người chị cố vấn tận tâm.
 
 =========================================
-TẦNG 2: DỮ LIỆU THỰC CHIẾN TRUY XUẤT TỪ SUPABASE (RAG CONTEXT)
+QUY TẮC BẮT BUỘC VỀ ĐỘ DÀI & ĐỊNH DẠNG TIN NHẮN (CỰC KỲ QUAN TRỌNG):
 =========================================
-${contextBlocks || 'Sử dụng kiến thức nền tảng của Khánh Vân tại Tầng 1.'}`;
+1. ĐỘ DÀI NGẮN GỌN (50 - 90 TỪ):
+   - Trả lời ngắn gọn, cô đọng, tự nhiên như chị Vân đang nhắn tin nhanh qua Zalo.
+   - Đi thẳng vào trọng tâm câu trả lời, chia làm 2-3 ý gãy gọn. Tuyệt đối KHÔNG viết bài luận dài, không liệt kê lan man.
+
+2. ĐỊNH DẠNG SẠCH SẼ - KHÔNG KÝ TỰ ĐẶC BIỆT:
+   - TUYỆT ĐỐI KHÔNG dùng dấu sao **in đậm**, không dùng markdown ##, không dùng code.
+   - Viết thuần chữ tiếng Việt tự nhiên, xuống dòng ngắt ý rõ ràng, dùng dấu gạch đầu dòng (-) hoặc dấu chấm tròn (•) khi liệt kê.
+
+3. DỰA VÀO DỮ LIỆU THỰC TẾ & GỢI MỞ KẾT NỐI:
+   - Dựa vào tài liệu thực chiến bên dưới để trả lời số liệu chính xác (ví dụ: quỹ bảo hiểm được Bộ Tài chính giám sát, chi trả thực tế, rút tiền sau 10-15 năm...).
+   - Nếu khách cần tính toán dòng tiền hoặc rà soát hợp đồng cụ thể, gợi ý nhẹ nhàng: bạn có thể để lại số Zalo ngay tại đây để Vân hỗ trợ chi tiết hơn.
+
+=========================================
+DỮ LIỆU THỰC CHIẾN TỪ THƯ VIỆN KHÁNH VÂN:
+=========================================
+${contextBlocks || 'Sử dụng kiến thức tài chính thực tế của Khánh Vân.'}`;
 }
 
 export default async function handler(req, res) {
@@ -425,19 +444,20 @@ export default async function handler(req, res) {
 
     if (!botReply) {
       botReply =
-        'Cảm ơn bạn đã đặt câu hỏi cho Khánh Vân. Với tình huống cụ thể này, bạn có thể để lại Số điện thoại / Zalo ngay tại đây hoặc nhắn trực tiếp cho Vân qua Zalo 0931 579 771 để Vân kiểm tra và tư vấn chi tiết nhất cho bạn nhé!';
+        'Cảm ơn bạn đã đặt câu hỏi cho Khánh Vân. Bạn có thể để lại Số điện thoại hoặc Zalo ngay tại đây để Vân kiểm tra và tư vấn trực tiếp cho bạn nhé!';
     }
 
+    // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
+    botReply = cleanReplyText(botReply);
+
     // 3. Check if the user typed a phone number inside their chat message!
-    const phoneMatch = cleanMsg.match(/(?:\+84|0)(?:3|5|7|8|9)\d{8}\b/);
-    const detectedPhone = phoneMatch ? phoneMatch[0] : visitorPhone;
+    const detectedPhone = extractPhoneNumber(cleanMsg) || visitorPhone || null;
 
     // 4. Save Chat History to Chị Vân's Supabase DB (`paaphwfpoiiowmthxtlp`)
-    // Try `web_chat_logs` first, and always log into `post_history` (`client_slug = 'khanh-van-chat'`)
     const logPayload = {
       client_slug: 'khanh-van-chat',
       topic_key: `${sessionId}-${Date.now()}`,
-      category: detectedPhone ? `CHAT_HAS_PHONE: ${detectedPhone}` : 'CHAT_LOG',
+      category: detectedPhone ? `LEAD_PHONE: ${detectedPhone}` : 'CHAT_LOG',
       angle_summary: `[Khách: ${visitorName || 'Ẩn danh'} | SĐT: ${detectedPhone || 'Chưa có'}] Hỏi: ${cleanMsg.slice(0, 180)}`,
       facebook_post: cleanMsg,
       website_article: botReply,
@@ -452,29 +472,55 @@ export default async function handler(req, res) {
       post_mode: 'advisory',
     };
 
-    // 4 & 5. Save Chat History to Supabase & Send Telegram Notification in parallel
-    const tgText = detectedPhone
-      ? `🔥 <b>LEAD SĐT TRONG KHUNG CHAT WEB KHÁNH VÂN</b>\n\n` +
-        `👤 <b>Khách:</b> ${visitorName || 'Khách truy cập web'}\n` +
-        `📞 <b>SĐT phát hiện:</b> <code>${detectedPhone}</code>\n` +
-        `💬 <b>Tin nhắn khách:</b> ${cleanMsg}\n\n` +
-        `🤖 <b>AI đã trả lời:</b> ${botReply.slice(0, 350)}...`
-      : `💬 <b>TIN NHẮN CHATBOT MỚI (Web Khánh Vân)</b>\n\n` +
-        `🗣 <b>Khách hỏi:</b> ${cleanMsg}\n\n` +
-        `🤖 <b>AI trả lời:</b> ${botReply.slice(0, 300)}${botReply.length > 300 ? '...' : ''}`;
+    const tasks = [];
+    if (SUPABASE_KEY) {
+      tasks.push(
+        fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(logPayload),
+        }).catch((e) => console.error('DB log error:', e))
+      );
+    }
 
-    await Promise.allSettled([
-      fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
-        method: 'POST',
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(logPayload),
-      }),
-      sendTelegramNotification(tgText),
-    ]);
+    // ONLY send notification to Telegram if client left their phone number!
+    // Format: SĐT + Tóm tắt toàn bộ đoạn hội thoại
+    if (detectedPhone) {
+      const historySnippet = history
+        .slice(-4)
+        .map((m) => `${m.role === 'user' ? 'Khách' : 'Vân'}: ${m.content}`)
+        .join('\n');
+
+      const fullSnippet = [
+        historySnippet,
+        `Khách: ${cleanMsg}`,
+        `Vân: ${botReply}`,
+      ]
+        .filter(Boolean)
+        .join('\n\n');
+
+      const safeSnippet = fullSnippet
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      const tgText =
+        `🎯 <b>CÓ LEAD SĐT MỚI TỪ WEB KHÁNH VÂN!</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `📞 <b>SĐT / Zalo:</b> <code>${detectedPhone}</code>\n` +
+        (visitorName ? `👤 <b>Họ tên:</b> ${visitorName}\n` : '') +
+        `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\n\n` +
+        `📝 <b>Tóm tắt hội thoại khách hàng:</b>\n` +
+        `<i>${safeSnippet}</i>`;
+
+      tasks.push(sendTelegramNotification(tgText));
+    }
+
+    await Promise.allSettled(tasks);
 
     return res.status(200).json({
       reply: botReply,

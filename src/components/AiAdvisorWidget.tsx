@@ -251,7 +251,10 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                           : 'bg-[#0A3622] text-[#FAF9F5]'
                       }`}
                     >
-                      {msg.content}
+                      {msg.content
+                        .replace(/\*\*(.*?)\*\*/g, '$1')
+                        .replace(/\*(.*?)\*/g, '$1')
+                        .replace(/^-\s+/gm, '• ')}
                     </div>
 
                     {/* ATTACHED VIDEO CARDS INSIDE BOT REPLY */}
