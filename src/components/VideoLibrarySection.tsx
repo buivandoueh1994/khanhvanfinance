@@ -1,10 +1,12 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Check,
+  ChevronDown,
+  ChevronUp,
   Copy,
   Eye,
   FolderOpen,
@@ -131,6 +133,98 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     }
     return archiveVideos.slice(0, 12);
   }, [archiveVideos, showAllArchive, searchQuery, selectedFolder, selectedSubtag]);
+
+  // Ordered playlist matching visual order on page for TikTok-style swipe/scroll
+  const playlist = useMemo(() => {
+    const combined = [...spotlightVideos, ...archiveVideos];
+    if (activeVideo && !combined.some((v) => v.id === activeVideo.id)) {
+      return VIDEO_LIBRARY;
+    }
+    return combined.length > 0 ? combined : VIDEO_LIBRARY;
+  }, [spotlightVideos, archiveVideos, activeVideo]);
+
+  const currentIndex = useMemo(() => {
+    if (!activeVideo) return -1;
+    return playlist.findIndex((v) => v.id === activeVideo.id);
+  }, [playlist, activeVideo]);
+
+  const prevVideoItem = useMemo(() => {
+    if (currentIndex < 0 || playlist.length <= 1) return null;
+    return playlist[(currentIndex - 1 + playlist.length) % playlist.length];
+  }, [playlist, currentIndex]);
+
+  const nextVideoItem = useMemo(() => {
+    if (currentIndex < 0 || playlist.length <= 1) return null;
+    return playlist[(currentIndex + 1) % playlist.length];
+  }, [playlist, currentIndex]);
+
+  const [slideDirection, setSlideDirection] = useState<number>(1);
+  const wheelLockRef = useRef<number>(0);
+  const touchStartYRef = useRef<number | null>(null);
+
+  const goToNextVideo = useCallback(() => {
+    if (!nextVideoItem) return;
+    setSlideDirection(1);
+    onOpenVideo(nextVideoItem);
+  }, [nextVideoItem, onOpenVideo]);
+
+  const goToPrevVideo = useCallback(() => {
+    if (!prevVideoItem) return;
+    setSlideDirection(-1);
+    onOpenVideo(prevVideoItem);
+  }, [prevVideoItem, onOpenVideo]);
+
+  // Keyboard navigation (ArrowDown / ArrowUp / Escape) like TikTok Web
+  useEffect(() => {
+    if (!activeVideo) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        goToNextVideo();
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        goToPrevVideo();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        onCloseVideo();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeVideo, goToNextVideo, goToPrevVideo, onCloseVideo]);
+
+  // Mouse wheel / trackpad 2-finger vertical scroll with cooldown debounce
+  const handleModalWheel = useCallback(
+    (e: React.WheelEvent) => {
+      const now = Date.now();
+      if (now - wheelLockRef.current < 650) return;
+      if (e.deltaY > 32) {
+        wheelLockRef.current = now;
+        goToNextVideo();
+      } else if (e.deltaY < -32) {
+        wheelLockRef.current = now;
+        goToPrevVideo();
+      }
+    },
+    [goToNextVideo, goToPrevVideo]
+  );
+
+  // Touch swipe up / down for mobile & tablet
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartYRef.current = e.touches[0]?.clientY ?? null;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartYRef.current === null) return;
+    const endY = e.changedTouches[0]?.clientY ?? touchStartYRef.current;
+    const deltaY = touchStartYRef.current - endY;
+    touchStartYRef.current = null;
+    if (deltaY > 45) {
+      goToNextVideo();
+    } else if (deltaY < -45) {
+      goToPrevVideo();
+    }
+  };
 
   const copyVideoLink = (video: VideoItem, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
@@ -468,7 +562,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
         </div>
       </section>
 
-      {/* FULL-HEIGHT 9:16 CINEMA MODAL (MAXIMIZED VIDEO SIZE + COMPACT NOTE) */}
+      {/* FULL-HEIGHT 9:16 CINEMA MODAL (TIKTOK-STYLE SWIPE/SCROLL FEED + COMPACT NOTE) */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -476,13 +570,47 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onCloseVideo}
+            onWheel={handleModalWheel}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             className="fixed inset-0 z-50 bg-[#0D1210]/92 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
           >
+            {/* TIKTOK-STYLE FLOATING UP/DOWN NAVIGATION RAIL (DESKTOP LEFT SIDE) */}
+            {playlist.length > 1 && (
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="hidden md:flex flex-col items-center gap-3 mr-4 z-20"
+              >
+                <button
+                  type="button"
+                  onClick={goToPrevVideo}
+                  className="w-11 h-11 rounded-full bg-white/12 hover:bg-[#008746] text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-95"
+                  title="Video trước (Lướt lên / Phím mũi tên lên)"
+                  aria-label="Video trước"
+                >
+                  <ChevronUp className="w-5 h-5" />
+                </button>
+                <span className="text-[10px] uppercase tracking-[0.14em] text-white/75 font-medium">
+                  {currentIndex + 1}/{playlist.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={goToNextVideo}
+                  className="w-11 h-11 rounded-full bg-white/12 hover:bg-[#008746] text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-95"
+                  title="Video tiếp theo (Lướt xuống / Phím mũi tên xuống)"
+                  aria-label="Video tiếp theo"
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </button>
+              </div>
+            )}
+
             <motion.div
-              initial={{ scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              key={activeVideo.id}
+              initial={{ y: slideDirection * 36, opacity: 0.35 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: slideDirection * -36, opacity: 0 }}
+              transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
               className="bg-[#FAF9F5] border border-[#DCD8CE] rounded-[6px] shadow-2xl overflow-hidden flex flex-col md:flex-row items-stretch my-auto"
               style={{
@@ -501,7 +629,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   key={`${activeVideo.id}-${playerDims.width}x${playerDims.height}`}
                   src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
                     activeVideo.url
-                  )}&show_text=false&width=${playerDims.width}&height=${playerDims.height}`}
+                  )}&show_text=false&autoplay=true&width=${playerDims.width}&height=${playerDims.height}`}
                   width={playerDims.width}
                   height={playerDims.height}
                   style={{
@@ -518,16 +646,16 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                 />
               </div>
 
-              {/* COMPACT SUMMARY PANEL (NO LONG SCRIPT, DOES NOT STEAL VIDEO HEIGHT ON DESKTOP) */}
+              {/* COMPACT SUMMARY & TIKTOK FEED PANEL */}
               <div
-                className="w-full md:w-[310px] lg:w-[330px] bg-[#FAF9F5] flex flex-col justify-between p-4 sm:p-6 border-t md:border-t-0 md:border-l border-[#E4E1D8]"
+                className="w-full md:w-[320px] lg:w-[340px] bg-[#FAF9F5] flex flex-col justify-between p-4 sm:p-6 border-t md:border-t-0 md:border-l border-[#E4E1D8]"
                 style={{
                   maxWidth: playerDims.width < 360 ? `${playerDims.width}px` : undefined,
                 }}
               >
                 {/* Top Action Row */}
-                <div className="space-y-5">
-                  <div className="flex items-center justify-between pb-3.5 border-b border-[#E4E1D8]">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E4E1D8]">
                     <button
                       type="button"
                       onClick={onCloseVideo}
@@ -567,6 +695,31 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     </div>
                   </div>
 
+                  {/* Quick Prev / Next Switcher Bar */}
+                  {playlist.length > 1 && (
+                    <div className="flex items-center justify-between bg-[#F2EFE9] px-3 py-1.5 rounded-[3px] border border-[#DCD8CE]">
+                      <button
+                        type="button"
+                        onClick={goToPrevVideo}
+                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] font-medium py-0.5"
+                      >
+                        <ChevronUp className="w-3.5 h-3.5" />
+                        <span>Video trước</span>
+                      </button>
+                      <span className="text-[10px] text-[#6A756F] font-medium">
+                        {currentIndex + 1} / {playlist.length}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={goToNextVideo}
+                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] font-medium py-0.5"
+                      >
+                        <span>Tiếp theo</span>
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
+
                   {/* Category & Views */}
                   <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em]">
                     <span className="text-[#008746] font-semibold bg-[#008746]/[0.08] px-2 py-0.5 rounded-[2px]">
@@ -579,7 +732,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#181F1C] leading-[1.3]">
+                  <h3 className="font-serif text-xl sm:text-[22px] font-normal text-[#181F1C] leading-[1.3]">
                     {activeVideo.title}
                   </h3>
 
@@ -592,10 +745,45 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       {activeVideo.summary}
                     </p>
                   </div>
+
+                  {/* Up Next Preview Card (TikTok Feed Preview) */}
+                  {nextVideoItem && (
+                    <div className="pt-2">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] uppercase tracking-[0.16em] text-[#858E89] font-medium">
+                          VIDEO TIẾP THEO (LƯỚT XUỐNG)
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={goToNextVideo}
+                        className="w-full text-left p-2.5 rounded-[4px] border border-[#DCD8CE] hover:border-[#0A3622] bg-white/80 hover:bg-white transition-all flex items-center gap-3 group"
+                      >
+                        <div className="w-11 h-14 rounded-[2px] overflow-hidden bg-black shrink-0 relative">
+                          <img
+                            src={nextVideoItem.thumbnail}
+                            alt={nextVideoItem.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
+                            <Play className="w-3 h-3 text-white fill-current" />
+                          </div>
+                        </div>
+                        <div className="min-w-0 flex-1 space-y-0.5">
+                          <p className="font-sans font-semibold text-xs text-[#181F1C] group-hover:text-[#008746] line-clamp-2 leading-[1.35] transition-colors">
+                            {nextVideoItem.title}
+                          </p>
+                          <span className="text-[10px] text-[#6A756F] block">
+                            {nextVideoItem.views} lượt xem &bull; Bấm hoặc lướt xuống
+                          </span>
+                        </div>
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom CTA Actions */}
-                <div className="pt-5 mt-5 border-t border-[#E4E1D8] space-y-2.5">
+                <div className="pt-4 mt-4 border-t border-[#E4E1D8] space-y-2.5">
                   <button
                     type="button"
                     onClick={() => onAskQuestion(activeVideo)}
