@@ -11,18 +11,24 @@ const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_AP
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
 const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
 
-// In-memory cache across warm serverless invocations
+import fs from 'fs';
+
+// Pre-load bundled knowledge angles to eliminate DB network latency (0ms latency!)
 let cachedAngles = null;
-let cachedAnglesTime = 0;
+try {
+  const jsonPath = new URL('./angles_data.json', import.meta.url);
+  cachedAngles = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+} catch (e) {
+  cachedAngles = [];
+}
 let cachedTelegramChatIds = new Set();
 
 async function getKnowledgeAngles() {
-  const now = Date.now();
-  if (cachedAngles && now - cachedAnglesTime < 10 * 60 * 1000) {
+  if (cachedAngles && cachedAngles.length > 0) {
     return cachedAngles;
   }
   if (!SUPABASE_KEY) {
-    return cachedAngles || [];
+    return [];
   }
   try {
     const res = await fetch(
@@ -36,7 +42,6 @@ async function getKnowledgeAngles() {
     );
     if (res.ok) {
       cachedAngles = await res.json();
-      cachedAnglesTime = now;
       return cachedAngles;
     }
   } catch (e) {
@@ -367,50 +372,12 @@ export default async function handler(req, res) {
     });
 
     let botReply = '';
-    const geminiModels = [
-      process.env.GEMINI_MODEL || 'gemini-3.8-flash',
-      'gemini-3.5-flash-lite',
-      'gemini-3.5-flash',
-      'gemini-2.5-flash',
-    ];
-    for (const key of GEMINI_KEYS) {
-      if (botReply) break;
-      for (const model of geminiModels) {
-        try {
-          const geminiRes = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                systemInstruction: {
-                  parts: [{ text: systemPrompt }],
-                },
-                contents,
-                generationConfig: {
-                  temperature: 0.45,
-                  maxOutputTokens: 650,
-                },
-              }),
-            }
-          );
-          if (geminiRes.ok) {
-            const data = await geminiRes.json();
-            botReply =
-              data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
-            if (botReply) break;
-          }
-        } catch (err) {
-          console.error(`Gemini call error (${model}):`, err);
-        }
-      }
-    }
 
-    // Fallback: If Gemini did not respond, use Anthropic Claude (Claude Haiku)
-    if (!botReply && ANTHROPIC_API_KEY) {
+    // Fast AI engine caller: Prioritizes working key with short timeouts & concise 350 tokens
+    if (ANTHROPIC_API_KEY) {
       try {
         const claudeMessages = [];
-        for (const h of history.slice(-6)) {
+        for (const h of history.slice(-4)) {
           if (!h.content) continue;
           claudeMessages.push({
             role: h.role === 'assistant' ? 'assistant' : 'user',
@@ -418,6 +385,9 @@ export default async function handler(req, res) {
           });
         }
         claudeMessages.push({ role: 'user', content: cleanMsg });
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
 
         const claudeRes = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
@@ -428,23 +398,61 @@ export default async function handler(req, res) {
           },
           body: JSON.stringify({
             model: 'claude-haiku-4-5-20251001',
-            max_tokens: 650,
+            max_tokens: 350,
             system: systemPrompt,
             messages: claudeMessages,
           }),
+          signal: controller.signal,
         });
+        clearTimeout(timeoutId);
         if (claudeRes.ok) {
           const cData = await claudeRes.json();
           botReply = cData.content?.[0]?.text?.trim() || '';
         }
       } catch (cErr) {
-        console.error('Claude call error:', cErr);
+        console.error('Fast Claude call error:', cErr);
+      }
+    }
+
+    // Try Gemini if no reply yet (only test valid Google AI Studio keys starting with AIzaSy)
+    if (!botReply) {
+      const validGeminiKeys = GEMINI_KEYS.filter((k) => k && !k.startsWith('AQ.'));
+      const activeGeminiKey = validGeminiKeys[0];
+      if (activeGeminiKey) {
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3500);
+
+          const geminiRes = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeGeminiKey}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                contents,
+                generationConfig: {
+                  temperature: 0.4,
+                  maxOutputTokens: 350,
+                },
+              }),
+              signal: controller.signal,
+            }
+          );
+          clearTimeout(timeoutId);
+          if (geminiRes.ok) {
+            const data = await geminiRes.json();
+            botReply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+          }
+        } catch (gErr) {
+          console.error('Fast Gemini call error:', gErr);
+        }
       }
     }
 
     if (!botReply) {
       botReply =
-        'Cảm ơn bạn đã đặt câu hỏi cho Khánh Vân. Bạn có thể để lại Số điện thoại hoặc Zalo ngay tại đây để Vân kiểm tra và tư vấn trực tiếp cho bạn nhé!';
+        'Cảm ơn bạn đã nhắn tin cho Khánh Vân. Để được rà soát hợp đồng và tư vấn trực tiếp nhanh nhất, bạn có thể để lại số Zalo ngay tại đây để Vân hỗ trợ bạn nhé!';
     }
 
     // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
@@ -453,7 +461,14 @@ export default async function handler(req, res) {
     // 3. Check if the user typed a phone number inside their chat message!
     const detectedPhone = extractPhoneNumber(cleanMsg) || visitorPhone || null;
 
-    // 4. Save Chat History to Chị Vân's Supabase DB (`paaphwfpoiiowmthxtlp`)
+    // Return HTTP response to the visitor IMMEDIATELY (no waiting for DB/Telegram!)
+    res.status(200).json({
+      reply: botReply,
+      matchedVideos: matchedVideoCodes,
+      detectedPhone: detectedPhone || null,
+    });
+
+    // 4 & 5. Background asynchronous tasks: save chat history & send Telegram lead
     const logPayload = {
       client_slug: 'khanh-van-chat',
       topic_key: `${sessionId}-${Date.now()}`,
@@ -472,9 +487,9 @@ export default async function handler(req, res) {
       post_mode: 'advisory',
     };
 
-    const tasks = [];
+    const backgroundTasks = [];
     if (SUPABASE_KEY) {
-      tasks.push(
+      backgroundTasks.push(
         fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
           method: 'POST',
           headers: {
@@ -483,12 +498,11 @@ export default async function handler(req, res) {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(logPayload),
-        }).catch((e) => console.error('DB log error:', e))
+        }).catch(() => {})
       );
     }
 
     // ONLY send notification to Telegram if client left their phone number!
-    // Format: SĐT + Tóm tắt toàn bộ đoạn hội thoại
     if (detectedPhone) {
       const historySnippet = history
         .slice(-4)
@@ -517,16 +531,11 @@ export default async function handler(req, res) {
         `📝 <b>Tóm tắt hội thoại khách hàng:</b>\n` +
         `<i>${safeSnippet}</i>`;
 
-      tasks.push(sendTelegramNotification(tgText));
+      backgroundTasks.push(sendTelegramNotification(tgText));
     }
 
-    await Promise.allSettled(tasks);
-
-    return res.status(200).json({
-      reply: botReply,
-      matchedVideos: matchedVideoCodes,
-      detectedPhone: detectedPhone || null,
-    });
+    Promise.allSettled(backgroundTasks).catch(() => {});
+    return;
   } catch (err) {
     console.error('Chat API error:', err);
     return res.status(500).json({
