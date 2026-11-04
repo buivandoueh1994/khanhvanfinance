@@ -7,6 +7,7 @@ const GEMINI_KEYS = [
   process.env.GEMINI_API_KEY,
   process.env.GEMINI_API_KEY_BACKUP,
 ].filter(Boolean);
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
 const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
 
@@ -374,6 +375,42 @@ export default async function handler(req, res) {
         }
       } catch (err) {
         console.error('Gemini call error:', err);
+      }
+    }
+
+    // Fallback: If Gemini did not respond, use Anthropic Claude (Claude Haiku)
+    if (!botReply && ANTHROPIC_API_KEY) {
+      try {
+        const claudeMessages = [];
+        for (const h of history.slice(-6)) {
+          if (!h.content) continue;
+          claudeMessages.push({
+            role: h.role === 'assistant' ? 'assistant' : 'user',
+            content: String(h.content),
+          });
+        }
+        claudeMessages.push({ role: 'user', content: cleanMsg });
+
+        const claudeRes = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'x-api-key': ANTHROPIC_API_KEY,
+            'anthropic-version': '2023-06-01',
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: 'claude-haiku-4-5-20251001',
+            max_tokens: 650,
+            system: systemPrompt,
+            messages: claudeMessages,
+          }),
+        });
+        if (claudeRes.ok) {
+          const cData = await claudeRes.json();
+          botReply = cData.content?.[0]?.text?.trim() || '';
+        }
+      } catch (cErr) {
+        console.error('Claude call error:', cErr);
       }
     }
 
