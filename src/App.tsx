@@ -6,10 +6,13 @@ import {
   ArrowUpRight,
   Check,
   Menu,
+  Play,
   Share2,
   ShieldCheck,
   X,
 } from 'lucide-react';
+import { VIDEO_LIBRARY, VideoItem } from './data/videos';
+import { VideoLibrarySection } from './components/VideoLibrarySection';
 
 const FACEBOOK_URL = 'https://www.facebook.com/nguyen.t.van.9250?locale=vi_VN';
 const ZALO_URL = 'https://zalo.me/0931579771';
@@ -461,6 +464,7 @@ export function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tất cả');
   const [activeArticle, setActiveArticle] = useState<Article | null>(null);
+  const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
   const [lightbox, setLightbox] = useState<LightboxImage | null>(null);
 
   const [formData, setFormData] = useState({
@@ -481,7 +485,7 @@ export function App() {
 
   // Prevent background scroll when modal or mobile menu is open (Native App UX)
   useEffect(() => {
-    if (activeArticle || lightbox || mobileMenuOpen) {
+    if (activeArticle || activeVideo || lightbox || mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -489,7 +493,14 @@ export function App() {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [activeArticle, lightbox, mobileMenuOpen]);
+  }, [activeArticle, activeVideo, lightbox, mobileMenuOpen]);
+
+  // Helper to read video ID from query param (?video=...)
+  const getVideoIdFromUrl = useCallback((): string | null => {
+    if (typeof window === 'undefined') return null;
+    const searchParams = new URLSearchParams(window.location.search);
+    return searchParams.get('video');
+  }, []);
 
   // Helper to read article ID from query param (?article=... or ?bai-viet=... or ?id=...), path (/bai-viet/... or /article/...) or hash (#bai-viet-... or #article-...)
   const getArticleIdFromUrl = useCallback((): string | null => {
@@ -580,8 +591,60 @@ export function App() {
     }
   }, []);
 
+  const openVideo = useCallback((video: VideoItem, pushHistory = true) => {
+    setActiveArticle(null);
+    setActiveVideo(video);
+    if (pushHistory && typeof window !== 'undefined') {
+      const newUrl = `${window.location.origin}/?video=${encodeURIComponent(video.id)}`;
+      window.history.pushState({ videoId: video.id }, '', newUrl);
+    }
+    updateMetaTags(`${video.title} — Video Khánh Vân`, video.summary);
+  }, []);
+
+  const closeVideo = useCallback((pushHistory = true) => {
+    setActiveVideo(null);
+    if (pushHistory && typeof window !== 'undefined') {
+      const cleanUrl = `${window.location.origin}/#thu-vien-video`;
+      window.history.pushState({}, '', cleanUrl);
+    }
+    updateMetaTags(
+      'Khánh Vân — Giám đốc Vùng Cấp cao',
+      'Khánh Vân — Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
+      typeof window !== 'undefined' ? `${window.location.origin}/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` : undefined
+    );
+  }, []);
+
+  const handleAskVideoQuestion = useCallback(
+    (video: VideoItem) => {
+      closeVideo(false);
+      setFormData((prev) => ({
+        ...prev,
+        topic:
+          video.folderId === 'chuyen-nghe-lanh-dao'
+            ? 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)'
+            : 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
+        note: `Tôi vừa xem video "${video.title}" và muốn trao đổi thêm về chủ đề này.`,
+      }));
+      setTimeout(() => {
+        const el = document.getElementById('lien-he');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    },
+    [closeVideo]
+  );
+
   // Deep-link check on initial mount
   useEffect(() => {
+    const targetVideoId = getVideoIdFromUrl();
+    if (targetVideoId) {
+      const foundVideo = VIDEO_LIBRARY.find(
+        (v) => v.id === targetVideoId || v.reelId === targetVideoId
+      );
+      if (foundVideo) {
+        openVideo(foundVideo, false);
+        return;
+      }
+    }
     const targetId = getArticleIdFromUrl();
     if (targetId) {
       const found = ARTICLES.find((a) => a.id === targetId);
@@ -589,11 +652,21 @@ export function App() {
         openArticle(found, false);
       }
     }
-  }, [getArticleIdFromUrl, openArticle]);
+  }, [getArticleIdFromUrl, getVideoIdFromUrl, openArticle, openVideo]);
 
   // Handle browser back / forward navigation (popstate)
   useEffect(() => {
     const handlePopState = (event: PopStateEvent) => {
+      const videoId = event.state?.videoId || getVideoIdFromUrl();
+      if (videoId) {
+        const foundVideo = VIDEO_LIBRARY.find(
+          (v) => v.id === videoId || v.reelId === videoId
+        );
+        if (foundVideo) {
+          openVideo(foundVideo, false);
+          return;
+        }
+      }
       const articleId = event.state?.articleId || getArticleIdFromUrl();
       if (articleId) {
         const found = ARTICLES.find((a) => a.id === articleId);
@@ -603,15 +676,17 @@ export function App() {
         }
       }
       closeArticle(false);
+      closeVideo(false);
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [getArticleIdFromUrl, openArticle, closeArticle]);
+  }, [getArticleIdFromUrl, getVideoIdFromUrl, openArticle, closeArticle, openVideo, closeVideo]);
 
   const navItems = [
     { label: 'Câu chuyện', href: '#cau-chuyen' },
     { label: 'Góc nhìn', href: '#goc-nhin' },
+    { label: 'Thư viện Video', href: '#thu-vien-video' },
     { label: 'Tủ sách', href: '#tu-sach' },
     { label: 'Cuộc sống', href: '#cuoc-song' },
     { label: 'Đồng hành', href: '#dong-hanh' },
@@ -1141,12 +1216,20 @@ export function App() {
         </div>
       </section>
 
+      {/* 5B. THƯ VIỆN VIDEO & HỎI ĐÁP THỰC CHIẾN (109 CATEGORIZED VIDEOS & SEARCH HUB) */}
+      <VideoLibrarySection
+        activeVideo={activeVideo}
+        onOpenVideo={(video) => openVideo(video)}
+        onCloseVideo={() => closeVideo()}
+        onAskQuestion={(video) => handleAskVideoQuestion(video)}
+      />
+
       {/* 6. TỦ SÁCH QUẢN TRỊ & GÓC NHÌN ĐỒNG HÀNH (CURATED EXECUTIVE READING & PERSONAL REFLECTIONS) */}
       <section id="tu-sach" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-              03 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
+              04 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
               Những Cuốn Sách Định Hình Tư Duy &amp; Triết Lý Hành Động
@@ -1205,7 +1288,7 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
             <div className="lg:col-span-5">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                04 / ĐIỂM TỰA CUỘC SỐNG
+                05 / ĐIỂM TỰA CUỘC SỐNG
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
                 Người Phụ Nữ Trong Gia Đình &amp; Sự Cân Bằng
@@ -1351,7 +1434,7 @@ export function App() {
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           <div className="max-w-4xl mb-16 sm:mb-20 space-y-4">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-              05 / HỢP TÁC &amp; ĐỒNG HÀNH &bull; WORK WITH ME
+              06 / HỢP TÁC &amp; ĐỒNG HÀNH &bull; WORK WITH ME
             </span>
             <h2 className="font-serif text-4xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
               Ba Trục Hợp Tác Chiến Lược Cùng Khánh Vân
@@ -2127,6 +2210,58 @@ export function App() {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* RELATED VIDEOS FROM KHÁNH VÂN */}
+                <div className="mt-8 pt-6 border-t border-[#E4E1D8] space-y-3.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
+                      VIDEO CHIA SẺ TRỰC TIẾP TỪ KHÁNH VÂN CÙNG CHỦ ĐỀ
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        closeArticle();
+                        setTimeout(() => {
+                          document.getElementById('thu-vien-video')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                      }}
+                      className="text-[11px] uppercase tracking-[0.15em] text-[#56605B] hover:text-[#0A3622] underline underline-offset-4"
+                    >
+                      Mở thư viện 109 Video
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    {VIDEO_LIBRARY.filter((v) =>
+                      activeArticle.category === 'Phát triển Sự nghiệp' ||
+                      activeArticle.category === 'Kỷ luật Bản thân'
+                        ? v.folderId === 'chuyen-nghe-lanh-dao'
+                        : activeArticle.category === 'Bố Mẹ Đi Làm'
+                        ? v.folderId === 'dong-tien-huu-tri'
+                        : v.folderId === 'minh-bach-bao-hiem'
+                    )
+                      .slice(0, 2)
+                      .map((vid) => (
+                        <button
+                          key={vid.id}
+                          type="button"
+                          onClick={() => openVideo(vid)}
+                          className="text-left p-4 rounded-[4px] border border-[#DCD8CE] hover:border-[#0A3622] bg-[#FAF9F5] transition-all group flex flex-col justify-between gap-2"
+                        >
+                          <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#008746]">
+                            <span>{vid.folderShort}</span>
+                            <span className="text-[#858E89]">{vid.views} lượt xem</span>
+                          </div>
+                          <p className="font-sans font-semibold text-sm text-[#181F1C] group-hover:text-[#0A3622] leading-[1.4] line-clamp-2">
+                            {vid.title}
+                          </p>
+                          <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-[#0A3622] group-hover:text-[#008746] font-medium pt-1">
+                            <Play className="w-3 h-3 fill-current" />
+                            <span>Xem Video &amp; Bản đọc</span>
+                          </span>
+                        </button>
+                      ))}
+                  </div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F2EFE9]/60 p-5 sm:p-6 rounded-[4px] mb-8">
