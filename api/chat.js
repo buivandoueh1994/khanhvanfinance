@@ -466,19 +466,12 @@ export default async function handler(req, res) {
     }
 
     if (!botReply) {
-      if (matchedAngles.length > 0 && matchedAngles[0].core_insight) {
-        const top = matchedAngles[0];
-        let insightClean = (top.core_insight || '')
-          .replace(/\[Chất liệu.*?\]\s*/gi, '')
-          .replace(/Góc nhìn chính:\s*/gi, '')
-          .replace(/Lời thoại & cách diễn đạt gốc của Vân:\s*/gi, '\n\n')
-          .replace(/["“”]/g, '')
-          .trim();
-        botReply = `Về chủ đề này, góc nhìn thực tế của Vân như sau:\n\n${insightClean}\n\nNếu bạn cần rà soát hợp đồng hoặc tính toán dòng tiền chi tiết cho gia đình, hãy để lại số Zalo để Vân hỗ trợ trực tiếp nhé!`;
-      } else {
-        botReply =
-          'Chào bạn! Vân đã nhận được câu hỏi. Bạn có thể để lại số Zalo hoặc chia sẻ cụ thể hơn để Vân tư vấn chi tiết nhất cho bạn nhé!';
-      }
+      botReply =
+        'Chào bạn! Để thiết kế gói giải pháp tài chính tối ưu và phù hợp nhất với gia đình, Vân cần biết thêm 3 thông tin cơ bản:\n\n' +
+        '• Mục tiêu ưu tiên: Thẻ sức khỏe nội trú 5 sao, bảo vệ thu nhập người trụ cột hay tích lũy học vấn cho con?\n' +
+        '• Độ tuổi của người tham gia bảo hiểm.\n' +
+        '• Ngân sách dự kiến mỗi năm.\n\n' +
+        'Bạn có thể nhắn nhanh các thông tin trên hoặc để lại số Zalo để Vân lên bảng minh họa chi tiết gửi bạn nhé!';
     }
 
     // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
