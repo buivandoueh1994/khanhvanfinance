@@ -253,9 +253,8 @@ function cleanReplyText(text = '') {
 
 function extractPhoneNumber(str = '') {
   if (!str) return null;
-  const clean = str.replace(/[\s.-]/g, '');
-  const match = clean.match(/(?:\+84|0)(?:3|5|7|8|9)\d{8}\b/);
-  return match ? match[0] : null;
+  const match = String(str).match(/(?<!\d)(?:\+84|0)[35789](?:[\s.-]*\d){8}(?!\d)/);
+  return match ? match[0].replace(/[\s.-]/g, '') : null;
 }
 
 // Sanitize and normalize multi-turn conversation history for Gemini API
