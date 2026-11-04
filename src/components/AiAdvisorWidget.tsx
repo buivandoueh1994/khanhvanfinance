@@ -238,7 +238,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
 
             {/* MESSAGES SCROLL AREA */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 overscroll-contain bg-[#FAF9F5]">
-              {messages.map((msg) => {
+              {messages.map((msg, idx) => {
                 const isBot = msg.role === 'assistant';
                 // Resolve matched video objects from VIDEO_LIBRARY
                 const resolvedVideos = (msg.matchedVideos || [])
