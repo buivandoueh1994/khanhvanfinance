@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -34,6 +34,31 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showAllArchive, setShowAllArchive] = useState<boolean>(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [playerDims, setPlayerDims] = useState<{ width: number; height: number }>({
+    width: 440,
+    height: 782,
+  });
+
+  useEffect(() => {
+    const updateDims = () => {
+      if (typeof window === 'undefined') return;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      if (vw >= 768) {
+        // Use 94% of viewport height so the 9:16 video is as large as possible on laptop/desktop screens
+        const h = Math.min(860, Math.max(540, vh - 36));
+        const w = Math.round((h * 9) / 16);
+        setPlayerDims({ width: w, height: h });
+      } else {
+        const w = Math.min(vw - 24, 380);
+        const h = Math.round((w * 16) / 9);
+        setPlayerDims({ width: w, height: h });
+      }
+    };
+    updateDims();
+    window.addEventListener('resize', updateDims);
+    return () => window.removeEventListener('resize', updateDims);
+  }, [activeVideo]);
 
   // Count videos per folder
   const folderCounts = useMemo(() => {
@@ -443,7 +468,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
         </div>
       </section>
 
-      {/* VIDEO-FIRST CINEMA MODAL (OPTIMAL 9:16 RATIO + SHORT NOTE BELOW) */}
+      {/* FULL-HEIGHT 9:16 CINEMA MODAL (MAXIMIZED VIDEO SIZE + COMPACT NOTE) */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -451,7 +476,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onCloseVideo}
-            className="fixed inset-0 z-50 bg-[#121715]/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#0D1210]/92 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.96, opacity: 0 }}
@@ -459,91 +484,147 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               exit={{ scale: 0.96, opacity: 0 }}
               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-[430px] bg-[#FAF9F5] border border-[#DCD8CE] rounded-[6px] shadow-2xl overflow-hidden flex flex-col my-auto"
+              className="bg-[#FAF9F5] border border-[#DCD8CE] rounded-[6px] shadow-2xl overflow-hidden flex flex-col md:flex-row items-stretch my-auto"
+              style={{
+                maxWidth: '100%',
+              }}
             >
-              {/* TOP BAR */}
-              <div className="px-4 py-2.5 bg-[#FAF9F5] border-b border-[#E4E1D8] flex items-center justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={onCloseVideo}
-                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] font-medium py-1"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Đóng</span>
-                </button>
-
-                <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-medium truncate">
-                  {activeVideo.folderShort} &bull; {activeVideo.views} views
-                </span>
-
-                <button
-                  type="button"
-                  onClick={(e) => copyVideoLink(activeVideo, e)}
-                  className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] bg-[#008746]/[0.08] px-2.5 py-1 rounded-[2px] font-medium transition-colors"
-                >
-                  {copiedId === activeVideo.id ? (
-                    <>
-                      <Check className="w-3 h-3 text-[#008746]" />
-                      <span>Đã chép</span>
-                    </>
-                  ) : (
-                    <>
-                      <Share2 className="w-3 h-3" />
-                      <span>Copy Link</span>
-                    </>
-                  )}
-                </button>
+              {/* MAIN FOCUS: FULL-VIEWPORT-HEIGHT 9:16 VIDEO PLAYER (ZERO BLACK MARGIN) */}
+              <div
+                className="bg-black shrink-0 relative overflow-hidden mx-auto"
+                style={{
+                  width: `${playerDims.width}px`,
+                  height: `${playerDims.height}px`,
+                }}
+              >
+                <iframe
+                  key={`${activeVideo.id}-${playerDims.width}x${playerDims.height}`}
+                  src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+                    activeVideo.url
+                  )}&show_text=false&width=${playerDims.width}&height=${playerDims.height}`}
+                  width={playerDims.width}
+                  height={playerDims.height}
+                  style={{
+                    border: 'none',
+                    overflow: 'hidden',
+                    width: `${playerDims.width}px`,
+                    height: `${playerDims.height}px`,
+                  }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title={activeVideo.title}
+                />
               </div>
 
-              {/* MAIN FOCUS: EXACT 9:16 VERTICAL VIDEO PLAYER (288x512 = 9:16, NEVER CLIPPED) */}
-              <div className="bg-[#0B0E0D] w-full flex items-center justify-center py-3">
-                <div className="w-[288px] h-[512px] bg-black rounded-[4px] overflow-hidden shadow-xl ring-1 ring-white/10 shrink-0">
-                  <iframe
-                    src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                      activeVideo.url
-                    )}&show_text=false&width=288&height=512`}
-                    width="288"
-                    height="512"
-                    style={{ border: 'none', overflow: 'hidden', width: '288px', height: '512px' }}
-                    scrolling="no"
-                    frameBorder="0"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    title={activeVideo.title}
-                  />
-                </div>
-              </div>
+              {/* COMPACT SUMMARY PANEL (NO LONG SCRIPT, DOES NOT STEAL VIDEO HEIGHT ON DESKTOP) */}
+              <div
+                className="w-full md:w-[310px] lg:w-[330px] bg-[#FAF9F5] flex flex-col justify-between p-4 sm:p-6 border-t md:border-t-0 md:border-l border-[#E4E1D8]"
+                style={{
+                  maxWidth: playerDims.width < 360 ? `${playerDims.width}px` : undefined,
+                }}
+              >
+                {/* Top Action Row */}
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between pb-3.5 border-b border-[#E4E1D8]">
+                    <button
+                      type="button"
+                      onClick={onCloseVideo}
+                      className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] font-medium"
+                    >
+                      <ArrowLeft className="w-3.5 h-3.5" />
+                      <span>Đóng</span>
+                    </button>
 
-              {/* COMPACT SHORT SUMMARY NOTE BELOW VIDEO */}
-              <div className="p-4 sm:p-5 bg-[#FAF9F5] space-y-3 border-t border-[#E4E1D8]">
-                <div className="space-y-1.5">
-                  <h3 className="font-sans font-semibold text-sm sm:text-[15px] text-[#181F1C] leading-[1.35]">
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        onClick={(e) => copyVideoLink(activeVideo, e)}
+                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] bg-[#008746]/[0.08] px-2.5 py-1.5 rounded-[2px] font-medium transition-colors"
+                      >
+                        {copiedId === activeVideo.id ? (
+                          <>
+                            <Check className="w-3 h-3 text-[#008746]" />
+                            <span>Đã chép Link</span>
+                          </>
+                        ) : (
+                          <>
+                            <Share2 className="w-3 h-3" />
+                            <span>Copy Link</span>
+                          </>
+                        )}
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={onCloseVideo}
+                        className="p-1 text-[#56605B] hover:text-[#181F1C]"
+                        aria-label="Đóng"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Category & Views */}
+                  <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em]">
+                    <span className="text-[#008746] font-semibold bg-[#008746]/[0.08] px-2 py-0.5 rounded-[2px]">
+                      {activeVideo.folderShort}
+                    </span>
+                    <span className="text-[#56605B] inline-flex items-center gap-1 font-medium">
+                      <Eye className="w-3 h-3 text-[#008746]" />
+                      {activeVideo.views} lượt xem
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#181F1C] leading-[1.3]">
                     {activeVideo.title}
                   </h3>
-                  <p className="text-xs text-[#28322D] leading-[1.6] bg-[#F2EFE9]/90 p-2.5 rounded-[3px] border-l-2 border-l-[#008746]">
-                    <strong className="text-[#0A3622]">Tóm tắt:</strong> {activeVideo.summary}
-                  </p>
+
+                  {/* Short Summary Note */}
+                  <div className="p-3.5 bg-[#F2EFE9]/90 border-l-2 border-l-[#008746] rounded-[3px] space-y-1">
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-[#008746] font-semibold block">
+                      TÓM TẮT NỘI DUNG
+                    </span>
+                    <p className="text-xs sm:text-[13px] text-[#28322D] leading-[1.65]">
+                      {activeVideo.summary}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between gap-2 pt-1">
-                  <a
-                    href={activeVideo.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] text-[#56605B] hover:text-[#0A3622] underline underline-offset-4"
-                  >
-                    <span>Mở trên Facebook</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-
+                {/* Bottom CTA Actions */}
+                <div className="pt-5 mt-5 border-t border-[#E4E1D8] space-y-2.5">
                   <button
                     type="button"
                     onClick={() => onAskQuestion(activeVideo)}
-                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[10px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] transition-colors"
                   >
-                    <span>Đặt câu hỏi riêng</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <span>Đặt câu hỏi riêng cho Khánh Vân</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
+
+                  <div className="flex items-center justify-between pt-1">
+                    <button
+                      type="button"
+                      onClick={(e) => copyVideoLink(activeVideo, e)}
+                      className="inline-flex items-center gap-1 text-[11px] text-[#56605B] hover:text-[#0A3622]"
+                    >
+                      <Copy className="w-3 h-3" />
+                      <span>Sao chép link gửi khách</span>
+                    </button>
+
+                    <a
+                      href={activeVideo.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] text-[#008746] hover:text-[#0A3622] underline underline-offset-4"
+                    >
+                      <span>Mở Facebook</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
