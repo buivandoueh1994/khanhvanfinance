@@ -339,7 +339,18 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Empty message' });
     }
 
-    // 1. Fetch 230 knowledge_angles and run Hybrid Retrieval
+    // 1. Instant Smart Greeting (0ms latency for greetings)
+    const normMsg = cleanMsg.toLowerCase().trim();
+    if (/^(hello|hi|chào|chao|alo|xin chào|hey|hé lô|chào bạn|chào chị|chào chị vân)$/i.test(normMsg)) {
+      return res.status(200).json({
+        reply:
+          'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!',
+        matchedVideos: [],
+        detectedPhone: null,
+      });
+    }
+
+    // 2. Fetch/match knowledge angles from local memory (0ms)
     const allAngles = await getKnowledgeAngles();
     const matchedScored = retrieveRelevantAngles(cleanMsg, history, allAngles, 5);
     const matchedAngles = matchedScored.map((s) => s.item);
@@ -451,8 +462,19 @@ export default async function handler(req, res) {
     }
 
     if (!botReply) {
-      botReply =
-        'Cảm ơn bạn đã nhắn tin cho Khánh Vân. Để được rà soát hợp đồng và tư vấn trực tiếp nhanh nhất, bạn có thể để lại số Zalo ngay tại đây để Vân hỗ trợ bạn nhé!';
+      if (matchedAngles.length > 0 && matchedAngles[0].core_insight) {
+        const top = matchedAngles[0];
+        let insightClean = (top.core_insight || '')
+          .replace(/\[Chất liệu.*?\]\s*/gi, '')
+          .replace(/Góc nhìn chính:\s*/gi, '')
+          .replace(/Lời thoại & cách diễn đạt gốc của Vân:\s*/gi, '\n\n')
+          .replace(/["“”]/g, '')
+          .trim();
+        botReply = `Về chủ đề này, góc nhìn thực tế của Vân như sau:\n\n${insightClean}\n\nNếu bạn cần rà soát hợp đồng hoặc tính toán dòng tiền chi tiết cho gia đình, hãy để lại số Zalo để Vân hỗ trợ trực tiếp nhé!`;
+      } else {
+        botReply =
+          'Chào bạn! Vân đã nhận được câu hỏi. Bạn có thể để lại số Zalo hoặc chia sẻ cụ thể hơn để Vân tư vấn chi tiết nhất cho bạn nhé!';
+      }
     }
 
     // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
