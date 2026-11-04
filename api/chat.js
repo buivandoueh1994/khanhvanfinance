@@ -348,7 +348,12 @@ export default async function handler(req, res) {
     });
 
     let botReply = '';
-    const geminiModels = ['gemini-1.5-flash', 'gemini-2.0-flash'];
+    const geminiModels = [
+      process.env.GEMINI_MODEL || 'gemini-3.8-flash',
+      'gemini-3.5-flash-lite',
+      'gemini-3.5-flash',
+      'gemini-2.5-flash',
+    ];
     for (const key of GEMINI_KEYS) {
       if (botReply) break;
       for (const model of geminiModels) {
