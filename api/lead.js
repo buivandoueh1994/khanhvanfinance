@@ -2,15 +2,17 @@
 // Captures Leads from both the Chatbot Quick Lead Form and the Main Website Contact Form (#lien-he)
 // Saves to Supabase & sends instant alert to Telegram (@khanhvan_web_bot)
 
-const SUPABASE_URL = 'https://paaphwfpoiiowmthxtlp.supabase.co';
-const SUPABASE_KEY = 'sb_secret_R8Nwj96LVpDPfeDFvEbpXg_wGrNt3wS';
-const LOGS_DB_URL = 'https://lmnrvfuleaoknkegtuku.supabase.co';
-const LOGS_DB_KEY = 'sb_secret_x815XOTM2TqMCJfYSNYwaA_bm-sS61r';
-const TELEGRAM_BOT_TOKEN = '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
+const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
 
 let cachedTelegramChatIds = new Set();
 
 async function getTelegramChatIds() {
+  if (DEFAULT_CHAT_ID) {
+    cachedTelegramChatIds.add(String(DEFAULT_CHAT_ID));
+  }
   try {
     const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
     if (tgRes.ok) {
@@ -24,38 +26,22 @@ async function getTelegramChatIds() {
       }
     }
 
-    const sbRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/post_history?client_slug=eq.telegram-config&select=topic_key&limit=10`,
-      {
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-        },
+    if (SUPABASE_KEY) {
+      const sbRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/post_history?client_slug=eq.telegram-config&select=topic_key&limit=10`,
+        {
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+          },
+        }
+      );
+      if (sbRes.ok) {
+        const rows = await sbRes.json();
+        for (const r of rows) {
+          if (r.topic_key) cachedTelegramChatIds.add(String(r.topic_key));
+        }
       }
-    );
-    if (sbRes.ok) {
-      const rows = await sbRes.json();
-      for (const r of rows) {
-        if (r.topic_key) cachedTelegramChatIds.add(String(r.topic_key));
-      }
-    }
-
-    for (const cid of cachedTelegramChatIds) {
-      await fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
-        method: 'POST',
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          client_slug: 'telegram-config',
-          topic_key: String(cid),
-          category: 'TELEGRAM_CHAT_ID',
-          angle_summary: 'Auto-discovered Telegram Chat ID for notifications',
-          post_mode: 'config',
-        }),
-      }).catch(() => {});
     }
   } catch (e) {
     console.error('Telegram discovery error:', e);
@@ -127,8 +113,8 @@ export default async function handler(req, res) {
     }
 
     // 2. Save Lead to Chị Vân's Supabase DB (`paaphwfpoiiowmthxtlp`)
-    await Promise.allSettled([
-      fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
+    if (SUPABASE_KEY) {
+      await fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
         method: 'POST',
         headers: {
           apikey: SUPABASE_KEY,
@@ -151,29 +137,10 @@ export default async function handler(req, res) {
             source,
             telegramNotified,
           }),
-          post_mode: source,
+          post_mode: 'advisory',
         }),
-      }),
-      fetch(`${LOGS_DB_URL}/rest/v1/web_leads`, {
-        method: 'POST',
-        headers: {
-          apikey: LOGS_DB_KEY,
-          Authorization: `Bearer ${LOGS_DB_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          session_id: sessionId || null,
-          full_name: fullName,
-          phone,
-          email: email || null,
-          topic,
-          background: background || null,
-          note: note || null,
-          source,
-          telegram_notified: telegramNotified,
-        }),
-      }),
-    ]);
+      }).catch((e) => console.error('Save lead error:', e));
+    }
 
     return res.status(200).json({
       ok: true,

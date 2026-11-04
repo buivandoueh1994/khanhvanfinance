@@ -1,15 +1,14 @@
 // Vercel Serverless Function: /api/chat
 // Hybrid AI Advisor (Core Persona Prompt + Supabase Smart Retrieval + Telegram Alert + DB Logging)
 
-const SUPABASE_URL = 'https://paaphwfpoiiowmthxtlp.supabase.co';
-const SUPABASE_KEY = 'sb_secret_R8Nwj96LVpDPfeDFvEbpXg_wGrNt3wS';
-const LOGS_DB_URL = 'https://lmnrvfuleaoknkegtuku.supabase.co';
-const LOGS_DB_KEY = 'sb_secret_x815XOTM2TqMCJfYSNYwaA_bm-sS61r';
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
 const GEMINI_KEYS = [
-  'AQ.Ab8RN6IBssOjhkcS86HZr8F-ecYJ9UEPnM0hsiFlLuN1wtqSNA',
-  'AQ.Ab8RN6LiGmDmYaoRBeKSl5Fre0aXW8HQFbixBmpFxA-7qTuh5Q',
-];
-const TELEGRAM_BOT_TOKEN = '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
+  process.env.GEMINI_API_KEY,
+  process.env.GEMINI_API_KEY_BACKUP,
+].filter(Boolean);
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
+const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
 
 // In-memory cache across warm serverless invocations
 let cachedAngles = null;
@@ -20,6 +19,9 @@ async function getKnowledgeAngles() {
   const now = Date.now();
   if (cachedAngles && now - cachedAnglesTime < 10 * 60 * 1000) {
     return cachedAngles;
+  }
+  if (!SUPABASE_KEY) {
+    return cachedAngles || [];
   }
   try {
     const res = await fetch(
@@ -160,8 +162,11 @@ function retrieveRelevantAngles(query, history = [], allAngles = [], topK = 5) {
   return topScored;
 }
 
-// Discover Telegram Chat IDs from getUpdates + Supabase config
+// Discover Telegram Chat IDs from default + getUpdates + Supabase config
 async function getTelegramChatIds() {
+  if (DEFAULT_CHAT_ID) {
+    cachedTelegramChatIds.add(String(DEFAULT_CHAT_ID));
+  }
   try {
     // 1. Check getUpdates from Telegram Bot
     const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
@@ -398,7 +403,7 @@ export default async function handler(req, res) {
         matchedAngles: matchedAngles.map((a) => a.angle_code),
         pageUrl,
       }),
-      post_mode: 'chatbot',
+      post_mode: 'advisory',
     };
 
     // 4 & 5. Save Chat History to Supabase & Send Telegram Notification in parallel
@@ -421,23 +426,6 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(logPayload),
-      }),
-      fetch(`${LOGS_DB_URL}/rest/v1/web_chat_logs`, {
-        method: 'POST',
-        headers: {
-          apikey: LOGS_DB_KEY,
-          Authorization: `Bearer ${LOGS_DB_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          session_id: sessionId,
-          visitor_name: visitorName || null,
-          visitor_phone: detectedPhone || null,
-          user_message: cleanMsg,
-          bot_reply: botReply,
-          matched_videos: matchedVideoCodes,
-          page_url: pageUrl,
-        }),
       }),
       sendTelegramNotification(tgText),
     ]);
