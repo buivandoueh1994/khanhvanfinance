@@ -336,9 +336,11 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#008746]" />
                   <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
-                    {selectedFolder === 'all' && !searchQuery
-                      ? 'TIÊU ĐIỂM VIDEO THỰC CHIẾN • ĐƯỢC XEM NHIỀU NHẤT'
-                      : 'VIDEO NỔI BẬT TRONG CHUYÊN ĐỀ'}
+                    {searchQuery.trim()
+                      ? `KẾT QUẢ TÌM KIẾM “${searchQuery.trim()}” • ${filteredVideos.length} VIDEO`
+                      : selectedSubtag !== 'Tất cả'
+                      ? `CHỦ ĐỀ: ${selectedSubtag} • ${filteredVideos.length} VIDEO`
+                      : 'TIÊU ĐIỂM VIDEO THỰC CHIẾN • ĐƯỢC XEM NHIỀU NHẤT'}
                   </span>
                 </div>
                 <span className="text-xs text-[#858E89] font-light">
