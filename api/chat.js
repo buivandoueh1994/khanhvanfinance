@@ -309,6 +309,94 @@ function buildGeminiContents(history = [], cleanMsg = '') {
   return merged;
 }
 
+// Generate a detailed executive summary of the customer's profile, needs, and questions for Telegram Lead Alert
+async function generateLeadSummary(history = [], cleanMsg = '', detectedPhone = '') {
+  const transcriptLines = [];
+  const userQuestions = [];
+
+  for (const h of history.slice(-14)) {
+    if (!h || !h.content) continue;
+    const text = String(h.content).trim();
+    if (
+      !text ||
+      text.startsWith('Chào bạn! Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm') ||
+      text.startsWith('Chào bạn! Để thiết kế gói giải pháp tài chính tối ưu và phù hợp nhất với gia đình')
+    ) {
+      continue;
+    }
+    if (h.role === 'user') {
+      userQuestions.push(text);
+    }
+    transcriptLines.push(`${h.role === 'assistant' ? 'Tư vấn viên' : 'Khách hàng'}: ${text}`);
+  }
+
+  if (userQuestions[userQuestions.length - 1] !== cleanMsg) {
+    userQuestions.push(cleanMsg);
+    transcriptLines.push(`Khách hàng: ${cleanMsg}`);
+  }
+
+  const summaryPrompt = `Bạn là trợ lý phân tích dữ liệu cho Giám đốc Vùng Cấp cao Khánh Vân (Manulife).
+Dưới đây là lịch sử cuộc trò chuyện giữa Khách hàng và Chatbot trên website. Khách hàng vừa để lại SĐT (${detectedPhone}).
+Hãy viết BẢN TÓM TẮT CHI TIẾT NHU CẦU KHÁCH HÀNG để Khánh Vân nắm bắt ngay trước khi gọi điện/nhắn Zalo.
+
+QUY TẮC BẮT BUỘC:
+- TUYỆT ĐỐI KHÔNG chép lại nguyên văn đoạn hội thoại, KHÔNG viết kiểu "Khách: ... Vân: ...".
+- KHÔNG viết câu mở đầu hay kết luận thừa, đi thẳng vào 4 mục bên dưới.
+- Không dùng dấu sao **, dùng dấu chấm tròn (•) ở đầu mỗi mục, tổng độ dài khoảng 90 - 140 từ:
+
+• Chân dung & Ngân sách: (Tổng hợp độ tuổi, giới tính, đối tượng tham gia bảo hiểm, mức ngân sách dự kiến nếu khách đã chia sẻ; ghi rõ thông tin nào khách chưa cung cấp).
+• Nhu cầu trọng tâm: (Mục tiêu chính khách đang tìm hiểu: tích lũy cho con, bảo vệ trụ cột, thẻ sức khỏe, hay cơ hội nghề nghiệp...).
+• Các băn khoăn & Câu hỏi của khách: (Tóm tắt chi tiết các vấn đề khách đã hỏi trong cuộc trò chuyện như: thời điểm rút tiền, rủi ro dừng hợp đồng trước hạn, quyền lợi y tế, thủ tục tham gia...).
+• Đề xuất hướng tư vấn Zalo: (Gợi ý chuẩn bị bảng minh họa hoặc tài liệu nào cần gửi ngay khi kết bạn Zalo với khách).
+
+Dữ liệu hội thoại:
+${transcriptLines.join('\n')}`;
+
+  const models = ['gemini-3.5-flash', 'gemini-3.8-flash'];
+  for (const modelName of models) {
+    for (const key of GEMINI_KEYS) {
+      if (!key) continue;
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 7000);
+        const res = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${key}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ role: 'user', parts: [{ text: summaryPrompt }] }],
+              generationConfig: {
+                temperature: 0.2,
+                maxOutputTokens: 450,
+                thinkingConfig: { thinkingBudget: 0 },
+              },
+            }),
+            signal: controller.signal,
+          }
+        );
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          const summaryText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+          if (summaryText) {
+            return cleanReplyText(summaryText);
+          }
+        }
+      } catch (e) {
+        console.error('Lead summary generation error:', e.message);
+      }
+    }
+  }
+
+  // Fallback structured summary if AI summary fails (still clean, never dumps long bot replies)
+  return (
+    `• Các vấn đề khách hàng đã quan tâm trao đổi:\n` +
+    userQuestions.map((q) => `  - ${q}`).join('\n') +
+    `\n• Đề xuất: Kết bạn Zalo số ${detectedPhone} để gửi bảng minh họa và tư vấn trực tiếp.`
+  );
+}
+
 // Build the System Prompt combining Layer 1 (Core Persona + Master Advisory Playbook) + Layer 2 (Retrieved Knowledge Angles)
 function buildSystemPrompt(retrievedAngles = []) {
   const contextBlocks = retrievedAngles
@@ -432,6 +520,14 @@ export default async function handler(req, res) {
     const systemPrompt = buildSystemPrompt(matchedAngles);
     const contents = buildGeminiContents(history, cleanMsg);
 
+    // Check if the user typed a phone number inside their chat message
+    const detectedPhone = extractPhoneNumber(cleanMsg) || visitorPhone || null;
+
+    // Start generating AI Lead Summary in parallel if phone number is detected (adds 0ms extra wait!)
+    const summaryPromise = detectedPhone
+      ? generateLeadSummary(history, cleanMsg, detectedPhone)
+      : Promise.resolve('');
+
     let botReply = '';
 
     // 4. Primary Engine: Gemini 3.8 Flash -> fallback Gemini 3.5 Flash
@@ -531,11 +627,7 @@ export default async function handler(req, res) {
     // Clean text: strip raw markdown artifacts, asterisks, and excessive line breaks
     botReply = cleanReplyText(botReply);
 
-    // 7. Check if the user typed a phone number inside their chat message
-    const detectedPhone = extractPhoneNumber(cleanMsg) || visitorPhone || null;
-
-    // 8. Save chat log to Supabase & send Telegram lead alert ONLY when phone is present
-    // Wait up to 1.5s before returning response so Vercel Serverless doesn't freeze before completion
+    // 7. Save chat log to Supabase & send Telegram lead alert ONLY when phone is present
     const logPayload = {
       client_slug: 'khanh-van-chat',
       topic_key: `${sessionId}-${Date.now()}`,
@@ -571,25 +663,8 @@ export default async function handler(req, res) {
 
     // ONLY send notification to Telegram if client left their phone number!
     if (detectedPhone) {
-      const historySnippet = history
-        .filter(
-          (m) =>
-            m.content &&
-            !String(m.content).startsWith('Chào bạn! Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm')
-        )
-        .slice(-5)
-        .map((m) => `${m.role === 'user' ? '👤 Khách' : '👩‍💼 Vân'}: ${m.content}`)
-        .join('\n');
-
-      const fullSnippet = [
-        historySnippet,
-        `👤 Khách: ${cleanMsg}`,
-        `👩‍💼 Vân: ${botReply}`,
-      ]
-        .filter(Boolean)
-        .join('\n\n');
-
-      const safeSnippet = fullSnippet
+      const leadSummary = await summaryPromise;
+      const safeSummary = leadSummary
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
@@ -600,8 +675,8 @@ export default async function handler(req, res) {
         `📞 <b>SĐT / Zalo:</b> <code>${detectedPhone}</code>\n` +
         (visitorName ? `👤 <b>Họ tên:</b> ${visitorName}\n` : '') +
         `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\n\n` +
-        `📝 <b>Tóm tắt hội thoại khách hàng:</b>\n` +
-        `<i>${safeSnippet}</i>`;
+        `📋 <b>Tóm tắt chi tiết nhu cầu khách hàng:</b>\n` +
+        `${safeSummary}`;
 
       sideEffectTasks.push(sendTelegramNotification(tgText));
     }
@@ -609,7 +684,7 @@ export default async function handler(req, res) {
     if (sideEffectTasks.length > 0) {
       await Promise.race([
         Promise.allSettled(sideEffectTasks),
-        new Promise((resolve) => setTimeout(resolve, 1500)),
+        new Promise((resolve) => setTimeout(resolve, 2000)),
       ]);
     }
 
