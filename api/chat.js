@@ -384,8 +384,48 @@ export default async function handler(req, res) {
 
     let botReply = '';
 
-    // Fast AI engine caller: Prioritizes working key with short timeouts & concise 350 tokens
-    if (ANTHROPIC_API_KEY) {
+    // 1. Primary Engine: Google Gemini 3.8 Flash (Using User Key)
+    for (const key of GEMINI_KEYS) {
+      if (botReply) break;
+      if (!key) continue;
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+        const geminiRes = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${key}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+              contents,
+              generationConfig: {
+                temperature: 0.45,
+                maxOutputTokens: 600,
+                thinkingConfig: {
+                  thinkingBudget: 0,
+                },
+              },
+            }),
+            signal: controller.signal,
+          }
+        );
+        clearTimeout(timeoutId);
+        if (geminiRes.ok) {
+          const data = await geminiRes.json();
+          botReply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+          if (botReply) break;
+        } else {
+          console.error('Gemini 3.8 Flash response error:', geminiRes.status, await geminiRes.text());
+        }
+      } catch (gErr) {
+        console.error('Gemini 3.8 Flash call error:', gErr);
+      }
+    }
+
+    // 2. Fallback Engine: Anthropic Claude (if Gemini key has issues)
+    if (!botReply && ANTHROPIC_API_KEY) {
       try {
         const claudeMessages = [];
         for (const h of history.slice(-4)) {
@@ -398,7 +438,7 @@ export default async function handler(req, res) {
         claudeMessages.push({ role: 'user', content: cleanMsg });
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 12000);
+        const timeoutId = setTimeout(() => controller.abort(), 6000);
 
         const claudeRes = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
@@ -421,43 +461,7 @@ export default async function handler(req, res) {
           botReply = cData.content?.[0]?.text?.trim() || '';
         }
       } catch (cErr) {
-        console.error('Fast Claude call error:', cErr);
-      }
-    }
-
-    // Try Gemini if no reply yet (only test valid Google AI Studio keys starting with AIzaSy)
-    if (!botReply) {
-      const validGeminiKeys = GEMINI_KEYS.filter((k) => k && !k.startsWith('AQ.'));
-      const activeGeminiKey = validGeminiKeys[0];
-      if (activeGeminiKey) {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3500);
-
-          const geminiRes = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeGeminiKey}`,
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-                contents,
-                generationConfig: {
-                  temperature: 0.4,
-                  maxOutputTokens: 350,
-                },
-              }),
-              signal: controller.signal,
-            }
-          );
-          clearTimeout(timeoutId);
-          if (geminiRes.ok) {
-            const data = await geminiRes.json();
-            botReply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
-          }
-        } catch (gErr) {
-          console.error('Fast Gemini call error:', gErr);
-        }
+        console.error('Claude fallback call error:', cErr);
       }
     }
 
