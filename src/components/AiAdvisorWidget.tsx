@@ -47,6 +47,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [viewportStyle, setViewportStyle] = useState<{ height?: string; top?: string }>({});
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -60,6 +61,64 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       setSessionId(sid);
     }
   }, []);
+
+  // Track visualViewport on mobile to handle iOS virtual keyboard smoothly without screen jump or zoom
+  useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+
+    const updateViewport = () => {
+      if (window.innerWidth >= 640) {
+        setViewportStyle({});
+        return;
+      }
+
+      if (window.visualViewport) {
+        const vv = window.visualViewport;
+        setViewportStyle({
+          height: `${vv.height}px`,
+          top: `${vv.offsetTop}px`,
+        });
+      } else {
+        setViewportStyle({
+          height: '100dvh',
+          top: '0px',
+        });
+      }
+    };
+
+    updateViewport();
+
+    const vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener('resize', updateViewport);
+      vv.addEventListener('scroll', updateViewport);
+    }
+    window.addEventListener('resize', updateViewport);
+
+    return () => {
+      if (vv) {
+        vv.removeEventListener('resize', updateViewport);
+        vv.removeEventListener('scroll', updateViewport);
+      }
+      window.removeEventListener('resize', updateViewport);
+    };
+  }, [isOpen]);
+
+  // Lock body scroll on mobile when chat drawer is open
+  useEffect(() => {
+    if (isOpen && typeof window !== 'undefined' && window.innerWidth < 640) {
+      const prevBodyOverflow = document.body.style.overflow;
+      const prevHtmlOverflow = document.documentElement.style.overflow;
+
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.overflow = prevBodyOverflow;
+        document.documentElement.style.overflow = prevHtmlOverflow;
+      };
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -142,11 +201,13 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
   return (
     <>
       {/* FLOATING TRIGGER BUTTON (DEDICATED BOTTOM RIGHT) */}
-      <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col items-end pointer-events-auto select-none">
-        {/* Subtle executive status pill (gently draws attention without being intrusive) */}
-        {!isOpen && (
-          <div className="mb-2.5 bg-[#FAF9F5]/95 backdrop-blur-md text-[#0A3622] border border-[#00A758]/35 px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(10,54,34,0.14)] text-[11px] font-medium flex items-center gap-2 transition-all hover:scale-105 cursor-pointer"
-               onClick={() => setIsOpen(true)}>
+      {!isOpen && (
+        <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col items-end pointer-events-auto select-none">
+          {/* Subtle executive status pill (gently draws attention without being intrusive) */}
+          <div
+            className="mb-2.5 bg-[#FAF9F5]/95 backdrop-blur-md text-[#0A3622] border border-[#00A758]/35 px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(10,54,34,0.14)] text-[11px] font-medium flex items-center gap-2 transition-all hover:scale-105 cursor-pointer"
+            onClick={() => setIsOpen(true)}
+          >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]" />
@@ -154,53 +215,54 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
             <span className="text-[#181F1C] font-semibold">Khánh Vân trực tuyến</span>
             <span className="text-[#008746]">&bull; Nhắn tin ngay</span>
           </div>
-        )}
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center gap-3 pl-2.5 pr-4.5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_10px_28px_rgba(10,54,34,0.38)] border border-[#00A758]/60 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-          aria-label="Mở Chat Với Khánh Vân"
-        >
-          {/* Subtle breathing emerald halo */}
-          <span
-            className="absolute -inset-1 rounded-full bg-[#00A758]/25 pointer-events-none animate-ping"
-            style={{ animationDuration: '3.2s' }}
-          />
-
-          {/* Real Avatar of Chị Khánh Vân */}
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7] shrink-0 shadow-xs bg-[#181F1C]">
-            <img
-              src="/images/avatar_khanh_van.jpg"
-              alt="Chuyên gia Tài chính Khánh Vân"
-              className="w-full h-full object-cover"
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            className="group relative flex items-center gap-3 pl-2.5 pr-4.5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_10px_28px_rgba(10,54,34,0.38)] border border-[#00A758]/60 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            aria-label="Mở Chat Với Khánh Vân"
+          >
+            {/* Subtle breathing emerald halo */}
+            <span
+              className="absolute -inset-1 rounded-full bg-[#00A758]/25 pointer-events-none animate-ping"
+              style={{ animationDuration: '3.2s' }}
             />
-            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22C55E] border-2 border-[#0A3622] rounded-full" />
-          </div>
 
-          <div className="text-left">
-            <span className="block text-[9.5px] uppercase tracking-[0.16em] text-[#6EE7B7] font-semibold leading-none mb-1">
-              Tư vấn trực tuyến
-            </span>
-            <span className="block font-sans font-semibold text-xs sm:text-[13.5px] text-white leading-none">
-              Chat Với Khánh Vân
-            </span>
-          </div>
-        </button>
-      </div>
+            {/* Real Avatar of Chị Khánh Vân */}
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7] shrink-0 shadow-xs bg-[#181F1C]">
+              <img
+                src="/images/avatar_khanh_van.jpg"
+                alt="Chuyên gia Tài chính Khánh Vân"
+                className="w-full h-full object-cover"
+              />
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22C55E] border-2 border-[#0A3622] rounded-full" />
+            </div>
+
+            <div className="text-left">
+              <span className="block text-[9.5px] uppercase tracking-[0.16em] text-[#6EE7B7] font-semibold leading-none mb-1">
+                Tư vấn trực tuyến
+              </span>
+              <span className="block font-sans font-semibold text-xs sm:text-[13.5px] text-white leading-none">
+                Chat Với Khánh Vân
+              </span>
+            </div>
+          </button>
+        </div>
+      )}
 
       {/* LUXURY EDITORIAL CHAT DRAWER / WINDOW */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.96 }}
-            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[410px] h-[580px] max-h-[85dvh] bg-[#FAF9F5] border border-[#DCD8CE] rounded-[10px] shadow-[0_24px_60px_rgba(10,54,34,0.32)] flex flex-col overflow-hidden"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={viewportStyle}
+            className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-50 w-full sm:w-[410px] h-[100dvh] sm:h-[580px] sm:max-h-[85dvh] bg-[#FAF9F5] sm:border sm:border-[#DCD8CE] sm:rounded-[12px] shadow-[0_24px_60px_rgba(10,54,34,0.32)] flex flex-col overflow-hidden"
           >
             {/* HEADER */}
-            <div className="bg-[#0A3622] text-[#FAF9F5] px-4 py-3.5 flex items-center justify-between shrink-0 border-b border-white/10 shadow-xs">
+            <div className="bg-[#0A3622] text-[#FAF9F5] px-4 pt-[max(0.875rem,env(safe-area-inset-top,0px))] pb-3.5 sm:pt-3.5 flex items-center justify-between shrink-0 border-b border-white/10 shadow-xs">
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7]/80 shrink-0 bg-[#181F1C] shadow-xs">
                   <img
@@ -229,10 +291,10 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 text-white/75 hover:text-white rounded-full hover:bg-white/10 transition-colors"
+                className="p-2 sm:p-1.5 text-white/80 hover:text-white rounded-full hover:bg-white/10 active:bg-white/20 transition-colors"
                 aria-label="Đóng khung chat"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5 sm:w-4 sm:h-4" />
               </button>
             </div>
 
@@ -363,14 +425,19 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                 e.preventDefault();
                 sendMessage();
               }}
-              className="p-3 bg-[#FAF9F5] border-t border-[#DCD8CE] flex items-center gap-2"
+              className="p-3 bg-[#FAF9F5] border-t border-[#DCD8CE] flex items-center gap-2 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-3"
             >
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
+                onFocus={() => {
+                  setTimeout(() => {
+                    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  }, 250);
+                }}
                 placeholder="Nhắn tin với Khánh Vân..."
-                className="flex-1 px-3.5 py-2.5 text-xs sm:text-[13px] bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[6px] text-[#181F1C] placeholder:text-[#858E89] focus:outline-none transition-colors"
+                className="flex-1 px-3.5 py-2.5 text-[16px] sm:text-[13px] bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[6px] text-[#181F1C] placeholder:text-[#858E89] focus:outline-none transition-colors"
               />
               <button
                 type="submit"
