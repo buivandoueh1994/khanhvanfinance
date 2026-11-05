@@ -1042,23 +1042,23 @@ export function App() {
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg',
+                    src: '/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg',
                     fig: 'C-LEVEL DIPLOMACY',
-                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) Manulife',
-                    subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất.',
+                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) & Giám Đốc Khối Đại Lý (CAO) Manulife',
+                    subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất tại Manulife Việt Nam.',
                   })
                 }
                 className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
-                    src="/images/SuKien_ChiVanCungCEO_ChupAnhTiecToi.jpg"
-                    alt="Chị Khánh Vân cùng CEO Manulife trong tiệc tối thân mật"
+                    src="/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg"
+                    alt="Chị Khánh Vân cùng CEO và CAO Manulife Việt Nam trong tiệc tối thân mật"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) Manulife
+                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) &amp; Giám Đốc Khối Đại Lý (CAO) Manulife
                 </figcaption>
               </figure>
             </div>
