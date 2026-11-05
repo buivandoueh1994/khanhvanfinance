@@ -1748,7 +1748,7 @@ export function App() {
                 <img
                   src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
                   alt="Đỉnh cao vinh danh bản lĩnh quản lý C-Level"
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
