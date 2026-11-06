@@ -856,46 +856,118 @@ export function App() {
         </AnimatePresence>
       </header>
 
-      {/* 2. EDITORIAL HERO — GENEROUS NEGATIVE SPACE, SLENDER SERIF, FULL-WIDTH PANORAMIC TEAM SHOWCASE */}
+      {/* 2. EDITORIAL HERO — THE EXECUTIVE SPLIT SPREAD (PORTRAIT + NARRATIVE + TEAM SCALE) */}
       <section className="pt-32 sm:pt-40 lg:pt-44 pb-20 lg:pb-28">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          {/* TẦNG 1: EDITORIAL HEADER & NARRATIVE (2-COLUMN BALANCED SPREAD) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-            {/* Left 6 Cols: Name & Signature Statement */}
-            <div className="lg:col-span-6 space-y-4 sm:space-y-6">
-              <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium">
-                Nhà Lãnh Đạo &bull; Cố Vấn Gia Sản &bull; Người Truyền Lửa &bull; Người Mẹ
-              </p>
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-normal tracking-tight text-[#181F1C] leading-[1.05]">
-                Khánh Vân
-              </h1>
-              <p className="font-serif italic text-2xl sm:text-[28px] text-[#181F1C] font-normal leading-[1.4] pt-1">
-                “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
-              </p>
-            </div>
+          {/* TẦNG 1: THE EXECUTIVE SPLIT HERO (CÂN BẰNG THỦ LĨNH & BẢO CHỨNG) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Cột Trái (7 Cột): Định Vị Quyền Lực, Châm Ngôn & Nút Hành Động */}
+            <div className="lg:col-span-7 space-y-6 sm:space-y-7">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#008746]/10 border border-[#008746]/20 text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
+                <span className="w-2 h-2 rounded-full bg-[#008746] animate-pulse" />
+                <span>Cựu Banker ANZ &bull; Giám Đốc Vùng Cấp Cao Manulife</span>
+              </div>
 
-            {/* Right 6 Cols: Bio Summary & Quick Actions */}
-            <div className="lg:col-span-6 space-y-6 lg:pt-2 flex flex-col justify-between h-full">
-              <div className="h-[1px] w-16 bg-[#0A3622]/30 lg:hidden" />
-              <p className="text-[15px] sm:text-base text-[#28322D] leading-[1.85] font-normal">
-                Khởi đầu từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến vị thế Giám đốc Vùng Cấp cao (DRD+) tại Manulife Việt Nam và giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á (2021). Hành trình gần hai thập kỷ của Khánh Vân được dẫn dắt bởi niềm tin rằng sự minh bạch, kỷ luật và lòng thấu cảm là nền tảng bền vững nhất của mọi di sản.
+              <div className="space-y-3">
+                <h1 className="font-serif text-5xl sm:text-6xl lg:text-[76px] font-normal tracking-tight text-[#181F1C] leading-[1.02]">
+                  Khánh Vân
+                </h1>
+                <div className="border-l-2 border-[#008746] pl-4 sm:pl-5 py-1">
+                  <p className="font-serif italic text-xl sm:text-2xl text-[#0A3622] font-normal leading-[1.4]">
+                    &ldquo;Đi chắc để đi xa &mdash; Kiến tạo tốc độ từ sự chuẩn mực.&rdquo;
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal max-w-xl">
+                Gần hai thập kỷ kiến tạo giá trị: từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) tại Manulife Việt Nam. Khánh Vân đồng hành bảo toàn dòng tiền và hoạch định gia sản bền vững cho các gia đình tinh hoa, đồng thời dẫn dắt hệ thống 64 nhà quản lý kế cận.
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-8">
+              <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
                 <a
-                  href="#cau-chuyen"
-                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-colors duration-300 min-h-[44px] rounded-[2px]"
+                  href="#lien-he"
+                  className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
                 >
-                  <span>Hành trình sự nghiệp</span>
+                  <span>Đặt lịch tham vấn 1-1</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="#goc-nhin"
-                  className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#181F1C] hover:text-[#008746] border-b border-[#181F1C]/40 hover:border-[#008746] pb-1.5 transition-colors font-medium min-h-[44px]"
+                  href="#cau-chuyen"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#181F1C] hover:text-[#008746] border border-[#DCD8CE] hover:border-[#008746]/50 bg-white/70 hover:bg-white rounded-[3px] transition-all font-medium min-h-[44px]"
                 >
-                  <span>Đọc góc nhìn &amp; chia sẻ</span>
+                  <span>Hành trình sự nghiệp</span>
                 </a>
               </div>
+
+              {/* Dải Micro Trust-Metrics */}
+              <div className="pt-6 sm:pt-7 border-t border-[#E4E1D8] grid grid-cols-3 gap-4 max-w-xl">
+                <div>
+                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-normal leading-none">08+</div>
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Năm Banker ANZ</div>
+                </div>
+                <div className="border-l border-[#E4E1D8] pl-4">
+                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-normal leading-none">Top 1</div>
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Lãnh Đạo Châu Á</div>
+                </div>
+                <div className="border-l border-[#E4E1D8] pl-4">
+                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-normal leading-none">500+</div>
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Nhân Sự Hệ Thống</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cột Phải (5 Cột): Khung Chân Dung Lãnh Đạo Quyền Quý & Huy Hiệu Quốc Tế */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+              <figure
+                onClick={() =>
+                  setLightbox({
+                    src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
+                    fig: 'PORTRAIT OF LEADERSHIP',
+                    title: 'Nguyễn Thị Vân — Bản Lĩnh & Thần Thái Thủ Lĩnh C-Level',
+                    subtitle: 'Khoảnh khắc nâng cúp vàng ManPower trong đầm dạ hội xanh lục bảo quyền quý.',
+                  })
+                }
+                className="cursor-zoom-in group relative block"
+              >
+                {/* Ánh sáng mềm Ambient Glow hậu cảnh */}
+                <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-[#008746]/15 via-[#0A3622]/8 to-transparent rounded-[16px] -z-10 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700" />
+
+                {/* Khung chân dung chính */}
+                <div className="overflow-hidden aspect-[4/5] bg-[#EAE7DF] rounded-[6px] shadow-[0_24px_50px_-15px_rgba(10,54,34,0.22)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
+                  <img
+                    src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
+                    alt="Khánh Vân — Giám đốc Vùng Cấp cao Manulife Việt Nam"
+                    className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  />
+
+                  {/* Gradient tối nhẹ ở đáy ảnh */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+
+                  {/* Floating Trust Badge dập nổi ở góc trên */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/92 backdrop-blur-md text-[#0A3622] text-[10px] font-semibold tracking-wider uppercase shadow-lg border border-white/60">
+                      <span className="text-[#D4AF37]">🏆</span> Asia Trusted Awards Winner
+                    </span>
+                  </div>
+
+                  {/* Tên & chức vị dập nổi ở góc dưới */}
+                  <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
+                    <div className="font-serif text-lg sm:text-xl font-medium tracking-wide">
+                      Nguyễn Thị Vân
+                    </div>
+                    <div className="text-[11px] tracking-[0.14em] uppercase text-white/80 font-normal mt-0.5">
+                      Giám Đốc Vùng Cấp Cao &bull; Manulife Việt Nam
+                    </div>
+                  </div>
+                </div>
+
+                <figcaption className="mt-3.5 flex items-center justify-between text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
+                  <span className="font-medium text-[#181F1C]">Phong thái Lãnh đạo Đương đại</span>
+                  <span className="text-[#008746] font-medium flex items-center gap-1">
+                    Xem ảnh lớn <ArrowUpRight className="w-3 h-3" />
+                  </span>
+                </figcaption>
+              </figure>
             </div>
           </div>
 
