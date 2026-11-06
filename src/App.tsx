@@ -880,7 +880,7 @@ export function App() {
               </div>
 
               <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal max-w-xl">
-                Gần hai thập kỷ kiến tạo giá trị: từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) tại Manulife Việt Nam. Khánh Vân đồng hành bảo toàn dòng tiền và hoạch định gia sản bền vững cho các gia đình tinh hoa, đồng thời dẫn dắt hệ thống 64 nhà quản lý kế cận.
+                Gần hai thập kỷ kiến tạo giá trị: từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và liên tục giữ vững vị thế Top 1 Manulife Việt Nam trong nhiều năm. Khánh Vân đồng hành bảo toàn dòng tiền và hoạch định gia sản bền vững cho các gia đình tinh hoa, đồng thời dẫn dắt hệ thống 64 nhà quản lý kế cận.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
@@ -921,10 +921,10 @@ export function App() {
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
-                    fig: 'PORTRAIT OF LEADERSHIP',
-                    title: 'Nguyễn Thị Vân — Bản Lĩnh & Thần Thái Thủ Lĩnh C-Level',
-                    subtitle: 'Khoảnh khắc nâng cúp vàng ManPower trong đầm dạ hội xanh lục bảo quyền quý.',
+                    src: '/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg',
+                    fig: 'EXECUTIVE PORTRAIT',
+                    title: 'Nguyễn Thị Vân — Phong Thái Lãnh Đạo Điềm Tĩnh & Chuẩn Mực',
+                    subtitle: 'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam — Vẻ đẹp thanh lịch, bản lĩnh và chiều sâu chuyên môn.',
                   })
                 }
                 className="cursor-zoom-in group relative block"
@@ -935,7 +935,7 @@ export function App() {
                 {/* Khung chân dung chính */}
                 <div className="overflow-hidden aspect-[4/5] bg-[#EAE7DF] rounded-[6px] shadow-[0_24px_50px_-15px_rgba(10,54,34,0.22)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
                   <img
-                    src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
+                    src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
                     alt="Khánh Vân — Giám đốc Vùng Cấp cao Manulife Việt Nam"
                     className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />

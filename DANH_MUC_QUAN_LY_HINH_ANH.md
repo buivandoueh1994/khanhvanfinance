@@ -20,11 +20,12 @@ Tài liệu này là **Nguồn Tham Chiếu Chuẩn Duy Nhất (Single Source of
 
 ## II. BẢNG PHÂN BỔ ẢNH ĐANG SỬ DỤNG TRÊN WEBSITE (ACTIVE IN PRODUCTION)
 
-Hiện tại website đang sử dụng chính thức **18 bức ảnh tinh hoa (FIG. 01 đến FIG. 18)** được phân bổ chính xác theo các phần nội dung:
+Hiện tại website đang sử dụng chính thức **19 bức ảnh tinh hoa (FIG. 00 đến FIG. 18)** được phân bổ chính xác theo các phần nội dung:
 
 | Mã Fig | Tên File Trong `public/images/` | Vị trí trên Website | Nguồn gốc | Tên file gốc ban đầu | Ý nghĩa & Thông điệp truyền tải |
 | :---: | :--- | :--- | :---: | :--- | :--- |
-| **FIG. 01** | `VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` | **Hero Section** (Ảnh mở đầu trang web) | **Đợt 2** | `1793511781173...48d5bc65.jpg` (Số 60) | Thủ lĩnh Khánh Vân ngồi ghế trung tâm trong trang phục vest trắng thanh lịch cùng hơn 35 nữ quản lý & chuyên viên tinh hoa trong trang phục vest xanh đồng bộ tại sảnh văn phòng Manulife; khẳng định quy mô, tầm vóc và uy tín của Giám đốc Vùng Cấp cao. |
+| **FIG. 00** | `ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg` | **Hero Section** (Khung chân dung Tầng 1) | **Đợt 3** | `media_1793975473686_ee1a9d05.jpg` | Chân dung thủ lĩnh Chị Khánh Vân ngồi sofa trong trang phục vest xanh ngọc thanh lịch, phong thái điềm tĩnh, tri thức và chiều sâu chuyên môn của Giám đốc Vùng Cấp cao. |
+| **FIG. 01** | `VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` | **Hero Section** (Toàn cảnh Tầng 2) | **Đợt 2** | `1793511781173...48d5bc65.jpg` (Số 60) | Thủ lĩnh Khánh Vân ngồi ghế trung tâm trong trang phục vest trắng thanh lịch cùng hơn 35 nữ quản lý & chuyên viên tinh hoa trong trang phục vest xanh đồng bộ tại sảnh văn phòng Manulife; khẳng định quy mô, tầm vóc và uy tín của Giám đốc Vùng Cấp cao. |
 | **FIG. 02** | `VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg` | **Section 4 — Chương I** (2009–2017) | **Đợt 2** | `1793510241398...dabe.jpg` (Số 03) | Chị Khánh Vân chủ trì hướng dẫn đội ngũ bên bàn họp chiến lược văn phòng Manulife; đại diện cho tác phong làm việc bài bản, chỉn chu từ nền tảng vận hành ngân hàng ANZ. |
 | **FIG. 03** | `SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg` | **Section 4 — Chương II** (Bước ngoặt 2018) | Đợt 1 | `a2.jpg` | Ảnh nhận giải sân khấu duy nhất trong 3 chương: Vinh danh Top 1 DRD+ Tỷ lệ duy trì hợp đồng 2025 &mdash; bảo chứng cho chữ "Tín" và niềm tin dài hạn của khách hàng. |
 | **FIG. 04** | `SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg` | **Section 4 — Chương III** (2018–nay) | **Đợt 3** | `media_1793902871806_1870a2bd.jpg` | Khoảnh khắc dạ tiệc tối sang trọng cùng Tổng Giám Đốc (CEO) Tina Nguyễn và Giám Đốc Khối Đại Lý (CAO) Manulife Việt Nam; khẳng định vị thế C-Level và sự ghi nhận cao nhất của Ban điều hành đối với Nhà Quản lý Xuất sắc nhất Châu Á. |
