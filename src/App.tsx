@@ -880,7 +880,7 @@ export function App() {
               </div>
 
               <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal max-w-xl">
-                Gần hai thập kỷ kiến tạo giá trị: từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và liên tục giữ vững vị thế Top 1 Manulife Việt Nam trong nhiều năm. Khánh Vân đồng hành bảo toàn dòng tiền và hoạch định gia sản bền vững cho các gia đình tinh hoa, đồng thời dẫn dắt hệ thống 64 nhà quản lý kế cận.
+                Với gần hai thập kỷ kiến tạo giá trị, ghi dấu ấn từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ cho đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và vị thế Top 1 Manulife Việt Nam nhiều năm liền. Hiện tại, Vân vẫn đang chuyên tâm đồng hành cùng các gia đình Việt trong việc bảo toàn dòng tiền và hoạch định gia sản bền vững, đồng thời trực tiếp dẫn dắt hệ thống gồm 64 nhà quản lý kế cận và hơn 500 tư vấn viên chuyên nghiệp.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
