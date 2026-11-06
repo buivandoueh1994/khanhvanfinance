@@ -711,6 +711,14 @@ export function App() {
 
   const pressMentions = [
     {
+      source: 'ASIA ADVISERS NETWORK',
+      sourceType: 'Tạp Chí Bảo Hiểm Châu Á • Singapore',
+      badge: 'Bảo Chứng Quốc Tế',
+      headline: 'Rookie Insurance Agency Leader of the Year 2021 - Nguyen Thi Van',
+      summary: 'Hồ sơ vinh danh chính thức từ Hội đồng Giám khảo Quốc tế ghi nhận dấu ấn lãnh đạo xuất sắc và cống hiến nâng cao nhận thức cộng đồng.',
+      url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
+    },
+    {
       source: 'VIETNAMNET',
       sourceType: 'Báo VietNamNet • Chuyên Đề Banker',
       badge: 'Chuyển Mình Từ Banker',
@@ -725,22 +733,6 @@ export function App() {
       headline: 'Đại lý Manulife Việt Nam nhận danh hiệu nhà quản lý mới của năm tại Châu Á',
       summary: 'Vinh danh bà Nguyễn Thị Vân - Trưởng khu vực kinh doanh HCM12 đoạt giải thưởng Rookie Insurance Agency Leader of the Year 2021.',
       url: 'https://vietnamnet.vn/dai-ly-manulife-viet-nam-nhan-danh-hieu-nha-quan-ly-moi-cua-nam-755155.html',
-    },
-    {
-      source: 'BÁO NGƯỜI LAO ĐỘNG',
-      sourceType: 'Báo Người Lao Động • Tuổi Trẻ Online',
-      badge: 'Lãnh Đạo Tinh Hoa',
-      headline: 'Đại lý Manulife Việt Nam được vinh danh Nhà quản lý đại lý bảo hiểm mới của năm',
-      summary: 'Ghi nhận nỗ lực xuất sắc của bà Nguyễn Thị Vân trong việc phát triển đội ngũ quy mô lớn, đào tạo 12 đại lý MDRT và chuẩn hóa năng lực tư vấn.',
-      url: 'https://tuoitre.vn/nld/chuyen-trang-phu-nu/dai-ly-manulife-viet-nam-duoc-vinh-danh-nha-quan-ly-dai-ly-bao-hiem-moi-cua-nam-20210712131050553.htm',
-    },
-    {
-      source: 'ASIA ADVISERS NETWORK',
-      sourceType: 'Tạp Chí Bảo Hiểm Châu Á • Singapore',
-      badge: 'Bảo Chứng Quốc Tế',
-      headline: 'Rookie Insurance Agency Leader of the Year 2021 - Nguyen Thi Van',
-      summary: 'Hồ sơ vinh danh chính thức từ Hội đồng Giám khảo Quốc tế ghi nhận dấu ấn lãnh đạo xuất sắc và cống hiến nâng cao nhận thức cộng đồng.',
-      url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
     },
   ];
 
@@ -951,40 +943,40 @@ export function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
             {pressMentions.map((item, idx) => (
               <a
                 key={idx}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 bg-white/70 hover:bg-white border border-[#E4E1D8] hover:border-[#008746]/60 rounded-[4px] shadow-[0_2px_12px_-4px_rgba(10,54,34,0.05)] hover:shadow-[0_12px_32px_-8px_rgba(10,54,34,0.12)] transition-all duration-300 flex flex-col justify-between"
+                className="group relative p-6 sm:p-7 bg-white/70 hover:bg-white border border-[#E4E1D8] hover:border-[#008746]/60 rounded-[4px] shadow-[0_2px_12px_-4px_rgba(10,54,34,0.05)] hover:shadow-[0_12px_32px_-8px_rgba(10,54,34,0.12)] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-3 mb-4 pb-3 border-b border-[#EFECE6]">
-                    <div>
-                      <div className="font-serif text-[15px] sm:text-base font-semibold tracking-[0.08em] text-[#0A3622] uppercase">
+                  <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-[#EFECE6]">
+                    <div className="min-w-0">
+                      <div className="font-serif text-base sm:text-[17px] font-semibold tracking-[0.06em] text-[#0A3622] uppercase truncate">
                         {item.source}
                       </div>
-                      <div className="text-[10px] uppercase tracking-[0.12em] text-[#858E89] mt-0.5">
+                      <div className="text-[10px] uppercase tracking-[0.12em] text-[#858E89] mt-0.5 truncate">
                         {item.sourceType}
                       </div>
                     </div>
-                    <span className="shrink-0 text-[10px] font-medium tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#008746]/10 text-[#008746] border border-[#008746]/20">
+                    <span className="shrink-0 text-[10px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#008746]/10 text-[#008746] border border-[#008746]/20 whitespace-nowrap">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-[15px] font-normal leading-snug text-[#181F1C] group-hover:text-[#008746] transition-colors line-clamp-3 mb-2.5">
+                  <h3 className="font-serif text-[16px] font-normal leading-snug text-[#181F1C] group-hover:text-[#008746] transition-colors line-clamp-3 mb-3">
                     &ldquo;{item.headline}&rdquo;
                   </h3>
 
-                  <p className="text-xs text-[#56605B] font-normal leading-relaxed line-clamp-2">
+                  <p className="text-xs text-[#56605B] font-normal leading-relaxed line-clamp-3">
                     {item.summary}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#F2EFE9] flex items-center justify-between text-[11px] font-medium tracking-[0.14em] uppercase text-[#008746]">
+                <div className="pt-4 mt-5 border-t border-[#F2EFE9] flex items-center justify-between text-[11px] font-medium tracking-[0.14em] uppercase text-[#008746]">
                   <span className="group-hover:underline underline-offset-4">Đọc bài báo gốc</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
