@@ -1016,9 +1016,11 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Cột Trái (7 Cột): Định Vị Quyền Lực, Châm Ngôn & Nút Hành Động */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-[#DCD8CE] shadow-xs text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] text-[#0A3622] font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
-                <span>Cựu Banker ANZ &bull; Giám Đốc Vùng Cấp Cao Manulife</span>
+              <div className="flex items-center gap-2.5 text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] text-[#0A3622] font-medium">
+                <span className="w-5 h-[1px] bg-[#008746]" />
+                <span>Cựu Banker ANZ</span>
+                <span className="text-[#858E89]">&bull;</span>
+                <span>Giám Đốc Vùng Cấp Cao Manulife</span>
               </div>
 
               <div className="space-y-3">
