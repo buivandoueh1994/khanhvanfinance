@@ -864,8 +864,8 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Cột Trái (7 Cột): Định Vị Quyền Lực, Châm Ngôn & Nút Hành Động */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-7">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#008746]/10 border border-[#008746]/20 text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#008746] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-[#DCD8CE] shadow-xs text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] text-[#0A3622] font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
                 <span>Cựu Banker ANZ &bull; Giám Đốc Vùng Cấp Cao Manulife</span>
               </div>
 
