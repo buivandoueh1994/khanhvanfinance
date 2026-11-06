@@ -203,49 +203,46 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       {/* FLOATING TRIGGER BUTTON (DEDICATED BOTTOM RIGHT) */}
       {!isOpen && (
         <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col items-end pointer-events-auto select-none">
-          {/* Subtle executive status pill (gently draws attention without being intrusive) */}
+          {/* Subtle executive status pill (delicate, elegant, zero redundancy) */}
           <div
-            className="mb-2 bg-[#FAF9F5]/95 backdrop-blur-md text-[#0A3622] border border-[#00A758]/35 px-2.5 py-1 rounded-full shadow-[0_2px_12px_rgba(10,54,34,0.1)] text-[10px] font-medium flex items-center gap-1.5 transition-all hover:scale-105 cursor-pointer"
+            className="mb-1.5 bg-[#FAF9F5]/90 backdrop-blur-md text-[#28322D] border border-[#00A758]/25 px-2.5 py-0.5 rounded-full shadow-[0_2px_8px_rgba(10,54,34,0.06)] text-[9.5px] sm:text-[10px] font-normal flex items-center gap-1.5 transition-all hover:scale-102 cursor-pointer"
             onClick={() => setIsOpen(true)}
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#22C55E]" />
             </span>
-            <span className="text-[#181F1C] font-semibold">Khánh Vân trực tuyến</span>
-            <span className="text-[#008746]">&bull; Nhắn tin ngay</span>
+            <span className="text-[#28322D]">Trực tuyến</span>
+            <span className="text-[#008746] font-medium">&bull; Phản hồi ngay</span>
           </div>
 
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="group relative flex items-center gap-3 pl-2.5 pr-4.5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_10px_28px_rgba(10,54,34,0.38)] border border-[#00A758]/60 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-            aria-label="Mở Chat Với Khánh Vân"
+            className="group relative flex items-center gap-2 pl-1.5 pr-3.5 sm:pr-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_6px_20px_rgba(10,54,34,0.28)] border border-[#00A758]/40 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            aria-label="Mở Chat với Khánh Vân"
           >
             {/* Subtle breathing emerald halo */}
             <span
-              className="absolute -inset-1 rounded-full bg-[#00A758]/25 pointer-events-none animate-ping"
-              style={{ animationDuration: '3.2s' }}
+              className="absolute -inset-1 rounded-full bg-[#00A758]/20 pointer-events-none animate-ping"
+              style={{ animationDuration: '3.6s' }}
             />
 
             {/* Real Avatar of Chị Khánh Vân */}
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7] shrink-0 shadow-xs bg-[#181F1C]">
+            <div className="relative w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#6EE7B7]/70 shrink-0 shadow-xs bg-[#181F1C]">
               <img
                 src="/images/avatar_khanh_van.jpg"
-                alt="Chuyên gia Tài chính Khánh Vân"
+                alt="Khánh Vân"
                 className="w-full h-full object-cover"
               />
-              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22C55E] border-2 border-[#0A3622] rounded-full" />
+              <span className="absolute bottom-0 right-0 w-2 h-2 bg-[#22C55E] border border-[#0A3622] rounded-full" />
             </div>
 
-            <div className="text-left">
-              <span className="block text-[9.5px] uppercase tracking-[0.16em] text-[#6EE7B7] font-semibold leading-none mb-1">
-                Tư vấn trực tuyến
-              </span>
-              <span className="block font-sans font-semibold text-xs sm:text-[13.5px] text-white leading-none">
-                Chat Với Khánh Vân
-              </span>
-            </div>
+            <span className="font-serif text-[13.5px] sm:text-[14px] font-medium text-white/95 leading-none tracking-[0.02em] whitespace-nowrap">
+              Chat với Khánh Vân
+            </span>
+
+            <Sparkles className="w-3 h-3 text-[#6EE7B7]/75 group-hover:text-[#6EE7B7] transition-colors shrink-0" />
           </button>
         </div>
       )}
@@ -274,8 +271,8 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h4 className="font-serif text-[17px] sm:text-lg font-medium text-white leading-none tracking-tight">
-                      Chat Với Khánh Vân
+                    <h4 className="font-serif text-[16px] sm:text-[17px] font-medium text-white leading-none tracking-tight">
+                      Chat với Khánh Vân
                     </h4>
                     <Sparkles className="w-3.5 h-3.5 text-[#6EE7B7]" />
                   </div>
