@@ -83,8 +83,110 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
-    id: 'tien-gui-sinh-loi-it-di-gia-dinh-bat-an-nhieu-hon',
+    id: 'am-29-phan-tram-mot-nam-giu-du-10-nam-sinh-loi-9-phay-4',
     index: '01',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/VanPhong_ChiVanCungDoiNgu_BanHopXanhLa.jpg',
+    imageCaption: 'Chiến lược quản trị tài sản và kỷ luật ủy thác dòng tiền dài hạn cùng các cộng sự nòng cốt.',
+    title: 'Âm 29,5% Trong Một Năm: Kỷ Luật Giữ Đủ 10 Năm Để Đạt Mức Sinh Lời 9,4%/Năm',
+    excerpt:
+      'Cuối năm 2022, khi tài khoản đỏ gần 30%, câu hỏi phổ biến là: "Có nên cắt lỗ luôn không?". Nhưng khoản lỗ trên giấy chỉ thành lỗ thật khi ta bán tháo. Tách bạch ngăn ngắn hạn và dài hạn chính là chìa khóa để an tâm đi qua giông bão.',
+    content: `*Cuối năm 2022, Vân nhận khá nhiều tin nhắn từ bạn bè và khách hàng với câu hỏi na ná nhau: "Có nên cắt lỗ luôn không, mình không chịu nổi nữa?". Họ không thiếu hiểu biết, nhiều người là quản lý thu nhập rất tốt. Chỉ là khi tài khoản đỏ gần 30%, cảm xúc thường đi trước lý trí.*
+
+## Khi Một Khoản Tiền Phải Gánh Quá Nhiều Nhiệm Vụ
+
+Vân nghe nhiều hơn khuyên. Và khi gỡ từng lớp ra, câu chuyện thường chung một gốc rễ: một khoản tiền đang bị bắt gánh cùng lúc quá nhiều trọng trách — vừa muốn là tiền tích lũy dài hạn cho tương lai, vừa muốn là tiền phòng bị rút ra khi cần chi gấp.
+
+Thử nhìn lại các con số thực tế trên thị trường:
+- Quỹ Tăng Trưởng do Công ty Quản lý Quỹ Manulife quản lý (đơn vị đang quản lý danh mục khoảng 150.000 tỷ đồng tài sản) giảm **29,5%** trong năm biến động 2022.
+- Những nhà đầu tư không hoảng loạn bán tháo đã đón trọn nhịp phục hồi mạnh mẽ: **+11,8%** năm 2023, **+14,1%** năm 2024 và bứt phá **+26,2%** trong năm 2025.
+
+Tính chung chu kỳ 10 năm đến hết 2025, mức sinh lời trung bình đạt **9,4%/năm**, tương đương mức tăng trưởng lũy kế **145,5%**. Tất nhiên, đây là số liệu lịch sử và không hàm ý cam kết cho tương lai, nhưng phản ánh rõ nét quy luật vận động của thị trường vốn.
+
+## Hai Bài Học Đắt Giá Từ Thực Tế Đầu Tư Dài Hạn
+
+Từ bức tranh số liệu ấy, có hai điều Vân thấy rất đáng suy ngẫm cho mỗi người làm chủ tài chính:
+
+- **Thứ nhất, lỗ trên giấy chỉ trở thành lỗ thật khi ta bán ra:** Người vội vã rời đi giữa năm 2022 đã tự tay hiện thực hóa phần thiệt hại, và vắng mặt đúng vào thời điểm thị trường phục hồi rực rỡ nhất.
+- **Thứ hai, tính kỷ luật quan trọng hơn nỗ lực đoán đáy thị trường:** Tích lũy đều đặn đồng nghĩa với việc ngay trong những năm thị trường định giá thấp, ta vẫn đang gom thêm tài sản ở vùng giá tốt cho bài toán 10 năm, thay vì sợ hãi dừng lại.
+
+## Nguyên Tắc Tách Dòng Tiền Thành Hai Ngăn Rõ Ràng
+
+Lời khuyên Vân luôn chia sẻ với các gia đình là hãy thiết lập ranh giới tài chính minh bạch:
+
+- **Ngăn ngắn hạn (Thanh khoản & Phòng vệ):** Dự phòng chi tiêu 6–12 tháng, học phí của con, nghĩa vụ tài chính sắp tới. Ngăn này bắt buộc phải tuyệt đối ổn định và an toàn, không được phép phụ thuộc vào biến động lên xuống của thị trường.
+- **Ngăn dài hạn (Ủy thác & Tăng trưởng):** Khoản tiền bạn chắc chắn chưa cần đụng tới trong vòng 5–10 năm. Chỉ ngăn này mới đủ tư cách và kiên nhẫn để ngồi yên đi qua các chu kỳ giông bão.
+
+Khi mỗi đồng tiền đã được phân công đúng nhiệm vụ, một năm thị trường âm gần 30% dẫu có khó chịu, nhưng không thể buộc ta phải đưa ra những quyết định bán tháo vội vàng trong hoảng loạn.
+
+Thị trường luôn có những chu kỳ biến động. Người giữ được kỷ luật và biết ủy thác cho các định chế quản lý quỹ chuyên nghiệp sẽ tận dụng được sức mạnh của lãi kép dài hạn. Điều cốt tử là đừng bao giờ nhảy khỏi tàu ngay giữa cơn bão.
+
+Mỗi gia đình là một bài toán dòng tiền riêng biệt. Nếu bạn cũng đang cân nhắc rà soát lại cấu trúc tài chính cho gia đình mình, cứ nhắn tin trao đổi cùng Vân nhé. Những góc nhìn độc lập luôn giúp ta sáng tỏ thêm nhiều điều.`,
+    keyTakeaways: [
+      'Khoản lỗ trên giấy chỉ trở thành lỗ thật khi bạn hoảng loạn bán tháo và bỏ lỡ chu kỳ phục hồi của thị trường.',
+      'Kỷ luật tích lũy định kỳ và ủy thác quỹ chuyên nghiệp quan trọng hơn nỗ lực đoán đỉnh, đoán đáy ngắn hạn.',
+      'Tách bạch dòng tiền: Ngăn ngắn hạn giữ an toàn thanh khoản, ngăn dài hạn kiên nhẫn chờ lãi kép vượt giông bão.',
+    ],
+  },
+  {
+    id: '17-trieu-va-171-trieu-chiec-xuong-ca-va-quyen-loi-tai-nan',
+    index: '02',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/VanPhong_ChiVanCung5NuQuanLy_SanhVomTron.jpg',
+    imageCaption: 'Chị Khánh Vân ân cần hướng dẫn đội ngũ quản lý về quy trình thẩm định và giải quyết quyền lợi bồi thường cho khách hàng.',
+    title: '17 Triệu Và 171 Triệu: Câu Chuyện Bồi Thường Hy Hữu Từ Một Chiếc Xương Cá',
+    excerpt:
+      'Nuốt phải xương cá làm thủng ruột non phải mổ cấp cứu. Viện phí 17 triệu được chi trả, nhưng điều khoản tai nạn bất ngờ kích hoạt thêm 150 triệu tiền mặt. Tổng chi trả vượt 171 triệu đồng. Định nghĩa “tai nạn” trong hợp đồng rộng hơn nhiều người vẫn nghĩ.',
+    content: `*17 triệu và 171 triệu. Hai con số chênh nhau hơn mười lần, và cả hai đều đến từ một chiếc xương cá trong bữa cơm gia đình thường nhật.*
+
+## Ca Bồi Thường Hy Hữu Từ Bàn Ăn
+
+Đây là ca bồi thường thực tế vừa được giải quyết tại Manulife mà Vân trực tiếp theo dõi. Khách hàng tham gia hợp đồng từ năm 2022. Trong một bữa cơm gia đình, người này chẳng may nuốt phải một chiếc xương cá. Chiếc xương trôi xuống làm thủng ruột non, khiến bệnh nhân phải nhập viện phẫu thuật khẩn cấp.
+
+Phần viện phí phẫu thuật khoảng **17 triệu đồng**, đi kèm các khoản hỗ trợ chi phí y tế, được bảo lãnh và thanh toán đầy đủ theo quyền lợi chăm sóc sức khỏe. Nhưng điều khiến Vân muốn chia sẻ câu chuyện này nằm ở phần quyền lợi thứ hai.
+
+Biến cố hóc dị vật gây tổn thương nội tạng nghiêm trọng này được xác định là sự kiện tai nạn khách quan, ngoài ý muốn. Do đó, hợp đồng lập tức kích hoạt điều khoản **Phẫu thuật nội tạng do tai nạn**, chi trả thêm một khoản tiền mặt lên tới **150 triệu đồng** chuyển thẳng vào tài khoản của khách hàng. Tổng số tiền chi trả thực tế vượt mốc **171 triệu đồng**.
+
+## Hiểu Lầm Phổ Biến Về Khái Niệm "Tai Nạn"
+
+Hiểu lầm phổ biến nhất mà Vân thường gặp là nhiều người mặc định "tai nạn" chỉ là va quẹt xe cộ hay trượt ngã ngoài đường. 
+
+Trong quy tắc và điều khoản pháp lý của hợp đồng bảo hiểm, tai nạn được định nghĩa chặt chẽ và rộng hơn rất nhiều: **Đó là sự kiện bất ngờ, không lường trước được, do nguyên nhân bên ngoài tác động trực tiếp lên cơ thể và gây ra thương tổn.**
+
+Một chiếc xương cá hay dị vật vô tình hóc phải trong bữa ăn hoàn toàn thỏa mãn đầy đủ các yếu tố của định nghĩa pháp lý này.
+
+## Phân Biệt Hai Khoản Tiền Trong Một Ca Chi Trả
+
+Cần phân biệt rất rõ bản chất của hai khoản tiền trong trường hợp này để thấy rõ giá trị của một hợp đồng được thiết kế chuẩn mực:
+- **Khoản 17 triệu đồng:** Là khoản thanh toán chi phí y tế thực tế phát sinh tại bệnh viện (nằm viện, phẫu thuật, thuốc men).
+- **Khoản 150 triệu đồng:** Là quyền lợi bồi thường khoán tiền mặt theo danh mục phẫu thuật do tai nạn, chi trả đúng theo hạn mức cam kết trong hợp đồng, hoàn toàn độc lập với hóa đơn viện phí.
+
+Khoản tiền mặt 150 triệu này đóng vai trò như một nguồn bù đắp thu nhập quý giá, giúp người bệnh và gia đình có thêm nguồn lực để yên tâm nghỉ ngơi, tĩnh dưỡng và phục hồi thể trạng mà không phải lo nghĩ về gánh nặng tài chính.
+
+## Ba Việc Nhỏ Giúp Bảo Vệ Quyền Lợi Của Chính Bạn
+
+Từ ca bồi thường thực tế này, Vân có ba gợi ý thiết thực mà mọi gia đình đều nên thực hiện ngay:
+
+- **Một là mở hợp đồng đọc kỹ phần định nghĩa "tai nạn":** Đừng tự đoán theo cảm tính thông thường mà hãy căn cứ trên định nghĩa pháp lý chính thức.
+- **Hai là kiểm tra bảng tỷ lệ thương tật & danh mục phẫu thuật:** Để nắm rõ từng tình huống tổn thương cụ thể sẽ tương ứng với quyền lợi chi trả bao nhiêu tiền mặt.
+- **Ba là luôn nộp hồ sơ đầy đủ khi có biến cố y tế:** Hãy để bộ phận thẩm định đối chiếu theo điều khoản hợp đồng và hồ sơ bệnh án, thay vì tự tước bỏ quyền lợi của mình vì nghĩ "chắc chuyện này không được chi trả".
+
+Bữa cơm gia đình vẫn cứ ngon và ấm cúng như thế, chẳng ai ngồi vào mâm mà phải bận tâm đến chiếc xương cá. Vân chỉ mong mỗi người đều hiểu thật rõ hợp đồng của mình, để lỡ khi có biến cố bất ngờ xảy đến, điều duy nhất gia đình cần bận tâm là nhanh chóng bình phục sức khỏe.`,
+    keyTakeaways: [
+      'Định nghĩa tai nạn trong bảo hiểm bao gồm mọi biến cố bất ngờ từ bên ngoài gây thương tổn, không chỉ giới hạn ở giao thông.',
+      'Phân biệt rõ chi trả viện phí thực tế và quyền lợi tiền mặt khoán theo danh mục phẫu thuật tai nạn để tối ưu quyền lợi.',
+      'Khi có biến cố y tế, luôn chủ động nộp hồ sơ đầy đủ để thẩm định chuyên môn xét duyệt, tránh tự phán đoán làm mất quyền lợi.',
+    ],
+  },
+  {
+    id: 'tien-gui-sinh-loi-it-di-gia-dinh-bat-an-nhieu-hon',
+    index: '03',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -134,11 +236,11 @@ Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông 
   },
   {
     id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
-    index: '02',
+    index: '04',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '6 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg',
     imageCaption: 'Chị Khánh Vân chủ trì buổi làm việc chuyên sâu về cơ chế bảo vệ và chuyển giao gia sản.',
     title: 'Khi Tài Sản Thừa Kế Trở Thành Vết Nứt Gia Đình: Bài Học Từ Một Cơ Chế Chuyển Giao Văn Minh',
@@ -179,11 +281,11 @@ Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi c
   },
   {
     id: 'phi-nam-dau-boc-hoi-toi-uu-dong-tien',
-    index: '03',
+    index: '05',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/VanPhong_NhomQuanLy_ThaoLuanTaiLieuThucChien.jpg',
     imageCaption: 'Phân tích bảng minh họa dòng tiền thực chiến và cấu trúc phí cùng các cộng sự chuyên môn.',
     title: 'Phí Năm Đầu “Bốc Hơi”: Hiểu Đúng Để Không Đánh Mất Cơ Hội Tối Ưu Dòng Tiền',
@@ -243,7 +345,7 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
   },
   {
     id: 'ba-thang-trang-tay-von-lieng-khong-nam-trong-so-sach',
-    index: '04',
+    index: '06',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -300,7 +402,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
-    index: '05',
+    index: '07',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 10, 2026',
     readTime: '5 phút đọc',
@@ -321,7 +423,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
-    index: '06',
+    index: '08',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 09, 2026',
     readTime: '5 phút đọc',
@@ -342,7 +444,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
-    index: '07',
+    index: '09',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
     readTime: '4 phút đọc',
@@ -362,7 +464,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
-    index: '08',
+    index: '10',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 08, 2026',
     readTime: '5 phút đọc',
@@ -383,7 +485,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
-    index: '09',
+    index: '11',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
     readTime: '4 phút đọc',
