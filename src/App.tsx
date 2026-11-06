@@ -83,8 +83,58 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
-    id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
+    id: 'tien-gui-sinh-loi-it-di-gia-dinh-bat-an-nhieu-hon',
     index: '01',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/VanPhong_NhomQuanLy_TraoDoiCongViecBenTablet.jpg',
+    imageCaption: 'Phân tích cơ cấu dòng tiền, bài toán thanh khoản và rà soát hợp đồng bảo vệ cùng các chuyên gia quản trị gia sản.',
+    title: 'Tiền Gửi Sinh Lời Ít Đi, Nhưng Nhiều Gia Đình Lại Bất An Nhiều Hơn',
+    excerpt:
+      'Lãi suất tiết kiệm càng thấp, người ta càng sốt ruột tìm nơi sinh lời cao hơn. Nhưng nghịch lý là càng sốt ruột kiếm lời, ta càng dễ tháo bỏ chính thứ giữ mình đứng vững. Khoản tiết kiệm không chỉ để sinh lời, nó là lớp đệm sống còn trước biến cố.',
+    content: `*Lãi suất tiết kiệm càng thấp, người ta càng muốn rút tiền ra đi tìm nơi sinh lời cao hơn. Nghịch lý là càng sốt ruột kiếm lời, ta càng dễ tháo bỏ chính thứ giữ mình đứng vững.*
+
+## Nghịch Lý Lãi Suất Giảm & Cơn Sốt Ruột Tìm Kiếm Lợi Nhuận
+
+Việc 46/46 ngân hàng đồng loạt hạ lãi suất huy động chỉ là cái cớ để thấy rõ tâm lý đó. Mặt bằng lãi suất xuống, và nhiều nhà bắt đầu dồn gần hết khoản tích lũy sang những kênh kỳ vọng cao hơn.
+
+Vân nhìn chuyện này ở một góc khác.
+
+Con số lãi suất là con số bình quân, dễ khiến ta thấy mình đang "ổn". Chúng ta theo dõi rất kỹ mức chênh lệch sinh lời vài phần trăm, nhưng hiếm khi tự hỏi: nếu ngày mai có biến cố sức khỏe lớn, mình phải bán tài sản nào, vào lúc nào, với giá nào?
+
+## Tiết Kiệm Không Chỉ Để Sinh Lời — Đó Là "Lớp Đệm" Sống Còn
+
+Khoản tiết kiệm nằm đó không chỉ để sinh lời. Nó là lớp đệm. Khi lớp đệm bị đem đi đầu tư hết, tài sản trông thì nhiều nhưng thực ra rất bấp bênh, vì đang kẹt ở những nơi không thể rút ra đúng lúc, đúng giá. Một hóa đơn điều trị bệnh nặng không hẹn trước, cũng không chờ thị trường hồi phục.
+
+Từ những năm làm ngân hàng đến nay, Vân giữ một triết lý khá giản dị: biết đủ là đủ. Tài chính suy cho cùng là công cụ để tâm trí được an yên và tự do, không phải cuộc đua xem ai sinh lời cao hơn ai. Làm nghề tử tế, tích lũy bền bỉ, khó trước dễ sau. Với Vân, "khó trước" là chịu trích một phần nhỏ để dựng hàng rào bảo vệ trước, rồi mới thong thả tính chuyện tăng trưởng.
+
+## Bản Chất Quỹ Dự Phòng Y Tế: Khóa Chặt Rủi Ro Bằng Tỷ Trọng Nhỏ
+
+Bản chất của một quỹ dự phòng tài chính y tế rất rõ ràng. Mình đóng một khoản định kỳ nhỏ so với thu nhập, để đổi lấy quyền nhận về hàng tỷ đồng ngay khi rủi ro lớn xảy ra. Khoản này không cần sinh lời. Nhiệm vụ duy nhất của nó là giữ nguyên vẹn khối tài sản gia đình đã mất nhiều năm xây dựng, không bị bào mòn bởi những hóa đơn đột ngột.
+
+Chỉ cần một tỷ trọng rất nhỏ. Không phải giữ khư khư tiền mặt, cũng không phải tất tay. Phần còn lại cứ để đi làm việc của nó, với tâm thế nhẹ nhõm hơn.
+
+## "Khám Sức Khỏe" Cho Hợp Đồng Bảo Vệ Cũ
+
+Nếu trong nhà đã có hợp đồng bảo vệ từ vài năm trước, đây là lúc hợp lý để mở ra xem lại:
+- Mức bảo vệ hiện tại còn theo kịp chi phí y tế ngày càng đắt đỏ không?
+- Người trụ cột tạo ra dòng tiền chính đã được che chắn đủ đầy chưa?
+- Các điều khoản bồi thường và bảo lãnh viện phí có đáp ứng nhu cầu thực tế của gia đình?
+
+Kiểm tra sức khỏe cho hợp đồng cũ cũng quan trọng không kém việc kiểm tra sức khỏe cho chính bản thân mình.
+
+Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông ngày càng hấp dẫn, bạn xác định phần "đủ" của mình ở đâu, và bằng cách nào? Vân rất muốn lắng nghe góc nhìn của mọi người ở phần bình luận.`,
+    keyTakeaways: [
+      'Tiết kiệm không chỉ để sinh lời mà là “lớp đệm thanh khoản” sống còn bảo vệ gia đình trước các biến cố y tế bất ngờ.',
+      'Bản chất quỹ dự phòng y tế là dùng một tỷ trọng định kỳ nhỏ để khóa chặt rủi ro, giữ nguyên vẹn khối tài sản tích lũy qua nhiều năm.',
+      'Chủ động “khám sức khỏe hợp đồng bảo vệ cũ” định kỳ để đảm bảo mức bảo vệ người trụ cột luôn bắt kịp chi phí y tế thực tế.',
+    ],
+  },
+  {
+    id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
+    index: '02',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '6 phút đọc',
@@ -129,7 +179,7 @@ Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi c
   },
   {
     id: 'phi-nam-dau-boc-hoi-toi-uu-dong-tien',
-    index: '02',
+    index: '03',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -193,11 +243,11 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
   },
   {
     id: 'ba-thang-trang-tay-von-lieng-khong-nam-trong-so-sach',
-    index: '03',
+    index: '04',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/Studio_ChiVanCungDoiNgu_KhoanhKhacVuiVe.jpg',
     imageCaption: 'Khoảnh khắc chân thành cùng các cộng sự thân thiết — minh chứng cho giá trị của sự tử tế và chữ Tín bền lâu.',
     title: 'Ba Tháng Trắng Tay Và Bài Học Về Vốn Liếng Không Nằm Trong Sổ Sách',
@@ -250,7 +300,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
-    index: '04',
+    index: '05',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 10, 2026',
     readTime: '5 phút đọc',
@@ -271,7 +321,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
-    index: '05',
+    index: '06',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 09, 2026',
     readTime: '5 phút đọc',
@@ -292,7 +342,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
-    index: '06',
+    index: '07',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
     readTime: '4 phút đọc',
@@ -312,7 +362,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
-    index: '07',
+    index: '08',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 08, 2026',
     readTime: '5 phút đọc',
@@ -333,7 +383,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
-    index: '08',
+    index: '09',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
     readTime: '4 phút đọc',

@@ -20,7 +20,7 @@ Tài liệu này là **Nguồn Tham Chiếu Chuẩn Duy Nhất (Single Source of
 
 ## II. BẢNG PHÂN BỔ ẢNH ĐANG SỬ DỤNG TRÊN WEBSITE (ACTIVE IN PRODUCTION)
 
-Hiện tại website đang sử dụng chính thức **19 bức ảnh tinh hoa (FIG. 00 đến FIG. 18)** được phân bổ chính xác theo các phần nội dung:
+Hiện tại website đang sử dụng chính thức **20 bức ảnh tinh hoa (FIG. 00 đến FIG. 19)** được phân bổ chính xác theo các phần nội dung:
 
 | Mã Fig | Tên File Trong `public/images/` | Vị trí trên Website | Nguồn gốc | Tên file gốc ban đầu | Ý nghĩa & Thông điệp truyền tải |
 | :---: | :--- | :--- | :---: | :--- | :--- |
@@ -43,6 +43,7 @@ Hiện tại website đang sử dụng chính thức **19 bức ảnh tinh hoa (
 | **FIG. 16** | `VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Bài 01) | **Đợt 2** | `1793511781180...e70b0c59.jpg` | Chị Khánh Vân chủ trì phiên làm việc chuyên sâu về cơ chế bảo vệ và chuyển giao gia sản tại bàn họp. |
 | **FIG. 17** | `VanPhong_NhomQuanLy_ThaoLuanTaiLieuThucChien.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Bài 02) | **Đợt 2** | `1793511781184...9135c11c.jpg` | Đội ngũ quản lý thảo luận tài liệu thực chiến trên iPad & sổ tay; trực quan hóa phân tích cấu trúc phí và dòng tiền. |
 | **FIG. 18** | `Studio_ChiVanCungDoiNgu_KhoanhKhacVuiVe.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Bài 03) | **Đợt 2** | `1793510241453...e522.jpg` | Khoảnh khắc chân thành, nụ cười đồng đội ấm áp; minh chứng sống động cho giá trị của sự tử tế và chữ Tín bền lâu. |
+| **FIG. 19** | `VanPhong_NhomQuanLy_TraoDoiCongViecBenTablet.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Tiền gửi sinh lời ít đi) | **Đợt 2** | `1793511781190...82044317bfe12499fec5353b3d974880.jpg` (Số 68) | Các chuyên gia tư vấn tinh hoa trao đổi giải pháp trên tablet bên khung cửa sổ view bầu trời thoáng đãng; biểu trưng cho góc nhìn quản trị thanh khoản và lớp đệm bảo vệ dòng tiền gia đình. |
 
 ---
 
