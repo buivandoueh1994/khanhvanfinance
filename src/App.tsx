@@ -711,7 +711,10 @@ export function App() {
 
   const pressMentions = [
     {
-      source: 'ASIA ADVISERS NETWORK',
+      source: 'Asia Advisers Network',
+      logo: '/images/logos/logo_aan.svg',
+      logoAlt: 'Asia Advisers Network Logo',
+      logoClass: 'h-6 sm:h-7',
       sourceType: 'Tạp Chí Bảo Hiểm Châu Á • Singapore',
       badge: 'Bảo Chứng Quốc Tế',
       headline: 'Rookie Insurance Agency Leader of the Year 2021 - Nguyen Thi Van',
@@ -719,7 +722,10 @@ export function App() {
       url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
     },
     {
-      source: 'VIETNAMNET',
+      source: 'VietNamNet',
+      logo: '/images/logos/logo_vietnamnet.svg',
+      logoAlt: 'Báo VietNamNet Logo',
+      logoClass: 'h-7 sm:h-8',
       sourceType: 'Báo VietNamNet • Chuyên Đề Banker',
       badge: 'Chuyển Mình Từ Banker',
       headline: 'Từ ngân hàng đến bảo hiểm: Khi những banker chọn rẽ hướng - Biến sự chỉn chu thành lợi thế dẫn dắt',
@@ -727,7 +733,10 @@ export function App() {
       url: 'https://vietnamnet.vn/tu-ngan-hang-den-bao-hiem-khi-nhung-banker-chon-re-huong-2523056.html',
     },
     {
-      source: 'VIETNAMNET',
+      source: 'VietNamNet',
+      logo: '/images/logos/logo_vietnamnet.svg',
+      logoAlt: 'Báo VietNamNet Logo',
+      logoClass: 'h-7 sm:h-8',
       sourceType: 'Báo VietNamNet • Thị Trường & Tiêu Dùng',
       badge: 'Giải Thưởng Châu Á',
       headline: 'Đại lý Manulife Việt Nam nhận danh hiệu nhà quản lý mới của năm tại Châu Á',
@@ -953,18 +962,21 @@ export function App() {
                 className="group relative p-6 sm:p-7 bg-white/70 hover:bg-white border border-[#E4E1D8] hover:border-[#008746]/60 rounded-[4px] shadow-[0_2px_12px_-4px_rgba(10,54,34,0.05)] hover:shadow-[0_12px_32px_-8px_rgba(10,54,34,0.12)] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-[#EFECE6]">
-                    <div className="min-w-0">
-                      <div className="font-serif text-base sm:text-[17px] font-semibold tracking-[0.06em] text-[#0A3622] uppercase truncate">
-                        {item.source}
-                      </div>
-                      <div className="text-[10px] uppercase tracking-[0.12em] text-[#858E89] mt-0.5 truncate">
-                        {item.sourceType}
-                      </div>
+                  <div className="flex items-center justify-between gap-3 mb-4 pb-3.5 border-b border-[#EFECE6] min-h-[46px]">
+                    <div className="flex items-center">
+                      <img
+                        src={item.logo}
+                        alt={item.logoAlt}
+                        className={`${item.logoClass} w-auto max-w-[155px] sm:max-w-[185px] object-contain object-left`}
+                      />
                     </div>
                     <span className="shrink-0 text-[10px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#008746]/10 text-[#008746] border border-[#008746]/20 whitespace-nowrap">
                       {item.badge}
                     </span>
+                  </div>
+
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#858E89] mb-2.5 font-medium">
+                    {item.sourceType}
                   </div>
 
                   <h3 className="font-serif text-[16px] font-normal leading-snug text-[#181F1C] group-hover:text-[#008746] transition-colors line-clamp-3 mb-3">
