@@ -697,90 +697,38 @@ function buildSystemPrompt(retrievedAngles = []) {
 ${contextBlocks ? `=========================================\n4. TÀI LIỆU THAM KHẢO BỔ SUNG:\n=========================================\n${contextBlocks}` : ''}`;
 }
 
-// Save full multi-turn conversation history & structured transcript to Project Chị Vân's Supabase DB
-async function saveConversationToDb({
+// Save Lead captured from chat directly to Project Chị Vân's web_leads table
+async function saveLeadFromChatToChiVanDb({
   sessionId = '',
-  visitorName = '',
-  visitorPhone = '',
-  cleanMsg = '',
-  botReply = '',
-  history = [],
-  detectedPhone = null,
-  matchedVideoCodes = [],
-  matchedAngles = [],
-  pageUrl = '',
-  suggestedQuestion = null,
+  fullName = '',
+  phone = '',
+  topic = 'Tư vấn giải pháp tài chính qua Chatbot',
+  note = '',
+  source = 'chatbot',
+  telegramNotified = false,
 }) {
-  if (!SUPABASE_KEY) return false;
-
-  const cleanHistory = (history || []).filter(
-    (h) =>
-      h &&
-      h.content &&
-      !String(h.content).startsWith('Chào bạn! Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm') &&
-      !String(h.content).startsWith('Chào bạn! Để thiết kế gói giải pháp tài chính tối ưu')
-  );
-
-  const fullHistory = [
-    ...cleanHistory,
-    { role: 'user', content: cleanMsg },
-    { role: 'assistant', content: botReply },
-  ];
-
-  const fullTurnCount = Math.floor(fullHistory.length / 2);
-
-  const transcriptLines = fullHistory.map((m) => {
-    const isUser = m.role === 'user' || m.role === 'client';
-    const speaker = isUser ? (visitorName ? `Khách (${visitorName})` : 'Khách hàng') : 'Khánh Vân';
-    return `${speaker}: ${m.content}`;
-  });
-  const fullTranscript = transcriptLines.join('\n\n');
-
-  const logPayload = {
-    client_slug: 'khanh-van-chat',
-    topic_key: `${sessionId || 'anon'}-${Date.now()}`,
-    category: detectedPhone ? `LEAD_PHONE: ${detectedPhone}` : 'CHAT_LOG',
-    angle_summary: `[Khách: ${visitorName || 'Ẩn danh'} | SĐT: ${detectedPhone || 'Chưa có'}] Lượt ${fullTurnCount}: ${cleanMsg.slice(0, 140)}`,
-    facebook_post: cleanMsg,
-    website_article: {
-      bot_reply: botReply,
-      user_message: cleanMsg,
-      session_id: sessionId || null,
-      turn_count: fullTurnCount,
-      detected_phone: detectedPhone || null,
-      visitor_name: visitorName || null,
-      suggested_question: suggestedQuestion || null,
-      full_transcript: fullTranscript,
-      full_history: fullHistory,
-      updated_at: new Date().toISOString(),
-    },
-    linkedin_post: JSON.stringify({
-      sessionId,
-      visitorName,
-      visitorPhone: detectedPhone,
-      turnCount: fullTurnCount,
-      matchedVideoCodes,
-      matchedAngles: (matchedAngles || []).map((a) => (typeof a === 'string' ? a : a.angle_code)),
-      pageUrl,
-      suggestedQuestion,
-      fullTranscript,
-    }),
-    post_mode: 'advisory',
-  };
-
+  if (!SUPABASE_KEY || !phone) return false;
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/web_leads`, {
       method: 'POST',
       headers: {
         apikey: SUPABASE_KEY,
         Authorization: `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(logPayload),
+      body: JSON.stringify({
+        session_id: sessionId || null,
+        full_name: fullName || 'Khách Chatbot',
+        phone,
+        topic,
+        note: note || null,
+        source,
+        telegram_notified: telegramNotified,
+      }),
     });
     return res.ok;
-  } catch (e) {
-    console.error('Error saving chat conversation to Supabase:', e.message);
+  } catch (err) {
+    console.error('Error inserting lead from chat into web_leads:', err.message);
     return false;
   }
 }
@@ -820,7 +768,7 @@ export default async function handler(req, res) {
         'Chào bạn! Vân rất vui được kết nối cùng bạn. Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy nhắn cho Vân nhé!';
       const suggestedQ = 'Tôi muốn tìm hiểu gói bảo hiểm phù hợp cho gia đình';
 
-      // Ensure even initial greetings are logged in Project Chị Vân's web_chat_logs and post_history
+      // Ensure even initial greetings are logged in Project Chị Vân's web_chat_logs table
       logToChiVanChatLogs({
         sessionId,
         visitorName,
@@ -830,22 +778,6 @@ export default async function handler(req, res) {
         matchedVideoCodes: [],
         pageUrl,
       }).catch(() => {});
-
-      if (SUPABASE_KEY) {
-        saveConversationToDb({
-          sessionId,
-          visitorName,
-          visitorPhone,
-          cleanMsg,
-          botReply: greetingReply,
-          history: [],
-          detectedPhone: null,
-          matchedVideoCodes: [],
-          matchedAngles: [],
-          pageUrl,
-          suggestedQuestion: suggestedQ,
-        }).catch(() => {});
-      }
 
       return res.status(200).json({
         reply: greetingReply,
@@ -989,7 +921,7 @@ export default async function handler(req, res) {
     // 6. Compute smart contextual suggested follow-up question
     const suggestedQuestion = getSmartSuggestedQuestion(cleanMsg, history, botReply, detectedPhone);
 
-    // 7. Save chat log to Project Chị Vân (web_chat_logs + post_history) & Telegram Lead Alert in parallel
+    // 7. Save chat log to Project Chị Vân's web_chat_logs & Telegram Lead Alert in parallel
     const sideEffectTasks = [];
 
     // Always log directly to Project Chị Vân's web_chat_logs table
@@ -997,7 +929,7 @@ export default async function handler(req, res) {
       logToChiVanChatLogs({
         sessionId,
         visitorName,
-        visitorPhone,
+        visitorPhone: detectedPhone || visitorPhone,
         cleanMsg,
         botReply,
         matchedVideoCodes,
@@ -1005,25 +937,7 @@ export default async function handler(req, res) {
       })
     );
 
-    if (SUPABASE_KEY) {
-      sideEffectTasks.push(
-        saveConversationToDb({
-          sessionId,
-          visitorName,
-          visitorPhone,
-          cleanMsg,
-          botReply,
-          history,
-          detectedPhone,
-          matchedVideoCodes,
-          matchedAngles,
-          pageUrl,
-          suggestedQuestion,
-        })
-      );
-    }
-
-    // ONLY send notification to Telegram if client left their phone number!
+    // ONLY send notification to Telegram & record in web_leads if client left their phone number!
     if (detectedPhone) {
       const leadSummary = await summaryPromise;
       const safeSummary = leadSummary
@@ -1041,6 +955,19 @@ export default async function handler(req, res) {
         `${safeSummary}`;
 
       sideEffectTasks.push(sendTelegramNotification(tgText));
+
+      // Also save lead cleanly into web_leads table
+      sideEffectTasks.push(
+        saveLeadFromChatToChiVanDb({
+          sessionId,
+          fullName: visitorName,
+          phone: detectedPhone,
+          topic: 'Tư vấn giải pháp tài chính qua Chatbot',
+          note: safeSummary,
+          source: 'chatbot',
+          telegramNotified: true,
+        })
+      );
     }
 
     if (sideEffectTasks.length > 0) {

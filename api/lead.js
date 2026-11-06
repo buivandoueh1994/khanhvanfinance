@@ -66,24 +66,6 @@ async function getTelegramChatIds() {
         if (cid) cachedTelegramChatIds.add(String(cid));
       }
     }
-
-    if (SUPABASE_KEY) {
-      const sbRes = await fetch(
-        `${SUPABASE_URL}/rest/v1/post_history?client_slug=eq.telegram-config&select=topic_key&limit=10`,
-        {
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: `Bearer ${SUPABASE_KEY}`,
-          },
-        }
-      );
-      if (sbRes.ok) {
-        const rows = await sbRes.json();
-        for (const r of rows) {
-          if (r.topic_key) cachedTelegramChatIds.add(String(r.topic_key));
-        }
-      }
-    }
   } catch (e) {
     console.error('Telegram discovery error:', e);
   }
@@ -153,58 +135,18 @@ export default async function handler(req, res) {
       }
     }
 
-    // 2. Save Lead directly to Project Chị Vân's web_leads and post_history
-    const dbTasks = [];
-
-    // Always log to Project Chị Vân's web_leads table
-    dbTasks.push(
-      logLeadToChiVanDb({
-        sessionId,
-        fullName,
-        phone,
-        email,
-        topic,
-        background,
-        note,
-        source,
-        telegramNotified,
-      })
-    );
-
-    if (SUPABASE_KEY) {
-      dbTasks.push(
-        fetch(`${SUPABASE_URL}/rest/v1/post_history`, {
-          method: 'POST',
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: `Bearer ${SUPABASE_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            client_slug: 'khanh-van-lead',
-            topic_key: `${phone}-${Date.now()}`,
-            category: 'WEB_LEAD',
-            angle_summary: `${fullName} | ${phone} | ${topic}`,
-            facebook_post: note || topic,
-            website_article: JSON.stringify({
-              fullName,
-              phone,
-              email,
-              topic,
-              background,
-              note,
-              source,
-              telegramNotified,
-            }),
-            post_mode: 'advisory',
-          }),
-        }).catch((e) => console.error('Save lead error to Chi Van DB:', e))
-      );
-    }
-
-    if (dbTasks.length > 0) {
-      await Promise.allSettled(dbTasks);
-    }
+    // 2. Save Lead directly to Project Chị Vân's web_leads table
+    await logLeadToChiVanDb({
+      sessionId,
+      fullName,
+      phone,
+      email,
+      topic,
+      background,
+      note,
+      source,
+      telegramNotified,
+    });
 
     return res.status(200).json({
       ok: true,
