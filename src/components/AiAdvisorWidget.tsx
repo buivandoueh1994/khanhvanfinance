@@ -205,7 +205,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
         <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex flex-col items-end pointer-events-auto select-none">
           {/* Subtle executive status pill (gently draws attention without being intrusive) */}
           <div
-            className="mb-2.5 bg-[#FAF9F5]/95 backdrop-blur-md text-[#0A3622] border border-[#00A758]/35 px-3 py-1.5 rounded-full shadow-[0_4px_16px_rgba(10,54,34,0.14)] text-[11px] font-medium flex items-center gap-2 transition-all hover:scale-105 cursor-pointer"
+            className="mb-2 bg-[#FAF9F5]/95 backdrop-blur-md text-[#0A3622] border border-[#00A758]/35 px-2.5 py-1 rounded-full shadow-[0_2px_12px_rgba(10,54,34,0.1)] text-[10px] font-medium flex items-center gap-1.5 transition-all hover:scale-105 cursor-pointer"
             onClick={() => setIsOpen(true)}
           >
             <span className="relative flex h-2 w-2">

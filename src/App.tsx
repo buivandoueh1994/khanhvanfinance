@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  Award,
   Check,
   Menu,
   Play,
@@ -944,9 +945,10 @@ export function App() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
 
                   {/* Floating Trust Badge dập nổi ở góc trên */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/92 backdrop-blur-md text-[#0A3622] text-[10px] font-semibold tracking-wider uppercase shadow-lg border border-white/60">
-                      <span className="text-[#D4AF37]">🏆</span> Asia Trusted Awards Winner
+                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:py-1 rounded-full bg-white/80 backdrop-blur-md text-[#0A3622] text-[8.5px] sm:text-[9px] font-medium tracking-[0.14em] uppercase shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-white/70">
+                      <Award className="w-2.5 h-2.5 text-[#B8860B] stroke-[2]" />
+                      <span>Asia Trusted Awards Winner</span>
                     </span>
                   </div>
 
