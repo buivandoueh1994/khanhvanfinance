@@ -709,6 +709,41 @@ export function App() {
   const featuredArticles = filteredArticles.filter((a) => a.featured);
   const archiveArticles = filteredArticles.filter((a) => !a.featured);
 
+  const pressMentions = [
+    {
+      source: 'BÁO LAO ĐỘNG',
+      sourceType: 'Thời báo Lao Động • Cơ quan TLĐLĐ Việt Nam',
+      badge: 'Giải Thưởng Châu Á',
+      headline: 'Manulife Việt Nam thắng lớn tại giải thưởng Asia Trusted Life Agents & Advisers Awards 2021',
+      summary: 'Vinh danh bà Nguyễn Thị Vân đoạt giải Nhà quản lý đại lý bảo hiểm mới của năm (Rookie Insurance Agency Leader of the Year).',
+      url: 'https://laodong.vn/kinh-doanh/manulife-viet-nam-thang-lon-tai-giai-thuong-asia-trusted-life-agents-advisers-awards-2021-950987.ldo',
+    },
+    {
+      source: 'AN NINH THỦ ĐÔ',
+      sourceType: 'Báo An Ninh Thủ Đô • Diễn đàn Kinh tế',
+      badge: 'Chuyên Đề Banker',
+      headline: 'Từ ngân hàng đến bảo hiểm: Khi những banker chọn rẽ hướng - Biến sự chỉn chu thành lợi thế dẫn dắt',
+      summary: 'Khánh Vân chia sẻ triết lý mang tiêu chuẩn kỷ luật khắt khe từ 8 năm tại ANZ Bank để xây dựng sự nghiệp bảo hiểm bền vững.',
+      url: 'https://anninhthudo.vn/tu-ngan-hang-den-bao-hiem-khi-nhung-banker-chon-re-huong-post490076.antd',
+    },
+    {
+      source: 'VIETNAMNET',
+      sourceType: 'Báo VietNamNet • Báo chí Chính thống',
+      badge: 'Tôn Vinh Lãnh Đạo',
+      headline: 'Tôn vinh Rookie Insurance Agency Leader of the Year tại đấu trường quốc tế 2021',
+      summary: 'Đại diện Việt Nam được xướng tên tại giải thưởng bảo hiểm danh giá Châu Á ghi nhận dấu ấn lãnh đạo vượt bậc.',
+      url: 'https://vietnamnet.vn/tim-kiem?q=Nguy%E1%BB%85n+Th%E1%BB%8B+V%C3%A2n+Manulife',
+    },
+    {
+      source: 'DOANH NHÂN PLUS',
+      sourceType: 'Tạp chí Doanh Nhân • Chuyên trang Quản trị',
+      badge: 'Gia Sản & Quản Trị',
+      headline: 'Chiến lược hoạch định gia sản & Nghệ thuật kiến tạo đội ngũ quản lý tài chính kế cận',
+      summary: 'Phương pháp bảo toàn dòng tiền dài hạn cho gia đình thượng lưu và mô hình ươm mầm hơn 500 nhân sự tinh hoa.',
+      url: 'https://doanhnhanplus.vn/',
+    },
+  ];
+
   const metrics = [
     { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản & Tín dụng quốc tế' },
     { figure: 'Top 1', unit: 'Toàn Quốc ANZ', detail: 'Vô địch doanh số thế chấp năm 2017' },
@@ -894,6 +929,67 @@ export function App() {
                 </span>
               </figcaption>
             </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 BẢO CHỨNG BÁO CHÍ & TRUYỀN THÔNG (PRESS & MEDIA MENTIONS) */}
+      <section id="bao-chi" className="border-t border-[#E4E1D8] bg-[#FAF9F5] py-14 sm:py-16">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 border-b border-[#E4E1D8]">
+            <div className="space-y-1.5">
+              <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
+                Bảo Chứng Báo Chí &amp; Truyền Thông Uy Tín
+              </div>
+              <h2 className="font-serif text-xl sm:text-2xl text-[#0A3622] font-normal tracking-tight">
+                Được đưa tin &amp; trích dẫn chuyên môn trên các cơ quan báo chí uy tín
+              </h2>
+            </div>
+            <p className="text-xs text-[#56605B] max-w-md font-normal leading-relaxed">
+              Các bài phân tích chuyên sâu về triết lý hoạch định gia sản, năng lực dẫn dắt đội ngũ và giải thưởng lãnh đạo xuất sắc cấp khu vực Châu Á.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8">
+            {pressMentions.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-6 bg-white/70 hover:bg-white border border-[#E4E1D8] hover:border-[#008746]/60 rounded-[4px] shadow-[0_2px_12px_-4px_rgba(10,54,34,0.05)] hover:shadow-[0_12px_32px_-8px_rgba(10,54,34,0.12)] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-4 pb-3 border-b border-[#EFECE6]">
+                    <div>
+                      <div className="font-serif text-[15px] sm:text-base font-semibold tracking-[0.08em] text-[#0A3622] uppercase">
+                        {item.source}
+                      </div>
+                      <div className="text-[10px] uppercase tracking-[0.12em] text-[#858E89] mt-0.5">
+                        {item.sourceType}
+                      </div>
+                    </div>
+                    <span className="shrink-0 text-[10px] font-medium tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#008746]/10 text-[#008746] border border-[#008746]/20">
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-[15px] font-normal leading-snug text-[#181F1C] group-hover:text-[#008746] transition-colors line-clamp-3 mb-2.5">
+                    &ldquo;{item.headline}&rdquo;
+                  </h3>
+
+                  <p className="text-xs text-[#56605B] font-normal leading-relaxed line-clamp-2">
+                    {item.summary}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-[#F2EFE9] flex items-center justify-between text-[11px] font-medium tracking-[0.14em] uppercase text-[#008746]">
+                  <span className="group-hover:underline underline-offset-4">Đọc bài báo gốc</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
