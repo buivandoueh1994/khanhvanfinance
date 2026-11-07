@@ -287,11 +287,70 @@ function cleanReplyText(text = '') {
     .trim();
 }
 
+// Validate standard 10-digit Vietnamese mobile phone numbers & detect mistyped phone candidates
+function analyzePhoneNumber(str = '') {
+  if (!str) return { validPhone: null, invalidPhoneReply: null };
+
+  // 1. Valid 10-digit Vietnamese mobile phone number: starts with 03, 05, 07, 08, 09 (or +84 / 84 equivalent)
+  const validMatch = String(str).match(/(?<!\d)(?:\+?84|0)([35789](?:[\s.-]*\d){8})(?!\d)/);
+  if (validMatch) {
+    const cleanDigits = '0' + validMatch[1].replace(/[\s.-]/g, '');
+    return { validPhone: cleanDigits, invalidPhoneReply: null };
+  }
+
+  // 2. User attempted to type a phone number starting with 0 or +84 (7 to 14 digits total)
+  const candidateMatch = String(str).match(/(?<!\d)(?:\+?84|0)(?:[\s.-]*\d){6,13}(?!\d)/);
+  if (candidateMatch) {
+    const rawStr = candidateMatch[0].trim();
+    const digitsOnly = rawStr.replace(/[\s.-]/g, '').replace(/^\+?84/, '0');
+    const len = digitsOnly.length;
+
+    if (len > 10) {
+      return {
+        validPhone: null,
+        invalidPhoneReply:
+          `Dạ Vân thấy số ${digitsOnly} bạn vừa nhắn đang có ${len} chữ số (hình như bị dư ${len - 10} số so với chuẩn 10 số điện thoại tại Việt Nam).\n\n` +
+          `Bạn kiểm tra và nhắn lại giúp Vân đúng 10 số Zalo của mình để Vân kết bạn và gửi bảng minh họa không bị nhầm nhé!`,
+      };
+    }
+
+    if (len < 10) {
+      return {
+        validPhone: null,
+        invalidPhoneReply:
+          `Dạ Vân thấy số ${digitsOnly} bạn vừa nhắn mới có ${len} chữ số (hình như đang thiếu ${10 - len} số so với chuẩn 10 số điện thoại tại Việt Nam).\n\n` +
+          `Bạn kiểm tra và nhắn lại giúp Vân đủ 10 số Zalo của mình để Vân kết bạn gửi bảng minh họa chi tiết nhé!`,
+      };
+    }
+
+    // len === 10 but invalid mobile prefix (e.g. 01..., 02..., 04..., 06..., 00...)
+    return {
+      validPhone: null,
+      invalidPhoneReply:
+        `Dạ số ${digitsOnly} bạn vừa nhắn hình như chưa đúng đầu số di động 10 số tại Việt Nam (các đầu số chuẩn hiện nay là 03, 05, 07, 08, 09).\n\n` +
+        `Bạn kiểm tra và nhắn lại giúp Vân số Zalo chính xác của mình để Vân kết nối ngay nhé!`,
+    };
+  }
+
+  // 3. Bare numeric string (7-13 digits without leading 0, e.g., forgot '0' at start: 931579771)
+  const trimmed = String(str).trim();
+  if (/^\d[\d\s.-]{5,12}\d$/.test(trimmed)) {
+    const bareDigits = trimmed.replace(/[\s.-]/g, '');
+    if (bareDigits.length >= 7 && bareDigits.length <= 13 && !/000000$/.test(bareDigits)) {
+      return {
+        validPhone: null,
+        invalidPhoneReply:
+          `Dạ Vân thấy dãy số ${bareDigits} bạn vừa nhắn chưa đúng định dạng số điện thoại 10 số tại Việt Nam (bắt đầu bằng 03, 05, 07, 08 hoặc 09).\n\n` +
+          `Bạn kiểm tra và nhắn lại giúp Vân đủ 10 số Zalo của mình để Vân kết bạn gửi bảng minh họa không bị nhầm nhé!`,
+      };
+    }
+  }
+
+  return { validPhone: null, invalidPhoneReply: null };
+}
+
 function extractPhoneNumber(str = '') {
-  if (!str) return null;
-  // Support 9, 10, and 11-digit Vietnamese phone numbers (e.g. 0931579771, 03282383489, +84931579771)
-  const match = String(str).match(/(?<!\d)(?:\+?84|0)[1-9](?:[\s.-]*\d){7,9}(?!\d)/);
-  return match ? match[0].replace(/[\s.-]/g, '') : null;
+  return analyzePhoneNumber(str).validPhone;
 }
 
 // Sanitize and normalize multi-turn conversation history for Gemini API
@@ -788,6 +847,27 @@ export default async function handler(req, res) {
       });
     }
 
+    // 1.5. Check if user typed a phone number (valid 10-digit VN phone vs mistyped phone number)
+    const phoneAnalysis = analyzePhoneNumber(cleanMsg);
+    if (phoneAnalysis.invalidPhoneReply) {
+      logToChiVanChatLogs({
+        sessionId,
+        visitorName,
+        visitorPhone: null,
+        cleanMsg,
+        botReply: phoneAnalysis.invalidPhoneReply,
+        matchedVideoCodes: [],
+        pageUrl,
+      }).catch(() => {});
+
+      return res.status(200).json({
+        reply: phoneAnalysis.invalidPhoneReply,
+        matchedVideos: [],
+        suggestedQuestion: null,
+        detectedPhone: null,
+      });
+    }
+
     // 2. Match relevant knowledge angles from local memory (0ms)
     const allAngles = await getKnowledgeAngles();
     const matchedScored = retrieveRelevantAngles(cleanMsg, history, allAngles, 4);
@@ -812,8 +892,8 @@ export default async function handler(req, res) {
     const systemPrompt = buildSystemPrompt(matchedAngles);
     const contents = buildGeminiContents(history, cleanMsg);
 
-    // Check if the user typed a phone number inside their chat message
-    const detectedPhone = extractPhoneNumber(cleanMsg) || visitorPhone || null;
+    // Check if the user typed a valid 10-digit Vietnamese phone number inside their chat message
+    const detectedPhone = phoneAnalysis.validPhone || visitorPhone || null;
 
     // Start generating AI Lead Summary in parallel if phone number is detected (adds 0ms extra wait!)
     const summaryPromise = detectedPhone
