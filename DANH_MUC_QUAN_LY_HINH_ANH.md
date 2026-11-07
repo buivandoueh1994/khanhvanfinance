@@ -20,7 +20,7 @@ Tài liệu này là **Nguồn Tham Chiếu Chuẩn Duy Nhất (Single Source of
 
 ## II. BẢNG PHÂN BỔ ẢNH ĐANG SỬ DỤNG TRÊN WEBSITE (ACTIVE IN PRODUCTION)
 
-Hiện tại website đang sử dụng chính thức **22 bức ảnh tinh hoa (FIG. 00 đến FIG. 21)** được phân bổ chính xác theo các phần nội dung:
+Hiện tại website đang sử dụng chính thức **23 bức ảnh tinh hoa (FIG. 00 đến FIG. 22)** được phân bổ chính xác theo các phần nội dung:
 
 | Mã Fig | Tên File Trong `public/images/` | Vị trí trên Website | Nguồn gốc | Tên file gốc ban đầu | Ý nghĩa & Thông điệp truyền tải |
 | :---: | :--- | :--- | :---: | :--- | :--- |
@@ -46,6 +46,7 @@ Hiện tại website đang sử dụng chính thức **22 bức ảnh tinh hoa (
 | **FIG. 19** | `VanPhong_NhomQuanLy_TraoDoiCongViecBenTablet.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Tiền gửi sinh lời ít đi) | **Đợt 2** | `1793511781190...82044317bfe12499fec5353b3d974880.jpg` (Số 68) | Các chuyên gia tư vấn tinh hoa trao đổi giải pháp trên tablet bên khung cửa sổ view bầu trời thoáng đãng; biểu trưng cho góc nhìn quản trị thanh khoản và lớp đệm bảo vệ dòng tiền gia đình. |
 | **FIG. 20** | `VanPhong_ChiVanCungDoiNgu_BanHopXanhLa.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Âm 29,5% một năm) | **Đợt 2** | `1793510241380...b8f1fc194928e43deabdadff1967507c.jpg` (Số 02) | Chị Khánh Vân chủ trì thảo luận chiến lược dài hạn cùng đội ngũ quản lý quanh bàn họp xanh lá Manulife; biểu trưng cho tính kỷ luật và sự kiên định cùng thị trường đi qua chu kỳ biến động. |
 | **FIG. 21** | `VanPhong_ChiVanCung5NuQuanLy_SanhVomTron.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Ca bồi thường 171 triệu) | **Đợt 2** | `1793511781132...0cdc59fde5a39fa20bf132489a09760b.jpg` (Số 47) | Chị Khánh Vân ân cần hướng dẫn các cộng sự quản lý tại sảnh vòm tròn Manulife; biểu trưng cho sự tận tâm hỗ trợ bồi thường quyền lợi và bảo vệ toàn diện sức khỏe cho các gia đình. |
+| **FIG. 22** | `SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg` | **Section 4 — Chương II** (Cú đúp Quán quân 2025) | **Đợt 3** | `media_1794057068026_08e77cb2.jpg` | Sân khấu LED vinh danh Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ hoàn thành chỉ tiêu FYP năm 2025; minh chứng năng lực khai thác kinh doanh và tốc độ bứt phá quy mô dẫn đầu toàn quốc song hành cùng tỷ lệ duy trì Top 1. |
 
 ---
 

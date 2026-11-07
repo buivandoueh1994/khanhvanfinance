@@ -904,7 +904,7 @@ export function App() {
     { figure: 'Top 1', unit: 'Lãnh Đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
     { figure: '64', unit: 'Quản Lý Cấp Cao', detail: 'Đội ngũ lãnh đạo kế cận trực tiếp' },
     { figure: '500+', unit: 'Nhân Sự Hệ Thống', detail: 'Vận hành chuẩn mực & gắn kết' },
-    { figure: 'Top 1', unit: 'Tỷ Lệ Duy Trì', detail: 'Bảo chứng niềm tin khách hàng dài hạn' },
+    { figure: 'Cú Đúp Top 1', unit: 'FYP & Duy Trì 2025', detail: 'Dẫn đầu chỉ tiêu kinh doanh & Giữ trọn niềm tin' },
   ];
 
   return (
@@ -1237,7 +1237,11 @@ export function App() {
                   idx !== 0 ? 'lg:border-l lg:border-[#DCD8CE] lg:pl-7' : ''
                 } space-y-2`}
               >
-                <div className="font-serif text-4xl sm:text-[44px] font-normal text-[#0A3622] leading-none tracking-tight">
+                <div
+                  className={`font-serif ${
+                    m.figure.length > 7 ? 'text-2xl sm:text-[32px]' : 'text-4xl sm:text-[44px]'
+                  } font-normal text-[#0A3622] leading-none tracking-tight`}
+                >
                   {m.figure}
                 </div>
                 <div className="text-[11px] uppercase tracking-[0.16em] text-[#181F1C] font-medium pt-1">
@@ -1315,40 +1319,71 @@ export function App() {
 
           {/* Chapter II & III Asymmetric Editorial Spread */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Column: Landscape Retention Photo + Chapter II Text */}
-            <div className="lg:col-span-6 space-y-12">
-              <figure
-                onClick={() =>
-                  setLightbox({
-                    src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
-                    fig: 'CLIENT TRUST',
-                    title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
-                    subtitle: 'Minh chứng cao nhất cho chất lượng tư vấn chuẩn mực và dài hạn.',
-                  })
-                }
-                className="cursor-zoom-in group"
-              >
-                <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
-                  <img
-                    src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
-                    alt="Top 1 DRD+ Tỷ lệ duy trì hợp đồng 2025"
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
-                  />
-                </div>
-                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng (Bảo chứng niềm tin khách hàng)
-                </figcaption>
-              </figure>
+            {/* Left Column: Dual Top 1 2025 Showcase + Chapter II Text */}
+            <div className="lg:col-span-6 space-y-10">
+              {/* Cú Đúp Quán Quân Toàn Quốc: Top 1 FYP & Top 1 Duy Trì 2025 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                {/* Award 1: Top 1 FYP 2025 */}
+                <figure
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg',
+                      fig: 'TOP 1 FYP 2025',
+                      title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Hoàn Thành Chỉ Tiêu FYP (2025)',
+                      subtitle: 'Bản lĩnh dẫn đầu quy mô và tốc độ tăng trưởng doanh số khai thác mới toàn quốc tại Manulife Việt Nam.',
+                    })
+                  }
+                  className="cursor-zoom-in group"
+                >
+                  <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[3px] shadow-sm">
+                    <img
+                      src="/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg"
+                      alt="Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ hoàn thành chỉ tiêu FYP năm 2025"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                    />
+                  </div>
+                  <figcaption className="mt-3 pt-2.5 border-t border-[#E4E1D8] text-[10.5px] uppercase tracking-[0.1em] text-[#858E89]">
+                    Top 1 DRD+ Hoàn thành chỉ tiêu FYP 2025
+                  </figcaption>
+                </figure>
+
+                {/* Award 2: Top 1 Tỷ Lệ Duy Trì 2025 */}
+                <figure
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
+                      fig: 'CLIENT TRUST',
+                      title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
+                      subtitle: 'Minh chứng cao nhất cho chất lượng tư vấn chuẩn mực và niềm tin dài hạn của khách hàng.',
+                    })
+                  }
+                  className="cursor-zoom-in group"
+                >
+                  <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[3px] shadow-sm">
+                    <img
+                      src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
+                      alt="Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ duy trì hợp đồng năm 2 2025"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                    />
+                  </div>
+                  <figcaption className="mt-3 pt-2.5 border-t border-[#E4E1D8] text-[10.5px] uppercase tracking-[0.1em] text-[#858E89]">
+                    Top 1 DRD+ Tỷ lệ Duy trì Hợp đồng Năm 2
+                  </figcaption>
+                </figure>
+              </div>
 
               <div className="space-y-5 pt-2">
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
-                  CHƯƠNG II &mdash; BƯỚC NGOẶT 2018
+                  CHƯƠNG II &mdash; BƯỚC NGOẶT 2018 ĐẾN ĐỈNH CAO 2025
                 </span>
                 <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                  Bước ra khỏi vùng an toàn &amp; lấy tỷ lệ duy trì làm thước đo danh dự
+                  Cú đúp Quán quân 2025: Dẫn đầu chỉ tiêu FYP &amp; Giữ vững tỷ lệ duy trì
                 </h3>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                   Rời môi trường ngân hàng nước ngoài năm 2018 để kiến tạo sự nghiệp độc lập tại Manulife Việt Nam, Khánh Vân mang theo kỷ luật kiểm soát rủi ro của một Banker: tư vấn đúng và đủ, lấy sự gắn bó dài hạn của khách hàng làm danh dự nghề nghiệp.
+                </p>
+                <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
+                  Năm 2025 đánh dấu cột mốc lịch sử khi chị cùng hệ thống xác lập cú đúp dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ Hoàn thành chỉ tiêu doanh số mới (FYP)</strong> song hành cùng <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ Tỷ lệ duy trì hợp đồng năm 2</strong> &mdash; bảo chứng đanh thép rằng tốc độ tăng trưởng quy mô luôn bắt nguồn từ sự chuẩn mực và chữ Tín vững chắc.
                 </p>
               </div>
             </div>
