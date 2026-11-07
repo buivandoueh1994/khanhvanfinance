@@ -20,7 +20,7 @@ Tài liệu này là **Nguồn Tham Chiếu Chuẩn Duy Nhất (Single Source of
 
 ## II. BẢNG PHÂN BỔ ẢNH ĐANG SỬ DỤNG TRÊN WEBSITE (ACTIVE IN PRODUCTION)
 
-Hiện tại website đang sử dụng chính thức **23 bức ảnh tinh hoa (FIG. 00 đến FIG. 22)** được phân bổ chính xác theo các phần nội dung:
+Hiện tại website đang sử dụng chính thức **24 bức ảnh tinh hoa (FIG. 00 đến FIG. 23)** được phân bổ chính xác theo các phần nội dung:
 
 | Mã Fig | Tên File Trong `public/images/` | Vị trí trên Website | Nguồn gốc | Tên file gốc ban đầu | Ý nghĩa & Thông điệp truyền tải |
 | :---: | :--- | :--- | :---: | :--- | :--- |
@@ -29,7 +29,7 @@ Hiện tại website đang sử dụng chính thức **23 bức ảnh tinh hoa (
 | **FIG. 02** | `VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg` | **Section 4 — Chương I** (2009–2017) | **Đợt 2** | `1793510241398...dabe.jpg` (Số 03) | Chị Khánh Vân chủ trì hướng dẫn đội ngũ bên bàn họp chiến lược văn phòng Manulife; đại diện cho tác phong làm việc bài bản, chỉn chu từ nền tảng vận hành ngân hàng ANZ. |
 | **FIG. 03** | `SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg` | **Section 4 — Chương II** (Bước ngoặt 2018) | Đợt 1 | `a2.jpg` | Ảnh nhận giải sân khấu duy nhất trong 3 chương: Vinh danh Top 1 DRD+ Tỷ lệ duy trì hợp đồng 2025 &mdash; bảo chứng cho chữ "Tín" và niềm tin dài hạn của khách hàng. |
 | **FIG. 04** | `SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg` | **Section 4 — Chương III** (2018–nay) | **Đợt 3** | `media_1793902871806_1870a2bd.jpg` | Khoảnh khắc dạ tiệc tối sang trọng cùng Tổng Giám Đốc (CEO) Tina Nguyễn và Giám Đốc Khối Đại Lý (CAO) Manulife Việt Nam; khẳng định vị thế C-Level và sự ghi nhận cao nhất của Ban điều hành đối với Nhà Quản lý Xuất sắc nhất Châu Á. |
-| **FIG. 05** | `GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg` | **Section 7** (Điểm tựa cuộc sống - Trái) | Đợt 1 | `f1.jpg` | Tổ ấm bình yên bên chồng và hai con tại phòng khách; điểm tựa vững chãi phía sau sự nghiệp. |
+| **FIG. 05** | `GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg` | **Section 7** (Điểm tựa cuộc sống - Trái) & **Reader Bài 09** (Bố Mẹ Đi Làm) | Đợt 1 | `f1.jpg` | Tổ ấm bình yên bên chồng và hai con tại phòng khách nhìn ra ban công xanh; điểm tựa vững chãi phía sau sự nghiệp và minh họa cho nghệ thuật "Hiện diện trọn vẹn". |
 | **FIG. 06** | `GiaDinh_ChiVan_AuYemConBenSanVuon.jpg` | **Section 7** (Điểm tựa cuộc sống - Phải) | Đợt 1 | `f2.jpg` | Tình mẫu tử ấm áp bên con nhỏ nơi sân vườn; hình ảnh người mẹ thấu cảm, chu đáo. |
 | **FIG. 07** | `DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg` | **Section 7** (Phong cách sống 1/3) | Đợt 1 | `l1.jpg` | Đón bình minh trên khinh khí cầu Cappadocia; khát vọng tự do và tầm nhìn vươn tầm quốc tế. |
 | **FIG. 08** | `DoiThuong_ChiVan_SelfiePhongTapGym.jpg` | **Section 7** (Phong cách sống 2/3) | Đợt 1 | `q1.jpg` | Tinh thần kỷ luật rèn luyện thể lực mỗi tuần tại phòng Gym; nguồn năng lượng tích cực bền bỉ. |
@@ -47,6 +47,7 @@ Hiện tại website đang sử dụng chính thức **23 bức ảnh tinh hoa (
 | **FIG. 20** | `VanPhong_ChiVanCungDoiNgu_BanHopXanhLa.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Âm 29,5% một năm) | **Đợt 2** | `1793510241380...b8f1fc194928e43deabdadff1967507c.jpg` (Số 02) | Chị Khánh Vân chủ trì thảo luận chiến lược dài hạn cùng đội ngũ quản lý quanh bàn họp xanh lá Manulife; biểu trưng cho tính kỷ luật và sự kiên định cùng thị trường đi qua chu kỳ biến động. |
 | **FIG. 21** | `VanPhong_ChiVanCung5NuQuanLy_SanhVomTron.jpg` | **Section 02 — Góc nhìn & Bài viết** (Bìa & Reader: Ca bồi thường 171 triệu) | **Đợt 2** | `1793511781132...0cdc59fde5a39fa20bf132489a09760b.jpg` (Số 47) | Chị Khánh Vân ân cần hướng dẫn các cộng sự quản lý tại sảnh vòm tròn Manulife; biểu trưng cho sự tận tâm hỗ trợ bồi thường quyền lợi và bảo vệ toàn diện sức khỏe cho các gia đình. |
 | **FIG. 22** | `SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg` | **Section 4 — Chương II** (Cú đúp Quán quân 2025) | **Đợt 3** | `media_1794057068026_08e77cb2.jpg` | Sân khấu LED vinh danh Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ hoàn thành chỉ tiêu FYP năm 2025; minh chứng năng lực khai thác kinh doanh và tốc độ bứt phá quy mô dẫn đầu toàn quốc song hành cùng tỷ lệ duy trì Top 1. |
+| **FIG. 23** | `DoiThuong_ChiVan_PhongTapGym_Ngang.jpg` | **Section 03 — Góc nhìn & Bài viết** (Bìa & Reader: Bài 11 Kỷ luật Bản thân) | Đợt 1 (Crop 16:10) | `q1.jpg` | Khung hình ngang chuẩn 16:10 ghi lại khoảnh khắc rèn luyện thể lực tại phòng Gym của chị Khánh Vân; biểu trưng cho sức bền thể chất, tính kỷ luật tự giác và sự điềm tĩnh của người lãnh đạo. |
 
 ---
 

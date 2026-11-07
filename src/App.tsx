@@ -447,19 +447,49 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
     index: '09',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
-    readTime: '4 phút đọc',
-    title: 'Nghệ thuật “Hiện diện trọn vẹn” giữa sự nghiệp và tổ ấm',
+    readTime: '6 phút đọc',
+    featured: false,
+    image: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
+    imageCaption: 'Tổ ấm bình yên bên người bạn đời tri kỷ và hai con — điểm tựa lớn nhất phía sau hành trình sự nghiệp của Khánh Vân.',
+    title: 'Nghệ Thuật “Hiện Diện Trọn Vẹn” Giữa Sự Nghiệp Và Tổ Ấm',
     excerpt:
-      'Cân bằng không có nghĩa là chia đôi quỹ thời gian một cách cơ học, mà là sự toàn tâm toàn ý cho nơi mình đang thuộc về ở từng khoảnh khắc.',
-    content: [
-      'Phụ nữ ở vị trí quản lý thường đối diện với nỗi trăn trở vô hình: khi ở văn phòng lại nghĩ về con cái, khi ở bên con lại bận tâm chuyện công việc. Giải pháp thực sự nằm ở nguyên tắc “Hiện diện trọn vẹn”.',
-      'Trong khung giờ làm việc và đào tạo, toàn bộ sự tập trung được dành cho đội ngũ và khách hàng thông qua việc phân bổ thời gian (Time-blocking) nghiêm ngặt. Và khi trở về nhà vào buổi tối, việc chủ động gác lại thiết bị công việc để lắng nghe câu chuyện nhỏ của hai con giúp mỗi phút giây bên gia đình đều thực sự có chiều sâu.',
-      'Hơn hết, sự chia sẻ thẳng thắn với người bạn đời về mục tiêu và áp lực công việc giúp biến gia đình thành những người đồng hành thấu hiểu.',
-    ],
+      'Đầu năm 2018, khi quyết định khép lại 8 năm tại ngân hàng ANZ ngay lúc đang ở đỉnh cao Top 1 doanh số, điều Vân tìm kiếm không chỉ là bứt phá thu nhập mà là quyền làm chủ thời gian — để vừa dẫn dắt sự nghiệp độc lập, vừa có mặt trọn vẹn trong tuổi thơ của hai con.',
+    content: `*Phụ nữ ở vị trí quản lý thường đối diện với một nỗi trăn trở vô hình: khi ngồi trong phòng họp lại thấp thỏm nghĩ về bữa tối của con, lúc ngồi bên con lại bận tâm chuyện chỉ tiêu, tin nhắn công việc. Sau nhiều năm đi qua áp lực ấy, Vân nhận ra cân bằng không phải là chia đôi quỹ thời gian 50–50 một cách cơ học, mà là nghệ thuật “Hiện diện trọn vẹn” ở nơi mình đang thuộc về.*
+
+## Bước Ngoặt 2018 Và Khát Khao Làm Chủ Quỹ Thời Gian
+
+Đầu năm 2018, sau 8 năm gắn bó với ngân hàng quốc tế ANZ (2009–2017) và vừa chạm cột mốc Top 1 doanh số thế chấp toàn quốc, Vân đưa ra một quyết định khiến nhiều đồng nghiệp bất ngờ: rời vùng an toàn của môi trường ngân hàng nước ngoài để bắt đầu hành trình độc lập tại Manulife Việt Nam.
+
+Lý do không phải vì công việc cũ không tốt. Ngược lại, ANZ đã rèn cho Vân kỷ luật kiểm soát rủi ro và tư duy quản lý tài sản chuẩn mực. Nhưng ở ngưỡng tuổi 30, khi nhìn vào con gái lớn và con trai nhỏ đang lớn lên từng ngày, Vân nhìn thấy hai giới hạn của con đường làm công ăn lương truyền thống: một là trần thu nhập cố định, và hai là quỹ thời gian bị đóng khung từ sáng sớm đến tối muộn.
+
+Vân khao khát một sự nghiệp mà ở đó mình được làm chủ nhịp điệu làm việc — vừa có thể phát triển hệ thống kinh doanh không giới hạn, vừa chủ động sắp xếp thời gian để không bỏ lỡ những cột mốc trưởng thành quan trọng của các con.
+
+## Thoát Khỏi Cảm Giác “Mắc Nợ Hai Đầu” Bằng Nguyên Tắc Đóng Mở Rõ Ràng
+
+Rất nhiều cha mẹ đi làm rơi vào trạng thái kiệt sức vì luôn cảm thấy mình mắc nợ cả công việc lẫn gia đình. Giải pháp giúp Vân điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao mà vẫn giữ được sự thong dong nằm ở kỷ luật phân bổ thời gian (Time-blocking) và ranh giới tâm trí rõ ràng:
+
+- **Từ 8h30 đến 17h30 — Toàn tâm cho đội ngũ và khách hàng:** Trong khung giờ làm việc, đào tạo F1 hoặc thẩm định hồ sơ gia sản cho khách hàng, Vân dành 100% sự tập trung cao độ, giải quyết dứt điểm từng đầu việc theo thứ tự ưu tiên thay vì để công việc kéo dài lê thê.
+- **Khoảnh khắc bước qua cánh cửa nhà — Chủ động gác lại thiết bị:** Khi trở về nhà vào buổi tối, Vân tập thói quen tắt thông báo công việc để thực sự thuộc về gia đình. Đó là giờ phút lắng nghe những câu chuyện nhỏ ở trường của hai chị em, cùng con đọc sách, hay cùng nhau tưới nước cho những chậu cây xanh ngoài ban công.
+
+Trẻ con có một sự nhạy cảm rất kỳ diệu. Các con không đếm bố mẹ ở nhà bao nhiêu tiếng đồng hồ, nhưng các con cảm nhận được ngay ánh mắt và tâm trí của bố mẹ có đang thực sự hướng về mình hay vẫn đang dán vào màn hình điện thoại. Ba mươi phút trò chuyện sâu sắc trước giờ đi ngủ giá trị hơn rất nhiều một buổi tối ngồi cạnh nhau nhưng mỗi người một thế giới riêng.
+
+## Sự Đồng Thuận Của Người Bạn Đời: Biến Tổ Ấm Thành Hậu Phương
+
+Đằng sau danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) hay những mùa vinh danh Top 1 toàn quốc chưa bao giờ là nỗ lực đơn độc của riêng Vân. Đó là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ — người đã luôn tin tưởng và ủng hộ Vân từ những ngày đầu bước ra khỏi vùng an toàn.
+
+Trong đời sống hôn nhân của những người làm quản lý, sai lầm dễ mắc phải nhất là mang gương mặt căng thẳng về nhà nhưng lại chọn cách im lặng tự gồng gánh. Ngược lại, Vân chọn sự minh bạch và sẻ chia thẳng thắn với chồng:
+- **Chia sẻ trước về những giai đoạn cao điểm:** Khi bước vào các tháng chạy chỉ tiêu lớn của vùng hoặc lịch trình sự kiện dày đặc, Vân luôn trao đổi trước để hai vợ chồng chủ động san sẻ lịch đưa đón và đồng hành cùng con.
+- **Tôn trọng không gian và cùng chung tầm nhìn tài chính:** Khi người bạn đời hiểu rõ mục tiêu mình đang theo đuổi không chỉ là danh hiệu nghề nghiệp, mà là xây dựng nền tảng tương lai vững chắc cho cả gia đình, tổ ấm sẽ trở thành trạm sạc năng lượng bình yên nhất.
+
+## Khi Công Việc Tử Tế Chính Là Bài Học Sống Động Nhất Dành Cho Con
+
+Nhiều người thường đặt Công việc và Cuộc sống lên hai đầu bàn cân đối lập. Nhưng với Vân, hai mảnh ghép ấy hòa quyện và nâng đỡ lẫn nhau.
+
+Khi các con nhìn thấy bố mẹ làm việc bằng sự tử tế, giữ chữ Tín với từng khách hàng và đồng nghiệp, chính các con cũng đang hấp thụ bài học tự nhiên nhất về lòng tự trọng và tinh thần trách nhiệm. Và ở chiều ngược lại, khi mỗi ngày đi làm Vân giúp hàng trăm gia đình thiết lập quỹ học vấn và lá chắn bảo vệ người trụ cột, Vân càng thấm thía rằng: tình yêu thương dành cho con cái sẽ trọn vẹn nhất khi đi kèm một cơ chế tài chính kỷ luật — để dù cuộc đời có những biến số bất ngờ, hành trình trưởng thành của các con vẫn luôn được bảo toàn nguyên vẹn.`,
     keyTakeaways: [
-      'Quản trị thời gian theo khung giờ tập trung cao độ.',
-      'Đề cao chất lượng sự hiện diện bên chồng con thay vì số giờ hình thức.',
-      'Đồng thuận cùng người bạn đời để giữ gìn sự bình an trong gia đình.',
+      'Cân bằng không phải là chia đôi thời gian cơ học, mà là hiện diện trọn vẹn 100% tâm trí ở nơi mình đang thuộc về.',
+      'Thiết lập kỷ luật Time-blocking ở văn phòng và chủ động gác lại thiết bị khi về nhà để lắng nghe, kết nối sâu sắc cùng các con.',
+      'Trò chuyện minh bạch với người bạn đời về mục tiêu sự nghiệp và chuẩn bị sẵn cấu trúc tài chính dài hạn để giữ trọn sự bình an cho tổ ấm.',
     ],
   },
   {
@@ -488,19 +518,54 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
     index: '11',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
-    readTime: '4 phút đọc',
-    title: 'Kỷ luật rèn luyện thể chất và bài học về sức bền của người lãnh đạo',
+    readTime: '6 phút đọc',
+    featured: false,
+    image: '/images/DoiThuong_ChiVan_PhongTapGym_Ngang.jpg',
+    imageCaption: 'Duy trì kỷ luật tập luyện thể lực đều đặn mỗi tuần — nền tảng cho sự minh mẫn, điềm tĩnh và sức bền trong quản trị đường dài.',
+    title: 'Kỷ Luật Rèn Luyện Thể Chất Và Bài Học Về Sức Bền Của Người Lãnh Đạo',
     excerpt:
-      'Một tư duy minh mẫn và khả năng ra quyết định điềm tĩnh luôn cần được nuôi dưỡng trong một cơ thể khỏe mạnh, dẻo dai.',
-    content: [
-      'Cường độ làm việc của một Giám đốc Vùng với các lịch trình đào tạo, cố vấn và điều hành đòi hỏi nền tảng thể lực bền bỉ. Việc duy trì lịch tập luyện thể thao đều đặn mỗi tuần không chỉ là chăm sóc sức khỏe, mà là cách rèn luyện tính kỷ luật tự giác.',
-      'Thể thao và quản trị có cùng một quy luật: Không có kết quả bền vững nào được tạo ra chỉ sau một đêm. Sự tiến bộ đến từ việc lặp lại những thói quen đúng đắn ngay cả khi không có ai giám sát.',
-      'Khi làm chủ được nhịp sinh học và năng lượng cá nhân, người lãnh đạo mới có thể lan tỏa sự điềm tĩnh và nguồn cảm hứng tích cực cho tập thể.',
-    ],
+      'Điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao đòi hỏi một nền tảng thể lực dẻo dai. Với Vân, phòng tập, khu vườn xanh và quản trị tài chính đều vận hành theo chung một quy luật: mọi thành quả vững chãi đều được kiến tạo từ những thói quen kỷ luật lặp lại mỗi ngày.',
+    content: `*Nhiều bạn bè và cộng sự thường hỏi Vân: “Làm thế nào để luôn giữ được nguồn năng lượng tích cực và sự điềm tĩnh khi vừa trực tiếp điều hành vùng kinh doanh hơn 500 nhân sự, vừa cố vấn cho khách hàng và chăm sóc gia đình?”. Câu trả lời của Vân không nằm ở những kỹ thuật quản trị phức tạp, mà bắt đầu từ những giờ tập luyện đổ mồ hôi đều đặn mỗi tuần.*
+
+## Quy Luật Chung Giữa Phòng Tập Và Quản Trị: Sức Mạnh Của Sự Lặp Lại
+
+Cường độ làm việc của một Giám đốc Vùng với các lịch trình đào tạo, họp chiến lược cùng các quản lý F1 và hoạch định gia sản đòi hỏi một nền tảng thể lực thực sự bền bỉ. Một tư duy sắc bén và khả năng ra quyết định sáng suốt không thể tồn tại lâu dài trong một cơ thể mệt mỏi.
+
+Nhưng hơn cả câu chuyện vóc dáng hay thể lực, phòng tập là nơi rèn luyện tính kỷ luật tự giác khắt khe nhất:
+- **Không có thành quả nào được tạo ra sau một đêm:** Bạn không thể nâng mức tạ nặng hay có một cơ thể dẻo dai chỉ sau một vài buổi tập đầy hứng khởi. Sự thay đổi chỉ đến khi bạn kiên trì lặp lại các bài tập đúng kỹ thuật ngay cả vào những buổi sáng cơ thể uể oải nhất và không có ai đứng cạnh giám sát.
+- **Chiến thắng sự trì hoãn của chính mình:** Mỗi lần xỏ giày bước vào phòng tập sau một ngày làm việc căng thẳng là một lần rèn luyện bản lĩnh vượt qua sự dễ dãi của bản thân.
+
+Trong quản trị đội ngũ và tích lũy tài sản cũng hoàn toàn tương tự. Thành tựu Top 1 toàn quốc không đến từ những cú bứt phá ngẫu hứng ngắn hạn, mà là kết quả tất yếu của những thói quen chuẩn mực được duy trì bền bỉ từ ngày này qua tháng khác.
+
+## Từ “Ba Tháng Trắng Tay” Đến Đỉnh Cao: Sức Bền Tâm Lý Bắt Nguồn Từ Thể Lực
+
+Nhìn lại gần hai thập kỷ làm nghề, từ những ngày đầu chuyển sang bộ phận kinh doanh tại ngân hàng ANZ với 3 tháng liên tiếp không có nổi một khách hàng, cho đến giai đoạn dẫn dắt hệ thống vượt qua đại dịch năm 2021 để chạm tới giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á, bài học lớn nhất của Vân là: **Người đi xa nhất không phải người chạy nhanh nhất ở vạch xuất phát, mà là người có sức bền tốt nhất để không bỏ cuộc giữa chừng.**
+
+Khi cơ thể khỏe mạnh và nhịp sinh học được làm chủ, cách chúng ta đối diện với áp lực cũng thay đổi hoàn toàn. Đứng trước một biến động của thị trường hay một bài toán nhân sự khó, một người lãnh đạo có nền tảng thể chất tốt sẽ giữ được nhịp thở điềm tĩnh, không hoảng loạn và không truyền sự căng thẳng sang tập thể. Như câu nói mà Vân luôn giữ làm kim chỉ nam suốt nhiều năm qua: *“Cứ đi rồi sẽ đến, chỉ cần hướng về mặt trời”*.
+
+## Bài Học Từ Khu Vườn Nhỏ: Giai Đoạn Đâm Rễ Âm Thầm Trước Khi Vươn Cao
+
+Ngoài những giờ rèn luyện trong phòng tập, một thói quen tĩnh lặng khác giúp Vân cân bằng năng lượng ở tuổi U40 là tự tay trồng cây và chăm sóc khu vườn nhỏ ngoài ban công.
+
+Trồng cây dạy cho người làm tài chính sự kiên nhẫn trước quy luật của tự nhiên:
+- Có những giai đoạn suốt nhiều tháng liền, nhìn bề ngoài cái cây gần như không cao thêm một centimet nào. Nhưng thực chất, nó không hề ngừng lớn — nó đang dồn toàn bộ nhựa sống xuống lòng đất để đâm bộ rễ thật sâu và thật chắc.
+- Chỉ khi bộ rễ dưới lòng đất đã đủ vững vàng, cây mới bắt đầu vươn cành lá xanh tốt và đủ sức đứng vững trước những cơn mưa bão lớn.
+
+Rèn luyện thể lực, xây dựng uy tín nghề nghiệp hay tích lũy tài chính dài hạn cho gia đình đều cần một “giai đoạn đâm rễ” âm thầm như thế. Đừng sốt ruột khi những tháng đầu tập luyện hay những năm đầu tích lũy chưa thấy kết quả nhảy vọt. Chính sự kiên định trong giai đoạn âm thầm ấy mới là thứ quyết định độ bền vững của cả chục năm sau.
+
+## Hai Mặt Của Sự Chủ Động: Rèn Luyện Cơ Thể Và Khóa Chặt Rủi Ro Y Tế
+
+Đứng ở góc nhìn của một người làm quản trị rủi ro, Vân luôn tâm niệm sức khỏe là con số 1 đứng đầu, còn tài sản, sự nghiệp hay những chuyến du lịch trải nghiệm thế giới là những con số 0 đứng sau. Có số 1 thì những số 0 mới mang đầy đủ ý nghĩa.
+
+Vì vậy, thương bản thân và bảo vệ sức khỏe một cách trí tuệ luôn cần hai mặt song hành như hai cánh của một chú chim:
+- **Mặt thứ nhất là chủ động rèn luyện mỗi ngày:** Tập thể dục đều đặn, ăn uống lành mạnh và giữ tâm trí an nhiên để cơ thể luôn dẻo dai, giảm thiểu tối đa xác suất bệnh tật.
+- **Mặt thứ hai là chủ động chuẩn bị quỹ dự phòng y tế từ lúc đang khỏe mạnh:** Bởi dù ta có kỷ luật đến đâu, cuộc sống vẫn luôn tồn tại những rủi ro y tế khách quan không báo trước. Chuẩn bị sẵn thẻ chăm sóc sức khỏe và quỹ dự phòng bệnh lý nghiêm trọng chính là cách khóa chặt rủi ro tài chính, để nếu biến cố xảy ra, gia đình được tiếp cận điều trị y tế tốt nhất mà không bao giờ phải chạm vào khoản tích lũy tương lai của các con.
+
+Suy cho cùng, tập thể dục mỗi ngày là để cơ thể khỏe mạnh, còn thiết lập sẵn một lớp đệm dự phòng y tế từ sớm là để tâm trí luôn được thảnh thơi và bình an.`,
     keyTakeaways: [
-      'Thể lực bền bỉ là điểm tựa cho sự minh mẫn trong quản trị.',
-      'Sự kiên trì đều đặn mỗi ngày tạo nên khác biệt lớn trong dài hạn.',
-      'Làm gương về lối sống cân bằng và kỷ luật tự giác.',
+      'Thể lực bền bỉ và nhịp sinh học kỷ luật là nền tảng giúp người lãnh đạo giữ được sự minh mẫn, điềm tĩnh trước mọi áp lực.',
+      'Thể thao, trồng cây và quản trị gia sản đều có chung quy luật: cần giai đoạn kiên trì bám rễ âm thầm trước khi hái quả ngọt dài hạn.',
+      'Chăm sóc sức khỏe toàn diện gồm hai vế không tách rời: rèn luyện thể chất mỗi ngày và chuẩn bị sẵn quỹ dự phòng y tế ngay từ lúc đang khỏe mạnh.',
     ],
   },
 ];
@@ -549,6 +614,27 @@ const BOOKS: BookItem[] = [
   },
 ];
 
+function formatInlineText(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={i} className="font-semibold text-[#181F1C]">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+      return (
+        <em key={i} className="italic text-[#0A3622]">
+          {part.slice(1, -1)}
+        </em>
+      );
+    }
+    return part;
+  });
+}
+
 function renderArticleContent(content: string | string[]) {
   const blocks = Array.isArray(content)
     ? content
@@ -573,7 +659,7 @@ function renderArticleContent(content: string | string[]) {
         }
 
         // Italic lead paragraph / quote
-        if (block.startsWith('*') && block.endsWith('*')) {
+        if (block.startsWith('*') && block.endsWith('*') && !block.startsWith('**')) {
           const innerText = block.slice(1, -1);
           return (
             <div
@@ -599,7 +685,7 @@ function renderArticleContent(content: string | string[]) {
                   className="flex items-start gap-3 text-[15px] sm:text-[16px] text-[#242D28] font-normal leading-[1.8]"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#008746] mt-2.5 shrink-0" />
-                  <span>{item.replace(/^-\s*/, '')}</span>
+                  <span>{formatInlineText(item.replace(/^-\s*/, ''))}</span>
                 </li>
               ))}
             </ul>
@@ -607,7 +693,7 @@ function renderArticleContent(content: string | string[]) {
         }
 
         // Standard paragraph
-        return <p key={idx}>{block}</p>;
+        return <p key={idx}>{formatInlineText(block)}</p>;
       })}
     </div>
   );
@@ -859,8 +945,12 @@ export function App() {
       ? ARTICLES
       : ARTICLES.filter((a) => a.category === selectedCategory);
 
-  const featuredArticles = filteredArticles.filter((a) => a.featured);
-  const archiveArticles = filteredArticles.filter((a) => !a.featured);
+  const featuredArticles =
+    selectedCategory === 'Tất cả'
+      ? filteredArticles.filter((a) => a.featured)
+      : filteredArticles.filter((a) => Boolean(a.image)).slice(0, 3);
+  const featuredIds = new Set(featuredArticles.map((a) => a.id));
+  const archiveArticles = filteredArticles.filter((a) => !featuredIds.has(a.id));
 
   const pressMentions = [
     {
@@ -2562,7 +2652,7 @@ export function App() {
 
                 {activeArticle.image && (
                   <figure className="my-6">
-                    <div className="overflow-hidden aspect-[16/10] sm:aspect-[16/8] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
+                    <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
                       <img
                         src={activeArticle.image}
                         alt={activeArticle.title}
