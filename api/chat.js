@@ -255,7 +255,7 @@ async function sendTelegramNotification(text) {
   if (!TELEGRAM_BOT_TOKEN || !DEFAULT_CHAT_ID) return false;
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
     const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -289,7 +289,8 @@ function cleanReplyText(text = '') {
 
 function extractPhoneNumber(str = '') {
   if (!str) return null;
-  const match = String(str).match(/(?<!\d)(?:\+84|0)[35789](?:[\s.-]*\d){8}(?!\d)/);
+  // Support 9, 10, and 11-digit Vietnamese phone numbers (e.g. 0931579771, 03282383489, +84931579771)
+  const match = String(str).match(/(?<!\d)(?:\+?84|0)[1-9](?:[\s.-]*\d){7,9}(?!\d)/);
   return match ? match[0].replace(/[\s.-]/g, '') : null;
 }
 
@@ -973,7 +974,7 @@ export default async function handler(req, res) {
     if (sideEffectTasks.length > 0) {
       await Promise.race([
         Promise.allSettled(sideEffectTasks),
-        new Promise((resolve) => setTimeout(resolve, 2500)),
+        new Promise((resolve) => setTimeout(resolve, 5000)),
       ]);
     }
 
