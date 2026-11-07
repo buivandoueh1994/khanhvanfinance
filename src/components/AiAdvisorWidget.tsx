@@ -229,11 +229,13 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
             />
 
             {/* Real Avatar of Chị Khánh Vân */}
-            <div className="relative w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#6EE7B7]/70 shrink-0 shadow-xs bg-[#181F1C]">
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#6EE7B7]/70 shrink-0 shadow-sm bg-[#181F1C]">
               <img
                 src="/images/avatar_khanh_van.jpg"
                 alt="Khánh Vân"
-                className="w-full h-full object-cover"
+                width={32}
+                height={32}
+                className="w-7 h-7 sm:w-8 sm:h-8 object-cover rounded-full block"
               />
               <span className="absolute bottom-0 right-0 w-2 h-2 bg-[#22C55E] border border-[#0A3622] rounded-full" />
             </div>
