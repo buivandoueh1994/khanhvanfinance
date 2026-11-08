@@ -1197,37 +1197,36 @@ export function App() {
         </AnimatePresence>
       </header>
 
-      {/* 2. EDITORIAL HERO — SIGNATURE PANORAMA PORTRAIT + EXECUTIVE SPLIT SPREAD */}
-      <section className="pt-28 sm:pt-36 lg:pt-40 pb-20 lg:pb-28">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          {/* TẦNG 1: FULL-WIDTH SIGNATURE STUDIO PORTRAIT & PHILOSOPHY PANORAMA */}
-          <div className="mb-12 sm:mb-16 lg:mb-20">
-            <figure
-              onClick={() =>
-                setLightbox({
-                  src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg',
-                  fig: 'EXECUTIVE PORTRAIT & PHILOSOPHY',
-                  title: 'Nguyễn Thị Vân — Đi Chắc Để Đi Xa, Đồng Hành Bằng Cả Trái Tim',
-                  subtitle:
-                    'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam trong không gian tĩnh tại cùng triết lý làm nghề chuẩn mực.',
-                })
-              }
-              className="cursor-zoom-in group relative block"
-            >
-              {/* Ánh sáng mềm Ambient Glow hậu cảnh */}
-              <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-[#008746]/12 via-[#0A3622]/6 to-transparent rounded-[14px] -z-10 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700" />
-
-              <div className="overflow-hidden aspect-[820/312] bg-[#EAE7DF] rounded-[6px] shadow-[0_24px_54px_-18px_rgba(10,54,34,0.20)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
-                <img
-                  src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
-                  alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
-                  className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
-                />
-              </div>
-            </figure>
+      {/* 2A. FULL-BLEED STICKY HERO STAGE — CURTAIN-REVEAL ON SCROLL (LIKE THAIVANLINH.COM) */}
+      <div className="mt-[69px] sm:mt-[77px] sticky top-[61px] sm:top-[65px] z-0 w-full bg-[#EAE7DF] overflow-hidden">
+        <figure
+          onClick={() =>
+            setLightbox({
+              src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg',
+              fig: 'EXECUTIVE PORTRAIT & PHILOSOPHY',
+              title: 'Nguyễn Thị Vân — Đi Chắc Để Đi Xa, Đồng Hành Bằng Cả Trái Tim',
+              subtitle:
+                'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam trong không gian tĩnh tại cùng triết lý làm nghề chuẩn mực.',
+            })
+          }
+          className="cursor-zoom-in group relative block w-full"
+        >
+          <div className="w-full aspect-[820/312] max-h-[calc(100vh-65px)] overflow-hidden relative">
+            <img
+              src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
+              alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
+              className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/[0.06] to-transparent" />
           </div>
+        </figure>
+      </div>
 
-          {/* TẦNG 2: THE EXECUTIVE SPLIT SPREAD (ĐỊNH VỊ LÃNH ĐẠO & ĐỘI NGŨ QUẢN LÝ TINH HOA) */}
+      {/* CONTENT CURTAIN SHEET 1 — SLIDES UP OVER THE STICKY HERO ON SCROLL */}
+      <div className="relative z-10 bg-[#FAF9F5] shadow-[0_-24px_60px_-12px_rgba(18,24,20,0.20)] border-t border-[#E4E1D8]">
+      {/* 2B. THE EXECUTIVE SPLIT SPREAD (ĐỊNH VỊ LÃNH ĐẠO & ĐỘI NGŨ QUẢN LÝ TINH HOA) */}
+      <section className="pt-14 sm:pt-20 lg:pt-24 pb-20 lg:pb-28">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Cột Trái (6 Cột): Định Vị Quyền Lực, Hành Trình & Nút Hành Động */}
             <div className="lg:col-span-6 space-y-6 sm:space-y-7">
@@ -1867,7 +1866,7 @@ export function App() {
           </div>
 
           {/* Family Diptych — Unboxed, Equal Height (7 + 5 Asymmetric Spread) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 lg:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <figure
               onClick={() =>
                 setLightbox({
@@ -1914,31 +1913,39 @@ export function App() {
               </figcaption>
             </figure>
           </div>
+        </div>
+      </section>
+      </div>
 
-          {/* Full-Width Panoramic Sunrise Feature — Cappadocia Golden Hour */}
-          <div className="mb-16 lg:mb-20">
-            <figure
-              onClick={() =>
-                setLightbox({
-                  src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg',
-                  fig: 'PERSPECTIVE & HORIZON',
-                  title: 'Tầm Nhìn Rộng Mở & Hành Trình Đón Bình Minh Rực Rỡ',
-                  subtitle:
-                    'Khoảnh khắc đón bình minh trên khinh khí cầu tại thung lũng Cappadocia — “Mỗi ngày mới là một hành trình đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
-                })
-              }
-              className="cursor-zoom-in group relative block"
-            >
-              <div className="overflow-hidden aspect-[820/312] bg-[#EAE7DF] rounded-[5px] shadow-[0_20px_48px_-18px_rgba(10,54,34,0.18)] ring-1 ring-inset ring-[#181F1C]/[0.08]">
-                <img
-                  src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
-                  alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
-                  className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
-                />
-              </div>
-            </figure>
+      {/* 7B. FULL-BLEED STICKY CAPPADOCIA SUNRISE STAGE — CURTAIN-REVEAL ON SCROLL */}
+      <div className="sticky top-[61px] sm:top-[65px] z-10 w-full bg-[#181F1C] overflow-hidden">
+        <figure
+          onClick={() =>
+            setLightbox({
+              src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg',
+              fig: 'PERSPECTIVE & HORIZON',
+              title: 'Tầm Nhìn Rộng Mở & Hành Trình Đón Bình Minh Rực Rỡ',
+              subtitle:
+                'Khoảnh khắc đón bình minh trên khinh khí cầu tại thung lũng Cappadocia — “Mỗi ngày mới là một hành trình đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
+            })
+          }
+          className="cursor-zoom-in group relative block w-full"
+        >
+          <div className="w-full aspect-[820/312] max-h-[calc(100vh-65px)] overflow-hidden relative">
+            <img
+              src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
+              alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
+              className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent" />
           </div>
+        </figure>
+      </div>
 
+      {/* CONTENT CURTAIN SHEET 2 — SLIDES UP OVER THE STICKY SUNRISE STAGE ON SCROLL */}
+      <div className="relative z-20 bg-[#FAF9F5] shadow-[0_-28px_64px_-12px_rgba(18,24,20,0.28)] border-t border-[#E4E1D8]">
+      <section className="py-20 lg:py-28 border-b border-[#E4E1D8]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           {/* Lifestyle & Companionship Diptych (5 + 7 Counter-Balanced Spread) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <figure
@@ -2619,6 +2626,7 @@ export function App() {
           </div>
         </div>
       </footer>
+      </div>
 
       {/* AI ADVISOR HYBRID CHATBOT WIDGET */}
       <AiAdvisorWidget
