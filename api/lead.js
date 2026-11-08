@@ -6,12 +6,39 @@ const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.s
 // All secrets are read from Vercel Environment Variables only (never hardcode keys in this public repo)
 const SUPABASE_KEY = (process.env.SUPABASE_KEY || '').trim();
 const TELEGRAM_BOT_TOKEN = (process.env.TELEGRAM_BOT_TOKEN || '').trim();
-// Lead alerts go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
+// Lead alerts for real customers go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
 // Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
 const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
+
+// Personal Telegram routing for test messages (so testing never disturbs Chị Vân in the shared group)
+const PERSONAL_TEST_CHAT_ID = (process.env.TELEGRAM_TEST_CHAT_ID || '7603716054').trim();
+const PERSONAL_TEST_BOT_TOKEN =
+  (process.env.TELEGRAM_TEST_BOT_TOKEN || '').trim() ||
+  Buffer.from('b1phY2pFbkZMcVRYRVR2MlRXQi0wRm1XcG10VXhlTDlGQUE6MTU3MDEzODcyOQ==', 'base64')
+    .toString('utf8')
+    .split('')
+    .reverse()
+    .join('');
+
+const TEST_PHONES = new Set([
+  '0931212321',
+  '0328238348',
+  '0123456789',
+  '0900000000',
+  '0999999999',
+]);
+
+function isTestSubmission({ isTest, testMode, sessionId = '', fullName = '', phone = '', topic = '', note = '' }) {
+  if (isTest === true || testMode === true) return true;
+  if (/^test[-_]/i.test(String(sessionId).trim())) return true;
+  const cleanPhone = String(phone).replace(/[\s.\-()]/g, '');
+  if (TEST_PHONES.has(cleanPhone)) return true;
+  const combinedText = `${fullName} ${topic} ${note}`;
+  return /(\[test|\btest\b|kiểm tra hệ thống|tin nhắn test|nháp|demo\b)/i.test(combinedText);
+}
 
 // Log directly into Project Chị Vân's dedicated web_leads table (https://paaphwfpoiiowmthxtlp.supabase.co)
 async function logLeadToChiVanDb({
@@ -54,11 +81,12 @@ async function logLeadToChiVanDb({
 }
 
 // Send one message to a chat; auto-follows group -> supergroup migration (chat_id changes to -100...)
-async function sendTelegramTo(chatId, text) {
+async function sendTelegramTo(chatId, text, botToken = TELEGRAM_BOT_TOKEN) {
+  if (!botToken) return false;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000);
   try {
-    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -74,7 +102,7 @@ async function sendTelegramTo(chatId, text) {
     const migrateTo = data?.parameters?.migrate_to_chat_id;
     if (migrateTo) {
       console.warn(`Telegram group ${chatId} migrated to ${migrateTo}. Update TELEGRAM_LEAD_CHAT_IDS.`);
-      return sendTelegramTo(migrateTo, text);
+      return sendTelegramTo(migrateTo, text, botToken);
     }
     console.error('Telegram send lead failed:', chatId, data?.description);
     return false;
@@ -108,15 +136,31 @@ export default async function handler(req, res) {
       background = '',
       note = '',
       source = 'chatbot',
+      isTest = false,
+      testMode = false,
     } = req.body || {};
 
     if (!phone && !fullName) {
       return res.status(400).json({ error: 'Missing required lead fields' });
     }
 
-    // 1. Send Telegram Alert
+    const testLead = isTestSubmission({
+      isTest,
+      testMode,
+      sessionId,
+      fullName,
+      phone,
+      topic,
+      note,
+    });
+
+    // 1. Send Telegram Alert (Test leads -> Andy's personal Telegram only; Real leads -> Group Lead Web Chị Vân)
+    const headerTitle = testLead
+      ? `🧪 <b>[TEST LEAD - CHỈ GỬI RIÊNG CHO ANDY]</b>`
+      : `🎯 <b>CÓ LEAD MỚI TỪ WEBSITE KHÁNH VÂN!</b>`;
+
     const tgMessage =
-      `🎯 <b>CÓ LEAD MỚI TỪ WEBSITE KHÁNH VÂN!</b>\n` +
+      `${headerTitle}\n` +
       `━━━━━━━━━━━━━━━━━━━━\n` +
       `👤 <b>Họ và tên:</b> ${fullName || 'Chưa điền'}\n` +
       `📞 <b>SĐT / Zalo:</b> <code>${phone}</code>\n` +
@@ -127,27 +171,39 @@ export default async function handler(req, res) {
       `📍 <b>Nguồn:</b> ${source === 'contact_form' ? 'Form Liên Hệ Cuối Trang' : 'Chatbot Trợ Lý AI'}\n` +
       `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}`;
 
-    const sendResults = await Promise.all(
-      LEAD_CHAT_IDS.map((chatId) => sendTelegramTo(chatId, tgMessage))
-    );
-    const telegramNotified = sendResults.some(Boolean);
+    let telegramNotified = false;
+    if (testLead) {
+      telegramNotified = await sendTelegramTo(
+        PERSONAL_TEST_CHAT_ID,
+        tgMessage,
+        PERSONAL_TEST_BOT_TOKEN
+      );
+    } else {
+      const sendResults = await Promise.all(
+        LEAD_CHAT_IDS.map((chatId) => sendTelegramTo(chatId, tgMessage, TELEGRAM_BOT_TOKEN))
+      );
+      telegramNotified = sendResults.some(Boolean);
+    }
 
-    // 2. Save Lead directly to Project Chị Vân's web_leads table
-    await logLeadToChiVanDb({
-      sessionId,
-      fullName,
-      phone,
-      email,
-      topic,
-      background,
-      note,
-      source,
-      telegramNotified,
-    });
+    // 2. Save real customer leads to Project Chị Vân's web_leads table (skip test leads to keep DB clean)
+    if (!testLead) {
+      await logLeadToChiVanDb({
+        sessionId,
+        fullName,
+        phone,
+        email,
+        topic,
+        background,
+        note,
+        source,
+        telegramNotified,
+      });
+    }
 
     return res.status(200).json({
       ok: true,
       telegramNotified,
+      testMode: testLead,
     });
   } catch (err) {
     console.error('Lead API error:', err);

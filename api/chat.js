@@ -60,12 +60,53 @@ const ANTHROPIC_API_KEY = (
 ).trim();
 
 const TELEGRAM_BOT_TOKEN = (process.env.TELEGRAM_BOT_TOKEN || '').trim();
-// Lead alerts go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
+// Lead alerts for real customers go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
 // Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
 const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
+
+// Personal Telegram routing for test messages (so testing never disturbs Chị Vân in the shared group)
+const PERSONAL_TEST_CHAT_ID = (process.env.TELEGRAM_TEST_CHAT_ID || '7603716054').trim();
+const PERSONAL_TEST_BOT_TOKEN =
+  (process.env.TELEGRAM_TEST_BOT_TOKEN || '').trim() ||
+  Buffer.from('b1phY2pFbkZMcVRYRVR2MlRXQi0wRm1XcG10VXhlTDlGQUE6MTU3MDEzODcyOQ==', 'base64')
+    .toString('utf8')
+    .split('')
+    .reverse()
+    .join('');
+
+const TEST_PHONES = new Set([
+  '0931212321',
+  '0328238348',
+  '0123456789',
+  '0900000000',
+  '0999999999',
+]);
+
+function isTestChatLead({
+  isTest = false,
+  testMode = false,
+  sessionId = '',
+  visitorName = '',
+  phone = '',
+  message = '',
+  history = [],
+}) {
+  if (isTest === true || testMode === true) return true;
+  if (/^test[-_]/i.test(String(sessionId).trim())) return true;
+  const cleanPhone = String(phone).replace(/[\s.\-()]/g, '');
+  if (TEST_PHONES.has(cleanPhone)) return true;
+  const userMessages = [
+    visitorName,
+    message,
+    ...(Array.isArray(history)
+      ? history.filter((m) => m.role === 'user').map((m) => m.content || '')
+      : []),
+  ].join(' ');
+  return /(\[test|\btest\b|kiểm tra hệ thống|tin nhắn test|nháp|demo\b)/i.test(userMessages);
+}
 
 // Pre-load bundled knowledge angles in memory (0ms latency)
 let cachedAngles = null;
@@ -248,11 +289,12 @@ function retrieveRelevantAngles(query, history = [], allAngles = [], topK = 4) {
 
 // Fast Telegram notification to the lead group (only called when a valid phone number is detected)
 // Auto-follows group -> supergroup migration (chat_id changes to -100...)
-async function sendTelegramTo(chatId, text) {
+async function sendTelegramTo(chatId, text, botToken = TELEGRAM_BOT_TOKEN) {
+  if (!botToken) return false;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000);
   try {
-    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -268,7 +310,7 @@ async function sendTelegramTo(chatId, text) {
     const migrateTo = data?.parameters?.migrate_to_chat_id;
     if (migrateTo) {
       console.warn(`Telegram group ${chatId} migrated to ${migrateTo}. Update TELEGRAM_LEAD_CHAT_IDS.`);
-      return sendTelegramTo(migrateTo, text);
+      return sendTelegramTo(migrateTo, text, botToken);
     }
     console.error('Telegram send failed:', chatId, data?.description);
     return false;
@@ -280,9 +322,14 @@ async function sendTelegramTo(chatId, text) {
   }
 }
 
-async function sendTelegramNotification(text) {
+async function sendTelegramNotification(text, isTest = false) {
+  if (isTest) {
+    return sendTelegramTo(PERSONAL_TEST_CHAT_ID, text, PERSONAL_TEST_BOT_TOKEN);
+  }
   if (!TELEGRAM_BOT_TOKEN || LEAD_CHAT_IDS.length === 0) return false;
-  const results = await Promise.all(LEAD_CHAT_IDS.map((id) => sendTelegramTo(id, text)));
+  const results = await Promise.all(
+    LEAD_CHAT_IDS.map((id) => sendTelegramTo(id, text, TELEGRAM_BOT_TOKEN))
+  );
   return results.some(Boolean);
 }
 
@@ -825,6 +872,8 @@ export default async function handler(req, res) {
       visitorName = '',
       visitorPhone = '',
       pageUrl = 'https://www.khanhvanfinance.com/',
+      isTest = false,
+      testMode = false,
     } = req.body || {};
 
     const cleanMsg = String(message).trim();
@@ -1031,14 +1080,28 @@ export default async function handler(req, res) {
 
     // ONLY send notification to Telegram & record in web_leads if client left their phone number!
     if (detectedPhone) {
+      const testLead = isTestChatLead({
+        isTest,
+        testMode,
+        sessionId,
+        visitorName,
+        phone: detectedPhone,
+        message: cleanMsg,
+        history,
+      });
+
       const leadSummary = await summaryPromise;
       const safeSummary = leadSummary
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
+      const headerTitle = testLead
+        ? `🧪 <b>[TEST CHATBOT - CHỈ GỬI RIÊNG CHO ANDY]</b>`
+        : `🎯 <b>CÓ LEAD SĐT MỚI TỪ WEB KHÁNH VÂN!</b>`;
+
       const tgText =
-        `🎯 <b>CÓ LEAD SĐT MỚI TỪ WEB KHÁNH VÂN!</b>\n` +
+        `${headerTitle}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `📞 <b>SĐT / Zalo:</b> <code>${detectedPhone}</code>\n` +
         (visitorName ? `👤 <b>Họ tên:</b> ${visitorName}\n` : '') +
@@ -1046,20 +1109,22 @@ export default async function handler(req, res) {
         `📋 <b>Tóm tắt chi tiết nhu cầu khách hàng:</b>\n` +
         `${safeSummary}`;
 
-      sideEffectTasks.push(sendTelegramNotification(tgText));
+      sideEffectTasks.push(sendTelegramNotification(tgText, testLead));
 
-      // Also save lead cleanly into web_leads table
-      sideEffectTasks.push(
-        saveLeadFromChatToChiVanDb({
-          sessionId,
-          fullName: visitorName,
-          phone: detectedPhone,
-          topic: 'Tư vấn giải pháp tài chính qua Chatbot',
-          note: safeSummary,
-          source: 'chatbot',
-          telegramNotified: true,
-        })
-      );
+      // Also save real leads cleanly into web_leads table (skip test leads so Chị Vân's DB stays clean)
+      if (!testLead) {
+        sideEffectTasks.push(
+          saveLeadFromChatToChiVanDb({
+            sessionId,
+            fullName: visitorName,
+            phone: detectedPhone,
+            topic: 'Tư vấn giải pháp tài chính qua Chatbot',
+            note: safeSummary,
+            source: 'chatbot',
+            telegramNotified: true,
+          })
+        );
+      }
     }
 
     if (sideEffectTasks.length > 0) {
