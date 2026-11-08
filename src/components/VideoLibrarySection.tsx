@@ -128,12 +128,10 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     return filteredVideos.filter((v) => !spotlightSet.has(v.id));
   }, [filteredVideos, spotlightVideos]);
 
-  const visibleArchiveVideos = useMemo(() => {
-    if (showAllArchive || searchQuery.trim() || selectedFolder !== 'all' || selectedSubtag !== 'Tất cả') {
-      return archiveVideos;
-    }
-    return archiveVideos.slice(0, 12);
-  }, [archiveVideos, showAllArchive, searchQuery, selectedFolder, selectedSubtag]);
+  // The archive list stays hidden on the homepage until the visitor searches, filters, or taps "Xem tất cả"
+  const isFiltering = Boolean(searchQuery.trim()) || selectedFolder !== 'all' || selectedSubtag !== 'Tất cả';
+  const showArchiveList = showAllArchive || isFiltering;
+  const visibleArchiveVideos = archiveVideos;
 
   // Ordered playlist matching visual order on page for TikTok-style swipe/scroll
   const playlist = useMemo(() => {
@@ -332,7 +330,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
 
           {/* TIER 1: 6 SPOTLIGHT VIDEO CARDS WITH VISUAL THUMBNAILS */}
           {spotlightVideos.length > 0 ? (
-            <div className="mb-16">
+            <div className={showArchiveList ? 'mb-16' : 'mb-0'}>
               <div className="flex items-center justify-between mb-6 sm:mb-8 pb-3 border-b border-[#DCD8CE]">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#008746]" />
@@ -345,16 +343,17 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   </span>
                 </div>
                 <span className="text-xs text-[#858E89] font-light">
-                  Chọn video để xem
+                  <span className="sm:hidden">Vuốt để xem thêm</span>
+                  <span className="hidden sm:inline">Chọn video để xem</span>
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-px-6 sm:scroll-px-0 no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 pb-2 sm:pb-0">
                 {spotlightVideos.map((video) => (
                   <article
                     key={video.id}
                     onClick={() => onOpenVideo(video)}
-                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] border border-[#DCD8CE] hover:border-[#0A3622]/50 hover:shadow-[0_16px_38px_-15px_rgba(10,54,34,0.16)] transition-all duration-300 rounded-[4px] overflow-hidden"
+                    className="w-[78%] shrink-0 snap-start sm:w-auto group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] border border-[#DCD8CE] hover:border-[#0A3622]/50 hover:shadow-[0_16px_38px_-15px_rgba(10,54,34,0.16)] transition-all duration-300 rounded-[4px] overflow-hidden"
                   >
                     <div>
                       {/* VIDEO THUMBNAIL CONTAINER */}
@@ -408,15 +407,15 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
 
                     {/* Footer Action Bar */}
                     <div className="px-5 sm:px-6 py-3.5 border-t border-[#EAE7DF] bg-[#F2EFE9]/40 flex items-center justify-between gap-2">
-                      <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#0A3622] group-hover:text-[#008746] font-semibold transition-colors">
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-[11px] uppercase tracking-[0.16em] text-[#0A3622] group-hover:text-[#008746] font-semibold transition-colors">
                         <Play className="w-3.5 h-3.5 fill-current" />
-                        <span>Xem Video</span>
+                        <span>Xem video</span>
                       </span>
 
                       <button
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
-                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1 rounded-[2px] hover:bg-[#EAE7DF] transition-colors"
+                        className="inline-flex items-center gap-1 whitespace-nowrap text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1 rounded-[2px] hover:bg-[#EAE7DF] transition-colors" aria-label="Sao chép link"
                         title="Sao chép link video này để chia sẻ"
                       >
                         {copiedId === video.id ? (
@@ -427,7 +426,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5" />
-                            <span>Sao chép link</span>
+                            <span className="hidden sm:inline">Sao chép link</span>
                           </>
                         )}
                       </button>
@@ -448,7 +447,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
           )}
 
           {/* TIER 2: STRUCTURED ARCHIVE DIRECTORY OF REMAINING VIDEOS WITH MINI THUMBNAILS */}
-          {archiveVideos.length > 0 && (
+          {showArchiveList && archiveVideos.length > 0 && (
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#0A3622] font-medium">
@@ -529,7 +528,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
 
                       <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-[#0A3622] group-hover:text-[#008746] font-semibold">
                         <Play className="w-3 h-3 fill-current" />
-                        <span>Xem Video</span>
+                        <span>Xem video</span>
                       </span>
                     </div>
                   </article>
@@ -537,10 +536,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               </div>
 
               {/* Expand / Collapse All Button */}
-              {archiveVideos.length > 12 &&
-                selectedFolder === 'all' &&
-                selectedSubtag === 'Tất cả' &&
-                !searchQuery.trim() && (
+              {showAllArchive && !isFiltering && (
                   <div className="mt-8 text-center">
                     <button
                       type="button"
@@ -560,6 +556,20 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     </button>
                   </div>
                 )}
+            </div>
+          )}
+
+          {/* Show-all button (archive list hidden by default to keep the homepage concise) */}
+          {!showArchiveList && archiveVideos.length > 0 && (
+            <div className="mt-10 sm:mt-12 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAllArchive(true)}
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 min-h-[44px] bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium rounded-[2px] transition-all shadow-sm"
+              >
+                <span>Xem tất cả {VIDEO_LIBRARY.length} video</span>
+                <ArrowRight className="w-3.5 h-3.5 rotate-90" />
+              </button>
             </div>
           )}
         </div>

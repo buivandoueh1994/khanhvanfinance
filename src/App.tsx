@@ -801,6 +801,7 @@ export function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tất cả');
+  const [showAllArticles, setShowAllArticles] = useState(false);
   const [activeArticle, setActiveArticle] = useState<Article | null>(null);
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
   const [lightbox, setLightbox] = useState<LightboxImage | null>(null);
@@ -1655,16 +1656,17 @@ export function App() {
                   BÀI VIẾT NỔI BẬT
                 </span>
                 <span className="text-xs text-[#858E89] font-light">
-                  {featuredArticles.length} bài viết
+                  <span className="md:hidden">Vuốt để xem thêm</span>
+                  <span className="hidden md:inline">{featuredArticles.length} bài viết</span>
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-6 sm:scroll-px-10 md:scroll-px-0 no-scrollbar -mx-6 px-6 sm:-mx-10 sm:px-10 md:mx-0 md:px-0 pb-2 md:pb-0">
                 {featuredArticles.map((article) => (
                   <article
                     key={article.id}
                     onClick={() => openArticle(article)}
-                    className="group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-5 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 active:scale-[0.99] hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
+                    className="w-[82%] sm:w-[60%] shrink-0 snap-start md:w-auto group cursor-pointer flex flex-col justify-between bg-[#FAF9F5] p-5 sm:p-7 border border-[#DCD8CE] hover:border-[#0A3622]/40 active:scale-[0.99] hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] transition-all duration-300 rounded-[4px]"
                   >
                     <div>
                       {/* Photo Thumbnail */}
@@ -1709,10 +1711,10 @@ export function App() {
             </div>
           )}
 
-          {/* Archive Index Rows */}
+          {/* Archive Index Rows — Compact title list, 4 by default with "Xem thêm" */}
           {archiveArticles.length > 0 && (
             <div>
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#DCD8CE]">
+              <div className="flex items-center justify-between mb-2 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#858E89] font-medium">
                   CÁC BÀI VIẾT KHÁC
                 </span>
@@ -1721,41 +1723,45 @@ export function App() {
                 </span>
               </div>
 
-              <div className="border-t border-[#DCD8CE]">
-                {archiveArticles.map((article) => (
+              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12">
+                {(showAllArticles ? archiveArticles : archiveArticles.slice(0, 4)).map((article) => (
                   <article
                     key={article.id}
                     onClick={() => openArticle(article)}
-                    className="group py-6 sm:py-9 border-b border-[#DCD8CE] grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-8 items-baseline cursor-pointer hover:bg-[#FAF9F5]/80 active:bg-[#F2EFE9] transition-colors px-2 sm:px-4"
+                    className="group py-4 sm:py-5 border-b border-[#DCD8CE] flex items-start gap-4 cursor-pointer hover:bg-[#FAF9F5]/80 active:bg-[#F2EFE9] transition-colors px-1 sm:px-2"
                   >
-                    <div className="lg:col-span-2 flex items-center gap-4">
-                      <span className="font-serif text-xl sm:text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
-                        {article.index}
-                      </span>
-                      <span className="text-[11px] uppercase tracking-[0.16em] text-[#008746]">
+                    <span className="font-serif text-lg text-[#858E89] group-hover:text-[#008746] transition-colors leading-[1.4] w-7 shrink-0">
+                      {article.index}
+                    </span>
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] block">
                         {article.category}
                       </span>
-                    </div>
-
-                    <div className="lg:col-span-5">
-                      <h3 className="font-sans font-semibold text-base sm:text-lg text-[#181F1C] group-hover:text-[#0A3622] leading-[1.4] transition-colors tracking-tight">
+                      <h3 className="font-sans font-semibold text-[15px] sm:text-base text-[#181F1C] group-hover:text-[#0A3622] leading-[1.45] transition-colors tracking-tight">
                         {article.title}
                       </h3>
                     </div>
-
-                    <div className="lg:col-span-4">
-                      <p className="text-sm text-[#28322D] font-normal leading-[1.75] line-clamp-2">
-                        {article.excerpt}
-                      </p>
-                    </div>
-
-                    <div className="lg:col-span-1 flex lg:justify-end items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#181F1C] group-hover:text-[#008746]">
-                      <span>Đọc</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </div>
+                    <ArrowUpRight className="w-4 h-4 mt-1 shrink-0 text-[#858E89] group-hover:text-[#008746] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </article>
                 ))}
               </div>
+
+              {archiveArticles.length > 4 && (
+                <div className="mt-8 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setShowAllArticles(!showAllArticles)}
+                    className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] border border-[#DCD8CE] hover:border-[#0A3622] text-[#181F1C] hover:text-[#0A3622] text-[11px] uppercase tracking-[0.2em] font-medium rounded-[2px] transition-colors bg-white/60"
+                  >
+                    <span>
+                      {showAllArticles ? 'Thu gọn' : `Xem thêm ${archiveArticles.length - 4} bài viết`}
+                    </span>
+                    <ArrowRight
+                      className={`w-3.5 h-3.5 transition-transform ${showAllArticles ? '-rotate-90' : 'rotate-90'}`}
+                    />
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
