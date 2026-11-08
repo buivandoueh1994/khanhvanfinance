@@ -41,7 +41,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       id: 'welcome-msg',
       role: 'assistant',
       content:
-        'Chào bạn! Bạn đang muốn tìm hiểu về cơ chế Hợp đồng Bảo hiểm, Thẻ sức khỏe, Quỹ tích sản cho con hay Lộ trình sự nghiệp tại Manulife? Hãy chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của bạn nhé!',
+        'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, thẻ sức khỏe, quỹ tích sản cho con hay lộ trình sự nghiệp tại Manulife? Bạn có thể chọn một câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình nhé.',
       timestamp: 'Vừa xong',
     },
   ]);
@@ -328,7 +328,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                     {isBot && resolvedVideos.length > 0 && (
                       <div className="mt-2.5 w-[88%] space-y-1.5">
                         <span className="text-[10px] uppercase tracking-[0.14em] text-[#008746] font-semibold block">
-                          🎬 Video Khánh Vân chia sẻ trực tiếp:
+                          Video liên quan từ Khánh Vân:
                         </span>
                         {resolvedVideos.map((vid) => (
                           <button
@@ -355,7 +355,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                                 {vid.title}
                               </p>
                               <span className="text-[10px] text-[#6A756F] block mt-0.5">
-                                {vid.views} lượt xem &bull; Bấm để xem video
+                                {vid.views} lượt xem &bull; Bấm để xem
                               </span>
                             </div>
                           </button>
@@ -389,7 +389,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
               {messages.length === 1 && !isLoading && (
                 <div className="pt-2 space-y-2">
                   <span className="text-[10px] uppercase tracking-[0.16em] text-[#858E89] block font-semibold">
-                    Chủ đề được hỏi nhiều nhất:
+                    Câu hỏi thường gặp:
                   </span>
                   <div className="flex flex-col gap-1.5">
                     {STARTER_QUESTIONS.map((q) => (
@@ -411,7 +411,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
               {isLoading && (
                 <div className="flex items-center gap-2 text-xs text-[#56605B] bg-[#F2EFE9] px-3.5 py-2.5 rounded-[8px] w-max border border-[#E4E1D8]">
                   <span className="w-2 h-2 rounded-full bg-[#008746] animate-ping" />
-                  <span>Khánh Vân đang trả lời...</span>
+                  <span>Đang soạn câu trả lời...</span>
                 </div>
               )}
 

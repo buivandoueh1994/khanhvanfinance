@@ -248,15 +248,15 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-10 items-end">
             <div className="lg:col-span-7 space-y-3">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-                02 / THƯ VIỆN VIDEO &amp; HỎI ĐÁP THỰC CHIẾN &bull; VIDEO ARCHIVE
+                02 / THƯ VIỆN VIDEO
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-                109 Video Giải Mã Bảo Hiểm, Dòng Tiền &amp; Nghề Tư Vấn
+                109 video giải đáp về bảo hiểm, dòng tiền và nghề tư vấn
               </h2>
             </div>
             <div className="lg:col-span-5 space-y-3">
               <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.8]">
-                Tra cứu nhanh các tình huống thực tế cùng Khánh Vân: từ bản chất dòng phí, quy tắc bồi thường, thẻ chăm sóc sức khỏe đến lộ trình phát triển sự nghiệp.
+                Tìm nhanh những tình huống thường gặp cùng Khánh Vân: từ bản chất dòng phí, quy tắc bồi thường, thẻ chăm sóc sức khỏe đến lộ trình phát triển sự nghiệp.
               </p>
             </div>
           </div>
@@ -270,7 +270,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Tìm nhanh theo tình huống (VD: rút tiền sau 10 năm, thẻ sức khỏe, hóc xương cá, VssID, tìm khách hàng...)"
+                  placeholder="Tìm theo tình huống, ví dụ: rút tiền sau 10 năm, thẻ sức khỏe..."
                   className="w-full pl-10 pr-9 py-2.5 sm:py-3 bg-[#FAF9F5] border border-[#DCD8CE] focus:border-[#0A3622] rounded-[3px] text-xs sm:text-sm text-[#181F1C] placeholder:text-[#858E89] focus:outline-none transition-colors"
                 />
                 {searchQuery && (
@@ -341,11 +341,11 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       ? `KẾT QUẢ TÌM KIẾM “${searchQuery.trim()}” • ${filteredVideos.length} VIDEO`
                       : selectedSubtag !== 'Tất cả'
                       ? `CHỦ ĐỀ: ${selectedSubtag} • ${filteredVideos.length} VIDEO`
-                      : 'TIÊU ĐIỂM VIDEO THỰC CHIẾN • ĐƯỢC XEM NHIỀU NHẤT'}
+                      : 'VIDEO ĐƯỢC XEM NHIỀU NHẤT'}
                   </span>
                 </div>
                 <span className="text-xs text-[#858E89] font-light">
-                  Bấm vào video để xem trực tiếp
+                  Chọn video để xem
                 </span>
               </div>
 
@@ -417,7 +417,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
                         className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1 rounded-[2px] hover:bg-[#EAE7DF] transition-colors"
-                        title="Sao chép link video này để gửi cho khách hàng hoặc đồng đội"
+                        title="Sao chép link video này để chia sẻ"
                       >
                         {copiedId === video.id ? (
                           <>
@@ -427,7 +427,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5" />
-                            <span>Copy Link</span>
+                            <span>Sao chép link</span>
                           </>
                         )}
                       </button>
@@ -452,10 +452,10 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#0A3622] font-medium">
-                  DANH MỤC TRA CỨU NHANH &bull; {archiveVideos.length} VIDEO TIẾP THEO
+                  THÊM {archiveVideos.length} VIDEO
                 </span>
                 <span className="text-xs text-[#6A756F] font-light">
-                  Tối ưu cho Đội ngũ tư vấn &amp; Khách hàng tra cứu theo tình huống
+                  Dành cho khách hàng và đội ngũ tra cứu theo từng tình huống
                 </span>
               </div>
 
@@ -512,7 +512,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
                         className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2.5 py-1.5 rounded-[2px] border border-transparent hover:border-[#DCD8CE] hover:bg-[#FAF9F5] transition-colors"
-                        title="Copy link gửi khách hàng / đồng đội"
+                        title="Sao chép link để chia sẻ"
                       >
                         {copiedId === video.id ? (
                           <>
@@ -522,7 +522,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5" />
-                            <span>Copy Link</span>
+                            <span>Sao chép link</span>
                           </>
                         )}
                       </button>
@@ -549,8 +549,8 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     >
                       <span>
                         {showAllArchive
-                          ? 'Thu Gọn Danh Mục Video'
-                          : `Xem Toàn Bộ ${VIDEO_LIBRARY.length} Video Trong Thư Viện`}
+                          ? 'Thu gọn danh sách'
+                          : `Xem tất cả ${VIDEO_LIBRARY.length} video`}
                       </span>
                       <ArrowRight
                         className={`w-3.5 h-3.5 transition-transform ${
@@ -677,12 +677,12 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         {copiedId === activeVideo.id ? (
                           <>
                             <Check className="w-3 h-3 text-[#008746]" />
-                            <span>Đã chép Link</span>
+                            <span>Đã chép link</span>
                           </>
                         ) : (
                           <>
                             <Share2 className="w-3 h-3" />
-                            <span>Copy Link</span>
+                            <span>Sao chép link</span>
                           </>
                         )}
                       </button>
@@ -807,7 +807,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       className="inline-flex items-center gap-1 text-[11px] text-[#56605B] hover:text-[#0A3622]"
                     >
                       <Copy className="w-3 h-3" />
-                      <span>Sao chép link gửi khách</span>
+                      <span>Sao chép link chia sẻ</span>
                     </button>
 
                     <a

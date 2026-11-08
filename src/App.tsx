@@ -690,7 +690,7 @@ const BOOKS: BookItem[] = [
     theme: 'Quản trị Gia sản',
     cover: '/images/books/book_02_psychology_of_money.jpg',
     note: 'Sự thịnh vượng bền vững không nằm ở những công thức phức tạp, mà ở kỷ luật kiểm soát hành vi và luôn giữ một biên độ an toàn dự phòng cho gia đình.',
-    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ANZ đến Manulife củng cố trong Vân một nguyên tắc: Quản trị gia sản là đảm bảo gia đình không bao giờ bị động khi biến cố ập đến.',
+    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ANZ đến Manulife củng cố trong Vân một nguyên tắc: quản trị gia sản là để gia đình không bao giờ bị động khi biến cố xảy ra.',
   },
   {
     num: '03',
@@ -698,8 +698,8 @@ const BOOKS: BookItem[] = [
     author: 'James Clear',
     theme: 'Kỷ luật Thói quen',
     cover: '/images/books/book_03_atomic_habits.jpg',
-    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi thành quả lớn đều bắt nguồn từ hệ thống các thói quen chuẩn mực được kiên trì lặp lại mỗi ngày.',
-    reflection: 'Ba tháng đầu chuyển sang làm Sales trắng tay không làm Vân nản lòng, bởi thành quả Top 1 toàn quốc chỉ là kết quả tất yếu của những mắt xích nhỏ được làm chỉn chu mỗi ngày.',
+    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: mọi thành quả lớn đều bắt nguồn từ những thói quen chuẩn mực được lặp lại kiên trì mỗi ngày.',
+    reflection: 'Ba tháng đầu làm Sales mà chưa có khách nào cũng không làm Vân nản lòng, bởi thành quả Top 1 toàn quốc là kết quả của những việc nhỏ được làm chỉn chu mỗi ngày.',
   },
   {
     num: '04',
@@ -708,7 +708,7 @@ const BOOKS: BookItem[] = [
     theme: 'Tâm thức Phụng sự',
     cover: '/images/books/book_04_servant_leadership.jpg',
     note: 'Lãnh đạo đích thực không bắt đầu bằng mong muốn quyền lực, mà bắt nguồn từ khát khao tự nhiên muốn được chăm sóc, nâng đỡ và phụng sự người khác.',
-    reflection: 'Sự trưởng thành của 64 nhà quản lý F1 hôm nay là minh chứng: bạn chỉ thực sự dẫn đầu khi giúp những người tin tưởng đi cùng bạn chạm tới thành công của riêng họ.',
+    reflection: 'Sự trưởng thành của 64 nhà quản lý F1 hôm nay cho Vân thấy: mình chỉ thực sự dẫn đầu khi giúp những người đi cùng chạm tới thành công của riêng họ.',
   },
 ];
 
@@ -1056,10 +1056,10 @@ export function App() {
       logo: '/images/logos/logo_aan.svg',
       logoAlt: 'Asia Advisers Network Logo',
       logoClass: 'h-6 sm:h-7',
-      sourceType: 'Tạp Chí Bảo Hiểm Châu Á • Singapore',
-      badge: 'Bảo Chứng Quốc Tế',
+      sourceType: 'Tạp chí Bảo hiểm Châu Á • Singapore',
+      badge: 'Quốc tế',
       headline: 'Rookie Insurance Agency Leader of the Year 2021 - Nguyen Thi Van',
-      summary: 'Hồ sơ vinh danh chính thức từ Hội đồng Giám khảo Quốc tế ghi nhận dấu ấn lãnh đạo xuất sắc và cống hiến nâng cao nhận thức cộng đồng.',
+      summary: 'Bài vinh danh chính thức từ Hội đồng Giám khảo Quốc tế, ghi nhận năng lực lãnh đạo và những đóng góp trong việc nâng cao nhận thức cộng đồng.',
       url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
     },
     {
@@ -1067,10 +1067,10 @@ export function App() {
       logo: '/images/logos/logo_vietnamnet.svg',
       logoAlt: 'Báo VietNamNet Logo',
       logoClass: 'h-7 sm:h-8',
-      sourceType: 'Báo VietNamNet • Chuyên Đề Banker',
-      badge: 'Chuyển Mình Từ Banker',
+      sourceType: 'Báo VietNamNet • Chuyên đề Banker',
+      badge: 'Từ Banker sang Bảo hiểm',
       headline: 'Từ ngân hàng đến bảo hiểm: Khi những banker chọn rẽ hướng - Biến sự chỉn chu thành lợi thế dẫn dắt',
-      summary: 'Khánh Vân chia sẻ triết lý mang tư duy hệ thống và kỷ luật vận hành khắt khe từ 8 năm tại ANZ Bank để xây dựng sự nghiệp bảo hiểm bền vững.',
+      summary: 'Khánh Vân chia sẻ cách chị mang tư duy hệ thống và kỷ luật vận hành từ 8 năm ở ANZ Bank vào việc xây dựng sự nghiệp bảo hiểm bền vững.',
       url: 'https://vietnamnet.vn/tu-ngan-hang-den-bao-hiem-khi-nhung-banker-chon-re-huong-2523056.html',
     },
     {
@@ -1078,8 +1078,8 @@ export function App() {
       logo: '/images/logos/logo_vietnamnet.svg',
       logoAlt: 'Báo VietNamNet Logo',
       logoClass: 'h-7 sm:h-8',
-      sourceType: 'Báo VietNamNet • Thị Trường & Tiêu Dùng',
-      badge: 'Giải Thưởng Châu Á',
+      sourceType: 'Báo VietNamNet • Thị trường & Tiêu dùng',
+      badge: 'Giải thưởng Châu Á',
       headline: 'Đại lý Manulife Việt Nam nhận danh hiệu nhà quản lý mới của năm tại Châu Á',
       summary: 'Vinh danh bà Nguyễn Thị Vân - Trưởng khu vực kinh doanh HCM12 đoạt giải thưởng Rookie Insurance Agency Leader of the Year 2021.',
       url: 'https://vietnamnet.vn/dai-ly-manulife-viet-nam-nhan-danh-hieu-nha-quan-ly-moi-cua-nam-755155.html',
@@ -1087,12 +1087,12 @@ export function App() {
   ];
 
   const metrics = [
-    { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản & Tín dụng quốc tế' },
-    { figure: 'Top 1', unit: 'Toàn Quốc ANZ', detail: 'Vô địch doanh số thế chấp năm 2017' },
-    { figure: 'Top 1', unit: 'Lãnh Đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
-    { figure: '64', unit: 'Quản Lý Cấp Cao', detail: 'Đội ngũ lãnh đạo kế cận trực tiếp' },
-    { figure: '500+', unit: 'Nhân Sự Hệ Thống', detail: 'Vận hành chuẩn mực & gắn kết' },
-    { figure: 'Cú Đúp Top 1', unit: 'FYP & Duy Trì 2025', detail: 'Dẫn đầu chỉ tiêu kinh doanh & Giữ trọn niềm tin' },
+    { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản và tín dụng quốc tế' },
+    { figure: 'Top 1', unit: 'Toàn quốc ANZ', detail: 'Dẫn đầu doanh số thế chấp năm 2017' },
+    { figure: 'Top 1', unit: 'Lãnh đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
+    { figure: '64', unit: 'Quản lý cấp cao', detail: 'Đội ngũ lãnh đạo kế cận trực tiếp dẫn dắt' },
+    { figure: '500+', unit: 'Nhân sự hệ thống', detail: 'Vận hành chuẩn mực và gắn kết' },
+    { figure: '2 × Top 1', unit: 'FYP & Duy trì 2025', detail: 'Dẫn đầu cả doanh số lẫn tỷ lệ duy trì hợp đồng' },
   ];
 
   return (
@@ -1130,7 +1130,7 @@ export function App() {
               href="#lien-he"
               className="whitespace-nowrap inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
             >
-              <span>Kết nối riêng</span>
+              <span>Liên hệ riêng</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -1170,7 +1170,7 @@ export function App() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-xs uppercase tracking-[0.2em] text-[#008746] font-medium min-h-[44px] flex items-center"
                   >
-                    Kết nối riêng &rarr;
+                    Liên hệ riêng &rarr;
                   </a>
                   <div className="flex items-center gap-4">
                     <a
@@ -1203,10 +1203,10 @@ export function App() {
           onClick={() =>
             setLightbox({
               src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg',
-              fig: 'EXECUTIVE PORTRAIT & PHILOSOPHY',
-              title: 'Nguyễn Thị Vân — Đi Chắc Để Đi Xa, Đồng Hành Bằng Cả Trái Tim',
+              fig: 'CHÂN DUNG & TRIẾT LÝ NGHỀ',
+              title: 'Nguyễn Thị Vân — Đi chắc để đi xa, đồng hành bằng cả trái tim',
               subtitle:
-                'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam trong không gian tĩnh tại cùng triết lý làm nghề chuẩn mực.',
+                'Chân dung chị Nguyễn Thị Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam, cùng triết lý làm nghề của chị.',
             })
           }
           className="cursor-zoom-in group relative block w-full"
@@ -1238,9 +1238,9 @@ export function App() {
             <div className="lg:col-span-6 space-y-5 sm:space-y-7">
               <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#0A3622] font-medium">
                 <span className="w-4 sm:w-5 h-[1px] bg-[#008746] shrink-0" />
-                <span className="whitespace-nowrap">Cựu Banker ANZ</span>
+                <span className="whitespace-nowrap">Cựu banker ANZ</span>
                 <span className="text-[#858E89]">&bull;</span>
-                <span className="whitespace-nowrap">Giám Đốc Vùng Cấp Cao Manulife</span>
+                <span className="whitespace-nowrap">Giám đốc Vùng Cấp cao Manulife</span>
               </div>
 
               <div className="space-y-3">
@@ -1255,7 +1255,7 @@ export function App() {
               </div>
 
               <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal">
-                Với gần hai thập kỷ kiến tạo giá trị, ghi dấu ấn từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ cho đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và vị thế Top 1 Manulife Việt Nam nhiều năm liền. Hiện tại, Vân vẫn đang chuyên tâm đồng hành cùng các gia đình Việt trong việc bảo toàn dòng tiền và hoạch định gia sản bền vững, đồng thời trực tiếp dẫn dắt hệ thống gồm 64 nhà quản lý kế cận và hơn 500 tư vấn viên chuyên nghiệp.
+                Gần hai thập kỷ làm nghề: 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ, sau đó là danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và nhiều năm liền giữ vị trí Top 1 tại Manulife Việt Nam. Hiện nay, Vân đồng hành cùng các gia đình Việt trong việc giữ vững dòng tiền và hoạch định gia sản dài hạn, đồng thời trực tiếp dẫn dắt 64 nhà quản lý kế cận và hơn 500 tư vấn viên.
               </p>
 
               <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-5">
@@ -1263,7 +1263,7 @@ export function App() {
                   href="#lien-he"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
                 >
-                  <span>Đặt lịch tham vấn 1-1</span>
+                  <span>Đặt lịch trao đổi 1-1</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
@@ -1297,10 +1297,10 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
-                    fig: 'ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
-                    title: 'Khánh Vân Cùng Hơn 35 Quản Lý Cấp Cao & Hệ Thống 500+ Nhân Sự',
+                    fig: 'ĐỘI NGŨ QUẢN LÝ',
+                    title: 'Khánh Vân cùng hơn 35 quản lý cấp cao và hệ thống hơn 500 nhân sự',
                     subtitle:
-                      'Chị Khánh Vân (Vest Trắng) ngồi trung tâm cùng dàn nữ tướng quản lý và chuyên viên tinh hoa tại sảnh văn phòng Manulife Việt Nam.',
+                      'Chị Khánh Vân (áo vest trắng, ngồi giữa) cùng đội ngũ quản lý và chuyên viên tại văn phòng Manulife Việt Nam.',
                   })
                 }
                 className="cursor-zoom-in group relative block"
@@ -1323,10 +1323,10 @@ export function App() {
 
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
                   <span className="font-medium text-[#181F1C]">
-                    Đội ngũ Quản lý Tinh hoa Manulife
+                    Đội ngũ quản lý Manulife
                   </span>
                   <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
-                    Hệ thống 64 Quản lý &amp; 500+ Nhân sự
+                    64 quản lý &middot; 500+ nhân sự
                   </span>
                 </figcaption>
               </figure>
@@ -1342,14 +1342,14 @@ export function App() {
             <div className="space-y-1.5">
               <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
-                Bảo Chứng Báo Chí &amp; Truyền Thông Uy Tín
+                Báo chí nói về chị Vân
               </div>
               <h2 className="font-serif text-xl sm:text-2xl text-[#0A3622] font-normal tracking-tight">
-                Được đưa tin &amp; trích dẫn chuyên môn trên các cơ quan báo chí uy tín
+                Được báo chí trong nước và quốc tế đưa tin
               </h2>
             </div>
             <p className="text-xs text-[#56605B] max-w-md font-normal leading-relaxed">
-              Các bài phân tích chuyên sâu về triết lý hoạch định gia sản, năng lực dẫn dắt đội ngũ và giải thưởng lãnh đạo xuất sắc cấp khu vực Châu Á.
+              Những bài viết về cách chị làm nghề, cách dẫn dắt đội ngũ và giải thưởng lãnh đạo cấp khu vực Châu Á.
             </p>
           </div>
 
@@ -1437,12 +1437,12 @@ export function App() {
                 01 / HÀNH TRÌNH SỰ NGHIỆP
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-                Từ Chuẩn Mực Ngân Hàng Quốc Tế Đến Đỉnh Cao Châu Á
+                Từ ngân hàng quốc tế đến đỉnh cao Châu Á
               </h2>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <p className="font-serif italic text-xl sm:text-[26px] text-[#181F1C] leading-[1.5]">
-                “Làm tốt nhất từ những việc nhỏ nhất mỗi ngày. Khi bạn đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
+                “Làm thật tốt từ những việc nhỏ nhất mỗi ngày. Khi mình đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
               </p>
             </div>
           </div>
@@ -1454,7 +1454,7 @@ export function App() {
                 CHƯƠNG I &mdash; 2009 ĐẾN 2017
               </span>
               <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                Nền tảng ANZ Bank và bài học để đời về chữ “Tín”
+                Nền tảng ANZ Bank và bài học về chữ “Tín”
               </h3>
               <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                 Trước khi vươn lên vị trí Top 1 Toàn Quốc ANZ năm 2017 mảng Tín dụng &amp; Thế chấp mua nhà, Khánh Vân từng trải qua 3 tháng đầu tiên chuyển sang bộ phận kinh doanh mà không có nổi một khách hàng, đứng trước nguy cơ bị cắt mã số.
@@ -1469,8 +1469,8 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg',
-                    fig: 'EXECUTIVE GOVERNANCE',
-                    title: 'Tác Phong Chuẩn Mực & Văn Hóa Vận Hành Tại Bàn Họp Chiến Lược',
+                    fig: 'TÁC PHONG LÀM VIỆC',
+                    title: 'Tác phong chuẩn mực tại bàn họp',
                     subtitle: 'Bài học từ 8 năm làm ngân hàng quốc tế: Lấy uy tín và sự cẩn trọng làm nền tảng.',
                   })
                 }
@@ -1484,7 +1484,7 @@ export function App() {
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Tác phong chuẩn mực &amp; Bài học về chữ “Tín” từ nền tảng Banker
+                  Tác phong chuẩn mực và bài học về chữ “Tín” từ nền tảng banker
                 </figcaption>
               </figure>
             </div>
@@ -1502,8 +1502,8 @@ export function App() {
                     setLightbox({
                       src: '/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg',
                       fig: 'TOP 1 FYP 2025',
-                      title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Hoàn Thành Chỉ Tiêu FYP (2025)',
-                      subtitle: 'Bản lĩnh dẫn đầu quy mô và tốc độ tăng trưởng doanh số khai thác mới toàn quốc tại Manulife Việt Nam.',
+                      title: 'Top 1 DRD+ về tỷ lệ hoàn thành chỉ tiêu FYP (2025)',
+                      subtitle: 'Dẫn đầu toàn quốc về mức độ hoàn thành chỉ tiêu doanh số khai thác mới tại Manulife Việt Nam.',
                     })
                   }
                   className="cursor-zoom-in group"
@@ -1525,9 +1525,9 @@ export function App() {
                   onClick={() =>
                     setLightbox({
                       src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
-                      fig: 'CLIENT TRUST',
-                      title: 'Top 1 DRD+ Dẫn Đầu Tỷ Lệ Duy Trì Hợp Đồng Năm 2 (2025)',
-                      subtitle: 'Minh chứng cao nhất cho chất lượng tư vấn chuẩn mực và niềm tin dài hạn của khách hàng.',
+                      fig: 'NIỀM TIN KHÁCH HÀNG',
+                      title: 'Top 1 DRD+ về tỷ lệ duy trì hợp đồng năm thứ 2 (2025)',
+                      subtitle: 'Dấu ấn của chất lượng tư vấn và niềm tin lâu dài từ khách hàng.',
                     })
                   }
                   className="cursor-zoom-in group"
@@ -1547,16 +1547,16 @@ export function App() {
 
               <div className="space-y-5 pt-2">
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
-                  CHƯƠNG II &mdash; BƯỚC NGOẶT 2018 ĐẾN ĐỈNH CAO 2025
+                  CHƯƠNG II &mdash; 2018 ĐẾN 2025
                 </span>
                 <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                  Cú đúp Quán quân 2025: Dẫn đầu chỉ tiêu FYP &amp; Giữ vững tỷ lệ duy trì
+                  Năm 2025: dẫn đầu cả chỉ tiêu FYP lẫn tỷ lệ duy trì
                 </h3>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Rời môi trường ngân hàng nước ngoài năm 2018 để kiến tạo sự nghiệp độc lập tại Manulife Việt Nam, Khánh Vân mang theo kỷ luật kiểm soát rủi ro của một Banker: tư vấn đúng và đủ, lấy sự gắn bó dài hạn của khách hàng làm danh dự nghề nghiệp.
+                  Năm 2018, chị rời ngân hàng nước ngoài để xây dựng sự nghiệp độc lập tại Manulife Việt Nam, mang theo kỷ luật kiểm soát rủi ro của một banker: tư vấn đúng và đủ, coi sự gắn bó lâu dài của khách hàng là danh dự nghề nghiệp.
                 </p>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Năm 2025 đánh dấu cột mốc lịch sử khi chị cùng hệ thống xác lập cú đúp dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ Hoàn thành chỉ tiêu doanh số mới (FYP)</strong> song hành cùng <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ Tỷ lệ duy trì hợp đồng năm 2</strong> &mdash; bảo chứng đanh thép rằng tốc độ tăng trưởng quy mô luôn bắt nguồn từ sự chuẩn mực và chữ Tín vững chắc.
+                  Năm 2025, chị cùng hệ thống đạt hai vị trí dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ hoàn thành chỉ tiêu doanh số mới (FYP)</strong> và <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ tỷ lệ duy trì hợp đồng năm 2</strong>. Với Vân, đó là minh chứng rằng tăng trưởng bền vững luôn bắt đầu từ sự chuẩn mực và chữ Tín.
                 </p>
               </div>
             </div>
@@ -1568,7 +1568,7 @@ export function App() {
                   CHƯƠNG III &mdash; 2018 ĐẾN NAY
                 </span>
                 <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                  Nhà Quản lý Xuất sắc nhất Châu Á &amp; hệ sinh thái 500+ nhân sự
+                  Nhà Quản lý Xuất sắc nhất Châu Á và hệ thống hơn 500 nhân sự
                 </h3>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
                   Năm 2021, chị trở thành đại diện duy nhất tại Việt Nam đoạt giải thưởng “Nhà Quản lý Xuất sắc nhất Châu Á” (Asia Trusted Life Agent &amp; Advisers Awards), đồng thời trực tiếp ươm mầm 64 Quản lý cấp cao và hơn 500 cộng sự.
@@ -1579,9 +1579,9 @@ export function App() {
                 onClick={() =>
                   setLightbox({
                     src: '/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg',
-                    fig: 'C-LEVEL DIPLOMACY',
-                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) & Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý (CAO) Manulife',
-                    subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất tại Manulife Việt Nam.',
+                    fig: 'GẶP GỠ BAN ĐIỀU HÀNH',
+                    title: 'Gặp gỡ Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife',
+                    subtitle: 'Khoảnh khắc cùng lãnh đạo cấp cao của Manulife Việt Nam trong buổi tiệc tối.',
                   })
                 }
                 className="cursor-zoom-in group"
@@ -1594,7 +1594,7 @@ export function App() {
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) &amp; Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý (CAO) Manulife
+                  Gặp gỡ Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife
                 </figcaption>
               </figure>
             </div>
@@ -1616,10 +1616,10 @@ export function App() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14 gap-5 sm:gap-6">
             <div>
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                03 / GÓC NHÌN &amp; BÀI VIẾT CHUYÊN SÂU
+                03 / GÓC NHÌN &amp; BÀI VIẾT
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C]">
-                Chia Sẻ Về Tài Chính, Quản Trị &amp; Cuộc Sống
+                Chia sẻ về tài chính, quản trị và cuộc sống
               </h2>
             </div>
 
@@ -1652,10 +1652,10 @@ export function App() {
             <div className="mb-16 sm:mb-20">
               <div className="flex items-center justify-between mb-6 sm:mb-8 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
-                  TIÊU ĐIỂM BÀI VIẾT MỚI &bull; SPOTLIGHT
+                  BÀI VIẾT NỔI BẬT
                 </span>
                 <span className="text-xs text-[#858E89] font-light">
-                  {featuredArticles.length} bài viết nổi bật
+                  {featuredArticles.length} bài viết
                 </span>
               </div>
 
@@ -1714,7 +1714,7 @@ export function App() {
             <div>
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#DCD8CE]">
                 <span className="text-[11px] uppercase tracking-[0.2em] text-[#858E89] font-medium">
-                  DANH MỤC LƯU TRỮ &bull; ARCHIVE INDEX
+                  CÁC BÀI VIẾT KHÁC
                 </span>
                 <span className="text-xs text-[#858E89] font-light">
                   {archiveArticles.length} bài viết
@@ -1768,14 +1768,14 @@ export function App() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E4E1D8]">
             <div>
               <span className="text-[10.5px] uppercase tracking-[0.24em] text-[#008746] font-medium block mb-2">
-                04 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
+                04 / TỦ SÁCH
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#181F1C] leading-[1.15]">
-                Tủ Sách Gối Đầu Giường &amp; Triết Lý Hành Động
+                Tủ sách gối đầu giường của chị Vân
               </h2>
             </div>
             <p className="text-xs sm:text-[13.5px] text-[#56605B] font-normal leading-[1.7] max-w-md">
-              4 tác phẩm kinh điển định hình tư duy quản trị rủi ro, kỷ luật thói quen và nghệ thuật dẫn dắt bằng sự phụng sự của Khánh Vân.
+              4 cuốn sách đã định hình cách Khánh Vân quản trị rủi ro, giữ kỷ luật thói quen và dẫn dắt đội ngũ bằng tinh thần phụng sự.
             </p>
           </div>
 
@@ -1792,7 +1792,7 @@ export function App() {
                   onClick={() =>
                     setLightbox({
                       src: book.cover,
-                      fig: `EXECUTIVE BOOK ${book.num} • ${book.theme.toUpperCase()}`,
+                      fig: `SÁCH ${book.num} • ${book.theme.toUpperCase()}`,
                       title: `${book.title} (${book.author})`,
                       subtitle: `Góc nhìn Khánh Vân: “${book.reflection}”`,
                     })
@@ -1856,16 +1856,16 @@ export function App() {
                 05 / ĐIỂM TỰA CUỘC SỐNG
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-                Người Phụ Nữ Trong Gia Đình &amp; Sự Cân Bằng
+                Người phụ nữ trong gia đình và sự cân bằng
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 space-y-4">
               <div className="border-l-2 border-l-[#008746] pl-5 sm:pl-6 space-y-3">
                 <p className="font-serif italic text-xl sm:text-2xl text-[#181F1C] leading-[1.5]">
-                  “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp vinh danh, mà là sự bình an khi trở về nhà bên chồng và hai con.”
+                  “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp, mà là sự bình an khi trở về nhà bên chồng và hai con.”
                 </p>
                 <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
-                  Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
+                  Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
                 </p>
               </div>
             </div>
@@ -1877,8 +1877,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
-                  fig: 'FAMILY SANCTUARY',
-                  title: 'Tổ Ấm Bình Yên Bên Chồng Và Hai Con',
+                  fig: 'TỔ ẤM',
+                  title: 'Tổ ấm bên chồng và hai con',
                   subtitle: 'Điểm tựa tinh thần lớn nhất phía sau hành trình sự nghiệp.',
                 })
               }
@@ -1892,7 +1892,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Tổ ấm bên người bạn đời và hai con
+                Tổ ấm bên chồng và hai con
               </figcaption>
             </figure>
 
@@ -1900,8 +1900,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg',
-                  fig: 'MOTHERHOOD',
-                  title: 'Trọn Vẹn Từng Khoảnh Khắc Bên Con',
+                  fig: 'LÀM MẸ',
+                  title: 'Trọn vẹn từng khoảnh khắc bên con',
                   subtitle: 'Làm chủ thời gian để đồng hành cùng tuổi thơ của các con.',
                 })
               }
@@ -1929,8 +1929,8 @@ export function App() {
           onClick={() =>
             setLightbox({
               src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg',
-              fig: 'PERSPECTIVE & HORIZON',
-              title: 'Tầm Nhìn Rộng Mở & Hành Trình Đón Bình Minh Rực Rỡ',
+              fig: 'BÌNH MINH CAPPADOCIA',
+              title: 'Đón bình minh trên khinh khí cầu',
               subtitle:
                 'Khoảnh khắc đón bình minh trên khinh khí cầu tại thung lũng Cappadocia — “Mỗi ngày mới là một hành trình đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
             })
@@ -1964,8 +1964,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg',
-                  fig: 'DISCIPLINE',
-                  title: 'Kỷ Luật Rèn Luyện Thể Lực Bền Bỉ',
+                  fig: 'KỶ LUẬT',
+                  title: 'Rèn luyện thể lực mỗi tuần',
                   subtitle: 'Duy trì nguồn năng lượng dẻo dai thông qua luyện tập mỗi tuần.',
                 })
               }
@@ -1979,7 +1979,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Kỷ luật bản thân &amp; rèn luyện thể chất
+                Kỷ luật bản thân và rèn luyện thể chất
               </figcaption>
             </figure>
 
@@ -1987,8 +1987,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg',
-                  fig: 'COMPANIONSHIP',
-                  title: 'Đồng Hành Bền Vững Cùng Người Bạn Đời',
+                  fig: 'ĐỒNG HÀNH',
+                  title: 'Đồng hành cùng người bạn đời',
                   subtitle: 'Sánh bước bên nhau trên mọi hành trình trong và ngoài nước.',
                 })
               }
@@ -2002,7 +2002,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Người bạn đời tri kỷ đồng hành
+                Người bạn đời luôn đồng hành
               </figcaption>
             </figure>
           </div>
@@ -2014,13 +2014,13 @@ export function App() {
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           <div className="max-w-4xl mb-10 sm:mb-20 space-y-3.5 sm:space-y-4">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-              06 / HỢP TÁC &amp; ĐỒNG HÀNH &bull; WORK WITH ME
+              06 / HỢP TÁC &amp; ĐỒNG HÀNH
             </span>
             <h2 className="font-serif text-3xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
-              Ba Trục Hợp Tác Chiến Lược Cùng Khánh Vân
+              Ba cách cùng làm việc với Khánh Vân
             </h2>
             <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
-              Dù bạn là chủ gia đình mong muốn thiết lập cơ chế chuyển giao tài sản an tâm, một chuyên viên quản lý tài chính khát khao bứt phá sự nghiệp, hay một tổ chức tìm kiếm diễn giả truyền cảm hứng — Khánh Vân luôn sẵn sàng đồng hành với sự chuẩn mực và tận tâm cao nhất.
+              Dù bạn là chủ gia đình muốn chuyển giao tài sản một cách yên tâm, một chuyên viên tài chính muốn bứt phá trong sự nghiệp, hay một tổ chức đang tìm diễn giả truyền cảm hứng — Khánh Vân sẵn sàng đồng hành với sự chuẩn mực và tận tâm.
             </p>
           </div>
 
@@ -2031,36 +2031,36 @@ export function App() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
-                    TRỤC I &bull; PRIVATE WEALTH
+                    HƯỚNG I &bull; HOẠCH ĐỊNH GIA SẢN
                   </span>
                   <span className="font-serif text-lg text-[#858E89]">01</span>
                 </div>
 
                 <div>
                   <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
-                    Hoạch Định Dòng Tiền &amp; Chuyển Giao Gia Sản
+                    Hoạch định dòng tiền và chuyển giao gia sản
                   </h3>
                   <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#6A756F] mt-2 font-medium">
-                    Phù hợp: Chủ doanh nghiệp &bull; Gia đình tài sản lớn &bull; C-Level
+                    Phù hợp: Chủ doanh nghiệp &bull; Gia đình có tài sản lớn &bull; Lãnh đạo cấp cao
                   </span>
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Thiết kế cơ chế tích lũy tài sản dài hạn đến 99 tuổi, bảo đảm đường đi pháp lý rõ ràng để gia sản được tiếp nối êm thấm giữa các thế hệ mà không đánh đổi bằng tranh chấp tình thân.
+                  Thiết kế lộ trình tích lũy tài sản dài hạn đến 99 tuổi, với khung pháp lý rõ ràng để gia sản được trao lại êm thấm giữa các thế hệ, không để tranh chấp làm tổn thương tình thân.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Lập trình sẵn quyền thừa kế hợp pháp qua hợp đồng tích lũy dài hạn.</span>
+                    <span>Chủ động sắp xếp quyền thừa kế hợp pháp thông qua hợp đồng tích lũy dài hạn.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Tối ưu hóa cấu trúc phí và bảo toàn dòng tiền sinh lời lãi kép liên tục.</span>
+                    <span>Tối ưu cấu trúc phí, giữ dòng tiền ổn định và tận dụng lãi kép.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Quỹ bảo vệ trụ cột và lộ trình học vấn quốc tế vững chắc cho con cái.</span>
+                    <span>Quỹ bảo vệ trụ cột gia đình và lộ trình học vấn quốc tế cho con.</span>
                   </div>
                 </div>
               </div>
@@ -2087,14 +2087,14 @@ export function App() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
-                    TRỤC II &bull; EXECUTIVE MENTORSHIP
+                    HƯỚNG II &bull; ĐỒNG HÀNH QUẢN LÝ
                   </span>
                   <span className="font-serif text-lg text-[#008746] font-medium">02</span>
                 </div>
 
                 <div>
                   <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
-                    Đồng Hành Phát Triển Quản Lý Kế Cận (F1)
+                    Đồng hành phát triển quản lý kế cận (F1)
                   </h3>
                   <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#008746] mt-2 font-medium">
                     Phù hợp: Cựu Banker &bull; Quản lý tài chính &bull; Quản lý kinh doanh
@@ -2102,21 +2102,21 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Chương trình kèm cặp 1-1 trực tiếp cùng Khánh Vân. Chuyển giao toàn bộ quy trình vận hành và nghệ thuật xây dựng hệ sinh thái kinh doanh độc lập đạt chuẩn Top 1 Châu Á.
+                  Chương trình kèm cặp 1-1 trực tiếp cùng Khánh Vân, chia sẻ toàn bộ quy trình vận hành và cách xây dựng một hệ thống kinh doanh độc lập theo chuẩn Top 1 Châu Á.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Lộ trình chuyển dịch an toàn 90 ngày từ bàn giấy ngân hàng sang thị trường.</span>
+                    <span>Lộ trình 90 ngày chuyển từ bàn giấy ngân hàng sang thị trường một cách an toàn.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Phương pháp tuyển dụng, đào tạo và giữ chân đội ngũ gắn kết bền vững.</span>
+                    <span>Phương pháp tuyển dụng, đào tạo và giữ chân một đội ngũ gắn kết.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Xây dựng thương hiệu cá nhân uy tín cao cấp dựa trên chữ “Tín”.</span>
+                    <span>Xây dựng thương hiệu cá nhân uy tín, lấy chữ “Tín” làm nền.</span>
                   </div>
                 </div>
               </div>
@@ -2132,7 +2132,7 @@ export function App() {
                   }
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#008746] hover:bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
                 >
-                  <span>Ứng tuyển Mentorship F1</span>
+                  <span>Đăng ký đồng hành F1</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -2143,14 +2143,14 @@ export function App() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
-                    TRỤC III &bull; CORPORATE SHARING
+                    HƯỚNG III &bull; CHIA SẺ &amp; ĐÀO TẠO
                   </span>
                   <span className="font-serif text-lg text-[#858E89]">03</span>
                 </div>
 
                 <div>
                   <h3 className="font-sans font-semibold text-xl sm:text-[22px] text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
-                    Diễn Giả Sự Kiện &amp; Đào Tạo Doanh Nghiệp
+                    Diễn giả sự kiện và đào tạo doanh nghiệp
                   </h3>
                   <span className="inline-block text-[11px] uppercase tracking-[0.16em] text-[#6A756F] mt-2 font-medium">
                     Phù hợp: Doanh nghiệp &bull; Ngân hàng &bull; Diễn đàn phụ nữ lãnh đạo
@@ -2158,21 +2158,21 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Chia sẻ thực chiến tại các hội nghị, hội thảo lãnh đạo và chương trình đào tạo nội bộ về nghệ thuật bán hàng bằng sự tử tế, văn hóa dịch vụ chuẩn mực và lãnh đạo thấu cảm.
+                  Chia sẻ thực tế tại hội nghị, hội thảo lãnh đạo và chương trình đào tạo nội bộ về bán hàng bằng sự tử tế, văn hóa dịch vụ chuẩn mực và lãnh đạo thấu cảm.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Keynote Speaker tại các ngày hội tài chính, ngân hàng và tuyển dụng.</span>
+                    <span>Diễn giả chính tại các sự kiện tài chính, ngân hàng và tuyển dụng.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Workshop truyền lửa: Bứt phá giới hạn và xây dựng kỷ luật bền bỉ.</span>
+                    <span>Workshop truyền cảm hứng về vượt giới hạn và xây dựng kỷ luật bền bỉ.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Chia sẻ góc nhìn cân bằng: Phụ nữ trong gia đình và đỉnh cao sự nghiệp.</span>
+                    <span>Góc nhìn về sự cân bằng của người phụ nữ giữa gia đình và sự nghiệp.</span>
                   </div>
                 </div>
               </div>
@@ -2201,8 +2201,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg',
-                  fig: 'EXECUTIVE TRAINING',
-                  title: 'Trực Tiếp Đứng Lớp Đào Tạo & Truyền Lửa',
+                  fig: 'ĐÀO TẠO',
+                  title: 'Trực tiếp đứng lớp, truyền lửa cho đội ngũ',
                   subtitle: 'Chia sẻ kiến thức chuyên môn và kỹ năng quản trị tại văn phòng Manulife.',
                 })
               }
@@ -2216,7 +2216,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Trực tiếp đứng lớp đào tạo thực chiến
+                Trực tiếp đứng lớp đào tạo
               </figcaption>
             </figure>
 
@@ -2224,8 +2224,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
-                  fig: 'SUCCESSION',
-                  title: 'Vinh Danh Các Quản Lý Cấp Cao Mới Thăng Cấp',
+                  fig: 'THĂNG CẤP',
+                  title: 'Chúc mừng các quản lý mới thăng cấp',
                   subtitle: 'Niềm tự hào khi đồng hành cùng cộng sự vươn lên vị trí Quản lý (SM).',
                 })
               }
@@ -2247,9 +2247,9 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg',
-                  fig: 'STRATEGIC SANCTUARY',
-                  title: 'Cố Vấn Chiến Lược & Hệ Sinh Thái Quản Lý F1',
-                  subtitle: 'Chị Khánh Vân cùng các nữ quản lý nòng cốt tại khu sofa thư giãn view thành phố cao tầng.',
+                  fig: 'ĐỒNG HÀNH F1',
+                  title: 'Cùng các quản lý F1 trao đổi định hướng',
+                  subtitle: 'Chị Khánh Vân cùng các quản lý nòng cốt trò chuyện bên cửa sổ nhìn ra thành phố.',
                 })
               }
               className="cursor-zoom-in group"
@@ -2262,7 +2262,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Không gian cố vấn chiến lược quản lý F1
+                Trao đổi định hướng cùng các quản lý F1
               </figcaption>
             </figure>
 
@@ -2270,8 +2270,8 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg',
-                  fig: 'DIGITAL WORKSPACE',
-                  title: 'Chuyển Giao Quy Trình Thực Chiến Trên Nền Tảng Số',
+                  fig: 'CÔNG CỤ SỐ',
+                  title: 'Hướng dẫn quy trình thực tế trên nền tảng số',
                   subtitle: 'Đào tạo và kèm cặp 1-1 các quản lý trẻ khai thác công cụ kỹ thuật số trong tư vấn gia sản.',
                 })
               }
@@ -2285,7 +2285,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Chuyển giao quy trình thực chiến trên nền tảng số
+                Hướng dẫn quy trình trên nền tảng số
               </figcaption>
             </figure>
 
@@ -2293,9 +2293,9 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg',
-                  fig: 'HUMAN CONNECTION',
-                  title: 'Sự Đồng Lòng & Tình Cảm Gắn Kết Chân Thành',
-                  subtitle: 'Hơn 30 cộng sự trong đội ngũ nồng nhiệt chào đón và chúc mừng người thủ lĩnh.',
+                  fig: 'GẮN KẾT',
+                  title: 'Sự đồng lòng và tình cảm của đội ngũ',
+                  subtitle: 'Hơn 30 cộng sự nồng nhiệt chào đón và chúc mừng chị Vân.',
                 })
               }
               className="cursor-zoom-in group"
@@ -2316,9 +2316,9 @@ export function App() {
               onClick={() =>
                 setLightbox({
                   src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
-                  fig: 'PINNACLE LEADERSHIP',
-                  title: 'Bản Lĩnh Đỉnh Cao Của Nhà Quản Lý Xuất Sắc',
-                  subtitle: 'Khoảnh khắc nâng cao cúp vàng ManPower trong đầm dạ hội xanh lục bảo quyền lực.',
+                  fig: 'VINH DANH',
+                  title: 'Khoảnh khắc nâng cúp ManPower',
+                  subtitle: 'Chị Vân nâng cúp vàng ManPower trong bộ đầm dạ hội xanh lục bảo.',
                 })
               }
               className="cursor-zoom-in group"
@@ -2326,12 +2326,12 @@ export function App() {
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
-                  alt="Đỉnh cao vinh danh bản lĩnh quản lý C-Level"
+                  alt="Khoảnh khắc nâng cúp vinh danh"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Đỉnh cao vinh danh bản lĩnh quản lý C-Level
+                Khoảnh khắc nâng cúp vinh danh
               </figcaption>
             </figure>
           </div>
@@ -2343,19 +2343,19 @@ export function App() {
           >
             <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
-                PRIVATE CONCIERGE &amp; INQUIRY
+                LIÊN HỆ RIÊNG
               </span>
               <h3 className="font-sans font-semibold text-2xl sm:text-3xl text-[#181F1C] leading-[1.25] tracking-tight">
-                Gửi Lời Nhắn Kết Nối Riêng Cùng Khánh Vân
+                Gửi lời nhắn đến Khánh Vân
               </h3>
               <p className="text-sm text-[#28322D] font-normal leading-[1.8]">
-                Mọi thông tin trao đổi về hoạch định tài chính gia đình hoặc định hướng chuyển dịch sự nghiệp của bạn đều được cam kết bảo mật tuyệt đối.
+                Mọi thông tin bạn chia sẻ về kế hoạch tài chính gia đình hoặc định hướng sự nghiệp đều được bảo mật tuyệt đối.
               </p>
 
               {/* Direct Executive Channels (Zalo & Facebook) */}
               <div className="pt-4 border-t border-[#DCD8CE] space-y-4">
                 <span className="text-[10px] uppercase tracking-[0.22em] text-[#858E89] block">
-                  KÊNH KẾT NỐI TRỰC TIẾP
+                  KẾT NỐI TRỰC TIẾP
                 </span>
 
                 <div className="divide-y divide-[#E4E1D8] border-t border-b border-[#E4E1D8]">
@@ -2374,7 +2374,7 @@ export function App() {
                       </span>
                       <div>
                         <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
-                          Zalo Trực Tiếp &bull; Điện Thoại
+                          Zalo &bull; Điện thoại
                         </span>
                         <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
                           {PHONE_DISPLAY}
@@ -2400,7 +2400,7 @@ export function App() {
                       </span>
                       <div>
                         <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
-                          Mạng Xã Hội Chính Thức
+                          Trang cá nhân
                         </span>
                         <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
                           Facebook Khánh Vân
@@ -2541,18 +2541,18 @@ export function App() {
                         Cố vấn Hoạch định Tài chính &amp; Gia sản Gia đình
                       </option>
                       <option value="Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp">
-                        Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp
+                        Mời đào tạo / chia sẻ tại sự kiện doanh nghiệp
                       </option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
-                      Chia sẻ thêm (Tùy chọn)
+                      Điều bạn muốn chia sẻ (không bắt buộc)
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Mong muốn hoặc câu hỏi của bạn dành cho Khánh Vân..."
+                      placeholder="Bạn muốn trao đổi điều gì cùng Khánh Vân?"
                       value={formData.note}
                       onChange={(e) => setFormData({ ...formData, note: e.target.value })}
                       className="editorial-input resize-none"
@@ -2564,12 +2564,12 @@ export function App() {
                       type="submit"
                       className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3 min-h-[44px]"
                     >
-                      <span>Gửi lời nhắn bảo mật</span>
+                      <span>Gửi lời nhắn</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                     <p className="text-[11px] text-[#858E89] font-light leading-relaxed flex items-center gap-1.5 pt-1">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#008746] shrink-0" />
-                      <span>Thông tin của bạn được cam kết bảo mật 100% theo Nghị định 13/2023/NĐ-CP và chỉ sử dụng cho mục đích liên hệ tư vấn cá nhân.</span>
+                      <span>Thông tin của bạn được bảo mật theo Nghị định 13/2023/NĐ-CP và chỉ dùng để liên hệ tư vấn.</span>
                     </p>
                   </div>
                 </form>
@@ -2588,7 +2588,7 @@ export function App() {
                 Khánh Vân
               </span>
               <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] mt-1 block">
-                Giám đốc Vùng Cấp cao &mdash; Manulife Vietnam
+                Giám đốc Vùng Cấp cao &mdash; Manulife Việt Nam
               </span>
             </div>
 
@@ -2609,7 +2609,7 @@ export function App() {
                 className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors"
               >
                 <FacebookBrandIcon className="w-3.5 h-3.5 text-[#008746]" />
-                <span>Facebook Cá Nhân</span>
+                <span>Facebook cá nhân</span>
               </a>
             </div>
           </div>
