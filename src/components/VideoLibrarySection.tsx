@@ -241,16 +241,16 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     <>
       <section
         id="thu-vien-video"
-        className="py-28 lg:py-36 bg-[#FAF9F5] border-b border-[#E4E1D8]"
+        className="py-16 sm:py-24 lg:py-36 bg-[#FAF9F5] border-b border-[#E4E1D8]"
       >
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           {/* SECTION HEADER */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-10 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-10 items-end">
             <div className="lg:col-span-7 space-y-3">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
                 02 / THƯ VIỆN VIDEO &amp; HỎI ĐÁP THỰC CHIẾN &bull; VIDEO ARCHIVE
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
                 109 Video Giải Mã Bảo Hiểm, Dòng Tiền &amp; Nghề Tư Vấn
               </h2>
             </div>
@@ -262,7 +262,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
           </div>
 
           {/* SEARCH BAR + TOPIC FILTER PILLS */}
-          <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 mb-12 space-y-4">
+          <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 mb-10 sm:mb-12 space-y-3.5 sm:space-y-4">
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-stretch md:items-center justify-between">
               <div className="relative flex-1">
                 <Search className="w-4 h-4 text-[#6A756F] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -305,8 +305,8 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               </div>
             </div>
 
-            {/* Topic Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2 pt-1">
+            {/* Topic Filter Pills — Swipeable single row on mobile, wrapped on tablet/desktop */}
+            <div className="flex sm:flex-wrap items-center gap-2 pt-1 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-1 sm:pb-0">
               <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] shrink-0 mr-1">
                 Chủ đề:
               </span>
@@ -317,7 +317,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     key={tag}
                     type="button"
                     onClick={() => setSelectedSubtag(tag)}
-                    className={`whitespace-nowrap text-[11px] px-3 py-1.5 rounded-[2px] border transition-colors ${
+                    className={`shrink-0 whitespace-nowrap text-[11px] px-3 py-1.5 rounded-[2px] border transition-colors ${
                       active
                         ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] font-medium'
                         : 'bg-[#FAF9F5] text-[#56605B] border-[#DCD8CE] hover:border-[#0A3622]/40 hover:text-[#181F1C]'

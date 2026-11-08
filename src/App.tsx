@@ -1101,8 +1101,8 @@ export function App() {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#FAF9F5]/92 backdrop-blur-md border-b border-[#E4E1D8] py-4'
-            : 'bg-[#FAF9F5] border-b border-[#E4E1D8]/60 py-6'
+            ? 'bg-[#FAF9F5]/92 backdrop-blur-md border-b border-[#E4E1D8] py-2.5 sm:py-4'
+            : 'bg-[#FAF9F5] border-b border-[#E4E1D8]/60 py-2.5 sm:py-6'
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 flex items-center justify-between">
@@ -1198,7 +1198,7 @@ export function App() {
       </header>
 
       {/* 2A. FULL-BLEED STICKY HERO STAGE — CURTAIN-REVEAL ON SCROLL (LIKE THAIVANLINH.COM) */}
-      <div className="mt-[69px] sm:mt-[77px] sticky top-[61px] sm:top-[65px] z-0 w-full bg-[#EAE7DF] overflow-hidden">
+      <div className="mt-[65px] sm:mt-[77px] sticky top-[65px] z-0 w-full bg-[#EAE7DF] overflow-hidden">
         <figure
           onClick={() =>
             setLightbox({
@@ -1211,13 +1211,19 @@ export function App() {
           }
           className="cursor-zoom-in group relative block w-full"
         >
-          <div className="w-full aspect-[820/312] overflow-hidden relative">
-            <img
-              src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
-              alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
-              className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/[0.06] to-transparent" />
+          <div className="w-full aspect-[4/3] sm:aspect-[820/312] overflow-hidden relative">
+            <picture>
+              <source
+                media="(min-width: 640px)"
+                srcSet="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
+              />
+              <img
+                src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Mobile.jpg"
+                alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
+                className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+              />
+            </picture>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 sm:h-14 bg-gradient-to-t from-black/[0.06] to-transparent" />
           </div>
         </figure>
       </div>
@@ -1225,16 +1231,16 @@ export function App() {
       {/* CONTENT CURTAIN SHEET 1 — SLIDES UP OVER THE STICKY HERO ON SCROLL */}
       <div className="relative z-10 bg-[#FAF9F5] shadow-[0_-24px_60px_-12px_rgba(18,24,20,0.20)] border-t border-[#E4E1D8]">
       {/* 2B. THE EXECUTIVE SPLIT SPREAD (ĐỊNH VỊ LÃNH ĐẠO & ĐỘI NGŨ QUẢN LÝ TINH HOA) */}
-      <section className="pt-14 sm:pt-20 lg:pt-24 pb-20 lg:pb-28">
+      <section className="pt-10 sm:pt-20 lg:pt-24 pb-14 sm:pb-20 lg:pb-28">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
             {/* Cột Trái (6 Cột): Định Vị Quyền Lực, Hành Trình & Nút Hành Động */}
-            <div className="lg:col-span-6 space-y-6 sm:space-y-7">
-              <div className="flex items-center gap-2.5 text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] text-[#0A3622] font-medium">
-                <span className="w-5 h-[1px] bg-[#008746]" />
-                <span>Cựu Banker ANZ</span>
+            <div className="lg:col-span-6 space-y-5 sm:space-y-7">
+              <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#0A3622] font-medium">
+                <span className="w-4 sm:w-5 h-[1px] bg-[#008746] shrink-0" />
+                <span className="whitespace-nowrap">Cựu Banker ANZ</span>
                 <span className="text-[#858E89]">&bull;</span>
-                <span>Giám Đốc Vùng Cấp Cao Manulife</span>
+                <span className="whitespace-nowrap">Giám Đốc Vùng Cấp Cao Manulife</span>
               </div>
 
               <div className="space-y-3">
@@ -1252,17 +1258,17 @@ export function App() {
                 Với gần hai thập kỷ kiến tạo giá trị, ghi dấu ấn từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ cho đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và vị thế Top 1 Manulife Việt Nam nhiều năm liền. Hiện tại, Vân vẫn đang chuyên tâm đồng hành cùng các gia đình Việt trong việc bảo toàn dòng tiền và hoạch định gia sản bền vững, đồng thời trực tiếp dẫn dắt hệ thống gồm 64 nhà quản lý kế cận và hơn 500 tư vấn viên chuyên nghiệp.
               </p>
 
-              <div className="pt-1 flex flex-wrap items-center gap-4 sm:gap-5">
+              <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-5">
                 <a
                   href="#lien-he"
-                  className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
                 >
                   <span>Đặt lịch tham vấn 1-1</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
                   href="#cau-chuyen"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#181F1C] hover:text-[#008746] border border-[#DCD8CE] hover:border-[#008746]/50 bg-white/70 hover:bg-white rounded-[3px] transition-all font-medium min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#181F1C] hover:text-[#008746] border border-[#DCD8CE] hover:border-[#008746]/50 bg-white/70 hover:bg-white rounded-[3px] transition-all font-medium min-h-[44px]"
                 >
                   <span>Hành trình sự nghiệp</span>
                 </a>
@@ -1394,9 +1400,9 @@ export function App() {
       </section>
 
       {/* 3. ARCHITECTURAL HAIRLINE METRICS (NO CHUNKY BOXES) */}
-      <section className="border-t border-b border-[#E4E1D8] bg-[#F2EFE9]/60 py-16 lg:py-20">
+      <section className="border-t border-b border-[#E4E1D8] bg-[#F2EFE9]/60 py-12 sm:py-16 lg:py-20">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 sm:gap-y-12 gap-x-6 sm:gap-x-8">
             {metrics.map((m, idx) => (
               <div
                 key={idx}
@@ -1406,7 +1412,7 @@ export function App() {
               >
                 <div
                   className={`font-serif ${
-                    m.figure.length > 7 ? 'text-2xl sm:text-[32px]' : 'text-4xl sm:text-[44px]'
+                    m.figure.length > 7 ? 'text-2xl sm:text-[32px]' : 'text-3xl sm:text-[44px]'
                   } font-normal text-[#0A3622] leading-none tracking-tight`}
                 >
                   {m.figure}
@@ -1422,27 +1428,27 @@ export function App() {
       </section>
 
       {/* 4. CÂU CHUYỆN SỰ NGHIỆP — EDITORIAL ESSAY & GALLERY LAYOUT */}
-      <section id="cau-chuyen" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+      <section id="cau-chuyen" className="py-16 sm:py-24 lg:py-36 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           {/* Section Intro */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-24 lg:mb-32 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 mb-14 sm:mb-24 lg:mb-32 items-end">
             <div className="lg:col-span-4">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
                 01 / HÀNH TRÌNH SỰ NGHIỆP
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
                 Từ Chuẩn Mực Ngân Hàng Quốc Tế Đến Đỉnh Cao Châu Á
               </h2>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="font-serif italic text-2xl sm:text-[26px] text-[#181F1C] leading-[1.5]">
+              <p className="font-serif italic text-xl sm:text-[26px] text-[#181F1C] leading-[1.5]">
                 “Làm tốt nhất từ những việc nhỏ nhất mỗi ngày. Khi bạn đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
               </p>
             </div>
           </div>
 
           {/* Chapter I */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28 lg:mb-36">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-28 lg:mb-36">
             <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] uppercase tracking-[0.22em] text-[#858E89] block">
                 CHƯƠNG I &mdash; 2009 ĐẾN 2017
@@ -1574,7 +1580,7 @@ export function App() {
                   setLightbox({
                     src: '/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg',
                     fig: 'C-LEVEL DIPLOMACY',
-                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) & Giám Đốc Khối Đại Lý (CAO) Manulife',
+                    title: 'Gặp Gỡ Chiến Lược Cùng Tổng Giám Đốc (CEO) & Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý (CAO) Manulife',
                     subtitle: 'Sự gắn kết và đồng hành chiến lược cùng Ban điều hành cấp cao nhất tại Manulife Việt Nam.',
                   })
                 }
@@ -1583,12 +1589,12 @@ export function App() {
                 <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img
                     src="/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg"
-                    alt="Chị Khánh Vân cùng CEO và CAO Manulife Việt Nam trong tiệc tối thân mật"
+                    alt="Chị Khánh Vân cùng Tổng Giám Đốc và Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý Manulife Việt Nam trong tiệc tối thân mật"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) &amp; Giám Đốc Khối Đại Lý (CAO) Manulife
+                  Gặp gỡ chiến lược cùng Tổng Giám Đốc (CEO) &amp; Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý (CAO) Manulife
                 </figcaption>
               </figure>
             </div>
@@ -1605,14 +1611,14 @@ export function App() {
       />
 
       {/* 5. GÓC NHÌN & BÀI VIẾT — ARCHITECTURAL EDITORIAL JOURNAL */}
-      <section id="goc-nhin" className="py-28 lg:py-36 bg-[#F2EFE9]/50 border-b border-[#E4E1D8]">
+      <section id="goc-nhin" className="py-16 sm:py-24 lg:py-36 bg-[#F2EFE9]/50 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14 gap-5 sm:gap-6">
             <div>
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
                 03 / GÓC NHÌN &amp; BÀI VIẾT CHUYÊN SÂU
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C]">
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C]">
                 Chia Sẻ Về Tài Chính, Quản Trị &amp; Cuộc Sống
               </h2>
             </div>
@@ -1842,14 +1848,14 @@ export function App() {
       </section>
 
       {/* 7. ĐIỂM TỰA GIA ĐÌNH & PHONG CÁCH SỐNG (UNBOXED EDITORIAL GALLERY) */}
-      <section id="cuoc-song" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+      <section id="cuoc-song" className="py-16 sm:py-24 lg:py-36 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 mb-12 sm:mb-20 items-end">
             <div className="lg:col-span-5">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
                 05 / ĐIỂM TỰA CUỘC SỐNG
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
                 Người Phụ Nữ Trong Gia Đình &amp; Sự Cân Bằng
               </h2>
             </div>
@@ -1866,7 +1872,7 @@ export function App() {
           </div>
 
           {/* Family Diptych — Unboxed, Equal Height (7 + 5 Asymmetric Spread) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-10">
             <figure
               onClick={() =>
                 setLightbox({
@@ -1878,14 +1884,14 @@ export function App() {
               }
               className="lg:col-span-7 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
+              <div className="overflow-hidden h-[260px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg"
                   alt="Gia đình chị Khánh Vân tại phòng khách"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
                 Tổ ấm bên người bạn đời và hai con
               </figcaption>
             </figure>
@@ -1901,14 +1907,14 @@ export function App() {
               }
               className="lg:col-span-5 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
+              <div className="overflow-hidden h-[260px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg"
                   alt="Gia đình chị Khánh Vân bên sân vườn"
                   className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
                 Khoảnh khắc yêu thương ngày thường
               </figcaption>
             </figure>
@@ -1918,7 +1924,7 @@ export function App() {
       </div>
 
       {/* 7B. FULL-BLEED STICKY CAPPADOCIA SUNRISE STAGE — CURTAIN-REVEAL ON SCROLL */}
-      <div className="sticky top-[61px] sm:top-[65px] z-10 w-full bg-[#181F1C] overflow-hidden">
+      <div className="sticky top-[65px] z-10 w-full bg-[#181F1C] overflow-hidden">
         <figure
           onClick={() =>
             setLightbox({
@@ -1931,23 +1937,29 @@ export function App() {
           }
           className="cursor-zoom-in group relative block w-full"
         >
-          <div className="w-full aspect-[820/312] overflow-hidden relative">
-            <img
-              src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
-              alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
-              className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent" />
+          <div className="w-full aspect-[4/3] sm:aspect-[820/312] overflow-hidden relative">
+            <picture>
+              <source
+                media="(min-width: 640px)"
+                srcSet="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
+              />
+              <img
+                src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Mobile.jpg"
+                alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
+                className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+              />
+            </picture>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 sm:h-16 bg-gradient-to-t from-black/25 to-transparent" />
           </div>
         </figure>
       </div>
 
       {/* CONTENT CURTAIN SHEET 2 — SLIDES UP OVER THE STICKY SUNRISE STAGE ON SCROLL */}
       <div className="relative z-20 bg-[#FAF9F5] shadow-[0_-28px_64px_-12px_rgba(18,24,20,0.28)] border-t border-[#E4E1D8]">
-      <section className="py-20 lg:py-28 border-b border-[#E4E1D8]">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-[#E4E1D8]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
           {/* Lifestyle & Companionship Diptych (5 + 7 Counter-Balanced Spread) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-10">
             <figure
               onClick={() =>
                 setLightbox({
@@ -1959,14 +1971,14 @@ export function App() {
               }
               className="lg:col-span-5 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[360px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
+              <div className="overflow-hidden h-[290px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg"
                   alt="Chị Khánh Vân rèn luyện thể thao"
                   className="w-full h-full object-cover object-[50%_75%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
                 Kỷ luật bản thân &amp; rèn luyện thể chất
               </figcaption>
             </figure>
@@ -1982,14 +1994,14 @@ export function App() {
               }
               className="lg:col-span-7 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[360px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
+              <div className="overflow-hidden h-[290px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg"
                   alt="Chị Khánh Vân cùng chồng du lịch quốc tế"
                   className="w-full h-full object-cover object-[50%_68%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
                 Người bạn đời tri kỷ đồng hành
               </figcaption>
             </figure>
@@ -1998,13 +2010,13 @@ export function App() {
       </section>
 
       {/* 8. ĐỒNG HÀNH & PHÁT TRIỂN ĐỘI NGŨ (WORK WITH ME + MENTORSHIP GALLERY + CONCIERGE FORM) */}
-      <section id="dong-hanh" className="py-28 lg:py-36">
+      <section id="dong-hanh" className="py-16 sm:py-24 lg:py-36">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="max-w-4xl mb-16 sm:mb-20 space-y-4">
+          <div className="max-w-4xl mb-10 sm:mb-20 space-y-3.5 sm:space-y-4">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
               06 / HỢP TÁC &amp; ĐỒNG HÀNH &bull; WORK WITH ME
             </span>
-            <h2 className="font-serif text-4xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
+            <h2 className="font-serif text-3xl sm:text-[46px] font-normal text-[#181F1C] leading-[1.15]">
               Ba Trục Hợp Tác Chiến Lược Cùng Khánh Vân
             </h2>
             <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
@@ -2013,9 +2025,9 @@ export function App() {
           </div>
 
           {/* 3 Architectural Enhanced Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 mb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-10 mb-14 sm:mb-20 lg:mb-28">
             {/* Pillar I: Private Wealth Advisory */}
-            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
+            <div className="bg-[#FAF9F5] p-6 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
@@ -2071,7 +2083,7 @@ export function App() {
             </div>
 
             {/* Pillar II: Executive Mentorship F1 */}
-            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#0A3622]/30 rounded-[4px] flex flex-col justify-between shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] relative group">
+            <div className="bg-[#FAF9F5] p-6 sm:p-9 border border-[#0A3622]/30 rounded-[4px] flex flex-col justify-between shadow-[0_12px_32px_-15px_rgba(10,54,34,0.12)] relative group">
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
@@ -2127,7 +2139,7 @@ export function App() {
             </div>
 
             {/* Pillar III: Corporate Sharing & Keynote */}
-            <div className="bg-[#FAF9F5] p-8 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
+            <div className="bg-[#FAF9F5] p-6 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.1)] group">
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
                   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium">
@@ -2183,8 +2195,8 @@ export function App() {
             </div>
           </div>
 
-          {/* 6 Curated Mentorship, Culture & Leadership Photos in 2x3 Architectural Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-28">
+          {/* 6 Curated Mentorship, Culture & Leadership Photos in 2-col Mobile / 3-col Desktop Architectural Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-6 md:gap-10 mb-14 sm:mb-20 lg:mb-28">
             <figure
               onClick={() =>
                 setLightbox({
@@ -2196,14 +2208,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg"
                   alt="Chị Khánh Vân đứng lớp đào tạo"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Trực tiếp đứng lớp đào tạo thực chiến
               </figcaption>
             </figure>
@@ -2219,14 +2231,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg"
                   alt="Chúc mừng các Quản lý SM thăng cấp"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Chúc mừng các Quản lý cấp cao thăng cấp
               </figcaption>
             </figure>
@@ -2242,14 +2254,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg"
                   alt="Không gian cố vấn chiến lược F1 của chị Khánh Vân"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Không gian cố vấn chiến lược quản lý F1
               </figcaption>
             </figure>
@@ -2265,14 +2277,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg"
                   alt="Chuyển giao quy trình thực chiến trên iPad"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Chuyển giao quy trình thực chiến trên nền tảng số
               </figcaption>
             </figure>
@@ -2288,14 +2300,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg"
                   alt="Văn hóa gắn kết và sự đồng lòng của đội ngũ"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Văn hóa gắn kết &amp; sự đồng lòng của đội ngũ
               </figcaption>
             </figure>
@@ -2311,14 +2323,14 @@ export function App() {
               }
               className="cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
+              <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
                 <img
                   src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
                   alt="Đỉnh cao vinh danh bản lĩnh quản lý C-Level"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+              <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
                 Đỉnh cao vinh danh bản lĩnh quản lý C-Level
               </figcaption>
             </figure>
@@ -2327,7 +2339,7 @@ export function App() {
           {/* Minimalist Concierge Contact Section (Underline Inputs, No Heavy Boxes) */}
           <div
             id="lien-he"
-            className="grid grid-cols-1 lg:grid-cols-12 gap-14 pt-16 border-t border-[#DCD8CE] items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 pt-12 sm:pt-16 border-t border-[#DCD8CE] items-start"
           >
             <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block">
@@ -2606,7 +2618,7 @@ export function App() {
           <div className="py-8 border-b border-[#DCD8CE]/70 text-[11px] text-[#858E89] leading-[1.85] font-light space-y-2">
             <p>
               <strong className="text-[#56605B] font-medium uppercase tracking-[0.1em]">Tuyên bố miễn trừ trách nhiệm &amp; Tuân thủ:</strong>{' '}
-              Website <span className="text-[#56605B]">khanhvanfinance.com</span> là trang thông tin và thương hiệu cá nhân của bà Nguyễn Thị Khánh Vân — Giám đốc Vùng Cấp cao (Đại lý bảo hiểm độc lập thuộc Manulife Việt Nam). Các nội dung và góc nhìn chia sẻ trên website mang tính chất tham khảo chuyên môn và hoạch định tài chính cá nhân, không đại diện cho phát ngôn chính thức của Công ty TNHH Manulife (Việt Nam).
+              Website <span className="text-[#56605B]">khanhvanfinance.com</span> là trang thông tin và thương hiệu cá nhân của bà Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao (Đại lý bảo hiểm độc lập thuộc Manulife Việt Nam). Các nội dung và góc nhìn chia sẻ trên website mang tính chất tham khảo chuyên môn và hoạch định tài chính cá nhân, không đại diện cho phát ngôn chính thức của Công ty TNHH Manulife (Việt Nam).
             </p>
             <p>
               Mọi quyền lợi, điều khoản và điều kiện sản phẩm bảo hiểm được áp dụng theo Quy tắc và Điều khoản hợp đồng do Manulife Việt Nam phát hành và được Bộ Tài chính phê chuẩn. Các nhãn hiệu, logo và tên thương mại liên quan thuộc quyền sở hữu trí tuệ hợp pháp của Công ty TNHH Manulife (Việt Nam) và các tổ chức liên quan.
@@ -2637,7 +2649,7 @@ export function App() {
       {/* FLOATING QUICK CONTACT BUTTONS — MOVED TO THE LEFT SIDE FOR A CLEAN & SPACIOUS LAYOUT */}
       <aside
         aria-label="Kênh kết nối trực tiếp Khánh Vân"
-        className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] left-4 sm:left-6 z-40 flex flex-col gap-3.5 sm:gap-4 items-start pointer-events-auto select-none transition-all duration-300 ${
+        className={`fixed bottom-[calc(0.875rem+env(safe-area-inset-bottom,0px))] sm:bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] left-3.5 sm:left-6 z-40 flex flex-col gap-2.5 sm:gap-4 items-start pointer-events-auto select-none transition-all duration-300 ${
           activeArticle || activeVideo || lightbox ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'
         }`}
       >
@@ -2648,16 +2660,16 @@ export function App() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Chat trực tiếp qua Zalo với Khánh Vân: ${PHONE_DISPLAY}`}
-            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:shadow-[0_10px_28px_rgba(0,167,88,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
+            className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:shadow-[0_10px_28px_rgba(0,167,88,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
             {/* Gentle breathing halo ring (controlled scale, never overlaps) */}
             <span className="manulife-halo absolute -inset-1 rounded-full bg-[#00A758]/35 pointer-events-none" />
 
-            <span className="relative z-10 font-sans font-extrabold tracking-tight text-[13px] sm:text-[13.5px] text-white leading-none select-none">
+            <span className="relative z-10 font-sans font-extrabold tracking-tight text-[11px] sm:text-[13.5px] text-white leading-none select-none">
               Zalo
             </span>
             <span className="
-              absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs
+              absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs
             " />
           </a>
 
@@ -2675,13 +2687,13 @@ export function App() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Kết nối Facebook Khánh Vân"
-            className="relative w-12 h-12 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:shadow-[0_10px_28px_rgba(0,135,70,0.48)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
+            className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:shadow-[0_10px_28px_rgba(0,135,70,0.48)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
           >
             {/* Gentle breathing halo ring (staggered) */}
             <span className="manulife-halo-delayed absolute -inset-1 rounded-full bg-[#008746]/32 pointer-events-none" />
 
-            <MessengerBrandSvg className="w-6 h-6 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
-            <span className="absolute bottom-0 right-0 z-20 w-3 h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs" />
+            <MessengerBrandSvg className="w-5 h-5 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
+            <span className="absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full shadow-xs" />
           </a>
 
           <div className="hidden md:flex items-center gap-2 px-3.5 py-2 ml-3.5 rounded-full bg-[#0A3622]/95 backdrop-blur-md text-[#FAF9F5] text-xs shadow-[0_8px_24px_rgba(10,54,34,0.24)] border border-[#00A758]/35 whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
