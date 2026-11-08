@@ -668,6 +668,7 @@ interface BookItem {
   title: string;
   author: string;
   theme: string;
+  cover: string;
   note: string;
   reflection: string;
 }
@@ -678,32 +679,36 @@ const BOOKS: BookItem[] = [
     title: 'Good to Great — Từ Tốt Đến Vĩ Đại',
     author: 'Jim Collins',
     theme: 'Triết lý Lãnh đạo',
+    cover: '/images/books/book_01_good_to_great.jpg',
     note: 'Hình mẫu “Lãnh đạo Cấp độ 5” — sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ nguyên tắc “Ai trước, cái gì sau”.',
-    reflection: 'Khi bắt đầu kiến tạo đội ngũ, bài học lớn nhất tôi mang theo từ Jim Collins là không vội mở rộng số lượng, mà chọn đúng những cộng sự có chung chữ “Tín” và sự tử tế. Đó là lý do hệ thống quản lý của chúng tôi đạt tỷ lệ gắn kết bền vững hàng đầu thị trường suốt nhiều năm qua.',
+    reflection: 'Khi kiến tạo đội ngũ, bài học lớn nhất Vân mang theo từ Jim Collins là không vội mở rộng số lượng, mà chọn đúng những cộng sự có chung chữ “Tín” và sự tử tế.',
   },
   {
     num: '02',
     title: 'The Psychology of Money — Tâm Lý Học Về Tiền',
     author: 'Morgan Housel',
     theme: 'Quản trị Gia sản',
-    note: 'Sự thịnh vượng bền vững không nằm ở những công thức tính toán phức tạp, mà ở kỷ luật kiểm soát hành vi và việc luôn giữ một biên độ an toàn dự phòng cho gia đình.',
-    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ngân hàng ANZ đến Manulife củng cố trong tôi một nguyên tắc cốt tử: Quản trị gia sản không phải là cố gắng thắng thị trường trong ngắn hạn, mà là đảm bảo gia đình bạn không bao giờ bị loại khỏi cuộc chơi khi biến cố ập đến.',
+    cover: '/images/books/book_02_psychology_of_money.jpg',
+    note: 'Sự thịnh vượng bền vững không nằm ở những công thức phức tạp, mà ở kỷ luật kiểm soát hành vi và luôn giữ một biên độ an toàn dự phòng cho gia đình.',
+    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ANZ đến Manulife củng cố trong Vân một nguyên tắc: Quản trị gia sản là đảm bảo gia đình không bao giờ bị động khi biến cố ập đến.',
   },
   {
     num: '03',
     title: 'Atomic Habits — Thay Đổi Tí Hon, Hiệu Quả Bất Ngờ',
     author: 'James Clear',
     theme: 'Kỷ luật Thói quen',
-    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi thành quả lớn đều bắt nguồn từ một hệ thống các thói quen chuẩn mực được kiên trì lặp lại mỗi ngày.',
-    reflection: 'Ba tháng đầu tiên chuyển sang làm Sales không có nổi một hợp đồng không làm tôi nản lòng, bởi tôi tin vào sức mạnh của sự tích lũy: mỗi ngày kết nối chân thành, mỗi tuần kỷ luật rèn luyện thể lực. Thành quả Top 1 toàn quốc chỉ là kết quả tất yếu của những mắt xích nhỏ được làm chỉn chu mỗi ngày.',
+    cover: '/images/books/book_03_atomic_habits.jpg',
+    note: 'Cốt lõi của phương châm “Đi chắc để đi xa”: Mọi thành quả lớn đều bắt nguồn từ hệ thống các thói quen chuẩn mực được kiên trì lặp lại mỗi ngày.',
+    reflection: 'Ba tháng đầu chuyển sang làm Sales trắng tay không làm Vân nản lòng, bởi thành quả Top 1 toàn quốc chỉ là kết quả tất yếu của những mắt xích nhỏ được làm chỉn chu mỗi ngày.',
   },
   {
     num: '04',
     title: 'Servant Leadership — Phụng Sự Để Dẫn Đầu',
     author: 'Robert K. Greenleaf',
     theme: 'Tâm thức Phụng sự',
+    cover: '/images/books/book_04_servant_leadership.jpg',
     note: 'Lãnh đạo đích thực không bắt đầu bằng mong muốn quyền lực, mà bắt nguồn từ khát khao tự nhiên muốn được chăm sóc, nâng đỡ và phụng sự người khác.',
-    reflection: 'Người thủ lĩnh không đứng trên đỉnh tháp để ra lệnh, mà là người sẵn sàng đồng hành ở tuyến đầu cùng cộng sự. Sự trưởng thành của 64 nhà quản lý F1 hôm nay chính là minh chứng: bạn chỉ thực sự dẫn đầu khi giúp những người tin tưởng đi cùng bạn chạm tới thành công của riêng họ.',
+    reflection: 'Sự trưởng thành của 64 nhà quản lý F1 hôm nay là minh chứng: bạn chỉ thực sự dẫn đầu khi giúp những người tin tưởng đi cùng bạn chạm tới thành công của riêng họ.',
   },
 ];
 
@@ -1771,57 +1776,85 @@ export function App() {
         </div>
       </section>
 
-      {/* 6. TỦ SÁCH QUẢN TRỊ & GÓC NHÌN ĐỒNG HÀNH (CURATED EXECUTIVE READING & PERSONAL REFLECTIONS) */}
-      <section id="tu-sach" className="py-28 lg:py-36 border-b border-[#E4E1D8]">
+      {/* 6. TỦ SÁCH QUẢN TRỊ & GÓC NHÌN ĐỒNG HÀNH — COMPACT EDITORIAL BOOKSHELF */}
+      <section id="tu-sach" className="py-16 lg:py-22 border-b border-[#E4E1D8] bg-[#FAF9F5]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
-            <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-              04 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
-            </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-              Những Cuốn Sách Định Hình Tư Duy &amp; Triết Lý Hành Động
-            </h2>
-            <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
-              Sách là người thầy thầm lặng định hình nên nhân sinh quan, bản lĩnh điều hành và nguyên tắc sống của Khánh Vân. Dưới đây là 4 tác phẩm gối đầu giường cùng những bài học thực chiến rút ra từ gần hai thập kỷ làm nghề.
+          {/* Compact Split Header Bar */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E4E1D8]">
+            <div>
+              <span className="text-[10.5px] uppercase tracking-[0.24em] text-[#008746] font-medium block mb-2">
+                04 / TỦ SÁCH QUẢN TRỊ &bull; EXECUTIVE READING
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#181F1C] leading-[1.15]">
+                Tủ Sách Gối Đầu Giường &amp; Triết Lý Hành Động
+              </h2>
+            </div>
+            <p className="text-xs sm:text-[13.5px] text-[#56605B] font-normal leading-[1.7] max-w-md">
+              4 tác phẩm kinh điển định hình tư duy quản trị rủi ro, kỷ luật thói quen và nghệ thuật dẫn dắt bằng sự phụng sự của Khánh Vân.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+          {/* Compact 2x2 Horizontal Book Showcase Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
             {BOOKS.map((book) => (
               <div
                 key={book.num}
-                className="bg-[#FAF9F5] p-7 sm:p-9 border border-[#DCD8CE] rounded-[4px] flex flex-col justify-between hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_12px_32px_-15px_rgba(10,54,34,0.08)] group"
+                className="bg-white/80 hover:bg-white p-4 sm:p-5 border border-[#DCD8CE] rounded-[4px] flex gap-4 sm:gap-5 items-start hover:border-[#0A3622]/40 transition-all duration-300 hover:shadow-[0_10px_28px_-14px_rgba(10,54,34,0.12)] group"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-[#EAE7DF]">
-                    <span className="font-serif text-2xl text-[#858E89] group-hover:text-[#008746] transition-colors">
-                      {book.num}
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#008746] font-medium px-2.5 py-1 bg-[#008746]/[0.06] rounded-[2px]">
-                      {book.theme}
+                {/* Left: 3D-Styled Book Cover Thumbnail */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    setLightbox({
+                      src: book.cover,
+                      fig: `EXECUTIVE BOOK ${book.num} • ${book.theme.toUpperCase()}`,
+                      title: `${book.title} (${book.author})`,
+                      subtitle: `Góc nhìn Khánh Vân: “${book.reflection}”`,
+                    })
+                  }
+                  className="relative w-[78px] sm:w-[92px] aspect-[2/3] shrink-0 rounded-[3px] overflow-hidden bg-[#EAE7DF] shadow-[0_8px_18px_-4px_rgba(18,24,20,0.22)] ring-1 ring-black/10 cursor-zoom-in group/cover"
+                  aria-label={`Xem bìa sách ${book.title}`}
+                >
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover/cover:scale-[1.03] transition-transform duration-500"
+                  />
+                  {/* Subtle Book Spine Crease Effect */}
+                  <span className="pointer-events-none absolute inset-y-0 left-0 w-[6px] bg-gradient-to-r from-black/25 via-white/25 to-transparent" />
+                </button>
+
+                {/* Right: Compact Book Details & Personal Reflection */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="inline-flex items-center gap-2">
+                      <span className="font-serif text-sm text-[#858E89] group-hover:text-[#008746] transition-colors">
+                        {book.num}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-medium px-2 py-0.5 bg-[#008746]/[0.07] rounded-[2px]">
+                        {book.theme}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-[#6A756F] italic">
+                      {book.author}
                     </span>
                   </div>
 
-                  <div>
-                    <h3 className="font-sans font-semibold text-lg sm:text-xl text-[#181F1C] leading-[1.35] group-hover:text-[#0A3622] transition-colors tracking-tight">
-                      {book.title}
-                    </h3>
-                    <p className="text-xs text-[#6A756F] italic mt-1 font-normal">Tác giả: {book.author}</p>
-                  </div>
+                  <h3 className="font-sans font-semibold text-[15px] sm:text-[17px] text-[#181F1C] leading-[1.3] group-hover:text-[#0A3622] transition-colors tracking-tight mt-1.5">
+                    {book.title}
+                  </h3>
 
-                  <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
+                  <p className="text-xs text-[#4A5550] font-normal leading-[1.6] mt-1 line-clamp-2">
                     {book.note}
                   </p>
-                </div>
 
-                {/* Personal Reflection Quote Box */}
-                <div className="mt-6 pt-5 border-t border-[#EAE7DF] bg-[#F2EFE9]/70 -mx-3 -mb-3 p-5 sm:p-6 rounded-[3px] border-l-2 border-l-[#008746]">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-medium block mb-2">
-                    GÓC NHÌN TỪ KHÁNH VÂN
-                  </span>
-                  <p className="font-serif italic text-base sm:text-[17px] text-[#181F1C] leading-[1.65]">
-                    “{book.reflection}”
-                  </p>
+                  {/* Compact Inline Personal Reflection */}
+                  <div className="mt-2.5 pt-2 border-t border-[#EAE7DF] border-l-2 border-l-[#008746] pl-2.5 bg-[#F2EFE9]/55 py-1.5 pr-2.5 rounded-r-[3px]">
+                    <p className="font-serif italic text-[13px] sm:text-[13.5px] text-[#181F1C] leading-[1.5]">
+                      “{book.reflection}”
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
