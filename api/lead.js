@@ -3,9 +3,9 @@
 // Saves to Supabase & sends instant alert to Telegram (@khanhvan_web_bot)
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
-const BUILTIN_SB_KEY = ['sb_secret_lLjAywJFYH', 'l9AvfTd5ACDA_Skg9oB0-'].join('');
-const SUPABASE_KEY = BUILTIN_SB_KEY || (process.env.SUPABASE_KEY || '').trim();
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
+// All secrets are read from Vercel Environment Variables only (never hardcode keys in this public repo)
+const SUPABASE_KEY = (process.env.SUPABASE_KEY || '').trim();
+const TELEGRAM_BOT_TOKEN = (process.env.TELEGRAM_BOT_TOKEN || '').trim();
 // Lead alerts go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
 // Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
 const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
