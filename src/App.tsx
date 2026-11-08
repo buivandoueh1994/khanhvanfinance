@@ -1224,15 +1224,6 @@ export function App() {
                   className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
                 />
               </div>
-
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.14em] uppercase text-[#858E89]">
-                <span className="font-medium text-[#181F1C]">
-                  Chân dung &amp; Triết lý làm nghề &mdash; Nguyễn Thị Vân (Khánh Vân)
-                </span>
-                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium flex items-center gap-1">
-                  Xem toàn cảnh độ phân giải cao <ArrowUpRight className="w-3 h-3" />
-                </span>
-              </figcaption>
             </figure>
           </div>
 
@@ -1945,14 +1936,6 @@ export function App() {
                   className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                <span className="font-medium text-[#181F1C]">
-                  Tầm nhìn rộng mở &amp; Khát vọng tự do &mdash; Bình minh tại thung lũng Cappadocia
-                </span>
-                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium flex items-center gap-1">
-                  Hành trình sống &amp; Năng lượng tích cực mỗi ngày <ArrowUpRight className="w-3 h-3" />
-                </span>
-              </figcaption>
             </figure>
           </div>
 
