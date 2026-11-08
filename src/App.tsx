@@ -1211,11 +1211,11 @@ export function App() {
           }
           className="cursor-zoom-in group relative block w-full"
         >
-          <div className="w-full aspect-[820/312] max-h-[calc(100vh-65px)] overflow-hidden relative">
+          <div className="w-full aspect-[820/312] overflow-hidden relative">
             <img
               src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
               alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
-              className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+              className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
             />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/[0.06] to-transparent" />
           </div>
@@ -1931,11 +1931,11 @@ export function App() {
           }
           className="cursor-zoom-in group relative block w-full"
         >
-          <div className="w-full aspect-[820/312] max-h-[calc(100vh-65px)] overflow-hidden relative">
+          <div className="w-full aspect-[820/312] overflow-hidden relative">
             <img
               src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
               alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
-              className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
+              className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
             />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent" />
           </div>
