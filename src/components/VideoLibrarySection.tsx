@@ -130,7 +130,12 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
 
   // The archive list stays hidden on the homepage until the visitor searches, filters, or taps "Xem tất cả"
   const isFiltering = Boolean(searchQuery.trim()) || selectedFolder !== 'all' || selectedSubtag !== 'Tất cả';
-  const showArchiveList = showAllArchive || isFiltering;
+  const showArchiveList = showAllArchive;
+
+  // Collapse the list again whenever the visitor switches topic or changes the search
+  useEffect(() => {
+    setShowAllArchive(false);
+  }, [selectedFolder, selectedSubtag, searchQuery]);
   const visibleArchiveVideos = archiveVideos;
 
   // Ordered playlist matching visual order on page for TikTok-style swipe/scroll
@@ -536,7 +541,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               </div>
 
               {/* Expand / Collapse All Button */}
-              {showAllArchive && !isFiltering && (
+              {showAllArchive && (
                   <div className="mt-8 text-center">
                     <button
                       type="button"
@@ -567,7 +572,11 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                 onClick={() => setShowAllArchive(true)}
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 min-h-[44px] bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium rounded-[2px] transition-all shadow-sm"
               >
-                <span>Xem tất cả {VIDEO_LIBRARY.length} video</span>
+                <span>
+                  {isFiltering
+                    ? `Xem thêm ${archiveVideos.length} video`
+                    : `Xem tất cả ${VIDEO_LIBRARY.length} video`}
+                </span>
                 <ArrowRight className="w-3.5 h-3.5 rotate-90" />
               </button>
             </div>
