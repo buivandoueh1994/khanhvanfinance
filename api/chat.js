@@ -69,7 +69,12 @@ const ANTHROPIC_API_KEY = (
 
 const TELEGRAM_BOT_TOKEN =
   process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
-const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
+// Lead alerts go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
+// Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
+const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 // Pre-load bundled knowledge angles in memory (0ms latency)
 let cachedAngles = null;
@@ -250,29 +255,44 @@ function retrieveRelevantAngles(query, history = [], allAngles = [], topK = 4) {
   return scored.filter((s) => s.score >= 10).slice(0, topK);
 }
 
-// Fast direct Telegram notification to Andy's chat ID (only called when phone number is detected)
-async function sendTelegramNotification(text) {
-  if (!TELEGRAM_BOT_TOKEN || !DEFAULT_CHAT_ID) return false;
+// Fast Telegram notification to the lead group (only called when a valid phone number is detected)
+// Auto-follows group -> supergroup migration (chat_id changes to -100...)
+async function sendTelegramTo(chatId, text) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
     const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: String(DEFAULT_CHAT_ID),
+        chat_id: String(chatId),
         text,
         parse_mode: 'HTML',
         disable_web_page_preview: true,
       }),
       signal: controller.signal,
     });
-    clearTimeout(timeoutId);
-    return res.ok;
-  } catch (e) {
-    console.error('Telegram send error:', e.message);
+    if (res.ok) return true;
+    const data = await res.json().catch(() => ({}));
+    const migrateTo = data?.parameters?.migrate_to_chat_id;
+    if (migrateTo) {
+      console.warn(`Telegram group ${chatId} migrated to ${migrateTo}. Update TELEGRAM_LEAD_CHAT_IDS.`);
+      return sendTelegramTo(migrateTo, text);
+    }
+    console.error('Telegram send failed:', chatId, data?.description);
     return false;
+  } catch (e) {
+    console.error('Telegram send error:', chatId, e.message);
+    return false;
+  } finally {
+    clearTimeout(timeoutId);
   }
+}
+
+async function sendTelegramNotification(text) {
+  if (!TELEGRAM_BOT_TOKEN || LEAD_CHAT_IDS.length === 0) return false;
+  const results = await Promise.all(LEAD_CHAT_IDS.map((id) => sendTelegramTo(id, text)));
+  return results.some(Boolean);
 }
 
 // Clean text: strip raw markdown artifacts (**bold**, headers, stray asterisks)

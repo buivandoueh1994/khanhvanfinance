@@ -6,7 +6,12 @@ const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.s
 const BUILTIN_SB_KEY = ['sb_secret_lLjAywJFYH', 'l9AvfTd5ACDA_Skg9oB0-'].join('');
 const SUPABASE_KEY = BUILTIN_SB_KEY || (process.env.SUPABASE_KEY || '').trim();
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9234859796:AAETTbQP74LLPXpzNPWALYpJ-I-coUsIWxY';
-const DEFAULT_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '7603716054';
+// Lead alerts go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
+// Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
+const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 // Log directly into Project Chị Vân's dedicated web_leads table (https://paaphwfpoiiowmthxtlp.supabase.co)
 async function logLeadToChiVanDb({
@@ -48,28 +53,37 @@ async function logLeadToChiVanDb({
   }
 }
 
-let cachedTelegramChatIds = new Set();
-
-async function getTelegramChatIds() {
-  if (DEFAULT_CHAT_ID) {
-    cachedTelegramChatIds.add(String(DEFAULT_CHAT_ID));
-  }
+// Send one message to a chat; auto-follows group -> supergroup migration (chat_id changes to -100...)
+async function sendTelegramTo(chatId, text) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
   try {
-    const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
-    if (tgRes.ok) {
-      const tgData = await tgRes.json();
-      for (const upd of tgData.result || []) {
-        const cid =
-          upd.message?.chat?.id ||
-          upd.edited_message?.chat?.id ||
-          upd.callback_query?.message?.chat?.id;
-        if (cid) cachedTelegramChatIds.add(String(cid));
-      }
+    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: String(chatId),
+        text,
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+      }),
+      signal: controller.signal,
+    });
+    if (res.ok) return true;
+    const data = await res.json().catch(() => ({}));
+    const migrateTo = data?.parameters?.migrate_to_chat_id;
+    if (migrateTo) {
+      console.warn(`Telegram group ${chatId} migrated to ${migrateTo}. Update TELEGRAM_LEAD_CHAT_IDS.`);
+      return sendTelegramTo(migrateTo, text);
     }
+    console.error('Telegram send lead failed:', chatId, data?.description);
+    return false;
   } catch (e) {
-    console.error('Telegram discovery error:', e);
+    console.error('Telegram send lead error:', chatId, e.message);
+    return false;
+  } finally {
+    clearTimeout(timeoutId);
   }
-  return Array.from(cachedTelegramChatIds);
 }
 
 export default async function handler(req, res) {
@@ -101,7 +115,6 @@ export default async function handler(req, res) {
     }
 
     // 1. Send Telegram Alert
-    const chatIds = await getTelegramChatIds();
     const tgMessage =
       `🎯 <b>CÓ LEAD MỚI TỪ WEBSITE KHÁNH VÂN!</b>\n` +
       `━━━━━━━━━━━━━━━━━━━━\n` +
@@ -114,26 +127,10 @@ export default async function handler(req, res) {
       `📍 <b>Nguồn:</b> ${source === 'contact_form' ? 'Form Liên Hệ Cuối Trang' : 'Chatbot Trợ Lý AI'}\n` +
       `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}`;
 
-    let telegramNotified = false;
-    for (const chatId of chatIds) {
-      try {
-        const tgSend = await fetch(
-          `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              chat_id: chatId,
-              text: tgMessage,
-              parse_mode: 'HTML',
-            }),
-          }
-        );
-        if (tgSend.ok) telegramNotified = true;
-      } catch (e) {
-        console.error('Telegram send lead error:', e);
-      }
-    }
+    const sendResults = await Promise.all(
+      LEAD_CHAT_IDS.map((chatId) => sendTelegramTo(chatId, tgMessage))
+    );
+    const telegramNotified = sendResults.some(Boolean);
 
     // 2. Save Lead directly to Project Chị Vân's web_leads table
     await logLeadToChiVanDb({
