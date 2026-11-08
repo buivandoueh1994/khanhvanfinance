@@ -1197,13 +1197,49 @@ export function App() {
         </AnimatePresence>
       </header>
 
-      {/* 2. EDITORIAL HERO — THE EXECUTIVE SPLIT SPREAD (PORTRAIT + NARRATIVE + TEAM SCALE) */}
-      <section className="pt-32 sm:pt-40 lg:pt-44 pb-20 lg:pb-28">
+      {/* 2. EDITORIAL HERO — SIGNATURE PANORAMA PORTRAIT + EXECUTIVE SPLIT SPREAD */}
+      <section className="pt-28 sm:pt-36 lg:pt-40 pb-20 lg:pb-28">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          {/* TẦNG 1: THE EXECUTIVE SPLIT HERO (CÂN BẰNG THỦ LĨNH & BẢO CHỨNG) */}
+          {/* TẦNG 1: FULL-WIDTH SIGNATURE STUDIO PORTRAIT & PHILOSOPHY PANORAMA */}
+          <div className="mb-12 sm:mb-16 lg:mb-20">
+            <figure
+              onClick={() =>
+                setLightbox({
+                  src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg',
+                  fig: 'EXECUTIVE PORTRAIT & PHILOSOPHY',
+                  title: 'Nguyễn Thị Vân — Đi Chắc Để Đi Xa, Đồng Hành Bằng Cả Trái Tim',
+                  subtitle:
+                    'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam trong không gian tĩnh tại cùng triết lý làm nghề chuẩn mực.',
+                })
+              }
+              className="cursor-zoom-in group relative block"
+            >
+              {/* Ánh sáng mềm Ambient Glow hậu cảnh */}
+              <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-[#008746]/12 via-[#0A3622]/6 to-transparent rounded-[14px] -z-10 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="overflow-hidden aspect-[820/312] bg-[#EAE7DF] rounded-[6px] shadow-[0_24px_54px_-18px_rgba(10,54,34,0.20)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
+                <img
+                  src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
+                  alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
+                />
+              </div>
+
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.14em] uppercase text-[#858E89]">
+                <span className="font-medium text-[#181F1C]">
+                  Chân dung &amp; Triết lý làm nghề &mdash; Nguyễn Thị Vân (Khánh Vân)
+                </span>
+                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium flex items-center gap-1">
+                  Xem toàn cảnh độ phân giải cao <ArrowUpRight className="w-3 h-3" />
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+
+          {/* TẦNG 2: THE EXECUTIVE SPLIT SPREAD (ĐỊNH VỊ LÃNH ĐẠO & ĐỘI NGŨ QUẢN LÝ TINH HOA) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Cột Trái (7 Cột): Định Vị Quyền Lực, Châm Ngôn & Nút Hành Động */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-7">
+            {/* Cột Trái (6 Cột): Định Vị Quyền Lực, Hành Trình & Nút Hành Động */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-7">
               <div className="flex items-center gap-2.5 text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] text-[#0A3622] font-medium">
                 <span className="w-5 h-[1px] bg-[#008746]" />
                 <span>Cựu Banker ANZ</span>
@@ -1212,21 +1248,21 @@ export function App() {
               </div>
 
               <div className="space-y-3">
-                <h1 className="font-serif text-5xl sm:text-6xl lg:text-[76px] font-normal tracking-tight text-[#181F1C] leading-[1.02]">
+                <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-normal tracking-tight text-[#181F1C] leading-[1.02]">
                   Khánh Vân
                 </h1>
                 <div className="border-l-2 border-[#008746] pl-4 sm:pl-5 py-1">
                   <p className="font-serif italic text-xl sm:text-2xl text-[#0A3622] font-normal leading-[1.4]">
-                    &ldquo;Đi chắc để đi xa &mdash; Kiến tạo tốc độ từ sự chuẩn mực.&rdquo;
+                    &ldquo;Kiến tạo tốc độ từ sự chuẩn mực &mdash; Giữ trọn chữ Tín trên mọi hành trình dài hạn.&rdquo;
                   </p>
                 </div>
               </div>
 
-              <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal max-w-xl">
+              <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal">
                 Với gần hai thập kỷ kiến tạo giá trị, ghi dấu ấn từ 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ cho đến danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và vị thế Top 1 Manulife Việt Nam nhiều năm liền. Hiện tại, Vân vẫn đang chuyên tâm đồng hành cùng các gia đình Việt trong việc bảo toàn dòng tiền và hoạch định gia sản bền vững, đồng thời trực tiếp dẫn dắt hệ thống gồm 64 nhà quản lý kế cận và hơn 500 tư vấn viên chuyên nghiệp.
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
+              <div className="pt-1 flex flex-wrap items-center gap-4 sm:gap-5">
                 <a
                   href="#lien-he"
                   className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
@@ -1243,7 +1279,7 @@ export function App() {
               </div>
 
               {/* Dải Micro Trust-Metrics */}
-              <div className="pt-6 sm:pt-7 border-t border-[#E4E1D8] grid grid-cols-3 gap-4 max-w-xl">
+              <div className="pt-6 sm:pt-7 border-t border-[#E4E1D8] grid grid-cols-3 gap-4">
                 <div>
                   <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-normal leading-none">08+</div>
                   <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Năm Banker ANZ</div>
@@ -1259,93 +1295,46 @@ export function App() {
               </div>
             </div>
 
-            {/* Cột Phải (5 Cột): Khung Chân Dung Lãnh Đạo Quyền Quý & Huy Hiệu Quốc Tế */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+            {/* Cột Phải (6 Cột): Đại Gia Đình Quản Lý Tinh Hoa & Huy Hiệu Quốc Tế */}
+            <div className="lg:col-span-6 relative mt-4 lg:mt-0">
               <figure
                 onClick={() =>
                   setLightbox({
-                    src: '/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg',
-                    fig: 'EXECUTIVE PORTRAIT',
-                    title: 'Nguyễn Thị Vân — Phong Thái Lãnh Đạo Điềm Tĩnh & Chuẩn Mực',
-                    subtitle: 'Chân dung Giám đốc Vùng Cấp cao Manulife Việt Nam — Vẻ đẹp thanh lịch, bản lĩnh và chiều sâu chuyên môn.',
+                    src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
+                    fig: 'ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
+                    title: 'Khánh Vân Cùng Hơn 35 Quản Lý Cấp Cao & Hệ Thống 500+ Nhân Sự',
+                    subtitle:
+                      'Chị Khánh Vân (Vest Trắng) ngồi trung tâm cùng dàn nữ tướng quản lý và chuyên viên tinh hoa tại sảnh văn phòng Manulife Việt Nam.',
                   })
                 }
                 className="cursor-zoom-in group relative block"
               >
-                {/* Ánh sáng mềm Ambient Glow hậu cảnh */}
-                <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-[#008746]/15 via-[#0A3622]/8 to-transparent rounded-[16px] -z-10 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700" />
-
-                {/* Khung chân dung chính */}
-                <div className="overflow-hidden aspect-[4/5] bg-[#EAE7DF] rounded-[6px] shadow-[0_24px_50px_-15px_rgba(10,54,34,0.22)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
+                <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[5px] shadow-[0_20px_48px_-18px_rgba(10,54,34,0.20)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
                   <img
-                    src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
-                    alt="Khánh Vân — Giám đốc Vùng Cấp cao Manulife Việt Nam"
-                    className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                    src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
+                    alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
+                    className="w-full h-full object-cover group-hover:scale-[1.018] transition-transform duration-700 ease-editorial"
                   />
-
-                  {/* Gradient tối nhẹ ở đáy ảnh */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
 
                   {/* Floating Trust Badge dập nổi ở góc trên */}
                   <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 z-10">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:py-1 rounded-full bg-white/80 backdrop-blur-md text-[#0A3622] text-[8.5px] sm:text-[9px] font-medium tracking-[0.14em] uppercase shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-white/70">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-md text-[#0A3622] text-[8.5px] sm:text-[9px] font-medium tracking-[0.14em] uppercase shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-white/70">
                       <Award className="w-2.5 h-2.5 text-[#B8860B] stroke-[2]" />
                       <span>Asia Trusted Awards Winner</span>
                     </span>
                   </div>
-
-                  {/* Tên & chức vị dập nổi ở góc dưới */}
-                  <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                    <div className="font-serif text-lg sm:text-xl font-medium tracking-wide">
-                      Nguyễn Thị Vân
-                    </div>
-                    <div className="text-[11px] tracking-[0.14em] uppercase text-white/80 font-normal mt-0.5">
-                      Giám Đốc Vùng Cấp Cao &bull; Manulife Việt Nam
-                    </div>
-                  </div>
                 </div>
 
-                <figcaption className="mt-3.5 flex items-center justify-between text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
-                  <span className="font-medium text-[#181F1C]">Phong thái Lãnh đạo Đương đại</span>
-                  <span className="text-[#008746] font-medium flex items-center gap-1">
-                    Xem ảnh lớn <ArrowUpRight className="w-3 h-3" />
+                <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.12em] uppercase text-[#858E89]">
+                  <span className="font-medium text-[#181F1C]">
+                    Đội ngũ Quản lý Tinh hoa Manulife
+                  </span>
+                  <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
+                    Hệ thống 64 Quản lý &amp; 500+ Nhân sự
                   </span>
                 </figcaption>
               </figure>
             </div>
-          </div>
-
-          {/* TẦNG 2: FULL-WIDTH PANORAMIC TEAM FRAME (HƠN 35 QUẢN LÝ TINH HOA & HỆ THỐNG 500+ NHÂN SỰ) */}
-          <div className="mt-14 sm:mt-18 lg:mt-20">
-            <figure
-              onClick={() =>
-                setLightbox({
-                  src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
-                  fig: 'ĐẠI GIA ĐÌNH QUẢN LÝ TINH HOA',
-                  title: 'Khánh Vân Cùng Hơn 35 Quản Lý Cấp Cao & Hệ Thống 500+ Nhân Sự',
-                  subtitle:
-                    'Chị Khánh Vân (Vest Trắng) ngồi trung tâm cùng dàn nữ tướng quản lý và chuyên viên tinh hoa tại sảnh văn phòng Manulife Việt Nam.',
-                })
-              }
-              className="cursor-zoom-in group relative block"
-            >
-              <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[4px] shadow-[0_16px_40px_-20px_rgba(10,54,34,0.18)] ring-1 ring-inset ring-[#181F1C]/[0.08]">
-                <img
-                  src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
-                  alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
-                  className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-700 ease-editorial"
-                />
-              </div>
-
-              <figcaption className="mt-3.5 sm:mt-4 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] tracking-[0.14em] uppercase text-[#858E89]">
-                <span className="font-medium text-[#181F1C]">
-                  Khánh Vân cùng Đội ngũ Quản lý Tinh hoa Manulife Việt Nam
-                </span>
-                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
-                  Trụ sở Manulife &bull; Hệ thống 64 Quản lý &amp; 500+ Nhân sự
-                </span>
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>
@@ -1886,8 +1875,8 @@ export function App() {
             </div>
           </div>
 
-          {/* Family Diptych — Unboxed, Equal Height */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20">
+          {/* Family Diptych — Unboxed, Equal Height (7 + 5 Asymmetric Spread) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 lg:mb-20">
             <figure
               onClick={() =>
                 setLightbox({
@@ -1899,7 +1888,7 @@ export function App() {
               }
               className="lg:col-span-7 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
+              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg"
                   alt="Gia đình chị Khánh Vân tại phòng khách"
@@ -1922,7 +1911,7 @@ export function App() {
               }
               className="lg:col-span-5 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF]">
+              <div className="overflow-hidden h-[320px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg"
                   alt="Gia đình chị Khánh Vân bên sân vườn"
@@ -1935,31 +1924,40 @@ export function App() {
             </figure>
           </div>
 
-          {/* 3 Lifestyle Photographs — Clean Unboxed Triptych */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Full-Width Panoramic Sunrise Feature — Cappadocia Golden Hour */}
+          <div className="mb-16 lg:mb-20">
             <figure
               onClick={() =>
                 setLightbox({
-                  src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg',
-                  fig: 'PERSPECTIVE',
-                  title: 'Tầm Nhìn Rộng Mở & Khát Vọng Tự Do',
-                  subtitle: 'Đón bình minh trên khinh khí cầu tại Cappadocia.',
+                  src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg',
+                  fig: 'PERSPECTIVE & HORIZON',
+                  title: 'Tầm Nhìn Rộng Mở & Hành Trình Đón Bình Minh Rực Rỡ',
+                  subtitle:
+                    'Khoảnh khắc đón bình minh trên khinh khí cầu tại thung lũng Cappadocia — “Mỗi ngày mới là một hành trình đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
                 })
               }
-              className="cursor-zoom-in group"
+              className="cursor-zoom-in group relative block"
             >
-              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
+              <div className="overflow-hidden aspect-[820/312] bg-[#EAE7DF] rounded-[5px] shadow-[0_20px_48px_-18px_rgba(10,54,34,0.18)] ring-1 ring-inset ring-[#181F1C]/[0.08]">
                 <img
-                  src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh.jpg"
-                  alt="Chị Khánh Vân đón bình minh trên khinh khí cầu"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
+                  alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.012] transition-transform duration-700 ease-editorial"
                 />
               </div>
-              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Tầm nhìn rộng mở &amp; trải nghiệm thế giới
+              <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
+                <span className="font-medium text-[#181F1C]">
+                  Tầm nhìn rộng mở &amp; Khát vọng tự do &mdash; Bình minh tại thung lũng Cappadocia
+                </span>
+                <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium flex items-center gap-1">
+                  Hành trình sống &amp; Năng lượng tích cực mỗi ngày <ArrowUpRight className="w-3 h-3" />
+                </span>
               </figcaption>
             </figure>
+          </div>
 
+          {/* Lifestyle & Companionship Diptych (5 + 7 Counter-Balanced Spread) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <figure
               onClick={() =>
                 setLightbox({
@@ -1969,13 +1967,13 @@ export function App() {
                   subtitle: 'Duy trì nguồn năng lượng dẻo dai thông qua luyện tập mỗi tuần.',
                 })
               }
-              className="cursor-zoom-in group"
+              className="lg:col-span-5 cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
+              <div className="overflow-hidden h-[360px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg"
                   alt="Chị Khánh Vân rèn luyện thể thao"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  className="w-full h-full object-cover object-[50%_75%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
@@ -1992,13 +1990,13 @@ export function App() {
                   subtitle: 'Sánh bước bên nhau trên mọi hành trình trong và ngoài nước.',
                 })
               }
-              className="cursor-zoom-in group"
+              className="lg:col-span-7 cursor-zoom-in group"
             >
-              <div className="overflow-hidden aspect-[4/4.8] bg-[#EAE7DF]">
+              <div className="overflow-hidden h-[360px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
                 <img
                   src="/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg"
                   alt="Chị Khánh Vân cùng chồng du lịch quốc tế"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  className="w-full h-full object-cover object-[50%_68%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
