@@ -1874,6 +1874,26 @@ export function App() {
                   Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng — người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
                 </p>
               </div>
+
+              {/* Quan điểm nuôi dạy con */}
+              <div className="pl-5 sm:pl-6 pt-2 space-y-3">
+                <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-medium block">
+                  Cách Vân nuôi dạy con
+                </span>
+                <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
+                  Với hai con — Minh Châu đang học lớp 7 và bé út học lớp 1 — Vân chọn cách đồng hành thay vì áp đặt. Các con vẫn được kèm cặp và rèn nề nếp, nhưng được tự do phát triển theo đam mê, sở thích của mình. Việc của cha mẹ là cùng con tìm ra thế mạnh riêng, rồi tiếp sức để con đi xa nhất trên con đường ấy.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {['Kèm cặp có nề nếp', 'Theo đam mê & sở thích', 'Phát huy thế mạnh riêng'].map((k) => (
+                    <span
+                      key={k}
+                      className="text-[11px] px-2.5 py-1 rounded-full border border-[#008746]/25 bg-[#008746]/[0.06] text-[#0A3622]"
+                    >
+                      {k}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1908,7 +1928,7 @@ export function App() {
                   src: '/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg',
                   fig: 'LÀM MẸ',
                   title: 'Trọn vẹn từng khoảnh khắc bên con',
-                  subtitle: 'Làm chủ thời gian để đồng hành cùng tuổi thơ của các con.',
+                  subtitle: 'Kèm cặp có nề nếp, nhưng luôn để con được lớn lên theo đam mê và thế mạnh của riêng mình.',
                 })
               }
               className="lg:col-span-5 cursor-zoom-in group"
