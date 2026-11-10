@@ -83,8 +83,52 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
-    id: 'am-29-phan-tram-mot-nam-giu-du-10-nam-sinh-loi-9-phay-4',
+    id: 'nguoi-huong-noi-lam-tu-van-loi-the-canh-tranh',
     index: '01',
+    category: 'Phát triển Sự nghiệp',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/Studio_ChiVanCungTapTheNuQuanLy_VestMint.jpg',
+    imageCaption: 'Khánh Vân cùng đội ngũ quản lý kế cận — nơi sự điềm đạm, cẩn trọng và năng lực lắng nghe sâu trở thành điểm tựa uy tín bền vững.',
+    title: 'Người Hướng Nội Làm Tư Vấn: Khi Sự Điềm Đạm Và Lắng Nghe Trở Thành Lợi Thế Cạnh Tranh',
+    excerpt:
+      'Có một câu Vân nghe rất nhiều từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy điều ngược lại: khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',
+    content: `*Có một câu Vân nghe rất nhiều từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Vân hiểu vì sao các bạn nghĩ vậy. Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân lại thấy điều ngược lại: khách hàng bây giờ không thiếu người nói hay, họ chỉ thiếu người nói đúng.*
+
+## Khi Sự Trôi Chảy Không Còn Đủ Để Thuyết Phục
+
+Hình ảnh người làm tư vấn trong suy nghĩ của số đông thường gắn liền với sự hoạt ngôn: nói nhanh, nói khéo, đứng giữa phòng họp không vấp một chữ. Định kiến ấy vô tình khiến nhiều người trầm tính, quen làm việc với con số và dữ liệu tự khép lại cánh cửa của chính mình trước khi thử bước vào nghề.
+
+Nhưng thực tế thị trường tài chính hiện nay đã khác trước rất nhiều. Khách hàng ngày nay tự tìm hiểu, tự đọc tài liệu và so sánh rất kỹ trước khi ngồi lại với chuyên viên. Sự trôi chảy đơn thuần đôi khi chỉ mang lại cảm giác đang nghe một kịch bản tiếp thị, chứ không còn đủ sức làm khách hàng nể phục.
+
+## Sức Nặng Của Người Dám Nói “Chưa Chắc”
+
+Đặt cùng một câu hỏi khó từ khách hàng lên bàn tư vấn, sự khác biệt giữa hai kiểu phản xạ lộ ra rất rõ:
+- **Người quen phản xạ nhanh miệng:** Thường cố gắng trả lời ngay lập tức cho kịp nhịp cuộc trò chuyện.
+- **Người hướng nội, cẩn trọng:** Thường hỏi ngược lại một câu để hiểu khách hàng đang thật sự lo điều gì phía sau câu hỏi ấy, hoặc thẳng thắn nói: *"Chỗ này em kiểm tra lại rồi báo anh chị con số chính xác."*
+
+Nghe qua tưởng như sự chững lại ấy là điểm yếu. Nhưng với một khách hàng đã tự so sánh đủ thứ trước khi gặp mình, đó lại là một tín hiệu đáng quý hiếm có. Người dám nói *"chưa chắc"* ở những chi tiết cần đối soát, thì mỗi lần họ nói *"chắc chắn"*, khách hàng tin ngay.
+
+## Giọng Có Thể Nhỏ, Nhưng Nền Phải Dày
+
+Vì thế Vân không bắt bạn nào trong đội ngũ phải tập sôi nổi hơn. Thay vào đó, Vân kèm một động tác thực tế rất cụ thể qua ba bước:
+- **Chuẩn bị trước buổi gặp:** Các bạn viết ra bộ câu hỏi mình cần hiểu về khách hàng để đi thẳng vào trọng tâm mối lo của gia đình họ.
+- **Bài tập “Tóm gọn trong ba câu”:** Tập đúc kết vấn đề phức tạp nhất của buổi ấy trong đúng ba câu ngắn gọn, nói thành tiếng cho người kèm nghe. Ba câu mà chưa gọn nghĩa là mình chưa hiểu đủ sâu — và quay lại học tiếp còn tốt hơn là nói dài cho qua.
+- **Rà soát sau buổi gặp:** Cả hai ngồi lại xem chỗ nào mình đã trả lời chắc chắn, chỗ nào cần kiểm tra lại quy tắc điều khoản để phản hồi chuẩn xác nhất.
+
+Giọng nói có thể nhỏ, nhịp độ có thể chậm, nhưng nền tảng chuyên môn phải dày. Điểm tựa của người làm nghề tư vấn chưa bao giờ nằm ở tốc độ nói, mà nằm ở độ sâu của sự thấu hiểu.
+
+Câu *"chắc em không hợp với nghề này"* Vân đã nghe đủ nhiều để nhận ra: thường đó chính là lời của người sẽ làm nghề này đáng tin cậy nhất.`,
+    keyTakeaways: [
+      'Khách hàng hiện đại không thiếu người nói hay mà cần người nói đúng; sự điềm đạm và lắng nghe sâu mới là lợi thế tạo dựng niềm tin.',
+      'Sự cẩn trọng dám nói "để em kiểm tra lại con số chính xác" tạo nên sức nặng uy tín lớn hơn nhiều so với những lời hứa hẹn trôi chảy.',
+      'Không cần ép mình thành người hoạt náo: giọng có thể nhỏ nhưng nền tảng chuyên môn phải dày thông qua kỷ luật chuẩn bị và đúc kết vấn đề.',
+    ],
+  },
+  {
+    id: 'am-29-phan-tram-mot-nam-giu-du-10-nam-sinh-loi-9-phay-4',
+    index: '02',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -133,7 +177,7 @@ Mỗi gia đình là một bài toán dòng tiền riêng biệt. Nếu bạn c�
   },
   {
     id: '17-trieu-va-171-trieu-chiec-xuong-ca-va-quyen-loi-tai-nan',
-    index: '02',
+    index: '03',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -186,11 +230,11 @@ Bữa cơm gia đình vẫn cứ ngon và ấm cúng như thế, chẳng ai ng�
   },
   {
     id: 'tien-gui-sinh-loi-it-di-gia-dinh-bat-an-nhieu-hon',
-    index: '03',
+    index: '04',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/VanPhong_NhomQuanLy_TraoDoiCongViecBenTablet.jpg',
     imageCaption: 'Phân tích cơ cấu dòng tiền, bài toán thanh khoản và rà soát hợp đồng bảo vệ cùng các chuyên gia quản trị gia sản.',
     title: 'Tiền Gửi Sinh Lời Ít Đi, Nhưng Nhiều Gia Đình Lại Bất An Nhiều Hơn',
@@ -235,8 +279,104 @@ Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông 
     ],
   },
   {
+    id: 'hop-dong-bao-hiem-cung-can-update-cv',
+    index: '05',
+    category: 'Phát triển Sự nghiệp',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: false,
+    image: '/images/VanPhong_NhomQuanLy_VoTayTanThuongBenCuaSo.jpg',
+    imageCaption: 'Khi thăng tiến từ công việc thị trường lên vị trí quản lý văn phòng, đừng quên rà soát và cập nhật lại nhóm nghề nghiệp trên hợp đồng bảo hiểm.',
+    title: 'Hợp Đồng Bảo Hiểm Cũng Cần “Update CV” Như Sự Nghiệp Của Bạn',
+    excerpt:
+      'Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân phát hiện ra bạn ấy đã chuyển từ công việc Sales thị trường sang làm quản lý vận hành tại văn phòng được gần ba năm, nhưng hợp đồng bảo hiểm vẫn “đóng băng” ở nhóm nghề nghiệp cũ với mức phí rủi ro cao hơn.',
+    content: `*Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân phát hiện ra một điều khá thú vị: bạn ấy đã chuyển từ công việc Sales thị trường sang làm quản lý vận hành tại văn phòng được gần ba năm, nhưng hợp đồng bảo hiểm vẫn "đóng băng" ở nhóm nghề nghiệp cũ. Nghĩa là suốt từng ấy thời gian, bạn vẫn trả phí rủi ro như thể ngày nào cũng ngoài đường, trong khi thực tế phần lớn thời gian chỉ ngồi bàn giấy.*
+
+## Khi Thông Tin Cũ Âm Thầm "Ăn" Vào Túi Tiền
+
+Nhiều người nghĩ hợp đồng bảo hiểm một khi đã ký là xong, cứ thế đóng phí đều đặn mỗi năm mà không cần nhìn lại. Nhưng ít ai để ý rằng một trong những yếu tố quyết định mức phí bảo hiểm tai nạn hàng năm chính là **nhóm nghề nghiệp** tại thời điểm tham gia.
+
+Công việc càng tiềm ẩn rủi ro di chuyển, va chạm, tai nạn lao động thì mức phí rủi ro càng cao. Ngược lại, công việc hành chính, ít di chuyển sẽ được xếp vào nhóm rủi ro thấp hơn, kéo theo phí bảo hiểm tai nạn cũng giảm tương ứng.
+
+Vấn đề nằm ở chỗ: công ty bảo hiểm không tự động biết bạn đã đổi việc. Nếu bạn không chủ động thông báo, hệ thống vẫn mặc định tính phí theo nghề nghiệp cũ — dù thực tế rủi ro của bạn đã thay đổi hoàn toàn.
+
+## Câu Chuyện Từ Nhóm Nghề 2 Sang Nhóm Nghề 1
+
+Quay lại câu chuyện của người bạn kia. Ngày mới ký hợp đồng, bạn ấy làm công việc thường xuyên di chuyển ngoài hiện trường — kiểu công việc được xếp vào nhóm nghề nghiệp có mức độ rủi ro cao hơn, tương tự như một phóng viên hiện trường. Sau này chuyển hẳn sang vị trí quản lý vận hành tại văn phòng, công việc gần như chỉ xoay quanh bàn giấy, họp hành, báo cáo — giống tính chất công việc của một biên tập viên.
+
+Về bản chất, đây là sự dịch chuyển từ nhóm nghề nghiệp rủi ro cao hơn sang nhóm rủi ro thấp hơn. Và điều thú vị là chỉ cần một thao tác đơn giản — gửi văn bản thông báo cập nhật nghề nghiệp cho công ty bảo hiểm — mức phí bảo hiểm tai nạn đã được điều chỉnh giảm ngay, từ **730.000đ** xuống còn **568.000đ** mỗi năm.
+
+Phần chênh lệch ấy không mất đi đâu cả. Nó được cộng thẳng vào tài khoản tích lũy trong hợp đồng, tiếp tục sinh lời theo thời gian. Quyền lợi bảo vệ không hề thay đổi, chỉ có chi phí rủi ro được tính đúng với thực tế công việc hiện tại.
+
+## Tại Sao Việc Này Lại Dễ Bị Bỏ Quên?
+
+Phần lớn mọi người chỉ nhớ đến hợp đồng bảo hiểm vào lúc ký kết, rồi sau đó gần như "quên" sự tồn tại của nó cho đến khi cần giải quyết quyền lợi. Trong khi đó, sự nghiệp của mỗi người lại liên tục thay đổi: từ nhân viên kinh doanh lên quản lý, từ công việc ngoài hiện trường chuyển về văn phòng, từ ngành này sang ngành khác.
+
+Hợp đồng bảo hiểm, suy cho cùng, giống như một bản hồ sơ cá nhân được "đóng băng" tại thời điểm ký. Nếu không chủ động cập nhật, nó sẽ không phản ánh đúng con người hiện tại của bạn — và trong trường hợp này, phần thiệt thòi lại thuộc về chính người đóng phí.
+
+Điều đáng nói là thủ tục cập nhật thường không phức tạp. Chỉ cần xác nhận công việc hiện tại qua giấy tờ đơn giản như hợp đồng lao động, quyết định bổ nhiệm, hoặc xác nhận từ phía công ty. Công ty bảo hiểm sẽ xem xét và điều chỉnh lại mức phí tương ứng với nhóm nghề nghiệp mới.
+
+## Một Thói Quen Nhỏ, Một Khoản Tối Ưu Không Nhỏ
+
+Nhìn rộng ra, đây không chỉ là chuyện của riêng người bạn kia. Rất nhiều người làm trong các ngành có tính chất công việc thay đổi theo thời gian — từ bán hàng thị trường lên quản lý khu vực, từ kỹ thuật hiện trường chuyển sang đào tạo nội bộ, từ phóng viên sang biên tập — đều có khả năng đang đóng phí rủi ro cao hơn mức cần thiết mà không hề hay biết.
+
+Khi sự nghiệp thay đổi theo hướng tích cực hơn, ít rủi ro hơn, đó cũng là lúc nên dành vài phút nhìn lại hợp đồng bảo hiểm của mình, giống như cách người ta cập nhật lại CV mỗi khi có một vị trí mới, một kỹ năng mới. Khác biệt là CV cập nhật để tìm kiếm cơ hội, còn hợp đồng bảo hiểm cập nhật để không bỏ lỡ quyền lợi tài chính đang nằm sẵn trong tay.`,
+    keyTakeaways: [
+      'Mức phí bảo hiểm tai nạn phụ thuộc vào nhóm nghề nghiệp tại thời điểm tham gia, không tự động điều chỉnh khi công việc thay đổi.',
+      'Khi chuyển từ công việc có mức độ rủi ro cao sang công việc văn phòng ít rủi ro hơn, chủ động thông báo cập nhật nghề nghiệp giúp giảm phí rủi ro và tăng phần tích lũy mà vẫn giữ nguyên quyền lợi.',
+      'Hãy xem việc rà soát lại hợp đồng bảo hiểm mỗi khi thăng tiến hoặc đổi vị trí công việc là một thói quen tài chính cần thiết, tương tự như việc cập nhật CV.',
+    ],
+  },
+  {
+    id: '500-tan-vang-nam-im-va-noi-so-vo-hinh',
+    index: '06',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '6 phút đọc',
+    featured: false,
+    image: '/images/VanPhong_NhomQuanLy_BanHopDaiXanhLa.jpg',
+    imageCaption: 'Hoạch định kiến trúc tài sản chuẩn mực: kết hợp hài hòa giữa tăng trưởng dài hạn và tầng phòng thủ chủ động cho gia đình.',
+    title: '500 Tấn Vàng Nằm Im Và Nỗi Sợ Vô Hình Của Tầng Lớp Trung Lưu',
+    excerpt:
+      'Giữa nghị trường Quốc hội, một con số được xướng lên khiến không ít người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Đó là bức chân dung tâm lý của cả một thế hệ đang chọn cách “phòng thủ” trước khi dám “tấn công”.',
+    content: `*Giữa nghị trường Quốc hội, một con số được xướng lên khiến không ít người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Đó không phải là thống kê khô khan, mà là bức chân dung tâm lý của cả một thế hệ đang chọn cách "phòng thủ" trước khi dám "tấn công".*
+
+## Khi Tiền Có Sẵn Nhưng Không Ai Dám Tiêu
+
+Đại biểu Lê Hoàng Anh (đoàn Gia Lai) gọi đây là một nghịch lý: vốn không thiếu, chỉ thiếu đường dẫn. Trong khi ngân sách Nhà nước phải vay gần 1,28 triệu tỷ đồng cho năm 2027, trái phiếu Chính phủ mới đạt 43% kế hoạch phát hành, thì hàng chục triệu tỷ đồng của người dân vẫn nằm yên trong tài khoản tiết kiệm, và 500 tấn vàng vẫn được khóa kỹ trong két sắt.
+
+Nhìn từ góc độ vĩ mô, đây là bài toán về cơ chế: thiếu công cụ tài chính đủ tin cậy để biến tiền nhàn rỗi thành vốn sản xuất. Nhưng nhìn từ góc độ một người từng ngồi ở bàn tư vấn tài sản cho hàng trăm khách hàng tại một ngân hàng nước ngoài, con số 11,2 triệu tỷ đồng còn kể một câu chuyện khác: đó là biểu hiện của một nỗi sợ rất con người — sợ mất trắng, sợ biến động, sợ không kiểm soát được tương lai.
+
+## Tiết Kiệm Không Phải Là Chiến Lược, Mà Là Phản Xạ
+
+Phần lớn người Việt lớn lên với niềm tin "có tiền mặt trong tay là an toàn nhất". Niềm tin ấy không sai, nhưng nó dừng lại ở mức phản xạ sinh tồn, chưa phải là một chiến lược tài chính. Giữ 500 tấn vàng không tạo ra dòng tiền, để 11,2 triệu tỷ đồng nằm trong ngân hàng với lãi suất thực tế gần như hòa vốn sau lạm phát — đó là cách con người chọn sự an toàn tức thời, đánh đổi bằng sự bào mòn giá trị tài sản trong dài hạn.
+
+Điều đáng nói là tâm lý phòng thủ cực đoan này không chỉ xuất hiện ở người ít tiền. Qua nhiều năm làm việc trong Khối Quản lý Tài sản, không hiếm trường hợp khách hàng có tài sản hàng chục tỷ đồng nhưng vẫn giữ nguyên tư duy "an toàn là giữ tiền mặt", bỏ lỡ hàng loạt cơ hội tăng trưởng vì không có một khung tư duy rõ ràng về việc nên giữ bao nhiêu, đầu tư bao nhiêu, và bảo vệ bằng cách nào.
+
+## Giữ Tiền Khó Hơn Kiếm Tiền
+
+Một quan sát xuyên suốt tám năm làm việc với khách hàng có tài sản lớn: người giàu bền vững không bao giờ dồn toàn bộ tiền vào các kênh "tấn công" như bất động sản, cổ phiếu hay mở rộng kinh doanh. Họ luôn dành một phần tài sản — không lớn, nhưng chắc chắn — để khóa chặt vào một **"tầng phòng thủ"**: bảo vệ sức khỏe, bảo vệ sinh mạng, và các quỹ hưu trí có kỷ luật.
+
+Lý do rất thực tế: biến cố không chờ ai chuẩn bị xong mới xảy ra. Một khách hàng từng chia sẻ rằng khoản bảo hiểm sức khỏe mà họ coi là "chi phí thừa" nhiều năm trước, hóa ra lại là thứ duy nhất giúp họ không phải bán tháo cổ phần công ty khi gặp biến cố y tế bất ngờ. Nếu không có tầng phòng thủ đó, toàn bộ phần tài sản "tấn công" — vốn cần thời gian để sinh lời — buộc phải bị cắt bán ở đúng thời điểm bất lợi nhất.
+
+Đây chính là điểm khác biệt giữa tích trữ và quản trị tài sản:
+- **Tích trữ thụ động:** Co cụm tất cả vào một hình thái (tiền mặt, vàng) và hy vọng nó đủ sức chống chọi mọi tình huống.
+- **Quản trị tài sản chủ động:** Phân bổ rõ ràng một phần để tăng trưởng, một phần để phòng thủ, và một phần luôn sẵn sàng ứng phó khẩn cấp mà không cần đụng đến phần còn lại.
+
+## Xây Móng Trước Khi Xây Lầu
+
+Câu chuyện 500 tấn vàng và 11,2 triệu tỷ đồng tiền gửi, suy cho cùng, không chỉ là vấn đề của nền kinh tế vĩ mô mà còn là tấm gương phản chiếu cách mỗi gia đình đang quản lý tài sản của chính mình. Trước khi nghĩ đến việc nhân đôi, nhân ba tài sản ở những kênh đầu tư nhiều sóng gió, có lẽ câu hỏi cần đặt ra trước tiên là: gia đình mình đã có một vành đai phòng thủ đủ vững để không bao giờ phải bán rẻ tài sản khi ốm đau hay khủng hoảng ập đến hay chưa?
+
+Dòng vốn quốc gia cần đường dẫn để chảy vào sản xuất. Nhưng trước hết, mỗi dòng tiền cá nhân cũng cần một kiến trúc rõ ràng — nơi phòng thủ và tấn công không mâu thuẫn, mà bổ trợ cho nhau. Đó là nền móng để bất kỳ ai, dù giữ vàng hay giữ cổ phiếu, cũng có thể yên tâm đi đường dài.`,
+    keyTakeaways: [
+      'Tiền mặt và vàng là lớp đệm an toàn, nhưng không phải là chiến lược tài sản toàn diện — chúng cần được đặt trong một cấu trúc tổng thể có mục tiêu rõ ràng.',
+      'Một “tầng phòng thủ” chủ động (bảo vệ sức khỏe, sinh mạng, quỹ hưu trí kỷ luật) giúp tài sản đầu tư không bị bán tháo khi biến cố xảy ra.',
+      'Trước khi tìm kênh sinh lời nhanh, hãy đảm bảo gia đình đã có vành đai an toàn để không bao giờ phải đánh đổi tài sản tích lũy lấy một khoản chi phí khẩn cấp.',
+    ],
+  },
+  {
     id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
-    index: '04',
+    index: '07',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '6 phút đọc',
@@ -281,7 +421,7 @@ Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi c
   },
   {
     id: 'phi-nam-dau-boc-hoi-toi-uu-dong-tien',
-    index: '05',
+    index: '08',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -345,7 +485,7 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
   },
   {
     id: 'ba-thang-trang-tay-von-lieng-khong-nam-trong-so-sach',
-    index: '06',
+    index: '09',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -402,7 +542,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
-    index: '07',
+    index: '10',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 10, 2026',
     readTime: '6 phút đọc',
@@ -461,7 +601,7 @@ Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhấ
   },
   {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
-    index: '08',
+    index: '11',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 09, 2026',
     readTime: '6 phút đọc',
@@ -508,7 +648,7 @@ Bởi suy cho cùng, di sản lớn nhất của một nhà lãnh đạo không 
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
-    index: '09',
+    index: '12',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
     readTime: '6 phút đọc',
@@ -558,7 +698,7 @@ Khi các con nhìn thấy bố mẹ làm việc bằng sự tử tế, giữ ch�
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
-    index: '10',
+    index: '13',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 08, 2026',
     readTime: '6 phút đọc',
@@ -608,7 +748,7 @@ Kiếm được nhiều tiền giúp gia đình có một cuộc sống tiện n
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
-    index: '11',
+    index: '14',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
     readTime: '6 phút đọc',
