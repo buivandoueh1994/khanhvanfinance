@@ -1,7 +1,13 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/|ig-demo|images/).*)", "destination": "/index.html" }
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/ho-so-quan-ly", "destination": "/" },
+    { "source": "/form-leader", "destination": "/" },
+    { "source": "/quan-ly-ho-so-leader", "destination": "/" },
+    { "source": "/bai-viet/:slug*", "destination": "/" },
+    { "source": "/article/:slug*", "destination": "/" },
+    { "source": "/he-thong", "destination": "/" },
+    { "source": "/nhung-chuyen-di", "destination": "/" }
   ]
 }
