@@ -126,7 +126,9 @@ const EMPTY_FORM: LeaderProfileData = {
   extraPhotos: [],
 };
 
-async function uploadImageDirect(
+const DRAFT_STORAGE_KEY = 'kv_leader_form_draft_v1';
+
+async function uploadImageDirectOnce(
   file: File,
   kind: 'portrait' | 'extra',
   leaderName: string
@@ -163,6 +165,20 @@ async function uploadImageDirect(
   }
 
   return String(signData.publicUrl);
+}
+
+async function uploadImageDirect(
+  file: File,
+  kind: 'portrait' | 'extra',
+  leaderName: string
+): Promise<string> {
+  try {
+    return await uploadImageDirectOnce(file, kind, leaderName);
+  } catch {
+    // Automatic 1x retry for flaky mobile/Zalo 4G network
+    await new Promise((r) => setTimeout(r, 800));
+    return uploadImageDirectOnce(file, kind, leaderName);
+  }
 }
 
 // ============================================================================
@@ -556,9 +572,41 @@ export const LeaderOnboardingPage: React.FC = () => {
     );
   }
 
-  const [form, setForm] = useState<LeaderProfileData>(EMPTY_FORM);
-  const [selectedRoleCode, setSelectedRoleCode] = useState<string>('DM');
-  const [customRoleTitle, setCustomRoleTitle] = useState<string>('');
+  const [form, setForm] = useState<LeaderProfileData>(() => {
+    try {
+      const saved = localStorage.getItem(DRAFT_STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') {
+          return { ...EMPTY_FORM, ...parsed };
+        }
+      }
+    } catch {
+      // ignore storage access issues in private mode
+    }
+    return EMPTY_FORM;
+  });
+  const [selectedRoleCode, setSelectedRoleCode] = useState<string>(() => {
+    const matched = ROLE_OPTIONS.find(
+      (r) => r.code !== 'OTHER' && r.code === form.roleCode
+    );
+    return matched ? matched.code : form.roleTitle ? 'OTHER' : 'DM';
+  });
+  const [customRoleTitle, setCustomRoleTitle] = useState<string>(() => {
+    const matched = ROLE_OPTIONS.find(
+      (r) => r.code !== 'OTHER' && r.code === form.roleCode
+    );
+    return matched ? '' : form.roleTitle || '';
+  });
+
+  // Auto-save form draft to localStorage so Zalo iOS WebView reloads never lose typed content
+  useEffect(() => {
+    try {
+      localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(form));
+    } catch {
+      // ignore quota/private mode errors
+    }
+  }, [form]);
 
   // Lookup existing profile state
   const [showLookup, setShowLookup] = useState(false);

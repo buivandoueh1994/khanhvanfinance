@@ -117,10 +117,30 @@ async function sendInternalTelegram(text) {
   }
 }
 
+async function backupToPostgresNotes(record) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/pa_notes`, {
+      method: 'POST',
+      headers: supabaseHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({
+        category: 'Ho_So_Leader_HCM69',
+        title: `[Leader HCM69] ${record.displayName} - ${record.phone} (v${record.revision || 1})`,
+        content: JSON.stringify(record),
+        is_archived: true,
+      }),
+    });
+    return res.ok;
+  } catch (err) {
+    console.error('Postgres backup note error:', err.message);
+    return false;
+  }
+}
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
@@ -204,7 +224,7 @@ export default async function handler(req, res) {
           (item) => item?.name && item.name.endsWith('.json')
         );
 
-        const profiles = (
+        const storageProfiles = (
           await Promise.all(
             jsonFiles.map(async (item) => {
               const fileRes = await fetch(
@@ -215,13 +235,40 @@ export default async function handler(req, res) {
               return fileRes.json().catch(() => null);
             })
           )
-        )
-          .filter(Boolean)
-          .sort((a, b) =>
-            String(b.updatedAt || b.createdAt || '').localeCompare(
-              String(a.updatedAt || a.createdAt || '')
-            )
+        ).filter(Boolean);
+
+        // Merge fallback backup records from PostgreSQL `pa_notes` if any phone is missing in Storage
+        const byPhone = new Map();
+        for (const p of storageProfiles) {
+          if (p?.phone) byPhone.set(p.phone, p);
+        }
+        try {
+          const notesRes = await fetch(
+            `${SUPABASE_URL}/rest/v1/pa_notes?category=eq.Ho_So_Leader_HCM69&order=id.desc&limit=200`,
+            { headers: supabaseHeaders() }
           );
+          if (notesRes.ok) {
+            const notes = (await notesRes.json()) || [];
+            for (const n of notes) {
+              try {
+                const parsed = JSON.parse(n.content || '{}');
+                if (parsed?.phone && !byPhone.has(parsed.phone)) {
+                  byPhone.set(parsed.phone, parsed);
+                }
+              } catch {
+                // ignore malformed note
+              }
+            }
+          }
+        } catch {
+          // ignore fallback error if storage succeeded
+        }
+
+        const profiles = Array.from(byPhone.values()).sort((a, b) =>
+          String(b.updatedAt || b.createdAt || '').localeCompare(
+            String(a.updatedAt || a.createdAt || '')
+          )
+        );
 
         return res.status(200).json({
           ok: true,
@@ -358,13 +405,26 @@ export default async function handler(req, res) {
         };
 
         if (!isTest) {
-          await putSubmissionObject(`profiles/${cleanPhone}.json`, record);
-          const safeTs = nowIso.replace(/[:.]/g, '-');
-          await putSubmissionObject(
-            `history/${safeTs}-${slugifyAscii(displayName)}-${cleanPhone}.json`,
-            record
-          );
+          let storageSaved = false;
+          try {
+            await putSubmissionObject(`profiles/${cleanPhone}.json`, record);
+            storageSaved = true;
+            const safeTs = nowIso.replace(/[:.]/g, '-');
+            await putSubmissionObject(
+              `history/${safeTs}-${slugifyAscii(displayName)}-${cleanPhone}.json`,
+              record
+            );
+          } catch (storageErr) {
+            console.error('Primary storage write error:', storageErr.message);
+          }
+          const dbSaved = await backupToPostgresNotes(record);
+          if (!storageSaved && !dbSaved) {
+            throw new Error('Không thể lưu dữ liệu vào kho lưu trữ, vui lòng thử lại.');
+          }
         }
+
+        const storyPreview =
+          story.length > 450 ? `${story.slice(0, 450)}...` : story;
 
         const tgTitle = isTest
           ? `🧪 <b>[TEST] HỒ SƠ LEADER HCM69</b>`
@@ -388,6 +448,7 @@ export default async function handler(req, res) {
             : '') +
           (priorBackground ? `💼 <b>Nền tảng trước đó:</b> ${escapeHtml(priorBackground)}\n` : '') +
           (quote ? `💬 <b>Châm ngôn:</b> <i>"${escapeHtml(quote)}"</i>\n` : '') +
+          (storyPreview ? `📖 <b>Câu chuyện:</b> ${escapeHtml(storyPreview)}\n` : '') +
           `🖼 <b>Ảnh chân dung HD:</b> <a href="${escapeHtml(portraitUrl)}">Mở xem ảnh gốc</a>` +
           (extraPhotos.length ? ` (+${extraPhotos.length} ảnh phụ)` : '') +
           `\n📋 <b>Trang tổng hợp:</b> https://www.khanhvanfinance.com/ho-so-quan-ly?xem=${ADMIN_VIEW_KEY}`;
