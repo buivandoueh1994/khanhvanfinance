@@ -10,23 +10,27 @@ const leaderFormHtml = baseHtml
     '<title>Hồ Sơ Đội Ngũ Quản Lý — Hệ Thống Khánh Vân (HCM69)</title>'
   )
   .replace(
-    /<meta property="og:title"[^>]*>/,
+    /<meta\s+[^>]*name="description"[^>]*>/,
+    '<meta name="description" content="Cổng thông tin dành riêng cho đội ngũ Quản lý Hệ thống Khánh Vân (Manulife Khu vực HCM69) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:title"[^>]*>/,
     '<meta property="og:title" content="Hồ Sơ Đội Ngũ Quản Lý — Hệ Thống Khánh Vân (HCM69)" />'
   )
   .replace(
-    /<meta name="twitter:title"[^>]*>/,
+    /<meta\s+[^>]*name="twitter:title"[^>]*>/,
     '<meta name="twitter:title" content="Hồ Sơ Đội Ngũ Quản Lý — Hệ Thống Khánh Vân (HCM69)" />'
   )
   .replace(
-    /<meta[\s\S]*?property="og:description"[\s\S]*?\/>/,
+    /<meta\s+[^>]*property="og:description"[^>]*>/,
     '<meta property="og:description" content="Cổng thông tin dành riêng cho đội ngũ Quản lý Hệ thống Khánh Vân (Manulife Khu vực HCM69) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
-    /<meta property="og:image"[^>]*>/,
+    /<meta\s+[^>]*property="og:image"[^>]*>/,
     '<meta property="og:image" content="https://www.khanhvanfinance.com/images/Studio_ChiVanCungTapTheNuQuanLy_VestMint.jpg" />'
   )
   .replace(
-    /<meta name="twitter:image"[^>]*>/,
+    /<meta\s+[^>]*name="twitter:image"[^>]*>/,
     '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/Studio_ChiVanCungTapTheNuQuanLy_VestMint.jpg" />'
   );
 
