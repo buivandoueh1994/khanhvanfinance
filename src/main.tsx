@@ -10,6 +10,7 @@ function RootRouter() {
   const isLeaderForm =
     pathname === '/ho-so-quan-ly' ||
     pathname === '/ho-so-ban-dieu-hanh' ||
+    pathname === '/ho-so-vung-khanh-van' ||
     pathname === '/ho-so-leader' ||
     pathname === '/form-leader' ||
     pathname === '/quan-ly-ho-so-leader' ||

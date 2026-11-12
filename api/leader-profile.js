@@ -427,10 +427,10 @@ export default async function handler(req, res) {
           story.length > 450 ? `${story.slice(0, 450)}...` : story;
 
         const tgTitle = isTest
-          ? `🧪 <b>[TEST] HỒ SƠ LEADER HCM69</b>`
+          ? `🧪 <b>[TEST] HỒ SƠ LEADER VÙNG KHÁNH VÂN</b>`
           : existing
           ? `🔄 <b>CẬP NHẬT HỒ SƠ LEADER (Lần ${revision})</b>`
-          : `✨ <b>HỒ SƠ LEADER MỚI — HỆ THỐNG KHÁNH VÂN</b>`;
+          : `✨ <b>HỒ SƠ LEADER MỚI — HỆ THỐNG VÙNG KHÁNH VÂN</b>`;
 
         const tgMsg =
           `${tgTitle}\n` +

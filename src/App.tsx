@@ -566,7 +566,7 @@ Năm 2018, khi quyết định chuyển sang Manulife Việt Nam để kiến t�
 
 Sai lầm lớn nhất của nhiều người khi chuyển từ làm công ăn lương sang làm chủ hoặc tư vấn tài chính độc lập là bước đi với tài khoản dự phòng mỏng manh. Khi áp lực cơm áo gạo tiền đè nặng ngay từ tháng thứ hai, thứ ba, người làm nghề rất dễ đánh mất sự điềm tĩnh — dẫn đến tâm lý nôn nóng chốt hợp đồng bằng mọi giá, hoặc bỏ cuộc ngay trước khi kịp hái quả ngọt.
 
-Nguyên tắc bất di bất dịch mà Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong hệ thống HCM69 trước khi các bạn toàn tâm chuyển nghề là:
+Nguyên tắc bất di bất dịch mà Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Vùng Khánh Vân trước khi các bạn toàn tâm chuyển nghề là:
 - **Tính toán chính xác định mức chi tiêu thiết yếu (Survival Number):** Bao gồm học phí của con, chi phí sinh hoạt gia đình, phụng dưỡng cha mẹ và các nghĩa vụ trả góp cố định mỗi tháng.
 - **Khóa chặt 6 đến 12 tháng chi phí này vào một tài khoản thanh khoản riêng biệt:** Khoản tiền này tuyệt đối không dùng để đầu tư mạo hiểm hay chi tiêu phát sinh.
 
@@ -610,12 +610,12 @@ Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhấ
     imageCaption: 'Niềm tự hào lớn nhất của người dẫn dắt: Cùng đội ngũ quản lý kế cận đứng chung trên bục vinh danh Manulife Talent Attractor (MTA).',
     title: 'Ba Phẩm Chất Của Người Quản Lý Dẫn Dắt Bằng Sự Thấu Cảm',
     excerpt:
-      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại khu vực HCM69, Vân nhận ra thước đo của một nhà lãnh đạo không nằm ở việc tự mình tỏa sáng rực rỡ nhất, mà là năng lực đánh thức thế mạnh độc bản của từng cộng sự.',
+      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Vùng Khánh Vân, Vân nhận ra thước đo của một nhà lãnh đạo không nằm ở việc tự mình tỏa sáng rực rỡ nhất, mà là năng lực đánh thức thế mạnh độc bản của từng cộng sự.',
     content: `*Khi mới bước từ vị trí ngôi sao bán hàng (Top Sales) lên vai trò quản lý, cái bẫy dễ mắc phải nhất là cố gắng biến tất cả nhân sự dưới quyền thành “bản sao” của chính mình. Nhưng suốt hành trình xây dựng hệ thống từ những viên gạch đầu tiên năm 2018 đến khi vinh dự nhận giải thưởng “Nhà Quản lý Xuất sắc và Đáng tin cậy nhất Châu Á” (2021), Vân thấm thía rằng: quyền lực áp đặt chỉ tạo ra sự tuân phục ngắn hạn, còn sự thấu cảm kết hợp cùng kỷ luật mới kiến tạo nên một tổ chức tự vận hành bền vững.*
 
 ## 1. Lắng Nghe Để “Đọc Vị” Và Đặt Đúng Người Vào Đúng Chỗ
 
-Một khu vườn đẹp không thể chỉ trồng một loài hoa, và một đội ngũ hơn 500 con người càng không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) trực tiếp đồng hành cùng Vân tại khu vực HCM69, mỗi người bước vào nghề với một xuất phát điểm và cá tính hoàn toàn khác biệt: có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, lại có những người mẹ bỉm sữa sở hữu sự dịu dàng và khả năng lắng nghe vô cùng sâu sắc.
+Một khu vườn đẹp không thể chỉ trồng một loài hoa, và một đội ngũ hơn 500 con người càng không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) trực tiếp đồng hành cùng Vân tại Hệ thống Vùng Khánh Vân, mỗi người bước vào nghề với một xuất phát điểm và cá tính hoàn toàn khác biệt: có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, lại có những người mẹ bỉm sữa sở hữu sự dịu dàng và khả năng lắng nghe vô cùng sâu sắc.
 
 Nếu người lãnh đạo chỉ dùng một thước đo duy nhất để phán xét, chúng ta sẽ vô tình làm thui chột tài năng của cộng sự. Lãnh đạo bằng sự thấu cảm bắt đầu từ việc quan sát sâu và lắng nghe không định kiến:
 - **Với những nhân sự mạnh về tư duy logic và phân tích:** Vân khuyến khích các bạn đào sâu vào nghiệp vụ hoạch định gia sản, cấu trúc dòng tiền doanh nghiệp và thẩm định điều khoản hợp đồng chuyên sâu.
@@ -631,7 +631,7 @@ Triết lý điều hành mà Vân theo đuổi là **“Lãnh đạo Phục v�
 - **Chuẩn mực trong từng chi tiết nhỏ:** Từ việc có mặt đúng giờ trong các buổi huấn luyện sáng, tác phong trang phục chỉn chu, cho đến sự minh bạch, sòng phẳng trong mọi chính sách thi đua của khu vực.
 - **Truyền nghề theo quy trình “4 Bước Thực Chiến”:** Thay vì chỉ giao chỉ tiêu rồi ngồi chờ báo cáo, Vân cùng các Giám đốc/Quản lý cấp cao áp dụng nguyên tắc: *Nói cho nghe — Làm mẫu cho xem — Cùng làm thực tế — Đúc kết và tháo gỡ tại chỗ*.
 
-Chính sự rèn giũa tỉ mỉ và đồng hành sát sao ấy đã giúp khu vực HCM69 đạt được kỳ tích hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi cực kỳ chắc chắn — đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
+Chính sự rèn giũa tỉ mỉ và đồng hành sát sao ấy đã giúp Hệ thống Vùng Khánh Vân đạt được kỳ tích hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi cực kỳ chắc chắn — đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
 
 ## 3. Lấy Sự Trưởng Thành Của Cộng Sự Làm Thước Đo Thành Tựu
 
@@ -722,7 +722,7 @@ Vì vậy, nguyên tắc đầu tiên của một cựu Banker luôn là: **Khó
 
 ## Nguyên Tắc 2: Cấu Trúc “Kiềng 3 Chân” Và Kỷ Luật Phân Bổ “Đúng & Đủ” (10%–15% Thu Nhập)
 
-Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt đỏ nhất, mà là hợp đồng **được duy trì trọn vẹn đến đúng thời điểm gia đình cần đến nó**. Đó cũng là lý do suốt nhiều năm qua, hệ thống HCM69 của Vân luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với chỉ số doanh thu.
+Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt đỏ nhất, mà là hợp đồng **được duy trì trọn vẹn đến đúng thời điểm gia đình cần đến nó**. Đó cũng là lý do suốt nhiều năm qua, Hệ thống Vùng Khánh Vân luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với chỉ số doanh thu.
 
 Để dòng tiền gia đình luôn thông suốt và nhẹ nhàng trong suốt hành trình 15–20 năm, Vân luôn khuyên khách hàng thiết lập mô hình **“Kiềng 3 Chân Tài Chính”**:
 - **Chân thứ nhất — Thanh khoản ngắn hạn (Ngân hàng):** Duy trì quỹ tiền gửi tương đương 6–12 tháng chi phí sinh hoạt để xử lý tức thời mọi nhu cầu phát sinh hàng ngày.
