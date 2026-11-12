@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { LeaderOnboardingPage } from './components/LeaderOnboardingPage';
+import { RegionalSystemPage } from './components/RegionalSystemPage';
 import './index.css';
 
 function RootRouter() {
   const pathname = window.location.pathname.replace(/\/+$/, '').toLowerCase();
   const params = new URLSearchParams(window.location.search);
+
   const isLeaderForm =
     pathname === '/ho-so-quan-ly' ||
     pathname === '/ho-so-ban-dieu-hanh' ||
@@ -19,6 +21,15 @@ function RootRouter() {
   if (isLeaderForm) {
     return <LeaderOnboardingPage />;
   }
+
+  const isRegionalPreview =
+    pathname === '/xem-truoc-vung-khanh-van' ||
+    params.get('preview') === 'vung-khanh-van';
+
+  if (isRegionalPreview) {
+    return <RegionalSystemPage />;
+  }
+
   return <App />;
 }
 

@@ -47,4 +47,20 @@ for (const page of pages) {
   fs.writeFileSync(path.join(distDir, page), leaderFormHtml, 'utf8');
 }
 
-console.log('Generated static route HTML files for Hệ Thống Vùng Khánh Vân:', pages.join(', '));
+const previewHtml = baseHtml
+  .replace(
+    /<title>[\s\S]*?<\/title>/,
+    '<title>Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý</title><meta name="robots" content="noindex, nofollow" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:title"[^>]*>/,
+    '<meta property="og:title" content="Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:image"[^>]*>/,
+    '<meta property="og:image" content="https://www.khanhvanfinance.com/images/BanDieuHanh_ChiVanCungTapTheQuanLy_OG.jpg" />'
+  );
+
+fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtml, 'utf8');
+
+console.log('Generated static route HTML files + private preview page.');

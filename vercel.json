@@ -8,6 +8,7 @@
     { "source": "/ho-so-leader", "destination": "/" },
     { "source": "/form-leader", "destination": "/" },
     { "source": "/quan-ly-ho-so-leader", "destination": "/" },
+    { "source": "/xem-truoc-vung-khanh-van", "destination": "/" },
     { "source": "/bai-viet/:slug*", "destination": "/" },
     { "source": "/article/:slug*", "destination": "/" },
     { "source": "/he-thong", "destination": "/" },
