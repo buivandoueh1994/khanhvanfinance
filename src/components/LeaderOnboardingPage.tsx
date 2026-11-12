@@ -976,13 +976,29 @@ export const LeaderOnboardingPage: React.FC = () => {
         <section className="space-y-5">
           <div className="space-y-2">
             <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] font-medium block">
-              CHUYÊN TRANG ĐỘI NGŨ QUẢN LÝ KẾ CẬN • MANULIFE VIỆT NAM
+              BAN ĐIỀU HÀNH & ĐỘI NGŨ QUẢN LÝ KẾ CẬN • MANULIFE VIỆT NAM
             </span>
             <h1 className="font-serif text-3xl sm:text-[42px] leading-[1.15] text-[#181F1C] font-normal">
               Hồ Sơ Thương Hiệu Quản Lý{' '}
               <span className="italic text-[#0A3622]">Hệ Thống Khánh Vân</span>
             </h1>
           </div>
+
+          <figure className="rounded-[4px] overflow-hidden border border-[#E4E1D8] bg-white shadow-[0_14px_34px_-22px_rgba(10,54,34,0.25)]">
+            <img
+              src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
+              alt="Khánh Vân cùng Ban Điều Hành Hệ thống tại Manulife Việt Nam"
+              className="w-full aspect-[16/10] object-cover object-center"
+            />
+            <figcaption className="px-4 py-2.5 bg-[#FAF9F5] border-t border-[#ECE9E0] flex items-center justify-between gap-2 text-[11px] text-[#56605B]">
+              <span className="font-medium text-[#0A3622] uppercase tracking-[0.16em]">
+                Ban Điều Hành • Khu Vực HCM69
+              </span>
+              <span className="italic font-serif text-sm text-[#28322D]">
+                “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
+              </span>
+            </figcaption>
+          </figure>
 
           <div className="bg-white border border-[#E4E1D8] border-l-[3px] border-l-[#0A3622] p-5 sm:p-6 rounded-[3px] space-y-2.5 shadow-[0_10px_30px_-20px_rgba(10,54,34,0.18)]">
             <p className="text-sm text-[#181F1C] font-medium">

@@ -89,8 +89,8 @@ const ARTICLES: Article[] = [
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
     featured: true,
-    image: '/images/Studio_ChiVanCungTapTheNuQuanLy_VestMint.jpg',
-    imageCaption: 'Khánh Vân cùng đội ngũ quản lý kế cận — nơi sự điềm đạm, cẩn trọng và năng lực lắng nghe sâu trở thành điểm tựa uy tín bền vững.',
+    image: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
+    imageCaption: 'Khánh Vân cùng Ban Điều Hành Hệ thống — nơi sự điềm đạm, chuẩn mực và năng lực lắng nghe sâu trở thành điểm tựa uy tín bền vững.',
     title: 'Người Hướng Nội Làm Tư Vấn: Khi Sự Điềm Đạm Và Lắng Nghe Trở Thành Lợi Thế Cạnh Tranh',
     excerpt:
       'Có một câu Vân nghe rất nhiều từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy điều ngược lại: khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',

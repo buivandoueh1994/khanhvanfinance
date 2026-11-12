@@ -3,6 +3,8 @@
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/ho-so-quan-ly", "destination": "/" },
+    { "source": "/ho-so-ban-dieu-hanh", "destination": "/" },
+    { "source": "/ho-so-leader", "destination": "/" },
     { "source": "/form-leader", "destination": "/" },
     { "source": "/quan-ly-ho-so-leader", "destination": "/" },
     { "source": "/bai-viet/:slug*", "destination": "/" },
