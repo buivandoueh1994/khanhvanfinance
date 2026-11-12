@@ -159,7 +159,7 @@ export const RegionalSystemPage: React.FC = () => {
           <a
             href="/"
             className="inline-flex items-center gap-3 group"
-            title="Về trang chủ Nguyễn Thị Vân (Khánh Vân)"
+            title="Về trang chủ Khánh Vân"
           >
             <span className="w-[3px] h-5 bg-[#008746] inline-block" />
             <div className="flex flex-col">
@@ -244,7 +244,7 @@ export const RegionalSystemPage: React.FC = () => {
             <div className="relative aspect-[16/10] sm:aspect-[16/9] bg-[#F2EFE9] overflow-hidden">
               <img
                 src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-                alt="Giám đốc Vùng Cấp cao Nguyễn Thị Vân (Khánh Vân) cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
+                alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#181F1C]/65 via-[#181F1C]/20 to-transparent pointer-events-none" />
@@ -319,7 +319,7 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="flex items-center gap-4">
                 <img
                   src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
-                  alt="Nguyễn Thị Vân (Khánh Vân)"
+                  alt="Khánh Vân"
                   className="w-20 h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
                 />
                 <div className="space-y-1">
@@ -327,8 +327,7 @@ export const RegionalSystemPage: React.FC = () => {
                     NGƯỜI SÁNG LẬP & DẪN DẮT VÙNG
                   </span>
                   <h2 className="font-serif text-2xl text-[#181F1C] font-medium leading-tight">
-                    Nguyễn Thị Vân{' '}
-                    <span className="italic text-[#0A3622]">(Khánh Vân)</span>
+                    Khánh Vân
                   </h2>
                   <p className="text-xs text-[#56605B]">
                     Giám đốc Vùng Cấp cao (SRD) • Nguyên Quản lý Tài sản ANZ Bank

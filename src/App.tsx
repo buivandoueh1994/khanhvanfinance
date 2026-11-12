@@ -1210,7 +1210,7 @@ export function App() {
       logoClass: 'h-6 sm:h-7',
       sourceType: 'Tạp chí Bảo hiểm Châu Á • Singapore',
       badge: 'Quốc tế',
-      headline: 'Rookie Insurance Agency Leader of the Year 2021 - Nguyen Thi Van',
+      headline: 'Rookie Insurance Agency Leader of the Year 2021 - Khanh Van',
       summary: 'Bài vinh danh chính thức từ Hội đồng Giám khảo Quốc tế, ghi nhận năng lực lãnh đạo và những đóng góp trong việc nâng cao nhận thức cộng đồng.',
       url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
     },
@@ -1233,7 +1233,7 @@ export function App() {
       sourceType: 'Báo VietNamNet • Thị trường & Tiêu dùng',
       badge: 'Giải thưởng Châu Á',
       headline: 'Đại lý Manulife Việt Nam nhận danh hiệu nhà quản lý mới của năm tại Châu Á',
-      summary: 'Vinh danh bà Nguyễn Thị Vân - Trưởng khu vực kinh doanh HCM12 đoạt giải thưởng Rookie Insurance Agency Leader of the Year 2021.',
+      summary: 'Vinh danh bà Khánh Vân - Trưởng khu vực kinh doanh HCM12 đoạt giải thưởng Rookie Insurance Agency Leader of the Year 2021.',
       url: 'https://vietnamnet.vn/dai-ly-manulife-viet-nam-nhan-danh-hieu-nha-quan-ly-moi-cua-nam-755155.html',
     },
   ];
@@ -1354,11 +1354,11 @@ export function App() {
         <figure
           onClick={() =>
             setLightbox({
-              src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg',
+              src: '/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg?v=2',
               fig: 'CHÂN DUNG & TRIẾT LÝ NGHỀ',
-              title: 'Nguyễn Thị Vân — Đi chắc để đi xa, đồng hành bằng cả trái tim',
+              title: 'Khánh Vân — Đi chắc để đi xa, đồng hành bằng cả trái tim',
               subtitle:
-                'Chân dung chị Nguyễn Thị Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam, cùng triết lý làm nghề của chị.',
+                'Chân dung chị Khánh Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam, cùng triết lý làm nghề của chị.',
             })
           }
           className="cursor-zoom-in group relative block w-full"
@@ -1367,10 +1367,10 @@ export function App() {
             <picture>
               <source
                 media="(min-width: 640px)"
-                srcSet="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg"
+                srcSet="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg?v=2"
               />
               <img
-                src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Mobile.jpg"
+                src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Mobile.jpg?v=2"
                 alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
                 className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
               />
@@ -2105,7 +2105,7 @@ export function App() {
         <figure
           onClick={() =>
             setLightbox({
-              src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg',
+              src: '/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg?v=2',
               fig: 'BÌNH MINH CAPPADOCIA',
               title: 'Đón bình minh trên khinh khí cầu',
               subtitle:
@@ -2118,10 +2118,10 @@ export function App() {
             <picture>
               <source
                 media="(min-width: 640px)"
-                srcSet="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg"
+                srcSet="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg?v=2"
               />
               <img
-                src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Mobile.jpg"
+                src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Mobile.jpg?v=2"
                 alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
                 className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
               />
