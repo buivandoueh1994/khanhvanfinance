@@ -9,7 +9,6 @@ import {
   ChevronUp,
   Copy,
   Eye,
-  FolderOpen,
   Play,
   Search,
   Share2,
@@ -17,7 +16,7 @@ import {
   Volume2,
   X,
 } from 'lucide-react';
-import { VIDEO_FOLDERS, VIDEO_LIBRARY, VideoItem } from '../data/videos';
+import { VIDEO_LIBRARY, VideoItem } from '../data/videos';
 
 interface VideoLibrarySectionProps {
   activeVideo: VideoItem | null;
@@ -63,15 +62,6 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     return () => window.removeEventListener('resize', updateDims);
   }, [activeVideo]);
 
-  // Count videos per folder
-  const folderCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: VIDEO_LIBRARY.length };
-    for (const v of VIDEO_LIBRARY) {
-      counts[v.folderId] = (counts[v.folderId] || 0) + 1;
-    }
-    return counts;
-  }, []);
-
   // Available subtags for current folder
   const availableSubtags = useMemo(() => {
     const base =
@@ -82,12 +72,6 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
     base.forEach((v) => set.add(v.subtag));
     return ['Tất cả', ...Array.from(set)];
   }, [selectedFolder]);
-
-  // Reset subtag when folder changes
-  const handleSelectFolder = (folderId: string) => {
-    setSelectedFolder(folderId);
-    setSelectedSubtag('Tất cả');
-  };
 
   // Filtered videos by folder, subtag, and search query
   const filteredVideos = useMemo(() => {
@@ -363,7 +347,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     <div>
                       {/* VIDEO THUMBNAIL CONTAINER */}
                       <div className="relative aspect-[4/4.6] w-full bg-[#121715] overflow-hidden">
-                        <img
+                        <img decoding="async"
                           src={video.thumbnail}
                           alt={video.title}
                           loading="lazy"
@@ -473,7 +457,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                     {/* Thumbnail + Folder + Views */}
                     <div className="lg:col-span-8 flex items-center gap-3.5 sm:gap-4">
                       <div className="relative w-14 h-[74px] sm:w-16 sm:h-20 rounded-[3px] overflow-hidden bg-[#121715] shrink-0 ring-1 ring-black/10">
-                        <img
+                        <img decoding="async"
                           src={video.thumbnail}
                           alt={video.title}
                           loading="lazy"
@@ -786,7 +770,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         className="w-full text-left p-2.5 rounded-[4px] border border-[#DCD8CE] hover:border-[#0A3622] bg-white/80 hover:bg-white transition-all flex items-center gap-3 group"
                       >
                         <div className="w-11 h-14 rounded-[2px] overflow-hidden bg-black shrink-0 relative">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={nextVideoItem.thumbnail}
                             alt={nextVideoItem.title}
                             className="w-full h-full object-cover"

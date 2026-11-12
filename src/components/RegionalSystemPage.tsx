@@ -242,7 +242,7 @@ export const RegionalSystemPage: React.FC = () => {
             className="bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden shadow-[0_24px_60px_-28px_rgba(10,54,34,0.22)]"
           >
             <div className="relative aspect-[16/10] sm:aspect-[16/9] bg-[#F2EFE9] overflow-hidden">
-              <img
+              <img decoding="async"
                 src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
                 alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
                 className="w-full h-full object-cover object-center"
@@ -317,7 +317,7 @@ export const RegionalSystemPage: React.FC = () => {
             {/* Founder Column */}
             <div className="lg:col-span-5 bg-[#F2EFE9]/80 border border-[#E4E1D8] rounded-[4px] p-6 sm:p-8 space-y-5">
               <div className="flex items-center gap-4">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
                   alt="Khánh Vân"
                   className="w-20 h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
@@ -467,7 +467,7 @@ export const RegionalSystemPage: React.FC = () => {
                         isReversed ? 'lg:order-2' : 'lg:order-1'
                       }`}
                     >
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={leader.portrait}
                         alt={`${leader.displayName} — ${leader.roleTitle}`}
                         className="w-full h-full object-cover object-top"

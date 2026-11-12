@@ -248,7 +248,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
 
             {/* Real Avatar of Chị Khánh Vân */}
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#6EE7B7]/70 shrink-0 shadow-sm bg-[#181F1C]">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/avatar_khanh_van.jpg"
                 alt="Khánh Vân"
                 width={32}
@@ -282,7 +282,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
             <div className="bg-[#0A3622] text-[#FAF9F5] px-4 pt-[max(0.875rem,env(safe-area-inset-top,0px))] pb-3.5 sm:pt-3.5 flex items-center justify-between shrink-0 border-b border-white/10 shadow-xs">
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7]/80 shrink-0 bg-[#181F1C] shadow-xs">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/avatar_khanh_van.jpg"
                     alt="Chuyên gia Tài chính Khánh Vân"
                     className="w-full h-full object-cover"
@@ -359,7 +359,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                             className="w-full text-left p-2 rounded-[6px] bg-white border border-[#DCD8CE] hover:border-[#008746] shadow-xs flex items-center gap-2.5 group transition-all"
                           >
                             <div className="w-10 h-12 rounded-[3px] overflow-hidden bg-black shrink-0 relative">
-                              <img
+                              <img loading="lazy" decoding="async"
                                 src={vid.thumbnail}
                                 alt={vid.title}
                                 className="w-full h-full object-cover"

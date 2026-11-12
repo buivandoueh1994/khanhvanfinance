@@ -31,6 +31,13 @@ const TEST_PHONES = new Set([
   '0999999999',
 ]);
 
+function escapeHtml(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function isTestSubmission({ isTest, testMode, sessionId = '', fullName = '', phone = '', topic = '', note = '' }) {
   if (isTest === true || testMode === true) return true;
   if (/^test[-_]/i.test(String(sessionId).trim())) return true;
@@ -162,12 +169,12 @@ export default async function handler(req, res) {
     const tgMessage =
       `${headerTitle}\n` +
       `━━━━━━━━━━━━━━━━━━━━\n` +
-      `👤 <b>Họ và tên:</b> ${fullName || 'Chưa điền'}\n` +
-      `📞 <b>SĐT / Zalo:</b> <code>${phone}</code>\n` +
-      (email ? `✉️ <b>Email:</b> ${email}\n` : '') +
-      `📌 <b>Chủ đề quan tâm:</b> ${topic}\n` +
-      (background ? `💼 <b>Lĩnh vực:</b> ${background}\n` : '') +
-      (note ? `📝 <b>Ghi chú:</b> ${note}\n` : '') +
+      `👤 <b>Họ và tên:</b> ${escapeHtml(fullName || 'Chưa điền')}\n` +
+      `📞 <b>SĐT / Zalo:</b> <code>${escapeHtml(phone)}</code>\n` +
+      (email ? `✉️ <b>Email:</b> ${escapeHtml(email)}\n` : '') +
+      `📌 <b>Chủ đề quan tâm:</b> ${escapeHtml(topic)}\n` +
+      (background ? `💼 <b>Lĩnh vực:</b> ${escapeHtml(background)}\n` : '') +
+      (note ? `📝 <b>Ghi chú:</b> ${escapeHtml(note)}\n` : '') +
       `📍 <b>Nguồn:</b> ${source === 'contact_form' ? 'Form Liên Hệ Cuối Trang' : 'Chatbot Trợ Lý AI'}\n` +
       `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}`;
 

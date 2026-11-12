@@ -1082,7 +1082,8 @@ export function App() {
     trackEvent('video_view', {
       video_id: video.id,
       video_title: video.title,
-      video_category: video.category,
+      video_category: video.folderShort,
+      video_subtag: video.subtag,
     });
     if (pushHistory && typeof window !== 'undefined') {
       const newUrl = `${window.location.origin}/?video=${encodeURIComponent(video.id)}`;
@@ -1369,7 +1370,7 @@ export function App() {
                 media="(min-width: 640px)"
                 srcSet="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Panorama.jpg?v=2"
               />
-              <img
+              <img fetchPriority="high" decoding="async"
                 src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Mobile.jpg?v=2"
                 alt="Khánh Vân — Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
                 className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
@@ -1458,7 +1459,7 @@ export function App() {
                 className="cursor-zoom-in group relative block"
               >
                 <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[5px] shadow-[0_20px_48px_-18px_rgba(10,54,34,0.20)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
                     alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
                     className="w-full h-full object-cover group-hover:scale-[1.018] transition-transform duration-700 ease-editorial"
@@ -1517,7 +1518,7 @@ export function App() {
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4 pb-3.5 border-b border-[#EFECE6] min-h-[46px]">
                     <div className="flex items-center">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={item.logo}
                         alt={item.logoAlt}
                         className={`${item.logoClass} w-auto max-w-[155px] sm:max-w-[185px] object-contain object-left`}
@@ -1629,7 +1630,7 @@ export function App() {
                 className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg"
                     alt="Khánh Vân hướng dẫn đội ngũ bên bàn họp chiến lược"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -1661,7 +1662,7 @@ export function App() {
                   className="cursor-zoom-in group"
                 >
                   <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[3px] shadow-sm">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg"
                       alt="Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ hoàn thành chỉ tiêu FYP năm 2025"
                       className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -1685,7 +1686,7 @@ export function App() {
                   className="cursor-zoom-in group"
                 >
                   <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[3px] shadow-sm">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg"
                       alt="Top 1 DRD+ Quản lý cấp cao dẫn đầu tỷ lệ duy trì hợp đồng năm 2 2025"
                       className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -1739,7 +1740,7 @@ export function App() {
                 className="cursor-zoom-in group"
               >
                 <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg"
                     alt="Chị Khánh Vân cùng Tổng Giám Đốc và Phó Tổng Giám Đốc Điều Hành Kênh Đại Lý Manulife Việt Nam trong tiệc tối thân mật"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -1823,7 +1824,7 @@ export function App() {
                       {/* Photo Thumbnail */}
                       {article.image && (
                         <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] ring-1 ring-inset ring-[#181F1C]/[0.06] mb-5">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={article.image}
                             alt={article.title}
                             className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-editorial"
@@ -1957,7 +1958,7 @@ export function App() {
                   className="relative w-[78px] sm:w-[92px] aspect-[2/3] shrink-0 rounded-[3px] overflow-hidden bg-[#EAE7DF] shadow-[0_8px_18px_-4px_rgba(18,24,20,0.22)] ring-1 ring-black/10 cursor-zoom-in group/cover"
                   aria-label={`Xem bìa sách ${book.title}`}
                 >
-                  <img
+                  <img decoding="async"
                     src={book.cover}
                     alt={book.title}
                     loading="lazy"
@@ -2062,7 +2063,7 @@ export function App() {
               className="lg:col-span-7 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[260px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg"
                   alt="Gia đình chị Khánh Vân tại phòng khách"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2085,7 +2086,7 @@ export function App() {
               className="lg:col-span-5 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[260px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg"
                   alt="Gia đình chị Khánh Vân bên sân vườn"
                   className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2120,7 +2121,7 @@ export function App() {
                 media="(min-width: 640px)"
                 srcSet="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Panorama.jpg?v=2"
               />
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/DuLich_ChiVan_BayKhinhKhiCauBinhMinh_Mobile.jpg?v=2"
                 alt="Chị Khánh Vân đón bình minh trên khinh khí cầu tại Cappadocia"
                 className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
@@ -2149,7 +2150,7 @@ export function App() {
               className="lg:col-span-5 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[290px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/DoiThuong_ChiVan_SelfiePhongTapGym.jpg"
                   alt="Chị Khánh Vân rèn luyện thể thao"
                   className="w-full h-full object-cover object-[50%_75%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2172,7 +2173,7 @@ export function App() {
               className="lg:col-span-7 cursor-zoom-in group"
             >
               <div className="overflow-hidden h-[290px] sm:h-[440px] lg:h-[500px] bg-[#EAE7DF] rounded-[4px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg"
                   alt="Chị Khánh Vân cùng chồng du lịch quốc tế"
                   className="w-full h-full object-cover object-[50%_68%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2386,7 +2387,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/PhongDaoTao_ChiVan_ChiaSeTruyenLua.jpg"
                   alt="Chị Khánh Vân đứng lớp đào tạo"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2409,7 +2410,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg"
                   alt="Chúc mừng các Quản lý SM thăng cấp"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2432,7 +2433,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg"
                   alt="Không gian cố vấn chiến lược F1 của chị Khánh Vân"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2455,7 +2456,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/VanPhong_NhomQuanLyTre_LamViecTrenIpad.jpg"
                   alt="Chuyển giao quy trình thực chiến trên iPad"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2478,7 +2479,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg"
                   alt="Văn hóa gắn kết và sự đồng lòng của đội ngũ"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2501,7 +2502,7 @@ export function App() {
               className="cursor-zoom-in group"
             >
               <div className="overflow-hidden aspect-[4/3] bg-[#EAE7DF] rounded-[5px] sm:rounded-[6px] ring-1 ring-inset ring-[#181F1C]/[0.06] shadow-[0_10px_30px_-15px_rgba(10,54,34,0.08)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg"
                   alt="Khoảnh khắc nâng cúp vinh danh"
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
@@ -2963,7 +2964,7 @@ export function App() {
                 {activeArticle.image && (
                   <figure className="my-6">
                     <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[4px] ring-1 ring-inset ring-[#181F1C]/[0.08] shadow-sm">
-                      <img
+                      <img decoding="async"
                         src={activeArticle.image}
                         alt={activeArticle.title}
                         className="w-full h-full object-cover"
@@ -3088,7 +3089,7 @@ export function App() {
               className="max-w-4xl w-full bg-[#FAF9F5] p-3 sm:p-6 rounded-[4px] overflow-hidden"
             >
               <div className="relative bg-[#181F1C] flex items-center justify-center max-h-[70vh] sm:max-h-[75vh] rounded-[2px] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={lightbox.src}
                   alt={lightbox.title}
                   className="max-h-[70vh] sm:max-h-[75vh] w-auto object-contain"

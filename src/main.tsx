@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { LeaderOnboardingPage } from './components/LeaderOnboardingPage';
-import { RegionalSystemPage } from './components/RegionalSystemPage';
 import './index.css';
+
+const App = lazy(() => import('./App'));
+const LeaderOnboardingPage = lazy(() =>
+  import('./components/LeaderOnboardingPage').then((m) => ({
+    default: m.LeaderOnboardingPage,
+  }))
+);
+const RegionalSystemPage = lazy(() =>
+  import('./components/RegionalSystemPage').then((m) => ({
+    default: m.RegionalSystemPage,
+  }))
+);
 
 function RootRouter() {
   const pathname = window.location.pathname.replace(/\/+$/, '').toLowerCase();
@@ -19,7 +28,11 @@ function RootRouter() {
     params.get('form') === 'leader';
 
   if (isLeaderForm) {
-    return <LeaderOnboardingPage />;
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
+        <LeaderOnboardingPage />
+      </Suspense>
+    );
   }
 
   const isRegionalPreview =
@@ -27,10 +40,18 @@ function RootRouter() {
     params.get('preview') === 'vung-khanh-van';
 
   if (isRegionalPreview) {
-    return <RegionalSystemPage />;
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
+        <RegionalSystemPage />
+      </Suspense>
+    );
   }
 
-  return <App />;
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
+      <App />
+    </Suspense>
+  );
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

@@ -4,10 +4,23 @@ import path from 'path';
 const distDir = path.resolve('dist');
 const baseHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 
-const leaderFormHtml = baseHtml
+const baseWithoutHeroPreload = baseHtml.replace(
+  /\s*<link\s+rel="preload"\s+as="image"[\s\S]*?\/>/g,
+  ''
+);
+
+const leaderFormHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân</title>'
+    '<title>Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
+  )
+  .replace(
+    /<link\s+rel="canonical"[^>]*>/,
+    '<link rel="canonical" href="https://www.khanhvanfinance.com/ho-so-quan-ly" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:url"[^>]*>/,
+    '<meta property="og:url" content="https://www.khanhvanfinance.com/ho-so-quan-ly" />'
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
@@ -47,10 +60,18 @@ for (const page of pages) {
   fs.writeFileSync(path.join(distDir, page), leaderFormHtml, 'utf8');
 }
 
-const previewHtml = baseHtml
+const previewHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý</title><meta name="robots" content="noindex, nofollow" />'
+    '<title>Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
+  )
+  .replace(
+    /<link\s+rel="canonical"[^>]*>/,
+    '<link rel="canonical" href="https://www.khanhvanfinance.com/xem-truoc-vung-khanh-van" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:url"[^>]*>/,
+    '<meta property="og:url" content="https://www.khanhvanfinance.com/xem-truoc-vung-khanh-van" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,

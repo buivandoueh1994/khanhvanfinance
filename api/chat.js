@@ -1100,6 +1100,15 @@ export default async function handler(req, res) {
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
+      const safePhone = String(detectedPhone)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      const safeVisitorName = String(visitorName || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
       const headerTitle = testLead
         ? `🧪 <b>[TEST CHATBOT - CHỈ GỬI RIÊNG CHO ANDY]</b>`
         : `🎯 <b>CÓ LEAD SĐT MỚI TỪ WEB KHÁNH VÂN!</b>`;
@@ -1107,8 +1116,8 @@ export default async function handler(req, res) {
       const tgText =
         `${headerTitle}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `📞 <b>SĐT / Zalo:</b> <code>${detectedPhone}</code>\n` +
-        (visitorName ? `👤 <b>Họ tên:</b> ${visitorName}\n` : '') +
+        `📞 <b>SĐT / Zalo:</b> <code>${safePhone}</code>\n` +
+        (safeVisitorName ? `👤 <b>Họ tên:</b> ${safeVisitorName}\n` : '') +
         `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\n\n` +
         `📋 <b>Tóm tắt chi tiết nhu cầu khách hàng:</b>\n` +
         `${safeSummary}`;

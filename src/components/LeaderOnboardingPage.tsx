@@ -198,7 +198,7 @@ const LeaderPreviewCard: React.FC<{ profile: LeaderProfileData }> = ({ profile }
       <div className="grid grid-cols-1 sm:grid-cols-12 items-start">
         <div className="sm:col-span-5 bg-[#F2EFE9] relative aspect-[3/4] w-full">
           {profile.portraitUrl ? (
-            <img
+            <img loading="lazy" decoding="async"
               src={profile.portraitUrl}
               alt={profile.displayName}
               className="w-full h-full object-cover object-top"
@@ -539,7 +539,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
                           className="w-24 h-24 rounded-[3px] overflow-hidden border border-[#DCD8CE] block bg-white hover:opacity-90"
                           title={`Ảnh bổ sung ${idx + 1}`}
                         >
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={url}
                             alt={`Ảnh phụ ${idx + 1}`}
                             className="w-full h-full object-cover"
@@ -993,7 +993,7 @@ export const LeaderOnboardingPage: React.FC = () => {
           </div>
 
           <figure className="rounded-[4px] overflow-hidden border border-[#E4E1D8] bg-white shadow-[0_14px_34px_-22px_rgba(10,54,34,0.25)]">
-            <img
+            <img decoding="async"
               src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
               alt="Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân tại Manulife Việt Nam"
               className="w-full aspect-[16/10] object-cover object-center"
@@ -1244,7 +1244,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 >
                   {localPortraitPreview || form.portraitUrl ? (
                     <>
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={localPortraitPreview || form.portraitUrl}
                         alt="Xem trước chân dung"
                         className="absolute inset-0 w-full h-full object-cover object-top"
@@ -1321,7 +1321,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                         key={url}
                         className="relative w-20 h-20 rounded-[3px] overflow-hidden border border-[#DCD8CE] bg-[#FAF9F5] group"
                       >
-                        <img
+                        <img loading="lazy" decoding="async"
                           src={url}
                           alt={`Ảnh bổ sung ${idx + 1}`}
                           className="w-full h-full object-cover"
