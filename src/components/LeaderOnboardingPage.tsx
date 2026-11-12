@@ -184,11 +184,19 @@ async function uploadImageDirect(
 // ============================================================================
 // EDITORIAL LEADER PREVIEW CARD (Shared between Confirmation & Admin View)
 // ============================================================================
+function formatExperienceDisplay(raw = '') {
+  const trimmed = raw.trim();
+  if (!trimmed) return '';
+  if (/^\d+$/.test(trimmed)) return `${trimmed} năm kinh nghiệm`;
+  return trimmed;
+}
+
 const LeaderPreviewCard: React.FC<{ profile: LeaderProfileData }> = ({ profile }) => {
+  const formattedExp = formatExperienceDisplay(profile.experienceSummary);
   return (
     <div className="bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden shadow-[0_18px_45px_-22px_rgba(10,54,34,0.22)]">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="sm:col-span-5 bg-[#F2EFE9] relative aspect-[3/4] sm:aspect-auto sm:min-h-[340px]">
+      <div className="grid grid-cols-1 sm:grid-cols-12 items-start">
+        <div className="sm:col-span-5 bg-[#F2EFE9] relative aspect-[3/4] w-full">
           {profile.portraitUrl ? (
             <img
               src={profile.portraitUrl}
@@ -231,14 +239,14 @@ const LeaderPreviewCard: React.FC<{ profile: LeaderProfileData }> = ({ profile }
                 )}
             </div>
 
-            {(profile.joinedYear || profile.experienceSummary || profile.priorBackground) && (
+            {(profile.joinedYear || formattedExp || profile.priorBackground) && (
               <div className="pt-2 border-t border-[#ECE9E0] space-y-1 text-xs text-[#56605B]">
-                {(profile.joinedYear || profile.experienceSummary) && (
+                {(profile.joinedYear || formattedExp) && (
                   <p>
                     <span className="font-medium text-[#181F1C]">Hành trình: </span>
                     {[
                       profile.joinedYear ? `Gia nhập Manulife ${profile.joinedYear}` : '',
-                      profile.experienceSummary,
+                      formattedExp,
                     ]
                       .filter(Boolean)
                       .join(' • ')}
@@ -260,7 +268,7 @@ const LeaderPreviewCard: React.FC<{ profile: LeaderProfileData }> = ({ profile }
             )}
 
             {profile.story && (
-              <p className="text-xs sm:text-[13px] text-[#28322D] leading-relaxed whitespace-pre-line line-clamp-5">
+              <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed whitespace-pre-line">
                 {profile.story}
               </p>
             )}
