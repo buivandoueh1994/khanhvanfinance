@@ -1,0 +1,16 @@
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /xem-truoc-vung-khanh-van
+Disallow: /ho-so-quan-ly
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /xem-truoc-vung-khanh-van
+Disallow: /ho-so-quan-ly
+
+Sitemap: https://www.khanhvanfinance.com/sitemap.xml
