@@ -1080,6 +1080,7 @@ export default async function handler(req, res) {
       })
     );
 
+    let isTestLeadFlag = false;
     // ONLY send notification to Telegram & record in web_leads if client left their phone number!
     if (detectedPhone) {
       const testLead = isTestChatLead({
@@ -1091,6 +1092,7 @@ export default async function handler(req, res) {
         message: cleanMsg,
         history,
       });
+      isTestLeadFlag = testLead;
 
       const leadSummary = await summaryPromise;
       const safeSummary = leadSummary
@@ -1141,6 +1143,7 @@ export default async function handler(req, res) {
       matchedVideos: matchedVideoCodes,
       suggestedQuestion: suggestedQuestion || null,
       detectedPhone: detectedPhone || null,
+      testMode: isTestLeadFlag,
     });
   } catch (err) {
     console.error('Chat API error:', err);

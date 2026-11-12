@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Play, Send, Sparkles, X } from 'lucide-react';
 import { VIDEO_LIBRARY, VideoItem } from '../data/videos';
+import { trackEvent, trackLeadConversion } from '../utils/analytics';
 
 interface MatchedVideoRef {
   id: string;
@@ -151,6 +152,9 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
     setMessages(nextHistory);
     setInputValue('');
     setIsLoading(true);
+    trackEvent('chatbot_message', {
+      turn_count: nextHistory.filter((m) => m.role === 'user').length,
+    });
 
     try {
       const res = await fetch('/api/chat', {
@@ -166,6 +170,14 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
 
       if (res.ok) {
         const data = await res.json();
+        if (data.detectedPhone && !data.testMode) {
+          trackLeadConversion({
+            source: 'chatbot',
+            phone: data.detectedPhone,
+            textContext: text,
+            isTest: Boolean(data.testMode),
+          });
+        }
         const botMsg: ChatMessage = {
           id: 'b-' + Date.now(),
           role: 'assistant',
@@ -206,7 +218,10 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
           {/* Subtle executive status pill (shown on tablet/desktop to keep mobile bottom bar uncluttered) */}
           <div
             className="hidden sm:flex mb-1.5 bg-[#FAF9F5]/90 backdrop-blur-md text-[#28322D] border border-[#00A758]/25 px-2.5 py-0.5 rounded-full shadow-[0_2px_8px_rgba(10,54,34,0.06)] text-[10px] font-normal items-center gap-1.5 transition-all hover:scale-102 cursor-pointer"
-            onClick={() => setIsOpen(true)}
+            onClick={() => {
+              setIsOpen(true);
+              trackEvent('chatbot_open', { trigger: 'status_pill' });
+            }}
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75" />
@@ -218,7 +233,10 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
 
           <button
             type="button"
-            onClick={() => setIsOpen(true)}
+            onClick={() => {
+              setIsOpen(true);
+              trackEvent('chatbot_open', { trigger: 'floating_button' });
+            }}
             className="group relative flex items-center gap-2 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_6px_20px_rgba(10,54,34,0.28)] border border-[#00A758]/40 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
             aria-label="Mở Chat với Khánh Vân"
           >

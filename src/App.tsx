@@ -15,6 +15,7 @@ import {
 import { VIDEO_LIBRARY, VideoItem } from './data/videos';
 import { VideoLibrarySection } from './components/VideoLibrarySection';
 import { AiAdvisorWidget } from './components/AiAdvisorWidget';
+import { trackEvent, trackLeadConversion } from './utils/analytics';
 
 const FACEBOOK_URL = 'https://www.facebook.com/nguyen.t.van.9250?locale=vi_VN';
 const ZALO_URL = 'https://zalo.me/0931579771';
@@ -1021,6 +1022,11 @@ export function App() {
 
   const openArticle = useCallback((article: Article, pushHistory = true) => {
     setActiveArticle(article);
+    trackEvent('article_view', {
+      article_id: article.id,
+      article_title: article.title,
+      article_category: article.category,
+    });
     if (pushHistory && typeof window !== 'undefined') {
       const newUrl = `${window.location.origin}/?article=${encodeURIComponent(article.id)}`;
       window.history.pushState({ articleId: article.id }, '', newUrl);
@@ -1073,6 +1079,11 @@ export function App() {
   const openVideo = useCallback((video: VideoItem, pushHistory = true) => {
     setActiveArticle(null);
     setActiveVideo(video);
+    trackEvent('video_view', {
+      video_id: video.id,
+      video_title: video.title,
+      video_category: video.category,
+    });
     if (pushHistory && typeof window !== 'undefined') {
       const newUrl = `${window.location.origin}/?video=${encodeURIComponent(video.id)}`;
       window.history.pushState({ videoId: video.id }, '', newUrl);
@@ -2609,6 +2620,12 @@ export function App() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     setSubmitted(true);
+                    trackLeadConversion({
+                      source: 'contact_form',
+                      topic: formData.topic,
+                      phone: formData.phone,
+                      textContext: `${formData.fullName} ${formData.topic} ${formData.note}`,
+                    });
                     fetch('/api/lead', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
