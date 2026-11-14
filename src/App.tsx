@@ -955,9 +955,6 @@ export function App() {
     background: 'Ngân hàng / Tài chính (Banker)',
     note: '',
   });
-  const [formEntryPoint, setFormEntryPoint] = useState('Form Đăng ký Tư vấn (#lien-he)');
-  const [phoneError, setPhoneError] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -1111,8 +1108,6 @@ export function App() {
   const handleAskVideoQuestion = useCallback(
     (video: VideoItem) => {
       closeVideo(false);
-      setSubmitted(false);
-      setFormEntryPoint(`Thư viện Video: ${video.title}`);
       setFormData((prev) => ({
         ...prev,
         topic:
@@ -1146,18 +1141,6 @@ export function App() {
       const found = ARTICLES.find((a) => a.id === targetId);
       if (found) {
         openArticle(found, false);
-        return;
-      }
-    }
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const hashId = window.location.hash.replace(/^#/, '');
-      if (hashId === 'lien-he' || hashId === 'dong-hanh') {
-        if (document.referrer.includes('/xem-truoc-vung-khanh-van')) {
-          setFormEntryPoint('Trang Hệ thống Vùng Khánh Vân');
-        }
-        setTimeout(() => {
-          document.getElementById(hashId)?.scrollIntoView({ behavior: 'smooth' });
-        }, 180);
       }
     }
   }, [getArticleIdFromUrl, getVideoIdFromUrl, openArticle, openVideo]);
@@ -1298,10 +1281,6 @@ export function App() {
           <div className="hidden sm:flex items-center gap-5 shrink-0">
             <a
               href="#lien-he"
-              onClick={() => {
-                setSubmitted(false);
-                setFormEntryPoint('Nút Liên hệ riêng (Header)');
-              }}
               className="whitespace-nowrap inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
             >
               <span>Liên hệ riêng</span>
@@ -1341,11 +1320,7 @@ export function App() {
                 <div className="pt-4 flex items-center justify-between">
                   <a
                     href="#lien-he"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setSubmitted(false);
-                      setFormEntryPoint('Menu Mobile — Liên hệ riêng');
-                    }}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-xs uppercase tracking-[0.2em] text-[#008746] font-medium min-h-[44px] flex items-center"
                   >
                     Liên hệ riêng &rarr;
@@ -1439,10 +1414,6 @@ export function App() {
               <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-5">
                 <a
                   href="#lien-he"
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormEntryPoint('Nút Đặt lịch trao đổi 1-1 (Đầu trang)');
-                  }}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 shadow-[0_12px_24px_-8px_rgba(10,54,34,0.3)] hover:shadow-[0_16px_32px_-8px_rgba(0,135,70,0.35)] rounded-[3px] min-h-[44px]"
                 >
                   <span>Đặt lịch trao đổi 1-1</span>
@@ -2275,14 +2246,12 @@ export function App() {
               <div className="pt-8">
                 <a
                   href="#lien-he"
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormEntryPoint('Mục Hợp tác — Đặt lịch cố vấn Gia sản');
+                  onClick={() =>
                     setFormData({
                       ...formData,
                       topic: 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
-                    });
-                  }}
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
                 >
                   <span>Đặt lịch cố vấn riêng</span>
@@ -2333,14 +2302,12 @@ export function App() {
               <div className="pt-8">
                 <a
                   href="#lien-he"
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormEntryPoint('Mục Hợp tác — Đăng ký đồng hành F1');
+                  onClick={() =>
                     setFormData({
                       ...formData,
                       topic: 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)',
-                    });
-                  }}
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#008746] hover:bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
                 >
                   <span>Đăng ký đồng hành F1</span>
@@ -2391,14 +2358,12 @@ export function App() {
               <div className="pt-8">
                 <a
                   href="#lien-he"
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormEntryPoint('Mục Hợp tác — Liên hệ lịch đào tạo');
+                  onClick={() =>
                     setFormData({
                       ...formData,
                       topic: 'Mời Đào tạo / Chia sẻ Sự kiện Doanh nghiệp',
-                    });
-                  }}
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#181F1C] hover:bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors rounded-[2px]"
                 >
                   <span>Liên hệ lịch đào tạo</span>
@@ -2653,64 +2618,28 @@ export function App() {
                 </div>
               ) : (
                 <form
-                  onSubmit={async (e) => {
+                  onSubmit={(e) => {
                     e.preventDefault();
-                    if (isSubmitting) return;
-
-                    const normalizedPhone = formData.phone
-                      .trim()
-                      .replace(/[\s.\-()]/g, '')
-                      .replace(/^\+?84/, '0');
-
-                    if (!/^0[35789]\d{8}$/.test(normalizedPhone)) {
-                      setPhoneError(
-                        'Vui lòng nhập đúng số điện thoại / Zalo 10 số tại Việt Nam (bắt đầu bằng 03, 05, 07, 08, 09).'
-                      );
-                      return;
-                    }
-
-                    setPhoneError('');
-                    setIsSubmitting(true);
-                    setFormData((prev) => ({ ...prev, phone: normalizedPhone }));
-
+                    setSubmitted(true);
                     trackLeadConversion({
                       source: 'contact_form',
                       topic: formData.topic,
-                      phone: normalizedPhone,
+                      phone: formData.phone,
                       textContext: `${formData.fullName} ${formData.topic} ${formData.note}`,
                     });
-
-                    const sessionId =
-                      typeof window !== 'undefined'
-                        ? localStorage.getItem('kv_chat_session_id') || ''
-                        : '';
-                    const pageUrl =
-                      typeof window !== 'undefined' ? window.location.href : '';
-
-                    try {
-                      await fetch('/api/lead', {
-                        method: 'POST',
-                        keepalive: true,
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                          sessionId,
-                          fullName: formData.fullName.trim(),
-                          phone: normalizedPhone,
-                          email: formData.email.trim(),
-                          topic: formData.topic,
-                          background: formData.background,
-                          note: formData.note.trim(),
-                          source: 'contact_form',
-                          entryPoint: formEntryPoint,
-                          pageUrl,
-                        }),
-                      });
-                    } catch {
-                      // Even on transient client abort, keepalive allows background completion
-                    } finally {
-                      setIsSubmitting(false);
-                      setSubmitted(true);
-                    }
+                    fetch('/api/lead', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        fullName: formData.fullName,
+                        phone: formData.phone,
+                        email: formData.email,
+                        topic: formData.topic,
+                        background: formData.background,
+                        note: formData.note,
+                        source: 'contact_form',
+                      }),
+                    }).catch(() => {});
                   }}
                   className="space-y-8"
                 >
@@ -2734,29 +2663,23 @@ export function App() {
                       </label>
                       <input
                         type="tel"
-                        inputMode="tel"
                         required
                         placeholder="090x xxx xxx"
                         value={formData.phone}
-                        onChange={(e) => {
-                          if (phoneError) setPhoneError('');
-                          setFormData({ ...formData, phone: e.target.value });
-                        }}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="editorial-input"
                       />
-                      {phoneError && (
-                        <p className="text-xs text-[#B42318] mt-1.5 leading-snug">{phoneError}</p>
-                      )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-[10px] uppercase tracking-[0.2em] text-[#858E89] mb-1">
-                        Địa chỉ Email (không bắt buộc)
+                        Địa chỉ Email *
                       </label>
                       <input
                         type="email"
+                        required
                         placeholder="email@domain.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -2823,10 +2746,9 @@ export function App() {
                   <div className="pt-2 space-y-3">
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] disabled:opacity-65 text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3 min-h-[44px]"
+                      className="px-10 py-4 bg-[#0A3622] hover:bg-[#008746] text-white text-[11px] uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-3 min-h-[44px]"
                     >
-                      <span>{isSubmitting ? 'Đang gửi thông tin...' : 'Gửi lời nhắn'}</span>
+                      <span>Gửi lời nhắn</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                     <p className="text-[11px] text-[#858E89] font-light leading-relaxed flex items-center gap-1.5 pt-1">
@@ -3135,33 +3057,13 @@ export function App() {
                       Bạn quan tâm đến cơ chế chuyển giao gia sản hoặc tối ưu dòng tiền dài hạn?
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const articleTitle = activeArticle.title;
-                      const articleCategory = activeArticle.category;
-                      closeArticle();
-                      setSubmitted(false);
-                      setFormEntryPoint(`Bài viết: ${articleTitle}`);
-                      setFormData((prev) => ({
-                        ...prev,
-                        topic:
-                          articleCategory === 'Phát triển Sự nghiệp' ||
-                          articleCategory === 'Kỷ luật Bản thân'
-                            ? 'Đồng hành Phát triển Quản lý Kế cận (Mentorship F1)'
-                            : 'Cố vấn Hoạch định Tài chính & Gia sản Gia đình',
-                        note:
-                          prev.note ||
-                          `Tôi vừa đọc bài viết "${articleTitle}" và muốn đăng ký trao đổi 1-1.`,
-                      }));
-                      setTimeout(() => {
-                        document.getElementById('lien-he')?.scrollIntoView({ behavior: 'smooth' });
-                      }, 120);
-                    }}
+                  <a
+                    href="#dong-hanh"
+                    onClick={() => closeArticle()}
                     className="inline-flex items-center justify-center px-5 py-3.5 sm:py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] active:scale-[0.98] transition-all rounded-[2px] shrink-0 text-center font-medium min-h-[44px]"
                   >
                     Đặt Lịch Tham Vấn 1-1
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
