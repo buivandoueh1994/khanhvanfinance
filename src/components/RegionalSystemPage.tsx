@@ -597,7 +597,7 @@ export const RegionalSystemPage: React.FC = () => {
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <a
-              href="/#dong-hanh"
+              href="/#lien-he"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#FAF9F5] text-[#0A3622] hover:bg-[#E8D3A6] text-xs uppercase tracking-[0.18em] font-semibold rounded-[2px] transition-colors"
             >
               <span>Đặt Lịch Trò Chuyện 1-1 Cùng Khánh Vân</span>

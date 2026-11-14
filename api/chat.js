@@ -2,6 +2,11 @@
 // Hybrid AI Advisor (Core Persona + Master Playbook + Smart Retrieval + Multi-turn Memory + Conditional Telegram Lead Alert)
 
 import fs from 'fs';
+import {
+  escapeHtml,
+  isTestLeadInput,
+  sendLeadTelegramAlert,
+} from './_telegram.js';
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://paaphwfpoiiowmthxtlp.supabase.co';
 
@@ -59,32 +64,6 @@ const ANTHROPIC_API_KEY = (
   ''
 ).trim();
 
-const TELEGRAM_BOT_TOKEN = (process.env.TELEGRAM_BOT_TOKEN || '').trim();
-// Lead alerts for real customers go to the shared Telegram group "Lead Web Chị Vân" (Andy + Chị Khánh Vân + team).
-// Override with env TELEGRAM_LEAD_CHAT_IDS (comma-separated) if the group ever changes.
-const LEAD_CHAT_IDS = (process.env.TELEGRAM_LEAD_CHAT_IDS || '-5171790211')
-  .split(',')
-  .map((s) => s.trim())
-  .filter(Boolean);
-
-// Personal Telegram routing for test messages (so testing never disturbs Chị Vân in the shared group)
-const PERSONAL_TEST_CHAT_ID = (process.env.TELEGRAM_TEST_CHAT_ID || '7603716054').trim();
-const PERSONAL_TEST_BOT_TOKEN =
-  (process.env.TELEGRAM_TEST_BOT_TOKEN || '').trim() ||
-  Buffer.from('b1phY2pFbkZMcVRYRVR2MlRXQi0wRm1XcG10VXhlTDlGQUE6MTU3MDEzODcyOQ==', 'base64')
-    .toString('utf8')
-    .split('')
-    .reverse()
-    .join('');
-
-const TEST_PHONES = new Set([
-  '0931212321',
-  '0328238348',
-  '0123456789',
-  '0900000000',
-  '0999999999',
-]);
-
 function isTestChatLead({
   isTest = false,
   testMode = false,
@@ -94,18 +73,20 @@ function isTestChatLead({
   message = '',
   history = [],
 }) {
-  if (isTest === true || testMode === true) return true;
-  if (/^test[-_]/i.test(String(sessionId).trim())) return true;
-  const cleanPhone = String(phone).replace(/[\s.\-()]/g, '');
-  if (TEST_PHONES.has(cleanPhone)) return true;
   const userMessages = [
-    visitorName,
     message,
     ...(Array.isArray(history)
       ? history.filter((m) => m.role === 'user').map((m) => m.content || '')
       : []),
   ].join(' ');
-  return /(\[test|\btest\b|kiểm tra hệ thống|tin nhắn test|nháp|demo\b)/i.test(userMessages);
+  return isTestLeadInput({
+    isTest,
+    testMode,
+    sessionId,
+    fullName: visitorName,
+    phone,
+    textContext: userMessages,
+  });
 }
 
 // Pre-load bundled knowledge angles in memory (0ms latency)
@@ -287,50 +268,9 @@ function retrieveRelevantAngles(query, history = [], allAngles = [], topK = 4) {
   return scored.filter((s) => s.score >= 10).slice(0, topK);
 }
 
-// Fast Telegram notification to the lead group (only called when a valid phone number is detected)
-// Auto-follows group -> supergroup migration (chat_id changes to -100...)
-async function sendTelegramTo(chatId, text, botToken = TELEGRAM_BOT_TOKEN) {
-  if (!botToken) return false;
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000);
-  try {
-    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: String(chatId),
-        text,
-        parse_mode: 'HTML',
-        disable_web_page_preview: true,
-      }),
-      signal: controller.signal,
-    });
-    if (res.ok) return true;
-    const data = await res.json().catch(() => ({}));
-    const migrateTo = data?.parameters?.migrate_to_chat_id;
-    if (migrateTo) {
-      console.warn(`Telegram group ${chatId} migrated to ${migrateTo}. Update TELEGRAM_LEAD_CHAT_IDS.`);
-      return sendTelegramTo(migrateTo, text, botToken);
-    }
-    console.error('Telegram send failed:', chatId, data?.description);
-    return false;
-  } catch (e) {
-    console.error('Telegram send error:', chatId, e.message);
-    return false;
-  } finally {
-    clearTimeout(timeoutId);
-  }
-}
-
+// Fast Telegram notification to all configured recipients (only called when a valid phone number is detected)
 async function sendTelegramNotification(text, isTest = false) {
-  if (isTest) {
-    return sendTelegramTo(PERSONAL_TEST_CHAT_ID, text, PERSONAL_TEST_BOT_TOKEN);
-  }
-  if (!TELEGRAM_BOT_TOKEN || LEAD_CHAT_IDS.length === 0) return false;
-  const results = await Promise.all(
-    LEAD_CHAT_IDS.map((id) => sendTelegramTo(id, text, TELEGRAM_BOT_TOKEN))
-  );
-  return results.some(Boolean);
+  return sendLeadTelegramAlert(text, isTest);
 }
 
 // Clean text: strip raw markdown artifacts (**bold**, headers, stray asterisks)
@@ -1095,49 +1035,45 @@ export default async function handler(req, res) {
       isTestLeadFlag = testLead;
 
       const leadSummary = await summaryPromise;
-      const safeSummary = leadSummary
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-
-      const safePhone = String(detectedPhone)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-      const safeVisitorName = String(visitorName || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
+      const safeSummary = escapeHtml(leadSummary);
+      const safePhone = escapeHtml(detectedPhone);
+      const safeVisitorName = escapeHtml(visitorName || '');
+      const zaloDigits = String(detectedPhone).replace(/\D/g, '');
+      const zaloLinkHtml = /^0\d{9}$/.test(zaloDigits)
+        ? ` • <a href="https://zalo.me/${zaloDigits}">Mở Zalo kết bạn</a>`
+        : '';
 
       const headerTitle = testLead
         ? `🧪 <b>[TEST CHATBOT - CHỈ GỬI RIÊNG CHO ANDY]</b>`
-        : `🎯 <b>CÓ LEAD SĐT MỚI TỪ WEB KHÁNH VÂN!</b>`;
+        : `💬 <b>CÓ LEAD SĐT MỚI TỪ CHATBOT WEBSITE!</b>`;
 
       const tgText =
         `${headerTitle}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `📞 <b>SĐT / Zalo:</b> <code>${safePhone}</code>\n` +
+        `📞 <b>SĐT / Zalo:</b> <code>${safePhone}</code>${zaloLinkHtml}\n` +
         (safeVisitorName ? `👤 <b>Họ tên:</b> ${safeVisitorName}\n` : '') +
+        `📍 <b>Nguồn:</b> Chatbot Trợ Lý AI Khánh Vân\n` +
         `⏰ <b>Thời gian:</b> ${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\n\n` +
         `📋 <b>Tóm tắt chi tiết nhu cầu khách hàng:</b>\n` +
         `${safeSummary}`;
 
-      sideEffectTasks.push(sendTelegramNotification(tgText, testLead));
-
-      // Also save real leads cleanly into web_leads table (skip test leads so Chị Vân's DB stays clean)
-      if (!testLead) {
-        sideEffectTasks.push(
-          saveLeadFromChatToChiVanDb({
-            sessionId,
-            fullName: visitorName,
-            phone: detectedPhone,
-            topic: 'Tư vấn giải pháp tài chính qua Chatbot',
-            note: safeSummary,
-            source: 'chatbot',
-            telegramNotified: true,
-          })
-        );
-      }
+      sideEffectTasks.push(
+        (async () => {
+          const tgNotified = await sendTelegramNotification(tgText, testLead);
+          // Save real leads cleanly into web_leads table (skip test leads so Chị Vân's DB stays clean)
+          if (!testLead) {
+            await saveLeadFromChatToChiVanDb({
+              sessionId,
+              fullName: visitorName,
+              phone: detectedPhone,
+              topic: 'Tư vấn giải pháp tài chính qua Chatbot',
+              note: safeSummary,
+              source: 'chatbot',
+              telegramNotified: tgNotified,
+            });
+          }
+        })()
+      );
     }
 
     if (sideEffectTasks.length > 0) {
