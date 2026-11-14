@@ -22,8 +22,8 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['"Be Vietnam Pro"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Roboto"', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Roboto"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       transitionTimingFunction: {
         'editorial': 'cubic-bezier(0.16, 1, 0.3, 1)',

@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
     background-color: #FAF9F5;
     color: #181F1C;
-    font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+    font-family: "Roboto", system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -21,8 +21,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  h1, h2 {
+    letter-spacing: -0.015em;
+  }
+
   .font-serif {
     font-variant-numeric: lining-nums;
+  }
+
+  /* Ensure no thin 300-weight text renders fragile like before */
+  .font-light {
+    font-weight: 400;
   }
 }
 
@@ -100,4 +109,19 @@
 
 .manulife-halo-delayed {
   animation: manulifeHaloBreath 3.2s cubic-bezier(0.4, 0, 0.6, 1) 1.6s infinite;
+}
+
+/* Roboto display hierarchy (matching crisp 500/700 weights across all headings) */
+h1.font-serif {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2.font-serif {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h3.font-serif {
+  font-weight: 500;
 }
