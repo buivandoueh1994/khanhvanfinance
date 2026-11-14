@@ -67,21 +67,38 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
-    '<link rel="canonical" href="https://www.khanhvanfinance.com/xem-truoc-vung-khanh-van" />'
+    '<link rel="canonical" href="https://www.khanhvanfinance.com/vung-khanh-van" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:url"[^>]*>/,
-    '<meta property="og:url" content="https://www.khanhvanfinance.com/xem-truoc-vung-khanh-van" />'
+    '<meta property="og:url" content="https://www.khanhvanfinance.com/vung-khanh-van" />'
+  )
+  .replace(
+    /<meta\s+[^>]*name="description"[^>]*>/,
+    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại các khu vực HCM69, MN111, SG168, SG169 cùng văn hóa tư vấn chuẩn mực." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
     '<meta property="og:title" content="Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý" />'
   )
   .replace(
+    /<meta\s+[^>]*name="twitter:title"[^>]*>/,
+    '<meta name="twitter:title" content="Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:description"[^>]*>/,
+    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại các khu vực HCM69, MN111, SG168, SG169 cùng văn hóa tư vấn chuẩn mực." />'
+  )
+  .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
     '<meta property="og:image" content="https://www.khanhvanfinance.com/images/BanDieuHanh_ChiVanCungTapTheQuanLy_OG.jpg" />'
+  )
+  .replace(
+    /<meta\s+[^>]*name="twitter:image"[^>]*>/,
+    '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/BanDieuHanh_ChiVanCungTapTheQuanLy_OG.jpg" />'
   );
 
+fs.writeFileSync(path.join(distDir, 'vung-khanh-van.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtml, 'utf8');
 
 console.log('Generated static route HTML files + private preview page.');

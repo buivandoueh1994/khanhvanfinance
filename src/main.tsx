@@ -36,6 +36,7 @@ function RootRouter() {
   }
 
   const isRegionalPreview =
+    pathname === '/vung-khanh-van' ||
     pathname === '/xem-truoc-vung-khanh-van' ||
     params.get('preview') === 'vung-khanh-van';
 
