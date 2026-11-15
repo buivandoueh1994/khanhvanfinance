@@ -41,7 +41,6 @@ export interface RegionalLeader {
   editorialBio: string[];
   badges: string[];
   specialties: string[];
-  facebookUrl?: string;
   portrait: string;
   gallery: LeaderGalleryItem[];
 }
@@ -217,9 +216,16 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         leaderId: 'bich-tien',
         subNote: 'MBA Bạch Kim • 40+ nhân sự',
       },
+      {
+        name: 'Trà My',
+        role: 'DM',
+        avatar: '/images/leaders/tra-my.jpg',
+        leaderId: 'tra-my',
+        subNote: 'Trưởng Phòng KD • ~20 nhân sự',
+      },
     ],
     moreCountNote:
-      'Cùng các nhánh DM Trà My, DM Hồng Hòa, DM Tiên Lê & đội ngũ SUM/UM chủ lực (Loan Trần, Ngọc Đầy, Huyền Lương, Nguyễn Hoa, Dương Quỳnh, Linh Tằng...)',
+      'Cùng các nhánh DM Hồng Hòa, DM Tiên Lê & đội ngũ SUM/UM chủ lực (Loan Trần, Thiên Vân, Ngọc Đầy, Huyền Lương, Thảo Bùi, Hà Đỗ, Ngọc Anh...)',
   },
   {
     code: 'SG168',
@@ -259,7 +265,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Hơn 60 nhân sự toàn khu vực cùng các nhóm UM Thiên Thanh, Nhuần Vũ, Băng Tâm, Ngọc Trâm...',
+      'Hơn 60 nhân sự toàn khu vực cùng các nhóm UM Thiên Thanh, Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
   },
   {
     code: 'SG169',
@@ -299,7 +305,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhóm kinh doanh UM Dương Lên (MDRT), UM Kim Thi, UM Sen Nguyễn & đội ngũ Cố vấn cấp cao...',
+      'Cùng các nhánh SUM Huyền Nguyễn (Luật sư), SUM Bùi Phước Ngoan, UM Dương Lên (MDRT), UM Kim Thi, UM Sen Nguyễn & đội ngũ Cố vấn...',
   },
   {
     code: 'MN111',
@@ -315,7 +321,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
 
 export const REGIONAL_LEADERS: RegionalLeader[] = [
   // ===========================================================================
-  // KHỐI 1: BAN GIÁM ĐỐC KHU VỰC & TRƯỞNG PHÒNG KINH DOANH (SM • SDM • DM — 9 HỒ SƠ)
+  // KHỐI 1: BAN GIÁM ĐỐC KHU VỰC & TRƯỞNG PHÒNG KINH DOANH (SM • SDM • DM — 10 HỒ SƠ)
   // ===========================================================================
   {
     id: 'dao-minh-phuong',
@@ -350,7 +356,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1DfNXj8XGA/?mibextid=wwXIfr',
     portrait: '/images/leaders/dao-minh-phuong.jpg',
     gallery: [],
   },
@@ -386,7 +391,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Phát triển Giám đốc Kế cận',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1BpCQA1gZT/?mibextid=wwXIfr',
     portrait: '/images/leaders/huyen-trang.jpg',
     gallery: [
       {
@@ -436,7 +440,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1Edjvux281/',
     portrait: '/images/leaders/thuy-liem.jpg',
     gallery: [
       {
@@ -474,7 +477,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['MDRT', 'FC', 'MBA Pro', 'Gắn bó từ 2018'],
     specialties: ['Hoạch định Hưu trí & Học vấn', 'Chăm sóc Sức khỏe Cao cấp'],
-    facebookUrl: 'https://www.facebook.com/dreamhigh.huyenlenguyen',
     portrait: '/images/leaders/le-huyen.jpg',
     gallery: [],
   },
@@ -511,7 +513,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1G1Ew9t7xM/?mibextid=wwXIfr',
     portrait: '/images/leaders/diem-ly.jpg',
     gallery: [],
   },
@@ -549,7 +550,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://web.facebook.com/aotranrh',
     portrait: '/images/leaders/tran-dao.jpg',
     gallery: [
       {
@@ -600,7 +600,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1FmBGw7smU/?mibextid=wwXIfrp',
     portrait: '/images/leaders/kieu-nguyen.jpg',
     gallery: [
       {
@@ -657,7 +656,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/LeTienMeCaChep?mibextid=LQQJ4d',
     portrait: '/images/leaders/bich-tien.jpg',
     gallery: [
       {
@@ -707,7 +705,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Hoạch định Hưu trí & Học vấn',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1MpjfLU7wR/?mibextid=wwXIfr',
     portrait: '/images/leaders/be-nguyen.jpg',
     gallery: [
       {
@@ -724,13 +721,56 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
     ],
   },
+  {
+    id: 'tra-my',
+    index: '10',
+    displayName: 'Trà My',
+    fullName: 'Nguyễn Thị Trà My',
+    roleBadge: 'DM',
+    roleTitle: 'Trưởng Phòng Kinh doanh',
+    tierKey: 'DM',
+    tierLabel: 'Trưởng Phòng Kinh doanh',
+    isSeniorLeadership: true,
+    unitCode: 'HCM69',
+    directLeader: 'SRD Khánh Vân',
+    joinedYear: '2022',
+    tenureLabel: 'Gia nhập 2022 • 3 năm Trợ lý Giám đốc & Phát triển Đội ngũ',
+    industryKey: 'CORP_BIZ',
+    priorBackgroundShort: '3 năm Thư ký kiêm Trợ lý Giám đốc Kinh doanh & Vận hành',
+    priorBackgroundFull:
+      '3 năm kinh nghiệm Thư ký kiêm Trợ lý Giám đốc Kinh doanh — trực tiếp hỗ trợ vận hành, tổ chức đào tạo và phát triển đội ngũ',
+    teamScaleBadge: 'Đội ngũ ~20 nhân sự',
+    highlightNote:
+      'Trưởng thành từ Trợ lý Giám đốc Vùng lên Trưởng Phòng Kinh doanh dẫn dắt gần 20 nhân sự tại Khu vực Hạt nhân HCM69',
+    quote:
+      'Không cần xuất phát điểm hoàn hảo, chỉ cần đủ kiên trì để mỗi ngày trở thành phiên bản tốt hơn của chính mình.',
+    cardSummary:
+      'Gắn bó từ thời sinh viên năm 3 trong vai trò Trợ lý Giám đốc Vùng, bước ra khỏi vùng an toàn để trực tiếp xây dựng phòng kinh doanh gần 20 nhân sự.',
+    editorialBio: [
+      'Cơ duyên đưa Nguyễn Thị Trà My đến với Manulife bắt đầu từ năm 2022 khi còn là sinh viên năm 3 đại học, đảm nhiệm vị trí Thư ký kiêm Trợ lý Giám đốc Kinh doanh cho chị Khánh Vân. Suốt 3 năm làm việc ở hậu trường điều hành, cô có cơ hội quý giá được quan sát trực tiếp cách vận hành một tổ chức kinh doanh chuẩn mực, cách người lãnh đạo rèn giũa kỷ luật và truyền lửa cho đội ngũ.',
+      'Quyết định bước ra khỏi vùng an toàn để trực tiếp dấn thân làm nghề tư vấn và quản lý, gần 2 năm qua Trà My từng bước vượt qua những bỡ ngỡ ban đầu để xây dựng đội ngũ gần 20 nhân sự và thăng tiến lên cương vị Trưởng Phòng Kinh doanh tại HCM69 — kiên định với niềm tin rằng bảo hiểm không đơn thuần là một hợp đồng, mà là hành trình xây dựng niềm tin và giá trị dài lâu.',
+    ],
+    badges: [
+      'Trưởng Phòng Kinh doanh (DM)',
+      'Đội ngũ ~20 Nhân sự',
+      'Quản trị & Vận hành Hệ thống',
+    ],
+    specialties: [
+      'Xây dựng & Đào tạo Đội ngũ',
+      'Bảo vệ Trụ cột Gia đình',
+      'Hoạch định Hưu trí & Học vấn',
+      'Chăm sóc Sức khỏe Cao cấp',
+    ],
+    portrait: '/images/leaders/tra-my.jpg',
+    gallery: [],
+  },
 
   // ===========================================================================
-  // KHỐI 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN (SUM • UM • ADVISOR — 29 HỒ SƠ)
+  // KHỐI 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN (SUM • UM • ADVISOR — 36 HỒ SƠ)
   // ===========================================================================
   {
     id: 'loan-tran',
-    index: '10',
+    index: '11',
     displayName: 'Loan Trần',
     fullName: 'Trần Thị Loan',
     roleBadge: 'SUM',
@@ -762,7 +802,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1ECiGhacqb/?mibextid=wwXIfr',
     portrait: '/images/leaders/loan-tran.jpg',
     gallery: [
       {
@@ -777,7 +816,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'hoang-thuy',
-    index: '11',
+    index: '12',
     displayName: 'Hoàng Thuý',
     fullName: 'Hoàng Thị Kim Thuý',
     roleBadge: 'SUM',
@@ -808,7 +847,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1EtVrroi6P/?mibextid=wwXIfr',
     portrait: '/images/leaders/hoang-thuy.jpg',
     gallery: [
       {
@@ -819,7 +857,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'ngoc-day',
-    index: '12',
+    index: '13',
     displayName: 'Ngọc Đầy',
     fullName: 'Nguyễn Thị Ngọc Đầy',
     roleBadge: 'SUM',
@@ -849,7 +887,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1F2Ku6aSsu/?mibextid=wwXIfr',
     portrait: '/images/leaders/ngoc-day.jpg',
     gallery: [
       {
@@ -868,7 +905,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'huyen-luong',
-    index: '13',
+    index: '14',
     displayName: 'Huyền Lương',
     fullName: 'Lương Thị Thanh Huyền',
     roleBadge: 'SUM',
@@ -898,7 +935,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Trụ cột Gia đình',
       'Hoạch định Hưu trí & Học vấn',
     ],
-    facebookUrl: 'https://www.facebook.com/bongbong.mua.12/',
     portrait: '/images/leaders/huyen-luong.jpg',
     gallery: [
       {
@@ -917,7 +953,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thien-thanh',
-    index: '14',
+    index: '15',
     displayName: 'Thiên Thanh',
     fullName: 'Nguyễn Thị Thiên Thanh',
     roleBadge: 'SUM',
@@ -965,7 +1001,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'duong-thanh-hoa',
-    index: '15',
+    index: '16',
     displayName: 'Dương Thanh Hoa',
     fullName: 'Dương Thị Thanh Hoa',
     roleBadge: 'SUM',
@@ -990,13 +1026,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['MDRT', 'MBA Pro', '15 Năm Ngân Hàng'],
     specialties: ['Bảo vệ Trụ cột Gia đình', 'Hoạch định Hưu trí & Học vấn'],
-    facebookUrl: 'https://www.facebook.com/share/1GrYYeomxu/?mibextid=wwXIfr',
     portrait: '/images/leaders/duong-thanh-hoa.jpg',
     gallery: [],
   },
   {
     id: 'anh-tho',
-    index: '16',
+    index: '17',
     displayName: 'Anh Thơ',
     fullName: 'Nguyễn Tố Anh Thơ',
     roleBadge: 'SUM',
@@ -1040,7 +1075,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'nguyen-hoa',
-    index: '17',
+    index: '18',
     displayName: 'Nguyễn Hoa',
     fullName: 'Nguyễn Thị Hoa',
     roleBadge: 'SUM',
@@ -1070,13 +1105,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/19d51eTfdD/',
     portrait: '/images/leaders/nguyen-hoa.jpg',
     gallery: [],
   },
   {
     id: 'tram-le',
-    index: '18',
+    index: '19',
     displayName: 'Trâm Lê',
     fullName: 'Lê Bảo Trâm',
     roleBadge: 'SUM',
@@ -1106,7 +1140,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/19yX8kkSrC/?mibextid=wwXIfr',
     portrait: '/images/leaders/tram-le.jpg',
     gallery: [
       {
@@ -1121,7 +1154,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'van-nguyen',
-    index: '19',
+    index: '20',
     displayName: 'Vân Nguyễn',
     fullName: 'Nguyễn Thị Vân',
     roleBadge: 'SUM',
@@ -1150,8 +1183,131 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [],
   },
   {
+    id: 'thien-van',
+    index: '21',
+    displayName: 'Thiên Vân',
+    fullName: 'Nguyễn Thanh Thiên Vân',
+    roleBadge: 'SUM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
+    tierKey: 'SUM',
+    tierLabel: 'Trưởng Nhóm Cấp cao',
+    unitCode: 'HCM69',
+    directLeader: 'DM Kiều Nguyễn • SRD Khánh Vân',
+    joinedYear: '2022',
+    tenureLabel: 'Gia nhập 2022 • 16 năm Thư ký Hành chính & Trưởng phòng Kế hoạch Vận hành',
+    industryKey: 'CORP_BIZ',
+    priorBackgroundShort: '16 năm Trưởng phòng Kế hoạch Vận hành & Thư ký Hành chính',
+    priorBackgroundFull:
+      '16 năm kinh nghiệm Thư ký Hành chính và Trưởng phòng Kế hoạch Vận hành doanh nghiệp',
+    teamScaleBadge: 'Đội ngũ 20 nhân sự',
+    highlightNote:
+      'Dẫn dắt đội ngũ 20 nhân sự tại HCM69 với phương châm luôn làm điều đúng đắn và bền vững',
+    quote:
+      'Bảo vệ thu nhập, xây nền tài chính an toàn và đồng hành bền bỉ cùng những người theo nghề tài chính.',
+    cardSummary:
+      'Mang 16 năm kinh nghiệm Trưởng phòng Kế hoạch Vận hành vào sứ mệnh xây dựng đội ngũ 20 nhân sự gắn kết, làm điều đúng đắn tại HCM69.',
+    editorialBio: [
+      'Với 16 năm kinh nghiệm trong lĩnh vực Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chủ động lựa chọn Manulife từ năm 2022. Khi trực tiếp hòa mình vào môi trường làm việc tại Khu vực HCM69 — Hệ thống Vùng Khánh Vân, chị càng thêm tự hào khi trở thành một phần của tập thể giữ vững vị thế Top 1 nhiều năm liền bằng văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
+      'Trực tiếp dẫn dắt đội ngũ 20 nhân sự, Thiên Vân lấy chính văn hóa phát triển lâu dài, minh bạch và tử tế của toàn vùng làm kim chỉ nam trong từng bản kế hoạch bảo vệ thu nhập cho khách hàng cũng như trên hành trình kèm cặp đồng đội.',
+    ],
+    badges: [
+      'Trưởng Nhóm Cấp cao (SUM)',
+      'Đội ngũ 20 Nhân sự',
+      '16 Năm Kế hoạch & Vận hành',
+    ],
+    specialties: [
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/thien-van.jpg',
+    gallery: [],
+  },
+  {
+    id: 'huyen-nguyen',
+    index: '22',
+    displayName: 'Huyền Nguyễn',
+    fullName: 'Nguyễn Thị Huyền',
+    roleBadge: 'SUM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
+    tierKey: 'SUM',
+    tierLabel: 'Trưởng Nhóm Cấp cao',
+    unitCode: 'SG169',
+    directLeader: 'SRD Khánh Vân • Khu vực SG169',
+    joinedYear: '2025',
+    tenureLabel: 'Gia nhập 2025 • Nền tảng Luật sư chuyên nghiệp',
+    industryKey: 'LAW_MED_INS',
+    priorBackgroundShort: 'Luật sư • Chuyên môn Pháp lý & Quy tắc Hợp đồng',
+    priorBackgroundFull:
+      'Luật sư — nền tảng pháp lý vững chắc trong thẩm định quy tắc và quyền lợi hợp đồng bảo hiểm',
+    teamScaleBadge: 'Luật sư • SUM SG169',
+    highlightNote:
+      'Kết hợp tư duy chuẩn xác của một Luật sư với triết lý “Làm đúng trước – Làm giỏi sau” tại Khu vực SG169',
+    quote: 'Cái gì xuất phát từ trái tim sẽ chạm đến trái tim.',
+    cardSummary:
+      'Từ một Luật sư tìm hiểu hợp đồng bảo hiểm cho chính gia đình mình đến hành trình gắn bó và phát triển đội ngũ tại Khu vực SG169.',
+    editorialBio: [
+      'Xuất phát từ nền tảng chuyên môn của một Luật sư, hành trình đến với Manulife của Nguyễn Thị Huyền bắt đầu từ mong muốn tự mình nghiên cứu thấu đáo các điều khoản hợp đồng bảo hiểm cho chính gia đình. Càng tìm hiểu sâu dưới lăng kính pháp lý, chị càng trân trọng giá trị nhân văn và tính bảo vệ thiết thực của bảo hiểm nhân thọ.',
+      'Chính văn hóa con người chân thành và triết lý “Làm đúng trước – Làm giỏi sau” tại Hệ thống Vùng Khánh Vân đã giữ chân chị ở lại và phát triển lên vị trí Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại Khu vực SG169 — luôn lắng nghe và trao gửi giải pháp từ trái tim cùng sự minh bạch pháp lý rõ ràng nhất.',
+    ],
+    badges: [
+      'Trưởng Nhóm Cấp cao (SUM)',
+      'Nền tảng Luật sư',
+      'Minh bạch Pháp lý Hợp đồng',
+    ],
+    specialties: [
+      'Rà soát Pháp lý & Điều khoản Hợp đồng',
+      'Bảo vệ Trụ cột Gia đình',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/huyen-nguyen.jpg',
+    gallery: [],
+  },
+  {
+    id: 'bui-phuoc-ngoan',
+    index: '23',
+    displayName: 'Bùi Phước Ngoan',
+    fullName: 'Bùi Phước Ngoan',
+    roleBadge: 'SUM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
+    tierKey: 'SUM',
+    tierLabel: 'Trưởng Nhóm Cấp cao',
+    unitCode: 'SG169',
+    directLeader: 'SM Huyền Trang',
+    joinedYear: '2025',
+    tenureLabel: 'Gia nhập 2025 • Trưởng thành từ Thư ký Vận hành Hệ thống',
+    industryKey: 'CORP_BIZ',
+    priorBackgroundShort: 'Thư ký Vận hành & Hỗ trợ Phát triển Đội ngũ Kinh doanh',
+    priorBackgroundFull:
+      'Khởi đầu từ vị trí Thư ký vận hành tại Hệ thống Vùng Khánh Vân khi còn là sinh viên năm 3 đại học',
+    teamScaleBadge: 'Thế hệ Quản lý Trẻ SG169',
+    highlightNote:
+      'Gương mặt Quản lý trẻ trưởng thành bài bản từ công tác vận hành nội bộ lên Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại SG169',
+    quote:
+      'Đồng hành bằng sự tận tâm, trách nhiệm và chỉn chu trong từng giải pháp trao gửi đến khách hàng.',
+    cardSummary:
+      'Khởi đầu từ vị trí Thư ký khi còn là sinh viên năm 3, trưởng thành trong môi trường chuyên nghiệp để trở thành Trưởng Nhóm Cấp cao tại SG169.',
+    editorialBio: [
+      'Bùi Phước Ngoan bắt đầu công việc đầu tiên tại Manulife khi vẫn còn là sinh viên năm 3 đại học ở vị trí Thư ký vận hành, từ đó có cơ hội đồng hành sát sao và học hỏi trực tiếp trong môi trường kỷ luật của Hệ thống Vùng Khánh Vân và Khu vực SG169.',
+      'Chính sự chuyên nghiệp, tinh thần hỗ trợ không khoảng cách giữa các thế hệ quản lý đã giúp cô thấu hiểu sâu sắc giá trị thực chất của bảo hiểm nhân thọ. Trên cương vị Trưởng Nhóm Kinh doanh Cấp cao (SUM), Phước Ngoan cam kết đóng góp bằng sự tận tâm, trách nhiệm và tác phong chỉn chu trong từng hồ sơ khách hàng.',
+    ],
+    badges: [
+      'Trưởng Nhóm Cấp cao (SUM)',
+      'Quản lý Kế cận Trẻ SG169',
+      'Vận hành & Đào tạo Đội ngũ',
+    ],
+    specialties: [
+      'Xây dựng & Đào tạo Đội ngũ Trẻ',
+      'Hoạch định Tài chính Cá nhân',
+      'Chăm sóc Sức khỏe Cao cấp',
+    ],
+    portrait: '/images/leaders/bui-phuoc-ngoan.jpg',
+    gallery: [],
+  },
+  {
     id: 'duong-quynh',
-    index: '20',
+    index: '24',
     displayName: 'Dương Quỳnh',
     fullName: 'Nguyễn Ngọc Dương Quỳnh',
     roleBadge: 'UM',
@@ -1188,7 +1344,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1JVD8VBPc3/?mibextid=wwXIfr',
     portrait: '/images/leaders/duong-quynh.jpg',
     gallery: [
       {
@@ -1207,7 +1362,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'dung-grace',
-    index: '21',
+    index: '25',
     displayName: 'Dung Grace',
     fullName: 'Nguyễn Cao Tường Dung',
     roleBadge: 'UM',
@@ -1238,7 +1393,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Nguồn thu Trụ cột',
       'Cố vấn & Đồng hành Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1AB3AmUySu/?mibextid=wwXIfr',
     portrait: '/images/leaders/dung-grace.jpg',
     gallery: [
       {
@@ -1253,7 +1407,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'duong-len',
-    index: '22',
+    index: '26',
     displayName: 'Dương Lên',
     fullName: 'Dương Thị Lên',
     roleBadge: 'UM',
@@ -1279,7 +1433,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['MDRT', 'Quản lý Xuất sắc', '8 Năm Ngân Hàng'],
     specialties: ['Bảo vệ Trụ cột Gia đình', 'Xây dựng & Đào tạo Đội ngũ'],
-    facebookUrl: 'https://www.facebook.com/share/1DdeocmMHS/?mibextid=wwXIfr',
     portrait: '/images/leaders/duong-len.jpg',
     gallery: [
       {
@@ -1298,7 +1451,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'linh-tang',
-    index: '23',
+    index: '27',
     displayName: 'Linh Tằng',
     fullName: 'Tằng Thị Hoài Linh',
     roleBadge: 'UM',
@@ -1328,13 +1481,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/tangthihoai.linh',
     portrait: '/images/leaders/linh-tang.jpg',
     gallery: [],
   },
   {
     id: 'tien-tien',
-    index: '24',
+    index: '28',
     displayName: 'Tiên Tiên',
     fullName: 'Huỳnh Thị Tiên',
     roleBadge: 'UM',
@@ -1364,13 +1516,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/19zMFHWh3w/?mibextid=wwXIfr',
     portrait: '/images/leaders/tien-tien.jpg',
     gallery: [],
   },
   {
     id: 'kim-thi',
-    index: '25',
+    index: '29',
     displayName: 'Kim Thi',
     fullName: 'Đỗ Thị Kim Thi',
     roleBadge: 'UM',
@@ -1401,7 +1552,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1EV1gW3hjE/',
     portrait: '/images/leaders/kim-thi.jpg',
     gallery: [
       {
@@ -1420,7 +1570,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'ha-phi-yen',
-    index: '26',
+    index: '30',
     displayName: 'Hà Phi Yến',
     fullName: 'Hà Phi Yến',
     roleBadge: 'UM',
@@ -1445,7 +1595,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '10 Năm Kế Toán Trưởng'],
     specialties: ['Hoạch định Dòng tiền Gia đình', 'Minh bạch Điều khoản & Quyền lợi'],
-    facebookUrl: 'https://www.facebook.com/share/1QJosBMWCJ/?mibextid=wwXIfr',
     portrait: '/images/leaders/ha-phi-yen.jpg',
     gallery: [
       {
@@ -1464,7 +1613,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thuy-trieu',
-    index: '27',
+    index: '31',
     displayName: 'Thủy Triều',
     fullName: 'Nguyễn Thị Thủy Triều',
     roleBadge: 'UM',
@@ -1493,7 +1642,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/thuytrieu91?mibextid=ZbWKwL',
     portrait: '/images/leaders/thuy-trieu.jpg',
     gallery: [
       {
@@ -1512,7 +1660,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'quynh-thi',
-    index: '28',
+    index: '32',
     displayName: 'Quỳnh Thi',
     fullName: 'Võ Thị Quỳnh Thi',
     roleBadge: 'UM',
@@ -1541,7 +1689,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Trụ cột Gia đình',
       'Chăm sóc Sức khỏe Cao cấp',
     ],
-    facebookUrl: 'https://www.facebook.com/vtqthi/',
     portrait: '/images/leaders/quynh-thi.jpg',
     gallery: [
       {
@@ -1552,7 +1699,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'tam-hoai',
-    index: '29',
+    index: '33',
     displayName: 'Tâm Hoài',
     fullName: 'Tâm Hoài',
     roleBadge: 'UM',
@@ -1583,7 +1730,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    facebookUrl: 'https://www.facebook.com/tam.hoai.5',
     portrait: '/images/leaders/tam-hoai.jpg',
     gallery: [
       {
@@ -1598,7 +1744,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'minh-phuong',
-    index: '30',
+    index: '34',
     displayName: 'Băng Tâm (Minh Phương)',
     fullName: 'Băng Tâm • Minh Phương',
     roleBadge: 'UM',
@@ -1632,7 +1778,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'nhuan-vu',
-    index: '31',
+    index: '35',
     displayName: 'Nhuần Vũ',
     fullName: 'Vũ Thị Nhuần',
     roleBadge: 'UM',
@@ -1661,7 +1807,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chăm sóc Y tế & Viện phí',
       'Hỗ trợ Thủ tục Chi trả Quyền lợi',
     ],
-    facebookUrl: 'https://www.facebook.com/share/19MRiWSNQd/?mibextid=wwXIfr',
     portrait: '/images/leaders/nhuan-vu.jpg',
     gallery: [
       {
@@ -1676,7 +1821,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'sen-nguyen',
-    index: '32',
+    index: '36',
     displayName: 'Sen Nguyễn',
     fullName: 'Nguyễn Thị Sen',
     roleBadge: 'UM',
@@ -1701,7 +1846,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['Manulife Pro Vàng', 'Đội ngũ 8 Nhân sự', '9 Năm Chăm Sóc Khách Hàng'],
     specialties: ['Bảo vệ Trụ cột Gia đình', 'Chăm sóc & Hỗ trợ Dịch vụ Hợp đồng'],
-    facebookUrl: 'https://www.facebook.com/share/19rNDDcvDk/',
     portrait: '/images/leaders/sen-nguyen.jpg',
     gallery: [
       {
@@ -1712,7 +1856,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thao-phuong',
-    index: '33',
+    index: '37',
     displayName: 'Thảo Phương',
     fullName: 'Vũ Ngọc Thảo Phương',
     roleBadge: 'UM',
@@ -1737,13 +1881,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '5 Năm Truyền Thông & Sự Kiện'],
     specialties: ['Hoạch định Tài chính Người Trẻ', 'Bảo vệ Thu nhập & Tích lũy'],
-    facebookUrl: 'https://www.facebook.com/thphuong.bctt/',
     portrait: '/images/leaders/thao-phuong.jpg',
     gallery: [],
   },
   {
     id: 'ngoc-tram',
-    index: '34',
+    index: '38',
     displayName: 'Ngọc Trâm',
     fullName: 'Nguyễn Ngọc Trâm',
     roleBadge: 'UM',
@@ -1768,7 +1911,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Đội ngũ 5 Nhân sự'],
     specialties: ['Xây dựng & Đào tạo Đội ngũ', 'Hoạch định Bảo vệ Gia đình Trẻ'],
-    facebookUrl: 'https://www.facebook.com/share/1A5uZBpPAU/?mibextid=wwXIfr',
     portrait: '/images/leaders/ngoc-tram.jpg',
     gallery: [
       {
@@ -1786,8 +1928,175 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
   },
   {
+    id: 'thao-bui',
+    index: '39',
+    displayName: 'Thảo Bùi',
+    fullName: 'Bùi Thị Thu Thảo',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'HCM69',
+    directLeader: 'DM Trần Đào • SRD Khánh Vân',
+    joinedYear: '2023',
+    tenureLabel: 'Gia nhập 2023 • 20 năm Viện Kiểm nghiệm Thuốc TP.HCM & gần 4 năm BHNT',
+    industryKey: 'LAW_MED_INS',
+    priorBackgroundShort: '20 năm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM',
+    priorBackgroundFull:
+      '20 năm công tác Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM • 3 năm theo dõi kế hoạch lâm nghiệp',
+    teamScaleBadge: '20 năm Ngành Dược',
+    highlightNote:
+      'Mang sự chuẩn xác, cẩn trọng của 20 năm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM vào nghề tư vấn tài chính',
+    quote: 'Tử tế trong tư vấn – Vững vàng trong giải pháp – Trọn vẹn trong đồng hành.',
+    cardSummary:
+      'Sau 20 năm công tác tại Viện Kiểm nghiệm Thuốc TP.HCM, tìm thấy nguồn cảm hứng mới nơi tập thể quy tụ tinh hoa đa ngành nghề của Vùng Khánh Vân.',
+    editorialBio: [
+      'Sau chặng đường 20 năm công tác trong lĩnh vực Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM, Bùi Thị Thu Thảo bén duyên với Manulife từ lời mời tìm hiểu giải pháp bảo vệ người trụ cột của một người đồng nghiệp cũ nay là tư vấn viên thuộc Vùng Khánh Vân. Cho phép bản thân mở lòng trải nghiệm môi trường mới, chị nhanh chóng bị thuyết phục bởi sự hướng dẫn tận tình, văn hóa sẻ chia không giới hạn giữa những đồng nghiệp xuất thân từ tinh hoa nhiều ngành nghề — đặc biệt là nguồn năng lượng chuẩn mực từ người dẫn đầu Khánh Vân.',
+      'Trên cương vị Trưởng Nhóm Kinh doanh (UM) tại HCM69, tâm huyết lớn nhất của Thảo Bùi là thiết kế những giải pháp bảo vệ vừa vặn với từng hoàn cảnh gia đình để chính khách hàng hiểu thấu và tự nguyện lan tỏa giá trị nhân văn của bảo hiểm nhân thọ, đồng thời kiến tạo đội ngũ theo phương châm: “Dẫn dắt bằng sự chân thành, phát triển bằng năng lực, gắn kết bằng trách nhiệm.”',
+    ],
+    badges: [
+      'Trưởng Nhóm Kinh doanh (UM)',
+      '20 Năm Viện Kiểm Nghiệm Thuốc TP.HCM',
+      'Hoạch định Y tế & Gia đình',
+    ],
+    specialties: [
+      'Chăm sóc Sức khỏe & Bệnh Lý Nghiêm Trọng',
+      'Bảo vệ Trụ cột Gia đình',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/thao-bui.jpg',
+    gallery: [
+      {
+        src: '/images/leaders/gallery/thao-bui-1.jpg',
+        caption: 'Trưởng Nhóm Kinh doanh Bùi Thị Thu Thảo tại không gian làm việc Manulife Plaza',
+      },
+      {
+        src: '/images/leaders/gallery/thao-bui-2.jpg',
+        caption: 'Cùng tập thể Quản lý và đồng nghiệp Khu vực HCM69 — Hệ thống Vùng Khánh Vân',
+      },
+      {
+        src: '/images/leaders/gallery/thao-bui-3.jpg',
+        caption: 'Khoảnh khắc vinh danh thăng cấp Trưởng Nhóm Kinh doanh (UM) tại HCM69',
+      },
+    ],
+  },
+  {
+    id: 'ha-do',
+    index: '40',
+    displayName: 'Hà Đỗ',
+    fullName: 'Hà Đỗ',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'HCM69',
+    directLeader: 'SRD Khánh Vân',
+    joinedYear: '2026',
+    tenureLabel: 'Gia nhập 2026 • 18 năm Tài chính – Chứng khoán & Kế toán Quản trị',
+    industryKey: 'FINANCE_ACC',
+    priorBackgroundShort: '18 năm Tài chính – Chứng khoán & Kế toán Quản trị',
+    priorBackgroundFull:
+      '18 năm kinh nghiệm chuyên sâu trong lĩnh vực Tài chính – Chứng khoán và Kế toán Quản trị doanh nghiệp',
+    teamScaleBadge: '18 năm Tài chính – CK',
+    highlightNote:
+      'Chinh phục danh hiệu Manulife Pro Bạc chỉ sau 3 tháng nhờ nền tảng 18 năm Tài chính – Chứng khoán và quy trình bài bản',
+    quote: 'Làm thật, học thật, giá trị thật sẽ tự lên tiếng.',
+    cardSummary:
+      'Dám bước ra thử thách giới hạn sau 18 năm Tài chính – Chứng khoán, chinh phục Pro Bạc chỉ sau 3 tháng bằng số liệu rõ ràng và lời nói thật.',
+    editorialBio: [
+      'Sở hữu bề dày 18 năm kinh nghiệm trong lĩnh vực Tài chính – Chứng khoán và Kế toán Quản trị, Hà Đỗ lựa chọn gia nhập Manulife để thử thách giới hạn bản thân ở một mảng hoạch định tài chính gần gũi và nhân văn hơn với từng gia đình. Nhờ tuân thủ đúng quy trình và học tập bài bản tại Khu vực HCM69, chị nhanh chóng chinh phục cột mốc Manulife Pro Bạc chỉ sau 3 tháng.',
+      'Điều chị trân quý nhất tại Hệ thống Vùng Khánh Vân là sự minh bạch tuyệt đối và tinh thần xem khách hàng như người thân ruột thịt. Nguyên tắc bất di bất dịch của Hà Đỗ là tư vấn dựa trên số liệu rõ ràng và lời nói thật — bởi niềm tin bền vững nhất chỉ đến khi người cố vấn dám nói điều khách hàng thực sự cần nghe, chứ không chỉ điều họ muốn nghe.',
+    ],
+    badges: [
+      'MBA Pro',
+      'Manulife Pro Bạc Sau 3 Tháng',
+      '18 Năm Tài Chính – Chứng Khoán',
+    ],
+    specialties: [
+      'Bảo vệ Trụ cột Gia đình',
+      'Hoạch định Hưu trí & Học vấn',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/ha-do.jpg',
+    gallery: [],
+  },
+  {
+    id: 'ngoc-anh',
+    index: '41',
+    displayName: 'Ngọc Anh',
+    fullName: 'Vũ Thị Ngọc Anh',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'HCM69',
+    directLeader: 'SRD Khánh Vân',
+    joinedYear: '2026',
+    tenureLabel: 'Gia nhập 2026 • 12 năm Đối tác Nhân sự Chiến lược (HRBP)',
+    industryKey: 'HR_EDU',
+    priorBackgroundShort: '12 năm Đối tác Nhân sự Chiến lược (HR Business Partner)',
+    priorBackgroundFull:
+      '12 năm kinh nghiệm Đối tác Nhân sự Chiến lược (HR Business Partner) tại các doanh nghiệp',
+    teamScaleBadge: '12 năm HRBP • MBA Pro',
+    highlightNote:
+      'Chủ động tìm đến Hệ thống Vùng Khánh Vân sau 12 năm làm HR Business Partner • Danh hiệu MBA Pro',
+    quote: 'Phương án bảo hiểm tốt nhất là phương án bảo vệ phù hợp nhất.',
+    cardSummary:
+      'Mang 12 năm kinh nghiệm HR Business Partner chủ động tìm đến Vùng Khánh Vân vì sự đồng điệu trong tinh thần chính trực và thấu hiểu con người.',
+    editorialBio: [
+      'Sau 12 năm đảm nhiệm vai trò Đối tác Nhân sự Chiến lược (HR Business Partner) chuyên đồng hành cùng ban lãnh đạo doanh nghiệp về bài toán con người và phúc lợi, Vũ Thị Ngọc Anh chủ động tìm hiểu và lựa chọn gia nhập Khu vực HCM69 — Hệ thống Vùng Khánh Vân.',
+      'Tại đây, chị tìm thấy sự cộng hưởng trọn vẹn từ tinh thần đoàn kết, tương trợ lẫn nhau giữa các thành viên. Trên cương vị Trưởng Nhóm Kinh doanh (UM) và quản lý MBA Pro, Ngọc Anh luôn đặt sự chính trực, lắng nghe thấu cảm và lợi ích thực chất của khách hàng cũng như đội ngũ lên hàng đầu.',
+    ],
+    badges: [
+      'MBA Pro',
+      'Trưởng Nhóm Kinh doanh (UM)',
+      '12 Năm HR Business Partner',
+    ],
+    specialties: [
+      'Xây dựng & Đào tạo Đội ngũ',
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+    ],
+    portrait: '/images/leaders/ngoc-anh.jpg',
+    gallery: [],
+  },
+  {
+    id: 'xuan-mai',
+    index: '42',
+    displayName: 'Xuân Mai',
+    fullName: 'Trần Xuân Mai',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'SG168',
+    directLeader: 'SM Đào Minh Phương',
+    joinedYear: '2025',
+    tenureLabel: 'Gia nhập 2025 • Trưởng Nhóm Kinh doanh Khu vực SG168',
+    industryKey: 'CORP_BIZ',
+    priorBackgroundShort: 'Phát triển Kinh doanh & Chăm sóc Khách hàng tận tâm',
+    priorBackgroundFull:
+      'Kinh nghiệm phát triển khách hàng và xây dựng nhóm kinh doanh tại Khu vực SG168',
+    teamScaleBadge: 'UM • Khu vực SG168',
+    highlightNote:
+      'Trưởng Nhóm Kinh doanh trẻ đầy nhiệt huyết đồng hành cùng Giám đốc Khu vực Đào Minh Phương tại SG168',
+    quote:
+      'Luôn đồng hành tận tâm để mang đến những giải pháp bảo vệ phù hợp và tốt nhất cho mỗi gia đình khách hàng.',
+    cardSummary:
+      'Bén duyên cùng Khu vực SG168 qua sự dẫn dắt của SM Đào Minh Phương, trân quý văn hóa luôn sẵn sàng nâng đỡ nhau tiến bộ mỗi ngày.',
+    editorialBio: [
+      'Cơ duyên đưa Trần Xuân Mai đến với Manulife Việt Nam bắt đầu từ sự đồng hành và dẫn dắt trực tiếp của Giám đốc Khu vực Đào Minh Phương tại SG168. Bước vào môi trường làm việc của Hệ thống Vùng Khánh Vân, điều khiến Xuân Mai gắn bó sâu sắc chính là văn hóa tập thể luôn sẵn sàng giúp đỡ, sẻ chia nghiệp vụ và tiếp thêm động lực cho nhau trong từng giai đoạn làm nghề.',
+      'Trên vai trò Trưởng Nhóm Kinh doanh (UM), Xuân Mai kiên định với mục tiêu nghiên cứu kỹ lưỡng nhu cầu thực tế để mang đến những giải pháp bảo vệ tối ưu, minh bạch và lâu dài nhất cho từng khách hàng.',
+    ],
+    badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Khu vực SG168'],
+    specialties: ['Bảo vệ Trụ cột Gia đình', 'Chăm sóc Sức khỏe & Tích lũy'],
+    portrait: '/images/leaders/xuan-mai.jpg',
+    gallery: [],
+  },
+  {
     id: 'hong-khanh',
-    index: '35',
+    index: '43',
     displayName: 'Hồng Khánh',
     fullName: 'Văn Thụy Hồng Khánh',
     roleBadge: 'MDRT',
@@ -1816,7 +2125,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Hoạch định Hưu trí & Học vấn',
       'Chăm sóc Sức khỏe Cao cấp',
     ],
-    facebookUrl: 'https://www.facebook.com/share/1Ec9CpjoZU/?mibextid=wwXIfr',
     portrait: '/images/leaders/hong-khanh.jpg',
     gallery: [
       {
@@ -1831,7 +2139,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'xuan-suong',
-    index: '36',
+    index: '44',
     displayName: 'Xuân Sương',
     fullName: 'Dương Thị Xuân Sương',
     roleBadge: 'MBA',
@@ -1864,7 +2172,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thuy-duong',
-    index: '37',
+    index: '45',
     displayName: 'Thuỳ Dương',
     fullName: 'Tôn Nữ Thuỳ Dương',
     roleBadge: 'SFA',
@@ -1894,13 +2202,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Trụ cột Gia đình',
       'Chăm sóc Sức khỏe Cao cấp',
     ],
-    facebookUrl: 'https://www.facebook.com/tonnuthuyduong/',
     portrait: '/images/leaders/thuy-duong.jpg',
     gallery: [],
   },
   {
     id: 'tam-nguyen',
-    index: '38',
+    index: '46',
     displayName: 'Tâm Nguyễn',
     fullName: 'Nguyễn Thị Ngọc Tâm',
     roleBadge: 'MPRO',
@@ -1908,7 +2215,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'ADVISOR',
     tierLabel: 'Chuyên viên Tài chính',
     unitCode: 'SG169',
-    directLeader: 'Ngoan Bùi • SM Huyền Trang',
+    directLeader: 'SUM Bùi Phước Ngoan • SM Huyền Trang',
     joinedYear: '2025',
     tenureLabel: 'Gia nhập 2025 • Controller Maersk & 3 năm tại Nhật Bản',
     industryKey: 'FINANCE_ACC',
@@ -1930,7 +2237,6 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Trụ cột Gia đình',
       'Chăm sóc Sức khỏe Cao cấp',
     ],
-    facebookUrl: 'https://www.facebook.com/share/14swj1v5m5L/?mibextid=wwXIfr',
     portrait: '/images/leaders/tam-nguyen.jpg',
     gallery: [
       {
