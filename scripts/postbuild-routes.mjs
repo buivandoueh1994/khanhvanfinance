@@ -75,7 +75,7 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại các khu vực HCM69, MN111, SG168, SG169 cùng văn hóa tư vấn chuẩn mực." />'
+    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết đội ngũ lãnh đạo & cố vấn." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
@@ -87,7 +87,7 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại các khu vực HCM69, MN111, SG168, SG169 cùng văn hóa tư vấn chuẩn mực." />'
+    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết đội ngũ lãnh đạo & cố vấn." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
