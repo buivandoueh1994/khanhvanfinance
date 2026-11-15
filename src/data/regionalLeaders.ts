@@ -67,6 +67,7 @@ export interface OrgNodeMember {
   avatar?: string;
   leaderId?: string;
   subNote?: string;
+  children?: OrgNodeMember[];
 }
 
 export interface OrgAreaBranch {
@@ -74,7 +75,8 @@ export interface OrgAreaBranch {
   areaLabel: string;
   headName: string;
   headRole: string;
-  headAvatar: string;
+  headAvatar?: string;
+  isOpenEmblem?: boolean;
   headLeaderId?: string;
   isCore?: boolean;
   keyManagers: OrgNodeMember[];
@@ -118,16 +120,24 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     code: 'HCM69',
     title: 'Khu Vực Hạt Nhân HCM69',
     subtitle: 'Đơn vị Nền móng từ 2018',
-    leadName: 'Khánh Vân',
+    leadName: 'Nguyễn Thị Vân (Khánh Vân)',
     leadRole: 'Giám đốc Vùng Cấp cao (SRD)',
     leadPortrait: '/images/leaders/avatars/khanh-van.jpg',
-    coLeadName: 'Minh Phượng',
-    coLeadRole: 'Giám đốc Chi nhánh (BM)',
-    coLeadPortrait: '/images/leaders/avatars/bm-minh-phuong.jpg',
-    scaleBadge: 'Đơn vị Hạt nhân',
+    scaleBadge: 'Open Unit • Hạt nhân',
     description:
-      'Cái nôi đặt nền móng cho văn hóa “Làm đúng trước – Làm giỏi sau” từ năm 2018, quy tụ dàn Giám đốc Chi nhánh (BM), Trưởng Phòng (SDM/DM), Trưởng Nhóm và các thành viên MDRT kỳ cựu.',
+      'Cái nôi đặt nền móng cho văn hóa “Làm đúng trước – Làm giỏi sau” từ năm 2018, trực thuộc SRD Khánh Vân, quy tụ dàn Giám đốc Chi nhánh (BM), Trưởng Phòng (SDM/DM), Trưởng Nhóm và các MDRT kỳ cựu.',
     isCore: true,
+  },
+  {
+    code: 'MN111',
+    title: 'Khu Vực Kinh Doanh MN111',
+    subtitle: 'Trực thuộc Hệ thống Vùng',
+    leadName: 'Ngân Vũ',
+    leadRole: 'Giám đốc Khu vực Cấp cao (PSSM)',
+    leadPortrait: '/images/leaders/avatars/ngan-vu.jpg',
+    scaleBadge: 'Khu vực Cấp cao',
+    description:
+      'Cánh quân chiến lược trực thuộc Hệ thống Vùng Khánh Vân, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành đường dài cùng khách hàng.',
   },
   {
     code: 'SG168',
@@ -153,79 +163,110 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     description:
       'Khởi nguồn từ kỷ luật Kiểm soát viên Ngân hàng, kiên định xây dựng hệ sinh thái bảo hiểm xanh – sạch – đẹp, nơi mỗi tư vấn viên đều vững nền tảng pháp lý và phụng sự khách hàng từ tâm.',
   },
-  {
-    code: 'MN111',
-    title: 'Khu Vực Kinh Doanh MN111',
-    subtitle: 'Trực thuộc Hệ thống Vùng',
-    leadName: 'Ngân Vũ',
-    leadRole: 'Giám đốc Khu vực Cấp cao (PSSM)',
-    leadPortrait: '/images/leaders/avatars/ngan-vu.jpg',
-    scaleBadge: 'Khu vực Cấp cao',
-    description:
-      'Cánh quân chiến lược trực thuộc Hệ thống Vùng Khánh Vân, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành đường dài cùng khách hàng.',
-  },
 ];
 
 export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
   {
     code: 'HCM69',
-    areaLabel: 'Khu Vực Hạt Nhân HCM69',
-    headName: 'Khánh Vân & BM Minh Phượng',
-    headRole: 'SRD & Giám đốc Chi nhánh',
-    headAvatar: '/images/leaders/avatars/bm-minh-phuong.jpg',
+    areaLabel: 'Đơn Vị Hạt Nhân • Open Unit',
+    headName: 'OPEN HCM69',
+    headRole: 'Báo cáo trực tiếp SRD Nguyễn Thị Vân',
+    isOpenEmblem: true,
     isCore: true,
     keyManagers: [
       {
-        name: 'Lê Huyên',
-        role: 'SDM / DM',
-        avatar: '/images/leaders/avatars/le-huyen.jpg',
-        leaderId: 'le-huyen',
-        subNote: 'Từ 2018 • MDRT/FC/MBA',
-      },
-      {
-        name: 'Diễm Ly',
-        role: 'SDM / DM',
-        avatar: '/images/leaders/avatars/diem-ly.jpg',
-        leaderId: 'diem-ly',
-        subNote: 'Nhánh DM Hồng Hòa & UM Dung Grace',
+        name: 'Minh Phượng',
+        role: 'BM',
+        avatar: '/images/leaders/avatars/bm-minh-phuong.jpg',
+        subNote: 'Giám đốc Chi nhánh • BCTT SRD Khánh Vân',
+        children: [
+          {
+            name: 'Trà My',
+            role: 'DM',
+            avatar: '/images/leaders/avatars/tra-my.jpg',
+            leaderId: 'tra-my',
+            subNote: 'Trưởng Phòng Kinh doanh',
+          },
+        ],
       },
       {
         name: 'Trân Phan',
         role: 'SDM',
         avatar: '/images/leaders/avatars/tran-phan.jpg',
-        subNote: 'Nhánh DM Tiên Lê',
+        subNote: 'Trưởng Phòng Cấp cao • BCTT SRD Khánh Vân',
+        children: [
+          {
+            name: 'Tiền Lê (Bích Tiền)',
+            role: 'DM',
+            avatar: '/images/leaders/avatars/bich-tien.jpg',
+            leaderId: 'bich-tien',
+            subNote: 'MBA Pro Bạch Kim • GAMA Global',
+          },
+        ],
       },
       {
-        name: 'Trần Đào',
-        role: 'DM',
-        avatar: '/images/leaders/avatars/tran-dao.jpg',
-        leaderId: 'tran-dao',
-        subNote: '3x MDRT • 3x MBA Pro',
+        name: 'Diễm Ly',
+        role: 'SDM',
+        avatar: '/images/leaders/avatars/diem-ly.jpg',
+        leaderId: 'diem-ly',
+        subNote: 'MDRT • MBA Pro • BCTT SRD Khánh Vân',
+        children: [
+          {
+            name: 'Hồng Hòa',
+            role: 'DM',
+            avatar: '/images/leaders/avatars/hong-hoa.jpg',
+            subNote: 'Trưởng Phòng Kinh doanh',
+          },
+        ],
       },
       {
-        name: 'Kiều Nguyễn',
+        name: 'Lê Huyên',
+        role: 'SDM',
+        avatar: '/images/leaders/avatars/le-huyen.jpg',
+        leaderId: 'le-huyen',
+        subNote: 'Từ 2018 • MDRT • FC • MBA',
+      },
+      {
+        name: 'Minh Kiều (Kiều Nguyễn)',
         role: 'DM',
         avatar: '/images/leaders/avatars/kieu-nguyen.jpg',
         leaderId: 'kieu-nguyen',
         subNote: 'Đại sứ MDRT 2026',
       },
       {
-        name: 'Bích Tiền',
+        name: 'Đào Trần (Trần Đào)',
         role: 'DM',
-        avatar: '/images/leaders/avatars/bich-tien.jpg',
-        leaderId: 'bich-tien',
-        subNote: 'MBA Pro Bạch Kim • GAMA Global',
+        avatar: '/images/leaders/avatars/tran-dao.jpg',
+        leaderId: 'tran-dao',
+        subNote: '3x MDRT • 3x MBA Pro',
       },
       {
-        name: 'Trà My',
-        role: 'DM',
-        avatar: '/images/leaders/avatars/tra-my.jpg',
-        leaderId: 'tra-my',
-        subNote: 'Từ Trợ lý Giám đốc Vùng',
+        name: 'Loan Trần',
+        role: 'SUM',
+        avatar: '/images/leaders/avatars/loan-tran.jpg',
+        leaderId: 'loan-tran',
+        subNote: '3x MDRT • MBA Pro',
+      },
+      {
+        name: 'Dương Quỳnh',
+        role: 'SUM',
+        avatar: '/images/leaders/avatars/duong-quynh.jpg',
+        leaderId: 'duong-quynh',
+        subNote: 'MDRT • Chứng chỉ LIMRA',
       },
     ],
     moreCountNote:
-      'Cùng các nhánh DM Hồng Hòa, DM Tiên Lê & đội ngũ SUM/UM chủ lực (Loan Trần, Thiên Vân, Ngọc Đầy, Huyền Lương, Thảo Bùi, Hà Đỗ, Ngọc Anh...)',
+      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Ngọc Đầy, Huyền Lương, Nguyễn Hoa, Thiên Vân, Linh Tằng, Dung Grace, Thảo Bùi, Hà Đỗ, Ngọc Anh...)',
+  },
+  {
+    code: 'MN111',
+    areaLabel: 'Khu Vực MN111',
+    headName: 'Ngân Vũ',
+    headRole: 'PSSM • Giám đốc Khu vực Cấp cao',
+    headAvatar: '/images/leaders/avatars/ngan-vu.jpg',
+    keyManagers: [],
+    moreCountNote:
+      'Đội ngũ Trưởng Phòng và Trưởng Nhóm Kinh doanh trực thuộc PSSM Ngân Vũ tại khu vực MN111 đang tiếp tục cập nhật hồ sơ trực tuyến.',
   },
   {
     code: 'SG168',
@@ -240,7 +281,16 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         role: 'SDM',
         avatar: '/images/leaders/avatars/thuy-liem.jpg',
         leaderId: 'thuy-liem',
-        subNote: 'MDRT & MBA • Nhánh SUM Thiên Thanh',
+        subNote: 'MDRT • MBA Pro Bạch Kim',
+        children: [
+          {
+            name: 'Thiên Thanh',
+            role: 'SUM',
+            avatar: '/images/leaders/avatars/thien-thanh.jpg',
+            leaderId: 'thien-thanh',
+            subNote: 'MBA Pro • 22 năm Kế toán trưởng',
+          },
+        ],
       },
       {
         name: 'Dương Thanh Hoa',
@@ -265,7 +315,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhóm của Thiên Thanh, Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
+      'Cùng các nhóm UM Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
   },
   {
     code: 'SG169',
@@ -276,18 +326,27 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
     headLeaderId: 'huyen-trang',
     keyManagers: [
       {
-        name: 'Nguyễn Bé',
-        role: 'DM',
-        avatar: '/images/leaders/avatars/be-nguyen.jpg',
-        leaderId: 'be-nguyen',
-        subNote: '2x MBA Pro • 12 năm HCNS',
-      },
-      {
         name: 'Hoàng Thuý',
         role: 'SUM',
         avatar: '/images/leaders/avatars/hoang-thuy.jpg',
         leaderId: 'hoang-thuy',
         subNote: 'MDRT • MBA Vàng',
+        children: [
+          {
+            name: 'Nguyễn Bé',
+            role: 'DM',
+            avatar: '/images/leaders/avatars/be-nguyen.jpg',
+            leaderId: 'be-nguyen',
+            subNote: '2x MBA Pro • 12 năm HCNS',
+          },
+        ],
+      },
+      {
+        name: 'Bùi Phước Ngoan',
+        role: 'SUM',
+        avatar: '/images/leaders/avatars/bui-phuoc-ngoan.jpg',
+        leaderId: 'bui-phuoc-ngoan',
+        subNote: 'Vận hành & Phát triển đội ngũ',
       },
       {
         name: 'Trâm Lê',
@@ -295,6 +354,13 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         avatar: '/images/leaders/avatars/tram-le.jpg',
         leaderId: 'tram-le',
         subNote: '15 năm Tập đoàn Nhật Bản',
+      },
+      {
+        name: 'Huyền Nguyễn',
+        role: 'SUM',
+        avatar: '/images/leaders/avatars/huyen-nguyen.jpg',
+        leaderId: 'huyen-nguyen',
+        subNote: 'Nền tảng Luật sư',
       },
       {
         name: 'Tiên Tiên',
@@ -305,17 +371,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhánh SUM Huyền Nguyễn (Luật sư), SUM Bùi Phước Ngoan, UM Dương Lên (MDRT), UM Kim Thi, UM Sen Nguyễn & đội ngũ Cố vấn...',
-  },
-  {
-    code: 'MN111',
-    areaLabel: 'Khu Vực MN111',
-    headName: 'Ngân Vũ',
-    headRole: 'PSSM • Giám đốc Khu vực Cấp cao',
-    headAvatar: '/images/leaders/avatars/ngan-vu.jpg',
-    keyManagers: [],
-    moreCountNote:
-      'Đội ngũ Trưởng Phòng và Trưởng Nhóm Kinh doanh trực thuộc Khu vực Cấp cao MN111 đang tiếp tục cập nhật hồ sơ trực tuyến.',
+      'Cùng các nhánh UM Dương Lên (MDRT), UM Kim Thi, UM Sen Nguyễn & đội ngũ Cố vấn...',
   },
 ];
 
@@ -627,7 +683,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierLabel: 'Trưởng Phòng Kinh doanh',
     isSeniorLeadership: true,
     unitCode: 'HCM69',
-    directLeader: 'SRD Khánh Vân',
+    directLeader: 'SDM Trân Phan • SRD Khánh Vân',
     joinedYear: '2020',
     tenureLabel: 'Gia nhập 10/2020 • Thạc sĩ & 11 năm Quản lý Chuỗi cung ứng',
     industryKey: 'CORP_BIZ',
@@ -731,7 +787,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierLabel: 'Trưởng Phòng Kinh doanh',
     isSeniorLeadership: true,
     unitCode: 'HCM69',
-    directLeader: 'SRD Khánh Vân',
+    directLeader: 'BM Minh Phượng • SRD Khánh Vân',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • 3 năm Trợ lý Giám đốc & Phát triển Đội ngũ',
     industryKey: 'CORP_BIZ',
@@ -1307,10 +1363,10 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     index: '24',
     displayName: 'Dương Quỳnh',
     fullName: 'Nguyễn Ngọc Dương Quỳnh',
-    roleBadge: 'UM',
-    roleTitle: 'Trưởng Nhóm Kinh doanh',
-    tierKey: 'UM',
-    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    roleBadge: 'SUM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
+    tierKey: 'SUM',
+    tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'HCM69',
     directLeader: 'SRD Khánh Vân',
     joinedYear: '2020',

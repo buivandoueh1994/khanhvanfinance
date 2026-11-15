@@ -682,11 +682,22 @@ export const RegionalSystemPage: React.FC = () => {
                     } ${activeMobileBranch.headLeaderId ? 'cursor-pointer' : ''}`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <img
-                        src={activeMobileBranch.headAvatar}
-                        alt={activeMobileBranch.headName}
-                        className="w-14 h-14 rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
-                      />
+                      {activeMobileBranch.isOpenEmblem ? (
+                        <div className="w-14 h-14 rounded-full border-2 border-[#E8D3A6] bg-[radial-gradient(circle_at_30%_25%,#145C3B,#072618_75%)] text-[#F3E5C2] shadow-sm shrink-0 flex flex-col items-center justify-center leading-none">
+                          <span className="text-[8px] uppercase tracking-[0.22em] text-[#E8D3A6]/90 font-bold">
+                            OPEN
+                          </span>
+                          <span className="font-serif text-[13px] font-semibold tracking-[0.04em] text-white mt-0.5">
+                            {activeMobileBranch.code}
+                          </span>
+                        </div>
+                      ) : (
+                        <img
+                          src={activeMobileBranch.headAvatar}
+                          alt={activeMobileBranch.headName}
+                          className="w-14 h-14 rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
+                        />
+                      )}
                       <div className="min-w-0">
                         <span
                           className={`text-[9.5px] uppercase tracking-[0.16em] font-bold block ${
@@ -723,34 +734,81 @@ export const RegionalSystemPage: React.FC = () => {
                           return (
                             <div
                               key={`mob-${activeMobileBranch.code}-${mgr.name}`}
-                              onClick={() => openLeaderById(mgr.leaderId)}
-                              className={`relative flex items-center gap-3 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] ${
-                                clickable ? 'cursor-pointer active:border-[#0A3622]' : ''
-                              }`}
+                              className="space-y-2"
                             >
-                              <span className="w-3.5 h-[2px] bg-[#CDB98C] absolute -left-3.5 top-1/2 -translate-y-1/2" />
-                              {mgr.avatar && (
-                                <img
-                                  src={mgr.avatar}
-                                  alt={mgr.name}
-                                  className="w-12 h-12 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_6px_rgba(10,54,34,0.08)] shrink-0"
-                                />
-                              )}
-                              <div className="min-w-0 flex-1">
-                                <div className="flex items-center justify-between gap-1.5">
-                                  <span className="text-[12.5px] font-bold text-[#181F1C] truncate">
-                                    {mgr.name}
-                                  </span>
-                                  <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
-                                    {mgr.role}
-                                  </span>
-                                </div>
-                                {mgr.subNote && (
-                                  <p className="text-[11px] text-[#56605B] truncate mt-0.5">
-                                    {mgr.subNote}
-                                  </p>
+                              <div
+                                onClick={() => openLeaderById(mgr.leaderId)}
+                                className={`relative flex items-center gap-3 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] ${
+                                  clickable ? 'cursor-pointer active:border-[#0A3622]' : ''
+                                }`}
+                              >
+                                <span className="w-3.5 h-[2px] bg-[#CDB98C] absolute -left-3.5 top-1/2 -translate-y-1/2" />
+                                {mgr.avatar && (
+                                  <img
+                                    src={mgr.avatar}
+                                    alt={mgr.name}
+                                    className="w-12 h-12 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_6px_rgba(10,54,34,0.08)] shrink-0"
+                                  />
                                 )}
+                                <div className="min-w-0 flex-1">
+                                  <div className="flex items-center justify-between gap-1.5">
+                                    <span className="text-[12.5px] font-bold text-[#181F1C] truncate">
+                                      {mgr.name}
+                                    </span>
+                                    <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
+                                      {mgr.role}
+                                    </span>
+                                  </div>
+                                  {mgr.subNote && (
+                                    <p className="text-[11px] text-[#56605B] truncate mt-0.5">
+                                      {mgr.subNote}
+                                    </p>
+                                  )}
+                                </div>
                               </div>
+
+                              {mgr.children && mgr.children.length > 0 && (
+                                <div className="ml-6 pl-3.5 border-l-2 border-[#D8C89E] space-y-1.5">
+                                  {mgr.children.map((child) => {
+                                    const childClickable = Boolean(child.leaderId);
+                                    return (
+                                      <div
+                                        key={`mob-child-${activeMobileBranch.code}-${mgr.name}-${child.name}`}
+                                        onClick={() => openLeaderById(child.leaderId)}
+                                        className={`relative flex items-center gap-2.5 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] ${
+                                          childClickable
+                                            ? 'cursor-pointer active:border-[#0A3622]'
+                                            : ''
+                                        }`}
+                                      >
+                                        <span className="w-3.5 h-[2px] bg-[#D8C89E] absolute -left-3.5 top-1/2 -translate-y-1/2" />
+                                        {child.avatar && (
+                                          <img
+                                            src={child.avatar}
+                                            alt={child.name}
+                                            className="w-10 h-10 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
+                                          />
+                                        )}
+                                        <div className="min-w-0 flex-1">
+                                          <div className="flex items-center justify-between gap-1.5">
+                                            <span className="text-[12px] font-bold text-[#181F1C] truncate">
+                                              {child.name}
+                                            </span>
+                                            <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
+                                              {child.role}
+                                            </span>
+                                          </div>
+                                          {child.subNote && (
+                                            <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
+                                              {child.subNote}
+                                            </p>
+                                          )}
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              )}
                             </div>
                           );
                         })}
@@ -831,11 +889,22 @@ export const RegionalSystemPage: React.FC = () => {
                             : 'bg-white text-[#181F1C] border-[#E4E1D8]'
                         } ${branch.headLeaderId || count > 0 ? 'cursor-pointer hover:opacity-95' : ''}`}
                       >
-                        <img
-                          src={branch.headAvatar}
-                          alt={branch.headName}
-                          className="w-[62px] h-[62px] rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
-                        />
+                        {branch.isOpenEmblem ? (
+                          <div className="w-[62px] h-[62px] rounded-full border-2 border-[#E8D3A6] bg-[radial-gradient(circle_at_30%_25%,#145C3B,#072618_75%)] text-[#F3E5C2] shadow-sm shrink-0 flex flex-col items-center justify-center leading-none">
+                            <span className="text-[8.5px] uppercase tracking-[0.22em] text-[#E8D3A6]/90 font-bold">
+                              OPEN
+                            </span>
+                            <span className="font-serif text-[14px] font-semibold tracking-[0.04em] text-white mt-0.5">
+                              {branch.code}
+                            </span>
+                          </div>
+                        ) : (
+                          <img
+                            src={branch.headAvatar}
+                            alt={branch.headName}
+                            className="w-[62px] h-[62px] rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
+                          />
+                        )}
                         <div className="min-w-0">
                           <span
                             className={`text-[9.5px] uppercase tracking-[0.16em] font-bold block ${
@@ -864,35 +933,82 @@ export const RegionalSystemPage: React.FC = () => {
                             return (
                               <div
                                 key={`${branch.code}-${mgr.name}`}
-                                onClick={() => openLeaderById(mgr.leaderId)}
-                                className={`flex items-center gap-2.5 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] transition-colors ${
-                                  clickable
-                                    ? 'cursor-pointer hover:border-[#0A3622] group'
-                                    : ''
-                                }`}
+                                className="space-y-1.5"
                               >
-                                {mgr.avatar && (
-                                  <img
-                                    src={mgr.avatar}
-                                    alt={mgr.name}
-                                    className="w-[52px] h-[52px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_8px_rgba(10,54,34,0.08)] shrink-0"
-                                  />
-                                )}
-                                <div className="min-w-0 flex-1">
-                                  <div className="flex items-center justify-between gap-1">
-                                    <span className="text-[12.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
-                                      {mgr.name}
-                                    </span>
-                                    <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
-                                      {mgr.role}
-                                    </span>
-                                  </div>
-                                  {mgr.subNote && (
-                                    <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
-                                      {mgr.subNote}
-                                    </p>
+                                <div
+                                  onClick={() => openLeaderById(mgr.leaderId)}
+                                  className={`flex items-center gap-2.5 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] transition-colors ${
+                                    clickable
+                                      ? 'cursor-pointer hover:border-[#0A3622] group'
+                                      : ''
+                                  }`}
+                                >
+                                  {mgr.avatar && (
+                                    <img
+                                      src={mgr.avatar}
+                                      alt={mgr.name}
+                                      className="w-[52px] h-[52px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_8px_rgba(10,54,34,0.08)] shrink-0"
+                                    />
                                   )}
+                                  <div className="min-w-0 flex-1">
+                                    <div className="flex items-center justify-between gap-1">
+                                      <span className="text-[12.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                        {mgr.name}
+                                      </span>
+                                      <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
+                                        {mgr.role}
+                                      </span>
+                                    </div>
+                                    {mgr.subNote && (
+                                      <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
+                                        {mgr.subNote}
+                                      </p>
+                                    )}
+                                  </div>
                                 </div>
+
+                                {mgr.children && mgr.children.length > 0 && (
+                                  <div className="ml-5 pl-3 border-l-2 border-[#D8C89E] space-y-1.5">
+                                    {mgr.children.map((child) => {
+                                      const childClickable = Boolean(child.leaderId);
+                                      return (
+                                        <div
+                                          key={`desk-child-${branch.code}-${mgr.name}-${child.name}`}
+                                          onClick={() => openLeaderById(child.leaderId)}
+                                          className={`relative flex items-center gap-2 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] transition-colors ${
+                                            childClickable
+                                              ? 'cursor-pointer hover:border-[#0A3622] group'
+                                              : ''
+                                          }`}
+                                        >
+                                          <span className="w-3 h-[2px] bg-[#D8C89E] absolute -left-3 top-1/2 -translate-y-1/2" />
+                                          {child.avatar && (
+                                            <img
+                                              src={child.avatar}
+                                              alt={child.name}
+                                              className="w-[42px] h-[42px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
+                                            />
+                                          )}
+                                          <div className="min-w-0 flex-1">
+                                            <div className="flex items-center justify-between gap-1">
+                                              <span className="text-[11.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                                {child.name}
+                                              </span>
+                                              <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
+                                                {child.role}
+                                              </span>
+                                            </div>
+                                            {child.subNote && (
+                                              <p className="text-[10px] text-[#56605B] truncate mt-0.5">
+                                                {child.subNote}
+                                              </p>
+                                            )}
+                                          </div>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
                             );
                           })
@@ -941,7 +1057,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Từ HCM69 — đơn vị hạt nhân — mô hình quản trị chuyên nghiệp đã được nhân rộng sang SG168, SG169 và MN111.
+                Từ HCM69 — đơn vị hạt nhân — mô hình quản trị chuyên nghiệp đã được nhân rộng sang MN111, SG168 và SG169.
               </p>
             </div>
 
