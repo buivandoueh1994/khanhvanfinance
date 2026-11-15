@@ -589,7 +589,7 @@ export const RegionalSystemPage: React.FC = () => {
                 <img
                   decoding="async"
                   src="/images/leaders/avatars/khanh-van.jpg"
-                  alt="Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao"
+                  alt="SRD Khánh Vân — Giám đốc Vùng Cấp cao"
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center border-2 border-[#E8D3A6] shadow-[0_6px_16px_rgba(0,0,0,0.3)] shrink-0"
                 />
                 <div className="min-w-0">
@@ -597,7 +597,7 @@ export const RegionalSystemPage: React.FC = () => {
                     SENIOR REGIONAL DIRECTOR • SRD
                   </span>
                   <p className="font-serif text-lg sm:text-2xl font-semibold text-white leading-tight mt-0.5">
-                    Nguyễn Thị Vân (Khánh Vân)
+                    Khánh Vân
                   </p>
                   <p className="text-[11px] sm:text-xs text-[#D7E2DC] mt-0.5 leading-snug">
                     Giám đốc Vùng Cấp cao • 4 Khu vực trực thuộc

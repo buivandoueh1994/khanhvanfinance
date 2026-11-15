@@ -120,7 +120,7 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     code: 'HCM69',
     title: 'Khu Vực Hạt Nhân HCM69',
     subtitle: 'Đơn vị Nền móng từ 2018',
-    leadName: 'Nguyễn Thị Vân (Khánh Vân)',
+    leadName: 'Khánh Vân',
     leadRole: 'Giám đốc Vùng Cấp cao (SRD)',
     leadPortrait: '/images/leaders/avatars/khanh-van.jpg',
     scaleBadge: 'Open Unit • Hạt nhân',
@@ -170,7 +170,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
     code: 'HCM69',
     areaLabel: 'Đơn Vị Hạt Nhân • Open Unit',
     headName: 'OPEN HCM69',
-    headRole: 'Báo cáo trực tiếp SRD Nguyễn Thị Vân',
+    headRole: 'Báo cáo trực tiếp cho SRD Khánh Vân',
     isOpenEmblem: true,
     isCore: true,
     keyManagers: [
