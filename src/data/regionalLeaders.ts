@@ -468,7 +468,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Bảo vệ Trụ cột Gia đình',
       'Rà soát Điều khoản & Hồ sơ Bồi thường',
     ],
-    portrait: '/images/leaders/minh-phuong.jpg',
+    portrait: '/images/leaders/minh-phuong.jpg?v=2',
     gallery: [],
   },
   {
