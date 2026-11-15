@@ -137,7 +137,7 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     leadRole: 'Giám đốc Khu vực (SM)',
     leadPortrait: '/images/leaders/avatars/dao-minh-phuong.jpg',
     leadProfileId: 'dao-minh-phuong',
-    scaleBadge: '60+ Nhân sự • 7 Leader',
+    scaleBadge: 'Đội ngũ đa ngành',
     description:
       'Quy tụ đội ngũ quản lý giàu kinh nghiệm từ Kế toán – Kiểm toán, Ngân hàng, Quản trị Nhân sự, Đào tạo và Bồi thường bảo hiểm — tận tâm dìu dắt đồng đội từng bước vững chắc.',
   },
@@ -149,7 +149,7 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     leadRole: 'Giám đốc Khu vực (SM)',
     leadPortrait: '/images/leaders/avatars/huyen-trang.jpg',
     leadProfileId: 'huyen-trang',
-    scaleBadge: 'Chuẩn Ngân hàng • MDRT',
+    scaleBadge: 'Chuẩn mực Ngân hàng',
     description:
       'Khởi nguồn từ kỷ luật Kiểm soát viên Ngân hàng, kiên định xây dựng hệ sinh thái bảo hiểm xanh – sạch – đẹp, nơi mỗi tư vấn viên đều vững nền tảng pháp lý và phụng sự khách hàng từ tâm.',
   },
@@ -200,7 +200,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         role: 'DM',
         avatar: '/images/leaders/avatars/tran-dao.jpg',
         leaderId: 'tran-dao',
-        subNote: '3x MDRT • Đội ngũ 20 nhân sự',
+        subNote: '3x MDRT • 3x MBA Pro',
       },
       {
         name: 'Kiều Nguyễn',
@@ -214,14 +214,14 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         role: 'DM',
         avatar: '/images/leaders/avatars/bich-tien.jpg',
         leaderId: 'bich-tien',
-        subNote: 'MBA Bạch Kim • 40+ nhân sự',
+        subNote: 'MBA Pro Bạch Kim • GAMA Global',
       },
       {
         name: 'Trà My',
         role: 'DM',
         avatar: '/images/leaders/avatars/tra-my.jpg',
         leaderId: 'tra-my',
-        subNote: 'Trưởng Phòng KD • ~20 nhân sự',
+        subNote: 'Từ Trợ lý Giám đốc Vùng',
       },
     ],
     moreCountNote:
@@ -265,7 +265,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Hơn 60 nhân sự toàn khu vực cùng các nhóm UM Thiên Thanh, Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
+      'Cùng các nhóm của Thiên Thanh, Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
   },
   {
     code: 'SG169',
@@ -287,7 +287,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         role: 'SUM',
         avatar: '/images/leaders/avatars/hoang-thuy.jpg',
         leaderId: 'hoang-thuy',
-        subNote: 'MDRT/MBA • Quản lý 30 nhân sự',
+        subNote: 'MDRT • MBA Vàng',
       },
       {
         name: 'Trâm Lê',
@@ -301,7 +301,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         role: 'UM',
         avatar: '/images/leaders/avatars/tien-tien.jpg',
         leaderId: 'tien-tien',
-        subNote: 'Quản lý Xuất sắc • 20 nhân sự',
+        subNote: 'Quản lý Xuất sắc',
       },
     ],
     moreCountNote:
@@ -340,16 +340,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'FINANCE_ACC',
     priorBackgroundShort: 'Nghiệp vụ Kế toán Doanh nghiệp',
     priorBackgroundFull: 'Chuyên môn Kế toán doanh nghiệp • Quản trị & Phát triển hệ thống kinh doanh',
-    teamScaleBadge: '60+ nhân sự • 7 Leader',
-    highlightNote: 'Quản lý hơn 60 nhân sự & 7 Leader trực tiếp • MDRT & MBA nhiều năm liền',
+    teamScaleBadge: 'Giám đốc Khu vực SG168',
+    highlightNote: 'MDRT & MBA nhiều năm liền • Dẫn dắt Khu vực SG168 từ năm 2020',
     quote: 'Muốn có điều mà mình chưa bao giờ có, hãy dám làm những việc mình chưa bao giờ làm.',
     cardSummary:
-      'Bén duyên từ một khách hàng chủ động hẹn gặp chị Khánh Vân để tham gia bảo hiểm cho gia đình, nay trực tiếp điều hành Khu vực SG168 với hơn 60 nhân sự.',
+      'Bén duyên từ một khách hàng chủ động hẹn gặp chị Khánh Vân để tham gia bảo hiểm cho gia đình, nay trực tiếp điều hành Khu vực SG168.',
     editorialBio: [
       'Cơ duyên đưa Đào Minh Phương đến với sự nghiệp bảo hiểm bắt đầu hết sức đời thường: tình cờ biết đến chị Khánh Vân qua một hội nhóm tìm trường học cho con, chị theo dõi trang cá nhân rồi chủ động hẹn gặp để thiết lập một hợp đồng bảo vệ cho gia đình. Chính sự chỉn chu và chuẩn mực trong buổi tư vấn ấy đã khơi dậy mong muốn tìm hiểu sâu hơn về nghề hoạch định tài chính.',
-      'Sau hơn 6 năm bền bỉ từ tháng 03/2020, Giám đốc Khu vực Đào Minh Phương hiện trực tiếp dẫn dắt Khu vực SG168 với hơn 60 nhân sự và 7 quản lý báo cáo trực tiếp, liên tiếp chinh phục các danh hiệu MDRT, MBA cùng nhiều chuyến tưởng thưởng quốc tế. Với khách hàng, chị luôn tâm niệm: “Trước kia khi là khách hàng mình mong gặp một người tư vấn tận tâm thế nào, thì hôm nay hãy mang đúng điều đó trao cho khách hàng”. Với đội ngũ, chị kiên trì chia nhỏ mục tiêu, sát cánh dìu dắt từng bước để mỗi đồng đội luôn cảm nhận điểm tựa vững chắc phía sau.',
+      'Sau hơn 6 năm bền bỉ từ tháng 03/2020, Giám đốc Khu vực Đào Minh Phương hiện trực tiếp điều hành Khu vực SG168, liên tiếp chinh phục các danh hiệu MDRT, MBA cùng nhiều chuyến tưởng thưởng quốc tế. Với khách hàng, chị luôn tâm niệm: “Trước kia khi là khách hàng mình mong gặp một người tư vấn tận tâm thế nào, thì hôm nay hãy mang đúng điều đó trao cho khách hàng”. Với đội ngũ, chị kiên trì chia nhỏ mục tiêu, sát cánh dìu dắt từng bước để mỗi đồng đội luôn cảm nhận điểm tựa vững chắc phía sau.',
     ],
-    badges: ['Giám đốc Khu vực (SM)', 'MDRT Nhiều Năm', 'MBA Pro', 'Quản lý 60+ Nhân sự'],
+    badges: ['Giám đốc Khu vực (SM)', 'MDRT Nhiều Năm', 'MBA Pro', 'Điều hành Khu vực SG168'],
     specialties: [
       'Bảo vệ Trụ cột Gia đình',
       'Hoạch định Hưu trí & Học vấn',
@@ -534,16 +534,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     priorBackgroundShort: 'Thạc sĩ • 15 năm Giáo viên Hóa trường Đinh Thiện Lý (Q.7)',
     priorBackgroundFull:
       'Thạc sĩ • 15 năm Giáo viên THPT môn Hóa học tại Trường THCS – THPT Đinh Thiện Lý (Quận 7)',
-    teamScaleBadge: 'Đội ngũ 20 thành viên',
-    highlightNote: '3 lần đạt MDRT • 3 lần đạt MBA Pro • Trực tiếp dẫn dắt đội ngũ 20 thành viên',
+    teamScaleBadge: '3x MDRT • 3x MBA Pro',
+    highlightNote: '3 lần đạt MDRT • 3 lần đạt MBA Pro • Thạc sĩ với 15 năm đứng lớp',
     quote: 'Rõ ràng tạo nên sức mạnh — khi khách hàng thực sự hiểu rõ mình cần gì, họ sẽ tự tin ra quyết định.',
     cardSummary:
       'Khép lại 15 năm đứng bục giảng tại Trường Đinh Thiện Lý ở tuổi 35 bằng một tin nhắn chủ động gửi chị Khánh Vân, giúp hàng chục gia đình nhận chi trả đến 500 triệu đồng.',
     editorialBio: [
       'Suốt 15 năm gắn bó với bục giảng, học sinh và phụ huynh trong vai trò Thạc sĩ – Giáo viên Hóa học tại Trường Đinh Thiện Lý (Quận 7), bước ngoặt đến với Trần Đào ở tuổi 35 khi chị đọc được một bài viết về những trải nghiệm không giới hạn của nghề tư vấn. Khát khao thử thách bản thân qua từng cột mốc mới đã thôi thúc chị chủ động nhắn tin cho chị Khánh Vân để bắt đầu hành trình tại HCM69 từ năm 2019.',
-      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Trần Đào tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị dẫn dắt đội ngũ 20 thành viên ưu tú cùng mục tiêu nhân đôi quy mô chất lượng.',
+      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Trần Đào tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị đồng hành cùng đội ngũ của mình với mục tiêu phát triển bền vững và chất lượng.',
     ],
-    badges: ['3x MDRT', '3x MBA Pro', 'Đội ngũ 20 Nhân sự', 'Thạc sĩ Giáo dục'],
+    badges: ['3x MDRT', '3x MBA Pro', 'Thạc sĩ Giáo dục'],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
       'Bảo vệ Trụ cột Gia đình',
@@ -634,22 +634,21 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     priorBackgroundShort: 'Thạc sĩ • Cử nhân Tài chính DN (UEH) • 4 năm Giảng viên Logistics',
     priorBackgroundFull:
       'Cử nhân Tài chính Doanh nghiệp (ĐH Kinh tế TP.HCM – UEH), Thạc sĩ • 11 năm Quản lý Chuỗi cung ứng (Procurement) & 4 năm Giảng viên đào tạo Mua hàng – Logistics',
-    teamScaleBadge: 'Đội ngũ 40+ nhân sự',
+    teamScaleBadge: 'MBA Pro Bạch Kim',
     highlightNote:
-      'MBA Pro Bạch Kim • 2 năm liền đạt bộ 3 MBA – MDRT – FC • Giải Lãnh đạo Thực chiến GAMA Global • Đội ngũ 40+ nhân sự',
+      'MBA Pro Bạch Kim • 2 năm liền đạt bộ 3 MBA – MDRT – FC • Giải Lãnh đạo Thực chiến GAMA Global',
     quote:
       'Làm đúng, chuẩn mực và không ngừng nâng cao trình độ chuyên môn để mang lại sự tin cậy tuyệt đối cho khách hàng và cộng sự.',
     cardSummary:
-      'Nền tảng Thạc sĩ & Cử nhân Tài chính Doanh nghiệp UEH cùng 11 năm quản trị chuỗi cung ứng, kiến tạo đội ngũ hơn 40 nhân sự chất lượng cao tại HCM69.',
+      'Nền tảng Thạc sĩ & Cử nhân Tài chính Doanh nghiệp UEH cùng 11 năm quản trị chuỗi cung ứng, xây dựng đội ngũ chất lượng cao tại HCM69.',
     editorialBio: [
       'Tốt nghiệp Cử nhân Tài chính Doanh nghiệp (UEH), sở hữu bằng Thạc sĩ cùng bề dày 11 năm quản lý vận hành – mua hàng (Procurement) và 4 năm giảng dạy nghiệp vụ Logistics, Bích Tiền bước vào Manulife tháng 10/2020 từ sự tín nhiệm dành cho người quản lý trực tiếp và môi trường hội tụ những đồng nghiệp ưu tú đa lĩnh vực.',
-      'Điều giữ chân chị gắn bó trọn vẹn với Hệ thống Vùng Khánh Vân chính là văn hóa sẵn sàng sẻ chia, trao đi kinh nghiệm một cách chân thành và vô tư. Với nguyên tắc đề cao uy tín đường dài, Bích Tiền đã chinh phục danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu kép MBA – MDRT – FC, Giải thưởng Lãnh đạo Thực chiến GAMA Global và trực tiếp xây dựng đội ngũ trên 40 nhân sự (gồm nhiều MBA Pro, Manulife Pro Vàng & Bạc).',
+      'Điều giữ chân chị gắn bó trọn vẹn với Hệ thống Vùng Khánh Vân chính là văn hóa sẵn sàng sẻ chia, trao đi kinh nghiệm một cách chân thành và vô tư. Với nguyên tắc đề cao uy tín đường dài, Bích Tiền đã chinh phục danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu kép MBA – MDRT – FC, Giải thưởng Lãnh đạo Thực chiến GAMA Global và xây dựng một đội ngũ chất lượng với nhiều MBA Pro, Manulife Pro Vàng & Bạc.',
     ],
     badges: [
       'MBA Pro Bạch Kim',
       '2x Bộ Ba MDRT • MBA • FC',
       'GAMA Global Leader',
-      'Đội ngũ 40+ Nhân sự',
     ],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
@@ -664,7 +663,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/bich-tien-2.jpg',
-        caption: 'Đồng hành huấn luyện và phát triển đội ngũ hơn 40 nhân sự chất lượng',
+        caption: 'Đồng hành huấn luyện và phát triển đội ngũ kế cận',
       },
       {
         src: '/images/leaders/gallery/bich-tien-3.jpg',
@@ -739,20 +738,19 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     priorBackgroundShort: '3 năm Thư ký kiêm Trợ lý Giám đốc Kinh doanh & Vận hành',
     priorBackgroundFull:
       '3 năm kinh nghiệm Thư ký kiêm Trợ lý Giám đốc Kinh doanh — trực tiếp hỗ trợ vận hành, tổ chức đào tạo và phát triển đội ngũ',
-    teamScaleBadge: 'Đội ngũ ~20 nhân sự',
+    teamScaleBadge: 'Từ Trợ lý Giám đốc Vùng',
     highlightNote:
-      'Trưởng thành từ Trợ lý Giám đốc Vùng lên Trưởng Phòng Kinh doanh dẫn dắt gần 20 nhân sự tại Khu vực Hạt nhân HCM69',
+      'Trưởng thành từ Trợ lý Giám đốc Vùng lên Trưởng Phòng Kinh doanh tại Khu vực Hạt nhân HCM69',
     quote:
       'Không cần xuất phát điểm hoàn hảo, chỉ cần đủ kiên trì để mỗi ngày trở thành phiên bản tốt hơn của chính mình.',
     cardSummary:
-      'Gắn bó từ thời sinh viên năm 3 trong vai trò Trợ lý Giám đốc Vùng, bước ra khỏi vùng an toàn để trực tiếp xây dựng phòng kinh doanh gần 20 nhân sự.',
+      'Gắn bó từ thời sinh viên năm 3 trong vai trò Trợ lý Giám đốc Vùng, bước ra khỏi vùng an toàn để trực tiếp xây dựng phòng kinh doanh của riêng mình.',
     editorialBio: [
       'Cơ duyên đưa Nguyễn Thị Trà My đến với Manulife bắt đầu từ năm 2022 khi còn là sinh viên năm 3 đại học, đảm nhiệm vị trí Thư ký kiêm Trợ lý Giám đốc Kinh doanh cho chị Khánh Vân. Suốt 3 năm làm việc ở hậu trường điều hành, cô có cơ hội quý giá được quan sát trực tiếp cách vận hành một tổ chức kinh doanh chuẩn mực, cách người lãnh đạo rèn giũa kỷ luật và truyền lửa cho đội ngũ.',
-      'Quyết định bước ra khỏi vùng an toàn để trực tiếp dấn thân làm nghề tư vấn và quản lý, gần 2 năm qua Trà My từng bước vượt qua những bỡ ngỡ ban đầu để xây dựng đội ngũ gần 20 nhân sự và thăng tiến lên cương vị Trưởng Phòng Kinh doanh tại HCM69 — kiên định với niềm tin rằng bảo hiểm không đơn thuần là một hợp đồng, mà là hành trình xây dựng niềm tin và giá trị dài lâu.',
+      'Quyết định bước ra khỏi vùng an toàn để trực tiếp dấn thân làm nghề tư vấn và quản lý, gần 2 năm qua Trà My từng bước vượt qua những bỡ ngỡ ban đầu để xây dựng đội ngũ riêng và thăng tiến lên cương vị Trưởng Phòng Kinh doanh tại HCM69 — kiên định với niềm tin rằng bảo hiểm không đơn thuần là một hợp đồng, mà là hành trình xây dựng niềm tin và giá trị dài lâu.',
     ],
     badges: [
       'Trưởng Phòng Kinh doanh (DM)',
-      'Đội ngũ ~20 Nhân sự',
       'Quản trị & Vận hành Hệ thống',
     ],
     specialties: [
@@ -785,17 +783,17 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     priorBackgroundShort: 'Nguyên Phó GĐ Hyundai • Chiến lược Định giá Cargill',
     priorBackgroundFull:
       'Nguyên Phó Giám đốc Hyundai • Chuyên gia Chiến lược Định giá tại Tập đoàn Cargill',
-    teamScaleBadge: '3x MDRT • 12 Nhân sự',
+    teamScaleBadge: '3x MDRT • MBA Pro',
     highlightNote:
-      '3 năm liên tiếp chuẩn quốc tế MDRT (2024–2026) • Nhà kiến tạo đội ngũ ưu tú MBA (12 nhân sự)',
+      '3 năm liên tiếp chuẩn quốc tế MDRT (2024–2026) • Nhà kiến tạo đội ngũ ưu tú MBA',
     quote: 'Đặt lợi ích khách hàng làm trung tâm.',
     cardSummary:
       'Mang tư duy quản trị 12 năm từ Hyundai & Cargill vào sứ mệnh xây dựng đội ngũ tư vấn chuẩn chỉnh, đóng góp cho diện mạo bảo hiểm xanh tại Việt Nam.',
     editorialBio: [
       'Sở hữu bề dày 12 năm trong lĩnh vực tài chính và điều hành doanh nghiệp — từng giữ cương vị Phó Giám đốc tại Hyundai và phụ trách chiến lược định giá tại Tập đoàn đa quốc gia Cargill — Loan Trần đến với Manulife từ chính sự thuyết phục khi trải nghiệm dịch vụ với tư cách một khách hàng.',
-      'Tại Hệ thống Vùng Khánh Vân, chị tìm thấy điểm hội tụ của những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần sẻ chia bền chặt. Với cột mốc 3 năm liên tiếp đạt danh hiệu MDRT (2024–2026) và trực tiếp kiến tạo đội ngũ 12 nhân sự, Loan Trần kiên định theo đuổi những giải pháp tài chính chuẩn mực, góp phần xây dựng ngành bảo hiểm văn minh và bền vững tại Việt Nam.',
+      'Tại Hệ thống Vùng Khánh Vân, chị tìm thấy điểm hội tụ của những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần sẻ chia bền chặt. Với cột mốc 3 năm liên tiếp đạt danh hiệu MDRT (2024–2026) và xây dựng một đội ngũ ưu tú, Loan Trần kiên định theo đuổi những giải pháp tài chính chuẩn mực, góp phần xây dựng ngành bảo hiểm văn minh và bền vững tại Việt Nam.',
     ],
-    badges: ['MDRT 2024–2026', 'MBA Pro', 'Đội ngũ 12 Nhân sự'],
+    badges: ['MDRT 2024–2026', 'MBA Pro', 'Cựu Phó Giám đốc Hyundai'],
     specialties: [
       'Bảo vệ Trụ cột Gia đình',
       'Hoạch định Hưu trí & Học vấn',
@@ -830,17 +828,17 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'BANKING',
     priorBackgroundShort: '10 năm Kiểm soát viên Ngân hàng',
     priorBackgroundFull: '10 năm kinh nghiệm Kiểm soát viên tại hệ thống Ngân hàng thương mại',
-    teamScaleBadge: 'Đội ngũ 30 nhân sự',
+    teamScaleBadge: 'MDRT • MBA Vàng',
     highlightNote:
-      'MDRT & MBA Vàng • Quản lý 30 nhân sự (phát triển 4 Trưởng phòng/Quản lý, 1 MPro Bạch Kim, 4 MPro Vàng)',
+      'MDRT & MBA Vàng • Ươm mầm nhiều thế hệ quản lý kế cận tại SG169',
     quote: 'Những gì đến từ trái tim sẽ chạm đến trái tim.',
     cardSummary:
-      'Rời vị trí Kiểm soát viên ngân hàng 10 năm để có thêm thời gian bên con, hiện dẫn dắt hệ thống 30 nhân sự và 4 quản lý kế cận tại SG169.',
+      'Rời vị trí Kiểm soát viên ngân hàng 10 năm để có thêm thời gian bên con, hiện dẫn dắt đội ngũ và ươm mầm các quản lý kế cận tại SG169.',
     editorialBio: [
       'Sau 10 năm gắn bó với nghiệp vụ Kiểm soát viên ngân hàng, Hoàng Thị Kim Thuý chủ động tìm đến Manulife vào năm 2020 từ mong muốn cân bằng cuộc sống và có nhiều thời gian chất lượng hơn bên con cái.',
-      'Chính định hướng làm nghề đúng đắn xuyên suốt từ Ban Lãnh đạo Vùng đến từng thành viên và tinh thần tương trợ hết lòng đã giúp chị bứt phá mạnh mẽ. Hiện Hoàng Thuý trực tiếp quản lý đội ngũ 30 nhân sự — trong đó phát triển thành công 4 trưởng phòng/quản lý, 1 MBA Vàng, 1 Manulife Pro Bạch Kim và 11 Manulife Pro Vàng/Bạc — với nguyên tắc bất di bất dịch: xem khách hàng và đồng đội như người thân, làm vì lợi ích của họ trước khi nghĩ đến mình.',
+      'Chính định hướng làm nghề đúng đắn xuyên suốt từ Ban Lãnh đạo Vùng đến từng thành viên và tinh thần tương trợ hết lòng đã giúp chị bứt phá mạnh mẽ. Hiện Hoàng Thuý trực tiếp dẫn dắt đội ngũ của mình — nơi đã ươm mầm nhiều trưởng phòng, quản lý, MBA Vàng, Manulife Pro Bạch Kim cùng các Manulife Pro Vàng/Bạc — với nguyên tắc nhất quán: xem khách hàng và đồng đội như người thân, làm vì lợi ích của họ trước khi nghĩ đến mình.',
     ],
-    badges: ['MDRT', 'MBA Vàng', 'Đội ngũ 30 Nhân sự', '4 Quản lý Kế cận'],
+    badges: ['MDRT', 'MBA Vàng', 'Ươm mầm Quản lý Kế cận'],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
       'Bảo vệ Trụ cột Gia đình',
@@ -919,16 +917,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'LAW_MED_INS',
     priorBackgroundShort: 'Luật sư • Chuyên môn Pháp lý sâu sắc',
     priorBackgroundFull: 'Luật sư • Chuyên gia rà soát điều khoản pháp lý và hoạch định bảo vệ gia đình',
-    teamScaleBadge: 'Luật sư • 12 Nhân sự',
-    highlightNote: 'Nền tảng Luật sư chuyên nghiệp • Trực tiếp dẫn dắt đội ngũ 12 nhân sự tại HCM69',
+    teamScaleBadge: 'Nền tảng Luật sư',
+    highlightNote: 'Nền tảng Luật sư chuyên nghiệp • Dẫn dắt đội ngũ tại Khu vực HCM69',
     quote: 'Mỗi ngày tốt hơn 1% — Thấu hiểu, Tin tưởng và Trách nhiệm.',
     cardSummary:
-      'Từ mối nhân duyên xử lý hồ sơ pháp lý khi chị Khánh Vân là khách hàng của công ty luật, sau 2 năm quan sát đã quyết định về đồng hành xây dựng đội ngũ 12 nhân sự.',
+      'Từ mối nhân duyên xử lý hồ sơ pháp lý khi chị Khánh Vân là khách hàng của công ty luật, sau 2 năm quan sát đã quyết định về đồng hành xây dựng đội ngũ tại HCM69.',
     editorialBio: [
       'Cơ duyên giữa Luật sư Lương Thị Thanh Huyền và Hệ thống Vùng Khánh Vân bắt đầu từ chiều ngược lại: trước đây, chị Khánh Vân chính là khách hàng tại công ty của Huyền. Qua những buổi làm việc xử lý hồ sơ trực tiếp, phong thái chuẩn mực và lời mời chân thành của chị Vân đã gieo hạt mầm thiện cảm — để sau đúng 2 năm quan sát kỹ lưỡng, Huyền quyết định gia nhập đội ngũ vào năm 2022.',
-      'Dưới góc nhìn khắt khe của một Luật sư, điều khiến Huyền Lương nể trọng nhất ở HCM69 và Vùng Khánh Vân là sự nhất quán hiếm có từ lời nói trên truyền thông đến hành động thực tế: từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch, chuẩn chỉnh khi tư vấn và phụng sự khách hàng. Hiện chị dẫn dắt đội ngũ 12 nhân sự với ba giá trị cốt lõi: Thấu hiểu – Tin tưởng – Trách nhiệm.',
+      'Dưới góc nhìn khắt khe của một Luật sư, điều khiến Huyền Lương nể trọng nhất ở HCM69 và Vùng Khánh Vân là sự nhất quán hiếm có từ lời nói trên truyền thông đến hành động thực tế: từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch, chuẩn chỉnh khi tư vấn và phụng sự khách hàng. Hiện chị dẫn dắt đội ngũ của mình với ba giá trị cốt lõi: Thấu hiểu – Tin tưởng – Trách nhiệm.',
     ],
-    badges: ['Nền tảng Luật sư', 'Trưởng Nhóm Cấp cao (SUM)', 'Đội ngũ 12 Nhân sự'],
+    badges: ['Nền tảng Luật sư', 'Trưởng Nhóm Cấp cao (SUM)'],
     specialties: [
       'Xây dựng & Đào tạo Đội ngũ',
       'Chăm sóc Sức khỏe Cao cấp',
@@ -1199,20 +1197,19 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     priorBackgroundShort: '16 năm Trưởng phòng Kế hoạch Vận hành & Thư ký Hành chính',
     priorBackgroundFull:
       '16 năm kinh nghiệm Thư ký Hành chính và Trưởng phòng Kế hoạch Vận hành doanh nghiệp',
-    teamScaleBadge: 'Đội ngũ 20 nhân sự',
+    teamScaleBadge: '16 năm Kế hoạch & Vận hành',
     highlightNote:
-      'Dẫn dắt đội ngũ 20 nhân sự tại HCM69 với phương châm luôn làm điều đúng đắn và bền vững',
+      'Dẫn dắt đội ngũ tại HCM69 với phương châm luôn làm điều đúng đắn và bền vững',
     quote:
       'Bảo vệ thu nhập, xây nền tài chính an toàn và đồng hành bền bỉ cùng những người theo nghề tài chính.',
     cardSummary:
-      'Mang 16 năm kinh nghiệm Trưởng phòng Kế hoạch Vận hành vào sứ mệnh xây dựng đội ngũ 20 nhân sự gắn kết, làm điều đúng đắn tại HCM69.',
+      'Mang 16 năm kinh nghiệm Trưởng phòng Kế hoạch Vận hành vào sứ mệnh xây dựng một đội ngũ gắn kết, làm điều đúng đắn tại HCM69.',
     editorialBio: [
       'Với 16 năm kinh nghiệm trong lĩnh vực Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chủ động lựa chọn Manulife từ năm 2022. Khi trực tiếp hòa mình vào môi trường làm việc tại Khu vực HCM69 — Hệ thống Vùng Khánh Vân, chị càng thêm tự hào khi trở thành một phần của tập thể giữ vững vị thế Top 1 nhiều năm liền bằng văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
-      'Trực tiếp dẫn dắt đội ngũ 20 nhân sự, Thiên Vân lấy chính văn hóa phát triển lâu dài, minh bạch và tử tế của toàn vùng làm kim chỉ nam trong từng bản kế hoạch bảo vệ thu nhập cho khách hàng cũng như trên hành trình kèm cặp đồng đội.',
+      'Trực tiếp dẫn dắt đội ngũ của mình, Thiên Vân lấy chính văn hóa phát triển lâu dài, minh bạch và tử tế của toàn vùng làm kim chỉ nam trong từng bản kế hoạch bảo vệ thu nhập cho khách hàng cũng như trên hành trình kèm cặp đồng đội.',
     ],
     badges: [
       'Trưởng Nhóm Cấp cao (SUM)',
-      'Đội ngũ 20 Nhân sự',
       '16 Năm Kế hoạch & Vận hành',
     ],
     specialties: [
@@ -1465,16 +1462,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'CORP_BIZ',
     priorBackgroundShort: 'Nguyên Trưởng nhóm Dịch vụ Khách hàng Công ty Phần mềm',
     priorBackgroundFull: 'Nguyên Trưởng nhóm Dịch vụ Khách hàng (Customer Service Lead) tại doanh nghiệp phần mềm công nghệ',
-    teamScaleBadge: 'MBA 2026 • 12 Nhân sự',
-    highlightNote: 'MBA Pro 2026 • Quản lý Xuất sắc • Dẫn dắt 11 thành viên & 1 Quản lý kế cận',
+    teamScaleBadge: 'MBA Pro 2026',
+    highlightNote: 'MBA Pro 2026 • Quản lý Xuất sắc • Phát triển đội ngũ và quản lý kế cận',
     quote: 'Làm đúng trước, kết quả tốt sẽ đến sau.',
     cardSummary:
-      'Từ Trưởng nhóm Dịch vụ khách hàng ngành công nghệ đến hơn 5 năm kiến tạo đội ngũ 12 nhân sự và quản lý kế cận tại HCM69.',
+      'Từ Trưởng nhóm Dịch vụ khách hàng ngành công nghệ đến hơn 5 năm xây dựng đội ngũ và quản lý kế cận tại HCM69.',
     editorialBio: [
       'Xuất thân là Trưởng nhóm Dịch vụ Khách hàng tại một công ty phần mềm, Tằng Thị Hoài Linh bước vào Manulife năm 2021 qua lời mời của một người bạn. Hơn 5 năm đi sâu vào nghề giúp chị thấm thía rằng bảo hiểm không đơn thuần là hoạt động kinh doanh, mà là sự chuẩn bị nhân văn trước những biến cố của cuộc sống.',
-      'Với Linh Tằng, tư vấn không phải là cố gắng chốt bằng được một hợp đồng, mà là giúp khách hàng thực sự hiểu mình cần gì để chọn giải pháp phù hợp nhất. Tinh thần ấy cũng được chị truyền trọn vẹn sang đội ngũ gồm 11 thành viên và 1 quản lý trực thuộc, đưa nhóm chinh phục danh hiệu MBA Pro 2026.',
+      'Với Linh Tằng, tư vấn không phải là cố gắng chốt bằng được một hợp đồng, mà là giúp khách hàng thực sự hiểu mình cần gì để chọn giải pháp phù hợp nhất. Tinh thần ấy cũng được chị truyền trọn vẹn sang đội ngũ của mình, để cả nhóm cùng chinh phục danh hiệu MBA Pro 2026.',
     ],
-    badges: ['MBA Pro 2026', 'Quản lý Xuất sắc', 'Đội ngũ 12 Nhân sự'],
+    badges: ['MBA Pro 2026', 'Quản lý Xuất sắc'],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
       'Bảo vệ Trụ cột Gia đình',
@@ -1500,16 +1497,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'CORP_BIZ',
     priorBackgroundShort: 'Chuyên viên Xuất nhập khẩu & Logistics',
     priorBackgroundFull: 'Chuyên viên nghiệp vụ Xuất nhập khẩu & Chuỗi cung ứng Logistics',
-    teamScaleBadge: 'Đội ngũ 20 nhân sự',
-    highlightNote: 'Quản lý Xuất sắc • Trực tiếp dẫn dắt đội ngũ 20 thành viên tại SG169',
+    teamScaleBadge: 'Quản lý Xuất sắc',
+    highlightNote: 'Quản lý Xuất sắc • Dẫn dắt đội ngũ tại Khu vực SG169',
     quote: 'Tư vấn từ tâm, làm nghề bằng sự tử tế.',
     cardSummary:
-      'Dẫn dắt đội ngũ 20 nhân sự bằng tâm thế của người phụ nữ hướng về gia đình: tuân thủ pháp luật, minh bạch và gieo hạt lành qua từng hợp đồng.',
+      'Dẫn dắt đội ngũ bằng tâm thế của người phụ nữ hướng về gia đình: tuân thủ pháp luật, minh bạch và gieo hạt lành qua từng hợp đồng.',
     editorialBio: [
       'Chuyển mình từ ngành Xuất nhập khẩu – Logistics sang lĩnh vực bảo hiểm nhân thọ từ năm 2021, Tiên Tiên tìm thấy ý nghĩa trọn vẹn của nghề nghiệp khi gặp gỡ Giám đốc Vùng Khánh Vân và Giám đốc Khu vực Huyền Trang. Là người phụ nữ luôn đặt gia đình làm điểm tựa, chị trân trọng môi trường giúp mình vừa nâng cao thu nhập bền vững, vừa có thời gian chất lượng đồng hành cùng con cái trưởng thành.',
-      'Hiện trực tiếp dẫn dắt đội ngũ 20 thành viên tại Khu vực SG169, Tiên Tiên giữ vững nguyên tắc thượng tôn pháp luật và tư vấn từ tâm — bởi chị luôn tin rằng làm nghề chuẩn mực chính là cách thiết thực nhất để gieo những hạt mầm bình an cho khách hàng và cho chính gia đình mình.',
+      'Hiện trực tiếp dẫn dắt đội ngũ tại Khu vực SG169, Tiên Tiên giữ vững nguyên tắc thượng tôn pháp luật và tư vấn từ tâm — bởi chị luôn tin rằng làm nghề chuẩn mực chính là cách thiết thực nhất để gieo những hạt mầm bình an cho khách hàng và cho chính gia đình mình.',
     ],
-    badges: ['Quản lý Xuất sắc', 'Đội ngũ 20 Nhân sự'],
+    badges: ['Quản lý Xuất sắc', 'Chuẩn mực & Minh bạch'],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
       'Bảo vệ Trụ cột Gia đình',
@@ -1835,16 +1832,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'LAW_MED_INS',
     priorBackgroundShort: '9 năm Chuyên viên Tổng đài Chăm sóc Khách hàng',
     priorBackgroundFull: '9 năm kinh nghiệm Tổng đài viên & Chăm sóc khách hàng chuyên nghiệp',
-    teamScaleBadge: 'MPro Vàng • 8 Nhân sự',
-    highlightNote: 'Manulife Pro Vàng • Trực tiếp dẫn dắt đội ngũ 8 thành viên tại Khu vực SG169',
+    teamScaleBadge: 'Manulife Pro Vàng',
+    highlightNote: 'Manulife Pro Vàng • Dẫn dắt nhóm kinh doanh tại Khu vực SG169',
     quote: 'Đến với khách hàng bằng sự chân thành và luôn sẵn sàng có mặt bất cứ khi nào khách hàng cần.',
     cardSummary:
-      '9 năm rèn luyện sự kiên nhẫn lắng nghe trong nghề Tổng đài viên, nay dẫn dắt đội ngũ 8 thành viên với cam kết kê khai trung thực tuyệt đối.',
+      '9 năm rèn luyện sự kiên nhẫn lắng nghe trong nghề Tổng đài viên, nay dẫn dắt nhóm kinh doanh với cam kết kê khai trung thực tuyệt đối.',
     editorialBio: [
       'Trải qua 9 năm gắn bó với công việc Tổng đài viên vốn đòi hỏi kỹ năng lắng nghe và sự nhẫn nại cao độ, Nguyễn Thị Sen bén duyên cùng Manulife năm 2022 sau buổi gặp gỡ trực tiếp đầy năng lượng và nhiệt huyết cùng Giám đốc Vùng Khánh Vân.',
-      'Yêu quý bầu không khí đoàn kết, yêu thương và sẵn lòng nâng đỡ nhau của tập thể SG169, Sen Nguyễn chinh phục danh hiệu Manulife Pro Vàng và xây dựng nhóm kinh doanh gồm 8 thành viên dựa trên nguyên tắc bất di bất dịch: tư vấn đúng đủ, kê khai hồ sơ trung thực và luôn có mặt kịp thời mỗi khi khách hàng cần hỗ trợ.',
+      'Yêu quý bầu không khí đoàn kết, yêu thương và sẵn lòng nâng đỡ nhau của tập thể SG169, Sen Nguyễn chinh phục danh hiệu Manulife Pro Vàng và xây dựng nhóm kinh doanh của riêng mình dựa trên nguyên tắc nhất quán: tư vấn đúng đủ, kê khai hồ sơ trung thực và luôn có mặt kịp thời mỗi khi khách hàng cần hỗ trợ.',
     ],
-    badges: ['Manulife Pro Vàng', 'Đội ngũ 8 Nhân sự', '9 Năm Chăm Sóc Khách Hàng'],
+    badges: ['Manulife Pro Vàng', '9 Năm Chăm Sóc Khách Hàng'],
     specialties: ['Bảo vệ Trụ cột Gia đình', 'Chăm sóc & Hỗ trợ Dịch vụ Hợp đồng'],
     portrait: '/images/leaders/sen-nguyen.jpg',
     gallery: [
@@ -1900,16 +1897,16 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'HR_EDU',
     priorBackgroundShort: '2 năm Quản lý Nhân sự tại Doanh nghiệp',
     priorBackgroundFull: 'Kinh nghiệm Quản lý Nhân sự tại Doanh nghiệp • Phát triển đội ngũ trẻ tại SG168',
-    teamScaleBadge: 'Đội ngũ 5 thành viên',
-    highlightNote: 'Trưởng Nhóm Kinh doanh trẻ dẫn dắt đội ngũ 5 thành viên tại Khu vực SG168',
+    teamScaleBadge: 'Quản lý trẻ SG168',
+    highlightNote: 'Trưởng Nhóm Kinh doanh trẻ tại Khu vực SG168',
     quote: 'Tư vấn đúng và đủ – Chữ tâm làm nên thương hiệu.',
     cardSummary:
-      'Từ nền tảng Quản lý Nhân sự doanh nghiệp đến hành trình xây dựng nhóm kinh doanh 5 thành viên dựa trên nguyên tắc “hiểu đúng – làm đúng từ đầu”.',
+      'Từ nền tảng Quản lý Nhân sự doanh nghiệp đến hành trình xây dựng nhóm kinh doanh dựa trên nguyên tắc “hiểu đúng – làm đúng từ đầu”.',
     editorialBio: [
       'Từng công tác ở vị trí Quản lý Nhân sự doanh nghiệp, Nguyễn Ngọc Trâm biết đến cơ hội sự nghiệp tại Manulife thông qua sự giới thiệu từ gia đình của Giám đốc Khu vực Đào Minh Phương.',
-      'Gia nhập Khu vực SG168 — Hệ thống Vùng Khánh Vân, Ngọc Trâm ấn tượng sâu sắc với văn hóa tương trợ và rèn luyện nền tảng “hiểu đúng – làm đúng ngay từ đầu”. Hiện cô trực tiếp dẫn dắt đội ngũ 5 thành viên với cam kết mang lại trải nghiệm minh bạch, chuẩn mực nhất cho cả khách hàng lẫn cộng sự.',
+      'Gia nhập Khu vực SG168 — Hệ thống Vùng Khánh Vân, Ngọc Trâm ấn tượng sâu sắc với văn hóa tương trợ và rèn luyện nền tảng “hiểu đúng – làm đúng ngay từ đầu”. Hiện cô trực tiếp dẫn dắt đội ngũ của mình với cam kết mang lại trải nghiệm minh bạch, chuẩn mực nhất cho cả khách hàng lẫn cộng sự.',
     ],
-    badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Đội ngũ 5 Nhân sự'],
+    badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Quản lý trẻ SG168'],
     specialties: ['Xây dựng & Đào tạo Đội ngũ', 'Hoạch định Bảo vệ Gia đình Trẻ'],
     portrait: '/images/leaders/ngoc-tram.jpg',
     gallery: [
@@ -2005,7 +2002,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Dám bước ra thử thách giới hạn sau 18 năm Tài chính – Chứng khoán, chinh phục Pro Bạc chỉ sau 3 tháng bằng số liệu rõ ràng và lời nói thật.',
     editorialBio: [
       'Sở hữu bề dày 18 năm kinh nghiệm trong lĩnh vực Tài chính – Chứng khoán và Kế toán Quản trị, Hà Đỗ lựa chọn gia nhập Manulife để thử thách giới hạn bản thân ở một mảng hoạch định tài chính gần gũi và nhân văn hơn với từng gia đình. Nhờ tuân thủ đúng quy trình và học tập bài bản tại Khu vực HCM69, chị nhanh chóng chinh phục cột mốc Manulife Pro Bạc chỉ sau 3 tháng.',
-      'Điều chị trân quý nhất tại Hệ thống Vùng Khánh Vân là sự minh bạch tuyệt đối và tinh thần xem khách hàng như người thân ruột thịt. Nguyên tắc bất di bất dịch của Hà Đỗ là tư vấn dựa trên số liệu rõ ràng và lời nói thật — bởi niềm tin bền vững nhất chỉ đến khi người cố vấn dám nói điều khách hàng thực sự cần nghe, chứ không chỉ điều họ muốn nghe.',
+      'Điều chị trân quý nhất tại Hệ thống Vùng Khánh Vân là sự minh bạch tuyệt đối và tinh thần xem khách hàng như người thân ruột thịt. Nguyên tắc nhất quán của Hà Đỗ là tư vấn dựa trên số liệu rõ ràng và lời nói thật — bởi niềm tin bền vững nhất chỉ đến khi người cố vấn dám nói điều khách hàng thực sự cần nghe, chứ không chỉ điều họ muốn nghe.',
     ],
     badges: [
       'MBA Pro',
@@ -2270,9 +2267,9 @@ export const REGIONAL_CULTURE_MOMENTS: RegionalCultureMoment[] = [
     id: 'hop-ban-dieu-hanh',
     src: '/images/VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg',
     tag: 'QUẢN TRỊ HỆ THỐNG',
-    title: 'Họp điều hành chiến lược cùng đội ngũ Quản lý các khu vực',
+    title: 'Họp điều hành cùng đội ngũ quản lý các khu vực',
     subtitle:
-      'Mỗi định hướng tư vấn và tiêu chuẩn chăm sóc khách hàng đều được thống nhất xuyên suốt từ Ban Điều Hành đến từng khu vực kinh doanh.',
+      'Mỗi định hướng tư vấn và tiêu chuẩn chăm sóc khách hàng đều được thống nhất từ Ban Điều Hành đến từng khu vực.',
     spanClass: 'md:col-span-7',
     aspectClass: 'aspect-[16/10]',
   },
@@ -2282,17 +2279,17 @@ export const REGIONAL_CULTURE_MOMENTS: RegionalCultureMoment[] = [
     tag: 'HUẤN LUYỆN NGHIỆP VỤ',
     title: 'Đào tạo chuyên sâu từ điều khoản pháp lý đến hoạch định dòng tiền',
     subtitle:
-      'Văn hóa rèn nghề thực chất giúp mỗi nhân sự tự tin giải thích thấu đáo từng trang hợp đồng cho khách hàng.',
+      'Văn hóa rèn nghề thực chất giúp mỗi tư vấn viên tự tin giải thích rõ ràng từng trang hợp đồng cho khách hàng.',
     spanClass: 'md:col-span-5',
     aspectClass: 'aspect-[4/3] md:aspect-auto md:h-full',
   },
   {
     id: 'co-van-ke-can',
     src: '/images/VanPhong_ChiVanCungNhomQuanLy_SofaBenCuaSoViewDep.jpg',
-    tag: 'MENTORING KẾ CẬN',
-    title: 'Đồng hành sát sao cùng thế hệ Quản lý trẻ',
+    tag: 'ĐỒNG HÀNH KẾ CẬN',
+    title: 'Đồng hành sát sao cùng thế hệ quản lý trẻ',
     subtitle:
-      'Trao truyền kinh nghiệm quản trị nhân sự và xây dựng đội ngũ bền vững ngay tại không gian làm việc Manulife Plaza.',
+      'Trao truyền kinh nghiệm quản trị và cách xây dựng đội ngũ bền vững ngay tại không gian làm việc Manulife Plaza.',
     spanClass: 'md:col-span-4',
     aspectClass: 'aspect-[4/3]',
   },
@@ -2300,9 +2297,9 @@ export const REGIONAL_CULTURE_MOMENTS: RegionalCultureMoment[] = [
     id: 'thao-luan-giai-phap',
     src: '/images/VanPhong_NhomQuanLy_ThaoLuanTaiLieuThucChien.jpg',
     tag: 'CHUẨN MỰC TƯ VẤN',
-    title: 'Cùng rà soát và thẩm định giải pháp trước khi trao đến gia đình khách hàng',
+    title: 'Cùng rà soát giải pháp trước khi trao đến gia đình khách hàng',
     subtitle:
-      'Tinh thần làm việc tập thể giúp mọi phương án bảo vệ đều được đối chiếu cẩn trọng trên dữ liệu thu nhập và nhu cầu thực tế.',
+      'Làm việc tập thể giúp mọi phương án bảo vệ được đối chiếu cẩn trọng với thu nhập và nhu cầu thực tế của từng gia đình.',
     spanClass: 'md:col-span-4',
     aspectClass: 'aspect-[4/3]',
   },
@@ -2310,9 +2307,9 @@ export const REGIONAL_CULTURE_MOMENTS: RegionalCultureMoment[] = [
     id: 'vinh-danh-top1',
     src: '/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg',
     tag: 'DẤU ẤN QUÁN QUÂN',
-    title: 'Cú đúp Top 1 Toàn quốc 2025 — Kết quả tự nhiên của sự tử tế',
+    title: 'Hai giải Top 1 toàn quốc 2025 — Kết quả tự nhiên của sự tử tế',
     subtitle:
-      'Vị trí dẫn đầu toàn quốc cả về Doanh số FYP lẫn Tỷ lệ Duy trì Hợp đồng là lời khẳng định khách quan nhất cho niềm tin của hàng nghìn gia đình.',
+      'Dẫn đầu toàn quốc cả về Doanh số FYP lẫn Tỷ lệ Duy trì Hợp đồng là minh chứng khách quan cho niềm tin của hàng nghìn gia đình.',
     spanClass: 'md:col-span-4',
     aspectClass: 'aspect-[4/3]',
   },
