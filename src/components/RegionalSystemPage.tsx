@@ -565,9 +565,9 @@ export const RegionalSystemPage: React.FC = () => {
         id="cau-truc-vung"
         className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-20 bg-[#F2EFE9]/60 border-b border-[#E4E1D8]"
       >
-        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 space-y-10 sm:space-y-14">
+        <div className="max-w-[1220px] w-full min-w-0 mx-auto px-4 sm:px-8 space-y-10 sm:space-y-14">
           {/* 2A. SƠ ĐỒ TỔ CHỨC HỆ THỐNG VÙNG KHÁNH VÂN (Nằm ngay đầu Chương 02) */}
-          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-8 lg:p-10 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-5 sm:space-y-8">
+          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 lg:p-7 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-5 sm:space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-4 sm:pb-5 border-b border-[#ECE9E0]">
               <div className="space-y-1">
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold">
@@ -588,9 +588,9 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="w-full sm:w-auto inline-flex items-center gap-3.5 sm:gap-4 px-4 py-3.5 sm:px-6 sm:py-4 bg-[#0A3622] text-[#FAF9F5] rounded-[4px] border-2 border-[#B8975A] shadow-[0_16px_36px_-18px_rgba(10,54,34,0.55)]">
                 <img
                   decoding="async"
-                  src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
+                  src="/images/leaders/avatars/khanh-van.jpg"
                   alt="Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao"
-                  className="w-[54px] h-[54px] sm:w-16 sm:h-16 rounded-full object-cover object-top border-2 border-[#E8D3A6] shrink-0"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center border-2 border-[#E8D3A6] shadow-[0_6px_16px_rgba(0,0,0,0.3)] shrink-0"
                 />
                 <div className="min-w-0">
                   <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#E8D3A6] font-bold block">
@@ -685,7 +685,7 @@ export const RegionalSystemPage: React.FC = () => {
                       <img
                         src={activeMobileBranch.headAvatar}
                         alt={activeMobileBranch.headName}
-                        className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#B8975A] bg-[#EFECE5] shrink-0"
+                        className="w-14 h-14 rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
                       />
                       <div className="min-w-0">
                         <span
@@ -717,28 +717,28 @@ export const RegionalSystemPage: React.FC = () => {
                   {/* Indented Visual Tree Spine for Sub-Branches */}
                   <div className="p-3.5 space-y-3">
                     {activeMobileBranch.keyManagers.length > 0 ? (
-                      <div className="relative ml-3.5 pl-4 border-l-2 border-[#CDB98C] space-y-2.5">
+                      <div className="relative ml-3 pl-3.5 border-l-2 border-[#CDB98C] space-y-2.5">
                         {activeMobileBranch.keyManagers.map((mgr) => {
                           const clickable = Boolean(mgr.leaderId);
                           return (
                             <div
                               key={`mob-${activeMobileBranch.code}-${mgr.name}`}
                               onClick={() => openLeaderById(mgr.leaderId)}
-                              className={`relative flex items-center gap-2.5 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] ${
+                              className={`relative flex items-center gap-3 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] ${
                                 clickable ? 'cursor-pointer active:border-[#0A3622]' : ''
                               }`}
                             >
-                              <span className="w-4 h-[2px] bg-[#CDB98C] absolute -left-4 top-1/2 -translate-y-1/2" />
+                              <span className="w-3.5 h-[2px] bg-[#CDB98C] absolute -left-3.5 top-1/2 -translate-y-1/2" />
                               {mgr.avatar && (
                                 <img
                                   src={mgr.avatar}
                                   alt={mgr.name}
-                                  className="w-9 h-9 rounded-full object-cover object-top border border-[#DCD8CE] bg-[#EFECE5] shrink-0"
+                                  className="w-12 h-12 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_6px_rgba(10,54,34,0.08)] shrink-0"
                                 />
                               )}
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center justify-between gap-1.5">
-                                  <span className="text-xs font-bold text-[#181F1C] truncate">
+                                  <span className="text-[12.5px] font-bold text-[#181F1C] truncate">
                                     {mgr.name}
                                   </span>
                                   <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
@@ -746,7 +746,7 @@ export const RegionalSystemPage: React.FC = () => {
                                   </span>
                                 </div>
                                 {mgr.subNote && (
-                                  <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
+                                  <p className="text-[11px] text-[#56605B] truncate mt-0.5">
                                     {mgr.subNote}
                                   </p>
                                 )}
@@ -804,7 +804,7 @@ export const RegionalSystemPage: React.FC = () => {
             </div>
 
             {/* Desktop 4 Connected Regional Branches */}
-            <div className="hidden lg:grid lg:grid-cols-4 gap-5 items-stretch">
+            <div className="hidden lg:grid lg:grid-cols-4 gap-4 items-stretch">
               {REGIONAL_ORG_BRANCHES.map((branch) => {
                 const count = areaCounts[branch.code] || 0;
                 return (
@@ -825,7 +825,7 @@ export const RegionalSystemPage: React.FC = () => {
                             handleSelectAreaHub(branch.code);
                           }
                         }}
-                        className={`p-4 border-b flex items-center gap-3 ${
+                        className={`p-3.5 border-b flex items-center gap-3 ${
                           branch.isCore
                             ? 'bg-[#0A3622] text-white border-[#0A3622]'
                             : 'bg-white text-[#181F1C] border-[#E4E1D8]'
@@ -834,21 +834,21 @@ export const RegionalSystemPage: React.FC = () => {
                         <img
                           src={branch.headAvatar}
                           alt={branch.headName}
-                          className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#B8975A] bg-[#EFECE5] shrink-0"
+                          className="w-[62px] h-[62px] rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm shrink-0"
                         />
                         <div className="min-w-0">
                           <span
-                            className={`text-[9.5px] uppercase tracking-[0.2em] font-bold block ${
+                            className={`text-[9.5px] uppercase tracking-[0.16em] font-bold block ${
                               branch.isCore ? 'text-[#E8D3A6]' : 'text-[#008746]'
                             }`}
                           >
                             {branch.areaLabel}
                           </span>
-                          <p className="font-serif text-[15px] font-semibold leading-snug">
+                          <p className="font-serif text-[15.5px] font-semibold leading-snug">
                             {branch.headName}
                           </p>
                           <p
-                            className={`text-[11px] truncate ${
+                            className={`text-[11px] leading-snug mt-0.5 ${
                               branch.isCore ? 'text-[#D7E2DC]' : 'text-[#56605B]'
                             }`}
                           >
@@ -857,7 +857,7 @@ export const RegionalSystemPage: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="p-3.5 space-y-2">
+                      <div className="p-3 space-y-2.5">
                         {branch.keyManagers.length > 0 ? (
                           branch.keyManagers.map((mgr) => {
                             const clickable = Boolean(mgr.leaderId);
@@ -865,7 +865,7 @@ export const RegionalSystemPage: React.FC = () => {
                               <div
                                 key={`${branch.code}-${mgr.name}`}
                                 onClick={() => openLeaderById(mgr.leaderId)}
-                                className={`flex items-center gap-2.5 p-2 rounded-[3px] bg-white border border-[#E4E1D8] transition-colors ${
+                                className={`flex items-center gap-2.5 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] transition-colors ${
                                   clickable
                                     ? 'cursor-pointer hover:border-[#0A3622] group'
                                     : ''
@@ -875,15 +875,15 @@ export const RegionalSystemPage: React.FC = () => {
                                   <img
                                     src={mgr.avatar}
                                     alt={mgr.name}
-                                    className="w-9 h-9 rounded-full object-cover object-top border border-[#DCD8CE] bg-[#EFECE5] shrink-0"
+                                    className="w-[52px] h-[52px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-[0_2px_8px_rgba(10,54,34,0.08)] shrink-0"
                                   />
                                 )}
                                 <div className="min-w-0 flex-1">
                                   <div className="flex items-center justify-between gap-1">
-                                    <span className="text-xs font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                    <span className="text-[12.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
                                       {mgr.name}
                                     </span>
-                                    <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.1em] rounded-[2px] shrink-0">
+                                    <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
                                       {mgr.role}
                                     </span>
                                   </div>
@@ -904,7 +904,7 @@ export const RegionalSystemPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="px-3.5 pb-3.5 pt-1 space-y-2">
+                    <div className="px-3 pb-3.5 pt-1 space-y-2">
                       {branch.moreCountNote && (
                         <p className="text-[11px] text-[#56605B] leading-snug">
                           {branch.moreCountNote}
@@ -954,13 +954,13 @@ export const RegionalSystemPage: React.FC = () => {
                 </span>
               </div>
 
-              <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory gap-3.5 sm:gap-5 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 no-scrollbar">
+              <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory gap-3.5 sm:gap-4 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 no-scrollbar">
                 {REGIONAL_EXECUTIVE_HUBS.map((hub) => {
                   const memberCount = areaCounts[hub.code] || 0;
                   return (
                     <div
                       key={hub.code}
-                      className={`w-[82vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center rounded-[4px] p-4 sm:p-6 border flex flex-col justify-between gap-4 sm:gap-5 transition-all ${
+                      className={`w-[84vw] max-w-[310px] sm:w-auto sm:max-w-none shrink-0 snap-center rounded-[4px] p-4 sm:p-5 border flex flex-col justify-between gap-4 sm:gap-5 transition-all ${
                         hub.isCore
                           ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] shadow-[0_20px_44px_-24px_rgba(10,54,34,0.6)]'
                           : 'bg-white text-[#181F1C] border-[#DCD8CE] hover:border-[#0A3622]/55 shadow-[0_12px_30px_-24px_rgba(10,54,34,0.16)]'
@@ -978,7 +978,7 @@ export const RegionalSystemPage: React.FC = () => {
                             {hub.code}
                           </span>
                           <span
-                            className={`text-[9.5px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.14em] font-medium text-right truncate ${
+                            className={`text-[9.5px] sm:text-[10px] uppercase tracking-[0.08em] sm:tracking-[0.11em] font-medium text-right truncate ${
                               hub.isCore ? 'text-[#E8D3A6]' : 'text-[#56605B]'
                             }`}
                           >
@@ -994,30 +994,36 @@ export const RegionalSystemPage: React.FC = () => {
                               handleSelectAreaHub(hub.code);
                             }
                           }}
-                          className={`flex items-center gap-3 p-2.5 rounded-[3px] border ${
+                          className={`flex items-center gap-3 p-2.5 sm:p-3 rounded-[4px] border ${
                             hub.isCore
                               ? 'bg-white/[0.06] border-white/15'
                               : 'bg-[#FAF9F5] border-[#ECE9E0]'
                           } ${hub.leadProfileId || memberCount > 0 ? 'cursor-pointer hover:opacity-95' : ''}`}
                         >
-                          <div className="flex -space-x-2.5 shrink-0">
-                            <img
-                              src={hub.leadPortrait}
-                              alt={hub.leadName}
-                              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover object-top border-2 border-[#B8975A] bg-[#EFECE5]"
-                            />
-                            {hub.coLeadPortrait && (
+                          {hub.coLeadPortrait ? (
+                            <div className="flex -space-x-3 shrink-0">
+                              <img
+                                src={hub.leadPortrait}
+                                alt={hub.leadName}
+                                className="w-[58px] h-[58px] sm:w-16 sm:h-16 rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-sm"
+                              />
                               <img
                                 src={hub.coLeadPortrait}
                                 alt={hub.coLeadName || ''}
                                 title={`${hub.coLeadName} — ${hub.coLeadRole}`}
-                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover object-top border-2 border-[#FAF9F5] bg-[#EFECE5]"
+                                className="w-[58px] h-[58px] sm:w-16 sm:h-16 rounded-full object-cover object-center border-2 border-[#FAF9F5] bg-[#EFECE5] shadow-sm"
                               />
-                            )}
-                          </div>
+                            </div>
+                          ) : (
+                            <img
+                              src={hub.leadPortrait}
+                              alt={hub.leadName}
+                              className="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full object-cover object-center border-2 border-[#B8975A] bg-[#EFECE5] shadow-[0_6px_16px_rgba(10,54,34,0.12)] shrink-0"
+                            />
+                          )}
                           <div className="min-w-0">
                             <p
-                              className={`font-serif text-base sm:text-lg font-semibold leading-tight truncate ${
+                              className={`font-serif text-[16px] sm:text-[17px] font-semibold leading-snug ${
                                 hub.isCore ? 'text-white' : 'text-[#181F1C]'
                               }`}
                             >
@@ -1031,7 +1037,7 @@ export const RegionalSystemPage: React.FC = () => {
                               {hub.leadRole}
                             </p>
                             {hub.coLeadName && (
-                              <p className="text-[10px] sm:text-[10.5px] text-[#D7E2DC] mt-0.5 truncate">
+                              <p className="text-[10px] sm:text-[10.5px] text-[#D7E2DC] mt-0.5 leading-snug">
                                 Cùng BM {hub.coLeadName}
                               </p>
                             )}
