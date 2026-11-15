@@ -74,6 +74,9 @@ export const RegionalSystemPage: React.FC = () => {
   const [activeIndustry, setActiveIndustry] = useState<'ALL' | IndustryCategoryKey>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showAllCompact, setShowAllCompact] = useState<boolean>(false);
+  const [activeMobileOrgCode, setActiveMobileOrgCode] = useState<
+    'HCM69' | 'SG168' | 'SG169' | 'MN111'
+  >('HCM69');
   const [selectedLeaderId, setSelectedLeaderId] = useState<string | null>(null);
   const [activeModalPhotoIdx, setActiveModalPhotoIdx] = useState<number>(0);
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
@@ -170,6 +173,13 @@ export const RegionalSystemPage: React.FC = () => {
   }, [compactFiltered, hasActiveFilter, showAllCompact]);
 
   const hiddenCompactCount = compactFiltered.length - visibleCompactLeaders.length;
+
+  const activeMobileBranch = useMemo(() => {
+    return (
+      REGIONAL_ORG_BRANCHES.find((b) => b.code === activeMobileOrgCode) ||
+      REGIONAL_ORG_BRANCHES[0]
+    );
+  }, [activeMobileOrgCode]);
 
   const selectedLeader: RegionalLeader | null = useMemo(() => {
     if (!selectedLeaderId) return null;
@@ -277,23 +287,26 @@ export const RegionalSystemPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#181F1C] selection:bg-[#0A3622] selection:text-white">
+    <div className="min-h-screen w-full max-w-[100vw] [overflow-x:clip] bg-[#FAF9F5] text-[#181F1C] selection:bg-[#0A3622] selection:text-white">
       {/* =================================================================== */}
-      {/* STICKY EDITORIAL HEADER */}
+      {/* STICKY EDITORIAL HEADER + MOBILE QUICK-JUMP CHAPTER STRIP */}
       {/* =================================================================== */}
       <header className="sticky top-0 z-40 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 h-14 sm:h-[68px] flex items-center justify-between gap-2.5 sm:gap-4">
           <a
             href="/"
-            className="inline-flex items-center gap-3 group shrink-0"
+            className="inline-flex items-center gap-2.5 sm:gap-3 group min-w-0"
             title="Về trang chủ Khánh Vân"
           >
-            <span className="w-[3px] h-5 bg-[#008746] inline-block" />
-            <div className="flex flex-col">
-              <span className="font-serif text-lg sm:text-xl tracking-[0.08em] text-[#181F1C] font-semibold leading-none">
+            <span className="w-[3px] h-5 bg-[#008746] inline-block shrink-0" />
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif text-base sm:text-xl tracking-[0.06em] sm:tracking-[0.08em] text-[#181F1C] font-semibold leading-none truncate">
                 KHÁNH VÂN
               </span>
-              <span className="text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
+              <span className="sm:hidden text-[9px] uppercase tracking-[0.12em] text-[#56605B] font-medium mt-1 truncate">
+                Vùng Khánh Vân • Manulife
+              </span>
+              <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
                 Hệ Thống Vùng • Manulife Việt Nam
               </span>
             </div>
@@ -314,23 +327,64 @@ export const RegionalSystemPage: React.FC = () => {
             </a>
           </nav>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <a
               href="/"
-              className="inline-flex items-center gap-1.5 px-3 py-2 border border-[#DCD8CE] hover:border-[#0A3622] text-xs font-medium text-[#181F1C] rounded-[2px] transition-colors"
+              aria-label="Về trang chủ"
+              className="inline-flex items-center justify-center gap-1.5 p-2 sm:px-3 sm:py-2 border border-[#DCD8CE] hover:border-[#0A3622] text-xs font-medium text-[#181F1C] rounded-[2px] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Trang chủ</span>
             </a>
             <a
               href="#ket-noi-vung"
-              className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.14em] font-medium rounded-[2px] transition-colors"
+              className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.14em] font-semibold rounded-[2px] transition-colors whitespace-nowrap"
             >
-              <span>Kết nối Vùng</span>
+              <span>Kết nối</span>
+              <span className="hidden sm:inline">Vùng</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
+
+        {/* Mobile Chapter Quick-Jump Bar */}
+        <nav
+          aria-label="Điều hướng nhanh các chương"
+          className="lg:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
+        >
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-4 py-2 text-[11px] font-medium text-[#4A544F]">
+            <a
+              href="#tam-voc"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+            >
+              01. Tầm vóc
+            </a>
+            <a
+              href="#cau-truc-vung"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+            >
+              02. Khu vực &amp; Sơ đồ
+            </a>
+            <a
+              href="#doi-ngu-quan-ly"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-[#EBF2EE] text-[#0A3622] font-semibold border border-[#008746]/30 transition-colors"
+            >
+              03. Đội ngũ ({REGIONAL_LEADERS.length})
+            </a>
+            <a
+              href="#van-hoa-he-thong"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+            >
+              04. Văn hóa
+            </a>
+            <a
+              href="#ket-noi-vung"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+            >
+              05. Kết nối
+            </a>
+          </div>
+        </nav>
       </header>
 
       {/* =================================================================== */}
@@ -338,42 +392,32 @@ export const RegionalSystemPage: React.FC = () => {
       {/* =================================================================== */}
       <section
         id="tam-voc"
-        className="pt-10 sm:pt-16 pb-16 sm:pb-24 border-b border-[#E4E1D8]"
+        className="scroll-mt-28 sm:scroll-mt-20 pt-7 sm:pt-14 pb-12 sm:pb-24 border-b border-[#E4E1D8]"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-12 sm:space-y-16">
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 space-y-8 sm:space-y-14">
           {/* 1A. Editorial Title & Lead */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl space-y-4"
-          >
-            <div className="inline-flex flex-wrap items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
+          <div className="max-w-4xl space-y-3 sm:space-y-4">
+            <div className="inline-flex flex-wrap items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#008746] font-semibold">
               <span>01 / TỔNG QUAN TỔ CHỨC</span>
-              <span className="w-8 h-px bg-[#B8975A]" />
+              <span className="w-6 sm:w-8 h-px bg-[#B8975A]" />
               <span className="text-[#56605B]">MANULIFE VIỆT NAM</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-[66px] leading-[1.06] font-medium text-[#181F1C] tracking-[-0.01em]">
+            <h1 className="font-serif text-[32px] sm:text-6xl lg:text-[66px] leading-[1.12] sm:leading-[1.06] font-medium text-[#181F1C] tracking-[-0.01em]">
               Hệ Thống Vùng{' '}
               <span className="italic text-[#0A3622]">Khánh Vân</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl pt-1">
-              Được kiến tạo từ năm 2018 trên nền tảng kỷ luật quản trị tài sản ngân hàng quốc tế, Hệ thống Vùng Khánh Vân là nơi hội tụ của hơn 500 nhân sự và 64 quản lý kinh doanh tại 4 khu vực trực thuộc cùng chung một kim chỉ nam:{' '}
-              <span className="font-medium text-[#0A3622] italic font-serif text-xl sm:text-2xl">
+            <p className="text-[14.5px] sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl">
+              Được kiến tạo từ năm 2018 trên nền tảng kỷ luật quản trị tài sản ngân hàng quốc tế, Hệ thống Vùng Khánh Vân quy tụ hơn 500 nhân sự và 64 quản lý kinh doanh tại 4 khu vực trực thuộc cùng chung một kim chỉ nam:{' '}
+              <span className="font-medium text-[#0A3622] italic font-serif text-[17px] sm:text-2xl block sm:inline mt-1 sm:mt-0">
                 “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
             </p>
-          </motion.div>
+          </div>
 
-          {/* 1B. Full-Width Framed Executive Board Portrait + Institutional Metrics */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden shadow-[0_24px_60px_-28px_rgba(10,54,34,0.22)]"
-          >
+          {/* 1B. Unobstructed Executive Board Portrait + Clean Caption Band + 4 Metrics */}
+          <div className="bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden shadow-[0_24px_60px_-28px_rgba(10,54,34,0.22)]">
             <figure
               onClick={() =>
                 setLightbox({
@@ -385,159 +429,164 @@ export const RegionalSystemPage: React.FC = () => {
                     'Thế hệ lãnh đạo kế cận trưởng thành từ Ngân hàng, Kế toán – Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
                 })
               }
-              className="relative aspect-[16/10] sm:aspect-[16/9] bg-[#F2EFE9] overflow-hidden cursor-zoom-in group"
+              className="cursor-zoom-in group"
             >
-              <img
-                fetchPriority="high"
-                decoding="async"
-                src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-                alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
-                className="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-32 sm:h-40 bg-gradient-to-t from-[#181F1C]/85 via-[#181F1C]/35 to-transparent pointer-events-none" />
-              <figcaption className="absolute bottom-4 left-4 right-4 sm:bottom-7 sm:left-8 sm:right-8 flex flex-wrap items-end justify-between gap-3 text-white">
-                <div className="max-w-2xl">
-                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold block">
+              <div className="relative aspect-[4/3] sm:aspect-[16/9] bg-[#F2EFE9] overflow-hidden">
+                <img
+                  fetchPriority="high"
+                  decoding="async"
+                  src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
+                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
+                />
+                <span className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/55 backdrop-blur-sm border border-white/25 rounded-[2px] text-[9.5px] sm:text-[10px] uppercase tracking-[0.14em] text-[#FAF9F5]">
+                  <Camera className="w-3 h-3 text-[#E8D3A6]" />
+                  <span>Phóng lớn</span>
+                </span>
+              </div>
+
+              {/* Dedicated Unobstructed Editorial Caption Strip */}
+              <figcaption className="bg-[#0A3622] text-[#FAF9F5] px-4 py-3.5 sm:px-7 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 border-b border-[#0A3622]">
+                <div>
+                  <span className="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold block">
                     BAN ĐIỀU HÀNH HỆ THỐNG VÙNG KHÁNH VÂN
                   </span>
-                  <p className="font-serif italic text-lg sm:text-2xl text-[#FAF9F5] leading-snug mt-0.5">
+                  <p className="font-serif italic text-[14.5px] sm:text-xl text-[#FAF9F5] leading-snug mt-0.5">
                     Thế hệ lãnh đạo kế cận bản lĩnh, chuyên môn sâu và chuẩn mực tại Manulife Việt Nam
                   </p>
                 </div>
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/40 backdrop-blur-sm border border-white/25 rounded-[2px] text-[10px] uppercase tracking-[0.18em] text-[#FAF9F5]">
-                  <Camera className="w-3 h-3 text-[#E8D3A6]" />
-                  <span>Phóng lớn ảnh</span>
+                <span className="hidden md:inline-block text-[10.5px] uppercase tracking-[0.16em] text-[#B9C8C0] shrink-0">
+                  Manulife Plaza • TP.HCM
                 </span>
               </figcaption>
             </figure>
 
-            {/* 4 Key Institutional Metrics */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x divide-[#E4E1D8] bg-[#FAF9F5]">
-              <div className="p-5 sm:p-7 space-y-1">
-                <span className="font-serif text-3xl sm:text-4xl text-[#0A3622] font-semibold block">
+            {/* 4 Key Institutional Metrics (Crisp 1px Grid on 2x2 Mobile & 1x4 Desktop) */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E4E1D8]">
+              <div className="bg-[#FAF9F5] p-4 sm:p-7 space-y-0.5 sm:space-y-1">
+                <span className="font-serif text-2xl sm:text-4xl text-[#0A3622] font-semibold block">
                   500+
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] text-[#181F1C] font-bold block">
+                <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#181F1C] font-bold block">
                   Nhân sự toàn vùng
                 </span>
-                <p className="text-xs text-[#56605B]">
-                  Phát triển bền vững từ con số 0 (2018)
+                <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
+                  Phát triển bền vững từ 2018
                 </p>
               </div>
 
-              <div className="p-5 sm:p-7 space-y-1">
-                <span className="font-serif text-3xl sm:text-4xl text-[#0A3622] font-semibold block">
+              <div className="bg-[#FAF9F5] p-4 sm:p-7 space-y-0.5 sm:space-y-1">
+                <span className="font-serif text-2xl sm:text-4xl text-[#0A3622] font-semibold block">
                   64
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] text-[#181F1C] font-bold block">
+                <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#181F1C] font-bold block">
                   Quản lý kinh doanh
                 </span>
-                <p className="text-xs text-[#56605B]">
-                  4 khu vực: HCM69, SG168, SG169, MN111
+                <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
+                  HCM69 • SG168 • SG169 • MN111
                 </p>
               </div>
 
-              <div className="p-5 sm:p-7 space-y-1">
-                <span className="font-serif text-3xl sm:text-4xl text-[#0A3622] font-semibold block">
+              <div className="bg-[#FAF9F5] p-4 sm:p-7 space-y-0.5 sm:space-y-1">
+                <span className="font-serif text-2xl sm:text-4xl text-[#0A3622] font-semibold block">
                   Top 1
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] text-[#181F1C] font-bold block">
-                  Cú đúp Quán quân 2025
+                <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#181F1C] font-bold block">
+                  Cú đúp Quán quân
                 </span>
-                <p className="text-xs text-[#56605B]">
-                  Dẫn đầu Doanh số FYP &amp; Tỷ lệ Duy trì HĐ
+                <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
+                  Doanh số FYP &amp; Tỷ lệ Duy trì HĐ
                 </p>
               </div>
 
-              <div className="p-5 sm:p-7 space-y-1">
-                <span className="font-serif text-3xl sm:text-4xl text-[#0A3622] font-semibold block">
+              <div className="bg-[#FAF9F5] p-4 sm:p-7 space-y-0.5 sm:space-y-1">
+                <span className="font-serif text-2xl sm:text-4xl text-[#0A3622] font-semibold block">
                   Châu Á
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] text-[#181F1C] font-bold block">
+                <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#181F1C] font-bold block">
                   Giải thưởng Quản lý
                 </span>
-                <p className="text-xs text-[#56605B]">
-                  Nhà Quản lý Xuất sắc &amp; Đáng tin cậy Châu Á
+                <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
+                  Nhà Quản lý Xuất sắc Châu Á
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* 1C. Regional Founder Note + 3 Operating Standards */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-stretch pt-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 items-stretch">
             {/* Founder Column */}
-            <div className="lg:col-span-5 bg-[#F2EFE9]/90 border border-[#E4E1D8] rounded-[4px] p-6 sm:p-8 flex flex-col justify-between gap-5">
-              <div className="space-y-5">
-                <div className="flex items-center gap-4">
+            <div className="lg:col-span-5 bg-[#F2EFE9]/90 border border-[#E4E1D8] rounded-[4px] p-5 sm:p-8 flex flex-col justify-between gap-4 sm:gap-5">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3.5 sm:gap-4">
                   <img
-                    loading="lazy"
                     decoding="async"
                     src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
                     alt="Khánh Vân — Giám đốc Vùng Cấp cao Manulife Việt Nam"
-                    className="w-20 h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
+                    className="w-16 h-20 sm:w-20 sm:h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
                   />
-                  <div className="space-y-1">
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-[#008746] font-bold block">
+                  <div className="space-y-0.5 sm:space-y-1 min-w-0">
+                    <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.16em] text-[#008746] font-bold block">
                       NGƯỜI SÁNG LẬP &amp; DẪN DẮT VÙNG
                     </span>
-                    <h2 className="font-serif text-2xl sm:text-[28px] text-[#181F1C] font-semibold leading-tight">
+                    <h2 className="font-serif text-xl sm:text-[28px] text-[#181F1C] font-semibold leading-tight">
                       Khánh Vân
                     </h2>
-                    <p className="text-xs text-[#56605B] font-medium leading-snug">
+                    <p className="text-[11.5px] sm:text-xs text-[#56605B] font-medium leading-snug">
                       Giám đốc Vùng Cấp cao (SRD) • Cựu Quản lý Tài sản ANZ Bank
                     </p>
                   </div>
                 </div>
 
-                <blockquote className="font-serif italic text-lg sm:text-[19.5px] text-[#0A3622] leading-relaxed border-l-2 border-[#B8975A] pl-4">
+                <blockquote className="font-serif italic text-[16px] sm:text-[19px] text-[#0A3622] leading-relaxed border-l-2 border-[#B8975A] pl-3.5 sm:pl-4">
                   “Một hệ thống mạnh không được đo bằng những lời hứa hào nhoáng, mà bằng phẩm chất của người tư vấn đứng sau từng hợp đồng và tỷ lệ khách hàng vẫn an tâm đồng hành sau 5 năm, 10 năm, 20 năm.”
                 </blockquote>
 
                 <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed">
-                  Rời vị trí Quản lý tại ngân hàng quốc tế ANZ sau 8 năm gắn bó để bắt đầu hành trình tại Manulife từ con số 0, chị Khánh Vân xây dựng vùng kinh doanh với tiêu chuẩn khắt khe của ngành ngân hàng: tuyển chọn những cộng sự tử tế, rèn luyện nghiệp vụ thực chất và trao quyền để mỗi quản lý tỏa sáng bằng chính thế mạnh riêng.
+                  Rời vị trí Quản lý tại ngân hàng quốc tế ANZ sau 8 năm gắn bó để bắt đầu hành trình tại Manulife từ con số 0, chị Khánh Vân xây dựng vùng kinh doanh với tiêu chuẩn khắt khe của ngành ngân hàng: tuyển chọn những cộng sự tử tế, rèn luyện nghiệp vụ thực chất và trao quyền để mỗi quản lý tỏa sáng bằng thế mạnh riêng.
                 </p>
               </div>
 
               <div className="pt-3 border-t border-[#DCD8CE]">
                 <a
                   href="/#cau-chuyen"
-                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-[#0A3622] hover:text-[#008746] font-bold"
+                  className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] font-bold"
                 >
-                  <span>Đọc trọn vẹn câu chuyện của Khánh Vân</span>
+                  <span>Đọc câu chuyện của Khánh Vân</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
 
             {/* 3 Core Cultural Pillars */}
-            <div className="lg:col-span-7 flex flex-col justify-between gap-6">
-              <div className="space-y-2">
-                <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
+            <div className="lg:col-span-7 flex flex-col justify-between gap-4 sm:gap-6">
+              <div className="space-y-1.5">
+                <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
                   BẢN SẮC &amp; CHUẨN MỰC VẬN HÀNH
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
+                <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
                   Ba trụ cột làm nên uy tín của{' '}
                   <span className="italic text-[#0A3622]">Vùng Khánh Vân</span>
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {SYSTEM_PILLARS.map((pillar) => {
                   const IconComp = pillar.icon;
                   return (
                     <div
                       key={pillar.number}
-                      className="bg-white border border-[#E4E1D8] rounded-[4px] p-5 sm:p-6 flex items-start gap-4 hover:border-[#0A3622]/40 transition-colors"
+                      className="bg-white border border-[#E4E1D8] rounded-[4px] p-4 sm:p-6 flex items-start gap-3.5 sm:gap-4 hover:border-[#0A3622]/40 transition-colors"
                     >
-                      <div className="w-10 h-10 rounded-[3px] bg-[#EBF2EE] text-[#0A3622] flex items-center justify-center shrink-0 mt-0.5">
-                        <IconComp className="w-5 h-5" />
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-[3px] bg-[#EBF2EE] text-[#0A3622] flex items-center justify-center shrink-0 mt-0.5">
+                        <IconComp className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <div className="space-y-1.5">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[11px] font-bold tracking-[0.18em] text-[#B8975A]">
+                      <div className="space-y-1 min-w-0">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-[10.5px] font-bold tracking-[0.16em] text-[#B8975A] shrink-0">
                             {pillar.number}
                           </span>
-                          <h4 className="font-serif text-xl sm:text-2xl text-[#181F1C] font-semibold">
+                          <h4 className="font-serif text-lg sm:text-2xl text-[#181F1C] font-semibold leading-snug">
                             {pillar.title}
                           </h4>
                         </div>
@@ -559,17 +608,17 @@ export const RegionalSystemPage: React.FC = () => {
       {/* =================================================================== */}
       <section
         id="cau-truc-vung"
-        className="py-16 sm:py-24 bg-[#F2EFE9]/60 border-b border-[#E4E1D8]"
+        className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-24 bg-[#F2EFE9]/60 border-b border-[#E4E1D8]"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-12 sm:space-y-16">
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 space-y-8 sm:space-y-14">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2 max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
-                <Layers className="w-3.5 h-3.5" />
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4">
+            <div className="space-y-1.5 sm:space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
+                <Layers className="w-3.5 h-3.5 shrink-0" />
                 <span>02 / BAN GIÁM ĐỐC KHU VỰC &amp; SƠ ĐỒ HỆ THỐNG</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-medium leading-tight">
+              <h2 className="font-serif text-[26px] sm:text-5xl text-[#181F1C] font-medium leading-tight">
                 Bốn khu vực kinh doanh —{' '}
                 <span className="italic text-[#0A3622]">Một chuẩn mực chung</span>
               </h2>
@@ -579,184 +628,375 @@ export const RegionalSystemPage: React.FC = () => {
             </p>
           </div>
 
-          {/* 2A. 4 Regional Executive Hub Cards with Real Portraits */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {REGIONAL_EXECUTIVE_HUBS.map((hub) => {
-              const memberCount = areaCounts[hub.code] || 0;
-              return (
-                <div
-                  key={hub.code}
-                  className={`rounded-[4px] p-5 sm:p-6 border flex flex-col justify-between gap-5 transition-all ${
-                    hub.isCore
-                      ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] shadow-[0_20px_44px_-24px_rgba(10,54,34,0.6)]'
-                      : 'bg-white text-[#181F1C] border-[#DCD8CE] hover:border-[#0A3622]/55 shadow-[0_12px_30px_-24px_rgba(10,54,34,0.16)]'
-                  }`}
-                >
-                  <div className="space-y-4">
-                    {/* Top Code & Scale Badge */}
-                    <div className="flex items-center justify-between gap-2">
-                      <span
-                        className={`px-2.5 py-1 text-[10.5px] uppercase tracking-[0.2em] font-bold rounded-[2px] ${
-                          hub.isCore
-                            ? 'bg-[#E8D3A6]/20 text-[#E8D3A6] border border-[#E8D3A6]/35'
-                            : 'bg-[#EBF2EE] text-[#0A3622]'
-                        }`}
-                      >
-                        {hub.code}
-                      </span>
-                      <span
-                        className={`text-[10px] uppercase tracking-[0.14em] font-medium ${
-                          hub.isCore ? 'text-[#E8D3A6]' : 'text-[#56605B]'
-                        }`}
-                      >
-                        {hub.scaleBadge}
-                      </span>
-                    </div>
+          {/* 2A. 4 Regional Executive Hub Cards (Swipeable Snap Carousel on Mobile, Grid on Tablet/Desktop) */}
+          <div className="space-y-2.5">
+            <div className="flex sm:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
+              <span>4 Khu vực trực thuộc Vùng Khánh Vân</span>
+              <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
+                <span>Vuốt ngang</span>
+                <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
 
-                    {/* Area Director Portrait(s) */}
-                    <div
-                      onClick={() => {
-                        if (hub.leadProfileId) {
-                          openLeaderById(hub.leadProfileId);
-                        } else if (memberCount > 0) {
-                          handleSelectAreaHub(hub.code);
-                        }
-                      }}
-                      className={`flex items-center gap-3.5 p-2.5 rounded-[3px] border ${
-                        hub.isCore
-                          ? 'bg-white/[0.06] border-white/15'
-                          : 'bg-[#FAF9F5] border-[#ECE9E0]'
-                      } ${hub.leadProfileId || memberCount > 0 ? 'cursor-pointer hover:opacity-95' : ''}`}
-                    >
-                      <div className="flex -space-x-2.5 shrink-0">
-                        <img
-                          loading="lazy"
-                          decoding="async"
-                          src={hub.leadPortrait}
-                          alt={hub.leadName}
-                          className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#B8975A]"
-                        />
-                        {hub.coLeadPortrait && (
-                          <img
-                            loading="lazy"
-                            decoding="async"
-                            src={hub.coLeadPortrait}
-                            alt={hub.coLeadName || ''}
-                            title={`${hub.coLeadName} — ${hub.coLeadRole}`}
-                            className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#FAF9F5]"
-                          />
-                        )}
+            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory gap-3.5 sm:gap-5 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 no-scrollbar">
+              {REGIONAL_EXECUTIVE_HUBS.map((hub) => {
+                const memberCount = areaCounts[hub.code] || 0;
+                return (
+                  <div
+                    key={hub.code}
+                    className={`w-[82vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center rounded-[4px] p-4 sm:p-6 border flex flex-col justify-between gap-4 sm:gap-5 transition-all ${
+                      hub.isCore
+                        ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] shadow-[0_20px_44px_-24px_rgba(10,54,34,0.6)]'
+                        : 'bg-white text-[#181F1C] border-[#DCD8CE] hover:border-[#0A3622]/55 shadow-[0_12px_30px_-24px_rgba(10,54,34,0.16)]'
+                    }`}
+                  >
+                    <div className="space-y-3.5 sm:space-y-4">
+                      {/* Top Code & Scale Badge */}
+                      <div className="flex items-center justify-between gap-2">
+                        <span
+                          className={`px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] font-bold rounded-[2px] shrink-0 ${
+                            hub.isCore
+                              ? 'bg-[#E8D3A6]/20 text-[#E8D3A6] border border-[#E8D3A6]/35'
+                              : 'bg-[#EBF2EE] text-[#0A3622]'
+                          }`}
+                        >
+                          {hub.code}
+                        </span>
+                        <span
+                          className={`text-[9.5px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.14em] font-medium text-right truncate ${
+                            hub.isCore ? 'text-[#E8D3A6]' : 'text-[#56605B]'
+                          }`}
+                        >
+                          {hub.scaleBadge}
+                        </span>
                       </div>
-                      <div className="min-w-0">
-                        <p
-                          className={`font-serif text-lg font-semibold leading-tight truncate ${
+
+                      {/* Area Director Portrait(s) */}
+                      <div
+                        onClick={() => {
+                          if (hub.leadProfileId) {
+                            openLeaderById(hub.leadProfileId);
+                          } else if (memberCount > 0) {
+                            handleSelectAreaHub(hub.code);
+                          }
+                        }}
+                        className={`flex items-center gap-3 p-2.5 rounded-[3px] border ${
+                          hub.isCore
+                            ? 'bg-white/[0.06] border-white/15'
+                            : 'bg-[#FAF9F5] border-[#ECE9E0]'
+                        } ${hub.leadProfileId || memberCount > 0 ? 'cursor-pointer hover:opacity-95' : ''}`}
+                      >
+                        <div className="flex -space-x-2.5 shrink-0">
+                          <img
+                            src={hub.leadPortrait}
+                            alt={hub.leadName}
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover object-top border-2 border-[#B8975A] bg-[#EFECE5]"
+                          />
+                          {hub.coLeadPortrait && (
+                            <img
+                              src={hub.coLeadPortrait}
+                              alt={hub.coLeadName || ''}
+                              title={`${hub.coLeadName} — ${hub.coLeadRole}`}
+                              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover object-top border-2 border-[#FAF9F5] bg-[#EFECE5]"
+                            />
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p
+                            className={`font-serif text-base sm:text-lg font-semibold leading-tight truncate ${
+                              hub.isCore ? 'text-white' : 'text-[#181F1C]'
+                            }`}
+                          >
+                            {hub.leadName}
+                          </p>
+                          <p
+                            className={`text-[10.5px] sm:text-[11px] font-medium leading-snug mt-0.5 ${
+                              hub.isCore ? 'text-[#E8D3A6]' : 'text-[#008746]'
+                            }`}
+                          >
+                            {hub.leadRole}
+                          </p>
+                          {hub.coLeadName && (
+                            <p className="text-[10px] sm:text-[10.5px] text-[#D7E2DC] mt-0.5 truncate">
+                              Cùng BM {hub.coLeadName}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="space-y-1">
+                        <h3
+                          className={`font-serif text-lg sm:text-xl font-semibold leading-snug ${
                             hub.isCore ? 'text-white' : 'text-[#181F1C]'
                           }`}
                         >
-                          {hub.leadName}
-                        </p>
+                          {hub.title}
+                        </h3>
                         <p
-                          className={`text-[11px] font-medium leading-snug mt-0.5 ${
-                            hub.isCore ? 'text-[#E8D3A6]' : 'text-[#008746]'
+                          className={`text-xs leading-relaxed line-clamp-4 sm:line-clamp-none ${
+                            hub.isCore ? 'text-[#D7E2DC]' : 'text-[#4A544F]'
                           }`}
                         >
-                          {hub.leadRole}
+                          {hub.description}
                         </p>
-                        {hub.coLeadName && (
-                          <p className="text-[10.5px] text-[#D7E2DC] mt-0.5 truncate">
-                            Cùng BM {hub.coLeadName}
-                          </p>
-                        )}
                       </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <h3
-                        className={`font-serif text-xl font-semibold leading-snug ${
-                          hub.isCore ? 'text-white' : 'text-[#181F1C]'
-                        }`}
-                      >
-                        {hub.title}
-                      </h3>
-                      <p
-                        className={`text-xs leading-relaxed ${
-                          hub.isCore ? 'text-[#D7E2DC]' : 'text-[#4A544F]'
-                        }`}
-                      >
-                        {hub.description}
-                      </p>
+                    {/* Card Footer Action */}
+                    <div
+                      className={`pt-3 border-t flex items-center justify-between text-xs font-medium ${
+                        hub.isCore
+                          ? 'border-white/15 text-[#E8D3A6]'
+                          : 'border-[#ECE9E0] text-[#0A3622]'
+                      }`}
+                    >
+                      {memberCount > 0 ? (
+                        <button
+                          type="button"
+                          onClick={() => handleSelectAreaHub(hub.code)}
+                          className="w-full flex items-center justify-between cursor-pointer group"
+                        >
+                          <span>Xem {memberCount} hồ sơ khu vực</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      ) : (
+                        <span className="text-[11px] text-[#56605B]">
+                          Đang cập nhật hồ sơ trực tuyến
+                        </span>
+                      )}
                     </div>
                   </div>
-
-                  {/* Card Footer Action */}
-                  <div
-                    className={`pt-3 border-t flex items-center justify-between text-xs font-medium ${
-                      hub.isCore
-                        ? 'border-white/15 text-[#E8D3A6]'
-                        : 'border-[#ECE9E0] text-[#0A3622]'
-                    }`}
-                  >
-                    {memberCount > 0 ? (
-                      <button
-                        type="button"
-                        onClick={() => handleSelectAreaHub(hub.code)}
-                        className="w-full flex items-center justify-between cursor-pointer group"
-                      >
-                        <span>Xem {memberCount} hồ sơ khu vực</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    ) : (
-                      <span className="text-[11px] text-[#56605B]">
-                        Đang cập nhật hồ sơ trực tuyến
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           {/* 2B. Interactive Visual Regional Org-Structure Diagram */}
-          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-5 sm:p-8 lg:p-10 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[#ECE9E0]">
+          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-8 lg:p-10 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-5 sm:space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-4 sm:pb-5 border-b border-[#ECE9E0]">
               <div className="space-y-1">
-                <span className="inline-flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-bold">
-                  <GitBranch className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold">
+                  <GitBranch className="w-3.5 h-3.5 shrink-0" />
                   <span>SƠ ĐỒ TỔ CHỨC HỆ THỐNG VÙNG KHÁNH VÂN</span>
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold">
+                <h3 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold leading-snug">
                   Cấu trúc điều hành từ Giám đốc Vùng đến các nhánh chủ lực
                 </h3>
               </div>
-              <span className="text-[11px] text-[#56605B] bg-[#FAF9F5] border border-[#E4E1D8] px-3 py-1.5 rounded-[2px] self-start sm:self-auto">
-                Chạm vào từng Quản lý để đọc hồ sơ chi tiết
+              <span className="text-[11px] text-[#56605B] bg-[#FAF9F5] border border-[#E4E1D8] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-[2px] self-start sm:self-auto">
+                Chạm vào từng Quản lý để xem hồ sơ
               </span>
             </div>
 
             {/* Root Node: SRD Khánh Vân */}
             <div className="flex flex-col items-center">
-              <div className="inline-flex flex-col sm:flex-row items-center gap-4 px-6 py-4 bg-[#0A3622] text-[#FAF9F5] rounded-[4px] border-2 border-[#B8975A] shadow-[0_16px_36px_-18px_rgba(10,54,34,0.55)] text-center sm:text-left">
+              <div className="w-full sm:w-auto inline-flex items-center gap-3.5 sm:gap-4 px-4 py-3.5 sm:px-6 sm:py-4 bg-[#0A3622] text-[#FAF9F5] rounded-[4px] border-2 border-[#B8975A] shadow-[0_16px_36px_-18px_rgba(10,54,34,0.55)]">
                 <img
-                  loading="lazy"
                   decoding="async"
                   src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
                   alt="Nguyễn Thị Vân (Khánh Vân) — Giám đốc Vùng Cấp cao"
-                  className="w-16 h-16 rounded-full object-cover object-top border-2 border-[#E8D3A6] shrink-0"
+                  className="w-[54px] h-[54px] sm:w-16 sm:h-16 rounded-full object-cover object-top border-2 border-[#E8D3A6] shrink-0"
                 />
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.24em] text-[#E8D3A6] font-bold block">
+                <div className="min-w-0">
+                  <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#E8D3A6] font-bold block">
                     SENIOR REGIONAL DIRECTOR • SRD
                   </span>
-                  <p className="font-serif text-2xl font-semibold text-white leading-tight mt-0.5">
+                  <p className="font-serif text-lg sm:text-2xl font-semibold text-white leading-tight mt-0.5">
                     Nguyễn Thị Vân (Khánh Vân)
                   </p>
-                  <p className="text-xs text-[#D7E2DC] mt-0.5">
-                    Giám đốc Vùng Cấp cao • Điều hành 4 Khu vực Kinh doanh (500+ Nhân sự)
+                  <p className="text-[11px] sm:text-xs text-[#D7E2DC] mt-0.5 leading-snug">
+                    Giám đốc Vùng Cấp cao • 4 Khu vực (500+ Nhân sự)
                   </p>
                 </div>
               </div>
 
-              {/* Desktop Tree Connector Lines */}
+              {/* =========================================================== */}
+              {/* MOBILE & TABLET INTERACTIVE CONNECTED ORG TREE (< lg) */}
+              {/* =========================================================== */}
+              <div className="lg:hidden w-full flex flex-col items-center">
+                {/* Connector from SRD to 4 Area Tabs */}
+                <div className="w-[2px] h-4 bg-[#CDB98C]" />
+                <div className="w-[78%] h-[2px] bg-[#CDB98C] relative">
+                  <span className="w-2 h-2 rounded-full bg-[#B8975A] absolute -top-[3px] left-1/2 -translate-x-1/2" />
+                </div>
+                <div className="grid grid-cols-4 w-full">
+                  {REGIONAL_ORG_BRANCHES.map((b) => (
+                    <div key={`tick-${b.code}`} className="flex justify-center">
+                      <div
+                        className={`w-[2px] h-3 ${
+                          activeMobileOrgCode === b.code ? 'bg-[#0A3622]' : 'bg-[#CDB98C]'
+                        }`}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* 4 Connected Area Selector Nodes */}
+                <div className="grid grid-cols-4 gap-1.5 w-full">
+                  {REGIONAL_ORG_BRANCHES.map((b) => {
+                    const isSelected = activeMobileOrgCode === b.code;
+                    return (
+                      <button
+                        key={`tab-${b.code}`}
+                        type="button"
+                        onClick={() => setActiveMobileOrgCode(b.code)}
+                        className={`py-2 px-1 rounded-[3px] border text-center transition-all cursor-pointer ${
+                          isSelected
+                            ? 'bg-[#0A3622] text-white border-[#B8975A] shadow-sm'
+                            : 'bg-[#FAF9F5] text-[#28322D] border-[#DCD8CE]'
+                        }`}
+                      >
+                        <span
+                          className={`text-[11px] font-bold tracking-[0.08em] block ${
+                            isSelected ? 'text-[#E8D3A6]' : 'text-[#0A3622]'
+                          }`}
+                        >
+                          {b.code}
+                        </span>
+                        <span
+                          className={`text-[9.5px] block truncate mt-0.5 ${
+                            isSelected ? 'text-white/90' : 'text-[#56605B]'
+                          }`}
+                        >
+                          {b.code === 'HCM69'
+                            ? 'Hạt nhân'
+                            : b.code === 'MN111'
+                              ? 'Ngân Vũ'
+                              : b.code === 'SG168'
+                                ? 'M.Phương'
+                                : 'H.Trang'}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Stem into Selected Area Tree Card */}
+                <div className="w-[2px] h-3.5 bg-[#B8975A]" />
+
+                {/* Selected Area Connected Branch Tree */}
+                <div className="w-full rounded-[4px] border border-[#0A3622]/35 bg-[#FAF9F5] overflow-hidden">
+                  {/* Area Director Header Node */}
+                  <div
+                    onClick={() => {
+                      if (activeMobileBranch.headLeaderId) {
+                        openLeaderById(activeMobileBranch.headLeaderId);
+                      }
+                    }}
+                    className={`p-3.5 flex items-center justify-between gap-3 ${
+                      activeMobileBranch.isCore
+                        ? 'bg-[#0A3622] text-white'
+                        : 'bg-white text-[#181F1C] border-b border-[#E4E1D8]'
+                    } ${activeMobileBranch.headLeaderId ? 'cursor-pointer' : ''}`}
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <img
+                        decoding="async"
+                        src={activeMobileBranch.headAvatar}
+                        alt={activeMobileBranch.headName}
+                        className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#B8975A] shrink-0"
+                      />
+                      <div className="min-w-0">
+                        <span
+                          className={`text-[9.5px] uppercase tracking-[0.16em] font-bold block ${
+                            activeMobileBranch.isCore ? 'text-[#E8D3A6]' : 'text-[#008746]'
+                          }`}
+                        >
+                          {activeMobileBranch.areaLabel}
+                        </span>
+                        <p className="font-serif text-base font-semibold leading-snug">
+                          {activeMobileBranch.headName}
+                        </p>
+                        <p
+                          className={`text-[11px] leading-snug ${
+                            activeMobileBranch.isCore ? 'text-[#D7E2DC]' : 'text-[#56605B]'
+                          }`}
+                        >
+                          {activeMobileBranch.headRole}
+                        </p>
+                      </div>
+                    </div>
+                    {activeMobileBranch.headLeaderId && (
+                      <span className="px-2 py-1 bg-[#EBF2EE] text-[#0A3622] text-[10px] font-semibold rounded-[2px] shrink-0">
+                        Hồ sơ
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Indented Visual Tree Spine for Sub-Branches */}
+                  <div className="p-3.5 space-y-3">
+                    {activeMobileBranch.keyManagers.length > 0 ? (
+                      <div className="relative ml-3.5 pl-4 border-l-2 border-[#CDB98C] space-y-2.5">
+                        {activeMobileBranch.keyManagers.map((mgr) => {
+                          const clickable = Boolean(mgr.leaderId);
+                          return (
+                            <div
+                              key={`mob-${activeMobileBranch.code}-${mgr.name}`}
+                              onClick={() => openLeaderById(mgr.leaderId)}
+                              className={`relative flex items-center gap-2.5 p-2.5 rounded-[3px] bg-white border border-[#E4E1D8] ${
+                                clickable ? 'cursor-pointer active:border-[#0A3622]' : ''
+                              }`}
+                            >
+                              {/* Horizontal Tree Branch Connector */}
+                              <span className="w-4 h-[2px] bg-[#CDB98C] absolute -left-4 top-1/2 -translate-y-1/2" />
+                              {mgr.avatar && (
+                                <img
+                                  decoding="async"
+                                  src={mgr.avatar}
+                                  alt={mgr.name}
+                                  className="w-9 h-9 rounded-full object-cover object-top border border-[#DCD8CE] shrink-0"
+                                />
+                              )}
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-center justify-between gap-1.5">
+                                  <span className="text-xs font-bold text-[#181F1C] truncate">
+                                    {mgr.name}
+                                  </span>
+                                  <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
+                                    {mgr.role}
+                                  </span>
+                                </div>
+                                {mgr.subNote && (
+                                  <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
+                                    {mgr.subNote}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="p-3 rounded-[3px] bg-white border border-dashed border-[#DCD8CE] text-xs text-[#56605B] leading-relaxed">
+                        Các nhánh Trưởng Phòng &amp; Trưởng Nhóm trực thuộc PSSM Ngân Vũ tại khu vực MN111.
+                      </div>
+                    )}
+
+                    {activeMobileBranch.moreCountNote && (
+                      <p className="text-[11px] text-[#56605B] leading-relaxed pt-1">
+                        {activeMobileBranch.moreCountNote}
+                      </p>
+                    )}
+
+                    {(areaCounts[activeMobileBranch.code] || 0) > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => handleSelectAreaHub(activeMobileBranch.code)}
+                        className="w-full py-2.5 px-3 bg-[#0A3622] text-white rounded-[2px] text-[11px] font-semibold uppercase tracking-[0.14em] inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                      >
+                        <span>
+                          Xem cả {areaCounts[activeMobileBranch.code]} hồ sơ {activeMobileBranch.code}
+                        </span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* =========================================================== */}
+              {/* DESKTOP 4-COLUMN TREE CONNECTOR LINES (lg+) */}
+              {/* =========================================================== */}
               <div className="hidden lg:flex flex-col items-center w-full">
                 <div className="w-[2px] h-7 bg-[#CDB98C]" />
                 <div className="w-[76%] h-[2px] bg-[#CDB98C] relative">
@@ -772,12 +1012,10 @@ export const RegionalSystemPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-              {/* Mobile short connector */}
-              <div className="lg:hidden w-[2px] h-5 bg-[#CDB98C]" />
             </div>
 
-            {/* 4 Connected Regional Branches */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+            {/* Desktop 4 Connected Regional Branches */}
+            <div className="hidden lg:grid lg:grid-cols-4 gap-5 items-stretch">
               {REGIONAL_ORG_BRANCHES.map((branch) => {
                 const count = areaCounts[branch.code] || 0;
                 return (
@@ -806,7 +1044,6 @@ export const RegionalSystemPage: React.FC = () => {
                         } ${branch.headLeaderId || count > 0 ? 'cursor-pointer hover:opacity-95' : ''}`}
                       >
                         <img
-                          loading="lazy"
                           decoding="async"
                           src={branch.headAvatar}
                           alt={branch.headName}
@@ -820,7 +1057,7 @@ export const RegionalSystemPage: React.FC = () => {
                           >
                             {branch.areaLabel}
                           </span>
-                          <p className="font-serif text-base font-semibold leading-tight truncate">
+                          <p className="font-serif text-[15px] font-semibold leading-snug">
                             {branch.headName}
                           </p>
                           <p
@@ -850,7 +1087,6 @@ export const RegionalSystemPage: React.FC = () => {
                               >
                                 {mgr.avatar && (
                                   <img
-                                    loading="lazy"
                                     decoding="async"
                                     src={mgr.avatar}
                                     alt={mgr.name}
@@ -912,123 +1148,54 @@ export const RegionalSystemPage: React.FC = () => {
       {/* =================================================================== */}
       {/* CHƯƠNG 03: DANH BẠ ĐỘI NGŨ PHÂN TẦNG & ĐA NỀN TẢNG */}
       {/* =================================================================== */}
-      <section id="doi-ngu-quan-ly" className="py-16 sm:py-24 border-b border-[#E4E1D8]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-10">
+      <section
+        id="doi-ngu-quan-ly"
+        className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-24 border-b border-[#E4E1D8]"
+      >
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 space-y-7 sm:space-y-10">
           {/* Section Header */}
-          <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
-              <Users className="w-3.5 h-3.5" />
+          <div className="space-y-2 sm:space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
+              <Users className="w-3.5 h-3.5 shrink-0" />
               <span>03 / HỒ SƠ ĐỘI NGŨ QUẢN LÝ &amp; CỐ VẤN ({REGIONAL_LEADERS.length} HỒ SƠ)</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-medium leading-tight">
+            <h2 className="font-serif text-[26px] sm:text-5xl text-[#181F1C] font-medium leading-tight">
               Những Người Đồng Hành{' '}
               <span className="italic text-[#0A3622]">Tận Tâm &amp; Bản Lĩnh</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
-              Mỗi Quản lý và Chuyên viên trong Hệ thống Vùng Khánh Vân bước vào nghề từ một nền tảng chuyên môn riêng biệt — từ Ngân hàng, Kế toán trưởng, Luật sư, Giáo viên đến Y tế — nhưng gặp nhau ở chữ “Tâm” và sự minh bạch pháp lý. Chạm vào bất kỳ hồ sơ nào để đọc trọn câu chuyện chuyển nghề.
+              Mỗi Quản lý và Chuyên viên bước vào nghề từ một nền tảng chuyên môn riêng biệt — Ngân hàng, Kế toán trưởng, Luật sư, Giáo viên, Y tế — nhưng gặp nhau ở chữ “Tâm” và sự minh bạch pháp lý. Chạm vào bất kỳ hồ sơ nào để đọc trọn câu chuyện nghề.
             </p>
           </div>
 
-          {/* 3A. Interactive Multi-Industry Talent Filter Strip */}
-          <div className="bg-[#F2EFE9]/80 border border-[#DCD8CE] rounded-[4px] p-4 sm:p-5 space-y-3">
-            <div className="flex items-center justify-between gap-2 flex-wrap">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-[3px] bg-[#0A3622] text-[#E8D3A6] flex items-center justify-center shrink-0">
-                  <Briefcase className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-[#008746] font-bold block">
-                    LỌC NHANH THEO NỀN TẢNG XUẤT THÂN TRƯỚC MANULIFE
-                  </span>
-                  <p className="text-xs text-[#28322D] font-medium">
-                    Chọn lĩnh vực chuyên môn để tìm người đồng hành đồng điệu nhất với gia đình hoặc sự nghiệp của bạn:
-                  </p>
-                </div>
+          {/* 3A. UNIFIED COMPACT FILTER & SEARCH PANEL */}
+          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-3.5 sm:p-5 space-y-3 sm:space-y-4 shadow-[0_12px_32px_-24px_rgba(10,54,34,0.14)] min-w-0">
+            {/* Row 1: Instant Search + Area Quick Chips */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div className="relative w-full md:w-80 order-1 md:order-2">
+                <Search className="w-3.5 h-3.5 text-[#858E89] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Tìm tên, Ngân hàng, Kế toán, Luật, MDRT..."
+                  aria-label="Tìm kiếm quản lý theo tên, nền tảng hoặc danh hiệu"
+                  className="w-full pl-8 pr-8 py-2 bg-[#FAF9F5] border border-[#DCD8CE] focus:border-[#0A3622] focus:bg-white rounded-[2px] text-[16px] sm:text-xs text-[#181F1C] placeholder:text-[#858E89] outline-none transition-colors"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    aria-label="Xóa từ khóa tìm kiếm"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#858E89] hover:text-[#181F1C]"
+                  >
+                    <X className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  </button>
+                )}
               </div>
-            </div>
 
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => handleSelectIndustry('ALL')}
-                className={`px-3 py-1.5 text-xs rounded-[2px] border transition-colors cursor-pointer ${
-                  activeIndustry === 'ALL'
-                    ? 'bg-[#0A3622] text-white border-[#0A3622] font-semibold'
-                    : 'bg-white text-[#28322D] border-[#DCD8CE] hover:border-[#0A3622]'
-                }`}
-              >
-                Tất cả ngành nghề ({industryCounts.ALL})
-              </button>
-              {INDUSTRY_CATEGORIES.map((cat) => {
-                const isSelected = activeIndustry === cat.key;
-                const count = industryCounts[cat.key] || 0;
-                return (
-                  <button
-                    key={cat.key}
-                    type="button"
-                    onClick={() => handleSelectIndustry(cat.key)}
-                    className={`px-3 py-1.5 text-xs rounded-[2px] border transition-colors cursor-pointer ${
-                      isSelected
-                        ? 'bg-[#0A3622] text-white border-[#0A3622] font-semibold'
-                        : 'bg-white text-[#28322D] border-[#DCD8CE] hover:border-[#0A3622]'
-                    }`}
-                  >
-                    {cat.label} ({count})
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* 3B. Dual-Filter (Role Tier + Area) & Instant Search Toolbar */}
-          <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-5 space-y-4 shadow-[0_12px_32px_-24px_rgba(10,54,34,0.14)]">
-            {/* Row 1: Role Tier Filter Tabs */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 -mx-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {[
-                { key: 'ALL' as const, label: `Tất cả cấp bậc (${tierCounts.ALL})` },
-                {
-                  key: 'SM' as const,
-                  label: `Giám đốc Khu vực — SM (${tierCounts.SM})`,
-                },
-                {
-                  key: 'DM' as const,
-                  label: `Trưởng Phòng — SDM/DM (${tierCounts.DM})`,
-                },
-                {
-                  key: 'SUM' as const,
-                  label: `Trưởng Nhóm Cấp cao — SUM (${tierCounts.SUM})`,
-                },
-                {
-                  key: 'UM' as const,
-                  label: `Trưởng Nhóm — UM (${tierCounts.UM})`,
-                },
-                {
-                  key: 'ADVISOR' as const,
-                  label: `Cố vấn Cấp cao (${tierCounts.ADVISOR})`,
-                },
-              ].map((tab) => {
-                const isActive = activeTier === tab.key;
-                return (
-                  <button
-                    key={tab.key}
-                    type="button"
-                    onClick={() => setActiveTier(tab.key)}
-                    className={`shrink-0 px-3.5 py-2 text-xs rounded-[2px] border transition-all cursor-pointer ${
-                      isActive
-                        ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] font-semibold'
-                        : 'bg-[#FAF9F5] text-[#4A544F] border-[#E4E1D8] hover:border-[#0A3622] hover:text-[#181F1C]'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Row 2: Area Filter Chips + Instant Search Input */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3 border-t border-[#ECE9E0]">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-[10.5px] uppercase tracking-[0.16em] text-[#56605B] font-semibold inline-flex items-center gap-1 mr-1">
+              <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar order-2 md:order-1">
+                <span className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.14em] text-[#56605B] font-semibold inline-flex items-center gap-1 mr-0.5 shrink-0">
                   <MapPin className="w-3 h-3 text-[#008746]" />
                   <span>Khu vực:</span>
                 </span>
@@ -1043,7 +1210,7 @@ export const RegionalSystemPage: React.FC = () => {
                       key={area}
                       type="button"
                       onClick={() => setActiveArea(area)}
-                      className={`px-2.5 py-1 text-[11px] rounded-[2px] border transition-colors cursor-pointer ${
+                      className={`shrink-0 px-2.5 py-1 text-[11px] rounded-[2px] border transition-colors cursor-pointer ${
                         isActive
                           ? 'bg-[#EBF2EE] text-[#0A3622] border-[#008746] font-bold'
                           : 'bg-white text-[#4A544F] border-[#DCD8CE] hover:border-[#0A3622]'
@@ -1054,52 +1221,128 @@ export const RegionalSystemPage: React.FC = () => {
                   );
                 })}
               </div>
+            </div>
 
-              <div className="relative w-full md:w-80">
-                <Search className="w-3.5 h-3.5 text-[#858E89] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Tìm tên, Luật sư, Ngân hàng, Kế toán, MDRT..."
-                  aria-label="Tìm kiếm quản lý theo tên, nền tảng hoặc danh hiệu"
-                  className="w-full pl-8 pr-8 py-2 bg-[#FAF9F5] border border-[#DCD8CE] focus:border-[#0A3622] focus:bg-white rounded-[2px] text-xs text-[#181F1C] placeholder:text-[#858E89] outline-none transition-colors"
-                />
-                {searchQuery && (
+            {/* Row 2: Role Tier Horizontal Scroll Pills */}
+            <div className="pt-2.5 border-t border-[#ECE9E0] flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
+              {[
+                {
+                  key: 'ALL' as const,
+                  mobileLabel: `Tất cả cấp bậc (${tierCounts.ALL})`,
+                  desktopLabel: `Tất cả cấp bậc (${tierCounts.ALL})`,
+                },
+                {
+                  key: 'SM' as const,
+                  mobileLabel: `Giám đốc KV • SM (${tierCounts.SM})`,
+                  desktopLabel: `Giám đốc Khu vực — SM (${tierCounts.SM})`,
+                },
+                {
+                  key: 'DM' as const,
+                  mobileLabel: `Trưởng Phòng • SDM/DM (${tierCounts.DM})`,
+                  desktopLabel: `Trưởng Phòng — SDM/DM (${tierCounts.DM})`,
+                },
+                {
+                  key: 'SUM' as const,
+                  mobileLabel: `SUM (${tierCounts.SUM})`,
+                  desktopLabel: `Trưởng Nhóm Cấp cao — SUM (${tierCounts.SUM})`,
+                },
+                {
+                  key: 'UM' as const,
+                  mobileLabel: `UM (${tierCounts.UM})`,
+                  desktopLabel: `Trưởng Nhóm — UM (${tierCounts.UM})`,
+                },
+                {
+                  key: 'ADVISOR' as const,
+                  mobileLabel: `Cố vấn (${tierCounts.ADVISOR})`,
+                  desktopLabel: `Cố vấn Cấp cao (${tierCounts.ADVISOR})`,
+                },
+              ].map((tab) => {
+                const isActive = activeTier === tab.key;
+                return (
                   <button
+                    key={tab.key}
                     type="button"
-                    onClick={() => setSearchQuery('')}
-                    aria-label="Xóa từ khóa tìm kiếm"
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#858E89] hover:text-[#181F1C]"
+                    onClick={() => setActiveTier(tab.key)}
+                    className={`shrink-0 px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11.5px] sm:text-xs rounded-[2px] border transition-all cursor-pointer ${
+                      isActive
+                        ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] font-semibold'
+                        : 'bg-[#FAF9F5] text-[#4A544F] border-[#E4E1D8] hover:border-[#0A3622] hover:text-[#181F1C]'
+                    }`}
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <span className="sm:hidden">{tab.mobileLabel}</span>
+                    <span className="hidden sm:inline">{tab.desktopLabel}</span>
                   </button>
-                )}
+                );
+              })}
+            </div>
+
+            {/* Row 3: Prior Industry Horizontal Scroll on Mobile / Wrap on Desktop */}
+            <div className="pt-2.5 border-t border-[#ECE9E0] space-y-2">
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-[10.5px] uppercase tracking-[0.15em] text-[#008746] font-bold">
+                <Briefcase className="w-3 h-3 shrink-0" />
+                <span>Nền tảng xuất thân trước Manulife:</span>
+              </div>
+
+              <div className="flex flex-nowrap md:flex-wrap items-center gap-1.5 sm:gap-2 overflow-x-auto md:overflow-visible no-scrollbar">
+                <button
+                  type="button"
+                  onClick={() => handleSelectIndustry('ALL')}
+                  className={`shrink-0 px-2.5 sm:px-3 py-1.5 text-[11.5px] sm:text-xs rounded-[2px] border transition-colors cursor-pointer ${
+                    activeIndustry === 'ALL'
+                      ? 'bg-[#0A3622] text-white border-[#0A3622] font-semibold'
+                      : 'bg-[#FAF9F5] text-[#28322D] border-[#DCD8CE] hover:border-[#0A3622]'
+                  }`}
+                >
+                  Tất cả ngành ({industryCounts.ALL})
+                </button>
+                {INDUSTRY_CATEGORIES.map((cat) => {
+                  const isSelected = activeIndustry === cat.key;
+                  const count = industryCounts[cat.key] || 0;
+                  return (
+                    <button
+                      key={cat.key}
+                      type="button"
+                      onClick={() => handleSelectIndustry(cat.key)}
+                      className={`shrink-0 px-2.5 sm:px-3 py-1.5 text-[11.5px] sm:text-xs rounded-[2px] border transition-colors cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#0A3622] text-white border-[#0A3622] font-semibold'
+                          : 'bg-[#FAF9F5] text-[#28322D] border-[#DCD8CE] hover:border-[#0A3622]'
+                      }`}
+                    >
+                      <span className="md:hidden">
+                        {cat.shortLabel} ({count})
+                      </span>
+                      <span className="hidden md:inline">
+                        {cat.label} ({count})
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
             {hasActiveFilter && (
-              <div className="flex items-center justify-between text-xs text-[#4A544F] pt-1">
+              <div className="flex items-center justify-between gap-2 text-xs text-[#4A544F] pt-1 border-t border-[#ECE9E0]">
                 <span>
-                  Đang hiển thị{' '}
+                  Hiển thị{' '}
                   <strong className="text-[#0A3622]">{filteredLeaders.length}</strong> /{' '}
-                  {REGIONAL_LEADERS.length} hồ sơ phù hợp
+                  {REGIONAL_LEADERS.length} hồ sơ
                 </span>
                 <button
                   type="button"
                   onClick={resetFilters}
                   className="text-[#008746] hover:underline font-semibold cursor-pointer"
                 >
-                  Đặt lại tất cả bộ lọc
+                  Đặt lại bộ lọc
                 </button>
               </div>
             )}
           </div>
 
-          {/* 3C. Empty State or Two-Tier Hierarchical Directory */}
+          {/* 3B. Empty State or Two-Tier Hierarchical Directory */}
           {filteredLeaders.length === 0 ? (
-            <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-12 text-center space-y-3">
-              <p className="font-serif text-2xl text-[#181F1C]">
+            <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-8 sm:p-12 text-center space-y-3">
+              <p className="font-serif text-xl sm:text-2xl text-[#181F1C]">
                 Không tìm thấy hồ sơ phù hợp với bộ lọc hiện tại
               </p>
               <p className="text-xs text-[#56605B]">
@@ -1114,34 +1357,31 @@ export const RegionalSystemPage: React.FC = () => {
               </button>
             </div>
           ) : (
-            <div className="space-y-14">
+            <div className="space-y-10 sm:space-y-14">
               {/* ============================================================= */}
               {/* TẦNG 1: BAN GIÁM ĐỐC KHU VỰC & TRƯỞNG PHÒNG KINH DOANH (SM • SDM • DM) */}
+              {/* Hybrid Mobile Horizontal Split Card (< sm) / Vertical Portrait Card (sm+) */}
               {/* ============================================================= */}
               {seniorFiltered.length > 0 && (
-                <div className="space-y-6">
-                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-3 border-b border-[#DCD8CE]">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1.5 sm:gap-2 pb-3 border-b border-[#DCD8CE]">
                     <div>
-                      <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#B8975A] font-bold block">
+                      <span className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#B8975A] font-bold block">
                         CẤP ĐỘ 01 • LÃNH ĐẠO KHU VỰC &amp; PHÒNG KINH DOANH
                       </span>
-                      <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
-                        Giám đốc Khu vực &amp; Trưởng Phòng Kinh doanh ({seniorFiltered.length})
+                      <h3 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
+                        Giám đốc Khu vực &amp; Trưởng Phòng ({seniorFiltered.length})
                       </h3>
                     </div>
                     <p className="text-xs text-[#56605B]">
-                      Đội ngũ lãnh đạo trực tiếp điều hành khu vực và các phòng kinh doanh chủ lực
+                      Trực tiếp điều hành khu vực và các phòng kinh doanh chủ lực
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-7">
                     {seniorFiltered.map((leader) => (
-                      <motion.article
+                      <article
                         key={leader.id}
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-40px' }}
-                        transition={{ duration: 0.4 }}
                         onClick={() => openLeaderDossier(leader)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
@@ -1152,128 +1392,130 @@ export const RegionalSystemPage: React.FC = () => {
                         tabIndex={0}
                         role="button"
                         aria-label={`Xem hồ sơ chi tiết của ${leader.displayName} — ${leader.roleTitle}`}
-                        className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622]/65 rounded-[4px] overflow-hidden flex flex-col justify-between shadow-[0_14px_38px_-24px_rgba(10,54,34,0.18)] hover:shadow-[0_24px_50px_-24px_rgba(10,54,34,0.28)] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
+                        className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622]/65 rounded-[4px] overflow-hidden flex flex-row sm:flex-col justify-between shadow-[0_12px_32px_-24px_rgba(10,54,34,0.2)] hover:shadow-[0_24px_50px_-24px_rgba(10,54,34,0.28)] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
                       >
-                        <div>
-                          {/* Calibrated 3:4 Portrait */}
-                          <div className="relative aspect-[3/4] bg-[#EFECE5] overflow-hidden">
-                            <img
-                              loading="lazy"
-                              decoding="async"
-                              src={leader.portrait}
-                              alt={`${leader.displayName} (${leader.fullName}) — ${leader.roleTitle}`}
-                              className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
-                            />
-                            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 via-black/15 to-transparent pointer-events-none" />
+                        {/* Left Column on Mobile / Top Portrait on sm+ */}
+                        <div className="w-[122px] sm:w-full min-h-[172px] sm:min-h-0 self-stretch shrink-0 relative sm:aspect-[3/4] bg-[#EFECE5] overflow-hidden">
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src={leader.portrait}
+                            alt={`${leader.displayName} (${leader.fullName}) — ${leader.roleTitle}`}
+                            className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                          />
+                          <div className="hidden sm:block absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 via-black/15 to-transparent pointer-events-none" />
 
-                            {/* Top Badges */}
-                            <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2">
-                              <div className="flex items-center gap-1.5">
-                                <span className="px-2.5 py-0.5 bg-[#0A3622]/95 backdrop-blur-sm text-[#E8D3A6] text-[10px] uppercase tracking-[0.18em] font-bold rounded-[2px] border border-[#B8975A]/40">
-                                  {leader.roleBadge} • {leader.unitCode}
-                                </span>
-                              </div>
-                              <span className="px-2 py-0.5 bg-[#FAF9F5]/95 backdrop-blur-sm text-[#0A3622] text-[10px] font-bold uppercase tracking-[0.12em] rounded-[2px] border border-[#DCD8CE]">
-                                Từ {leader.joinedYear}
-                              </span>
-                            </div>
-
-                            {/* Bottom Scale / Photo Pill */}
-                            <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between gap-2">
-                              {leader.teamScaleBadge ? (
-                                <span className="px-2.5 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[10px] font-bold uppercase tracking-[0.12em] rounded-[2px]">
-                                  {leader.teamScaleBadge}
-                                </span>
-                              ) : (
-                                <span />
-                              )}
-                              {leader.gallery.length > 0 && (
-                                <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm text-white text-[10px] tracking-[0.08em] rounded-[2px] inline-flex items-center gap-1">
-                                  <Camera className="w-3 h-3 text-[#E8D3A6]" />
-                                  <span>{leader.gallery.length + 1} ảnh</span>
-                                </span>
-                              )}
-                            </div>
+                          {/* Top Badges */}
+                          <div className="absolute top-2 left-2 right-2 sm:top-3.5 sm:left-3.5 sm:right-3.5 flex items-center justify-between gap-1">
+                            <span className="px-1.5 sm:px-2.5 py-0.5 bg-[#0A3622]/95 text-[#E8D3A6] text-[9px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.18em] font-bold rounded-[2px] border border-[#B8975A]/40">
+                              {leader.roleBadge} • {leader.unitCode}
+                            </span>
+                            <span className="hidden sm:inline-block px-2 py-0.5 bg-[#FAF9F5]/95 backdrop-blur-sm text-[#0A3622] text-[10px] font-bold uppercase tracking-[0.12em] rounded-[2px] border border-[#DCD8CE]">
+                              Từ {leader.joinedYear}
+                            </span>
                           </div>
 
-                          {/* Card Content */}
-                          <div className="p-5 sm:p-6 space-y-4">
-                            <div className="space-y-1">
-                              <span className="text-[11px] uppercase tracking-[0.14em] text-[#008746] font-bold block">
+                          {/* Bottom Scale / Photo Pill */}
+                          <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3.5 sm:right-3.5 flex items-center justify-between gap-1">
+                            <span className="sm:hidden px-1.5 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[9px] font-bold rounded-[2px]">
+                              Từ {leader.joinedYear}
+                            </span>
+                            {leader.teamScaleBadge ? (
+                              <span className="hidden sm:inline-block px-2.5 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[10px] font-bold uppercase tracking-[0.12em] rounded-[2px] truncate max-w-full">
+                                {leader.teamScaleBadge}
+                              </span>
+                            ) : (
+                              <span className="hidden sm:inline-block" />
+                            )}
+                            {leader.gallery.length > 0 && (
+                              <span className="hidden sm:inline-flex px-2 py-0.5 bg-black/60 backdrop-blur-sm text-white text-[10px] tracking-[0.08em] rounded-[2px] items-center gap-1 shrink-0">
+                                <Camera className="w-3 h-3 text-[#E8D3A6]" />
+                                <span>{leader.gallery.length + 1} ảnh</span>
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Right Column on Mobile / Body + Footer on sm+ */}
+                        <div className="flex-1 min-w-0 flex flex-col justify-between p-3.5 sm:p-6 gap-2.5 sm:gap-4">
+                          <div className="space-y-2 sm:space-y-4">
+                            <div className="space-y-0.5 sm:space-y-1">
+                              <span className="text-[9.5px] sm:text-[11px] uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#008746] font-bold block leading-snug">
                                 {leader.roleTitle}
                               </span>
-                              <h4 className="font-serif text-[26px] sm:text-[28px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-tight transition-colors">
+                              <h4 className="font-serif text-[19px] sm:text-[27px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-tight transition-colors">
                                 {leader.displayName}
                               </h4>
                               {leader.fullName !== leader.displayName && (
-                                <p className="text-xs text-[#56605B]">
+                                <p className="hidden sm:block text-xs text-[#56605B]">
                                   {leader.fullName}
                                 </p>
                               )}
                             </div>
 
                             {/* Prior Background Callout */}
-                            <div className="p-3 bg-[#FAF9F5] border border-[#ECE9E0] rounded-[3px] space-y-0.5">
-                              <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
+                            <div className="p-2 sm:p-3 bg-[#FAF9F5] border border-[#ECE9E0] rounded-[3px] space-y-0.5">
+                              <span className="hidden sm:block text-[9.5px] uppercase tracking-[0.16em] text-[#56605B] font-semibold">
                                 Nền tảng trước Manulife
                               </span>
-                              <p className="text-xs font-medium text-[#181F1C] leading-snug line-clamp-2">
+                              <p className="text-[11px] sm:text-xs font-medium text-[#181F1C] leading-snug line-clamp-2">
                                 {leader.priorBackgroundShort}
                               </p>
                             </div>
 
                             {/* Signature Quote */}
-                            <blockquote className="border-l-2 border-[#B8975A] pl-3 font-serif italic text-[17px] text-[#0A3622] leading-snug line-clamp-3">
+                            <blockquote className="border-l-2 border-[#B8975A] pl-2.5 sm:pl-3 font-serif italic text-[12.5px] sm:text-[17px] text-[#0A3622] leading-snug line-clamp-2 sm:line-clamp-3">
                               “{leader.quote}”
                             </blockquote>
                           </div>
-                        </div>
 
-                        {/* Card Footer */}
-                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-[#F0EDE6] space-y-3">
-                          <div className="flex flex-wrap gap-1.5">
-                            {leader.badges.slice(0, 3).map((badge) => (
-                              <span
-                                key={badge}
-                                className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#FAF9F5] border border-[#E4E1D8] text-[10.5px] font-medium text-[#28322D] rounded-[2px]"
-                              >
-                                <Award className="w-2.5 h-2.5 text-[#008746] shrink-0" />
-                                <span>{badge}</span>
-                              </span>
-                            ))}
-                          </div>
+                          {/* Footer */}
+                          <div className="pt-2 sm:pt-3 border-t border-[#F0EDE6] space-y-2.5">
+                            <div className="hidden sm:flex flex-wrap gap-1.5">
+                              {leader.badges.slice(0, 3).map((badge) => (
+                                <span
+                                  key={badge}
+                                  className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#FAF9F5] border border-[#E4E1D8] text-[10.5px] font-medium text-[#28322D] rounded-[2px]"
+                                >
+                                  <Award className="w-2.5 h-2.5 text-[#008746] shrink-0" />
+                                  <span>{badge}</span>
+                                </span>
+                              ))}
+                            </div>
 
-                          <div className="flex items-center justify-between text-xs font-semibold text-[#0A3622] group-hover:text-[#008746] transition-colors">
-                            <span>Đọc câu chuyện &amp; hồ sơ chi tiết</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-[#0A3622] group-hover:text-[#008746] transition-colors">
+                              <span className="sm:hidden">Đọc hồ sơ chi tiết</span>
+                              <span className="hidden sm:inline">Đọc câu chuyện &amp; hồ sơ chi tiết</span>
+                              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
+                            </div>
                           </div>
                         </div>
-                      </motion.article>
+                      </article>
                     ))}
                   </div>
                 </div>
               )}
 
               {/* ============================================================= */}
-              {/* TẦNG 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN (COMPACT 4-COL) */}
+              {/* TẦNG 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN (COMPACT 2-COL MOBILE / 4-COL DESKTOP) */}
               {/* ============================================================= */}
               {compactFiltered.length > 0 && (
-                <div className="space-y-6">
-                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-3 border-b border-[#DCD8CE]">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1.5 sm:gap-2 pb-3 border-b border-[#DCD8CE]">
                     <div>
-                      <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-bold block">
+                      <span className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold block">
                         CẤP ĐỘ 02 • ĐỘI NGŨ QUẢN LÝ NHÓM &amp; CỐ VẤN CHUẨN QUỐC TẾ
                       </span>
-                      <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
+                      <h3 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
                         Trưởng Nhóm Kinh doanh &amp; Cố vấn Cấp cao ({compactFiltered.length})
                       </h3>
                     </div>
                     <p className="text-xs text-[#56605B]">
-                      Chạm vào từng thẻ để mở toàn bộ câu chuyện nghề và danh hiệu
+                      Chạm vào từng thẻ để mở câu chuyện nghề và danh hiệu
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
                     {visibleCompactLeaders.map((leader) => (
                       <article
                         key={leader.id}
@@ -1299,42 +1541,49 @@ export const RegionalSystemPage: React.FC = () => {
                               alt={`${leader.displayName} — ${leader.roleTitle}`}
                               className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                             />
-                            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
+                            <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
 
-                            <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1">
-                              <span className="px-2 py-0.5 bg-[#0A3622]/90 text-white text-[9.5px] uppercase tracking-[0.14em] font-bold rounded-[2px]">
+                            <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1">
+                              <span className="px-1.5 sm:px-2 py-0.5 bg-[#0A3622]/90 text-white text-[9px] sm:text-[9.5px] uppercase tracking-[0.08em] sm:tracking-[0.14em] font-bold rounded-[2px] truncate">
                                 {leader.roleBadge} • {leader.unitCode}
                               </span>
-                              <span className="hidden sm:inline-block px-1.5 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[9.5px] font-semibold rounded-[2px]">
+                              <span className="hidden sm:inline-block px-1.5 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[9.5px] font-semibold rounded-[2px] shrink-0">
                                 {leader.joinedYear}
                               </span>
                             </div>
 
                             {leader.teamScaleBadge && (
-                              <span className="absolute bottom-2 left-2.5 px-2 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[9.5px] font-bold rounded-[2px] max-w-[90%] truncate">
+                              <span className="absolute bottom-2 left-2 px-1.5 sm:px-2 py-0.5 bg-[#FAF9F5]/95 text-[#0A3622] text-[9px] sm:text-[9.5px] font-bold rounded-[2px] max-w-[90%] truncate">
                                 {leader.teamScaleBadge}
                               </span>
                             )}
                           </div>
 
                           {/* Compact Body */}
-                          <div className="p-3.5 sm:p-4 space-y-2">
+                          <div className="p-3 sm:p-4 space-y-1.5 sm:space-y-2">
                             <div>
-                              <span className="text-[10px] uppercase tracking-[0.12em] text-[#008746] font-bold block truncate">
-                                {leader.tierLabel}
+                              <span className="sm:hidden text-[9px] uppercase tracking-[0.05em] text-[#008746] font-bold block truncate">
+                                {leader.tierKey === 'SUM'
+                                  ? 'Trưởng Nhóm Cấp cao'
+                                  : leader.tierKey === 'UM'
+                                    ? 'Trưởng Nhóm KD'
+                                    : 'Cố vấn Cấp cao'}
                               </span>
-                              <h4 className="font-serif text-lg sm:text-[21px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-snug truncate mt-0.5">
+                              <span className="hidden sm:block text-[10px] uppercase tracking-[0.12em] text-[#008746] font-bold truncate">
+                                {leader.roleTitle}
+                              </span>
+                              <h4 className="font-serif text-[15.5px] sm:text-[20px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-snug line-clamp-2 mt-0.5">
                                 {leader.displayName}
                               </h4>
                             </div>
 
-                            <p className="text-[11px] sm:text-xs text-[#28322D] font-medium leading-snug line-clamp-2 min-h-[2.5em]">
+                            <p className="text-[11px] sm:text-xs text-[#4A544F] font-normal leading-snug line-clamp-2">
                               {leader.priorBackgroundShort}
                             </p>
                           </div>
                         </div>
 
-                        <div className="px-3.5 sm:px-4 pb-3.5 pt-2.5 border-t border-[#F0EDE6] flex items-center justify-between text-[11px] font-semibold text-[#0A3622] group-hover:text-[#008746]">
+                        <div className="px-3 sm:px-4 pb-3 pt-2 border-t border-[#F0EDE6] flex items-center justify-between text-[11px] font-semibold text-[#0A3622] group-hover:text-[#008746]">
                           <span>Xem hồ sơ</span>
                           <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                         </div>
@@ -1344,17 +1593,17 @@ export const RegionalSystemPage: React.FC = () => {
 
                   {/* Progressive Disclosure Expand / Collapse Button */}
                   {!hasActiveFilter && compactFiltered.length > INITIAL_COMPACT_COUNT && (
-                    <div className="pt-4 flex flex-col items-center gap-2">
+                    <div className="pt-3 sm:pt-4 flex flex-col items-center">
                       {!showAllCompact ? (
                         <button
                           type="button"
                           onClick={() => setShowAllCompact(true)}
-                          className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.18em] font-bold rounded-[3px] shadow-[0_14px_30px_-16px_rgba(10,54,34,0.5)] transition-all cursor-pointer"
+                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.18em] font-bold rounded-[3px] shadow-[0_14px_30px_-16px_rgba(10,54,34,0.5)] transition-all cursor-pointer"
                         >
                           <span>
-                            Xem trọn vẹn cả {REGIONAL_LEADERS.length} hồ sơ (+{hiddenCompactCount} Quản lý &amp; Cố vấn)
+                            Xem đủ {REGIONAL_LEADERS.length} hồ sơ (+{hiddenCompactCount} Quản lý &amp; Cố vấn)
                           </span>
-                          <ChevronDown className="w-4 h-4 text-[#E8D3A6]" />
+                          <ChevronDown className="w-4 h-4 text-[#E8D3A6] shrink-0" />
                         </button>
                       ) : (
                         <button
@@ -1364,7 +1613,7 @@ export const RegionalSystemPage: React.FC = () => {
                             const el = document.getElementById('doi-ngu-quan-ly');
                             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                           }}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-[#FAF9F5] text-[#0A3622] border border-[#DCD8CE] hover:border-[#0A3622] text-xs uppercase tracking-[0.16em] font-semibold rounded-[3px] transition-colors cursor-pointer"
+                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-[#FAF9F5] text-[#0A3622] border border-[#DCD8CE] hover:border-[#0A3622] text-xs uppercase tracking-[0.16em] font-semibold rounded-[3px] transition-colors cursor-pointer"
                         >
                           <span>Thu gọn danh sách</span>
                           <ChevronUp className="w-4 h-4" />
@@ -1384,16 +1633,16 @@ export const RegionalSystemPage: React.FC = () => {
       {/* =================================================================== */}
       <section
         id="van-hoa-he-thong"
-        className="py-16 sm:py-24 bg-[#F2EFE9]/45 border-b border-[#E4E1D8]"
+        className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-24 bg-[#F2EFE9]/45 border-b border-[#E4E1D8]"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2.5 max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 space-y-6 sm:space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4">
+            <div className="space-y-1.5 sm:space-y-2.5 max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
                 <span>04 / VĂN HÓA ĐÀO TẠO &amp; ĐỒNG HÀNH THỰC CHIẾN</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-medium leading-tight">
+              <h2 className="font-serif text-[26px] sm:text-5xl text-[#181F1C] font-medium leading-tight">
                 Đằng sau mỗi hợp đồng là{' '}
                 <span className="italic text-[#0A3622]">một tập thể rèn nghề</span>
               </h2>
@@ -1403,42 +1652,58 @@ export const RegionalSystemPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
-            {REGIONAL_CULTURE_MOMENTS.map((item) => (
-              <figure
-                key={item.id}
-                onClick={() =>
-                  setLightbox({
-                    src: item.src,
-                    tag: item.tag,
-                    title: item.title,
-                    subtitle: item.subtitle,
-                  })
-                }
-                className={`${item.spanClass} bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden flex flex-col justify-between group cursor-zoom-in shadow-[0_14px_34px_-24px_rgba(10,54,34,0.16)]`}
-              >
-                <div className={`relative overflow-hidden bg-[#EAE7DF] ${item.aspectClass}`}>
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src={item.src}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-700"
-                  />
-                  <span className="absolute top-3.5 left-3.5 px-2.5 py-1 bg-[#FAF9F5]/95 backdrop-blur-sm text-[9.5px] uppercase tracking-[0.2em] font-bold text-[#0A3622] rounded-[2px] border border-[#DCD8CE]">
-                    {item.tag}
-                  </span>
-                </div>
-                <figcaption className="p-4 sm:p-5 space-y-1.5 bg-white">
-                  <h3 className="font-serif text-lg sm:text-xl text-[#181F1C] font-semibold leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-[#4A544F] leading-relaxed">
-                    {item.subtitle}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="space-y-2.5">
+            <div className="flex md:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
+              <span>Chạm vào ảnh để phóng lớn</span>
+              <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
+                <span>Vuốt xem ảnh</span>
+                <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+
+            <div className="flex md:grid md:grid-cols-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-3.5 sm:gap-6 -mx-4 px-4 md:mx-0 md:px-0 pb-2 md:pb-0 no-scrollbar">
+              {REGIONAL_CULTURE_MOMENTS.map((item) => (
+                <figure
+                  key={item.id}
+                  onClick={() =>
+                    setLightbox({
+                      src: item.src,
+                      tag: item.tag,
+                      title: item.title,
+                      subtitle: item.subtitle,
+                    })
+                  }
+                  className={`w-[84vw] max-w-[320px] md:w-auto md:max-w-none shrink-0 snap-center ${item.spanClass} bg-white border border-[#DCD8CE] rounded-[4px] overflow-hidden flex flex-col justify-between group cursor-zoom-in shadow-[0_14px_34px_-24px_rgba(10,54,34,0.16)]`}
+                >
+                  <div
+                    className={`relative overflow-hidden bg-[#EAE7DF] aspect-[16/10] ${
+                      item.aspectClass === 'aspect-[16/10]'
+                        ? 'md:aspect-[16/10]'
+                        : 'md:aspect-[4/3]'
+                    }`}
+                  >
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-700"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 sm:py-1 bg-[#FAF9F5]/95 backdrop-blur-sm text-[9px] sm:text-[9.5px] uppercase tracking-[0.18em] font-bold text-[#0A3622] rounded-[2px] border border-[#DCD8CE]">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <figcaption className="p-4 sm:p-5 space-y-1 sm:space-y-1.5 bg-white flex-1">
+                    <h3 className="font-serif text-base sm:text-xl text-[#181F1C] font-semibold leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-[#4A544F] leading-relaxed">
+                      {item.subtitle}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1446,17 +1711,20 @@ export const RegionalSystemPage: React.FC = () => {
       {/* =================================================================== */}
       {/* CHƯƠNG 05: ĐỐI THOẠI & KẾT NỐI TRỰC TIẾP CÙNG VÙNG KHÁNH VÂN */}
       {/* =================================================================== */}
-      <section id="ket-noi-vung" className="py-16 sm:py-24 bg-[#0A3622] text-[#FAF9F5]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <section
+        id="ket-noi-vung"
+        className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-24 bg-[#0A3622] text-[#FAF9F5]"
+      >
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left Column: Dual-Path Proposition + Direct Contact */}
-            <div className="lg:col-span-6 space-y-8">
-              <div className="space-y-3">
-                <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#E8D3A6] font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+              <div className="space-y-2.5 sm:space-y-3">
+                <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#E8D3A6] font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                   <span>05 / ĐỒNG HÀNH CÙNG HỆ THỐNG VÙNG KHÁNH VÂN</span>
                 </span>
-                <h2 className="font-serif text-3xl sm:text-5xl font-medium leading-tight text-white">
+                <h2 className="font-serif text-[26px] sm:text-5xl font-medium leading-tight text-white">
                   Điểm tựa tài chính gia đình — hoặc một{' '}
                   <span className="italic text-[#E8D3A6]">hành trình sự nghiệp mới</span>
                 </h2>
@@ -1466,12 +1734,12 @@ export const RegionalSystemPage: React.FC = () => {
               </div>
 
               {/* Dual-Path Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-2">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold block">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="p-4 sm:p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-1.5">
+                  <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-bold block">
                     DÀNH CHO KHÁCH HÀNG &amp; GIA ĐÌNH
                   </span>
-                  <h3 className="font-serif text-xl text-white font-semibold">
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-semibold">
                     Hoạch định Bảo vệ &amp; Gia sản
                   </h3>
                   <p className="text-xs text-[#D7E2DC] leading-relaxed">
@@ -1479,11 +1747,11 @@ export const RegionalSystemPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-2">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold block">
+                <div className="p-4 sm:p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-1.5">
+                  <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-bold block">
                     DÀNH CHO NHÂN SỰ CHUYỂN NGÀNH
                   </span>
-                  <h3 className="font-serif text-xl text-white font-semibold">
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-semibold">
                     Lộ trình Quản lý Kế cận
                   </h3>
                   <p className="text-xs text-[#D7E2DC] leading-relaxed">
@@ -1493,7 +1761,7 @@ export const RegionalSystemPage: React.FC = () => {
               </div>
 
               {/* Direct Zalo & Return Links */}
-              <div className="pt-4 border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="pt-4 border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B9C8C0] font-semibold block">
                     KẾT NỐI ZALO TRỰC TIẾP KHÁNH VÂN
@@ -1511,7 +1779,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                 <a
                   href="/"
-                  className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#FAF9F5] hover:text-[#E8D3A6] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-semibold text-[#FAF9F5] hover:text-[#E8D3A6] transition-colors"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Về trang chủ Khánh Vân</span>
@@ -1519,14 +1787,14 @@ export const RegionalSystemPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Concierge Inquiry Form */}
-            <div className="lg:col-span-6 bg-[#FAF9F5] text-[#181F1C] rounded-[4px] p-6 sm:p-9 border border-[#DCD8CE] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.45)]">
+            {/* Right Column: Concierge Inquiry Form (16px font on mobile prevents iOS Safari zoom) */}
+            <div className="lg:col-span-6 bg-[#FAF9F5] text-[#181F1C] rounded-[4px] p-5 sm:p-9 border border-[#DCD8CE] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.45)]">
               {submitted ? (
-                <div className="py-10 text-center space-y-4">
+                <div className="py-8 sm:py-10 text-center space-y-4">
                   <div className="w-12 h-12 rounded-full bg-[#EBF2EE] text-[#008746] flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-3xl text-[#181F1C] font-semibold">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold">
                     Cảm ơn bạn đã gửi lời nhắn
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A544F] max-w-md mx-auto leading-relaxed">
@@ -1565,7 +1833,7 @@ export const RegionalSystemPage: React.FC = () => {
                       }),
                     }).catch(() => {});
                   }}
-                  className="space-y-5"
+                  className="space-y-4 sm:space-y-5"
                 >
                   <div className="space-y-1">
                     <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-bold block">
@@ -1576,8 +1844,8 @@ export const RegionalSystemPage: React.FC = () => {
                     </h3>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    <div className="space-y-1">
                       <label className="text-[11px] uppercase tracking-[0.14em] text-[#4A544F] font-semibold block">
                         Họ và tên *
                       </label>
@@ -1589,11 +1857,11 @@ export const RegionalSystemPage: React.FC = () => {
                           setFormData({ ...formData, fullName: e.target.value })
                         }
                         placeholder="Nguyễn Văn A"
-                        className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-sm text-[#181F1C] outline-none"
+                        className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-[16px] sm:text-sm text-[#181F1C] outline-none"
                       />
                     </div>
 
-                    <div className="space-y-1.5">
+                    <div className="space-y-1">
                       <label className="text-[11px] uppercase tracking-[0.14em] text-[#4A544F] font-semibold block">
                         Số điện thoại / Zalo *
                       </label>
@@ -1605,12 +1873,12 @@ export const RegionalSystemPage: React.FC = () => {
                           setFormData({ ...formData, phone: e.target.value })
                         }
                         placeholder="09xx xxx xxx"
-                        className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-sm text-[#181F1C] outline-none"
+                        className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-[16px] sm:text-sm text-[#181F1C] outline-none"
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="text-[11px] uppercase tracking-[0.14em] text-[#4A544F] font-semibold block">
                       Nhu cầu bạn đang quan tâm
                     </label>
@@ -1619,7 +1887,7 @@ export const RegionalSystemPage: React.FC = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, topic: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-sm text-[#181F1C] outline-none"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-[16px] sm:text-sm text-[#181F1C] outline-none"
                     >
                       <option value="Hoạch định Bảo vệ & Tài chính Gia đình">
                         Hoạch định Bảo vệ &amp; Tài chính Gia đình
@@ -1633,7 +1901,7 @@ export const RegionalSystemPage: React.FC = () => {
                     </select>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="text-[11px] uppercase tracking-[0.14em] text-[#4A544F] font-semibold block">
                       Lời nhắn hoặc câu hỏi riêng (không bắt buộc)
                     </label>
@@ -1644,13 +1912,13 @@ export const RegionalSystemPage: React.FC = () => {
                         setFormData({ ...formData, note: e.target.value })
                       }
                       placeholder="Chia sẻ ngắn gọn mong muốn của gia đình bạn hoặc lĩnh vực công việc hiện tại..."
-                      className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-sm text-[#181F1C] outline-none resize-none"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#DCD8CE] focus:border-[#0A3622] rounded-[2px] text-[16px] sm:text-sm text-[#181F1C] outline-none resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.2em] font-bold rounded-[2px] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-6 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.18em] font-bold rounded-[2px] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Gửi Yêu Cầu Kết Nối</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -1663,10 +1931,10 @@ export const RegionalSystemPage: React.FC = () => {
       </section>
 
       {/* Minimal Institutional Footer */}
-      <footer className="bg-[#072618] text-[#B9C8C0] py-8 border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#00A758]" />
+      <footer className="bg-[#072618] text-[#B9C8C0] py-7 sm:py-8 border-t border-white/10">
+        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-center sm:text-left text-xs">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
               Hệ Thống Vùng Khánh Vân • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
             </span>
@@ -1678,7 +1946,7 @@ export const RegionalSystemPage: React.FC = () => {
       </footer>
 
       {/* =================================================================== */}
-      {/* EXECUTIVE LEADER DOSSIER MODAL */}
+      {/* EXECUTIVE LEADER DOSSIER MODAL (Mobile-First Above-the-Fold Design) */}
       {/* =================================================================== */}
       <AnimatePresence>
         {selectedLeader && (
@@ -1688,37 +1956,38 @@ export const RegionalSystemPage: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedLeaderId(null)}
-            className="fixed inset-0 z-50 bg-[#121815]/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#121815]/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
           >
             <motion.div
-              initial={{ opacity: 0, y: 28, scale: 0.98 }}
+              initial={{ opacity: 0, y: 24, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.98 }}
-              transition={{ duration: 0.25 }}
+              exit={{ opacity: 0, y: 20, scale: 0.99 }}
+              transition={{ duration: 0.22 }}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
               aria-label={`Hồ sơ chi tiết ${selectedLeader.displayName}`}
-              className="relative w-full max-w-5xl max-h-[92vh] sm:max-h-[88vh] bg-[#FAF9F5] border border-[#DCD8CE] rounded-t-[10px] sm:rounded-[4px] overflow-hidden shadow-2xl flex flex-col"
+              className="relative w-full max-w-full sm:max-w-5xl max-h-[92vh] sm:max-h-[88vh] bg-[#FAF9F5] border-t sm:border border-[#DCD8CE] rounded-t-[14px] sm:rounded-[4px] overflow-hidden shadow-2xl flex flex-col"
             >
-              {/* Modal Top Bar */}
-              <div className="px-4 sm:px-6 py-3.5 bg-white border-b border-[#E4E1D8] flex items-center justify-between gap-3 shrink-0">
-                <div className="flex items-center gap-2 text-xs text-[#56605B]">
-                  <span className="font-serif font-bold text-[#0A3622]">
-                    HỒ SƠ {selectedLeader.index} / {String(REGIONAL_LEADERS.length).padStart(2, '0')}
+              {/* Modal Sticky Top Bar */}
+              <div className="px-3.5 sm:px-6 py-3 bg-white border-b border-[#E4E1D8] flex items-center justify-between gap-2 shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs text-[#56605B] min-w-0">
+                  <span className="font-serif font-bold text-[#0A3622] shrink-0">
+                    HỒ SƠ {selectedLeader.index}/{String(REGIONAL_LEADERS.length).padStart(2, '0')}
                   </span>
                   <span>•</span>
-                  <span className="uppercase tracking-[0.14em] text-[10.5px] font-bold text-[#181F1C]">
-                    Khu vực {selectedLeader.unitCode}
+                  <span className="uppercase tracking-[0.12em] text-[10px] sm:text-[10.5px] font-bold text-[#181F1C] truncate">
+                    {selectedLeader.unitCode}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 shrink-0">
                   <button
                     type="button"
                     onClick={() => navigateLeaderModal(-1)}
                     title="Hồ sơ trước"
-                    className="p-1.5 border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] text-[#181F1C] cursor-pointer"
+                    aria-label="Hồ sơ trước"
+                    className="w-8 h-8 flex items-center justify-center border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] text-[#181F1C] cursor-pointer"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
@@ -1726,7 +1995,8 @@ export const RegionalSystemPage: React.FC = () => {
                     type="button"
                     onClick={() => navigateLeaderModal(1)}
                     title="Hồ sơ tiếp theo"
-                    className="p-1.5 border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] text-[#181F1C] cursor-pointer"
+                    aria-label="Hồ sơ tiếp theo"
+                    className="w-8 h-8 flex items-center justify-center border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] text-[#181F1C] cursor-pointer"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
@@ -1734,7 +2004,7 @@ export const RegionalSystemPage: React.FC = () => {
                     type="button"
                     onClick={() => setSelectedLeaderId(null)}
                     aria-label="Đóng hồ sơ"
-                    className="ml-1 inline-flex items-center gap-1 px-2.5 py-1.5 bg-[#181F1C] hover:bg-[#0A3622] text-white text-xs font-medium rounded-[2px] cursor-pointer transition-colors"
+                    className="ml-0.5 h-8 inline-flex items-center gap-1 px-2.5 sm:px-3 bg-[#181F1C] hover:bg-[#0A3622] text-white text-xs font-medium rounded-[2px] cursor-pointer transition-colors"
                   >
                     <X className="w-3.5 h-3.5" />
                     <span>Đóng</span>
@@ -1743,10 +2013,96 @@ export const RegionalSystemPage: React.FC = () => {
               </div>
 
               {/* Modal Scrollable Body */}
-              <div className="overflow-y-auto flex-1">
+              <div className="overflow-y-auto overscroll-contain flex-1">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
-                  {/* Left Visual Column: Main Photo + Gallery Switcher */}
-                  <div className="lg:col-span-5 bg-[#EFECE5] p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-[#E4E1D8] flex flex-col justify-between gap-4">
+                  {/* ======================================================= */}
+                  {/* MOBILE & TABLET COMPACT HERO INSIDE MODAL (lg:hidden) */}
+                  {/* Shows Portrait + Name + Role + Gallery IMMEDIATELY above the fold! */}
+                  {/* ======================================================= */}
+                  <div className="lg:hidden bg-white border-b border-[#E4E1D8] p-4 space-y-3">
+                    <div className="flex items-start gap-3.5">
+                      <div
+                        onClick={() => {
+                          const current = modalPhotos[activeModalPhotoIdx];
+                          if (current) {
+                            setLightbox({
+                              src: current.src,
+                              tag: `${selectedLeader.displayName.toUpperCase()} • KHU VỰC ${selectedLeader.unitCode}`,
+                              title: current.caption,
+                            });
+                          }
+                        }}
+                        className="w-[106px] sm:w-[132px] aspect-[3/4] bg-[#EFECE5] rounded-[3px] overflow-hidden border border-[#DCD8CE] shrink-0 relative cursor-zoom-in"
+                      >
+                        <img
+                          src={
+                            modalPhotos[activeModalPhotoIdx]?.src ||
+                            selectedLeader.portrait
+                          }
+                          alt={selectedLeader.displayName}
+                          className="w-full h-full object-cover object-top"
+                        />
+                        <span className="absolute bottom-1.5 right-1.5 p-1 bg-black/60 text-white rounded-[2px]">
+                          <Camera className="w-3 h-3 text-[#E8D3A6]" />
+                        </span>
+                      </div>
+
+                      <div className="flex-1 min-w-0 space-y-1.5">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className="px-2 py-0.5 bg-[#0A3622] text-[#E8D3A6] text-[10px] font-bold uppercase tracking-[0.14em] rounded-[2px]">
+                            {selectedLeader.roleBadge} • {selectedLeader.unitCode}
+                          </span>
+                        </div>
+                        <p className="text-[11px] uppercase tracking-[0.1em] text-[#008746] font-bold leading-snug">
+                          {selectedLeader.roleTitle}
+                        </p>
+                        <h2 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold leading-tight">
+                          {selectedLeader.displayName}
+                        </h2>
+                        {selectedLeader.fullName !== selectedLeader.displayName && (
+                          <p className="text-xs text-[#56605B]">
+                            {selectedLeader.fullName}
+                          </p>
+                        )}
+                        <p className="text-[11.5px] text-[#4A544F] pt-0.5 leading-snug">
+                          {selectedLeader.tenureLabel}
+                        </p>
+                      </div>
+                    </div>
+
+                    {modalPhotos.length > 1 && (
+                      <div className="pt-2.5 border-t border-[#ECE9E0] space-y-1.5">
+                        <span className="text-[10px] uppercase tracking-[0.14em] text-[#56605B] font-semibold block">
+                          Chạm chọn ảnh chân dung &amp; hoạt động ({modalPhotos.length})
+                        </span>
+                        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                          {modalPhotos.map((photo, pIdx) => (
+                            <button
+                              key={photo.src}
+                              type="button"
+                              onClick={() => setActiveModalPhotoIdx(pIdx)}
+                              className={`w-14 h-14 shrink-0 rounded-[2px] overflow-hidden border-2 transition-all cursor-pointer ${
+                                activeModalPhotoIdx === pIdx
+                                  ? 'border-[#008746]'
+                                  : 'border-transparent opacity-70'
+                              }`}
+                            >
+                              <img
+                                src={photo.src}
+                                alt=""
+                                className="w-full h-full object-cover object-top"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* ======================================================= */}
+                  {/* DESKTOP LEFT PORTRAIT & GALLERY COLUMN (hidden lg:flex) */}
+                  {/* ======================================================= */}
+                  <div className="hidden lg:flex lg:col-span-5 bg-[#EFECE5] p-6 border-r border-[#E4E1D8] flex-col justify-between gap-4">
                     <div className="space-y-3">
                       <div
                         onClick={() => {
@@ -1782,7 +2138,6 @@ export const RegionalSystemPage: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Extra Photo Thumbnails if available */}
                     {modalPhotos.length > 1 && (
                       <div className="space-y-2 pt-2 border-t border-[#DCD8CE]">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#4A544F] font-semibold block">
@@ -1813,9 +2168,9 @@ export const RegionalSystemPage: React.FC = () => {
                   </div>
 
                   {/* Right Editorial Dossier Column */}
-                  <div className="lg:col-span-7 p-5 sm:p-8 space-y-6 bg-[#FAF9F5]">
-                    {/* Identity Header */}
-                    <div className="space-y-2">
+                  <div className="lg:col-span-7 p-4 sm:p-8 space-y-5 sm:space-y-6 bg-[#FAF9F5]">
+                    {/* Desktop-Only Identity Header (Mobile shows it in Compact Hero above) */}
+                    <div className="hidden lg:block space-y-2">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="px-2.5 py-0.5 bg-[#0A3622] text-[#FAF9F5] text-[11px] font-bold uppercase tracking-[0.16em] rounded-[2px]">
                           {selectedLeader.roleBadge}
@@ -1837,8 +2192,8 @@ export const RegionalSystemPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* 4-Cell Executive Metadata Summary */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 p-4 bg-white border border-[#E4E1D8] rounded-[3px]">
+                    {/* Executive Metadata Summary */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 sm:p-4 bg-white border border-[#E4E1D8] rounded-[3px]">
                       <div className="space-y-0.5">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
                           Nền tảng trước Manulife
@@ -1848,7 +2203,7 @@ export const RegionalSystemPage: React.FC = () => {
                         </p>
                       </div>
 
-                      <div className="space-y-0.5 sm:border-l sm:border-[#ECE9E0] sm:pl-3.5">
+                      <div className="hidden sm:block space-y-0.5 sm:border-l sm:border-[#ECE9E0] sm:pl-3.5">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
                           Thâm niên &amp; Gắn bó
                         </span>
@@ -1877,16 +2232,16 @@ export const RegionalSystemPage: React.FC = () => {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="border-l-2 border-[#B8975A] pl-4 py-0.5 font-serif italic text-xl sm:text-2xl text-[#0A3622] leading-snug">
+                    <blockquote className="border-l-2 border-[#B8975A] pl-3.5 sm:pl-4 py-0.5 font-serif italic text-[17px] sm:text-2xl text-[#0A3622] leading-snug">
                       “{selectedLeader.quote}”
                     </blockquote>
 
                     {/* Full Editorial Story */}
-                    <div className="space-y-3.5">
+                    <div className="space-y-3">
                       <span className="text-[10px] uppercase tracking-[0.2em] text-[#008746] font-bold block">
                         CÂU CHUYỆN NGHỀ &amp; HÀNH TRÌNH ĐỒNG HÀNH
                       </span>
-                      <div className="space-y-3 text-xs sm:text-[14px] text-[#28322D] leading-[1.8]">
+                      <div className="space-y-3 text-[13px] sm:text-[14px] text-[#28322D] leading-[1.78]">
                         {selectedLeader.editorialBio.map((para, idx) => (
                           <p key={idx}>{para}</p>
                         ))}
@@ -1894,7 +2249,7 @@ export const RegionalSystemPage: React.FC = () => {
                     </div>
 
                     {/* Credentials & Specialties */}
-                    <div className="pt-4 border-t border-[#E4E1D8] space-y-3">
+                    <div className="pt-4 border-t border-[#E4E1D8] space-y-2.5">
                       <span className="text-[10px] uppercase tracking-[0.2em] text-[#56605B] font-bold block">
                         DANH HIỆU &amp; LĨNH VỰC CHUYÊN SÂU
                       </span>
@@ -1904,7 +2259,7 @@ export const RegionalSystemPage: React.FC = () => {
                             key={badge}
                             className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#EBF2EE] text-[#0A3622] text-[11px] font-semibold rounded-[2px]"
                           >
-                            <Award className="w-3 h-3 text-[#008746]" />
+                            <Award className="w-3 h-3 text-[#008746] shrink-0" />
                             <span>{badge}</span>
                           </span>
                         ))}
@@ -1919,8 +2274,8 @@ export const RegionalSystemPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="pt-4 border-t border-[#E4E1D8] flex flex-wrap items-center gap-3">
+                    {/* Desktop Action Buttons */}
+                    <div className="hidden sm:flex pt-4 border-t border-[#E4E1D8] flex-wrap items-center gap-3">
                       <button
                         type="button"
                         onClick={() => handleConnectFromLeader(selectedLeader)}
@@ -1945,6 +2300,30 @@ export const RegionalSystemPage: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Sticky Mobile Bottom CTA Bar inside Modal */}
+              <div className="sm:hidden px-3.5 py-3 bg-white border-t border-[#E4E1D8] flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => handleConnectFromLeader(selectedLeader)}
+                  className="flex-1 py-2.5 px-3 bg-[#0A3622] text-[#FAF9F5] text-[11px] uppercase tracking-[0.12em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <span>Đặt lịch tư vấn</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+
+                {selectedLeader.facebookUrl && (
+                  <a
+                    href={selectedLeader.facebookUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="py-2.5 px-3 bg-[#FAF9F5] border border-[#DCD8CE] text-xs font-medium text-[#181F1C] rounded-[2px] inline-flex items-center gap-1 shrink-0"
+                  >
+                    <span>Facebook</span>
+                    <ExternalLink className="w-3 h-3 text-[#56605B]" />
+                  </a>
+                )}
+              </div>
             </motion.div>
           </motion.div>
         )}
@@ -1966,28 +2345,28 @@ export const RegionalSystemPage: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               className="max-w-5xl w-full space-y-3"
             >
-              <div className="flex items-center justify-between text-white/80 text-xs">
-                <span className="uppercase tracking-[0.2em] text-[#E8D3A6] text-[10px] font-semibold">
+              <div className="flex items-center justify-between gap-2 text-white/80 text-xs">
+                <span className="uppercase tracking-[0.16em] text-[#E8D3A6] text-[10px] font-semibold truncate">
                   {lightbox.tag}
                 </span>
                 <button
                   type="button"
                   onClick={() => setLightbox(null)}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-[2px] cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-[2px] cursor-pointer shrink-0"
                 >
                   <X className="w-3.5 h-3.5" />
                   <span>Đóng</span>
                 </button>
               </div>
-              <div className="bg-black/40 rounded-[4px] overflow-hidden flex items-center justify-center max-h-[78vh]">
+              <div className="bg-black/40 rounded-[4px] overflow-hidden flex items-center justify-center max-h-[75vh]">
                 <img
                   src={lightbox.src}
                   alt={lightbox.title}
-                  className="max-h-[78vh] w-auto object-contain"
+                  className="max-h-[75vh] w-auto object-contain"
                 />
               </div>
               <div className="text-center space-y-1">
-                <p className="font-serif text-lg sm:text-xl text-white">
+                <p className="font-serif text-base sm:text-xl text-white">
                   {lightbox.title}
                 </p>
                 {lightbox.subtitle && (

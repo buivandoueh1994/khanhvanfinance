@@ -171,8 +171,8 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
   {
     code: 'HCM69',
     areaLabel: 'Khu Vực Hạt Nhân HCM69',
-    headName: 'Khánh Vân (SRD) & Minh Phượng (BM)',
-    headRole: 'Trực tiếp điều hành & Phát triển Chi nhánh',
+    headName: 'Khánh Vân & BM Minh Phượng',
+    headRole: 'SRD & Giám đốc Chi nhánh điều hành',
     headAvatar: '/images/leaders/bm-minh-phuong.jpg',
     isCore: true,
     keyManagers: [
@@ -270,18 +270,18 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
     headLeaderId: 'huyen-trang',
     keyManagers: [
       {
-        name: 'Hoàng Thuý',
-        role: 'SUM',
-        avatar: '/images/leaders/hoang-thuy.jpg',
-        leaderId: 'hoang-thuy',
-        subNote: 'MDRT/MBA • Quản lý 30 nhân sự',
-      },
-      {
         name: 'Nguyễn Bé',
         role: 'DM',
         avatar: '/images/leaders/be-nguyen.jpg',
         leaderId: 'be-nguyen',
         subNote: '2x MBA Pro • 12 năm HCNS',
+      },
+      {
+        name: 'Hoàng Thuý',
+        role: 'SUM',
+        avatar: '/images/leaders/hoang-thuy.jpg',
+        leaderId: 'hoang-thuy',
+        subNote: 'MDRT/MBA • Quản lý 30 nhân sự',
       },
       {
         name: 'Trâm Lê',
