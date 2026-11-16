@@ -1254,48 +1254,56 @@ export function App() {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#FAF9F5]/92 backdrop-blur-md border-b border-[#E4E1D8] py-2.5 sm:py-4'
-            : 'bg-[#FAF9F5] border-b border-[#E4E1D8]/60 py-2.5 sm:py-6'
+            ? 'bg-[#FAF9F5]/92 backdrop-blur-md border-b border-[#E4E1D8] py-2.5 sm:py-3.5'
+            : 'bg-[#FAF9F5] border-b border-[#E4E1D8]/60 py-2.5 sm:py-5'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3.5 shrink-0 whitespace-nowrap group">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-8 xl:px-10 flex items-center justify-between gap-4">
+          <a href="#" className="flex items-center gap-3 shrink-0 whitespace-nowrap group">
             <span className="w-[3px] h-5 bg-[#008746] inline-block" />
-            <span className="font-serif text-xl sm:text-2xl font-medium tracking-[0.14em] uppercase text-[#181F1C]">
+            <span className="font-serif text-lg sm:text-2xl font-medium tracking-[0.12em] sm:tracking-[0.14em] uppercase text-[#181F1C]">
               Khánh Vân
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap text-[12px] uppercase tracking-[0.18em] text-[#56605B] hover:text-[#0A3622] transition-colors font-normal"
+                className="whitespace-nowrap text-[11px] xl:text-[11.5px] uppercase tracking-[0.14em] xl:tracking-[0.16em] text-[#56605B] hover:text-[#0A3622] transition-colors font-normal"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden sm:flex items-center gap-5 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-5 shrink-0">
+            <a
+              href="/vung-khanh-van"
+              className="group whitespace-nowrap inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-[2px] bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/25 hover:border-[#0A3622] text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#008746] group-hover:bg-[#E8D3A6] transition-colors shrink-0" />
+              <span>Vùng Khánh Vân</span>
+            </a>
+
             <a
               href="#lien-he"
-              className="whitespace-nowrap inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
+              className="hidden sm:inline-flex whitespace-nowrap items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
             >
               <span>Liên hệ riêng</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-          </div>
 
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#181F1C] min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
-            aria-label="Menu"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-[#181F1C] min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -1306,7 +1314,23 @@ export function App() {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden"
             >
-              <div className="px-6 py-6 flex flex-col gap-2">
+              <div className="px-5 py-5 flex flex-col gap-2">
+                <a
+                  href="/vung-khanh-van"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mb-2 px-4 py-3 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
+                >
+                  <div>
+                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
+                      Hệ Thống Kinh Doanh
+                    </span>
+                    <span className="font-serif text-base font-medium text-white">
+                      Vùng Khánh Vân • 4 Khu vực
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                </a>
+
                 {navItems.map((item) => (
                   <a
                     key={item.href}
