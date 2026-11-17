@@ -256,7 +256,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Ngọc Đầy, Huyền Lương, Nguyễn Hoa, Thiên Vân, Linh Tằng, Dung Grace, Thảo Bùi, Hà Đỗ, Ngọc Anh...)',
+      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Ngọc Đầy, Huyền Lương, Nguyễn Hoa, Thiên Vân, Linh Tằng, Dung Grace, Thảo Bùi, Cẩm Hương, Hà Đỗ, Ngọc Anh...)',
   },
   {
     code: 'MN111',
@@ -2148,8 +2148,58 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [],
   },
   {
-    id: 'hong-khanh',
+    id: 'cam-huong',
     index: '43',
+    displayName: 'Cẩm Hương',
+    fullName: 'Lê Thị Cẩm Hương',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'HCM69',
+    directLeader: 'SRD Khánh Vân',
+    joinedYear: '2021',
+    tenureLabel: 'Gia nhập 2021 • 10 năm Ngoại giao & Điều hành Doanh nghiệp',
+    industryKey: 'CORP_BIZ',
+    priorBackgroundShort: '10 năm Ngoại giao tại Tổng Lãnh sự quán Kuwait • Chủ DN Nhập khẩu',
+    priorBackgroundFull:
+      '10 năm công tác lĩnh vực Ngoại giao tại Tổng Lãnh sự quán Kuwait • Chủ doanh nghiệp kinh doanh nhập khẩu',
+    teamScaleBadge: '2x MDRT • MBA Pro',
+    highlightNote:
+      '2 lần đạt chuẩn quốc tế MDRT (2023, 2027) • Quản lý MBA 2023 • Manulife Pro Bạch Kim',
+    quote: 'Làm đúng trước, làm giỏi sau. Làm người trước, làm nghề sau.',
+    cardSummary:
+      'Từ 10 năm công tác ngoại giao tại Tổng Lãnh sự quán Kuwait và điều hành công ty nhập khẩu đến danh hiệu MDRT 2027 cùng khát vọng nhân rộng chuẩn mực bảo hiểm xanh sạch tại HCM69.',
+    editorialBio: [
+      'Từng có 10 năm công tác trong lĩnh vực ngoại giao tại Tổng Lãnh sự quán Kuwait và trực tiếp điều hành doanh nghiệp nhập khẩu riêng, Lê Thị Cẩm Hương hiểu rất rõ giá trị của việc chủ động chuẩn bị tài chính cho mỗi cá nhân và gia đình. Trước khi bước vào nghề, chị vốn là khách hàng tham gia hợp đồng của nhiều công ty bảo hiểm khác nhau; chính góc nhìn khắt khe của một người mua có trải nghiệm đã đưa chị đến với Manulife và gắn bó gần 6 năm qua tại Khu vực HCM69 thuộc Vùng Khánh Vân.',
+      'Điều giữ chân Cẩm Hương đồng hành dài lâu nằm ở sự chuẩn mực làm nghề với chữ Tâm đặt lên cao nhất vì quyền lợi bền vững của khách hàng. Liên tiếp chinh phục các cột mốc MDRT 2023, Quản lý MBA 2023, Manulife Pro Bạch Kim và sớm hoàn thành tiêu chí MDRT 2027, chị tâm niệm “Làm đúng trước, làm giỏi sau; làm người trước, làm nghề sau”, mong muốn kiến tạo thêm nhiều thế hệ tư vấn viên chuẩn xanh, sạch, đúng tại Việt Nam.',
+    ],
+    badges: ['2x MDRT (2023, 2027)', 'MBA 2023', 'Manulife Pro Bạch Kim', 'M-Star 2026'],
+    specialties: [
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/cam-huong.jpg',
+    gallery: [
+      {
+        src: '/images/leaders/gallery/cam-huong-1.jpg',
+        caption: 'Vinh danh hoàn thành tiêu chí danh hiệu quốc tế MDRT 2027 tại Khu vực HCM69',
+      },
+      {
+        src: '/images/leaders/gallery/cam-huong-2.jpg',
+        caption: 'Chinh phục vé tham dự Hành trình Ngôi Sao M-Star 2026 khám phá Thổ Nhĩ Kỳ',
+      },
+      {
+        src: '/images/leaders/gallery/cam-huong-3.jpg',
+        caption: 'Cùng SRD Khánh Vân và các đồng đội tại sự kiện tổng kết kinh doanh Manulife Plaza',
+      },
+    ],
+  },
+  {
+    id: 'hong-khanh',
+    index: '44',
     displayName: 'Hồng Khánh',
     fullName: 'Văn Thụy Hồng Khánh',
     roleBadge: 'MDRT',
@@ -2192,7 +2242,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'xuan-suong',
-    index: '44',
+    index: '45',
     displayName: 'Xuân Sương',
     fullName: 'Dương Thị Xuân Sương',
     roleBadge: 'MBA',
@@ -2225,7 +2275,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thuy-duong',
-    index: '45',
+    index: '46',
     displayName: 'Thuỳ Dương',
     fullName: 'Tôn Nữ Thuỳ Dương',
     roleBadge: 'SFA',
@@ -2260,7 +2310,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'tam-nguyen',
-    index: '46',
+    index: '47',
     displayName: 'Tâm Nguyễn',
     fullName: 'Nguyễn Thị Ngọc Tâm',
     roleBadge: 'MPRO',
@@ -2305,6 +2355,43 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
         caption: 'Đồng hành cùng đội ngũ Khu vực SG169 — Hệ thống Vùng Khánh Vân',
       },
     ],
+  },
+  {
+    id: 'huong-giang',
+    index: '48',
+    displayName: 'Nguyễn Hương Giang',
+    fullName: 'Nguyễn Thị Hương Giang',
+    roleBadge: 'FA',
+    roleTitle: 'Chuyên viên Tư vấn Tài chính Bảo hiểm',
+    tierKey: 'ADVISOR',
+    tierLabel: 'Chuyên viên Tài chính',
+    unitCode: 'SG169',
+    directLeader: 'SM Huyền Trang',
+    joinedYear: '2024',
+    tenureLabel: 'Gia nhập 2024 • 7 năm Thẩm định Ngân hàng & 11 năm Doanh nghiệp',
+    industryKey: 'BANKING',
+    priorBackgroundShort: '7 năm Thẩm định Tài chính Ngân hàng • 11 năm Doanh nghiệp',
+    priorBackgroundFull:
+      '7 năm Chuyên viên Thẩm định Tài chính Ngân hàng • 11 năm kinh nghiệm làm việc tại Doanh nghiệp',
+    teamScaleBadge: '7 năm Thẩm định Ngân hàng',
+    highlightNote:
+      '18 năm nền tảng Thẩm định Tài chính Ngân hàng & Doanh nghiệp • Thấu hiểu giá trị bảo hiểm từ trải nghiệm bồi thường thực tế',
+    quote: 'Bảo hiểm tử tế: lấy sự tử tế và văn minh làm tôn chỉ sống và làm nghề.',
+    cardSummary:
+      'Sau 18 năm làm thẩm định ngân hàng và doanh nghiệp cùng 2 lần trực tiếp nhận quyền lợi bồi thường cho gia đình, chọn lan tỏa giá trị bảo hiểm tử tế tại SG169.',
+    editorialBio: [
+      'Có nền tảng 7 năm làm Chuyên viên Thẩm định Tài chính tại ngân hàng cùng 11 năm làm việc trong môi trường doanh nghiệp, Nguyễn Thị Hương Giang vốn quen đánh giá mọi kế hoạch tài chính bằng con số thực chất. Bước ngoặt đưa chị đến với nghề tư vấn bắt đầu từ trải nghiệm rất thật của chính mình: sau hai lần bản thân và gia đình trực tiếp nhận quyền lợi chi trả bồi thường y tế, chị cảm nhận trọn vẹn giá trị điểm tựa mà bảo hiểm mang lại đúng lúc cần nhất.',
+      'Gia nhập Khu vực SG169 cùng Giám đốc Khu vực Huyền Trang thuộc Vùng Khánh Vân từ năm 2024, Hương Giang tìm thấy sự đồng điệu sâu sắc nơi tập thể đặt hai chữ “Bảo hiểm tử tế” làm kim chỉ nam dẫn dắt đội nhóm, gắn liền với tôn chỉ sống tử tế và văn minh mà chị luôn gìn giữ.',
+    ],
+    badges: ['7 Năm Thẩm Định Ngân Hàng', '11 Năm Doanh Nghiệp', 'Khu vực SG169'],
+    specialties: [
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/huong-giang.jpg',
+    gallery: [],
   },
 ];
 
