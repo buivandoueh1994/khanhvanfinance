@@ -84,12 +84,242 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
-    id: 'nguoi-huong-noi-lam-tu-van-loi-the-canh-tranh',
+    id: 'rut-du-tien-goc-tai-khoan-van-gap-doi-xanh-phu-quy',
     index: '01',
+    category: 'Tài chính & Gia sản',
+    date: 'Tháng 11, 2026',
+    readTime: '6 phút đọc',
+    featured: true,
+    image: '/images/articles/Article_XanhPhuQuy_CauTrucHaiGiaiDoan.jpg',
+    imageCaption: 'Đội ngũ Quản lý Vùng Khánh Vân rà soát kịch bản dòng tiền hai giai đoạn cho khách hàng hoạch định gia sản dài hạn.',
+    title: 'Rút Đủ Tiền Gốc Mà Tài Khoản Vẫn Còn Gấp Đôi: Cấu Trúc Hai Giai Đoạn Của Xanh Phú Quý',
+    excerpt:
+      'Đóng 2,5 tỷ đồng trong 10 năm đầu, rút ra đủ 2,5 tỷ trong 10 năm tiếp theo, đến năm thứ 20 tài khoản minh họa vẫn còn khoảng 5,36 tỷ. Bí quyết nằm ở nguyên tắc chỉ lấy đi phần hoa trái định kỳ để phần gốc tiếp tục hưởng lãi kép.',
+    content: `*2,5 tỷ đồng đóng vào đều đặn trong 10 năm đầu, rút ra đủ 2,5 tỷ đồng trong 10 năm tiếp theo, vậy mà đến năm thứ 20 giá trị tài khoản minh họa vẫn còn khoảng 5,36 tỷ đồng. Lần đầu ngồi xem bảng dòng tiền này, rất nhiều anh chị hỏi lại Vân rằng có nhầm lẫn ở con số nào không.*
+
+## Lối Mòn Tư Duy Về Hai Chữ “Đáo Hạn”
+
+Băn khoăn ấy rất tự nhiên. Phần lớn chúng ta lớn lên cùng thói quen gửi tiết kiệm hoặc tích lũy một chiều: bỏ tiền vào đều đặn, khóa chặt trong suốt mười lăm hay hai mươi năm, chờ tới ngày đáo hạn mới được cầm trọn một cục tiền về.
+
+Trong lối nghĩ quen thuộc đó, việc rút tiền ra giữa chừng gần như đồng nghĩa với phá vỡ kế hoạch hoặc chịu phạt phí. Chính tâm lý sợ bị chôn vốn quá lâu khiến không ít gia đình chần chừ trước các giải pháp tích lũy dài hạn, dù trong thâm tâm ai cũng hiểu mình cần một kỷ luật giữ tiền cho tuổi hưu trí và tương lai của con cái.
+
+## Cấu Trúc Hai Nhịp: 10 Năm Nuôi Quỹ, 10 Năm Để Quỹ Nuôi Dự Định
+
+Giải pháp bảo hiểm liên kết đơn vị Xanh Phú Quý được thiết kế theo một triết lý linh hoạt hơn, chia hành trình 20 năm thành hai giai đoạn tách biệt:
+
+- **Giai đoạn 1 (Năm 1 đến năm 10, Kỷ luật gieo hạt):** Người tham gia đóng phí đều đặn mỗi năm để xây dựng nền vốn gốc vững chắc, đồng thời kích hoạt ngay hạn mức bảo vệ sinh mạng cho người trụ cột. Phần tiền phân bổ vào các quỹ liên kết đơn vị do Công ty Quản lý Quỹ Manulife vận hành bắt đầu tích lũy đơn vị quỹ qua từng chu kỳ thị trường.
+- **Giai đoạn 2 (Từ năm thứ 11 trở đi, Thu hoạch từng mùa):** Khách hàng được quyền rút tiền định kỳ mỗi năm một lần với mức tối đa **10% tổng phí bảo hiểm cơ bản đã đóng trong 10 năm đầu** để phục vụ học phí cho con, du lịch trải nghiệm hoặc bổ sung dòng tiền sinh hoạt, mà **không làm giảm các khoản Thưởng Tri Ân** của hợp đồng.
+
+Lấy ví dụ thực tế từ hồ sơ một vị khách nam 35 tuổi mà Vân từng thiết kế lộ trình: mỗi năm anh ủy thác 250 triệu đồng trong 10 năm, tổng vốn gốc đóng vào là 2,5 tỷ đồng. Bước sang giai đoạn từ năm thứ 11 đến năm thứ 20, mỗi năm anh rút ra đúng 250 triệu đồng. Sau 10 lần rút, anh đã thu hồi đủ 2,5 tỷ đồng tiền gốc ban đầu. Phần giá trị còn lại nằm trong Quỹ Tăng Trưởng vẫn tiếp tục sinh sôi nhờ lãi kép; ở mức tỷ suất đầu tư minh họa 9%/năm, đến cuối năm thứ 20 giá trị tài khoản ước tính vẫn đạt khoảng **5,36 tỷ đồng**.
+
+## Ba Nguyên Tắc Cần Đọc Kỹ Trước Khi Đặt Bút Ký
+
+Con số 5,36 tỷ đồng nhìn rất đẹp, nhưng với tư duy quản trị rủi ro từ 8 năm làm ngân hàng quốc tế, Vân luôn nhắc khách hàng nhìn thấu ba điểm cốt lõi trước khi quyết định:
+
+- **Thứ nhất, hiểu rõ bản chất của lãi suất minh họa:** Mức 9%/năm là giả định minh họa dựa trên hiệu quả đầu tư dài hạn của quỹ cổ phiếu, không phải mức lãi cam kết cố định. Khi ngồi cùng cố vấn, anh chị luôn nên yêu cầu mở song song cả cột kịch bản tỷ suất thấp để biết rõ biên độ dao động của tài sản trong những năm thị trường trầm lắng.
+- **Thứ hai, sức mạnh nằm ở việc không rút cạn một lần:** Sở dĩ tài khoản vẫn phình to dù đã rút đủ tiền gốc là vì mỗi năm mình chỉ lấy ra 10%, để phần lớn khối tài sản tích lũy từ 10 năm đầu tiếp tục ở lại làm việc trong quỹ.
+- **Thứ ba, kỷ luật 10 năm đầu là điều kiện tiên quyết:** Mọi trái ngọt từ năm thứ 11 chỉ mở ra trọn vẹn khi gia đình chọn mức phí vừa vặn từ 10% đến 15% thu nhập ổn định để đi hết 10 năm đầu tiên một cách nhẹ nhàng, không đứt gánh.
+
+Một kế hoạch tích lũy thông minh không bắt chúng ta phải nhịn chi tiêu đến tận cuối đời mới được tận hưởng. Mười năm đầu mình kiên nhẫn nuôi quỹ, để mười năm sau quỹ quay lại nuôi dưỡng những dự định đẹp nhất của gia đình đúng vào lúc mình cần.`,
+    keyTakeaways: [
+      'Cấu trúc hai giai đoạn của Xanh Phú Quý giúp giải tỏa nỗi lo chôn vốn: 10 năm đầu kỷ luật đóng phí xây nền, từ năm thứ 11 được rút định kỳ tối đa 10% tổng phí cơ bản mỗi năm mà vẫn giữ nguyên Thưởng Tri Ân.',
+      'Việc chỉ rút từng phần 10% mỗi năm giúp thu hồi đủ tiền gốc sau một thập kỷ trong khi khối tài sản còn lại vẫn tiếp tục nhân lên nhờ hiệu ứng lãi kép.',
+      'Luôn đối chiếu đồng thời kịch bản tỷ suất minh họa cao và thấp, đồng thời cân đối mức phí trong khoảng 10% đến 15% thu nhập để duy trì trọn vẹn kỷ luật 10 năm đầu.',
+    ],
+  },
+  {
+    id: 'thang-than-vi-thuong-gop-y-de-cong-su-gioi-len',
+    index: '02',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
     featured: true,
+    image: '/images/articles/Article_RadicalCandor_ThangThanViThuong.jpg',
+    imageCaption: 'Văn hóa kèm cặp 1-1 tại Vùng Khánh Vân: góp ý riêng tư, trực diện vào nghiệp vụ và cùng cộng sự hoàn thiện ngay trên tình huống thực tế.',
+    title: 'Thẳng Thắn Vì Thương: Góp Ý Để Cộng Sự Giỏi Lên Mà Không Thấy Mình Bị Phán Xét',
+    excerpt:
+      'Góp ý sao cho người nghe không tự ái mà thực sự tiến bộ? Từ cuốn sách Radical Candor của Kim Scott đến thực tế dẫn dắt 64 quản lý, Vân chọn đứng giữa hai thái cực: quan tâm thật lòng đến con người và nói thẳng vào công việc.',
+    content: `*“Góp ý thế nào để một người giỏi lên mà không thấy mình bị phán xét?” Câu hỏi ấy đi theo Vân suốt những năm đầu tập làm quản lý. Và lời giải sáng rõ nhất lại đến từ cuốn sách Radical Candor của Kim Scott, cựu giám đốc điều hành tại Google và Apple, với tinh thần có thể gói gọn trong bốn chữ: thẳng thắn vì thương.*
+
+## Hai Cái Bẫy Phổ Biến Của Người Làm Sếp
+
+Khi chuyển từ một người làm chuyên môn giỏi sang vị trí dẫn dắt đội ngũ, phần lớn quản lý trẻ thường vô tình rơi vào một trong hai thái cực đối lập:
+
+- **Thái cực thứ nhất là sự gay gắt thiếu thấu cảm:** Vì quá sốt ruột trước chỉ tiêu hoặc cầu toàn về tiêu chuẩn, người sếp buông lời nhận xét nặng nề ngay trước mặt tập thể. Nhân sự có thể sửa lỗi ngay lúc đó vì sợ, nhưng sau vài lần như thế họ bắt đầu thu mình lại, giấu cái dốt và không còn dám thử những cách làm mới.
+- **Thái cực thứ hai là sự xuê xoa vì ngại va chạm:** Đây lại là cái bẫy tinh vi hơn ở những người quản lý hiền lành. Vì sợ mất lòng, sợ cộng sự buồn rồi nghỉ việc, mình chỉ khen xã giao cho êm chuyện. Bề ngoài phòng họp lúc nào cũng hòa thuận, nhưng cộng sự thì mãi dậm chân tại chỗ vì không ai chỉ cho họ biết điểm mù của mình nằm ở đâu.
+
+Nhìn lại chặng đường đồng hành cùng hơn 500 nhân sự, Vân nhận ra sự im lặng xuê xoa tuy dễ chịu ở hiện tại, nhưng về lâu dài lại là cách ứng xử thiếu tử tế nhất với một người đang gửi gắm thanh xuân để trưởng thành cùng mình.
+
+## Nguyên Tắc “Khen Trước Tập Thể, Chỉnh Sửa Riêng Tư”
+
+Áp dụng tinh thần Radical Candor vào thực tế vận hành Vùng, Vân rèn cho mình và các quản lý cấp cao thói quen giữ trọn hai vế song song: **quan tâm thật lòng đến con người**, và **trực diện vào chất lượng công việc**.
+
+Trong từng buổi kèm cặp thực tế, nguyên tắc ấy được cụ thể hóa thành ba động tác nhỏ:
+
+- **Khen ngợi cụ thể trước tập thể:** Khi một bạn làm tốt, đừng chỉ nói chung chung *“Em giỏi lắm”*. Hãy gọi tên chính xác hành động đáng quý ấy trước cả nhóm, chẳng hạn cách bạn kiên nhẫn kiểm tra lại lịch sử y khoa cho khách hàng trước khi nộp hồ sơ thẩm định. Lời khen đúng chỗ sẽ trở thành tiêu chuẩn chung cho cả tập thể học theo.
+- **Góp ý riêng tư và tách bạch hành vi khỏi nhân cách:** Khi cần chỉnh sửa, Vân luôn mời bạn ngồi riêng ở một góc yên tĩnh. Mình nói về một tình huống cụ thể chưa chuẩn xác trong buổi tư vấn sáng nay, tuyệt đối không quy chụp sang năng lực hay tính cách của bạn.
+- **Cùng sửa ngay trên một bài toán thật:** Góp ý xong không để bạn tự bơi trong cảm giác bối rối. Hai chị em sẽ mở lại đúng bộ giải pháp đó, làm mẫu lại từng câu hỏi khai thác nhu cầu để bạn thấy rõ con đường làm tốt hơn ngay trong tuần kế tiếp.
+
+## Lòng Tin Là Tấm Đệm Đỡ Mọi Lời Nói Thẳng
+
+Điều kỳ diệu trong quản trị con người là khi cộng sự cảm nhận được người đứng đầu thực sự thương mình, thực sự muốn thu nhập và vị thế của mình vững vàng hơn, thì những lời góp ý thẳng thắn nhất lại được đón nhận bằng thái độ biết ơn nhẹ nhàng nhất.
+
+Mối quan hệ bền chặt trong một tổ chức lớn không được xây bằng những lời khen lấy lòng. Nó được xây từ những buổi ngồi lại chân thành sau một ca làm việc chưa trọn vẹn, nơi người dẫn dắt đủ bao dung để không phán xét, và đủ trách nhiệm để không làm ngơ trước lỗi sai của người đi cùng.
+
+Người ta hiếm khi sợ bị góp ý. Người ta chỉ sợ bị góp ý bởi một người không thật lòng muốn mình tốt lên.`,
+    keyTakeaways: [
+      'Tránh cả hai cái bẫy của người làm quản lý: sự gay gắt làm nhân sự thu mình và sự im lặng xuê xoa khiến cộng sự mãi không nhận ra điểm mù.',
+      'Thực hành nguyên tắc khen cụ thể trước tập thể để nhân rộng chuẩn mực tốt, và góp ý riêng tư tập trung vào hành vi công việc thay vì phán xét con người.',
+      'Sau mỗi lời góp ý thẳng thắn luôn cần một phương án đồng hành sửa sai ngay trên tình huống thực tế để cộng sự tự tin bước tiếp.',
+    ],
+  },
+  {
+    id: 'khi-cha-me-phai-tam-dung-ke-hoach-cua-con-van-di-tiep',
+    index: '03',
+    category: 'Bố Mẹ Đi Làm',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: true,
+    image: '/images/articles/Article_BaoPhiXanh_KeHoachCuaConVanDiTiep.jpg',
+    imageCaption: 'Niềm vui của những người mẹ làm nghề hoạch định tài chính bên các con nhỏ, nơi mỗi kế hoạch tương lai đều được khóa chặt bằng lớp đệm dự phòng.',
+    title: 'Khi Cha Mẹ Phải Tạm Dừng, Kế Hoạch Của Con Vẫn Đi Tiếp',
+    excerpt:
+      'Ngồi rà soát hợp đồng học vấn cho con, phần lớn phụ huynh nghĩ quyền lợi miễn đóng phí chỉ kích hoạt khi cha mẹ qua đời. Thực tế, kịch bản người trụ cột mất sức lao động toàn bộ còn tạo áp lực dòng tiền nặng nề hơn nhiều.',
+    content: `*Một người trụ cột đột ngột rời đi, và một người trụ cột vẫn còn ở bên gia đình nhưng không thể đi làm tạo ra thu nhập được nữa. Nếu nhìn thuần túy trên bảng cân đối dòng tiền của một tổ ấm, hoàn cảnh thứ hai nhiều khi còn tạo áp lực tài chính nặng nề và dai dẳng hơn rất nhiều.*
+
+## Câu Hỏi Bỏ Ngỏ Trong Những Cuốn Hợp Đồng Cho Con
+
+Là mẹ của hai bé đang tuổi lớn, mỗi khi ngồi rà soát danh mục tích lũy học vấn cùng các gia đình trẻ, Vân rất hay nhận được một câu hỏi thẳng thắn: *“Chị Vân ơi, mình lập kế hoạch đóng 15 năm cho con, nhỡ giữa đường bố mẹ gặp chuyện không may thì cuốn hợp đồng của con ai đóng tiếp?”*
+
+Đa số bố mẹ đều đã từng nghe thoáng qua cụm từ *“quyền lợi miễn đóng phí”*. Thế nhưng khi Vân hỏi sâu thêm một nhịp rằng quyền lợi ấy che chở gia đình trong những trường hợp nào, chín trên mười người vẫn mặc định nó chỉ kích hoạt khi cha mẹ không còn trên đời.
+
+Cuộc sống thực tế lại phức tạp hơn một kịch bản trắng đen như vậy. Một tai nạn giao thông nghiêm trọng, biến chứng sau đột quỵ hoặc một căn bệnh hiểm nghèo giai đoạn nặng có thể giữ lại sinh mạng, nhưng lấy đi vĩnh viễn khả năng làm việc của người cha hoặc người mẹ. Ngay tại thời điểm ấy, gia đình chịu tác động kép: nguồn thu nhập chính đứt gãy về số không, chi phí y tế và điều dưỡng dài hạn tăng vọt, trong khi kỳ đóng phí học vấn hàng năm của con vẫn đều đặn gõ cửa.
+
+## Cơ Chế Gỡ Nút Thắt Của Quyền Lợi Bảo Phí Xanh
+
+Trong cấu trúc hoạch định gia sản chuẩn mực tại Manulife, sản phẩm bổ trợ **Bảo Phí Xanh** (và phiên bản nâng cấp Bảo Phí Xanh 2026) được thiết kế chuyên biệt để khóa chặt rủi ro đứt gãy dòng tiền đóng phí trước cả ba nhóm biến cố nghiêm trọng của người trụ cột:
+
+- **Trường hợp tử vong:** Công ty bảo hiểm lập tức tiếp nhận nghĩa vụ đóng toàn bộ các kỳ phí định kỳ còn lại của hợp đồng theo đúng lộ trình ban đầu.
+- **Mất bộ phận hoặc chức năng cơ thể vĩnh viễn:** Bao gồm các tổn thương không thể phục hồi ở hai tay, hai chân hoặc thị lực hai mắt theo quy định điều khoản.
+- **Tổn thương cơ thể nặng dẫn đến mất sức lao động hoàn toàn (Thương tật toàn bộ vĩnh viễn):** Khi tỷ lệ tổn thương cơ thể được hội đồng giám định y khoa xác nhận từ 81% trở lên theo quy tắc sản phẩm, hợp đồng được miễn hoàn toàn nghĩa vụ đóng phí cho suốt thời hạn hiệu lực của quyền lợi.
+
+Nhờ lớp chốt chặn này, thay vì phải ngậm ngùi dừng hợp đồng hoặc rút giá trị hoàn lại ít ỏi giữa chừng để trang trải biến cố, gia đình vẫn giữ nguyên được tài khoản tích lũy cho con trưởng thành đúng hẹn năm 18 hay 22 tuổi.
+
+## Cách Giữ Trọn Lời Hứa Của Cha Mẹ Bằng Con Số Cụ Thể
+
+Tình thương của cha mẹ dành cho con vốn không có điều kiện, nhưng dòng tiền nuôi con ăn học thì luôn bị ràng buộc bởi sức khỏe của người đi làm. Khi mở lại cuốn hợp đồng đang cất trong tủ của gia đình mình, Vân khuyên anh chị hãy dành năm phút kiểm tra ba dòng thông tin sau:
+
+- **Ai đang đứng tên Bên mua bảo hiểm:** Quyền lợi miễn đóng phí cần được gắn trực tiếp lên sinh mạng và sức khỏe lao động của người tạo ra thu nhập chính trong nhà.
+- **Phạm vi kích hoạt miễn đóng phí:** Đọc kỹ xem hợp đồng hiện tại mới chỉ miễn phí khi tử vong, hay đã bao gồm cả Thương tật toàn bộ vĩnh viễn và bệnh lý nghiêm trọng.
+- **Thời hạn bảo vệ của sản phẩm bổ trợ:** Đảm bảo thời hạn của Bảo Phí Xanh khớp trọn vẹn với số năm cha mẹ cam kết đóng phí tích lũy cho con.
+
+Một kế hoạch dành cho con chỉ thực sự vững chãi khi nó có khả năng tự bước tiếp đến vạch đích, kể cả trong những ngày cha mẹ buộc phải tạm dừng lại để nghỉ ngơi và chữa lành.`,
+    keyTakeaways: [
+      'Biến cố mất hoàn toàn khả năng lao động (Thương tật toàn bộ vĩnh viễn) thường gây áp lực dòng tiền nặng nề hơn vì gia đình vừa mất thu nhập vừa gánh chi phí chăm sóc dài hạn.',
+      'Quyền lợi bổ trợ Bảo Phí Xanh giúp Manulife đóng thay phần phí định kỳ còn lại cả khi cha mẹ tử vong lẫn khi bị Thương tật toàn bộ vĩnh viễn theo điều khoản.',
+      'Khi lập hợp đồng học vấn cho con, cần gắn quyền lợi miễn đóng phí đúng vào người tạo thu nhập chính và khớp trọn thời hạn đóng phí dự kiến.',
+    ],
+  },
+  {
+    id: 'ngoai-the-kham-om-vat-lop-bao-ve-benh-ly-tre-nho',
+    index: '04',
+    category: 'Bố Mẹ Đi Làm',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: false,
+    image: '/images/articles/Article_LaChanXanh_BaoVeBenhLyTreEm.jpg',
+    imageCaption: 'Khoảnh khắc bình yên của các em nhỏ bên mẹ tại không gian văn phòng xanh: chuẩn bị từ sớm là cách cha mẹ giữ trọn sự chủ động trước những rủi ro y tế đặc thù tuổi thiếu nhi.',
+    title: 'Ngoài Thẻ Khám Ốm Vặt, Con Còn Cần Lớp Bảo Vệ Trước Bệnh Lý Nặng Đặc Thù Của Trẻ Nhỏ',
+    excerpt:
+      'Phần lớn cha mẹ chuẩn bị bảo hiểm cho con đều bắt đầu từ chiếc thẻ khám sốt, viêm họng. Nhưng những bệnh lý đặc thù ở trẻ em như Kawasaki biến chứng tim hay thấp tim mới là bài toán cần một khoản dự phòng tiền mặt độc lập.',
+    content: `*Hầu hết các cặp vợ chồng trẻ khi nhắn cho Vân hỏi giải pháp bảo hiểm đầu đời cho bé đều bắt đầu bằng cùng một mong muốn: làm một chiếc thẻ sức khỏe để mỗi lần con ho sốt, viêm phế quản vào viện quốc tế đỡ xót tiền. Suy nghĩ ấy hoàn toàn thực tế, vì ốm vặt theo mùa là chuyện bố mẹ nhìn thấy thường xuyên nhất trong những năm đầu đời của con.*
+
+## Khoảng Trống Giữa “Thẻ Thanh Toán Viện Phí” Và “Quỹ Dự Phòng Tiền Mặt”
+
+Làm mẹ của hai con, Vân rất thấu cảm giác an tâm khi cầm chiếc thẻ bảo lãnh viện phí đưa con đi khám. Tuy nhiên, dưới góc nhìn hoạch định rủi ro gia đình, thẻ chăm sóc sức khỏe mới giải quyết được vế thứ nhất: **thanh toán hóa đơn y tế thực tế cho bệnh viện**.
+
+Khi ngồi đọc kỹ danh mục bệnh học nhi khoa, nhiều phụ huynh mới giật mình nhận ra có một nhóm bệnh lý nặng chỉ xuất hiện đặc thù ở cơ thể trẻ nhỏ và thanh thiếu niên:
+
+- **Bệnh Kawasaki có biến chứng tim mạch:** Một hội chứng viêm mạch máu cấp tính ở trẻ nhỏ có thể gây phình động mạch vành nếu diễn tiến phức tạp.
+- **Bệnh thấp tim có tổn thương van tim, sốt bại liệt, bệnh xương thủy tinh, hen suyễn cấp tính nặng hoặc đái tháo đường phụ thuộc insulin khởi phát sớm.**
+
+Những bệnh lý này hiếm gặp hơn viêm họng, sốt siêu vi hàng ngày rất nhiều. Nhưng một khi không may xảy ra, bài toán của gia đình không còn gói gọn trong hóa đơn giường bệnh. Bố hoặc mẹ thường phải xin nghỉ việc không lương hàng tháng trời để túc trực chăm con, cộng thêm chi phí dinh dưỡng chuyên biệt, phục hồi chức năng và đi lại theo dõi định kỳ suốt nhiều năm.
+
+## Điểm Đáng Quý Trong Thiết Kế Của Lá Chắn Xanh Cho Trẻ Dưới 18 Tuổi
+
+Trước đây, nhiều sản phẩm bệnh lý nghiêm trọng trên thị trường thường dùng chung một danh sách bệnh của người trưởng thành (như nhồi máu cơ tim, tai biến mạch máu não, ung thư tuổi trung niên) rồi áp nguyên sang cho trẻ nhỏ, khiến xác suất bảo vệ thực tế ở lứa tuổi thiếu nhi chưa thực sự sát sườn.
+
+Trong giải pháp bổ trợ **Lá Chắn Xanh** của Manulife, cấu trúc quyền lợi cho trẻ em dưới 18 tuổi được thiết kế nhân văn và thực tế hơn rất nhiều:
+
+- **Bảo vệ mặc định thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em:** Bên cạnh danh sách 56 bệnh lý nghiêm trọng giai đoạn cuối theo chuẩn chung, trẻ dưới 18 tuổi được tích hợp sẵn quyền lợi bảo vệ trước 10 bệnh lý đặc thù lứa tuổi thiếu nhi mà không phải đóng thêm phụ phí riêng.
+- **Chi trả một lần 100% Số tiền bảo hiểm (tối đa lên đến 1 tỷ đồng):** Khoản tiền mặt này giải ngân trực tiếp về tài khoản gia đình ngay khi có chẩn đoán thỏa điều kiện điều khoản, hoàn toàn độc lập với chiếc thẻ sức khỏe đang thanh toán viện phí tại bệnh viện.
+- **Tham gia sớm ngay từ 30 ngày tuổi:** Giúp bố mẹ khóa chặt quyền lợi bảo vệ cho bé ngay từ những tháng đầu đời với mức phí rủi ro còn rất nhẹ nhàng.
+
+## Công Thức Hai Lớp Áo Giáp Vừa Vặn Cho Con
+
+Chuẩn bị hành trang sức khỏe cho con không có nghĩa là mua thật nhiều hợp đồng đắt đỏ, mà là phối hợp đúng chức năng của từng lớp bảo vệ:
+
+- **Lớp thứ nhất (Thẻ Chăm sóc Sức khỏe):** Đỡ đần những đợt ốm đau, nằm viện thường ngày để con được tiếp cận dịch vụ y tế chu đáo, sạch sẽ.
+- **Lớp thứ hai (Quỹ Bệnh lý Nghiêm trọng Trẻ em):** Một khoản tiền mặt dự phòng đủ lớn đứng sau lưng, để nếu biến cố y tế lớn ập đến, bố mẹ có thể gác lại công việc mà toàn tâm toàn ý nắm tay con đi qua đợt điều trị dài ngày.
+
+Những cơn sốt mọc răng hay cảm cúm chuyển mùa của con thì bố mẹ nào cũng nhìn thấy trước mắt; còn những rủi ro lớn hiếm gặp nhưng hệ trọng mới chính là điều cần sự nhìn xa và chuẩn bị từ lúc con đang khỏe mạnh, bình an nhất.`,
+    keyTakeaways: [
+      'Thẻ chăm sóc sức khỏe giúp thanh toán hóa đơn bệnh viện, nhưng khi trẻ mắc bệnh nặng kéo dài, gia đình cần thêm một quỹ tiền mặt độc lập để bù đắp thu nhập khi cha mẹ nghỉ việc chăm con.',
+      'Lá Chắn Xanh tích hợp mặc định thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em (như Kawasaki biến chứng tim, thấp tim, xương thủy tinh) cho trẻ dưới 18 tuổi từ 30 ngày tuổi, chi trả 100% STBH tối đa 1 tỷ đồng.',
+      'Kết hợp hài hòa hai lớp bảo vệ gồm thẻ y tế nội trú và quyền lợi bệnh lý nghiêm trọng giúp cha mẹ chủ động trọn vẹn mà chi phí hàng năm vẫn rất hợp lý.',
+    ],
+  },
+  {
+    id: 'doi-ngu-khong-doc-khau-hieu-nhin-nguoi-dan-dau-tam-gio-sang',
+    index: '05',
+    category: 'Kỷ luật Bản thân',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: false,
+    image: '/images/articles/Article_KyLuatLamGuong_NguoiDanDauTamGioSang.jpg',
+    imageCaption: 'Khánh Vân cùng đội ngũ Quản lý nòng cốt: sự chỉn chu, đúng giờ và nhất quán của người đứng đầu là thước đo rõ ràng nhất cho văn hóa tập thể.',
+    title: 'Đội Ngũ Không Đọc Khẩu Hiệu Trên Tường, Họ Nhìn Người Dẫn Đầu Lúc Tám Giờ Sáng',
+    excerpt:
+      'Nhiều người nghĩ lãnh đạo bằng sự thấu cảm thì phải mềm mỏng, dễ dãi. Với Vân, sự ấm áp luôn dành cho con người, còn sự nghiêm khắc dành cho tiêu chuẩn nghề nghiệp bắt đầu từ tác phong lúc tám giờ sáng của chính người đứng đầu.',
+    content: `*Đội ngũ hiếm khi hành động theo những dòng khẩu hiệu in đẹp treo trên tường phòng họp. Họ quan sát xem người dẫn đầu xuất hiện thế nào và làm việc ra sao vào đúng tám giờ sáng thứ Hai đầu tuần.*
+
+## Hiểu Đúng Về Hai Chữ “Thấu Cảm” Trong Quản Trị
+
+Khi biết Vân theo đuổi phong cách lãnh đạo phụng sự và thấu cảm trong một hệ thống phần lớn là phụ nữ có gia đình, không ít người hình dung môi trường ấy hẳn phải mềm mỏng, xuề xòa và ít áp lực lắm.
+
+Thực tế vận hành một vùng kinh doanh hơn 500 nhân sự suốt nhiều năm qua cho Vân thấy điều ngược lại: một tập thể thiếu kỷ luật thì không thể có sự bình an dài lâu. Sự thấu cảm và tính kỷ luật hoàn toàn song hành được cùng nhau, miễn là người lãnh đạo phân định thật rạch ròi hai ranh giới:
+
+- **Sự ấm áp và bao dung dành cho hoàn cảnh con người:** Khi con cái cộng sự ốm đau hay gia đình có việc đột xuất, tập thể sẵn sàng san sẻ và nâng đỡ nhau không tính toán.
+- **Sự nghiêm khắc và nhất quán dành cho tiêu chuẩn nghề nghiệp:** Từ đạo đức tư vấn trung thực, bảo mật thông tin khách hàng cho đến cam kết giờ giấc huấn luyện đều không có vùng xám nhân nhượng.
+
+## Ba Thói Quen Nhỏ Định Hình Văn Hóa Không Cần Lời Nhắc
+
+Thừa hưởng tác phong làm việc chuẩn xác từ 8 năm ở ngân hàng quốc tế ANZ, Vân không thích quản trị bằng những bản nội quy dày đặc hình phạt. Thay vào đó, Vân tự đặt kỷ luật lên chính mình ở ba chi tiết nhỏ lặp lại hàng tuần:
+
+- **Có mặt trước giờ bắt đầu mỗi buổi đào tạo sáng:** Dù tối hôm trước lịch họp kéo muộn hay sáng sớm phải thu xếp đưa hai con đến trường, khi đã ấn định buổi chia sẻ lúc 8h30 thì 8h15 Vân đã có mặt chỉnh lại bài giảng. Người đứng đầu tôn trọng thời gian của tập thể thì tự khắc không ai cho phép mình đi trễ.
+- **Chỉn chu từ trang phục đến số liệu trên bàn họp:** Dù là hội nghị hàng trăm người hay buổi ngồi kèm cặp ba bạn quản lý mới, trang phục, sổ tay và bảng số liệu phân tích đều được chuẩn bị tươm tất. Sự chỉn chu bên ngoài rèn cho tư duy bên trong thói quen không làm việc qua loa.
+- **Minh bạch tiêu chí thi đua và thăng tiến ngay từ ngày đầu:** Mọi chính sách tưởng thưởng trong Vùng đều được công bố rõ ràng bằng con số để bất kỳ nhân sự nào nhìn vào cũng biết mình đang được ghi nhận công bằng theo năng lực thật.
+
+## Khi Lời Nói Và Việc Làm Lệch Nhau, Tập Thể Luôn Tin Vào Việc Làm
+
+Vân từng chứng kiến có những đội nhóm hô khẩu hiệu quyết tâm rất vang dội ở đầu quý, nhưng người trưởng nhóm lại là người thường xuyên đến muộn nhất hoặc lỡ hẹn báo cáo mà không một lời giải thích. Một khi lời nói trên bục giảng và hành động ngoài đời thực lệch pha nhau, nhân sự sẽ lập tức sao chép hành động thực tế của người sếp.
+
+Ngược lại, các bạn tư vấn viên mới gia nhập Vùng Khánh Vân thường hòa nhập vào nề nếp rất nhanh mà chẳng cần ai đôn đốc nặng lời. Các bạn nhìn cách các anh chị Giám đốc Khu vực, Trưởng phòng chuẩn bị hồ sơ kỹ lưỡng lúc sáng sớm, nhìn cách mọi người ăn mặc thanh lịch và giữ chữ tín với từng cuộc hẹn khách hàng, rồi tự điều chỉnh nhịp bước của mình khớp vào guồng quay chung.
+
+Người dẫn đầu giữ được kỷ luật nghiêm cẩn với bản thân trước tiên thì không bao giờ phải quát tháo ai. Sự chuyên nghiệp cứ thế thấm dần xuống từng tầng quản lý, lặng lẽ, tự nguyện và bền bỉ hơn mọi tấm bảng khẩu hiệu treo trên tường.`,
+    keyTakeaways: [
+      'Lãnh đạo thấu cảm không đồng nghĩa với dễ dãi: hãy dành sự ấm áp cho hoàn cảnh con người và dành sự nghiêm khắc nhất quán cho tiêu chuẩn nghề nghiệp.',
+      'Ba hành động làm gương có sức nặng hơn mọi văn bản nội quy: luôn đến đúng giờ đào tạo sáng, xuất hiện chỉn chu trong mọi cuộc họp nhỏ và minh bạch hóa tiêu chí đánh giá.',
+      'Khi lời nói và hành động của người đứng đầu đồng nhất, văn hóa chuyên nghiệp sẽ tự nhiên thấm xuống đội ngũ mới mà không cần sự áp đặt.',
+    ],
+  },
+  {
+    id: 'nguoi-huong-noi-lam-tu-van-loi-the-canh-tranh',
+    index: '06',
+    category: 'Phát triển Sự nghiệp',
+    date: 'Tháng 11, 2026',
+    readTime: '5 phút đọc',
+    featured: false,
     image: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
     imageCaption: 'Khánh Vân cùng Ban Điều Hành Hệ thống — nơi sự điềm đạm, chuẩn mực và năng lực lắng nghe sâu trở thành điểm tựa uy tín bền vững.',
     title: 'Người Hướng Nội Làm Tư Vấn: Khi Sự Điềm Đạm Và Lắng Nghe Trở Thành Lợi Thế Cạnh Tranh',
@@ -129,11 +359,11 @@ Câu *"chắc em không hợp với nghề này"* Vân đã nghe đủ nhiều �
   },
   {
     id: 'am-29-phan-tram-mot-nam-giu-du-10-nam-sinh-loi-9-phay-4',
-    index: '02',
+    index: '07',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/VanPhong_ChiVanCungDoiNgu_BanHopXanhLa.jpg',
     imageCaption: 'Chiến lược quản trị tài sản và kỷ luật ủy thác dòng tiền dài hạn cùng các cộng sự nòng cốt.',
     title: 'Âm 29,5% Trong Một Năm: Kỷ Luật Giữ Đủ 10 Năm Để Đạt Mức Sinh Lời 9,4%/Năm',
@@ -178,11 +408,11 @@ Mỗi gia đình là một bài toán dòng tiền riêng biệt. Nếu bạn c�
   },
   {
     id: '17-trieu-va-171-trieu-chiec-xuong-ca-va-quyen-loi-tai-nan',
-    index: '03',
+    index: '08',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
-    featured: true,
+    featured: false,
     image: '/images/VanPhong_ChiVanCung5NuQuanLy_SanhVomTron.jpg',
     imageCaption: 'Chị Khánh Vân ân cần hướng dẫn đội ngũ quản lý về quy trình thẩm định và giải quyết quyền lợi bồi thường cho khách hàng.',
     title: '17 Triệu Và 171 Triệu: Câu Chuyện Bồi Thường Hy Hữu Từ Một Chiếc Xương Cá',
@@ -231,7 +461,7 @@ Bữa cơm gia đình vẫn cứ ngon và ấm cúng như thế, chẳng ai ng�
   },
   {
     id: 'tien-gui-sinh-loi-it-di-gia-dinh-bat-an-nhieu-hon',
-    index: '04',
+    index: '09',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -281,7 +511,7 @@ Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông 
   },
   {
     id: 'hop-dong-bao-hiem-cung-can-update-cv',
-    index: '05',
+    index: '10',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -330,7 +560,7 @@ Khi sự nghiệp thay đổi theo hướng tích cực hơn, ít rủi ro hơn,
   },
   {
     id: '500-tan-vang-nam-im-va-noi-so-vo-hinh',
-    index: '06',
+    index: '11',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '6 phút đọc',
@@ -377,7 +607,7 @@ Dòng vốn quốc gia cần đường dẫn để chảy vào sản xuất. Nh�
   },
   {
     id: 'khi-tai-san-thua-ke-tro-thanh-vet-nut-gia-dinh',
-    index: '07',
+    index: '12',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '6 phút đọc',
@@ -422,7 +652,7 @@ Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi c
   },
   {
     id: 'phi-nam-dau-boc-hoi-toi-uu-dong-tien',
-    index: '08',
+    index: '13',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -486,7 +716,7 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
   },
   {
     id: 'ba-thang-trang-tay-von-lieng-khong-nam-trong-so-sach',
-    index: '09',
+    index: '14',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 11, 2026',
     readTime: '5 phút đọc',
@@ -543,7 +773,7 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình - nh�
   },
   {
     id: 'chuan-bi-tai-chinh-truoc-khi-buoc-ra-vung-an-toan',
-    index: '10',
+    index: '15',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 10, 2026',
     readTime: '6 phút đọc',
@@ -602,7 +832,7 @@ Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhấ
   },
   {
     id: '3-bieu-hien-cua-nguoi-quan-ly-gioi',
-    index: '11',
+    index: '16',
     category: 'Phát triển Sự nghiệp',
     date: 'Tháng 09, 2026',
     readTime: '6 phút đọc',
@@ -649,7 +879,7 @@ Bởi suy cho cùng, di sản lớn nhất của một nhà lãnh đạo không 
   },
   {
     id: 'can-bang-cong-viec-va-gia-dinh-bo-me-di-lam',
-    index: '12',
+    index: '17',
     category: 'Bố Mẹ Đi Làm',
     date: 'Tháng 09, 2026',
     readTime: '6 phút đọc',
@@ -699,7 +929,7 @@ Khi các con nhìn thấy bố mẹ làm việc bằng sự tử tế, giữ ch�
   },
   {
     id: '3-nguyen-tac-quan-tri-dong-tien-gia-dinh',
-    index: '13',
+    index: '18',
     category: 'Tài chính & Gia sản',
     date: 'Tháng 08, 2026',
     readTime: '6 phút đọc',
@@ -749,7 +979,7 @@ Kiếm được nhiều tiền giúp gia đình có một cuộc sống tiện n
   },
   {
     id: 'ky-luat-phong-tap-va-su-ben-bi',
-    index: '14',
+    index: '19',
     category: 'Kỷ luật Bản thân',
     date: 'Tháng 08, 2026',
     readTime: '6 phút đọc',
