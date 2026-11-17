@@ -234,7 +234,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         subNote: 'Đại sứ MDRT 2026',
       },
       {
-        name: 'Đào Trần (Trần Đào)',
+        name: 'Đào Trần',
         role: 'SUM',
         avatar: '/images/leaders/avatars/tran-dao.jpg',
         leaderId: 'tran-dao',
@@ -575,7 +575,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   {
     id: 'tran-dao',
     index: '06',
-    displayName: 'Trần Đào',
+    displayName: 'Đào Trần',
     fullName: 'Trần Thị Đào',
     roleBadge: 'SUM',
     roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
@@ -595,8 +595,8 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Khép lại 15 năm đứng bục giảng tại Trường Đinh Thiện Lý ở tuổi 35 bằng một tin nhắn chủ động gửi chị Khánh Vân, giúp hàng chục gia đình nhận chi trả đến 500 triệu đồng.',
     editorialBio: [
-      'Suốt 15 năm gắn bó với bục giảng, học sinh và phụ huynh trong vai trò Thạc sĩ – Giáo viên Hóa học tại Trường Đinh Thiện Lý (Quận 7), bước ngoặt đến với Trần Đào ở tuổi 35 khi chị đọc được một bài viết về những trải nghiệm không giới hạn của nghề tư vấn. Khát khao thử thách bản thân qua từng cột mốc mới đã thôi thúc chị chủ động nhắn tin cho chị Khánh Vân để bắt đầu hành trình tại HCM69 từ năm 2019.',
-      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Trần Đào tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị đồng hành cùng đội ngũ của mình với mục tiêu phát triển bền vững và chất lượng.',
+      'Suốt 15 năm gắn bó với bục giảng, học sinh và phụ huynh trong vai trò Thạc sĩ – Giáo viên Hóa học tại Trường Đinh Thiện Lý (Quận 7), bước ngoặt đến với Đào Trần ở tuổi 35 khi chị đọc được một bài viết về những trải nghiệm không giới hạn của nghề tư vấn. Khát khao thử thách bản thân qua từng cột mốc mới đã thôi thúc chị chủ động nhắn tin cho chị Khánh Vân để bắt đầu hành trình tại HCM69 từ năm 2019.',
+      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Đào Trần tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị đồng hành cùng đội ngũ của mình với mục tiêu phát triển bền vững và chất lượng.',
     ],
     badges: ['3x MDRT', '3x MBA Pro', 'Thạc sĩ Giáo dục'],
     specialties: [
@@ -1990,7 +1990,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'DM Trần Đào • SRD Khánh Vân',
+    directLeader: 'SUM Đào Trần • SRD Khánh Vân',
     joinedYear: '2023',
     tenureLabel: 'Gia nhập 2023 • 20 năm Viện Kiểm nghiệm Thuốc TP.HCM & gần 4 năm BHNT',
     industryKey: 'LAW_MED_INS',
