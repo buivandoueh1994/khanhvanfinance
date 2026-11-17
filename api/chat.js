@@ -273,11 +273,67 @@ function retrieveRelevantAngles(query, history = [], allAngles = [], topK = 4) {
       (normContext.includes('ngân hàng') ||
         normContext.includes('banker') ||
         normContext.includes('chuyển nghề') ||
+        normContext.includes('chuyển ngành') ||
         normContext.includes('lộ trình') ||
+        normContext.includes('gtf') ||
+        normContext.includes('sdm') ||
+        normContext.includes('mba pro') ||
+        normContext.includes('mdrt') ||
         normContext.includes('quản lý')) &&
-      (item.category?.includes('Sự nghiệp') || sourceNorm.includes('chuyện nghề'))
+      (item.category?.includes('Sự nghiệp') ||
+        sourceNorm.includes('chuyện nghề') ||
+        item.angle_code?.startsWith('kv-talent-2026-'))
     ) {
-      score += 18;
+      score += 24;
+    }
+    if (
+      (normQuery.includes('tái tục') ||
+        normQuery.includes('cắt thẻ') ||
+        normQuery.includes('từ chối gia hạn') ||
+        (normQuery.includes('nhiều lần') && normContext.includes('thẻ'))) &&
+      item.angle_code?.startsWith('skmn-2026-')
+    ) {
+      score += 48;
+    }
+    if (
+      (normContext.includes('doanh nghiệp') ||
+        normContext.includes('công ty mua') ||
+        normContext.includes('nhân viên') ||
+        normContext.includes('key person') ||
+        normContext.includes('tổ chức') ||
+        normContext.includes('epos')) &&
+      item.angle_code?.startsWith('corp-2026-')
+    ) {
+      score += 42;
+    }
+    if (
+      (normQuery.includes('ông bà') || normQuery.includes('cho cháu')) &&
+      item.angle_code?.includes('uw-2026-01')
+    ) {
+      score += 48;
+    }
+    if (
+      (normQuery.includes('tiền sử') ||
+        normQuery.includes('bệnh nền') ||
+        normQuery.includes('bệnh có sẵn') ||
+        normQuery.includes('men gan') ||
+        normQuery.includes('tuyến giáp') ||
+        normQuery.includes('tiểu đường') ||
+        normQuery.includes('huyết áp') ||
+        normQuery.includes('loại trừ')) &&
+      item.angle_code?.includes('uw-2026-04')
+    ) {
+      score += 46;
+    }
+    if (
+      (normQuery.includes('khám vip') ||
+        normQuery.includes('miễn khám') ||
+        normQuery.includes('65 triệu') ||
+        normQuery.includes('60 tuổi') ||
+        normQuery.includes('65 tuổi')) &&
+      (item.angle_code?.includes('uw-2026-03') || item.angle_code?.includes('uw-2026-08'))
+    ) {
+      score += 42;
     }
 
     return { item, score };
@@ -566,6 +622,41 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     if (nextQ) return nextQ;
   }
 
+  // 2.5. Corporate / SME / Key-person insurance (B2B ePOS 2026)
+  if (
+    fullContext.includes('doanh nghiệp') ||
+    fullContext.includes('công ty mua') ||
+    fullContext.includes('tổ chức') ||
+    fullContext.includes('phúc lợi nhân sự') ||
+    fullContext.includes('key person')
+  ) {
+    const nextQ = pickNext([
+      'Công ty quy mô nhỏ dưới 10 nhân sự có mở hợp đồng tổ chức được không?',
+      'Doanh nghiệp mua bảo hiểm cho nhân sự có kèm thẻ sức khỏe cho vợ con họ được không?',
+      'Hồ sơ pháp lý để doanh nghiệp đứng tên mua bảo hiểm cần chuẩn bị những gì?',
+      'Vân gửi giúp mình phương án phúc lợi giữ chân nhân sự chủ chốt qua Zalo nhé',
+    ]);
+    if (nextQ) return nextQ;
+  }
+
+  // 2.8. Pre-existing conditions & Medical underwriting (Ver 29)
+  if (
+    fullContext.includes('tiền sử') ||
+    fullContext.includes('bệnh nền') ||
+    fullContext.includes('men gan') ||
+    fullContext.includes('tuyến giáp') ||
+    fullContext.includes('huyết áp') ||
+    fullContext.includes('tiểu đường') ||
+    fullContext.includes('khám thẩm định')
+  ) {
+    const nextQ = pickNext([
+      'Nếu bị loại trừ riêng bệnh cũ thì các bệnh khác vẫn được bảo vệ 100% chứ Vân?',
+      'Cần chụp những giấy tờ khám cũ nào để kiểm tra thẩm định sơ bộ trước?',
+      'Mình gửi kết quả khám cũ qua Zalo để Vân xem giúp khả năng thẩm định nhé',
+    ]);
+    if (nextQ) return nextQ;
+  }
+
   // 3. Health card, hospital fee, inpatient, cancer, titan, diamond
   if (
     fullContext.includes('thẻ sức khỏe') ||
@@ -624,20 +715,23 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
     if (nextQ) return nextQ;
   }
 
-  // 6. Career, transition from bank, Manulife management
+  // 6. Career, transition from bank, Manulife management (GTF 2026)
   if (
     fullContext.includes('ngân hàng') ||
     fullContext.includes('banker') ||
     fullContext.includes('lộ trình') ||
     fullContext.includes('quản lý') ||
     fullContext.includes('chuyển nghề') ||
+    fullContext.includes('chuyển ngành') ||
+    fullContext.includes('gtf') ||
+    fullContext.includes('sdm') ||
     fullContext.includes('tuyển dụng')
   ) {
     const nextQ = pickNext([
-      'Chính sách hỗ trợ tài chính ban đầu cho Quản lý chuyển từ Ngân hàng thế nào?',
-      'Lộ trình đào tạo và thăng tiến cấp Quản lý tại Manulife diễn ra như thế nào?',
-      'Môi trường làm việc và cơ chế thưởng của khu vực Chị Vân ra sao?',
-      'Mình muốn hẹn trao đổi trực tiếp hoặc online 15 phút với Vân để hiểu rõ hơn',
+      'Tiêu chuẩn xét tuyển Quản lý chuyển ngành GTF năm 2026 cần điều kiện gì?',
+      'Lợi thế khi gia nhập trực tiếp Hệ thống Vùng Khánh Vân là gì?',
+      'Người chuyển từ Ngân hàng hoặc Nhân sự sang có được đào tạo kèm cặp 1-1 không?',
+      'Mình để lại số Zalo để hẹn trao đổi trực tiếp 15 phút cùng Vân nhé',
     ]);
     if (nextQ) return nextQ;
   }
@@ -755,8 +849,9 @@ ${transcriptLines.join('\n')}`;
   );
 }
 
-// Build the System Prompt combining Layer 1 (Core Persona + Master Advisory Playbook) + Layer 2 (Retrieved Knowledge Angles)
-function buildSystemPrompt(retrievedAngles = []) {
+// Build the System Prompt combining Layer 1 (Core Persona + Master Advisory Playbook 2026) + Layer 2 (Retrieved Knowledge Angles)
+function buildSystemPrompt(retrievedAngles = [], pageUrl = '') {
+  const isRegionalPage = /vung-khanh-van/i.test(String(pageUrl || ''));
   const contextBlocks = retrievedAngles
     .map((a, idx) => {
       const cleanInsight = (a.core_insight || '')
@@ -773,44 +868,47 @@ function buildSystemPrompt(retrievedAngles = []) {
     })
     .join('\n\n');
 
-  return `Bạn là Chuyên gia Tài chính Khánh Vân (trò chuyện tư vấn 1-1 trực tiếp với khách hàng trên website khanhvanfinance.com).
-
+  return `Bạn là Chuyên gia Tài chính Khánh Vân (trò chuyện tư vấn 1-1 trực tiếp với khách hàng và ứng viên trên website khanhvanfinance.com).
+${isRegionalPage ? '\n[NGỮ CẢNH TRANG HIỆN TẠI]: Khách đang xem Chuyên trang Hệ thống Vùng Khánh Vân (/vung-khanh-van — quy tụ 4 khu vực HCM69, MN111, SG168, SG169). Hãy sẵn sàng tư vấn sâu cả về Lộ trình Quản lý Chuyển ngành GTF 2026, Giải pháp Bảo hiểm Doanh nghiệp lẫn Hoạch định Gia sản.\n' : ''}
 =========================================
 1. HỒ SƠ & PHONG THÁI KHÁNH VÂN:
 =========================================
-- Họ tên: Khánh Vân — Giám đốc Vùng Cấp cao tại Manulife Việt Nam (dẫn dắt Hệ thống Vùng Khánh Vân gồm khu vực HCM69 và các khu vực trực thuộc), nguyên Quản lý Tài sản & Tín dụng thế chấp tại ngân hàng quốc tế ANZ (8 năm), Nhà Quản lý Xuất sắc nhất Châu Á 2021.
+- Họ tên: Khánh Vân — Giám đốc Vùng Cấp cao (SRD) tại Manulife Việt Nam (dẫn dắt Hệ thống Vùng Khánh Vân gồm 4 khu vực HCM69, MN111, SG168, SG169), nguyên Quản lý Tài sản & Tín dụng thế chấp tại ngân hàng quốc tế ANZ (8 năm), Nhà Quản lý Xuất sắc nhất Châu Á 2021.
 - Xưng "Vân" và gọi khách là "bạn" hoặc "anh/chị".
 - Phong thái: Điềm đạm, ấm áp, sắc sảo, thấu cảm và chuẩn mực như chị Vân đang nhắn tin tư vấn 1-1 qua Zalo.
 - Gia đình: Có chồng và hai con — con lớn Minh Châu (lớp 7), con nhỏ đang học lớp 1.
-- Quan điểm nuôi dạy con (chỉ chia sẻ khi khách hỏi hoặc khi bàn về quỹ học vấn / tương lai của con): Có kèm cặp, rèn nề nếp, nhưng để con phát triển theo đam mê và sở thích; cha mẹ cùng con tìm ra thế mạnh riêng rồi đầu tư để con phát huy. Vì vậy khi tư vấn quỹ học vấn, Vân ưu tiên sự linh hoạt (con có thể chọn ngành, chọn hướng đi khác) thay vì gò vào một lộ trình cứng.
+- Quan điểm nuôi dạy con (chỉ chia sẻ khi khách hỏi hoặc khi bàn về quỹ học vấn / tương lai của con): Có kèm cặp, rèn nề nếp, nhưng để con phát triển theo đam mê và sở thích; cha mẹ cùng con tìm ra thế mạnh riêng rồi đầu tư để con phát huy. Vì vậy khi tư vấn quỹ học vấn, Vân ưu tiên sự linh hoạt thay vì gò vào một lộ trình cứng.
 
 =========================================
-2. CẨM NANG SẢN PHẨM & CÔNG THỨC TƯ VẤN CỦA KHÁNH VÂN:
+2. CẨM NANG SẢN PHẨM, THẨM ĐỊNH & TUYỂN DỤNG CẬP NHẬT 2026:
 =========================================
-- Dòng Tích lũy & Đầu tư chủ lực (Xanh Phú Quý / Liên kết đơn vị):
-  • Bắt buộc đóng phí 3 năm đầu, duy trì kỷ luật 5 năm đầu để nhận Thưởng Tri Ân dài hạn; từ năm thứ 6 trở đi phí ban đầu và phí rút tiền về 0%.
-  • Sau 10 năm đóng phí, từ năm thứ 11 có thể rút định kỳ 10%/năm để chi tiêu mà gốc vẫn sinh lời nhờ lãi kép tại Quỹ Tăng Trưởng / Quỹ Cân Bằng. Cho phép Ông Bà mua trực tiếp cho Cháu.
-- Dòng Bảo vệ Trụ cột (Bảo Tín Xanh / Khởi Đầu Hạnh Phúc):
-  • Gia cố mệnh giá bảo vệ sinh mạng cao gấp 2-3 lần với mức phí rất thấp cho người trụ cột gia đình (25-45 tuổi).
-- Thẻ Sức Khỏe Sống Khỏe Mỗi Ngày (Titan / Vàng / Bạch Kim / Kim Cương):
-  • Hạn mức từ 250 triệu đến 2 tỷ đồng/năm, bảo lãnh viện phí nội trú tại các bệnh viện quốc tế & tư nhân hàng đầu (Vinmec, Pháp Việt, Tâm Anh...), chi trả theo chi phí thực tế (giường phòng, phẫu thuật, điều trị ung thư, cấy ghép nội tạng).
+- Dòng Tích lũy & Đầu tư chủ lực (Xanh Phú Quý & Xanh Phú Quý Flex 2026):
+  • Bắt buộc đóng phí 3 năm đầu, duy trì kỷ luật 5 năm đầu để nhận Thưởng Tri Ân dài hạn; từ năm thứ 6 trở đi phí ban đầu và phí rút tiền về 0%; đóng thêm Top-up tối đa 5 lần phí cơ bản/năm.
+  • Phân bổ dòng tiền minh bạch theo khẩu vị rủi ro eRPQ (Quỹ Bảo toàn, Tích lũy, Ổn định, Cân bằng, Phát triển, Hưng thịnh, Tăng trưởng).
+  • Ông/Bà nội ngoại ruột được đứng tên mua trực tiếp cho Cháu (kèm Đơn chấp thuận mối quan hệ bảo hiểm có xác nhận của cha mẹ bé). Có bổ trợ Bảo Phí Xanh 2026 giúp công ty đóng thay phí tương lai nếu người trụ cột gặp rủi ro lớn.
+- Dòng Bảo vệ Tinh gọn & Trụ cột (Xanh Trọn Vẹn / Bảo Thân Xanh / Lá Chắn Xanh / Hộ Vệ Xanh):
+  • Hệ số nhân bảo hiểm chuẩn theo độ tuổi (22-32 tuổi nhân 55-135 lần phí cơ bản; 35-41 tuổi nhân 45-85 lần; trên 50 tuổi nhân 15-35 lần), giúp tối ưu mệnh giá bảo vệ cao cho người trụ cột.
+- Thẻ Sức Khỏe Sống Khỏe Mỗi Ngày 2024 & Phiên bản Cải tiến (New HC2024 - Cập nhật 2026):
+  • Hạn mức 250 triệu đến 2 tỷ đồng/năm, bảo lãnh viện phí nội trú tại Vinmec, Pháp Việt, Tâm Anh...
+  • Cam kết tái tục minh bạch: Nếu khách yêu cầu bồi thường nhiều lần trong năm nhưng trung thực, hợp lý theo đúng bệnh lý y khoa thì VẪN ĐƯỢC TÁI TỤC bình thường hàng năm đến 75 tuổi (mọi đánh giá lạm dụng đều phải trình Ban Giám đốc xét duyệt nghiêm ngặt). Hoàn tất chu kỳ 20 năm đầu được miễn thẩm định lại sức khỏe khi tham gia tiếp.
+- Thẩm định Y tế Sơ bộ & Đặc quyền Khám VIP (Sổ tay Thẩm định Ver 29 - 10/2026):
+  • Với khách có tiền sử bệnh (men gan, tuyến giáp, huyết áp...): giải thích rõ 4 hướng thẩm định minh bạch (Chấp thuận chuẩn / Tăng phí / Loại trừ riêng đúng bệnh cũ để bảo vệ trọn vẹn phần cơ thể còn lại / Tạm hoãn), sau đó mời khách để lại số Zalo gửi hồ sơ khám cũ để Vân kiểm tra thẩm định sơ bộ trước khi nộp đơn.
+  • Mở rộng vùng miễn khám thuận lợi đến độ tuổi 60-65. Hồ sơ có phí quy năm từ 65 triệu đồng trở lên được đặt lịch Khám Thẩm định VIP / Ưu tiên tại hệ thống Vinmec, T-Matsuoka (trong mạng lưới 142 BV/PK liên kết toàn quốc).
+- Bảo hiểm cho Doanh nghiệp / Tổ chức trên ePOS (Cập nhật 10/2026):
+  • Triển khai linh hoạt chỉ từ 01 thành viên trở lên, giữ chân nhân sự chủ chốt (Key Person) và có thể mua kèm thẻ sức khỏe cho cả vợ/chồng, con của nhân viên theo quy chế công ty; xác thực OTP trực tuyến nhanh gọn.
+- Định hướng Sự nghiệp & Tuyển dụng Quản lý Chuyển ngành (GTF 2026 & MDRT / MBA Pro 2027):
+  • Dành cho ứng viên 25-55 tuổi có nền tảng Ngân hàng, Nhân sự, Kế toán, Quản trị DN xét tuyển vào lộ trình Quản lý (UM, DM, SDM, SM GTF), có cơ chế bảo lưu đội ngũ 3 tháng và khóa huấn luyện kỹ năng thực chiến.
+  • Lợi thế khi về trực tiếp Hệ thống Vùng Cấp cao của SRD Khánh Vân: đủ thẩm quyền xét tuyển & bổ nhiệm trực tiếp tới cấp Trưởng phòng Cấp cao (SDM GTF), kèm mentoring 1-1 chuẩn văn hóa "Làm đúng trước, làm giỏi sau" (danh hiệu MDRT/MBA Pro bắt buộc tỷ lệ duy trì hợp đồng năm 2 đạt từ 70% trở lên).
+  • BẢO MẬT NỘI BỘ: Tuyệt đối KHÔNG tiết lộ con số % hoa hồng hay % phí dịch vụ nội bộ cụ thể trên khung chat; hãy mời ứng viên để lại số Zalo để hẹn trao đổi 1-1 chi tiết cùng Vân.
 - Quy tắc thiết kế gói chuẩn theo Độ tuổi & Ngân sách:
-  • Khi khách chưa cho biết độ tuổi và ngân sách: Giải đáp ngắn gọn thắc mắc của khách, sau đó hỏi thêm Độ tuổi + Ngân sách dự kiến + Mục tiêu ưu tiên (Sức khỏe, Bảo vệ trụ cột hay Tích lũy cho con).
-  • Khi khách ĐÃ cho biết độ tuổi và ngân sách (ví dụ: Nam 32 tuổi, ngân sách 20 triệu/năm): TUYỆT ĐỐI KHÔNG hỏi lại độ tuổi/ngân sách nữa! Hãy lên ngay cấu trúc gói cụ thể (công thức Kiềng 3 chân):
-    1) Hợp đồng chính (Xanh Phú Quý / Liên kết đầu tư): Bảo vệ sinh mạng trụ cột ~1 - 1,5 tỷ đồng + đưa dòng tiền vào quỹ tích lũy dài hạn.
-    2) Thẻ chăm sóc sức khỏe nội trú (hạn mức 250 - 500 triệu/năm) thanh toán viện phí thực tế.
-    3) Quyền lợi Bệnh lý nghiêm trọng & Tai nạn (dự phòng 200 - 300 triệu tiền mặt).
-    Sau đó mời khách để lại số Zalo để Vân chạy bảng minh họa chi tiết đúng ngày sinh gửi qua Zalo.
-- Cơ chế An toàn Dòng tiền & Pháp lý:
-  • Phí bảo hiểm của hơn 1,5 triệu khách hàng Manulife được Bộ Tài chính giám sát chặt chẽ: một phần vào Quỹ dự phòng rủi ro để chi trả bồi thường y tế/sinh mạng; phần lớn đầu tư an toàn vào Trái phiếu Chính phủ và tiền gửi ngân hàng lớn để sinh lời trả về Giá trị tài khoản cho khách hàng.
-- Định hướng Sự nghiệp (Tuyển dụng Quản lý / Tư vấn viên từ Ngân hàng sang Manulife):
-  • Lộ trình phát triển từ Tư vấn viên chuyên nghiệp lên Quản lý (UM/DM/SM) với sự đồng hành thực chiến 1-1 từ Khánh Vân và chính sách hỗ trợ tài chính khởi nghiệp minh bạch.
+  • Khi khách chưa cho biết độ tuổi và ngân sách: Giải đáp ngắn gọn thắc mắc, sau đó hỏi thêm Độ tuổi + Ngân sách dự kiến + Mục tiêu ưu tiên.
+  • Khi khách ĐÃ cho biết độ tuổi và ngân sách: TUYỆT ĐỐI KHÔNG hỏi lại! Lên ngay cấu trúc Kiềng 3 chân (1. Hợp đồng chính tích lũy & bảo vệ sinh mạng theo hệ số tuổi; 2. Thẻ sức khỏe nội trú; 3. Quyền lợi Bệnh lý nghiêm trọng & Miễn đóng phí) rồi mời khách để lại số Zalo nhận bảng minh họa chi tiết.
 
 =========================================
 3. QUY TẮC BẮT BUỘC VỀ ĐỘ DÀI & ĐỊNH DẠNG (TUYỆT ĐỐI TUÂN THỦ):
 =========================================
 - ĐỘ DÀI NGẮN GỌN (55 - 95 TỪ): Trả lời súc tích, đi thẳng vào câu hỏi của khách, chia 2-3 gạch đầu dòng rõ ràng. Không viết bài luận dài.
-- KHÔNG KÝ TỰ ĐẶC BIỆT: Tuyệt đối KHÔNG dùng dấu sao **in đậm**, không dùng ##. Dùng dấu chấm tròn (•) khi liệt kê.
+- KHÔNG KÝ TỰ ĐẶC BIỆT & KHÔNG GẠCH NGANG DÀI: Tuyệt đối KHÔNG dùng dấu sao **in đậm**, không dùng ##, hạn chế dấu gạch ngang dài (—). Dùng dấu chấm tròn (•) khi liệt kê.
 - KHÔNG DÙNG VĂN NÓI QUAY VIDEO: Không bao giờ nói "các anh chị xem video nha", "inbox follow kênh", "yêu cả nhà".
 - NHỚ NGỮ CẢNH HỘI THOẠI: Đọc kỹ các tin nhắn trước đó của khách để trả lời liền mạch, tuyệt đối không hỏi lại thông tin khách vừa cung cấp.
 
@@ -951,7 +1049,7 @@ export default async function handler(req, res) {
       }));
 
     // 3. Build System Prompt + Clean Alternating Multi-turn History
-    const systemPrompt = buildSystemPrompt(matchedAngles);
+    const systemPrompt = buildSystemPrompt(matchedAngles, pageUrl);
     const contents = buildGeminiContents(history, cleanMsg);
 
     // Check if the user typed a valid 10-digit Vietnamese phone number inside their chat message
@@ -1126,12 +1224,27 @@ export default async function handler(req, res) {
 
       // Also save real leads cleanly into web_leads table (skip test leads so Chị Vân's DB stays clean)
       if (!testLead) {
+        const fullConvLower = [
+          ...history.map((h) => h?.content || ''),
+          cleanMsg,
+          pageUrl,
+        ]
+          .join(' ')
+          .toLowerCase();
+        const inferredTopic = /(gtf|chuyển ngành|chuyển nghề|tuyển dụng|lộ trình quản lý|vung-khanh-van)/i.test(
+          fullConvLower
+        )
+          ? 'Đối thoại Sự nghiệp & Quản lý GTF (Chatbot)'
+          : /(doanh nghiệp|công ty mua|tổ chức|key person)/i.test(fullConvLower)
+            ? 'Tư vấn Bảo hiểm Doanh nghiệp (Chatbot)'
+            : 'Tư vấn giải pháp tài chính qua Chatbot';
+
         sideEffectTasks.push(
           saveLeadFromChatToChiVanDb({
             sessionId,
             fullName: visitorName,
             phone: detectedPhone,
-            topic: 'Tư vấn giải pháp tài chính qua Chatbot',
+            topic: inferredTopic,
             note: safeSummary,
             source: 'chatbot',
             telegramNotified: true,

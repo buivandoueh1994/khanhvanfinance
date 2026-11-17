@@ -24,25 +24,40 @@ interface AiAdvisorWidgetProps {
   hidden?: boolean;
 }
 
-const STARTER_QUESTIONS = [
-  'Tiền đóng vào công ty bảo hiểm sẽ đi về đâu?',
+const HOME_STARTER_QUESTIONS = [
+  'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
   'Đóng phí 10 năm rồi có nên rút Giá trị tài khoản không?',
-  'Thẻ sức khỏe Kim Cương 2 tỷ/năm có quyền lợi gì?',
-  'Lộ trình từ Ngân hàng sang làm Quản lý tại Manulife?',
+  'Doanh nghiệp muốn mua bảo hiểm phúc lợi cho nhân sự chủ chốt?',
+  'Lộ trình chuyển từ Ngân hàng sang làm Quản lý GTF tại Manulife?',
+];
+
+const REGIONAL_STARTER_QUESTIONS = [
+  'Lộ trình chuyển ngành sang làm Quản lý GTF 2026 cần điều kiện gì?',
+  'Lợi thế khi gia nhập trực tiếp Hệ thống Vùng Khánh Vân?',
+  'Doanh nghiệp mua bảo hiểm cho nhân sự & người thân trên ePOS thế nào?',
+  'Thẻ sức khỏe dùng nhiều lần trong năm có bị cắt tái tục không?',
 ];
 
 export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
   onOpenVideo,
   hidden = false,
 }) => {
+  const isRegionalPage =
+    typeof window !== 'undefined' &&
+    window.location.pathname.toLowerCase().includes('vung-khanh-van');
+  const starterQuestions = isRegionalPage
+    ? REGIONAL_STARTER_QUESTIONS
+    : HOME_STARTER_QUESTIONS;
+
   const [isOpen, setIsOpen] = useState(false);
   const [sessionId, setSessionId] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 'welcome-msg',
       role: 'assistant',
-      content:
-        'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, thẻ sức khỏe, quỹ tích sản cho con hay lộ trình sự nghiệp tại Manulife? Bạn có thể chọn một câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình nhé.',
+      content: isRegionalPage
+        ? 'Chào bạn! Bạn đang quan tâm đến Lộ trình Quản lý Chuyển ngành (GTF 2026) tại Vùng Khánh Vân, Giải pháp Bảo hiểm cho Doanh nghiệp hay Hoạch định Tài chính Gia đình? Chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
+        : 'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, quy chế tái tục thẻ sức khỏe, bảo hiểm cho doanh nghiệp hay lộ trình Quản lý GTF tại Manulife? Chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình nhé.',
       timestamp: 'Vừa xong',
     },
   ]);
@@ -410,7 +425,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                     Câu hỏi thường gặp:
                   </span>
                   <div className="flex flex-col gap-1.5">
-                    {STARTER_QUESTIONS.map((q) => (
+                    {starterQuestions.map((q) => (
                       <button
                         key={q}
                         type="button"
