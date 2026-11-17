@@ -2199,7 +2199,7 @@ export const RegionalSystemPage: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedLeaderId(null)}
-            className="fixed inset-0 z-50 bg-[#121815]/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
+            className="fixed inset-0 z-50 bg-[#121815]/80 backdrop-blur-sm flex items-end sm:items-center justify-center pt-[max(3.75rem,env(safe-area-inset-top))] px-0 pb-0 sm:p-6"
           >
             <motion.div
               initial={{ opacity: 0, y: 24, scale: 0.99 }}
@@ -2210,7 +2210,7 @@ export const RegionalSystemPage: React.FC = () => {
               role="dialog"
               aria-modal="true"
               aria-label={`Hồ sơ chi tiết ${selectedLeader.displayName}`}
-              className="relative w-full max-w-full sm:max-w-5xl max-h-[92vh] sm:max-h-[88vh] bg-[#FAF9F5] border-t sm:border border-[#DCD8CE] rounded-t-[14px] sm:rounded-[4px] overflow-hidden shadow-2xl flex flex-col"
+              className="relative w-full max-w-full sm:max-w-5xl max-h-[86vh] max-h-[calc(100dvh-4.5rem)] sm:max-h-[88vh] bg-[#FAF9F5] border-t sm:border border-[#DCD8CE] rounded-t-[16px] sm:rounded-[4px] overflow-hidden shadow-2xl flex flex-col"
             >
               {/* Modal Sticky Top Bar */}
               <div className="px-3.5 sm:px-6 py-3 bg-white border-b border-[#E4E1D8] flex items-center justify-between gap-2 shrink-0">
@@ -2523,7 +2523,7 @@ export const RegionalSystemPage: React.FC = () => {
               </div>
 
               {/* Sticky Mobile Bottom CTA Bar inside Modal (System-Level Connection Only) */}
-              <div className="sm:hidden px-3.5 py-3 bg-white border-t border-[#E4E1D8] flex items-center shrink-0">
+              <div className="sm:hidden px-3.5 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-white border-t border-[#E4E1D8] flex items-center shrink-0">
                 <button
                   type="button"
                   onClick={() => handleConnectFromLeader(selectedLeader)}
