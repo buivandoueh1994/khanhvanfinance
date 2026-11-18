@@ -12,7 +12,7 @@ const baseWithoutHeroPreload = baseHtml.replace(
 const leaderFormHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -28,11 +28,11 @@ const leaderFormHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân" />'
+    '<meta property="og:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân" />'
+    '<meta name="twitter:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
@@ -63,7 +63,7 @@ for (const page of pages) {
 const previewHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -79,11 +79,11 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý" />'
+    '<meta property="og:title" content="Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý" />'
+    '<meta name="twitter:title" content="Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,

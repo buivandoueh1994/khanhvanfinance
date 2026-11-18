@@ -661,13 +661,13 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
               >
                 {/* Top Action Row */}
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-[#E4E1D8]">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-[#E4E1D8]">
                     <button
                       type="button"
                       onClick={onCloseVideo}
-                      className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] font-medium"
+                      className="inline-flex items-center gap-1.5 min-h-[40px] px-2 -ml-2 text-[11px] uppercase tracking-[0.16em] text-[#56605B] hover:text-[#181F1C] font-medium"
                     >
-                      <ArrowLeft className="w-3.5 h-3.5" />
+                      <ArrowLeft className="w-4 h-4" />
                       <span>Đóng</span>
                     </button>
 
@@ -675,16 +675,16 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       <button
                         type="button"
                         onClick={(e) => copyVideoLink(activeVideo, e)}
-                        className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] bg-[#008746]/[0.08] px-2.5 py-1.5 rounded-[2px] font-medium transition-colors"
+                        className="inline-flex items-center gap-1 min-h-[38px] text-[10px] uppercase tracking-[0.14em] text-[#0A3622] hover:text-[#008746] bg-[#008746]/[0.08] px-3 py-1.5 rounded-[2px] font-medium transition-colors"
                       >
                         {copiedId === activeVideo.id ? (
                           <>
-                            <Check className="w-3 h-3 text-[#008746]" />
+                            <Check className="w-3.5 h-3.5 text-[#008746]" />
                             <span>Đã chép link</span>
                           </>
                         ) : (
                           <>
-                            <Share2 className="w-3 h-3" />
+                            <Share2 className="w-3.5 h-3.5" />
                             <span>Sao chép link</span>
                           </>
                         )}
@@ -693,7 +693,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                       <button
                         type="button"
                         onClick={onCloseVideo}
-                        className="p-1 text-[#56605B] hover:text-[#181F1C]"
+                        className="min-w-[40px] min-h-[40px] flex items-center justify-center -mr-2 text-[#56605B] hover:text-[#181F1C]"
                         aria-label="Đóng"
                       >
                         <X className="w-4 h-4" />

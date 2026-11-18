@@ -88,7 +88,7 @@ const SYSTEM_PILLARS = [
     number: '02',
     icon: Building2,
     title: 'Đội Ngũ Giàu Chuyên Môn Từ Nhiều Ngành',
-    desc: 'Đội ngũ quản lý quy tụ những người trưởng thành từ Ngân hàng, Kế toán – Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp — mang đến góc nhìn hoạch định dòng tiền thực chất cho từng gia đình.',
+    desc: 'Đội ngũ quản lý quy tụ những người trưởng thành từ Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp, mang đến góc nhìn hoạch định dòng tiền thực chất cho từng gia đình.',
   },
   {
     number: '03',
@@ -131,7 +131,7 @@ export const RegionalSystemPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = 'Hệ Thống Vùng Khánh Vân — Ban Điều Hành & Đội Ngũ Quản Lý';
+    document.title = 'Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý';
     window.scrollTo(0, 0);
   }, []);
 
@@ -229,7 +229,7 @@ export const RegionalSystemPage: React.FC = () => {
     return [
       {
         src: selectedLeader.portrait,
-        caption: `${selectedLeader.displayName} — ${selectedLeader.roleTitle} (Khu vực ${selectedLeader.unitCode})`,
+        caption: `${selectedLeader.displayName}, ${selectedLeader.roleTitle} (Khu vực ${selectedLeader.unitCode})`,
       },
       ...selectedLeader.gallery,
     ];
@@ -311,7 +311,7 @@ export const RegionalSystemPage: React.FC = () => {
       ...prev,
       note: prev.note
         ? prev.note
-        : `Mong muốn kết nối tư vấn / trao đổi cùng Hệ thống Vùng Khánh Vân (quan tâm hồ sơ ${leader.displayName} — Khu vực ${leader.unitCode}).`,
+        : `Mong muốn kết nối tư vấn / trao đổi cùng Hệ thống Vùng Khánh Vân (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
     }));
     setTimeout(() => {
       const el = document.getElementById('ket-noi-vung');
@@ -453,7 +453,7 @@ export const RegionalSystemPage: React.FC = () => {
             <p className="text-[14.5px] sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl">
               Hình thành từ năm 2018 trên nền tảng kỷ luật quản trị tài sản của ngân hàng quốc tế, Vùng Khánh Vân hôm nay có hơn 500 cộng sự cùng 64 quản lý kinh doanh tại 4 khu vực, chung một kim chỉ nam:{' '}
               <span className="font-medium text-[#0A3622] italic font-serif text-[17px] sm:text-2xl block sm:inline mt-1 sm:mt-0">
-                “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
+                “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
             </p>
           </div>
@@ -468,7 +468,7 @@ export const RegionalSystemPage: React.FC = () => {
                   title:
                     'Giám đốc Vùng Cấp cao Khánh Vân cùng tập thể Quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
-                    'Những quản lý trưởng thành từ Ngân hàng, Kế toán – Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
+                    'Những quản lý trưởng thành từ Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
                 })
               }
               className="cursor-zoom-in group"
@@ -589,7 +589,7 @@ export const RegionalSystemPage: React.FC = () => {
                 <img
                   decoding="async"
                   src="/images/leaders/avatars/khanh-van.jpg"
-                  alt="SRD Khánh Vân — Giám đốc Vùng Cấp cao"
+                  alt="SRD Khánh Vân, Giám đốc Vùng Cấp cao"
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center border-2 border-[#E8D3A6] shadow-[0_6px_16px_rgba(0,0,0,0.3)] shrink-0"
                 />
                 <div className="min-w-0">
@@ -1052,12 +1052,12 @@ export const RegionalSystemPage: React.FC = () => {
                   <span>BAN GIÁM ĐỐC 4 KHU VỰC TRỰC THUỘC</span>
                 </div>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
-                  Bốn khu vực kinh doanh —{' '}
+                  Bốn khu vực kinh doanh,{' '}
                   <span className="italic text-[#0A3622]">Một chuẩn mực chung</span>
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Từ HCM69 — đơn vị hạt nhân — mô hình quản trị chuyên nghiệp đã được nhân rộng sang MN111, SG168 và SG169.
+                Từ đơn vị hạt nhân HCM69, mô hình quản trị chuyên nghiệp đã được nhân rộng sang MN111, SG168 và SG169.
               </p>
             </div>
 
@@ -1126,7 +1126,7 @@ export const RegionalSystemPage: React.FC = () => {
                               <img
                                 src={hub.coLeadPortrait}
                                 alt={hub.coLeadName || ''}
-                                title={`${hub.coLeadName} — ${hub.coLeadRole}`}
+                                title={`${hub.coLeadName} • ${hub.coLeadRole}`}
                                 className="w-[58px] h-[58px] sm:w-16 sm:h-16 rounded-full object-cover object-center border-2 border-[#FAF9F5] bg-[#EFECE5] shadow-sm"
                               />
                             </div>
@@ -1154,7 +1154,7 @@ export const RegionalSystemPage: React.FC = () => {
                             </p>
                             {hub.coLeadName && (
                               <p className="text-[10px] sm:text-[10.5px] text-[#D7E2DC] mt-0.5 leading-snug">
-                                Cùng BM {hub.coLeadName}
+                                Cùng SDM {hub.coLeadName}
                               </p>
                             )}
                           </div>
@@ -1228,7 +1228,7 @@ export const RegionalSystemPage: React.FC = () => {
               <span className="italic text-[#0A3622]">Tận Tâm &amp; Bản Lĩnh</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
-              Mỗi người bước vào nghề từ một chuyên môn riêng — Ngân hàng, Kế toán – Chứng khoán, Luật, Giáo dục, Y Dược — nhưng gặp nhau ở chữ “Tâm” và sự minh bạch trong tư vấn. Chạm vào từng hồ sơ để đọc câu chuyện nghề của họ.
+              Mỗi người bước vào nghề từ một chuyên môn riêng như Ngân hàng, Kế toán, Chứng khoán, Luật, Giáo dục, Y Dược, nhưng gặp nhau ở chữ “Tâm” và sự minh bạch trong tư vấn. Chạm vào từng hồ sơ để đọc câu chuyện nghề của họ.
             </p>
           </div>
 
@@ -1298,22 +1298,22 @@ export const RegionalSystemPage: React.FC = () => {
                 {
                   key: 'SM' as const,
                   mobileLabel: `Giám đốc KV • SM (${tierCounts.SM})`,
-                  desktopLabel: `Giám đốc Khu vực — SM (${tierCounts.SM})`,
+                  desktopLabel: `Giám đốc Khu vực • SM (${tierCounts.SM})`,
                 },
                 {
                   key: 'DM' as const,
                   mobileLabel: `Trưởng Phòng • SDM/DM (${tierCounts.DM})`,
-                  desktopLabel: `Trưởng Phòng — SDM/DM (${tierCounts.DM})`,
+                  desktopLabel: `Trưởng Phòng • SDM/DM (${tierCounts.DM})`,
                 },
                 {
                   key: 'SUM' as const,
                   mobileLabel: `SUM (${tierCounts.SUM})`,
-                  desktopLabel: `Trưởng Nhóm Cấp cao — SUM (${tierCounts.SUM})`,
+                  desktopLabel: `Trưởng Nhóm Cấp cao • SUM (${tierCounts.SUM})`,
                 },
                 {
                   key: 'UM' as const,
                   mobileLabel: `UM (${tierCounts.UM})`,
-                  desktopLabel: `Trưởng Nhóm — UM (${tierCounts.UM})`,
+                  desktopLabel: `Trưởng Nhóm • UM (${tierCounts.UM})`,
                 },
                 {
                   key: 'ADVISOR' as const,
@@ -1454,7 +1454,7 @@ export const RegionalSystemPage: React.FC = () => {
                         }}
                         tabIndex={0}
                         role="button"
-                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName} — ${leader.roleTitle}`}
+                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName}, ${leader.roleTitle}`}
                         className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622]/65 rounded-[4px] overflow-hidden flex flex-row sm:flex-col justify-between shadow-[0_12px_32px_-24px_rgba(10,54,34,0.2)] hover:shadow-[0_24px_50px_-24px_rgba(10,54,34,0.28)] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
                       >
                         {/* Left Column on Mobile / Top Portrait on sm+ */}
@@ -1463,7 +1463,7 @@ export const RegionalSystemPage: React.FC = () => {
                             loading="lazy"
                             decoding="async"
                             src={leader.portrait}
-                            alt={`${leader.displayName} (${leader.fullName}) — ${leader.roleTitle}`}
+                            alt={`${leader.displayName} (${leader.fullName}), ${leader.roleTitle}`}
                             className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                           />
                           <div className="hidden sm:block absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 via-black/15 to-transparent pointer-events-none" />
@@ -1588,7 +1588,7 @@ export const RegionalSystemPage: React.FC = () => {
                         }}
                         tabIndex={0}
                         role="button"
-                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName} — ${leader.roleTitle}`}
+                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName}, ${leader.roleTitle}`}
                         className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622] rounded-[4px] overflow-hidden flex flex-col justify-between shadow-[0_10px_26px_-20px_rgba(10,54,34,0.18)] hover:shadow-[0_18px_36px_-20px_rgba(10,54,34,0.28)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
                       >
                         <div>
@@ -1597,7 +1597,7 @@ export const RegionalSystemPage: React.FC = () => {
                               loading="lazy"
                               decoding="async"
                               src={leader.portrait}
-                              alt={`${leader.displayName} — ${leader.roleTitle}`}
+                              alt={`${leader.displayName}, ${leader.roleTitle}`}
                               className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                             />
                             <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
@@ -1704,7 +1704,7 @@ export const RegionalSystemPage: React.FC = () => {
                   <img
                     decoding="async"
                     src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
-                    alt="Khánh Vân — Giám đốc Vùng Cấp cao Manulife Việt Nam"
+                    alt="Khánh Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam"
                     className="w-16 h-20 sm:w-20 sm:h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
                   />
                   <div className="space-y-0.5 sm:space-y-1 min-w-0">
@@ -1885,7 +1885,7 @@ export const RegionalSystemPage: React.FC = () => {
                   <span>05 / ĐỒNG HÀNH CÙNG HỆ THỐNG VÙNG KHÁNH VÂN</span>
                 </span>
                 <h2 className="font-serif text-[26px] sm:text-5xl font-medium leading-tight text-white">
-                  Điểm tựa tài chính gia đình — hoặc một{' '}
+                  Điểm tựa tài chính gia đình, hoặc một{' '}
                   <span className="italic text-[#E8D3A6]">hành trình sự nghiệp mới</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D7E2DC] leading-relaxed">

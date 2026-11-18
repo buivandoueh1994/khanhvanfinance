@@ -30,37 +30,37 @@ const ROLE_OPTIONS: RoleOption[] = [
   {
     code: 'PSSM',
     title: 'Giám đốc Kinh doanh Khu vực Cấp cao',
-    label: 'PSSM — Giám đốc Kinh doanh Khu vực Cấp cao',
+    label: 'PSSM • Giám đốc Kinh doanh Khu vực Cấp cao',
   },
   {
     code: 'SM',
     title: 'Giám đốc Kinh doanh Khu vực',
-    label: 'SM — Giám đốc Kinh doanh Khu vực',
+    label: 'SM • Giám đốc Kinh doanh Khu vực',
   },
   {
     code: 'BM',
     title: 'Trưởng Chi nhánh Kinh doanh',
-    label: 'BM — Trưởng Chi nhánh Kinh doanh',
+    label: 'BM • Trưởng Chi nhánh Kinh doanh',
   },
   {
     code: 'SDM',
     title: 'Trưởng Phòng Kinh doanh Cấp cao',
-    label: 'SDM — Trưởng Phòng Kinh doanh Cấp cao',
+    label: 'SDM • Trưởng Phòng Kinh doanh Cấp cao',
   },
   {
     code: 'DM',
     title: 'Trưởng Phòng Kinh doanh',
-    label: 'DM — Trưởng Phòng Kinh doanh',
+    label: 'DM • Trưởng Phòng Kinh doanh',
   },
   {
     code: 'SUM',
     title: 'Trưởng Nhóm Kinh doanh Cấp cao',
-    label: 'SUM — Trưởng Nhóm Kinh doanh Cấp cao',
+    label: 'SUM • Trưởng Nhóm Kinh doanh Cấp cao',
   },
   {
     code: 'UM',
     title: 'Trưởng Nhóm Kinh doanh',
-    label: 'UM — Trưởng Nhóm Kinh doanh',
+    label: 'UM • Trưởng Nhóm Kinh doanh',
   },
   {
     code: 'OTHER',
@@ -638,7 +638,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
   useEffect(() => {
     document.title =
-      'Hồ Sơ Đội Ngũ Quản Lý — Hệ Thống Vùng Khánh Vân';
+      'Hồ Sơ Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân';
   }, []);
 
   const updateField = <K extends keyof LeaderProfileData>(
@@ -1003,7 +1003,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 Ban Điều Hành • Hệ Thống Vùng Khánh Vân
               </span>
               <span className="italic font-serif text-sm text-[#28322D]">
-                “Đi chắc để đi xa — Kiến tạo tốc độ từ sự chuẩn mực.”
+                “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
             </figcaption>
           </figure>
