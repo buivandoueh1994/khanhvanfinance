@@ -382,14 +382,11 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhánh SUM Bùi Phước Ngoan, UM Sen Nguyễn, UM Thuỳ Dương, UM Tâm Nguyễn, UM Hương Giang...',
+      'Cùng các nhánh SUM Bùi Phước Ngoan, UM Sen Nguyễn, UM Thuỳ Dương, UM Tâm Nguyễn, UM Nguyễn Hương Giang...',
   },
 ];
 
 export const REGIONAL_LEADERS: RegionalLeader[] = [
-  // ===========================================================================
-  // KHỐI 1: BAN GIÁM ĐỐC KHU VỰC & TRƯỞNG PHÒNG KINH DOANH (SM • SDM • DM — 10 HỒ SƠ)
-  // ===========================================================================
   {
     id: 'dao-minh-phuong',
     index: '01',
@@ -523,7 +520,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     roleBadge: 'SDM',
     roleTitle: 'Trưởng Phòng Kinh doanh Cấp cao',
     tierKey: 'DM',
-    tierLabel: 'Trưởng Phòng Kinh doanh',
+    tierLabel: 'Trưởng Phòng Cấp cao',
     isSeniorLeadership: true,
     unitCode: 'HCM69',
     directLeader: 'SRD Khánh Vân',
@@ -555,7 +552,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     roleBadge: 'SDM',
     roleTitle: 'Trưởng Phòng Kinh doanh Cấp cao',
     tierKey: 'DM',
-    tierLabel: 'Trưởng Phòng Kinh doanh',
+    tierLabel: 'Trưởng Phòng Cấp cao',
     isSeniorLeadership: true,
     unitCode: 'HCM69',
     directLeader: 'SRD Khánh Vân',
@@ -584,43 +581,44 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [],
   },
   {
-    id: 'tran-dao',
+    id: 'hoang-thuy',
     index: '06',
-    displayName: 'Đào Trần',
-    fullName: 'Trần Thị Đào',
-    roleBadge: 'SUM',
-    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
-    tierKey: 'SUM',
-    tierLabel: 'Trưởng Nhóm Cấp cao',
-    unitCode: 'HCM69',
-    directLeader: 'SRD Khánh Vân',
-    joinedYear: '2019',
-    tenureLabel: 'Gia nhập 2019 • Thạc sĩ & 15 năm Giảng dạy THPT',
-    industryKey: 'HR_EDU',
-    priorBackgroundShort: 'Thạc sĩ • 15 năm Giáo viên Hóa trường Đinh Thiện Lý (Q.7)',
-    priorBackgroundFull:
-      'Thạc sĩ • 15 năm Giáo viên THPT môn Hóa học tại Trường THCS & THPT Đinh Thiện Lý (Quận 7)',
-    teamScaleBadge: '3x MDRT • 3x MBA Pro',
-    highlightNote: '3 lần đạt MDRT • 3 lần đạt MBA Pro • Thạc sĩ với 15 năm đứng lớp',
-    quote: 'Rõ ràng tạo nên sức mạnh: khi khách hàng thực sự hiểu rõ mình cần gì, họ sẽ tự tin ra quyết định.',
+    displayName: 'Thuý Hoàng',
+    fullName: 'Hoàng Thị Kim Thuý',
+    roleBadge: 'SDM',
+    roleTitle: 'Trưởng Phòng Kinh doanh Cấp cao',
+    tierKey: 'DM',
+    tierLabel: 'Trưởng Phòng Cấp cao',
+    isSeniorLeadership: true,
+    unitCode: 'SG169',
+    directLeader: 'SM Huyền Trang',
+    joinedYear: '2020',
+    tenureLabel: 'Gia nhập 2020 • 10 năm Kinh nghiệm Ngân hàng',
+    industryKey: 'BANKING',
+    priorBackgroundShort: '10 năm Kiểm soát viên Ngân hàng',
+    priorBackgroundFull: '10 năm kinh nghiệm Kiểm soát viên tại hệ thống Ngân hàng thương mại',
+    teamScaleBadge: 'MDRT • MBA Vàng',
+    highlightNote:
+      'MDRT & MBA Vàng • Ươm mầm nhiều thế hệ quản lý kế cận tại SG169',
+    quote: 'Những gì đến từ trái tim sẽ chạm đến trái tim.',
     cardSummary:
-      'Khép lại 15 năm đứng bục giảng tại Trường Đinh Thiện Lý ở tuổi 35 bằng một tin nhắn chủ động gửi chị Khánh Vân, giúp hàng chục gia đình nhận chi trả đến 500 triệu đồng.',
+      'Rời vị trí Kiểm soát viên ngân hàng 10 năm để có thêm thời gian bên con, hiện dẫn dắt đội ngũ và ươm mầm các quản lý kế cận tại SG169.',
     editorialBio: [
-      'Suốt 15 năm gắn bó với bục giảng, học sinh và phụ huynh trong vai trò Thạc sĩ, Giáo viên Hóa học tại Trường Đinh Thiện Lý (Quận 7), bước ngoặt đến với Đào Trần ở tuổi 35 khi chị đọc được một bài viết về những trải nghiệm không giới hạn của nghề tư vấn. Khát khao thử thách bản thân qua từng cột mốc mới đã thôi thúc chị chủ động nhắn tin cho chị Khánh Vân để bắt đầu hành trình tại HCM69 từ năm 2019.',
-      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Đào Trần tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị đồng hành cùng đội ngũ của mình với mục tiêu phát triển bền vững và chất lượng.',
+      'Sau 10 năm gắn bó với nghiệp vụ Kiểm soát viên ngân hàng, Hoàng Thị Kim Thuý chủ động tìm đến Manulife vào năm 2020 từ mong muốn cân bằng cuộc sống và có nhiều thời gian chất lượng hơn bên con cái.',
+      'Chính định hướng làm nghề đúng đắn xuyên suốt từ Ban Lãnh đạo Vùng đến từng thành viên và tinh thần tương trợ hết lòng đã giúp chị bứt phá mạnh mẽ. Hiện Hoàng Thuý trực tiếp dẫn dắt đội ngũ của mình, nơi đã ươm mầm nhiều trưởng phòng, quản lý, MBA Vàng, Manulife Pro Bạch Kim cùng các Manulife Pro Vàng/Bạc, với nguyên tắc nhất quán: xem khách hàng và đồng đội như người thân, làm vì lợi ích của họ trước khi nghĩ đến mình.',
     ],
-    badges: ['3x MDRT', '3x MBA Pro', 'Thạc sĩ Giáo dục'],
+    badges: ['MDRT', 'MBA Vàng', 'Ươm mầm Quản lý Kế cận'],
     specialties: [
       'Hoạch định Hưu trí & Học vấn',
       'Bảo vệ Trụ cột Gia đình',
       'Chăm sóc Sức khỏe Cao cấp',
       'Xây dựng & Đào tạo Đội ngũ',
     ],
-    portrait: '/images/leaders/tran-dao.jpg',
+    portrait: '/images/leaders/hoang-thuy.jpg',
     gallery: [
       {
-        src: '/images/leaders/gallery/tran-dao-1.jpg',
-        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trần Thị Đào cùng dấu ấn phát triển đội ngũ tại HCM69',
+        src: '/images/leaders/gallery/hoang-thuy-1.jpg',
+        caption: 'Vinh danh Nhà kiến tạo đội ngũ ưu tú MBA Pro Hoàng Thị Kim Thuý',
       },
     ],
   },
@@ -740,7 +738,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   {
     id: 'be-nguyen',
     index: '09',
-    displayName: 'Nguyễn Bé',
+    displayName: 'Bé Nguyễn',
     fullName: 'Nguyễn Thị Bé',
     roleBadge: 'DM',
     roleTitle: 'Trưởng Phòng Kinh doanh',
@@ -748,7 +746,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierLabel: 'Trưởng Phòng Kinh doanh',
     isSeniorLeadership: true,
     unitCode: 'SG169',
-    directLeader: 'SDM Hoàng Thuý • SM Huyền Trang',
+    directLeader: 'SDM Thuý Hoàng • SM Huyền Trang',
     joinedYear: '2021',
     tenureLabel: 'Gia nhập 2021 • Hơn 12 năm Hành chính Nhân sự & 5 năm BHNT',
     industryKey: 'HR_EDU',
@@ -828,13 +826,50 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     portrait: '/images/leaders/tra-my.jpg',
     gallery: [],
   },
-
-  // ===========================================================================
-  // KHỐI 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN (SUM • UM • ADVISOR — 36 HỒ SƠ)
-  // ===========================================================================
+  {
+    id: 'tran-dao',
+    index: '11',
+    displayName: 'Đào Trần',
+    fullName: 'Trần Thị Đào',
+    roleBadge: 'SUM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh Cấp cao',
+    tierKey: 'SUM',
+    tierLabel: 'Trưởng Nhóm Cấp cao',
+    unitCode: 'HCM69',
+    directLeader: 'SRD Khánh Vân',
+    joinedYear: '2019',
+    tenureLabel: 'Gia nhập 2019 • Thạc sĩ & 15 năm Giảng dạy THPT',
+    industryKey: 'HR_EDU',
+    priorBackgroundShort: 'Thạc sĩ • 15 năm Giáo viên Hóa trường Đinh Thiện Lý (Q.7)',
+    priorBackgroundFull:
+      'Thạc sĩ • 15 năm Giáo viên THPT môn Hóa học tại Trường THCS & THPT Đinh Thiện Lý (Quận 7)',
+    teamScaleBadge: '3x MDRT • 3x MBA Pro',
+    highlightNote: '3 lần đạt MDRT • 3 lần đạt MBA Pro • Thạc sĩ với 15 năm đứng lớp',
+    quote: 'Rõ ràng tạo nên sức mạnh: khi khách hàng thực sự hiểu rõ mình cần gì, họ sẽ tự tin ra quyết định.',
+    cardSummary:
+      'Khép lại 15 năm đứng bục giảng tại Trường Đinh Thiện Lý ở tuổi 35 bằng một tin nhắn chủ động gửi chị Khánh Vân, giúp hàng chục gia đình nhận chi trả đến 500 triệu đồng.',
+    editorialBio: [
+      'Suốt 15 năm gắn bó với bục giảng, học sinh và phụ huynh trong vai trò Thạc sĩ, Giáo viên Hóa học tại Trường Đinh Thiện Lý (Quận 7), bước ngoặt đến với Đào Trần ở tuổi 35 khi chị đọc được một bài viết về những trải nghiệm không giới hạn của nghề tư vấn. Khát khao thử thách bản thân qua từng cột mốc mới đã thôi thúc chị chủ động nhắn tin cho chị Khánh Vân để bắt đầu hành trình tại HCM69 từ năm 2019.',
+      'Mang phong thái sư phạm mạch lạc vào nghề tư vấn, Đào Trần tâm niệm “Rõ ràng tạo nên sức mạnh”: chị kiên nhẫn lắng nghe để khách hàng tự nhìn rõ nhu cầu thật sự của gia đình mình. Niềm hạnh phúc lớn nhất của chị là khi biến cố xảy đến với bạn bè hay người thân, thay vì chỉ có thể thăm hỏi vài triệu đồng, những hợp đồng chị tư vấn đã kịp thời chi trả từ 10 triệu, 50 triệu đến 500 triệu đồng viện phí. Hiện chị đồng hành cùng đội ngũ của mình với mục tiêu phát triển bền vững và chất lượng.',
+    ],
+    badges: ['3x MDRT', '3x MBA Pro', 'Thạc sĩ Giáo dục'],
+    specialties: [
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/tran-dao.jpg',
+    gallery: [
+      {
+        src: '/images/leaders/gallery/tran-dao-1.jpg',
+        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trần Thị Đào cùng dấu ấn phát triển đội ngũ tại HCM69',
+      },
+    ],
+  },
   {
     id: 'loan-tran',
-    index: '11',
+    index: '12',
     displayName: 'Loan Trần',
     fullName: 'Trần Thị Loan',
     roleBadge: 'SUM',
@@ -879,98 +914,8 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
   },
   {
-    id: 'hoang-thuy',
-    index: '12',
-    displayName: 'Hoàng Thuý',
-    fullName: 'Hoàng Thị Kim Thuý',
-    roleBadge: 'SDM',
-    roleTitle: 'Trưởng Phòng Kinh doanh Cấp cao',
-    tierKey: 'DM',
-    tierLabel: 'Trưởng Phòng Kinh doanh',
-    isSeniorLeadership: true,
-    unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
-    joinedYear: '2020',
-    tenureLabel: 'Gia nhập 2020 • 10 năm Kinh nghiệm Ngân hàng',
-    industryKey: 'BANKING',
-    priorBackgroundShort: '10 năm Kiểm soát viên Ngân hàng',
-    priorBackgroundFull: '10 năm kinh nghiệm Kiểm soát viên tại hệ thống Ngân hàng thương mại',
-    teamScaleBadge: 'MDRT • MBA Vàng',
-    highlightNote:
-      'MDRT & MBA Vàng • Ươm mầm nhiều thế hệ quản lý kế cận tại SG169',
-    quote: 'Những gì đến từ trái tim sẽ chạm đến trái tim.',
-    cardSummary:
-      'Rời vị trí Kiểm soát viên ngân hàng 10 năm để có thêm thời gian bên con, hiện dẫn dắt đội ngũ và ươm mầm các quản lý kế cận tại SG169.',
-    editorialBio: [
-      'Sau 10 năm gắn bó với nghiệp vụ Kiểm soát viên ngân hàng, Hoàng Thị Kim Thuý chủ động tìm đến Manulife vào năm 2020 từ mong muốn cân bằng cuộc sống và có nhiều thời gian chất lượng hơn bên con cái.',
-      'Chính định hướng làm nghề đúng đắn xuyên suốt từ Ban Lãnh đạo Vùng đến từng thành viên và tinh thần tương trợ hết lòng đã giúp chị bứt phá mạnh mẽ. Hiện Hoàng Thuý trực tiếp dẫn dắt đội ngũ của mình, nơi đã ươm mầm nhiều trưởng phòng, quản lý, MBA Vàng, Manulife Pro Bạch Kim cùng các Manulife Pro Vàng/Bạc, với nguyên tắc nhất quán: xem khách hàng và đồng đội như người thân, làm vì lợi ích của họ trước khi nghĩ đến mình.',
-    ],
-    badges: ['MDRT', 'MBA Vàng', 'Ươm mầm Quản lý Kế cận'],
-    specialties: [
-      'Hoạch định Hưu trí & Học vấn',
-      'Bảo vệ Trụ cột Gia đình',
-      'Chăm sóc Sức khỏe Cao cấp',
-      'Xây dựng & Đào tạo Đội ngũ',
-    ],
-    portrait: '/images/leaders/hoang-thuy.jpg',
-    gallery: [
-      {
-        src: '/images/leaders/gallery/hoang-thuy-1.jpg',
-        caption: 'Vinh danh Nhà kiến tạo đội ngũ ưu tú MBA Pro Hoàng Thị Kim Thuý',
-      },
-    ],
-  },
-  {
-    id: 'ngoc-day',
-    index: '13',
-    displayName: 'Ngọc Đầy',
-    fullName: 'Nguyễn Thị Ngọc Đầy',
-    roleBadge: 'UM',
-    roleTitle: 'Trưởng Nhóm Kinh doanh',
-    tierKey: 'UM',
-    tierLabel: 'Trưởng Nhóm Kinh doanh',
-    unitCode: 'HCM69',
-    directLeader: 'SDM Trân Phan • SRD Khánh Vân',
-    joinedYear: '2020',
-    tenureLabel: 'Gia nhập 2020 • 7 năm tại Manulife & Nền tảng Kế toán trưởng',
-    industryKey: 'FINANCE_ACC',
-    priorBackgroundShort: 'Nguyên Kế toán trưởng Doanh nghiệp',
-    priorBackgroundFull: 'Nguyên Kế toán trưởng doanh nghiệp • 7 năm hoạch định tài chính tại Manulife',
-    teamScaleBadge: '4x MDRT • MBA Pro',
-    highlightNote: '4 lần chinh phục chuẩn quốc tế MDRT (2021, 2022, 2023, 2027) • Quản lý MBA 2023',
-    quote: 'Mình cứ làm đúng trước đã, kết quả xứng đáng sẽ tự khắc đến sau.',
-    cardSummary:
-      'Từ cương vị Kế toán trưởng đến 4 lần chinh phục bàn tròn triệu đô MDRT trong môi trường toàn những đồng đội giỏi giang và kỷ luật tại HCM69.',
-    editorialBio: [
-      'Chuyển mình từ vị trí Kế toán trưởng doanh nghiệp sang lĩnh vực hoạch định tài chính cá nhân từ năm 2020, điều giữ chân Nguyễn Thị Ngọc Đầy gắn bó suốt 7 năm qua trước hết nằm ở giá trị bảo vệ thực tế mà bảo hiểm mang lại cho mỗi gia đình khách hàng.',
-      'Chia sẻ về động lực phát triển tại Khu vực HCM69, Vùng Khánh Vân, Ngọc Đầy tâm đắc: khi làm việc giữa một tập thể toàn những người giỏi nhưng luôn sẵn lòng nâng đỡ nhau, bản thân mỗi người cũng không cho phép mình ngừng cố gắng. Tinh thần nâng cấp bản thân mỗi ngày và nguyên tắc “cứ làm đúng trước đã” đã đưa chị chinh phục 4 danh hiệu MDRT cùng cột mốc Quản lý MBA Pro.',
-    ],
-    badges: ['4x MDRT', 'MBA Pro', 'Quản lý Xuất sắc'],
-    specialties: [
-      'Hoạch định Hưu trí & Học vấn',
-      'Bảo vệ Trụ cột Gia đình',
-      'Chăm sóc Sức khỏe Cao cấp',
-      'Xây dựng & Đào tạo Đội ngũ',
-    ],
-    portrait: '/images/leaders/ngoc-day.jpg',
-    gallery: [
-      {
-        src: '/images/leaders/gallery/ngoc-day-1.jpg',
-        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Nguyễn Thị Ngọc Đầy tại Khu vực HCM69',
-      },
-      {
-        src: '/images/leaders/gallery/ngoc-day-2.jpg',
-        caption: 'Khoảnh khắc vinh danh danh hiệu quốc tế MDRT cùng tập thể Vùng Khánh Vân',
-      },
-      {
-        src: '/images/leaders/gallery/ngoc-day-3.jpg',
-        caption: 'Đồng hành cùng đội ngũ quản lý chuyên nghiệp tại Manulife Việt Nam',
-      },
-    ],
-  },
-  {
     id: 'huyen-luong',
-    index: '14',
+    index: '13',
     displayName: 'Huyền Lương',
     fullName: 'Lương Thị Thanh Huyền',
     roleBadge: 'SUM',
@@ -978,7 +923,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'HCM69',
-    directLeader: 'SDM Minh Phượng',
+    directLeader: 'SDM Minh Phượng • SRD Khánh Vân',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • Nền tảng Luật sư hành nghề',
     industryKey: 'LAW_MED_INS',
@@ -1018,7 +963,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thien-thanh',
-    index: '15',
+    index: '14',
     displayName: 'Thiên Thanh',
     fullName: 'Nguyễn Thị Thiên Thanh',
     roleBadge: 'SUM',
@@ -1066,7 +1011,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'duong-thanh-hoa',
-    index: '16',
+    index: '15',
     displayName: 'Dương Thanh Hoa',
     fullName: 'Dương Thị Thanh Hoa',
     roleBadge: 'SUM',
@@ -1096,7 +1041,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'anh-tho',
-    index: '17',
+    index: '16',
     displayName: 'Anh Thơ',
     fullName: 'Nguyễn Tố Anh Thơ',
     roleBadge: 'SUM',
@@ -1140,7 +1085,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'nguyen-hoa',
-    index: '18',
+    index: '17',
     displayName: 'Nguyễn Hoa',
     fullName: 'Nguyễn Thị Hoa',
     roleBadge: 'SUM',
@@ -1175,7 +1120,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'tram-le',
-    index: '19',
+    index: '18',
     displayName: 'Trâm Lê',
     fullName: 'Lê Bảo Trâm',
     roleBadge: 'SUM',
@@ -1219,7 +1164,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'van-nguyen',
-    index: '20',
+    index: '19',
     displayName: 'Vân Nguyễn',
     fullName: 'Nguyễn Thị Vân',
     roleBadge: 'SUM',
@@ -1249,7 +1194,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'thien-van',
-    index: '21',
+    index: '20',
     displayName: 'Thiên Vân',
     fullName: 'Nguyễn Thanh Thiên Vân',
     roleBadge: 'SUM',
@@ -1290,7 +1235,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'huyen-nguyen',
-    index: '22',
+    index: '21',
     displayName: 'Huyền Nguyễn',
     fullName: 'Nguyễn Thị Huyền',
     roleBadge: 'SUM',
@@ -1330,7 +1275,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
   },
   {
     id: 'bui-phuoc-ngoan',
-    index: '23',
+    index: '22',
     displayName: 'Bùi Phước Ngoan',
     fullName: 'Bùi Phước Ngoan',
     roleBadge: 'SUM',
@@ -1368,6 +1313,54 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     portrait: '/images/leaders/bui-phuoc-ngoan.jpg',
     gallery: [],
+  },
+  {
+    id: 'ngoc-day',
+    index: '23',
+    displayName: 'Ngọc Đầy',
+    fullName: 'Nguyễn Thị Ngọc Đầy',
+    roleBadge: 'UM',
+    roleTitle: 'Trưởng Nhóm Kinh doanh',
+    tierKey: 'UM',
+    tierLabel: 'Trưởng Nhóm Kinh doanh',
+    unitCode: 'HCM69',
+    directLeader: 'SDM Trân Phan • SRD Khánh Vân',
+    joinedYear: '2020',
+    tenureLabel: 'Gia nhập 2020 • 7 năm tại Manulife & Nền tảng Kế toán trưởng',
+    industryKey: 'FINANCE_ACC',
+    priorBackgroundShort: 'Nguyên Kế toán trưởng Doanh nghiệp',
+    priorBackgroundFull: 'Nguyên Kế toán trưởng doanh nghiệp • 7 năm hoạch định tài chính tại Manulife',
+    teamScaleBadge: '4x MDRT • MBA Pro',
+    highlightNote: '4 lần chinh phục chuẩn quốc tế MDRT (2021, 2022, 2023, 2027) • Quản lý MBA 2023',
+    quote: 'Mình cứ làm đúng trước đã, kết quả xứng đáng sẽ tự khắc đến sau.',
+    cardSummary:
+      'Từ cương vị Kế toán trưởng đến 4 lần chinh phục bàn tròn triệu đô MDRT trong môi trường toàn những đồng đội giỏi giang và kỷ luật tại HCM69.',
+    editorialBio: [
+      'Chuyển mình từ vị trí Kế toán trưởng doanh nghiệp sang lĩnh vực hoạch định tài chính cá nhân từ năm 2020, điều giữ chân Nguyễn Thị Ngọc Đầy gắn bó suốt 7 năm qua trước hết nằm ở giá trị bảo vệ thực tế mà bảo hiểm mang lại cho mỗi gia đình khách hàng.',
+      'Chia sẻ về động lực phát triển tại Khu vực HCM69, Vùng Khánh Vân, Ngọc Đầy tâm đắc: khi làm việc giữa một tập thể toàn những người giỏi nhưng luôn sẵn lòng nâng đỡ nhau, bản thân mỗi người cũng không cho phép mình ngừng cố gắng. Tinh thần nâng cấp bản thân mỗi ngày và nguyên tắc “cứ làm đúng trước đã” đã đưa chị chinh phục 4 danh hiệu MDRT cùng cột mốc Quản lý MBA Pro.',
+    ],
+    badges: ['4x MDRT', 'MBA Pro', 'Quản lý Xuất sắc'],
+    specialties: [
+      'Hoạch định Hưu trí & Học vấn',
+      'Bảo vệ Trụ cột Gia đình',
+      'Chăm sóc Sức khỏe Cao cấp',
+      'Xây dựng & Đào tạo Đội ngũ',
+    ],
+    portrait: '/images/leaders/ngoc-day.jpg',
+    gallery: [
+      {
+        src: '/images/leaders/gallery/ngoc-day-1.jpg',
+        caption: 'Trưởng Nhóm Kinh doanh Nguyễn Thị Ngọc Đầy tại Khu vực HCM69',
+      },
+      {
+        src: '/images/leaders/gallery/ngoc-day-2.jpg',
+        caption: 'Khoảnh khắc vinh danh danh hiệu quốc tế MDRT cùng tập thể Vùng Khánh Vân',
+      },
+      {
+        src: '/images/leaders/gallery/ngoc-day-3.jpg',
+        caption: 'Đồng hành cùng đội ngũ quản lý chuyên nghiệp tại Manulife Việt Nam',
+      },
+    ],
   },
   {
     id: 'duong-quynh',
@@ -2355,7 +2348,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [
       {
         src: '/images/leaders/gallery/tam-nguyen-1.jpg',
-        caption: 'Chuyên viên Hoạch định Tài chính Nguyễn Thị Ngọc Tâm tại văn phòng Manulife',
+        caption: 'Trưởng Nhóm Kinh doanh Nguyễn Thị Ngọc Tâm tại văn phòng Manulife',
       },
       {
         src: '/images/leaders/gallery/tam-nguyen-2.jpg',

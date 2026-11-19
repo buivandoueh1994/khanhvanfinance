@@ -1506,7 +1506,7 @@ export const RegionalSystemPage: React.FC = () => {
                 Không tìm thấy hồ sơ phù hợp với bộ lọc hiện tại
               </p>
               <p className="text-xs text-[#56605B]">
-                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} Quản lý &amp; Cố vấn của Vùng Khánh Vân.
+                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} Quản lý của Vùng Khánh Vân.
               </p>
               <button
                 type="button"
@@ -1660,10 +1660,10 @@ export const RegionalSystemPage: React.FC = () => {
                   <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1.5 sm:gap-2 pb-3 border-b border-[#DCD8CE]">
                     <div>
                       <span className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold block">
-                        QUẢN LÝ NHÓM &amp; CỐ VẤN
+                        ĐỘI NGŨ QUẢN LÝ NHÓM • SUM &amp; UM
                       </span>
                       <h3 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
-                        Trưởng Nhóm Kinh doanh &amp; Cố vấn Cấp cao ({compactFiltered.length})
+                        Trưởng Nhóm Cấp cao &amp; Trưởng Nhóm Kinh doanh ({compactFiltered.length})
                       </h3>
                     </div>
                     <p className="text-xs text-[#56605B]">
