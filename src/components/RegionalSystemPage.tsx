@@ -774,36 +774,83 @@ export const RegionalSystemPage: React.FC = () => {
                                     return (
                                       <div
                                         key={`mob-child-${activeMobileBranch.code}-${mgr.name}-${child.name}`}
-                                        onClick={() => openLeaderById(child.leaderId)}
-                                        className={`relative flex items-center gap-2.5 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] ${
-                                          childClickable
-                                            ? 'cursor-pointer active:border-[#0A3622]'
-                                            : ''
-                                        }`}
+                                        className="space-y-1.5"
                                       >
-                                        <span className="w-3.5 h-[2px] bg-[#D8C89E] absolute -left-3.5 top-1/2 -translate-y-1/2" />
-                                        {child.avatar && (
-                                          <img
-                                            src={child.avatar}
-                                            alt={child.name}
-                                            className="w-10 h-10 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
-                                          />
-                                        )}
-                                        <div className="min-w-0 flex-1">
-                                          <div className="flex items-center justify-between gap-1.5">
-                                            <span className="text-[12px] font-bold text-[#181F1C] truncate">
-                                              {child.name}
-                                            </span>
-                                            <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
-                                              {child.role}
-                                            </span>
-                                          </div>
-                                          {child.subNote && (
-                                            <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
-                                              {child.subNote}
-                                            </p>
+                                        <div
+                                          onClick={() => openLeaderById(child.leaderId)}
+                                          className={`relative flex items-center gap-2.5 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] ${
+                                            childClickable
+                                              ? 'cursor-pointer active:border-[#0A3622]'
+                                              : ''
+                                          }`}
+                                        >
+                                          <span className="w-3.5 h-[2px] bg-[#D8C89E] absolute -left-3.5 top-1/2 -translate-y-1/2" />
+                                          {child.avatar && (
+                                            <img
+                                              src={child.avatar}
+                                              alt={child.name}
+                                              className="w-10 h-10 rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
+                                            />
                                           )}
+                                          <div className="min-w-0 flex-1">
+                                            <div className="flex items-center justify-between gap-1.5">
+                                              <span className="text-[12px] font-bold text-[#181F1C] truncate">
+                                                {child.name}
+                                              </span>
+                                              <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
+                                                {child.role}
+                                              </span>
+                                            </div>
+                                            {child.subNote && (
+                                              <p className="text-[10.5px] text-[#56605B] truncate mt-0.5">
+                                                {child.subNote}
+                                              </p>
+                                            )}
+                                          </div>
                                         </div>
+
+                                        {child.children && child.children.length > 0 && (
+                                          <div className="ml-5 pl-3 border-l-2 border-[#E2DEC9] space-y-1.5">
+                                            {child.children.map((grandchild) => {
+                                              const gcClickable = Boolean(grandchild.leaderId);
+                                              return (
+                                                <div
+                                                  key={`mob-gc-${activeMobileBranch.code}-${child.name}-${grandchild.name}`}
+                                                  onClick={() => openLeaderById(grandchild.leaderId)}
+                                                  className={`relative flex items-center gap-2 p-1.5 rounded-[3px] bg-white border border-[#E7E3D5] ${
+                                                    gcClickable
+                                                      ? 'cursor-pointer active:border-[#0A3622]'
+                                                      : ''
+                                                  }`}
+                                                >
+                                                  <span className="w-3 h-[2px] bg-[#E2DEC9] absolute -left-3 top-1/2 -translate-y-1/2" />
+                                                  {grandchild.avatar && (
+                                                    <img
+                                                      src={grandchild.avatar}
+                                                      alt={grandchild.name}
+                                                      className="w-9 h-9 rounded-full object-cover object-center border border-[#C9B78B] bg-[#EFECE5] shrink-0"
+                                                    />
+                                                  )}
+                                                  <div className="min-w-0 flex-1">
+                                                    <div className="flex items-center justify-between gap-1.5">
+                                                      <span className="text-[11.5px] font-bold text-[#181F1C] truncate">
+                                                        {grandchild.name}
+                                                      </span>
+                                                      <span className="px-1.5 py-0.5 bg-[#FAF9F5] text-[#0A3622] border border-[#DCE5E0] text-[8.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
+                                                        {grandchild.role}
+                                                      </span>
+                                                    </div>
+                                                    {grandchild.subNote && (
+                                                      <p className="text-[10px] text-[#56605B] truncate mt-0.5">
+                                                        {grandchild.subNote}
+                                                      </p>
+                                                    )}
+                                                  </div>
+                                                </div>
+                                              );
+                                            })}
+                                          </div>
+                                        )}
                                       </div>
                                     );
                                   })}
@@ -974,36 +1021,83 @@ export const RegionalSystemPage: React.FC = () => {
                                       return (
                                         <div
                                           key={`desk-child-${branch.code}-${mgr.name}-${child.name}`}
-                                          onClick={() => openLeaderById(child.leaderId)}
-                                          className={`relative flex items-center gap-2 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] transition-colors ${
-                                            childClickable
-                                              ? 'cursor-pointer hover:border-[#0A3622] group'
-                                              : ''
-                                          }`}
+                                          className="space-y-1.5"
                                         >
-                                          <span className="w-3 h-[2px] bg-[#D8C89E] absolute -left-3 top-1/2 -translate-y-1/2" />
-                                          {child.avatar && (
-                                            <img
-                                              src={child.avatar}
-                                              alt={child.name}
-                                              className="w-[42px] h-[42px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
-                                            />
-                                          )}
-                                          <div className="min-w-0 flex-1">
-                                            <div className="flex items-center justify-between gap-1">
-                                              <span className="text-[11.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
-                                                {child.name}
-                                              </span>
-                                              <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
-                                                {child.role}
-                                              </span>
-                                            </div>
-                                            {child.subNote && (
-                                              <p className="text-[10px] text-[#56605B] truncate mt-0.5">
-                                                {child.subNote}
-                                              </p>
+                                          <div
+                                            onClick={() => openLeaderById(child.leaderId)}
+                                            className={`relative flex items-center gap-2 p-2 rounded-[3px] bg-[#F5F3EC] border border-[#E2DEC9] transition-colors ${
+                                              childClickable
+                                                ? 'cursor-pointer hover:border-[#0A3622] group'
+                                                : ''
+                                            }`}
+                                          >
+                                            <span className="w-3 h-[2px] bg-[#D8C89E] absolute -left-3 top-1/2 -translate-y-1/2" />
+                                            {child.avatar && (
+                                              <img
+                                                src={child.avatar}
+                                                alt={child.name}
+                                                className="w-[42px] h-[42px] rounded-full object-cover object-center border-[1.5px] border-[#C9B78B] bg-[#EFECE5] shadow-sm shrink-0"
+                                              />
                                             )}
+                                            <div className="min-w-0 flex-1">
+                                              <div className="flex items-center justify-between gap-1">
+                                                <span className="text-[11.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                                  {child.name}
+                                                </span>
+                                                <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
+                                                  {child.role}
+                                                </span>
+                                              </div>
+                                              {child.subNote && (
+                                                <p className="text-[10px] text-[#56605B] truncate mt-0.5">
+                                                  {child.subNote}
+                                                </p>
+                                              )}
+                                            </div>
                                           </div>
+
+                                          {child.children && child.children.length > 0 && (
+                                            <div className="ml-4 pl-2.5 border-l-2 border-[#E2DEC9] space-y-1.5">
+                                              {child.children.map((grandchild) => {
+                                                const gcClickable = Boolean(grandchild.leaderId);
+                                                return (
+                                                  <div
+                                                    key={`desk-gc-${branch.code}-${child.name}-${grandchild.name}`}
+                                                    onClick={() => openLeaderById(grandchild.leaderId)}
+                                                    className={`relative flex items-center gap-2 p-1.5 rounded-[3px] bg-white border border-[#E7E3D5] transition-colors ${
+                                                      gcClickable
+                                                        ? 'cursor-pointer hover:border-[#0A3622] group'
+                                                        : ''
+                                                    }`}
+                                                  >
+                                                    <span className="w-2.5 h-[2px] bg-[#E2DEC9] absolute -left-2.5 top-1/2 -translate-y-1/2" />
+                                                    {grandchild.avatar && (
+                                                      <img
+                                                        src={grandchild.avatar}
+                                                        alt={grandchild.name}
+                                                        className="w-[36px] h-[36px] rounded-full object-cover object-center border border-[#C9B78B] bg-[#EFECE5] shrink-0"
+                                                      />
+                                                    )}
+                                                    <div className="min-w-0 flex-1">
+                                                      <div className="flex items-center justify-between gap-1">
+                                                        <span className="text-[11px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                                          {grandchild.name}
+                                                        </span>
+                                                        <span className="px-1.5 py-0.5 bg-[#FAF9F5] text-[#0A3622] border border-[#DCE5E0] text-[8.5px] font-bold uppercase tracking-[0.05em] rounded-[2px] shrink-0">
+                                                          {grandchild.role}
+                                                        </span>
+                                                      </div>
+                                                      {grandchild.subNote && (
+                                                        <p className="text-[9.5px] text-[#56605B] truncate mt-0.5">
+                                                          {grandchild.subNote}
+                                                        </p>
+                                                      )}
+                                                    </div>
+                                                  </div>
+                                                );
+                                              })}
+                                            </div>
+                                          )}
                                         </div>
                                       );
                                     })}
@@ -1320,7 +1414,9 @@ export const RegionalSystemPage: React.FC = () => {
                   mobileLabel: `Cố vấn (${tierCounts.ADVISOR})`,
                   desktopLabel: `Cố vấn Cấp cao (${tierCounts.ADVISOR})`,
                 },
-              ].map((tab) => {
+              ]
+                .filter((tab) => tab.key === 'ALL' || (tierCounts[tab.key] || 0) > 0)
+                .map((tab) => {
                 const isActive = activeTier === tab.key;
                 return (
                   <button
