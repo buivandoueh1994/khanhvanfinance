@@ -26,16 +26,16 @@ interface AiAdvisorWidgetProps {
 
 const HOME_STARTER_QUESTIONS = [
   'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
-  'Đóng phí 10 năm rồi có nên rút Giá trị tài khoản không?',
-  'Doanh nghiệp muốn mua bảo hiểm phúc lợi cho nhân sự chủ chốt?',
-  'Lộ trình chuyển từ Ngân hàng sang làm Quản lý GTF tại Manulife?',
+  'Đóng phí 10 năm rồi có nên rút giá trị tài khoản không?',
+  'Doanh nghiệp mua bảo hiểm phúc lợi cho nhân sự chủ chốt thế nào?',
+  'Lộ trình chuyển từ ngân hàng sang làm Quản lý GTF tại Manulife ra sao?',
 ];
 
 const REGIONAL_STARTER_QUESTIONS = [
   'Lộ trình chuyển ngành sang làm Quản lý GTF 2026 cần điều kiện gì?',
-  'Lợi thế khi gia nhập trực tiếp Hệ thống Vùng Khánh Vân?',
-  'Doanh nghiệp mua bảo hiểm cho nhân sự & người thân trên ePOS thế nào?',
-  'Thẻ sức khỏe dùng nhiều lần trong năm có bị cắt tái tục không?',
+  'Gia nhập trực tiếp Hệ thống Vùng Khánh Vân có lợi thế gì?',
+  'Doanh nghiệp mua bảo hiểm cho nhân sự và người thân trên ePOS thế nào?',
+  'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
 ];
 
 export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
@@ -56,8 +56,8 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       id: 'welcome-msg',
       role: 'assistant',
       content: isRegionalPage
-        ? 'Chào bạn! Bạn đang quan tâm đến Lộ trình Quản lý Chuyển ngành (GTF 2026) tại Vùng Khánh Vân, Giải pháp Bảo hiểm cho Doanh nghiệp hay Hoạch định Tài chính Gia đình? Chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
-        : 'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, quy chế tái tục thẻ sức khỏe, bảo hiểm cho doanh nghiệp hay lộ trình Quản lý GTF tại Manulife? Chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình nhé.',
+        ? 'Chào bạn! Bạn đang quan tâm đến lộ trình Quản lý chuyển ngành (GTF 2026) tại Hệ thống Vùng Khánh Vân, giải pháp bảo hiểm cho doanh nghiệp hay hoạch định tài chính gia đình? Bạn có thể chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
+        : 'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, điều kiện tái tục thẻ sức khỏe, bảo hiểm cho doanh nghiệp hay lộ trình Quản lý GTF tại Manulife? Bạn có thể chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình cho Vân nhé.',
       timestamp: 'Vừa xong',
     },
   ]);
@@ -214,7 +214,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
         id: 'b-err-' + Date.now(),
         role: 'assistant',
         content:
-          'Khánh Vân đã nhận được câu hỏi của bạn. Để được hỗ trợ trực tiếp và rà soát hợp đồng nhanh nhất, bạn có thể gửi tin nhắn qua Zalo 0931 579 771 nhé!',
+          'Vân đã nhận được câu hỏi của bạn. Để được hỗ trợ trực tiếp và rà soát hợp đồng nhanh nhất, bạn có thể nhắn tin qua Zalo 0931 579 771 nhé!',
         timestamp: 'Vừa xong',
       };
       setMessages((prev) => [...prev, fallbackMsg]);
@@ -253,7 +253,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
               trackEvent('chatbot_open', { trigger: 'floating_button' });
             }}
             className="group relative flex items-center gap-2 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-[#0A3622] via-[#0D5C38] to-[#0A3622] hover:from-[#008746] hover:to-[#0A3622] text-[#FAF9F5] shadow-[0_6px_20px_rgba(10,54,34,0.28)] border border-[#00A758]/40 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-            aria-label="Mở Chat với Khánh Vân"
+            aria-label="Mở khung chat với Khánh Vân"
           >
             {/* Subtle breathing emerald halo (desktop only to prevent horizontal overflow on narrow mobile screens) */}
             <span
@@ -299,7 +299,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#6EE7B7]/80 shrink-0 bg-[#181F1C] shadow-xs">
                   <img loading="lazy" decoding="async"
                     src="/images/avatar_khanh_van.jpg"
-                    alt="Chuyên gia Tài chính Khánh Vân"
+                    alt="Chuyên gia tài chính Khánh Vân"
                     className="w-full h-full object-cover"
                   />
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22C55E] border border-white rounded-full" />

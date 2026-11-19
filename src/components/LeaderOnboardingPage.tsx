@@ -65,7 +65,7 @@ const ROLE_OPTIONS: RoleOption[] = [
   {
     code: 'OTHER',
     title: '',
-    label: 'Chức danh khác (Tự nhập bên dưới)',
+    label: 'Chức danh khác (tự nhập bên dưới)',
   },
 ];
 
@@ -230,7 +230,7 @@ const LeaderPreviewCard: React.FC<{ profile: LeaderProfileData }> = ({ profile }
 
             <div>
               <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-medium leading-tight">
-                {profile.displayName || 'Tên Hiển Thị'}
+                {profile.displayName || 'Tên hiển thị'}
               </h3>
               {profile.fullName &&
                 profile.fullName.trim().toLowerCase() !==
@@ -364,7 +364,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
                 KHÁNH VÂN
               </span>
               <span className="hidden sm:inline text-xs text-[#56605B] ml-2">
-                • Tổng hợp Hồ sơ Quản lý Hệ Thống Vùng Khánh Vân
+                • Tổng hợp hồ sơ quản lý Hệ thống Vùng Khánh Vân
               </span>
             </div>
           </div>
@@ -373,7 +373,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
               href="/ho-so-quan-ly"
               className="px-3 py-1.5 text-xs border border-[#DCD8CE] rounded-[2px] hover:border-[#0A3622] transition-colors"
             >
-              Mở Form Điền Hồ Sơ
+              Mở form điền hồ sơ
             </a>
             <button
               type="button"
@@ -394,7 +394,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
               BẢNG THEO DÕI NỘI BỘ • HỆ THỐNG VÙNG KHÁNH VÂN
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl text-[#181F1C]">
-              Danh sách Hồ sơ Quản lý đã gửi ({profiles.length})
+              Danh sách hồ sơ quản lý đã gửi ({profiles.length})
             </h1>
           </div>
 
@@ -464,7 +464,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
               Chưa có hồ sơ nào được gửi
             </p>
             <p className="text-xs sm:text-sm text-[#56605B] max-w-md mx-auto">
-              Khi các anh chị Quản lý điền thông tin tại đường dẫn{' '}
+              Khi các anh chị quản lý điền thông tin tại đường dẫn{' '}
               <a
                 href="/ho-so-quan-ly"
                 className="text-[#008746] underline underline-offset-2 font-medium"
@@ -638,7 +638,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
   useEffect(() => {
     document.title =
-      'Hồ Sơ Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân';
+      'Hồ sơ Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân';
   }, []);
 
   const updateField = <K extends keyof LeaderProfileData>(
@@ -728,7 +728,7 @@ export const LeaderOnboardingPage: React.FC = () => {
       });
       setLocalPortraitPreview(p.portraitUrl || '');
       setLookupMessage(
-        `Đã tải lại hồ sơ của ${p.displayName}! Bạn có thể chỉnh sửa hoặc đổi ảnh mới rồi bấm Lưu nhé.`
+        `Đã tải lại hồ sơ của ${p.displayName}! Bạn có thể chỉnh sửa hoặc đổi ảnh mới, rồi bấm “Hoàn tất và gửi hồ sơ” nhé.`
       );
     } catch {
       setLookupMessage('Lỗi kết nối mạng khi tra cứu hồ sơ.');
@@ -810,7 +810,7 @@ export const LeaderOnboardingPage: React.FC = () => {
     setErrorMsg('');
 
     if (uploadingPortrait || uploadingExtra) {
-      setErrorMsg('Ảnh đang được tải lên, bạn vui lòng đợi vài giây cho hoàn tất nhé!');
+      setErrorMsg('Ảnh đang được tải lên, bạn vui lòng đợi vài giây để hoàn tất nhé!');
       return;
     }
 
@@ -820,27 +820,27 @@ export const LeaderOnboardingPage: React.FC = () => {
         : form.roleTitle.trim();
 
     if (!form.displayName.trim()) {
-      setErrorMsg('Bạn vui lòng nhập Tên hiển thị trên website nhé.');
+      setErrorMsg('Bạn vui lòng nhập tên thương hiệu hiển thị trên website nhé.');
       return;
     }
     const digits = form.phone.replace(/\D/g, '');
     if (digits.length < 9 || digits.length > 12) {
-      setErrorMsg('Bạn vui lòng nhập Số điện thoại / Zalo hợp lệ (10 chữ số) nhé.');
+      setErrorMsg('Bạn vui lòng nhập số điện thoại/Zalo hợp lệ (10 chữ số) nhé.');
       return;
     }
     if (!effectiveRoleTitle) {
-      setErrorMsg('Bạn vui lòng chọn hoặc nhập Chức danh hiện tại nhé.');
+      setErrorMsg('Bạn vui lòng chọn hoặc nhập chức danh hiện tại nhé.');
       return;
     }
     if (!form.portraitUrl) {
       setErrorMsg(
-        'Bạn vui lòng tải lên ít nhất 1 tấm ảnh chân dung chính ở Mục 02 nhé.'
+        'Bạn vui lòng tải lên ít nhất 1 tấm ảnh chân dung chính ở mục 02 nhé.'
       );
       return;
     }
     if (!form.story.trim()) {
       setErrorMsg(
-        'Bạn vui lòng chia sẻ đôi dòng câu chuyện cơ duyên hoặc quan điểm làm nghề ở Mục 04 nhé.'
+        'Bạn vui lòng chia sẻ đôi dòng câu chuyện cơ duyên hoặc quan điểm làm nghề ở mục 04 nhé.'
       );
       return;
     }
@@ -912,7 +912,7 @@ export const LeaderOnboardingPage: React.FC = () => {
               Cảm ơn {submittedProfile.displayName} rất nhiều!
             </h1>
             <p className="text-xs sm:text-sm text-[#28322D] max-w-xl mx-auto leading-relaxed">
-              Thông tin và hình ảnh chất lượng cao của bạn đã được lưu vào hệ thống biên tập chuyên trang{' '}
+              Thông tin và hình ảnh chất lượng cao của bạn đã được lưu vào hệ thống biên tập của chuyên trang{' '}
               <span className="font-medium text-[#0A3622]">
                 “Hệ thống Vùng Khánh Vân”
               </span>
@@ -931,7 +931,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 className="inline-flex items-center gap-1.5 text-xs text-[#0A3622] hover:text-[#008746] font-medium underline underline-offset-4"
               >
                 <Edit3 className="w-3.5 h-3.5" />
-                <span>Chỉnh sửa lại nội dung / Đổi ảnh</span>
+                <span>Chỉnh sửa nội dung / đổi ảnh</span>
               </button>
             </div>
 
@@ -951,7 +951,7 @@ export const LeaderOnboardingPage: React.FC = () => {
               href="/"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#008746] transition-colors"
             >
-              <span>Khám phá Website Khánh Vân</span>
+              <span>Khám phá website Khánh Vân</span>
             </a>
           </div>
         </main>
@@ -974,7 +974,7 @@ export const LeaderOnboardingPage: React.FC = () => {
             </span>
           </a>
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium bg-[#EBF2EE] px-2.5 py-1 rounded-[2px]">
-            HỆ THỐNG VÙNG KHÁNH VÂN • HỒ SƠ LEADER
+            HỆ THỐNG VÙNG KHÁNH VÂN • HỒ SƠ QUẢN LÝ
           </span>
         </div>
       </header>
@@ -987,8 +987,8 @@ export const LeaderOnboardingPage: React.FC = () => {
               BAN ĐIỀU HÀNH & ĐỘI NGŨ QUẢN LÝ KẾ CẬN • MANULIFE VIỆT NAM
             </span>
             <h1 className="font-serif text-3xl sm:text-[42px] leading-[1.15] text-[#181F1C] font-normal">
-              Hồ Sơ Thương Hiệu Quản Lý{' '}
-              <span className="italic text-[#0A3622]">Hệ Thống Vùng Khánh Vân</span>
+              Hồ sơ thương hiệu quản lý{' '}
+              <span className="italic text-[#0A3622]">Hệ thống Vùng Khánh Vân</span>
             </h1>
           </div>
 
@@ -1000,7 +1000,7 @@ export const LeaderOnboardingPage: React.FC = () => {
             />
             <figcaption className="px-4 py-2.5 bg-[#FAF9F5] border-t border-[#ECE9E0] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#56605B]">
               <span className="font-medium text-[#0A3622] uppercase tracking-[0.16em]">
-                Ban Điều Hành • Hệ Thống Vùng Khánh Vân
+                Ban Điều Hành • Hệ thống Vùng Khánh Vân
               </span>
               <span className="italic font-serif text-sm text-[#28322D]">
                 “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
@@ -1010,7 +1010,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
           <div className="bg-white border border-[#E4E1D8] border-l-[3px] border-l-[#0A3622] p-5 sm:p-6 rounded-[3px] space-y-2.5 shadow-[0_10px_30px_-20px_rgba(10,54,34,0.18)]">
             <p className="text-sm text-[#181F1C] font-medium">
-              Thân gửi các anh chị em Quản lý trong Hệ thống Vùng Khánh Vân,
+              Thân gửi các anh chị em quản lý trong Hệ thống Vùng Khánh Vân,
             </p>
             <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed">
               Để ra mắt chuyên trang{' '}
@@ -1021,8 +1021,8 @@ export const LeaderOnboardingPage: React.FC = () => {
               <span className="underline decoration-[#B8975A] underline-offset-2">
                 khanhvanfinance.com
               </span>
-              , mỗi anh chị dành khoảng 3 phút chia sẻ thông tin và tải lên{' '}
-              <strong>1 bức ảnh chân dung rõ nét nhất</strong> của mình nhé. Đội ngũ biên tập sẽ trau chuốt câu chữ và thiết kế hồ sơ thật trang trọng cho từng Leader.
+              , mỗi anh chị vui lòng dành khoảng 3 phút chia sẻ thông tin và tải lên{' '}
+              <strong>1 bức ảnh chân dung rõ nét nhất</strong> của mình nhé. Đội ngũ biên tập sẽ trau chuốt câu chữ và thiết kế hồ sơ thật trang trọng cho từng anh chị.
             </p>
           </div>
 
@@ -1084,7 +1084,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 01 / ĐỊNH DANH & VỊ TRÍ TRONG HỆ THỐNG
               </span>
               <h2 className="font-serif text-2xl text-[#181F1C] mt-0.5">
-                Thông tin cơ bản của Quản lý
+                Thông tin cơ bản của quản lý
               </h2>
             </div>
 
@@ -1102,7 +1102,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                   className="w-full px-3.5 py-3 text-sm bg-[#FAF9F5] border border-[#DCD8CE] rounded-[2px] focus:bg-white focus:outline-none focus:border-[#0A3622]"
                 />
                 <p className="text-[11px] text-[#858E89]">
-                  Tên ngắn gọn hoặc tên đầy đủ mà khách hàng & đội ngũ thường gọi bạn.
+                  Tên ngắn gọn hoặc tên đầy đủ mà khách hàng và đội ngũ thường gọi bạn.
                 </p>
               </div>
 
@@ -1138,7 +1138,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-[#181F1C]">
-                  Chức danh hiện tại tại Manulife <span className="text-red-600">*</span>
+                  Chức danh hiện nay tại Manulife <span className="text-red-600">*</span>
                 </label>
                 <select
                   value={selectedRoleCode}
@@ -1176,7 +1176,7 @@ export const LeaderOnboardingPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-1">
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-[#181F1C]">
-                  Mã Khu vực / Văn phòng trực thuộc
+                  Mã khu vực / văn phòng trực thuộc
                 </label>
                 <input
                   type="text"
@@ -1206,7 +1206,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-[#181F1C]">
-                  Quản lý trực tiếp trên Sơ đồ tổ chức
+                  Quản lý trực tiếp trên sơ đồ tổ chức
                 </label>
                 <input
                   type="text"
@@ -1216,7 +1216,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                   className="w-full px-3.5 py-3 text-sm bg-[#FAF9F5] border border-[#DCD8CE] rounded-[2px] focus:bg-white focus:outline-none focus:border-[#0A3622]"
                 />
                 <p className="text-[11px] text-[#858E89]">
-                  Giúp ban biên tập xếp chính xác vị trí nhánh trên Sơ đồ tổ chức vùng.
+                  Giúp ban biên tập xếp chính xác vị trí nhánh trên sơ đồ tổ chức vùng.
                 </p>
               </div>
             </div>
@@ -1292,14 +1292,14 @@ export const LeaderOnboardingPage: React.FC = () => {
                 <div className="bg-[#FAF9F5] border border-[#E4E1D8] rounded-[3px] p-4 space-y-2">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0A3622]">
                     <Sparkles className="w-4 h-4 text-[#008746]" />
-                    <span>Gợi ý chọn ảnh lên website đẹp & sang nhất:</span>
+                    <span>Gợi ý chọn ảnh để hồ sơ trên website đẹp và sang nhất:</span>
                   </div>
                   <ul className="text-xs text-[#56605B] space-y-1.5 list-disc pl-4 leading-relaxed">
                     <li>
-                      Ưu tiên <strong>ảnh chụp Studio hoặc ảnh bán thân rõ nét</strong>, trang phục Vest / công sở lịch sự.
+                      Ưu tiên <strong>ảnh chụp studio hoặc ảnh bán thân rõ nét</strong>, trang phục vest hoặc công sở lịch sự.
                     </li>
                     <li>
-                      Nên chọn ảnh <strong>khổ dọc</strong>, không bị cắt sát đỉnh đầu để khi lên khung trang Hệ thống nhìn cân đối nhất.
+                      Nên chọn ảnh <strong>khổ dọc</strong>, không bị cắt sát đỉnh đầu, để khi lên khung hình trên trang Hệ thống ảnh trông cân đối nhất.
                     </li>
                     <li>
                       Chọn trực tiếp file ảnh gốc độ phân giải cao (không cần nén nhỏ).
@@ -1311,7 +1311,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 <div className="space-y-2.5 pt-1">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-medium text-[#181F1C]">
-                      Ảnh bổ sung: Vinh danh MDRT / Đội ngũ / Sự kiện (Tùy chọn, tối đa 3 ảnh)
+                      Ảnh bổ sung: vinh danh MDRT, đội ngũ, sự kiện (tùy chọn, tối đa 3 ảnh)
                     </label>
                   </div>
 
@@ -1378,7 +1378,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 03 / HÀNH TRÌNH SỰ NGHIỆP & DẤU ẤN CHUYÊN MÔN
               </span>
               <h2 className="font-serif text-2xl text-[#181F1C] mt-0.5">
-                Nền tảng kinh nghiệm & Danh hiệu
+                Nền tảng kinh nghiệm và danh hiệu
               </h2>
             </div>
 
@@ -1406,7 +1406,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                   onChange={(e) =>
                     updateField('experienceSummary', e.target.value)
                   }
-                  placeholder="VD: 10 năm kinh nghiệm Ngân hàng & Tài chính"
+                  placeholder="VD: 10 năm kinh nghiệm Ngân hàng, Tài chính"
                   className="w-full px-3.5 py-3 text-sm bg-[#FAF9F5] border border-[#DCD8CE] rounded-[2px] focus:bg-white focus:outline-none focus:border-[#0A3622]"
                 />
               </div>
@@ -1414,23 +1414,23 @@ export const LeaderOnboardingPage: React.FC = () => {
 
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Công việc / Nền tảng trước khi đến với Manulife
+                Công việc / nền tảng trước khi đến với Manulife
               </label>
               <input
                 type="text"
                 value={form.priorBackground}
                 onChange={(e) => updateField('priorBackground', e.target.value)}
-                placeholder="VD: Nguyên Chuyên viên QHKH Doanh nghiệp tại Vietcombank / Kế toán trưởng / Kinh doanh riêng..."
+                placeholder="VD: Nguyên chuyên viên Quan hệ khách hàng doanh nghiệp tại Vietcombank / Kế toán trưởng / Kinh doanh riêng..."
                 className="w-full px-3.5 py-3 text-sm bg-[#FAF9F5] border border-[#DCD8CE] rounded-[2px] focus:bg-white focus:outline-none focus:border-[#0A3622]"
               />
               <p className="text-[11px] text-[#858E89]">
-                Chi tiết này giúp khách hàng & ứng viên thấy được sự đa dạng và chiều sâu trải nghiệm của đội ngũ.
+                Chi tiết này giúp khách hàng và ứng viên thấy được sự đa dạng và chiều sâu trải nghiệm của đội ngũ.
               </p>
             </div>
 
             <div className="space-y-2">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Danh hiệu & Thế mạnh nổi bật (Bấm chọn các mục phù hợp)
+                Danh hiệu & thế mạnh nổi bật (bấm chọn các mục phù hợp)
               </label>
               <div className="flex flex-wrap gap-2">
                 {ACHIEVEMENT_CHIPS.map((chip) => {
@@ -1460,7 +1460,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Ghi chú chi tiết thêm về thành tích / quy mô đội ngũ (Tùy chọn)
+                Ghi chú thêm về thành tích / quy mô đội ngũ (tùy chọn)
               </label>
               <input
                 type="text"
@@ -1487,7 +1487,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
             <div className="space-y-2">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Câu chuyện cơ duyên & Quan điểm làm nghề của bạn{' '}
+                Câu chuyện cơ duyên & quan điểm làm nghề của bạn{' '}
                 <span className="text-red-600">*</span>
               </label>
               <div className="bg-[#FAF9F5] border border-[#E4E1D8] rounded-[3px] p-3.5 text-xs text-[#56605B] space-y-1 leading-relaxed">
@@ -1510,7 +1510,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Một câu tâm niệm / Châm ngôn nghề nghiệp yêu thích
+                Câu tâm niệm / châm ngôn nghề nghiệp yêu thích
               </label>
               <input
                 type="text"
@@ -1526,7 +1526,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-[#181F1C]">
-                Link Facebook cá nhân (Tùy chọn)
+                Link Facebook cá nhân (tùy chọn)
               </label>
               <input
                 type="url"
@@ -1560,7 +1560,7 @@ export const LeaderOnboardingPage: React.FC = () => {
               ) : (
                 <>
                   <ShieldCheck className="w-4 h-4" />
-                  <span>Hoàn Tất & Gửi Hồ Sơ Quản Lý</span>
+                  <span>Hoàn tất và gửi hồ sơ</span>
                 </>
               )}
             </button>

@@ -243,7 +243,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
             </div>
             <div className="lg:col-span-5 space-y-3">
               <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.8]">
-                Tìm nhanh những tình huống thường gặp cùng Khánh Vân: từ bản chất dòng phí, quy tắc bồi thường, thẻ chăm sóc sức khỏe đến lộ trình phát triển sự nghiệp.
+                Cùng Khánh Vân tìm nhanh lời giải cho những tình huống thường gặp, từ bản chất dòng phí, quy tắc bồi thường, thẻ chăm sóc sức khỏe đến lộ trình phát triển sự nghiệp.
               </p>
             </div>
           </div>
@@ -405,7 +405,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                         type="button"
                         onClick={(e) => copyVideoLink(video, e)}
                         className="inline-flex items-center gap-1 whitespace-nowrap text-[10px] uppercase tracking-[0.14em] text-[#6A756F] hover:text-[#0A3622] px-2 py-1 rounded-[2px] hover:bg-[#EAE7DF] transition-colors" aria-label="Sao chép link"
-                        title="Sao chép link video này để chia sẻ"
+                        title="Sao chép link video để chia sẻ"
                       >
                         {copiedId === video.id ? (
                           <>
@@ -430,7 +430,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                 Không tìm thấy video nào khớp với từ khóa “{searchQuery}”
               </p>
               <p className="text-xs sm:text-sm text-[#56605B]">
-                Hãy thử tìm bằng từ khóa ngắn hơn (ví dụ: “đáo hạn”, “thẻ sức khỏe”, “bồi thường”, “tuyển dụng”).
+                Bạn hãy thử từ khóa ngắn hơn, ví dụ: “đáo hạn”, “thẻ sức khỏe”, “bồi thường”, “tuyển dụng”.
               </p>
             </div>
           )}
@@ -591,7 +591,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   type="button"
                   onClick={goToPrevVideo}
                   className="w-11 h-11 rounded-full bg-white/12 hover:bg-[#008746] text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-95"
-                  title="Video trước (Lướt lên / Phím mũi tên lên)"
+                  title="Video trước (lướt lên hoặc nhấn phím mũi tên lên)"
                   aria-label="Video trước"
                 >
                   <ChevronUp className="w-5 h-5" />
@@ -603,7 +603,7 @@ export const VideoLibrarySection: React.FC<VideoLibrarySectionProps> = ({
                   type="button"
                   onClick={goToNextVideo}
                   className="w-11 h-11 rounded-full bg-white/12 hover:bg-[#008746] text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all shadow-lg active:scale-95"
-                  title="Video tiếp theo (Lướt xuống / Phím mũi tên xuống)"
+                  title="Video tiếp theo (lướt xuống hoặc nhấn phím mũi tên xuống)"
                   aria-label="Video tiếp theo"
                 >
                   <ChevronDown className="w-5 h-5" />

@@ -82,7 +82,7 @@ const SYSTEM_PILLARS = [
     number: '01',
     icon: ShieldCheck,
     title: 'Minh Bạch Từ Trang Đầu Tiên',
-    desc: 'Tư vấn bắt đầu từ việc cùng khách hàng đọc kỹ điều khoản loại trừ, thời gian chờ và chọn mức đóng phù hợp 10–15% thu nhập ổn định. Nền tảng ấy giúp toàn vùng giữ vị trí Top 1 toàn quốc về tỷ lệ duy trì hợp đồng.',
+    desc: 'Tư vấn bắt đầu từ việc cùng khách hàng đọc kỹ điều khoản loại trừ, thời gian chờ và chọn mức đóng phù hợp, trong khoảng 10–15% thu nhập ổn định. Nền tảng ấy giúp toàn vùng giữ vị trí Top 1 toàn quốc về tỷ lệ duy trì hợp đồng.',
   },
   {
     number: '02',
@@ -131,7 +131,7 @@ export const RegionalSystemPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = 'Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý';
+    document.title = 'Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý';
     window.scrollTo(0, 0);
   }, []);
 
@@ -311,7 +311,7 @@ export const RegionalSystemPage: React.FC = () => {
       ...prev,
       note: prev.note
         ? prev.note
-        : `Mong muốn kết nối tư vấn / trao đổi cùng Hệ thống Vùng Khánh Vân (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
+        : `Tôi mong muốn được tư vấn và trao đổi cùng Hệ thống Vùng Khánh Vân (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
     }));
     setTimeout(() => {
       const el = document.getElementById('ket-noi-vung');
@@ -349,7 +349,7 @@ export const RegionalSystemPage: React.FC = () => {
                 Vùng Khánh Vân • Manulife
               </span>
               <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
-                Hệ Thống Vùng • Manulife Việt Nam
+                Hệ thống Vùng • Manulife Việt Nam
               </span>
             </div>
           </a>
@@ -359,13 +359,13 @@ export const RegionalSystemPage: React.FC = () => {
               01. Tổng quan
             </a>
             <a href="#cau-truc-vung" className="hover:text-[#0A3622] transition-colors">
-              02. Sơ đồ Tổ chức Vùng
+              02. Sơ đồ tổ chức Vùng
             </a>
             <a href="#doi-ngu-quan-ly" className="hover:text-[#0A3622] transition-colors">
               03. Đội ngũ ({REGIONAL_LEADERS.length})
             </a>
             <a href="#van-hoa-he-thong" className="hover:text-[#0A3622] transition-colors">
-              04. Người dẫn dắt &amp; Văn hóa
+              04. Người dẫn dắt &amp; văn hóa
             </a>
           </nav>
 
@@ -417,7 +417,7 @@ export const RegionalSystemPage: React.FC = () => {
               href="#van-hoa-he-thong"
               className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
             >
-              04. Bản sắc &amp; Văn hóa
+              04. Người dẫn dắt &amp; văn hóa
             </a>
             <a
               href="#ket-noi-vung"
@@ -446,7 +446,7 @@ export const RegionalSystemPage: React.FC = () => {
             </div>
 
             <h1 className="font-serif text-[32px] sm:text-6xl lg:text-[66px] leading-[1.12] sm:leading-[1.06] font-medium text-[#181F1C] tracking-[-0.01em]">
-              Hệ Thống Vùng{' '}
+              Hệ thống Vùng{' '}
               <span className="italic text-[#0A3622]">Khánh Vân</span>
             </h1>
 
@@ -466,7 +466,7 @@ export const RegionalSystemPage: React.FC = () => {
                   src: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
                   tag: 'BAN ĐIỀU HÀNH HỆ THỐNG VÙNG KHÁNH VÂN',
                   title:
-                    'Giám đốc Vùng Cấp cao Khánh Vân cùng tập thể Quản lý nòng cốt tại Manulife Plaza',
+                    'Giám đốc Vùng Cấp cao Khánh Vân cùng tập thể quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
                     'Những quản lý trưởng thành từ Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
                 })
@@ -494,7 +494,7 @@ export const RegionalSystemPage: React.FC = () => {
                     BAN ĐIỀU HÀNH HỆ THỐNG VÙNG KHÁNH VÂN
                   </span>
                   <p className="font-serif italic text-[14.5px] sm:text-xl text-[#FAF9F5] leading-snug mt-0.5">
-                    Thế hệ quản lý bản lĩnh, chuyên môn sâu và làm nghề chuẩn mực tại Manulife Việt Nam
+                    Thế hệ quản lý bản lĩnh, chuyên môn sâu và làm nghề bài bản tại Manulife Việt Nam
                   </p>
                 </div>
                 <span className="hidden md:inline-block text-[10.5px] uppercase tracking-[0.16em] text-[#B9C8C0] shrink-0">
@@ -537,7 +537,7 @@ export const RegionalSystemPage: React.FC = () => {
                   Hai giải Quán quân
                 </span>
                 <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
-                  Doanh số FYP &amp; Tỷ lệ duy trì hợp đồng
+                  Doanh số FYP và tỷ lệ duy trì hợp đồng
                 </p>
               </div>
 
@@ -600,7 +600,7 @@ export const RegionalSystemPage: React.FC = () => {
                     Khánh Vân
                   </p>
                   <p className="text-[11px] sm:text-xs text-[#D7E2DC] mt-0.5 leading-snug">
-                    Giám đốc Vùng Cấp cao • 4 Khu vực trực thuộc
+                    Giám đốc Vùng Cấp cao • 4 khu vực trực thuộc
                   </p>
                 </div>
               </div>
@@ -1147,7 +1147,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </div>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
                   Bốn khu vực kinh doanh,{' '}
-                  <span className="italic text-[#0A3622]">Một chuẩn mực chung</span>
+                  <span className="italic text-[#0A3622]">một chuẩn mực chung</span>
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
@@ -1157,7 +1157,7 @@ export const RegionalSystemPage: React.FC = () => {
 
             <div className="space-y-2.5">
               <div className="flex sm:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
-                <span>4 Khu vực trực thuộc Vùng Khánh Vân</span>
+                <span>4 khu vực trực thuộc Vùng Khánh Vân</span>
                 <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
                   <span>Vuốt ngang</span>
                   <ArrowRight className="w-3 h-3" />
@@ -1315,11 +1315,11 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="space-y-2 sm:space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
               <Users className="w-3.5 h-3.5 shrink-0" />
-              <span>03 / ĐỘI NGŨ QUẢN LÝ &amp; CỐ VẤN • {REGIONAL_LEADERS.length} HỒ SƠ</span>
+              <span>03 / ĐỘI NGŨ QUẢN LÝ • {REGIONAL_LEADERS.length} HỒ SƠ</span>
             </div>
             <h2 className="font-serif text-[26px] sm:text-5xl text-[#181F1C] font-medium leading-tight">
-              Những Người Đồng Hành{' '}
-              <span className="italic text-[#0A3622]">Tận Tâm &amp; Bản Lĩnh</span>
+              Những người đồng hành{' '}
+              <span className="italic text-[#0A3622]">tận tâm và bản lĩnh</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
               Mỗi người bước vào nghề từ một chuyên môn riêng như Ngân hàng, Kế toán, Chứng khoán, Luật, Giáo dục, Y Dược, nhưng gặp nhau ở chữ “Tâm” và sự minh bạch trong tư vấn. Chạm vào từng hồ sơ để đọc câu chuyện nghề của họ.
@@ -1506,7 +1506,7 @@ export const RegionalSystemPage: React.FC = () => {
                 Không tìm thấy hồ sơ phù hợp với bộ lọc hiện tại
               </p>
               <p className="text-xs text-[#56605B]">
-                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} Quản lý của Vùng Khánh Vân.
+                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} hồ sơ quản lý của Vùng Khánh Vân.
               </p>
               <button
                 type="button"
@@ -1641,7 +1641,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                             <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-[#0A3622] group-hover:text-[#008746] transition-colors">
                               <span className="sm:hidden">Đọc hồ sơ chi tiết</span>
-                              <span className="hidden sm:inline">Đọc câu chuyện &amp; hồ sơ chi tiết</span>
+                              <span className="hidden sm:inline">Đọc câu chuyện và hồ sơ chi tiết</span>
                               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
                             </div>
                           </div>
@@ -1653,7 +1653,7 @@ export const RegionalSystemPage: React.FC = () => {
               )}
 
               {/* ============================================================= */}
-              {/* TẦNG 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO, TRƯỞNG NHÓM & CỐ VẤN */}
+              {/* TẦNG 2: ĐỘI NGŨ TRƯỞNG NHÓM CẤP CAO & TRƯỞNG NHÓM */}
               {/* ============================================================= */}
               {compactFiltered.length > 0 && (
                 <div className="space-y-4 sm:space-y-6">
@@ -1720,7 +1720,7 @@ export const RegionalSystemPage: React.FC = () => {
                                 {leader.tierKey === 'SUM'
                                   ? 'Trưởng Nhóm Cấp cao'
                                   : leader.tierKey === 'UM'
-                                    ? 'Trưởng Nhóm KD'
+                                    ? 'Trưởng Nhóm'
                                     : 'Cố vấn Cấp cao'}
                               </span>
                               <span className="hidden sm:block text-[10px] uppercase tracking-[0.12em] text-[#008746] font-bold truncate">
@@ -1902,7 +1902,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Tại Hệ thống Vùng Khánh Vân, không ai phải bước đi một mình. Từ phòng huấn luyện nghiệp vụ mỗi sáng đến những buổi rà soát hồ sơ thực chiến, sự chuẩn mực được bồi đắp mỗi ngày.
+                Tại Hệ thống Vùng Khánh Vân, không ai phải bước đi một mình. Từ phòng huấn luyện nghiệp vụ mỗi sáng đến những buổi rà soát hồ sơ thực chiến, tay nghề được bồi đắp mỗi ngày.
               </p>
             </div>
 
@@ -1985,7 +1985,7 @@ export const RegionalSystemPage: React.FC = () => {
                   <span className="italic text-[#E8D3A6]">hành trình sự nghiệp mới</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D7E2DC] leading-relaxed">
-                  Mọi cuộc trò chuyện tại Vùng Khánh Vân đều bắt đầu bằng sự lắng nghe, không áp lực. Thông tin của bạn được bảo mật tuyệt đối, và chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
+                  Mọi cuộc trò chuyện tại Vùng Khánh Vân đều bắt đầu bằng sự lắng nghe, không áp lực. Thông tin của bạn được bảo mật tuyệt đối. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
                 </p>
               </div>
 
@@ -2007,10 +2007,10 @@ export const RegionalSystemPage: React.FC = () => {
                     DÀNH CHO NGƯỜI CHUYỂN NGÀNH
                   </span>
                   <h3 className="font-serif text-lg sm:text-xl text-white font-semibold">
-                    Lộ trình trở thành Quản lý
+                    Lộ trình trở thành quản lý
                   </h3>
                   <p className="text-xs text-[#D7E2DC] leading-relaxed">
-                    Dành cho bạn đang làm Ngân hàng, Kế toán, Luật, Y tế hay Doanh nghiệp và tìm một môi trường làm nghề tử tế, đào tạo thực chất.
+                    Dành cho bạn đang làm trong lĩnh vực Ngân hàng, Kế toán, Luật, Y tế hay Quản trị doanh nghiệp và đang tìm một môi trường làm nghề tử tế, đào tạo thực chất.
                   </p>
                 </div>
               </div>
@@ -2019,7 +2019,7 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="pt-4 border-t border-white/15 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div className="space-y-2">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B9C8C0] font-semibold block">
-                    KẾT NỐI TRỰC TIẾP CHỊ KHÁNH VÂN (SRD)
+                    KẾT NỐI TRỰC TIẾP VỚI CHỊ KHÁNH VÂN (SRD)
                   </span>
                   <div className="flex flex-wrap items-center gap-4">
                     <a
@@ -2202,7 +2202,7 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Hệ Thống Vùng Khánh Vân • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
+              Hệ thống Vùng Khánh Vân • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8FA398]">
@@ -2285,7 +2285,7 @@ export const RegionalSystemPage: React.FC = () => {
       </aside>
 
       {/* =================================================================== */}
-      {/* EXECUTIVE LEADER DOSSIER MODAL (NO Individual FB/Phone — System CTA Only) */}
+      {/* EXECUTIVE LEADER DOSSIER MODAL (NO Individual FB/Phone, System CTA Only) */}
       {/* =================================================================== */}
       <AnimatePresence>
         {selectedLeader && (
@@ -2537,7 +2537,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                       <div className="hidden sm:block space-y-0.5 sm:border-l sm:border-[#ECE9E0] sm:pl-3.5">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
-                          Thâm niên &amp; Gắn bó
+                          Thâm niên &amp; gắn bó
                         </span>
                         <p className="text-xs font-medium text-[#181F1C] leading-snug">
                           {selectedLeader.tenureLabel}
@@ -2546,7 +2546,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                       <div className="space-y-0.5 pt-2.5 border-t border-[#ECE9E0]">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
-                          Khu vực &amp; Quản lý trực tiếp
+                          Khu vực &amp; quản lý trực tiếp
                         </span>
                         <p className="text-xs font-semibold text-[#0A3622] leading-snug">
                           Khu vực {selectedLeader.unitCode} • {selectedLeader.directLeader}

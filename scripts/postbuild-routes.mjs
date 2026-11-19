@@ -12,7 +12,7 @@ const baseWithoutHeroPreload = baseHtml.replace(
 const leaderFormHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -24,19 +24,19 @@ const leaderFormHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Cổng thông tin dành riêng cho Ban Điều Hành & đội ngũ Quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta name="description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân" />'
+    '<meta property="og:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hồ Sơ Ban Điều Hành & Đội Ngũ Quản Lý | Hệ Thống Vùng Khánh Vân" />'
+    '<meta name="twitter:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Cổng thông tin dành riêng cho Ban Điều Hành & đội ngũ Quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta property="og:description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
@@ -63,7 +63,7 @@ for (const page of pages) {
 const previewHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -75,19 +75,19 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết đội ngũ lãnh đạo & cố vấn." />'
+    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý" />'
+    '<meta property="og:title" content="Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hệ Thống Vùng Khánh Vân | Ban Điều Hành & Đội Ngũ Quản Lý" />'
+    '<meta name="twitter:title" content="Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết đội ngũ lãnh đạo & cố vấn." />'
+    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
