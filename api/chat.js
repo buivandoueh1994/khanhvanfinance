@@ -915,6 +915,38 @@ ${isRegionalPage ? '\n[NGỮ CẢNH TRANG HIỆN TẠI]: Khách đang xem Chuyê
 ${contextBlocks ? `=========================================\n4. TÀI LIỆU THAM KHẢO BỔ SUNG:\n=========================================\n${contextBlocks}` : ''}`;
 }
 
+// Non-blocking telemetry ping to Executive OS V4 (Agency Pulse)
+async function pushAgencyLeadTelemetry({ source = 'chatbot', leadName = '' }) {
+  const key = (process.env.AGENCY_TELEMETRY_KEY || '').trim();
+  if (!key) return false;
+  const baseUrl = (process.env.AGENCY_TELEMETRY_URL || 'https://tro-ly-ca-nhan-pi.vercel.app')
+    .trim()
+    .replace(/\/$/, '');
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 3500);
+  try {
+    const res = await fetch(`${baseUrl}/api/telemetry/lead`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify({
+        domain: 'khanhvanfinance.com',
+        source,
+        count: 1,
+        lead_name: leadName || '',
+      }),
+      signal: controller.signal,
+    });
+    return res.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // Save Lead captured from chat directly to Project Chị Vân's web_leads table
 async function saveLeadFromChatToChiVanDb({
   sessionId = '',
@@ -1248,6 +1280,10 @@ export default async function handler(req, res) {
             note: safeSummary,
             source: 'chatbot',
             telegramNotified: true,
+          }),
+          pushAgencyLeadTelemetry({
+            source: 'chatbot',
+            leadName: visitorName || 'Khách Chatbot',
           })
         );
       }

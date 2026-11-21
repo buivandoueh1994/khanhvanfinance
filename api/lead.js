@@ -47,6 +47,38 @@ function isTestSubmission({ isTest, testMode, sessionId = '', fullName = '', pho
   return /(\[test|\btest\b|kiểm tra hệ thống|tin nhắn test|nháp|demo\b)/i.test(combinedText);
 }
 
+// Non-blocking telemetry ping to Executive OS V4 (Agency Pulse)
+async function pushAgencyLeadTelemetry({ source = 'form', leadName = '' }) {
+  const key = (process.env.AGENCY_TELEMETRY_KEY || '').trim();
+  if (!key) return false;
+  const baseUrl = (process.env.AGENCY_TELEMETRY_URL || 'https://tro-ly-ca-nhan-pi.vercel.app')
+    .trim()
+    .replace(/\/$/, '');
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 3500);
+  try {
+    const res = await fetch(`${baseUrl}/api/telemetry/lead`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify({
+        domain: 'khanhvanfinance.com',
+        source,
+        count: 1,
+        lead_name: leadName || '',
+      }),
+      signal: controller.signal,
+    });
+    return res.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // Log directly into Project Chị Vân's dedicated web_leads table (https://paaphwfpoiiowmthxtlp.supabase.co)
 async function logLeadToChiVanDb({
   sessionId = '',
@@ -192,19 +224,25 @@ export default async function handler(req, res) {
       telegramNotified = sendResults.some(Boolean);
     }
 
-    // 2. Save real customer leads to Project Chị Vân's web_leads table (skip test leads to keep DB clean)
+    // 2. Save real customer leads to Project Chị Vân's web_leads table & Executive OS V4 telemetry (skip test leads)
     if (!testLead) {
-      await logLeadToChiVanDb({
-        sessionId,
-        fullName,
-        phone,
-        email,
-        topic,
-        background,
-        note,
-        source,
-        telegramNotified,
-      });
+      await Promise.allSettled([
+        logLeadToChiVanDb({
+          sessionId,
+          fullName,
+          phone,
+          email,
+          topic,
+          background,
+          note,
+          source,
+          telegramNotified,
+        }),
+        pushAgencyLeadTelemetry({
+          source: source === 'contact_form' ? 'form' : 'chatbot',
+          leadName: fullName,
+        }),
+      ]);
     }
 
     return res.status(200).json({
