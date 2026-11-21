@@ -34,3 +34,6 @@ Anh_Da_Phan_Tich_Dot_2/*.jpg
 Anh_Da_Phan_Tich_Dot_2/*.jpeg
 Sản Phẩm/
 lau-treo-xom-leo/
+
+# AI Assistant dossier & n8n workflow (contains DB/Bot credentials - never push to GitHub)
+tro_ly_khanh_van/

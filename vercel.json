@@ -23,6 +23,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/troly", "destination": "https://tro-ly-khanh-van.vercel.app/troly" },
+    { "source": "/troly/:path*", "destination": "https://tro-ly-khanh-van.vercel.app/troly/:path*" },
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/ho-so-quan-ly", "destination": "/" },
     { "source": "/ho-so-ban-dieu-hanh", "destination": "/" },
