@@ -2362,11 +2362,11 @@ export function App() {
               }
               className="lg:col-span-5 cursor-zoom-in group"
             >
-              <div className="overflow-hidden h-[260px] sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
+              <div className="overflow-hidden aspect-[4/5] sm:aspect-auto sm:h-[420px] lg:h-[460px] bg-[#EAE7DF] rounded-[4px]">
                 <img loading="lazy" decoding="async"
                   src="/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg"
                   alt="Gia đình chị Khánh Vân bên sân vườn"
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
+                  className="w-full h-full object-cover object-[50%_26%] group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
