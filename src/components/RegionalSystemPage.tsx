@@ -1958,6 +1958,28 @@ export const RegionalSystemPage: React.FC = () => {
                   </figure>
                 ))}
               </div>
+
+              {/* Cross-link to /nhung-chuyen-di */}
+              <div className="mt-8 p-5 sm:p-7 rounded-[4px] bg-[#FAF9F5] border border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1 max-w-xl">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-[#008746] font-bold block">
+                    CHUYÊN TRANG MỚI • NHẬT KÝ HÀNH TRÌNH 2019–2026
+                  </span>
+                  <h4 className="font-serif text-lg sm:text-2xl text-[#181F1C] font-medium leading-snug">
+                    Khánh Vân &amp; Những Chuyến Đi cùng gia đình và đội ngũ
+                  </h4>
+                  <p className="text-xs text-[#4A544F] leading-relaxed">
+                    Xem trọn vẹn 11 chương ký ức, 118 bức ảnh chọn lọc và 7 thước phim thực tế từ các kỳ M-Star quốc tế, đại lễ vinh danh Yên Tử, Kick-off Phan Thiết đến chuyến thiện nguyện Đắk Lắk.
+                  </p>
+                </div>
+                <a
+                  href="/nhung-chuyen-di"
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
+                >
+                  <span>Mở chuyên trang Chuyến đi</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -13,6 +13,11 @@ const RegionalSystemPage = lazy(() =>
     default: m.RegionalSystemPage,
   }))
 );
+const JourneysPage = lazy(() =>
+  import('./components/JourneysPage').then((m) => ({
+    default: m.JourneysPage,
+  }))
+);
 
 function RootRouter() {
   const pathname = window.location.pathname.replace(/\/+$/, '').toLowerCase();
@@ -44,6 +49,19 @@ function RootRouter() {
     return (
       <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
         <RegionalSystemPage />
+      </Suspense>
+    );
+  }
+
+  const isJourneysPage =
+    pathname === '/nhung-chuyen-di' ||
+    pathname === '/dong-hanh-cung-khanh-van' ||
+    params.get('page') === 'nhung-chuyen-di';
+
+  if (isJourneysPage) {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
+        <JourneysPage />
       </Suspense>
     );
   }

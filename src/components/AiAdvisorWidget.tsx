@@ -38,14 +38,26 @@ const REGIONAL_STARTER_QUESTIONS = [
   'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
 ];
 
+const JOURNEYS_STARTER_QUESTIONS = [
+  'Làm thế nào để đạt chuẩn vinh danh M-Star & MDRT cùng Vùng Khánh Vân?',
+  'Lộ trình chuyển ngành sang làm Quản lý GTF 2026 cần điều kiện gì?',
+  'Thiết kế quỹ học vấn và quỹ hưu trí dài hạn cho gia đình như thế nào?',
+  'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
+];
+
 export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
   onOpenVideo,
   hidden = false,
 }) => {
-  const isRegionalPage =
-    typeof window !== 'undefined' &&
-    window.location.pathname.toLowerCase().includes('vung-khanh-van');
-  const starterQuestions = isRegionalPage
+  const currentPath =
+    typeof window !== 'undefined' ? window.location.pathname.toLowerCase() : '';
+  const isRegionalPage = currentPath.includes('vung-khanh-van');
+  const isJourneysPage =
+    currentPath.includes('nhung-chuyen-di') ||
+    currentPath.includes('dong-hanh-cung-khanh-van');
+  const starterQuestions = isJourneysPage
+    ? JOURNEYS_STARTER_QUESTIONS
+    : isRegionalPage
     ? REGIONAL_STARTER_QUESTIONS
     : HOME_STARTER_QUESTIONS;
 
@@ -55,7 +67,9 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
     {
       id: 'welcome-msg',
       role: 'assistant',
-      content: isRegionalPage
+      content: isJourneysPage
+        ? 'Chào bạn! Cảm ơn bạn đã ghé thăm chuyên trang Những Chuyến Đi. Bạn đang muốn tìm hiểu lộ trình chinh phục M-Star & Quản lý GTF tại Vùng Khánh Vân, hay thiết kế kế hoạch bảo vệ và hưu trí cho gia đình? Hãy chọn câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
+        : isRegionalPage
         ? 'Chào bạn! Bạn đang quan tâm đến lộ trình Quản lý chuyển ngành (GTF 2026) tại Hệ thống Vùng Khánh Vân, giải pháp bảo hiểm cho doanh nghiệp hay hoạch định tài chính gia đình? Bạn có thể chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
         : 'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, điều kiện tái tục thẻ sức khỏe, bảo hiểm cho doanh nghiệp hay lộ trình Quản lý GTF tại Manulife? Bạn có thể chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình cho Vân nhé.',
       timestamp: 'Vừa xong',

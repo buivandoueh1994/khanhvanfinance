@@ -1427,6 +1427,7 @@ export function App() {
     { label: 'Góc nhìn', href: '#goc-nhin' },
     { label: 'Tủ sách', href: '#tu-sach' },
     { label: 'Cuộc sống', href: '#cuoc-song' },
+    { label: 'Chuyến đi', href: '/nhung-chuyen-di' },
     { label: 'Đồng hành', href: '#dong-hanh' },
   ];
 
@@ -1528,7 +1529,7 @@ export function App() {
             </a>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -1571,7 +1572,7 @@ export function App() {
                 <a
                   href="/vung-khanh-van"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mb-2 px-4 py-3 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
+                  className="mb-1 px-4 py-3 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
                 >
                   <div>
                     <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
@@ -1582,6 +1583,22 @@ export function App() {
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                </a>
+
+                <a
+                  href="/nhung-chuyen-di"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mb-2 px-4 py-3 rounded-[3px] bg-[#EBF2EE] text-[#0A3622] border border-[#008746]/30 flex items-center justify-between gap-3 active:opacity-95"
+                >
+                  <div>
+                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#008746] font-semibold block">
+                      Nhật Ký Hành Trình Mới
+                    </span>
+                    <span className="font-serif text-base font-medium text-[#181F1C]">
+                      Khánh Vân &amp; Những Chuyến Đi
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-[#008746] shrink-0" />
                 </a>
 
                 {navItems.map((item) => (
@@ -2460,6 +2477,28 @@ export function App() {
                 Người bạn đời luôn đồng hành
               </figcaption>
             </figure>
+          </div>
+
+          {/* Editorial Feature Invite to /nhung-chuyen-di */}
+          <div className="mt-10 sm:mt-14 p-6 sm:p-9 rounded-[5px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/35 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold block">
+                Chuyên Trang Nhật Ký Hành Trình • 2019–2026
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-snug">
+                Khánh Vân &amp; Những Chuyến Đi: 11 chương ký ức, 118 khung hình và 7 thước phim thực tế
+              </h3>
+              <p className="text-xs sm:text-sm text-[#C8D6CE] leading-relaxed">
+                Cùng nhìn lại những bước chân từ Tháp Eiffel, mùa hoa anh đào Seoul, hồ Hallstatt, Bến Thượng Hải, đỉnh núi Phú Sĩ, phố núi Trùng Khánh đến đêm vinh danh Yên Tử, chuyến thiện nguyện Đắk Lắk và khoảng trời bình yên bên gia đình.
+              </p>
+            </div>
+            <a
+              href="/nhung-chuyen-di"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#FAF9F5] hover:bg-[#E8D3A6] text-[#0A3622] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors"
+            >
+              <span>Khám phá Những Chuyến Đi</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>

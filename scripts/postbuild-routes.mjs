@@ -101,4 +101,45 @@ const previewHtml = baseWithoutHeroPreload
 fs.writeFileSync(path.join(distDir, 'vung-khanh-van.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtml, 'utf8');
 
-console.log('Generated static route HTML files + private preview page.');
+const journeysHtml = baseWithoutHeroPreload
+  .replace(
+    /<title>[\s\S]*?<\/title>/,
+    '<title>Khánh Vân &amp; Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ &amp; Tổ ấm</title>'
+  )
+  .replace(
+    /<link\s+rel="canonical"[^>]*>/,
+    '<link rel="canonical" href="https://www.khanhvanfinance.com/nhung-chuyen-di" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:url"[^>]*>/,
+    '<meta property="og:url" content="https://www.khanhvanfinance.com/nhung-chuyen-di" />'
+  )
+  .replace(
+    /<meta\s+[^>]*name="description"[^>]*>/,
+    '<meta name="description" content="Nhật ký 11 chương hành trình, 118 khung hình thực tế và 7 thước phim sống động của Khánh Vân cùng gia đình và đội ngũ quản lý từ Paris, Seoul, Hallstatt, Thượng Hải, Phú Sĩ, Trùng Khánh đến Yên Tử, Phan Thiết và Đắk Lắk." />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:title"[^>]*>/,
+    '<meta property="og:title" content="Khánh Vân &amp; Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ &amp; Tổ ấm" />'
+  )
+  .replace(
+    /<meta\s+[^>]*name="twitter:title"[^>]*>/,
+    '<meta name="twitter:title" content="Khánh Vân &amp; Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ &amp; Tổ ấm" />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:description"[^>]*>/,
+    '<meta property="og:description" content="Khám phá 11 chương ký ức, 118 khung hình chọn lọc và 7 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Vùng Khánh Vân." />'
+  )
+  .replace(
+    /<meta\s+[^>]*property="og:image"[^>]*>/,
+    '<meta property="og:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg" />'
+  )
+  .replace(
+    /<meta\s+[^>]*name="twitter:image"[^>]*>/,
+    '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg" />'
+  );
+
+fs.writeFileSync(path.join(distDir, 'nhung-chuyen-di.html'), journeysHtml, 'utf8');
+fs.writeFileSync(path.join(distDir, 'dong-hanh-cung-khanh-van.html'), journeysHtml, 'utf8');
+
+console.log('Generated static route HTML files + journeys page + regional page.');
