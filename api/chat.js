@@ -729,7 +729,7 @@ function getSmartSuggestedQuestion(cleanMsg = '', history = [], botReply = '', d
   ) {
     const nextQ = pickNext([
       'Tiêu chuẩn xét tuyển Quản lý chuyển ngành GTF năm 2026 cần điều kiện gì?',
-      'Lợi thế khi gia nhập trực tiếp Hệ thống Vùng Khánh Vân là gì?',
+      'Lợi thế khi gia nhập trực tiếp Hệ thống Green Power là gì?',
       'Người chuyển từ Ngân hàng hoặc Nhân sự sang có được đào tạo kèm cặp 1-1 không?',
       'Mình để lại số Zalo để hẹn trao đổi trực tiếp 15 phút cùng Vân nhé',
     ]);
@@ -851,7 +851,7 @@ ${transcriptLines.join('\n')}`;
 
 // Build the System Prompt combining Layer 1 (Core Persona + Master Advisory Playbook 2026) + Layer 2 (Retrieved Knowledge Angles)
 function buildSystemPrompt(retrievedAngles = [], pageUrl = '') {
-  const isRegionalPage = /vung-khanh-van/i.test(String(pageUrl || ''));
+  const isRegionalPage = /(green-power|vung-khanh-van)/i.test(String(pageUrl || ''));
   const contextBlocks = retrievedAngles
     .map((a, idx) => {
       const cleanInsight = (a.core_insight || '')
@@ -869,11 +869,11 @@ function buildSystemPrompt(retrievedAngles = [], pageUrl = '') {
     .join('\n\n');
 
   return `Bạn là Chuyên gia Tài chính Khánh Vân (trò chuyện tư vấn 1-1 trực tiếp với khách hàng và ứng viên trên website khanhvanfinance.com).
-${isRegionalPage ? '\n[NGỮ CẢNH TRANG HIỆN TẠI]: Khách đang xem Chuyên trang Hệ thống Vùng Khánh Vân (/vung-khanh-van — quy tụ 4 khu vực HCM69, MN111, SG168, SG169). Hãy sẵn sàng tư vấn sâu cả về Lộ trình Quản lý Chuyển ngành GTF 2026, Giải pháp Bảo hiểm Doanh nghiệp lẫn Hoạch định Gia sản.\n' : ''}
+${isRegionalPage ? '\n[NGỮ CẢNH TRANG HIỆN TẠI]: Khách đang xem Chuyên trang Hệ thống Green Power (/vung-khanh-van — quy tụ 4 khu vực HCM69, MN111, SG168, SG169). Hãy sẵn sàng tư vấn sâu cả về Lộ trình Quản lý Chuyển ngành GTF 2026, Giải pháp Bảo hiểm Doanh nghiệp lẫn Hoạch định Gia sản.\n' : ''}
 =========================================
 1. HỒ SƠ & PHONG THÁI KHÁNH VÂN:
 =========================================
-- Họ tên: Khánh Vân — Giám đốc Vùng Cấp cao (SRD) tại Manulife Việt Nam (dẫn dắt Hệ thống Vùng Khánh Vân gồm 4 khu vực HCM69, MN111, SG168, SG169), nguyên Quản lý Tài sản & Tín dụng thế chấp tại ngân hàng quốc tế ANZ (8 năm), Nhà Quản lý Xuất sắc nhất Châu Á 2021.
+- Họ tên: Khánh Vân — Giám đốc Vùng Cấp cao (SRD) tại Manulife Việt Nam (dẫn dắt Hệ thống Green Power gồm 4 khu vực HCM69, MN111, SG168, SG169), nguyên Quản lý Tài sản & Tín dụng thế chấp tại ngân hàng quốc tế ANZ (8 năm), Nhà Quản lý Xuất sắc nhất Châu Á 2021.
 - Xưng "Vân" và gọi khách là "bạn" hoặc "anh/chị".
 - Phong thái: Điềm đạm, ấm áp, sắc sảo, thấu cảm và chuẩn mực như chị Vân đang nhắn tin tư vấn 1-1 qua Zalo.
 - Gia đình: Có chồng và hai con — con lớn Minh Châu (lớp 7), con nhỏ đang học lớp 1.
@@ -1263,7 +1263,7 @@ export default async function handler(req, res) {
         ]
           .join(' ')
           .toLowerCase();
-        const inferredTopic = /(gtf|chuyển ngành|chuyển nghề|tuyển dụng|lộ trình quản lý|vung-khanh-van)/i.test(
+        const inferredTopic = /(gtf|chuyển ngành|chuyển nghề|tuyển dụng|lộ trình quản lý|green-power|vung-khanh-van)/i.test(
           fullConvLower
         )
           ? 'Đối thoại Sự nghiệp & Quản lý GTF (Chatbot)'

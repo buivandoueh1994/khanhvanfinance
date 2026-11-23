@@ -91,7 +91,7 @@ const ARTICLES: Article[] = [
     readTime: '6 phút đọc',
     featured: true,
     image: '/images/articles/Article_XanhPhuQuy_CauTrucHaiGiaiDoan.jpg',
-    imageCaption: 'Đội ngũ Quản lý Vùng Khánh Vân rà soát kịch bản dòng tiền hai giai đoạn cho khách hàng hoạch định gia sản dài hạn.',
+    imageCaption: 'Đội ngũ Quản lý Green Power rà soát kịch bản dòng tiền hai giai đoạn cho khách hàng hoạch định gia sản dài hạn.',
     title: 'Rút Đủ Tiền Gốc Mà Tài Khoản Vẫn Còn Gấp Đôi: Cấu Trúc Hai Giai Đoạn Của Xanh Phú Quý',
     excerpt:
       'Đóng 2,5 tỷ đồng trong 10 năm đầu, rút ra đủ 2,5 tỷ trong 10 năm tiếp theo, đến năm thứ 20 tài khoản minh họa vẫn còn khoảng 5,36 tỷ. Bí quyết nằm ở nguyên tắc chỉ lấy đi phần hoa trái định kỳ để phần gốc tiếp tục hưởng lãi kép.',
@@ -135,7 +135,7 @@ Một kế hoạch tích lũy thông minh không bắt chúng ta phải nhịn c
     readTime: '5 phút đọc',
     featured: true,
     image: '/images/articles/Article_RadicalCandor_ThangThanViThuong.jpg',
-    imageCaption: 'Văn hóa kèm cặp 1-1 tại Vùng Khánh Vân: góp ý riêng tư, trực diện vào nghiệp vụ và cùng cộng sự hoàn thiện ngay trên tình huống thực tế.',
+    imageCaption: 'Văn hóa kèm cặp 1-1 tại Green Power: góp ý riêng tư, trực diện vào nghiệp vụ và cùng cộng sự hoàn thiện ngay trên tình huống thực tế.',
     title: 'Thẳng Thắn Vì Thương: Góp Ý Để Cộng Sự Giỏi Lên Mà Không Thấy Mình Bị Phán Xét',
     excerpt:
       'Góp ý sao cho người nghe không tự ái mà thực sự tiến bộ? Từ cuốn sách Radical Candor của Kim Scott đến thực tế dẫn dắt 64 quản lý, Vân chọn đứng giữa hai thái cực: quan tâm thật lòng đến con người và nói thẳng vào công việc.',
@@ -304,7 +304,7 @@ Thừa hưởng tác phong làm việc chuẩn xác từ 8 năm ở ngân hàng 
 
 Vân từng chứng kiến có những đội nhóm hô khẩu hiệu quyết tâm rất vang dội ở đầu quý, nhưng người trưởng nhóm lại là người thường xuyên đến muộn nhất hoặc lỡ hẹn báo cáo mà không một lời giải thích. Một khi lời nói trên bục giảng và hành động ngoài đời thực lệch pha nhau, nhân sự sẽ lập tức sao chép hành động thực tế của người sếp.
 
-Ngược lại, các bạn tư vấn viên mới gia nhập Vùng Khánh Vân thường hòa nhập vào nề nếp rất nhanh mà chẳng cần ai đôn đốc nặng lời. Các bạn nhìn cách các anh chị Giám đốc Khu vực, Trưởng Phòng chuẩn bị hồ sơ kỹ lưỡng lúc sáng sớm, nhìn cách mọi người ăn mặc thanh lịch và giữ chữ tín với từng cuộc hẹn khách hàng, rồi tự điều chỉnh nhịp bước của mình khớp vào guồng quay chung.
+Ngược lại, các bạn tư vấn viên mới gia nhập Green Power thường hòa nhập vào nề nếp rất nhanh mà chẳng cần ai đôn đốc nặng lời. Các bạn nhìn cách các anh chị Giám đốc Khu vực, Trưởng Phòng chuẩn bị hồ sơ kỹ lưỡng lúc sáng sớm, nhìn cách mọi người ăn mặc thanh lịch và giữ chữ tín với từng cuộc hẹn khách hàng, rồi tự điều chỉnh nhịp bước của mình khớp vào guồng quay chung.
 
 Người dẫn đầu giữ được kỷ luật nghiêm cẩn với bản thân trước tiên thì không bao giờ phải quát tháo ai. Sự chuyên nghiệp cứ thế thấm dần xuống từng tầng quản lý, lặng lẽ, tự nguyện và bền bỉ hơn mọi tấm bảng khẩu hiệu treo trên tường.`,
     keyTakeaways: [
@@ -803,7 +803,7 @@ Năm 2018, khi quyết định chuyển sang Manulife Việt Nam để gây dự
 
 Sai lầm lớn nhất của nhiều người khi chuyển từ làm công ăn lương sang làm chủ hoặc tư vấn tài chính độc lập là bước đi với tài khoản dự phòng mỏng manh. Khi áp lực cơm áo gạo tiền đè nặng ngay từ tháng thứ hai, thứ ba, người làm nghề rất dễ đánh mất sự điềm tĩnh, dẫn đến tâm lý nôn nóng chốt hợp đồng bằng mọi giá, hoặc bỏ cuộc ngay trước khi kịp hái quả ngọt.
 
-Nguyên tắc bất di bất dịch mà Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Vùng Khánh Vân trước khi các bạn toàn tâm chuyển nghề là:
+Nguyên tắc bất di bất dịch mà Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Green Power trước khi các bạn toàn tâm chuyển nghề là:
 
 - **Tính toán chính xác định mức chi tiêu thiết yếu (Survival Number):** Bao gồm học phí của con, chi phí sinh hoạt gia đình, phụng dưỡng cha mẹ và các nghĩa vụ trả góp cố định mỗi tháng.
 - **Khóa chặt 6 đến 12 tháng chi phí này vào một tài khoản thanh khoản riêng biệt:** Khoản tiền này không dùng để đầu tư mạo hiểm hay chi tiêu phát sinh.
@@ -849,12 +849,12 @@ Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhấ
     imageCaption: 'Niềm tự hào lớn nhất của người dẫn dắt là cùng đội ngũ quản lý kế cận đứng chung trên bục vinh danh Manulife Talent Attractor (MTA).',
     title: 'Ba Phẩm Chất Của Người Quản Lý Dẫn Dắt Bằng Sự Thấu Cảm',
     excerpt:
-      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Vùng Khánh Vân, Vân nhận ra thước đo của một nhà lãnh đạo không nằm ở việc tự mình tỏa sáng rực rỡ nhất, mà là năng lực đánh thức thế mạnh độc bản của từng cộng sự.',
+      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Green Power, Vân nhận ra thước đo của một nhà lãnh đạo không nằm ở việc tự mình tỏa sáng rực rỡ nhất, mà là năng lực đánh thức thế mạnh độc bản của từng cộng sự.',
     content: `*Khi mới bước từ vị trí ngôi sao bán hàng (Top Sales) lên vai trò quản lý, cái bẫy dễ mắc phải nhất là cố gắng biến tất cả nhân sự dưới quyền thành “bản sao” của chính mình. Nhưng suốt hành trình xây dựng hệ thống từ những viên gạch đầu tiên năm 2018 đến khi vinh dự nhận giải thưởng “Nhà Quản lý Xuất sắc và Đáng tin cậy nhất Châu Á” (2021), Vân thấm thía rằng quyền lực áp đặt chỉ tạo ra sự tuân phục ngắn hạn, còn sự thấu cảm kết hợp cùng kỷ luật mới tạo nên một tổ chức tự vận hành bền vững.*
 
 ## 1. Lắng Nghe Để “Đọc Vị” Và Đặt Đúng Người Vào Đúng Chỗ
 
-Một khu vườn đẹp không thể chỉ trồng một loài hoa, và một đội ngũ hơn 500 con người càng không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) trực tiếp đồng hành cùng Vân tại Hệ thống Vùng Khánh Vân, mỗi người bước vào nghề với một xuất phát điểm và cá tính hoàn toàn khác biệt: có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, lại có những người mẹ bỉm sữa sở hữu sự dịu dàng và khả năng lắng nghe vô cùng sâu sắc.
+Một khu vườn đẹp không thể chỉ trồng một loài hoa, và một đội ngũ hơn 500 con người càng không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) trực tiếp đồng hành cùng Vân tại Hệ thống Green Power, mỗi người bước vào nghề với một xuất phát điểm và cá tính hoàn toàn khác biệt: có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, lại có những người mẹ bỉm sữa sở hữu sự dịu dàng và khả năng lắng nghe vô cùng sâu sắc.
 
 Nếu người lãnh đạo chỉ dùng một thước đo duy nhất để phán xét, chúng ta sẽ vô tình làm thui chột tài năng của cộng sự. Lãnh đạo bằng sự thấu cảm bắt đầu từ việc quan sát sâu và lắng nghe không định kiến:
 
@@ -872,7 +872,7 @@ Triết lý điều hành mà Vân theo đuổi là **“Lãnh đạo Phục v�
 - **Chuẩn mực trong từng chi tiết nhỏ:** Từ việc có mặt đúng giờ trong các buổi huấn luyện sáng, tác phong trang phục chỉn chu, cho đến sự minh bạch, sòng phẳng trong mọi chính sách thi đua của khu vực.
 - **Truyền nghề theo quy trình “4 Bước Thực Chiến”:** Thay vì chỉ giao chỉ tiêu rồi ngồi chờ báo cáo, Vân cùng các Giám đốc và Quản lý cấp cao áp dụng nguyên tắc: *Nói cho nghe, làm mẫu cho xem, cùng làm thực tế, đúc kết và tháo gỡ tại chỗ*.
 
-Chính sự rèn giũa tỉ mỉ và đồng hành sát sao ấy đã giúp Hệ thống Vùng Khánh Vân đạt được kỳ tích hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi cực kỳ chắc chắn, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
+Chính sự rèn giũa tỉ mỉ và đồng hành sát sao ấy đã giúp Hệ thống Green Power đạt được kỳ tích hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi cực kỳ chắc chắn, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
 
 ## 3. Lấy Sự Trưởng Thành Của Cộng Sự Làm Thước Đo Thành Tựu
 
@@ -965,7 +965,7 @@ Vì vậy, nguyên tắc đầu tiên của một cựu Banker luôn là: **Khó
 
 ## Nguyên Tắc 2: Cấu Trúc “Kiềng 3 Chân” Và Kỷ Luật Phân Bổ “Đúng & Đủ” (10%–15% Thu Nhập)
 
-Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt đỏ nhất, mà là hợp đồng **được duy trì trọn vẹn đến đúng thời điểm gia đình cần đến nó**. Đó cũng là lý do suốt nhiều năm qua, Hệ thống Vùng Khánh Vân luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với chỉ số doanh thu.
+Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt đỏ nhất, mà là hợp đồng **được duy trì trọn vẹn đến đúng thời điểm gia đình cần đến nó**. Đó cũng là lý do suốt nhiều năm qua, Hệ thống Green Power luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với chỉ số doanh thu.
 
 Để dòng tiền gia đình luôn thông suốt và nhẹ nhàng trong suốt hành trình 15–20 năm, Vân luôn khuyên khách hàng thiết lập mô hình **“Kiềng 3 Chân Tài Chính”**:
 
@@ -1542,11 +1542,11 @@ export function App() {
 
           <div className="flex items-center gap-2.5 sm:gap-5 shrink-0">
             <a
-              href="/vung-khanh-van"
+              href="/green-power"
               className="group whitespace-nowrap inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-[2px] bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/25 hover:border-[#0A3622] text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold transition-colors"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#008746] group-hover:bg-[#E8D3A6] transition-colors shrink-0" />
-              <span>Vùng Khánh Vân</span>
+              <span>Green Power</span>
             </a>
 
             <a
@@ -1569,7 +1569,7 @@ export function App() {
             >
               <div className="px-5 py-5 flex flex-col gap-2">
                 <a
-                  href="/vung-khanh-van"
+                  href="/green-power"
                   onClick={() => setMobileMenuOpen(false)}
                   className="mb-2 px-4 py-3 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
                 >
@@ -1578,7 +1578,7 @@ export function App() {
                       Hệ Thống Kinh Doanh
                     </span>
                     <span className="font-serif text-base font-medium text-white">
-                      Vùng Khánh Vân • 4 Khu vực
+                      Green Power • 4 Khu vực
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />

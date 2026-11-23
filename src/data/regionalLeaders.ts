@@ -137,7 +137,7 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     leadPortrait: '/images/leaders/avatars/ngan-vu.jpg',
     scaleBadge: 'Khu vực Cấp cao',
     description:
-      'Cánh quân chiến lược trực thuộc Hệ thống Vùng Khánh Vân, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành đường dài cùng khách hàng.',
+      'Cánh quân chiến lược trực thuộc Hệ thống Green Power, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành đường dài cùng khách hàng.',
   },
   {
     code: 'SG168',
@@ -467,7 +467,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/huyen-trang-3.jpg',
-        caption: 'Dấu ấn trên hành trình xây dựng hệ sinh thái bảo hiểm chuẩn mực cùng Hệ thống Vùng Khánh Vân',
+        caption: 'Dấu ấn trên hành trình xây dựng hệ sinh thái bảo hiểm chuẩn mực cùng Hệ thống Green Power',
       },
     ],
   },
@@ -537,7 +537,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ 5 năm làm việc với bảng cân đối doanh nghiệp đến 8 năm hoạch định dòng tiền an toàn cho từng cá nhân, gắn bó từ những ngày đầu thành lập HCM69.',
     editorialBio: [
       'Tốt nghiệp chuyên ngành Kế toán, Kiểm toán tại Trường Đại học Kinh tế - Luật, Lê Huyên có 5 năm đảm nhiệm vị trí kế toán tổng hợp trước khi bén duyên cùng Manulife từ năm 2018. Cả hai chặng đường sự nghiệp của chị đều gắn liền với tính kỷ luật của những con số. Chỉ khác là, nếu trước kia chị làm việc với báo cáo tài chính của doanh nghiệp và tập đoàn, thì suốt 8 năm qua chị chọn đồng hành cùng bức tranh dòng tiền của mỗi cá nhân và mỗi gia đình.',
-      'Là một trong những quản lý gắn bó bền bỉ cùng Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân ngay từ giai đoạn nền móng, Lê Huyên tin rằng sự tỉ mỉ, tử tế và chân thành chính là chiếc chìa khóa duy nhất để đi bền lâu cùng khách hàng qua năm tháng.',
+      'Là một trong những quản lý gắn bó bền bỉ cùng Khu vực HCM69 thuộc Hệ thống Green Power ngay từ giai đoạn nền móng, Lê Huyên tin rằng sự tỉ mỉ, tử tế và chân thành chính là chiếc chìa khóa duy nhất để đi bền lâu cùng khách hàng qua năm tháng.',
     ],
     badges: ['MDRT', 'FC', 'MBA Pro', 'Gắn bó từ 2018'],
     specialties: ['Hoạch định Hưu trí & Học vấn', 'Chăm sóc Sức khỏe Cao cấp'],
@@ -707,7 +707,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ nền tảng Cử nhân Tài chính Doanh nghiệp UEH, bằng Thạc sĩ và 11 năm quản trị chuỗi cung ứng, chị xây dựng đội ngũ chất lượng cao tại HCM69.',
     editorialBio: [
       'Bích Tiền tốt nghiệp Cử nhân Tài chính Doanh nghiệp (UEH), sở hữu bằng Thạc sĩ cùng bề dày 11 năm quản lý vận hành, mua hàng (Procurement) và 4 năm giảng dạy nghiệp vụ Logistics. Chị bước vào Manulife tháng 10/2020 nhờ sự tín nhiệm dành cho người quản lý trực tiếp và môi trường hội tụ những đồng nghiệp ưu tú đa lĩnh vực.',
-      'Điều giữ chân chị gắn bó trọn vẹn với Hệ thống Vùng Khánh Vân chính là văn hóa sẵn sàng sẻ chia, trao đi kinh nghiệm một cách chân thành và vô tư. Với nguyên tắc đề cao uy tín đường dài, Bích Tiền đã chinh phục danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu MBA, MDRT, FC và nhận Giải thưởng Lãnh đạo Thực chiến GAMA Global. Chị cũng xây dựng một đội ngũ chất lượng với nhiều MBA Pro, Manulife Pro Vàng và Bạc.',
+      'Điều giữ chân chị gắn bó trọn vẹn với Hệ thống Green Power chính là văn hóa sẵn sàng sẻ chia, trao đi kinh nghiệm một cách chân thành và vô tư. Với nguyên tắc đề cao uy tín đường dài, Bích Tiền đã chinh phục danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu MBA, MDRT, FC và nhận Giải thưởng Lãnh đạo Thực chiến GAMA Global. Chị cũng xây dựng một đội ngũ chất lượng với nhiều MBA Pro, Manulife Pro Vàng và Bạc.',
     ],
     badges: [
       'MBA Pro Bạch Kim',
@@ -758,7 +758,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Sau hơn 12 năm làm Trưởng phòng Nhân sự, chị bắt đầu chỉ từ mong muốn tìm hiểu bảo hiểm cho gia đình, nay đã 2 năm liên tiếp đạt danh hiệu Nhà kiến tạo đội ngũ MBA Pro.',
     editorialBio: [
-      'Sau hơn 12 năm đảm nhiệm cương vị Trưởng phòng Hành chính Nhân sự, hành trình đến với Manulife của Nguyễn Thị Bé khởi đầu rất tự nhiên từ mong muốn tìm hiểu thấu đáo một giải pháp bảo vệ cho chính gia đình mình. Khi trực tiếp tiếp xúc với môi trường đào tạo và văn hóa sẻ chia không tính toán tại Hệ thống Vùng Khánh Vân, chị nhận ra đây chính là sự nghiệp dài hạn mình đang tìm kiếm.',
+      'Sau hơn 12 năm đảm nhiệm cương vị Trưởng phòng Hành chính Nhân sự, hành trình đến với Manulife của Nguyễn Thị Bé khởi đầu rất tự nhiên từ mong muốn tìm hiểu thấu đáo một giải pháp bảo vệ cho chính gia đình mình. Khi trực tiếp tiếp xúc với môi trường đào tạo và văn hóa sẻ chia không tính toán tại Hệ thống Green Power, chị nhận ra đây chính là sự nghiệp dài hạn mình đang tìm kiếm.',
       'Ngay từ những ngày đầu tiên, bài học cốt lõi “Phải làm đúng trước, làm giỏi sau” đã trở thành kim chỉ nam xuyên suốt của chị. Chỉ khi tư vấn đúng bản chất sản phẩm thì người làm nghề mới tồn tại bền vững. Đó cũng là nguyên tắc Bé Nguyễn bền bỉ truyền đạt lại cho các thế hệ tư vấn viên mới trên hành trình 2 năm liên tiếp chinh phục danh hiệu MBA Pro.',
     ],
     badges: ['2x MBA Pro Liên Tiếp', 'Trưởng Phòng Kinh doanh (DM)', '12+ Năm Quản trị Nhân sự'],
@@ -892,7 +892,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Mang tư duy quản trị 12 năm từ Hyundai và Cargill vào sứ mệnh xây dựng đội ngũ tư vấn chuẩn chỉnh, đóng góp cho diện mạo bảo hiểm xanh tại Việt Nam.',
     editorialBio: [
       'Sở hữu bề dày 12 năm trong lĩnh vực tài chính và điều hành doanh nghiệp (từng giữ cương vị Phó Giám đốc tại Hyundai và phụ trách chiến lược định giá tại Tập đoàn đa quốc gia Cargill), Loan Trần đến với Manulife từ chính trải nghiệm thuyết phục khi là một khách hàng.',
-      'Tại Hệ thống Vùng Khánh Vân, chị tìm thấy điểm hội tụ của những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần sẻ chia bền chặt. Với cột mốc 3 năm liên tiếp đạt danh hiệu MDRT (2024–2026) và xây dựng một đội ngũ ưu tú, Loan Trần kiên định theo đuổi những giải pháp tài chính chuẩn mực, góp phần vun đắp một ngành bảo hiểm văn minh và bền vững tại Việt Nam.',
+      'Tại Hệ thống Green Power, chị tìm thấy điểm hội tụ của những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần sẻ chia bền chặt. Với cột mốc 3 năm liên tiếp đạt danh hiệu MDRT (2024–2026) và xây dựng một đội ngũ ưu tú, Loan Trần kiên định theo đuổi những giải pháp tài chính chuẩn mực, góp phần vun đắp một ngành bảo hiểm văn minh và bền vững tại Việt Nam.',
     ],
     badges: ['MDRT 2024–2026', 'MBA Pro', 'Cựu Phó Giám đốc Hyundai'],
     specialties: [
@@ -935,8 +935,8 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Từ cơ duyên xử lý hồ sơ pháp lý khi chị Khánh Vân là khách hàng của công ty luật, sau 2 năm quan sát, chị quyết định về đồng hành xây dựng đội ngũ tại HCM69.',
     editorialBio: [
-      'Cơ duyên giữa Luật sư Lương Thị Thanh Huyền và Hệ thống Vùng Khánh Vân bắt đầu từ chiều ngược lại. Trước đây, chị Khánh Vân chính là khách hàng tại công ty của Huyền. Qua những buổi làm việc xử lý hồ sơ trực tiếp, phong thái chuẩn mực và lời mời chân thành của chị Vân đã gieo mầm thiện cảm, để sau đúng 2 năm quan sát kỹ lưỡng, Huyền quyết định gia nhập đội ngũ vào năm 2022.',
-      'Dưới góc nhìn khắt khe của một Luật sư, điều khiến Huyền Lương nể trọng nhất ở HCM69 và Hệ thống Vùng Khánh Vân là sự nhất quán hiếm có từ lời nói trên truyền thông đến hành động thực tế: từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch, chuẩn chỉnh khi tư vấn và phụng sự khách hàng. Hiện chị dẫn dắt đội ngũ của mình với ba giá trị cốt lõi: Thấu hiểu, Tin tưởng, Trách nhiệm.',
+      'Cơ duyên giữa Luật sư Lương Thị Thanh Huyền và Hệ thống Green Power bắt đầu từ chiều ngược lại. Trước đây, chị Khánh Vân chính là khách hàng tại công ty của Huyền. Qua những buổi làm việc xử lý hồ sơ trực tiếp, phong thái chuẩn mực và lời mời chân thành của chị Vân đã gieo mầm thiện cảm, để sau đúng 2 năm quan sát kỹ lưỡng, Huyền quyết định gia nhập đội ngũ vào năm 2022.',
+      'Dưới góc nhìn khắt khe của một Luật sư, điều khiến Huyền Lương nể trọng nhất ở HCM69 và Hệ thống Green Power là sự nhất quán hiếm có từ lời nói trên truyền thông đến hành động thực tế: từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch, chuẩn chỉnh khi tư vấn và phụng sự khách hàng. Hiện chị dẫn dắt đội ngũ của mình với ba giá trị cốt lõi: Thấu hiểu, Tin tưởng, Trách nhiệm.',
     ],
     badges: ['Nền tảng Luật sư', 'Trưởng Nhóm Cấp cao (SUM)'],
     specialties: [
@@ -957,7 +957,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/huyen-luong-3.jpg',
-        caption: 'Khoảnh khắc gắn kết văn hóa tập thể tại Hệ thống Vùng Khánh Vân',
+        caption: 'Khoảnh khắc gắn kết văn hóa tập thể tại Hệ thống Green Power',
       },
     ],
   },
@@ -981,9 +981,9 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: 'MBA Pro • Quản lý Xuất sắc • Bề dày 22 năm Kế toán trưởng doanh nghiệp FDI và nội địa',
     quote: 'Tư vấn đúng nhu cầu, bảo vệ đủ giá trị, đồng hành trọn vẹn.',
     cardSummary:
-      'Hơn hai thập kỷ giữ vị trí Kế toán trưởng tại các công ty trong và ngoài nước, nay chị tự hào gắn bó với môi trường “Đúng, Đủ, Đều” giàu tình người của Hệ thống Vùng Khánh Vân.',
+      'Hơn hai thập kỷ giữ vị trí Kế toán trưởng tại các công ty trong và ngoài nước, nay chị tự hào gắn bó với môi trường “Đúng, Đủ, Đều” giàu tình người của Hệ thống Green Power.',
     editorialBio: [
-      'Sở hữu bề dày 22 năm làm việc trong lĩnh vực Tài chính, Kế toán và đảm nhiệm cương vị Kế toán trưởng tại nhiều doanh nghiệp trong và ngoài nước, Nguyễn Thị Thiên Thanh tìm thấy sự đồng điệu sâu sắc khi gia nhập Khu vực SG168 thuộc Hệ thống Vùng Khánh Vân từ năm 2022.',
+      'Sở hữu bề dày 22 năm làm việc trong lĩnh vực Tài chính, Kế toán và đảm nhiệm cương vị Kế toán trưởng tại nhiều doanh nghiệp trong và ngoài nước, Nguyễn Thị Thiên Thanh tìm thấy sự đồng điệu sâu sắc khi gia nhập Khu vực SG168 thuộc Hệ thống Green Power từ năm 2022.',
       'Chị đặc biệt tự hào về văn hóa làm nghề “Đúng, Đủ, Đều, Chuyên nghiệp” cùng sự quan tâm chân thành của Giám đốc Vùng Cấp cao Khánh Vân, người luôn nhớ rõ thông tin, hoàn cảnh của từng thành viên trong vùng để kịp thời nâng đỡ khi cần. Chính nền tảng ấy giúp chị vững tin xây dựng đội ngũ và trao giải pháp bảo vệ chuẩn xác nhất đến từng gia đình.',
     ],
     badges: ['MBA Pro', 'Quản lý Xuất sắc', '22 Năm Kế Toán Trưởng'],
@@ -1005,7 +1005,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thien-thanh-3.jpg',
-        caption: 'Đồng hành cùng Ban Điều hành Hệ thống Vùng Khánh Vân',
+        caption: 'Đồng hành cùng Ban Điều hành Hệ thống Green Power',
       },
     ],
   },
@@ -1031,7 +1031,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Khép lại hơn 15 năm làm Trưởng nhóm Kiểm soát sau trong ngành ngân hàng để chọn con đường hoạch định bảo vệ gia đình bằng chữ tín dài lâu.',
     editorialBio: [
-      'Sau hơn 15 năm gắn bó với ngành ngân hàng ở vị trí Trưởng nhóm Kiểm soát sau, Dương Thị Thanh Hoa từng nghĩ mình sẽ đi trọn sự nghiệp trong môi trường ngân hàng quen thuộc. Thế nhưng những cuộc trò chuyện sâu sắc và sự thấu hiểu về vai trò của bảo hiểm trước biến cố gia đình đã giúp chị vượt qua những do dự ban đầu để bước sang hành trình mới cùng Hệ thống Vùng Khánh Vân.',
+      'Sau hơn 15 năm gắn bó với ngành ngân hàng ở vị trí Trưởng nhóm Kiểm soát sau, Dương Thị Thanh Hoa từng nghĩ mình sẽ đi trọn sự nghiệp trong môi trường ngân hàng quen thuộc. Thế nhưng những cuộc trò chuyện sâu sắc và sự thấu hiểu về vai trò của bảo hiểm trước biến cố gia đình đã giúp chị vượt qua những do dự ban đầu để bước sang hành trình mới cùng Hệ thống Green Power.',
       'Giữ trọn tác phong cẩn trọng của người làm công tác kiểm soát ngân hàng, chị đặt ra bốn nguyên tắc bất biến: tư vấn đúng nhu cầu và vừa vặn khả năng tài chính, tuyệt đối không hứa hẹn vượt quá điều khoản, không bao giờ vì doanh số mà đánh đổi lợi ích khách hàng, và luôn đồng hành bền bỉ cả trước lẫn sau khi hợp đồng phát hành.',
     ],
     badges: ['MDRT', 'MBA Pro', '15 Năm Ngân Hàng'],
@@ -1062,7 +1062,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Từ một người từng dè dặt với bảo hiểm, sau biến cố gia đình, chị trở thành người quản lý truyền lửa văn hóa “Làm ĐÚNG và làm có TÂM”.',
     editorialBio: [
-      'Từng có hơn 10 năm làm Phiên dịch viên, Giảng viên tiếng Tây Ban Nha và Chuyên gia đào tạo (Trainer), Anh Thơ thẳng thắn chia sẻ rằng trước đây chị từng là người e ngại bảo hiểm. Bước ngoặt chỉ thực sự đến khi gia đình trải qua biến cố và chị được Giám đốc Khu vực Đào Minh Phương đồng hành, vừa trở thành khách hàng được bảo vệ tại Manulife, vừa tìm thấy sứ mệnh nghề nghiệp mới trong Hệ thống Vùng Khánh Vân.',
+      'Từng có hơn 10 năm làm Phiên dịch viên, Giảng viên tiếng Tây Ban Nha và Chuyên gia đào tạo (Trainer), Anh Thơ thẳng thắn chia sẻ rằng trước đây chị từng là người e ngại bảo hiểm. Bước ngoặt chỉ thực sự đến khi gia đình trải qua biến cố và chị được Giám đốc Khu vực Đào Minh Phương đồng hành, vừa trở thành khách hàng được bảo vệ tại Manulife, vừa tìm thấy sứ mệnh nghề nghiệp mới trong Hệ thống Green Power.',
       'Điều khiến Anh Thơ tự hào nhất ở hệ thống là kim chỉ nam mà chị Khánh Vân luôn nhắc nhở toàn đội ngũ. Làm bất cứ việc gì cũng phải “làm ĐÚNG và làm có TÂM”. Trong tư vấn, đó là tư vấn đúng nhu cầu và minh bạch đúng điều khoản sản phẩm; trong phát triển đội ngũ, đó là tuyển chọn đúng người và đồng hành đúng định hướng sự nghiệp của họ.',
     ],
     badges: ['Manulife Pro Vàng', 'Quản lý Xuất sắc'],
@@ -1139,10 +1139,10 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: '15 năm tác phong Tập đoàn Nhật Bản • Trưởng Nhóm Kinh doanh Cấp cao SG169',
     quote: 'Luôn lắng nghe thấu đáo và đặt lợi ích dài hạn của khách hàng lên hàng đầu.',
     cardSummary:
-      'Kết hợp kỷ luật tỉ mỉ sau 15 năm làm việc tại các tập đoàn đầu tư Nhật Bản với văn hóa biết ơn đặc trưng của Hệ thống Vùng Khánh Vân.',
+      'Kết hợp kỷ luật tỉ mỉ sau 15 năm làm việc tại các tập đoàn đầu tư Nhật Bản với văn hóa biết ơn đặc trưng của Hệ thống Green Power.',
     editorialBio: [
       'Từng có 15 năm công tác tại các tập đoàn thương mại, đầu tư của Nhật Bản và điều hành doanh nghiệp gia đình trong mảng xuất nhập khẩu, Trâm Lê đặc biệt ấn tượng trước hệ thống đào tạo chuyên môn bài bản, chuẩn quốc tế của Manulife Việt Nam.',
-      'Khi đồng hành cùng Hệ thống Vùng Khánh Vân tại Khu vực SG169, giá trị khiến chị tâm đắc nhất chính là “văn hóa biết ơn” và sự tử tế giữa những người đồng đội. Trong mọi cuộc tư vấn, chị giữ nguyên chuẩn mực lắng nghe sâu sắc của phong cách Nhật Bản để đặt lợi ích khách hàng lên vị trí ưu tiên cao nhất.',
+      'Khi đồng hành cùng Hệ thống Green Power tại Khu vực SG169, giá trị khiến chị tâm đắc nhất chính là “văn hóa biết ơn” và sự tử tế giữa những người đồng đội. Trong mọi cuộc tư vấn, chị giữ nguyên chuẩn mực lắng nghe sâu sắc của phong cách Nhật Bản để đặt lợi ích khách hàng lên vị trí ưu tiên cao nhất.',
     ],
     badges: ['Trưởng Nhóm Cấp cao (SUM)', '15 Năm Tập Đoàn Nhật Bản'],
     specialties: [
@@ -1154,7 +1154,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [
       {
         src: '/images/leaders/gallery/tram-le-1.jpg',
-        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trâm Lê tại sự kiện chuyên môn của Hệ thống Vùng Khánh Vân',
+        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trâm Lê tại sự kiện chuyên môn của Hệ thống Green Power',
       },
       {
         src: '/images/leaders/gallery/tram-le-2.jpg',
@@ -1217,7 +1217,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Mang 16 năm kinh nghiệm Trưởng phòng Kế hoạch Vận hành vào sứ mệnh xây dựng một đội ngũ gắn kết, làm điều đúng đắn tại HCM69.',
     editorialBio: [
-      'Với 16 năm kinh nghiệm trong lĩnh vực Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chủ động lựa chọn Manulife từ năm 2022. Khi trực tiếp hòa mình vào môi trường làm việc tại Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân, chị càng thêm tự hào khi trở thành một phần của tập thể giữ vững vị thế Top 1 nhiều năm liền bằng văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
+      'Với 16 năm kinh nghiệm trong lĩnh vực Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chủ động lựa chọn Manulife từ năm 2022. Khi trực tiếp hòa mình vào môi trường làm việc tại Khu vực HCM69 thuộc Hệ thống Green Power, chị càng thêm tự hào khi trở thành một phần của tập thể giữ vững vị thế Top 1 nhiều năm liền bằng văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
       'Trực tiếp dẫn dắt đội ngũ của mình, Thiên Vân lấy chính văn hóa phát triển lâu dài, minh bạch và tử tế của toàn vùng làm kim chỉ nam trong từng bản kế hoạch bảo vệ thu nhập cho khách hàng cũng như trên hành trình kèm cặp đồng đội.',
     ],
     badges: [
@@ -1258,7 +1258,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ một Luật sư tìm hiểu hợp đồng bảo hiểm cho chính gia đình mình đến hành trình gắn bó và phát triển đội ngũ tại Khu vực SG169.',
     editorialBio: [
       'Xuất phát từ nền tảng chuyên môn của một Luật sư, hành trình đến với Manulife của Nguyễn Thị Huyền bắt đầu từ mong muốn tự mình nghiên cứu thấu đáo các điều khoản hợp đồng bảo hiểm cho chính gia đình. Càng tìm hiểu sâu dưới lăng kính pháp lý, chị càng trân trọng giá trị nhân văn và tính bảo vệ thiết thực của bảo hiểm nhân thọ.',
-      'Chính văn hóa con người chân thành và triết lý “Làm đúng trước, làm giỏi sau” tại Hệ thống Vùng Khánh Vân đã giữ chân chị và giúp chị phát triển lên vị trí Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại Khu vực SG169. Chị luôn lắng nghe và trao gửi giải pháp từ trái tim, cùng sự minh bạch pháp lý rõ ràng nhất.',
+      'Chính văn hóa con người chân thành và triết lý “Làm đúng trước, làm giỏi sau” tại Hệ thống Green Power đã giữ chân chị và giúp chị phát triển lên vị trí Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại Khu vực SG169. Chị luôn lắng nghe và trao gửi giải pháp từ trái tim, cùng sự minh bạch pháp lý rõ ràng nhất.',
     ],
     badges: [
       'Trưởng Nhóm Cấp cao (SUM)',
@@ -1289,7 +1289,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     industryKey: 'CORP_BIZ',
     priorBackgroundShort: 'Thư ký Vận hành & Hỗ trợ Phát triển Đội ngũ Kinh doanh',
     priorBackgroundFull:
-      'Khởi đầu từ vị trí Thư ký vận hành tại Hệ thống Vùng Khánh Vân khi còn là sinh viên năm 3 đại học',
+      'Khởi đầu từ vị trí Thư ký vận hành tại Hệ thống Green Power khi còn là sinh viên năm 3 đại học',
     teamScaleBadge: 'Thế hệ Quản lý Trẻ SG169',
     highlightNote:
       'Gương mặt quản lý trẻ trưởng thành bài bản từ công tác vận hành nội bộ lên Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại SG169',
@@ -1298,7 +1298,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Khởi đầu từ vị trí Thư ký khi còn là sinh viên năm 3, trưởng thành trong môi trường chuyên nghiệp để trở thành Trưởng Nhóm Kinh doanh Cấp cao tại SG169.',
     editorialBio: [
-      'Bùi Phước Ngoan bắt đầu công việc đầu tiên tại Manulife khi vẫn còn là sinh viên năm 3 đại học ở vị trí Thư ký vận hành, từ đó có cơ hội đồng hành sát sao và học hỏi trực tiếp trong môi trường kỷ luật của Hệ thống Vùng Khánh Vân và Khu vực SG169.',
+      'Bùi Phước Ngoan bắt đầu công việc đầu tiên tại Manulife khi vẫn còn là sinh viên năm 3 đại học ở vị trí Thư ký vận hành, từ đó có cơ hội đồng hành sát sao và học hỏi trực tiếp trong môi trường kỷ luật của Hệ thống Green Power và Khu vực SG169.',
       'Chính sự chuyên nghiệp và tinh thần hỗ trợ không khoảng cách giữa các thế hệ quản lý đã giúp chị thấu hiểu sâu sắc giá trị thực chất của bảo hiểm nhân thọ. Trên cương vị Trưởng Nhóm Kinh doanh Cấp cao (SUM), Phước Ngoan cam kết đóng góp bằng sự tận tâm, trách nhiệm và tác phong chỉn chu trong từng hồ sơ khách hàng.',
     ],
     badges: [
@@ -1337,7 +1337,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ cương vị Kế toán trưởng đến 4 lần chinh phục danh hiệu MDRT (Bàn tròn Triệu đô), giữa một tập thể toàn những đồng đội giỏi giang và kỷ luật tại HCM69.',
     editorialBio: [
       'Nguyễn Thị Ngọc Đầy chuyển mình từ vị trí Kế toán trưởng doanh nghiệp sang lĩnh vực hoạch định tài chính cá nhân từ năm 2020. Điều giữ chân chị suốt 7 năm qua trước hết nằm ở giá trị bảo vệ thực tế mà bảo hiểm mang lại cho mỗi gia đình khách hàng.',
-      'Chia sẻ về động lực phát triển tại Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân, Ngọc Đầy tâm đắc rằng khi làm việc giữa một tập thể toàn những người giỏi nhưng luôn sẵn lòng nâng đỡ nhau, mỗi người cũng không cho phép mình ngừng cố gắng. Tinh thần nâng cấp bản thân mỗi ngày và nguyên tắc “cứ làm đúng trước đã” đã đưa chị chinh phục 4 danh hiệu MDRT cùng cột mốc Quản lý MBA Pro.',
+      'Chia sẻ về động lực phát triển tại Khu vực HCM69 thuộc Hệ thống Green Power, Ngọc Đầy tâm đắc rằng khi làm việc giữa một tập thể toàn những người giỏi nhưng luôn sẵn lòng nâng đỡ nhau, mỗi người cũng không cho phép mình ngừng cố gắng. Tinh thần nâng cấp bản thân mỗi ngày và nguyên tắc “cứ làm đúng trước đã” đã đưa chị chinh phục 4 danh hiệu MDRT cùng cột mốc Quản lý MBA Pro.',
     ],
     badges: ['4x MDRT', 'MBA Pro', 'Quản lý Xuất sắc'],
     specialties: [
@@ -1354,7 +1354,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ngoc-day-2.jpg',
-        caption: 'Khoảnh khắc vinh danh danh hiệu quốc tế MDRT cùng tập thể Hệ thống Vùng Khánh Vân',
+        caption: 'Khoảnh khắc vinh danh danh hiệu quốc tế MDRT cùng tập thể Hệ thống Green Power',
       },
       {
         src: '/images/leaders/gallery/ngoc-day-3.jpg',
@@ -1439,7 +1439,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Thành viên Bàn Tròn Triệu Đô MDRT • Đại biểu Hội nghị Toàn cầu MDRT tại Sydney (Úc)',
     quote: 'Tận tâm, tử tế, chuyên nghiệp.',
     cardSummary:
-      'Sau hơn hai thập kỷ trên thương trường FMCG và tài chính, chị tìm thấy sự đồng điệu trong văn hóa sẻ chia và nâng đỡ đội ngũ tại Hệ thống Vùng Khánh Vân.',
+      'Sau hơn hai thập kỷ trên thương trường FMCG và tài chính, chị tìm thấy sự đồng điệu trong văn hóa sẻ chia và nâng đỡ đội ngũ tại Hệ thống Green Power.',
     editorialBio: [
       'Trước khi bước sang lĩnh vực hoạch định tài chính và bảo hiểm năm 2021, Dung Grace đã có 19 năm đảm nhiệm vị trí Quản lý Tiếp thị Thương mại (Trade Marketing) trong ngành hàng tiêu dùng nhanh (FMCG) đầy năng động. Bề dày trải nghiệm thực chiến giúp chị sở hữu góc nhìn sắc bén về quản trị kế hoạch cũng như sự thấu cảm sâu sắc trước nhu cầu của từng gia đình.',
       'Dung Grace đã chinh phục danh hiệu quốc tế MDRT và trực tiếp tham dự Hội nghị Toàn cầu MDRT tại Sydney (Úc). Điều giữ chân chị gắn bó bền chặt cùng Khu vực HCM69 chính là văn hóa “cho đi”, sẵn lòng chia sẻ kinh nghiệm và sát cánh hỗ trợ từng thành viên trong đội ngũ cùng trưởng thành.',
@@ -1485,7 +1485,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Sau 8 năm làm việc trong ngành Tài chính, Ngân hàng, chị tìm thấy bến đỗ phát triển bền vững và văn hóa nâng đỡ chân thành tại Khu vực SG169.',
     editorialBio: [
-      'Có nền tảng 8 năm làm việc chuyên sâu trong ngành Tài chính, Ngân hàng trước khi gia nhập Manulife tháng 07/2022, Dương Thị Lên xem việc trở thành thành viên Hệ thống Vùng Khánh Vân là một may mắn lớn trên hành trình sự nghiệp.',
+      'Có nền tảng 8 năm làm việc chuyên sâu trong ngành Tài chính, Ngân hàng trước khi gia nhập Manulife tháng 07/2022, Dương Thị Lên xem việc trở thành thành viên Hệ thống Green Power là một may mắn lớn trên hành trình sự nghiệp.',
       'Chinh phục danh hiệu quốc tế MDRT và Quản lý Xuất sắc tại Khu vực SG169, chị luôn đặt quyền lợi dài hạn của khách hàng lên vị trí cao nhất, đồng thời hướng tới vai trò người truyền cảm hứng, sẻ chia để từng cộng sự trong nhóm cùng phát triển vững vàng.',
     ],
     badges: ['MDRT', 'Quản lý Xuất sắc', '8 Năm Ngân Hàng'],
@@ -1498,7 +1498,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/duong-len-2.jpg',
-        caption: 'Khoảnh khắc gắn kết cùng Ban Lãnh đạo và đội ngũ Vùng Khánh Vân',
+        caption: 'Khoảnh khắc gắn kết cùng Ban Lãnh đạo và đội ngũ Green Power',
       },
       {
         src: '/images/leaders/gallery/duong-len-3.jpg',
@@ -1597,10 +1597,10 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: '13 năm Kế toán, Tài chính • 5 năm hoạch định bảo vệ gia đình tại Khu vực SG169',
     quote: 'Làm nghề bằng sự tử tế, đồng hành bằng trách nhiệm.',
     cardSummary:
-      'Sau 7 năm làm Kế toán trưởng doanh nghiệp sản xuất và bất động sản, chị bén duyên cùng Hệ thống Vùng Khánh Vân trong mùa dịch 2021 để có thời gian đồng hành cùng con vào lớp 1.',
+      'Sau 7 năm làm Kế toán trưởng doanh nghiệp sản xuất và bất động sản, chị bén duyên cùng Hệ thống Green Power trong mùa dịch 2021 để có thời gian đồng hành cùng con vào lớp 1.',
     editorialBio: [
       'Sở hữu 13 năm kinh nghiệm kế toán tài chính doanh nghiệp, trong đó có 7 năm giữ cương vị Kế toán trưởng tại các doanh nghiệp sản xuất và bất động sản, Đỗ Thị Kim Thi tìm đến Manulife vào tháng 09/2021. Khi ấy con bước vào lớp 1 và chị mong muốn một sự nghiệp chủ động thời gian để sát cánh cùng con.',
-      'Văn hóa làm nghề “có tâm, có tầm, chuẩn chỉnh, cho đi vô điều kiện” của Hệ thống Vùng Khánh Vân đã thuyết phục chị gắn bó suốt 5 năm qua. Với tư duy mạch lạc của một Kế toán trưởng, Kim Thi luôn giúp khách hàng nhìn thấu bức tranh tài chính tổng thể, đồng thời tìm kiếm những cộng sự cùng tần số để cùng đi xa bền vững.',
+      'Văn hóa làm nghề “có tâm, có tầm, chuẩn chỉnh, cho đi vô điều kiện” của Hệ thống Green Power đã thuyết phục chị gắn bó suốt 5 năm qua. Với tư duy mạch lạc của một Kế toán trưởng, Kim Thi luôn giúp khách hàng nhìn thấu bức tranh tài chính tổng thể, đồng thời tìm kiếm những cộng sự cùng tần số để cùng đi xa bền vững.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '7 Năm Kế Toán Trưởng'],
     specialties: [
@@ -1617,7 +1617,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/kim-thi-2.jpg',
-        caption: 'Đồng hành cùng tập thể quản lý Khu vực SG169, Hệ thống Vùng Khánh Vân',
+        caption: 'Đồng hành cùng tập thể quản lý Khu vực SG169, Hệ thống Green Power',
       },
       {
         src: '/images/leaders/gallery/kim-thi-3.jpg',
@@ -1664,7 +1664,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ha-phi-yen-3.jpg',
-        caption: 'Khoảnh khắc gắn kết cùng đội ngũ Hệ thống Vùng Khánh Vân',
+        caption: 'Khoảnh khắc gắn kết cùng đội ngũ Hệ thống Green Power',
       },
     ],
   },
@@ -1707,7 +1707,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thuy-trieu-2.jpg',
-        caption: 'Gắn kết cùng tập thể quản lý Khu vực HCM69, Hệ thống Vùng Khánh Vân',
+        caption: 'Gắn kết cùng tập thể quản lý Khu vực HCM69, Hệ thống Green Power',
       },
       {
         src: '/images/leaders/gallery/thuy-trieu-3.jpg',
@@ -1777,7 +1777,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Mang bản lĩnh của một Giám đốc Kinh doanh với 15 năm trong lĩnh vực sản xuất, thương mại, anh hòa nhịp cùng môi trường nhiệt huyết, có tâm và có tầm tại HCM69.',
     editorialBio: [
-      'Sau 15 năm chinh chiến trong lĩnh vực Sale, Marketing và đảm nhiệm vị trí Giám đốc Kinh doanh tại các doanh nghiệp sản xuất và thương mại, Tâm Hoài gia nhập Hệ thống Vùng Khánh Vân vào tháng 09/2025 khi tìm kiếm một môi trường vừa tự chủ thời gian, vừa phát huy chiều sâu kinh nghiệm quản trị kinh doanh.',
+      'Sau 15 năm chinh chiến trong lĩnh vực Sale, Marketing và đảm nhiệm vị trí Giám đốc Kinh doanh tại các doanh nghiệp sản xuất và thương mại, Tâm Hoài gia nhập Hệ thống Green Power vào tháng 09/2025 khi tìm kiếm một môi trường vừa tự chủ thời gian, vừa phát huy chiều sâu kinh nghiệm quản trị kinh doanh.',
       'Nguồn năng lượng nhiệt huyết, chuyên nghiệp cùng tinh thần làm nghề đàng hoàng của chị Khánh Vân và tập thể HCM69 đã thuyết phục anh gắn bó trọn vẹn. Với Tâm Hoài, mỗi giải pháp trao đi không đơn thuần là một sản phẩm tài chính, mà là cam kết đồng hành và trách nhiệm trước những cột mốc trọng đại của gia đình khách hàng.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '15 Năm Giám Đốc Kinh Doanh'],
@@ -1795,7 +1795,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/tam-hoai-2.jpg',
-        caption: 'Đồng hành phát triển đội ngũ tại Khu vực HCM69, Hệ thống Vùng Khánh Vân',
+        caption: 'Đồng hành phát triển đội ngũ tại Khu vực HCM69, Hệ thống Green Power',
       },
     ],
   },
@@ -1823,7 +1823,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từng trực tiếp làm việc tại phòng Bồi thường bảo hiểm phi nhân thọ, chị thấu hiểu từng chữ trong điều khoản để thiết kế giải pháp “đúng và đủ”.',
     editorialBio: [
       'Khác với nhiều nhân sự chuyển ngành từ lĩnh vực ngoài bảo hiểm, Băng Tâm (Minh Phương) đã sớm có nền tảng chuyên môn sâu tại Phòng Bồi thường của doanh nghiệp bảo hiểm phi nhân thọ. Chính quãng thời gian trực tiếp xử lý hồ sơ sự kiện bảo hiểm giúp chị hiểu rõ hơn ai hết rằng một hợp đồng chỉ thực sự phát huy giá trị bảo vệ khi được kê khai trung thực và thiết kế đúng bản chất ngay từ ngày ký.',
-      'Tìm kiếm một tập thể làm nghề đàng hoàng, giàu tình yêu thương và tương trợ lẫn nhau, chị lựa chọn gia nhập Hệ thống Vùng Khánh Vân từ năm 2022 để tiếp tục theo đuổi đam mê bảo hiểm một cách chuẩn chỉnh và bền vững.',
+      'Tìm kiếm một tập thể làm nghề đàng hoàng, giàu tình yêu thương và tương trợ lẫn nhau, chị lựa chọn gia nhập Hệ thống Green Power từ năm 2022 để tiếp tục theo đuổi đam mê bảo hiểm một cách chuẩn chỉnh và bền vững.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Chuyên môn Bồi thường Bảo hiểm'],
     specialties: [
@@ -1856,7 +1856,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Tận mắt chứng kiến giá trị chi trả quyền lợi bảo hiểm dành cho người thân, chị đi từ sự tò mò thử sức đến niềm đam mê gắn bó dài lâu.',
     editorialBio: [
       'Hành trình đến với bảo hiểm nhân thọ của Nhuần Vũ bắt đầu từ một trải nghiệm thực tế ngay trong chính gia đình. Chứng kiến người thân nhận quyền lợi chi trả kịp thời từ hợp đồng bảo hiểm, chị mới thực sự thấm thía giá trị nhân văn sâu sắc đằng sau những trang điều khoản.',
-      'Chị khép lại công việc kế toán trước đó để thử sức tại Khu vực SG168 thuộc Hệ thống Vùng Khánh Vân từ năm 2022. Sự cẩn trọng của người làm kế toán kết hợp cùng niềm tin thực chứng vào sản phẩm đã giữ chị gắn bó say mê suốt 4 năm qua, luôn đồng hành cùng khách hàng bằng sự tận tâm và giản dị nhất.',
+      'Chị khép lại công việc kế toán trước đó để thử sức tại Khu vực SG168 thuộc Hệ thống Green Power từ năm 2022. Sự cẩn trọng của người làm kế toán kết hợp cùng niềm tin thực chứng vào sản phẩm đã giữ chị gắn bó say mê suốt 4 năm qua, luôn đồng hành cùng khách hàng bằng sự tận tâm và giản dị nhất.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Đồng hành Quyền lợi Thực tế'],
     specialties: [
@@ -1964,7 +1964,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ nền tảng Quản lý Nhân sự doanh nghiệp đến hành trình xây dựng nhóm kinh doanh dựa trên nguyên tắc “hiểu đúng, làm đúng từ đầu”.',
     editorialBio: [
       'Từng công tác ở vị trí Quản lý Nhân sự doanh nghiệp, Nguyễn Ngọc Trâm biết đến cơ hội sự nghiệp tại Manulife thông qua sự giới thiệu từ gia đình của Giám đốc Khu vực Đào Minh Phương.',
-      'Khi gia nhập Khu vực SG168 thuộc Hệ thống Vùng Khánh Vân, Ngọc Trâm ấn tượng sâu sắc với văn hóa tương trợ và tinh thần rèn luyện nền tảng “hiểu đúng, làm đúng ngay từ đầu”. Hiện chị trực tiếp dẫn dắt đội ngũ của mình với cam kết mang lại trải nghiệm minh bạch, chuẩn mực nhất cho cả khách hàng lẫn cộng sự.',
+      'Khi gia nhập Khu vực SG168 thuộc Hệ thống Green Power, Ngọc Trâm ấn tượng sâu sắc với văn hóa tương trợ và tinh thần rèn luyện nền tảng “hiểu đúng, làm đúng ngay từ đầu”. Hiện chị trực tiếp dẫn dắt đội ngũ của mình với cam kết mang lại trải nghiệm minh bạch, chuẩn mực nhất cho cả khách hàng lẫn cộng sự.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Quản lý trẻ SG168'],
     specialties: ['Xây dựng & Đào tạo Đội ngũ', 'Hoạch định Bảo vệ Gia đình Trẻ'],
@@ -1980,7 +1980,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ngoc-tram-3.jpg',
-        caption: 'Văn hóa gắn kết và sẻ chia tại Hệ thống Vùng Khánh Vân',
+        caption: 'Văn hóa gắn kết và sẻ chia tại Hệ thống Green Power',
       },
     ],
   },
@@ -2006,9 +2006,9 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Mang sự chuẩn xác, cẩn trọng của 20 năm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM vào nghề tư vấn tài chính',
     quote: 'Tử tế trong tư vấn, vững vàng trong giải pháp, trọn vẹn trong đồng hành.',
     cardSummary:
-      'Sau 20 năm công tác tại Viện Kiểm nghiệm Thuốc TP.HCM, chị tìm thấy nguồn cảm hứng mới trong tập thể quy tụ tinh hoa nhiều ngành nghề của Hệ thống Vùng Khánh Vân.',
+      'Sau 20 năm công tác tại Viện Kiểm nghiệm Thuốc TP.HCM, chị tìm thấy nguồn cảm hứng mới trong tập thể quy tụ tinh hoa nhiều ngành nghề của Hệ thống Green Power.',
     editorialBio: [
-      'Sau chặng đường 20 năm công tác trong lĩnh vực Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM, Bùi Thị Thu Thảo bén duyên với Manulife từ lời mời tìm hiểu giải pháp bảo vệ người trụ cột của một người đồng nghiệp cũ, nay là tư vấn viên thuộc Hệ thống Vùng Khánh Vân. Khi mở lòng trải nghiệm môi trường mới, chị nhanh chóng được thuyết phục bởi sự hướng dẫn tận tình và văn hóa sẻ chia không giới hạn giữa những đồng nghiệp giỏi đến từ nhiều ngành nghề, đặc biệt là nguồn năng lượng chuẩn mực từ người dẫn dắt là chị Khánh Vân.',
+      'Sau chặng đường 20 năm công tác trong lĩnh vực Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM, Bùi Thị Thu Thảo bén duyên với Manulife từ lời mời tìm hiểu giải pháp bảo vệ người trụ cột của một người đồng nghiệp cũ, nay là tư vấn viên thuộc Hệ thống Green Power. Khi mở lòng trải nghiệm môi trường mới, chị nhanh chóng được thuyết phục bởi sự hướng dẫn tận tình và văn hóa sẻ chia không giới hạn giữa những đồng nghiệp giỏi đến từ nhiều ngành nghề, đặc biệt là nguồn năng lượng chuẩn mực từ người dẫn dắt là chị Khánh Vân.',
       'Trên cương vị Trưởng Nhóm Kinh doanh (UM) tại HCM69, tâm huyết lớn nhất của Thảo Bùi là thiết kế những giải pháp bảo vệ vừa vặn với từng hoàn cảnh gia đình, để chính khách hàng hiểu thấu và tự nguyện lan tỏa giá trị nhân văn của bảo hiểm nhân thọ. Chị xây dựng đội ngũ theo phương châm “Dẫn dắt bằng sự chân thành, phát triển bằng năng lực, gắn kết bằng trách nhiệm”.',
     ],
     badges: [
@@ -2029,7 +2029,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thao-bui-2.jpg',
-        caption: 'Cùng tập thể quản lý và đồng nghiệp Khu vực HCM69, Hệ thống Vùng Khánh Vân',
+        caption: 'Cùng tập thể quản lý và đồng nghiệp Khu vực HCM69, Hệ thống Green Power',
       },
       {
         src: '/images/leaders/gallery/thao-bui-3.jpg',
@@ -2062,7 +2062,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Sau 18 năm trong ngành Tài chính, Chứng khoán, chị dám bước ra thử thách giới hạn và chinh phục Manulife Pro Bạc chỉ sau 3 tháng bằng số liệu rõ ràng và lời nói thật.',
     editorialBio: [
       'Sở hữu bề dày 18 năm kinh nghiệm trong lĩnh vực Tài chính, Chứng khoán và Kế toán Quản trị, Hà Đỗ lựa chọn gia nhập Manulife để thử thách giới hạn bản thân ở một mảng hoạch định tài chính gần gũi và nhân văn hơn với từng gia đình. Nhờ tuân thủ đúng quy trình và học tập bài bản tại Khu vực HCM69, chị nhanh chóng chinh phục cột mốc Manulife Pro Bạc chỉ sau 3 tháng.',
-      'Điều chị trân quý nhất tại Hệ thống Vùng Khánh Vân là sự minh bạch tuyệt đối và tinh thần xem khách hàng như người thân ruột thịt. Nguyên tắc nhất quán của Hà Đỗ là tư vấn dựa trên số liệu rõ ràng và lời nói thật, bởi niềm tin bền vững nhất chỉ đến khi người tư vấn dám nói điều khách hàng thực sự cần nghe, chứ không chỉ điều họ muốn nghe.',
+      'Điều chị trân quý nhất tại Hệ thống Green Power là sự minh bạch tuyệt đối và tinh thần xem khách hàng như người thân ruột thịt. Nguyên tắc nhất quán của Hà Đỗ là tư vấn dựa trên số liệu rõ ràng và lời nói thật, bởi niềm tin bền vững nhất chỉ đến khi người tư vấn dám nói điều khách hàng thực sự cần nghe, chứ không chỉ điều họ muốn nghe.',
     ],
     badges: [
       'MBA Pro',
@@ -2097,12 +2097,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       '12 năm kinh nghiệm Đối tác Nhân sự Chiến lược (HR Business Partner) tại các doanh nghiệp',
     teamScaleBadge: '12 năm HRBP • MBA Pro',
     highlightNote:
-      'Chủ động tìm đến Hệ thống Vùng Khánh Vân sau 12 năm làm HR Business Partner • Danh hiệu MBA Pro',
+      'Chủ động tìm đến Hệ thống Green Power sau 12 năm làm HR Business Partner • Danh hiệu MBA Pro',
     quote: 'Phương án bảo hiểm tốt nhất là phương án bảo vệ phù hợp nhất.',
     cardSummary:
-      'Mang 12 năm kinh nghiệm HR Business Partner, chị chủ động tìm đến Hệ thống Vùng Khánh Vân vì sự đồng điệu trong tinh thần chính trực và thấu hiểu con người.',
+      'Mang 12 năm kinh nghiệm HR Business Partner, chị chủ động tìm đến Hệ thống Green Power vì sự đồng điệu trong tinh thần chính trực và thấu hiểu con người.',
     editorialBio: [
-      'Sau 12 năm đảm nhiệm vai trò Đối tác Nhân sự Chiến lược (HR Business Partner) chuyên đồng hành cùng ban lãnh đạo doanh nghiệp về bài toán con người và phúc lợi, Vũ Thị Ngọc Anh chủ động tìm hiểu và lựa chọn gia nhập Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân.',
+      'Sau 12 năm đảm nhiệm vai trò Đối tác Nhân sự Chiến lược (HR Business Partner) chuyên đồng hành cùng ban lãnh đạo doanh nghiệp về bài toán con người và phúc lợi, Vũ Thị Ngọc Anh chủ động tìm hiểu và lựa chọn gia nhập Khu vực HCM69 thuộc Hệ thống Green Power.',
       'Tại đây, chị tìm thấy sự cộng hưởng trọn vẹn từ tinh thần đoàn kết, tương trợ lẫn nhau giữa các thành viên. Trên cương vị Trưởng Nhóm Kinh doanh (UM) và quản lý MBA Pro, Ngọc Anh luôn đặt sự chính trực, lắng nghe thấu cảm và lợi ích thực chất của khách hàng cũng như đội ngũ lên hàng đầu.',
     ],
     badges: [
@@ -2143,7 +2143,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Bén duyên cùng Khu vực SG168 qua sự dẫn dắt của Giám đốc Khu vực Đào Minh Phương, chị trân quý văn hóa luôn sẵn sàng nâng đỡ nhau tiến bộ mỗi ngày.',
     editorialBio: [
-      'Cơ duyên đưa Trần Xuân Mai đến với Manulife Việt Nam bắt đầu từ sự đồng hành và dẫn dắt trực tiếp của Giám đốc Khu vực Đào Minh Phương tại SG168. Bước vào môi trường làm việc của Hệ thống Vùng Khánh Vân, điều khiến Xuân Mai gắn bó sâu sắc chính là văn hóa tập thể luôn sẵn sàng giúp đỡ, sẻ chia nghiệp vụ và tiếp thêm động lực cho nhau trong từng giai đoạn làm nghề.',
+      'Cơ duyên đưa Trần Xuân Mai đến với Manulife Việt Nam bắt đầu từ sự đồng hành và dẫn dắt trực tiếp của Giám đốc Khu vực Đào Minh Phương tại SG168. Bước vào môi trường làm việc của Hệ thống Green Power, điều khiến Xuân Mai gắn bó sâu sắc chính là văn hóa tập thể luôn sẵn sàng giúp đỡ, sẻ chia nghiệp vụ và tiếp thêm động lực cho nhau trong từng giai đoạn làm nghề.',
       'Trên vai trò Trưởng Nhóm Kinh doanh (UM), Xuân Mai kiên định với mục tiêu nghiên cứu kỹ lưỡng nhu cầu thực tế để mang đến những giải pháp bảo vệ tối ưu, minh bạch và lâu dài nhất cho từng khách hàng.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Khu vực SG168'],
@@ -2175,7 +2175,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Từ 10 năm công tác ngoại giao tại Tổng Lãnh sự quán Kuwait và điều hành công ty nhập khẩu đến danh hiệu MDRT 2027 cùng khát vọng nhân rộng chuẩn mực bảo hiểm xanh, sạch tại HCM69.',
     editorialBio: [
-      'Từng có 10 năm công tác trong lĩnh vực ngoại giao tại Tổng Lãnh sự quán Kuwait và trực tiếp điều hành doanh nghiệp nhập khẩu riêng, Lê Thị Cẩm Hương hiểu rất rõ giá trị của việc chủ động chuẩn bị tài chính cho mỗi cá nhân và gia đình. Trước khi bước vào nghề, chị vốn là khách hàng tham gia hợp đồng của nhiều công ty bảo hiểm khác nhau. Chính góc nhìn khắt khe của một người mua có trải nghiệm đã đưa chị đến với Manulife và gắn bó gần 6 năm qua tại Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân.',
+      'Từng có 10 năm công tác trong lĩnh vực ngoại giao tại Tổng Lãnh sự quán Kuwait và trực tiếp điều hành doanh nghiệp nhập khẩu riêng, Lê Thị Cẩm Hương hiểu rất rõ giá trị của việc chủ động chuẩn bị tài chính cho mỗi cá nhân và gia đình. Trước khi bước vào nghề, chị vốn là khách hàng tham gia hợp đồng của nhiều công ty bảo hiểm khác nhau. Chính góc nhìn khắt khe của một người mua có trải nghiệm đã đưa chị đến với Manulife và gắn bó gần 6 năm qua tại Khu vực HCM69 thuộc Hệ thống Green Power.',
       'Điều giữ chân Cẩm Hương đồng hành dài lâu nằm ở sự chuẩn mực làm nghề với chữ Tâm đặt lên cao nhất vì quyền lợi bền vững của khách hàng. Chị liên tiếp chinh phục các cột mốc MDRT 2023, Quản lý MBA 2023, Manulife Pro Bạch Kim và sớm hoàn thành tiêu chí MDRT 2027. Với tâm niệm “Làm đúng trước, làm giỏi sau; làm người trước, làm nghề sau”, chị mong muốn vun đắp thêm nhiều thế hệ tư vấn viên làm nghề xanh, sạch, đúng chuẩn tại Việt Nam.',
     ],
     badges: ['2x MDRT (2023, 2027)', 'MBA 2023', 'Manulife Pro Bạch Kim', 'M-Star 2026'],
@@ -2224,7 +2224,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ nền tảng Quản lý Nhân sự giàu sự lắng nghe đến cột mốc 2 năm liên tiếp đạt MDRT trong môi trường hỗ trợ không vụ lợi tại HCM69.',
     editorialBio: [
       'Giai đoạn 2020–2021 với nhiều biến động của đại dịch đã khiến Hồng Khánh (khi ấy đang công tác ở vị trí Quản lý Nhân sự) nhìn nhận sâu sắc hơn về tính dự phòng trước rủi ro cuộc sống. Từ lời chia sẻ của một người đồng nghiệp cũ, chị quyết định mở lòng tìm hiểu bài bản và trao cho bản thân cơ hội bước vào lĩnh vực hoạch định bảo hiểm nhân thọ.',
-      'Trải qua các chương trình huấn luyện chuyên sâu tại Khu vực HCM69 thuộc Hệ thống Vùng Khánh Vân, chị được thuyết phục bởi sự nhiệt huyết, tinh thần nâng đỡ nhau không vụ lợi và trên hết là chữ “TÂM” làm nghề của tập thể lãnh đạo. Chị chọn nơi đây làm sự nghiệp gắn bó lâu dài và liên tiếp chinh phục các cột mốc MDRT, FC Platinum.',
+      'Trải qua các chương trình huấn luyện chuyên sâu tại Khu vực HCM69 thuộc Hệ thống Green Power, chị được thuyết phục bởi sự nhiệt huyết, tinh thần nâng đỡ nhau không vụ lợi và trên hết là chữ “TÂM” làm nghề của tập thể lãnh đạo. Chị chọn nơi đây làm sự nghiệp gắn bó lâu dài và liên tiếp chinh phục các cột mốc MDRT, FC Platinum.',
     ],
     badges: ['2x MDRT', 'FC Platinum', 'MBA', 'Quản lý Xuất sắc'],
     specialties: [
@@ -2301,7 +2301,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Thấm thía nỗi vất vả khi gia đình mất đi người trụ cột kinh tế từ những năm cấp 2, cùng 3 năm dịch thuật chuyên ngành bảo hiểm, chị theo đuổi nghề tư vấn tài chính theo chuẩn quốc tế LIMRA.',
     editorialBio: [
       'Ngay từ khi còn là một cô học trò cấp 2, Tôn Nữ Thuỳ Dương đã sớm trải qua và thấu hiểu nỗi mất mát, chật vật của một gia đình khi thiếu vắng người trụ cột kinh tế. Trải nghiệm đời thực ấy cùng 3 năm làm Biên phiên dịch trong ngành bảo hiểm phi nhân thọ khiến chị tin chắc rằng bảo hiểm nhân thọ không phải một lựa chọn xa xỉ, mà là tấm khiên thiết yếu cho những người mình yêu thương.',
-      'Thuỳ Dương lựa chọn Manulife và Khu vực SG169 thuộc Hệ thống Vùng Khánh Vân từ năm 2022 vì nền tảng đào tạo bài bản. Chị đã chinh phục danh hiệu Manulife Pro cùng Chứng nhận Quốc tế MFA do tổ chức LIMRA cấp, kiên định phục vụ khách hàng bằng sự tận tâm và chuẩn mực chuyên môn cao nhất.',
+      'Thuỳ Dương lựa chọn Manulife và Khu vực SG169 thuộc Hệ thống Green Power từ năm 2022 vì nền tảng đào tạo bài bản. Chị đã chinh phục danh hiệu Manulife Pro cùng Chứng nhận Quốc tế MFA do tổ chức LIMRA cấp, kiên định phục vụ khách hàng bằng sự tận tâm và chuẩn mực chuyên môn cao nhất.',
     ],
     badges: ['Chứng nhận MFA của LIMRA', 'Manulife Pro', '8 Năm Ngành Bảo Hiểm'],
     specialties: [
@@ -2356,7 +2356,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/tam-nguyen-3.jpg',
-        caption: 'Đồng hành cùng đội ngũ Khu vực SG169, Hệ thống Vùng Khánh Vân',
+        caption: 'Đồng hành cùng đội ngũ Khu vực SG169, Hệ thống Green Power',
       },
     ],
   },
@@ -2385,7 +2385,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Sau 18 năm làm thẩm định ngân hàng và doanh nghiệp cùng 2 lần trực tiếp nhận quyền lợi bồi thường cho gia đình, chị chọn lan tỏa giá trị bảo hiểm tử tế tại SG169.',
     editorialBio: [
       'Có nền tảng 7 năm làm Chuyên viên Thẩm định Tài chính tại ngân hàng cùng 11 năm làm việc trong môi trường doanh nghiệp, Nguyễn Thị Hương Giang vốn quen đánh giá mọi kế hoạch tài chính bằng con số thực chất. Bước ngoặt đưa chị đến với nghề tư vấn bắt đầu từ trải nghiệm rất thật của chính mình. Sau hai lần bản thân và gia đình trực tiếp nhận quyền lợi chi trả bồi thường y tế, chị cảm nhận trọn vẹn giá trị điểm tựa mà bảo hiểm mang lại đúng lúc cần nhất.',
-      'Gia nhập Khu vực SG169 thuộc Hệ thống Vùng Khánh Vân từ năm 2024 cùng Giám đốc Khu vực Huyền Trang, Hương Giang tìm thấy sự đồng điệu sâu sắc nơi tập thể đặt “Bảo hiểm tử tế” làm kim chỉ nam dẫn dắt đội nhóm, gắn liền với tôn chỉ sống tử tế và văn minh mà chị luôn gìn giữ.',
+      'Gia nhập Khu vực SG169 thuộc Hệ thống Green Power từ năm 2024 cùng Giám đốc Khu vực Huyền Trang, Hương Giang tìm thấy sự đồng điệu sâu sắc nơi tập thể đặt “Bảo hiểm tử tế” làm kim chỉ nam dẫn dắt đội nhóm, gắn liền với tôn chỉ sống tử tế và văn minh mà chị luôn gìn giữ.',
     ],
     badges: ['7 Năm Thẩm Định Ngân Hàng', '11 Năm Doanh Nghiệp', 'Khu vực SG169'],
     specialties: [

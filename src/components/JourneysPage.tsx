@@ -208,7 +208,7 @@ export const JourneysPage: React.FC = () => {
       note: prev.note
         ? prev.note
         : chapter.ctaMode === 'career'
-        ? `Tôi vừa xem chương "${chapter.milestoneBadge}" và mong muốn tìm hiểu lộ trình phát triển sự nghiệp cùng Hệ thống Vùng Khánh Vân.`
+        ? `Tôi vừa xem chương "${chapter.milestoneBadge}" và mong muốn tìm hiểu lộ trình phát triển sự nghiệp cùng Hệ thống Green Power.`
         : `Tôi vừa xem chuyên trang Những Chuyến Đi và mong muốn trao đổi thêm về kế hoạch tài chính cho gia đình.`,
     }));
     setTimeout(() => {
@@ -267,10 +267,10 @@ export const JourneysPage: React.FC = () => {
               <span className="hidden sm:inline">Trang chủ</span>
             </a>
             <a
-              href="/vung-khanh-van"
+              href="/green-power"
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/20 text-[11px] uppercase tracking-[0.14em] font-semibold rounded-[2px] transition-colors whitespace-nowrap"
             >
-              <span>Vùng Khánh Vân</span>
+              <span>Green Power</span>
             </a>
             <a
               href="#ket-noi-dong-hanh"
@@ -307,7 +307,7 @@ export const JourneysPage: React.FC = () => {
               03. Nhật ký ({JOURNEY_CHAPTERS.length})
             </a>
             <a
-              href="/vung-khanh-van"
+              href="/green-power"
               className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
             >
               Hệ thống Vùng
@@ -869,13 +869,13 @@ export const JourneysPage: React.FC = () => {
                     <span>Dành cho Ứng viên Quản lý GTF &amp; Cộng sự</span>
                   </div>
                   <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Gia nhập Hệ thống Vùng Khánh Vân (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến để xây dựng đội ngũ bền vững và cùng có mặt trên những hành trình vinh danh M-Star, MDRT năm châu.
+                    Gia nhập Hệ thống Green Power (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến để xây dựng đội ngũ bền vững và cùng có mặt trên những hành trình vinh danh M-Star, MDRT năm châu.
                   </p>
                   <a
-                    href="/vung-khanh-van"
+                    href="/green-power"
                     className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#E8D3A6] hover:text-white font-semibold pt-1"
                   >
-                    <span>Xem hồ sơ 48 Quản lý Vùng Khánh Vân</span>
+                    <span>Xem hồ sơ 48 Quản lý Green Power</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -1051,7 +1051,7 @@ export const JourneysPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Khánh Vân &amp; Những Chuyến Đi • Hệ thống Vùng Khánh Vân (Manulife Việt Nam)
+              Khánh Vân &amp; Những Chuyến Đi • Hệ thống Green Power (Manulife Việt Nam)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#9BB0A5]">
@@ -1324,7 +1324,7 @@ export const JourneysPage: React.FC = () => {
                   <div className="space-y-1 max-w-xl">
                     <span className="text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
                       {selectedChapter.ctaMode === 'career'
-                        ? 'Đồng hành sự nghiệp cùng Vùng Khánh Vân'
+                        ? 'Đồng hành sự nghiệp cùng Green Power'
                         : 'Hoạch định điểm tựa bình an cho gia đình'}
                     </span>
                     <p className="font-serif text-lg sm:text-xl text-white leading-snug">

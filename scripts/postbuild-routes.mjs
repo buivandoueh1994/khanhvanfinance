@@ -12,7 +12,7 @@ const baseWithoutHeroPreload = baseHtml.replace(
 const leaderFormHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -24,19 +24,19 @@ const leaderFormHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta name="description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Green Power (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân" />'
+    '<meta property="og:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân" />'
+    '<meta name="twitter:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Vùng Khánh Vân (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta property="og:description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Green Power (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
@@ -63,31 +63,31 @@ for (const page of pages) {
 const previewHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
-    '<link rel="canonical" href="https://www.khanhvanfinance.com/vung-khanh-van" />'
+    '<link rel="canonical" href="https://www.khanhvanfinance.com/green-power" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:url"[^>]*>/,
-    '<meta property="og:url" content="https://www.khanhvanfinance.com/vung-khanh-van" />'
+    '<meta property="og:url" content="https://www.khanhvanfinance.com/green-power" />'
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
+    '<meta name="description" content="Khám phá Hệ thống Green Power tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý" />'
+    '<meta property="og:title" content="Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý" />'
+    '<meta name="twitter:title" content="Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá Hệ thống Vùng Khánh Vân tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
+    '<meta property="og:description" content="Khám phá Hệ thống Green Power tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
@@ -98,6 +98,8 @@ const previewHtml = baseWithoutHeroPreload
     '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/BanDieuHanh_ChiVanCungTapTheQuanLy_OG.jpg" />'
   );
 
+fs.writeFileSync(path.join(distDir, 'green-power.html'), previewHtml, 'utf8');
+fs.writeFileSync(path.join(distDir, 'vung-green-power.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'vung-khanh-van.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtml, 'utf8');
 
@@ -128,7 +130,7 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá 11 chương ký ức, 118 khung hình chọn lọc và 7 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Vùng Khánh Vân." />'
+    '<meta property="og:description" content="Khám phá 11 chương ký ức, 118 khung hình chọn lọc và 7 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,

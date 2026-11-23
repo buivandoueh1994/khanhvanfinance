@@ -364,7 +364,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
                 KHÁNH VÂN
               </span>
               <span className="hidden sm:inline text-xs text-[#56605B] ml-2">
-                • Tổng hợp hồ sơ quản lý Hệ thống Vùng Khánh Vân
+                • Tổng hợp hồ sơ quản lý Hệ thống Green Power
               </span>
             </div>
           </div>
@@ -391,7 +391,7 @@ const LeaderAdminDashboard: React.FC<{ initialKey: string }> = ({ initialKey }) 
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#E4E1D8]">
           <div>
             <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium block mb-1.5">
-              BẢNG THEO DÕI NỘI BỘ • HỆ THỐNG VÙNG KHÁNH VÂN
+              BẢNG THEO DÕI NỘI BỘ • HỆ THỐNG GREEN POWER
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl text-[#181F1C]">
               Danh sách hồ sơ quản lý đã gửi ({profiles.length})
@@ -638,7 +638,7 @@ export const LeaderOnboardingPage: React.FC = () => {
 
   useEffect(() => {
     document.title =
-      'Hồ sơ Đội ngũ Quản lý | Hệ thống Vùng Khánh Vân';
+      'Hồ sơ Đội ngũ Quản lý | Hệ thống Green Power';
   }, []);
 
   const updateField = <K extends keyof LeaderProfileData>(
@@ -895,7 +895,7 @@ export const LeaderOnboardingPage: React.FC = () => {
               <span>Trang chủ Khánh Vân</span>
             </a>
             <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
-              HỆ THỐNG VÙNG KHÁNH VÂN
+              HỆ THỐNG GREEN POWER
             </span>
           </div>
         </header>
@@ -914,7 +914,7 @@ export const LeaderOnboardingPage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#28322D] max-w-xl mx-auto leading-relaxed">
               Thông tin và hình ảnh chất lượng cao của bạn đã được lưu vào hệ thống biên tập của chuyên trang{' '}
               <span className="font-medium text-[#0A3622]">
-                “Hệ thống Vùng Khánh Vân”
+                “Hệ thống Green Power”
               </span>
               . Dưới đây là bản xem trước thẻ hồ sơ của bạn:
             </p>
@@ -974,7 +974,7 @@ export const LeaderOnboardingPage: React.FC = () => {
             </span>
           </a>
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium bg-[#EBF2EE] px-2.5 py-1 rounded-[2px]">
-            HỆ THỐNG VÙNG KHÁNH VÂN • HỒ SƠ QUẢN LÝ
+            HỆ THỐNG GREEN POWER • HỒ SƠ QUẢN LÝ
           </span>
         </div>
       </header>
@@ -988,19 +988,19 @@ export const LeaderOnboardingPage: React.FC = () => {
             </span>
             <h1 className="font-serif text-3xl sm:text-[42px] leading-[1.15] text-[#181F1C] font-normal">
               Hồ sơ thương hiệu quản lý{' '}
-              <span className="italic text-[#0A3622]">Hệ thống Vùng Khánh Vân</span>
+              <span className="italic text-[#0A3622]">Hệ thống Green Power</span>
             </h1>
           </div>
 
           <figure className="rounded-[4px] overflow-hidden border border-[#E4E1D8] bg-white shadow-[0_14px_34px_-22px_rgba(10,54,34,0.25)]">
             <img decoding="async"
               src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-              alt="Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân tại Manulife Việt Nam"
+              alt="Khánh Vân cùng Ban Điều Hành Hệ thống Green Power tại Manulife Việt Nam"
               className="w-full aspect-[16/10] object-cover object-center"
             />
             <figcaption className="px-4 py-2.5 bg-[#FAF9F5] border-t border-[#ECE9E0] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#56605B]">
               <span className="font-medium text-[#0A3622] uppercase tracking-[0.16em]">
-                Ban Điều Hành • Hệ thống Vùng Khánh Vân
+                Ban Điều Hành • Hệ thống Green Power
               </span>
               <span className="italic font-serif text-sm text-[#28322D]">
                 “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
@@ -1010,12 +1010,12 @@ export const LeaderOnboardingPage: React.FC = () => {
 
           <div className="bg-white border border-[#E4E1D8] border-l-[3px] border-l-[#0A3622] p-5 sm:p-6 rounded-[3px] space-y-2.5 shadow-[0_10px_30px_-20px_rgba(10,54,34,0.18)]">
             <p className="text-sm text-[#181F1C] font-medium">
-              Thân gửi các anh chị em quản lý trong Hệ thống Vùng Khánh Vân,
+              Thân gửi các anh chị em quản lý trong Hệ thống Green Power,
             </p>
             <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed">
               Để ra mắt chuyên trang{' '}
               <strong className="font-medium text-[#0A3622]">
-                “Hệ thống Vùng Khánh Vân là ai”
+                “Hệ thống Green Power là ai”
               </strong>{' '}
               trên website chính thức{' '}
               <span className="underline decoration-[#B8975A] underline-offset-2">
@@ -1481,7 +1481,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                 04 / CÂU CHUYỆN ĐỒNG HÀNH & CHÂM NGÔN LÀM NGHỀ
               </span>
               <h2 className="font-serif text-2xl text-[#181F1C] mt-0.5">
-                Dấu ấn cá nhân của bạn tại Hệ thống Vùng Khánh Vân
+                Dấu ấn cá nhân của bạn tại Hệ thống Green Power
               </h2>
             </div>
 

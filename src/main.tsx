@@ -41,9 +41,12 @@ function RootRouter() {
   }
 
   const isRegionalPreview =
+    pathname === '/green-power' ||
+    pathname === '/vung-green-power' ||
     pathname === '/vung-khanh-van' ||
     pathname === '/xem-truoc-vung-khanh-van' ||
-    params.get('preview') === 'vung-khanh-van';
+    params.get('preview') === 'vung-khanh-van' ||
+    params.get('preview') === 'green-power';
 
   if (isRegionalPreview) {
     return (

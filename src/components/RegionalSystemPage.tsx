@@ -94,7 +94,7 @@ const SYSTEM_PILLARS = [
     number: '03',
     icon: Compass,
     title: 'Luôn Có Hệ Thống Đồng Hành Phía Sau',
-    desc: 'Mỗi gia đình khách hàng không làm việc với một tư vấn viên đơn lẻ, mà luôn có đội ngũ quản lý nhiều tầng của Vùng Khánh Vân cùng đồng hành và giám sát chất lượng tại Manulife Việt Nam.',
+    desc: 'Mỗi gia đình khách hàng không làm việc với một tư vấn viên đơn lẻ, mà luôn có đội ngũ quản lý nhiều tầng của Green Power cùng đồng hành và giám sát chất lượng tại Manulife Việt Nam.',
   },
 ];
 
@@ -131,7 +131,7 @@ export const RegionalSystemPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = 'Hệ thống Vùng Khánh Vân | Ban Điều Hành & Đội ngũ Quản lý';
+    document.title = 'Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý';
     window.scrollTo(0, 0);
   }, []);
 
@@ -311,7 +311,7 @@ export const RegionalSystemPage: React.FC = () => {
       ...prev,
       note: prev.note
         ? prev.note
-        : `Tôi mong muốn được tư vấn và trao đổi cùng Hệ thống Vùng Khánh Vân (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
+        : `Tôi mong muốn được tư vấn và trao đổi cùng Hệ thống Green Power (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
     }));
     setTimeout(() => {
       const el = document.getElementById('ket-noi-vung');
@@ -346,10 +346,10 @@ export const RegionalSystemPage: React.FC = () => {
                 KHÁNH VÂN
               </span>
               <span className="sm:hidden text-[9px] uppercase tracking-[0.12em] text-[#56605B] font-medium mt-1 truncate">
-                Vùng Khánh Vân • Manulife
+                Green Power • Manulife
               </span>
               <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
-                Hệ thống Vùng • Manulife Việt Nam
+                Hệ thống Green Power • Manulife Việt Nam
               </span>
             </div>
           </a>
@@ -446,12 +446,12 @@ export const RegionalSystemPage: React.FC = () => {
             </div>
 
             <h1 className="font-serif text-[32px] sm:text-6xl lg:text-[66px] leading-[1.12] sm:leading-[1.06] font-medium text-[#181F1C] tracking-[-0.01em]">
-              Hệ thống Vùng{' '}
-              <span className="italic text-[#0A3622]">Khánh Vân</span>
+              Hệ thống{' '}
+              <span className="italic text-[#0A3622]">Green Power</span>
             </h1>
 
             <p className="text-[14.5px] sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl">
-              Hình thành từ năm 2018 trên nền tảng kỷ luật quản trị tài sản của ngân hàng quốc tế, Vùng Khánh Vân hôm nay có hơn 500 cộng sự cùng 64 quản lý kinh doanh tại 4 khu vực, chung một kim chỉ nam:{' '}
+              Hình thành từ năm 2018 trên nền tảng kỷ luật quản trị tài sản của ngân hàng quốc tế, Green Power hôm nay có hơn 500 cộng sự cùng 64 quản lý kinh doanh tại 4 khu vực, chung một kim chỉ nam:{' '}
               <span className="font-medium text-[#0A3622] italic font-serif text-[17px] sm:text-2xl block sm:inline mt-1 sm:mt-0">
                 “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
@@ -464,7 +464,7 @@ export const RegionalSystemPage: React.FC = () => {
               onClick={() =>
                 setLightbox({
                   src: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
-                  tag: 'BAN ĐIỀU HÀNH HỆ THỐNG VÙNG KHÁNH VÂN',
+                  tag: 'BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER',
                   title:
                     'Giám đốc Vùng Cấp cao Khánh Vân cùng tập thể quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
@@ -478,7 +478,7 @@ export const RegionalSystemPage: React.FC = () => {
                   fetchPriority="high"
                   decoding="async"
                   src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Vùng Khánh Vân"
+                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Green Power"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
                 />
                 <span className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/55 backdrop-blur-sm border border-white/25 rounded-[2px] text-[9.5px] sm:text-[10px] uppercase tracking-[0.14em] text-[#FAF9F5]">
@@ -491,7 +491,7 @@ export const RegionalSystemPage: React.FC = () => {
               <figcaption className="bg-[#0A3622] text-[#FAF9F5] px-4 py-3.5 sm:px-7 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 border-b border-[#0A3622]">
                 <div>
                   <span className="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold block">
-                    BAN ĐIỀU HÀNH HỆ THỐNG VÙNG KHÁNH VÂN
+                    BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER
                   </span>
                   <p className="font-serif italic text-[14.5px] sm:text-xl text-[#FAF9F5] leading-snug mt-0.5">
                     Thế hệ quản lý bản lĩnh, chuyên môn sâu và làm nghề bài bản tại Manulife Việt Nam
@@ -566,13 +566,13 @@ export const RegionalSystemPage: React.FC = () => {
         className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-20 bg-[#F2EFE9]/60 border-b border-[#E4E1D8]"
       >
         <div className="max-w-[1220px] w-full min-w-0 mx-auto px-4 sm:px-8 space-y-10 sm:space-y-14">
-          {/* 2A. SƠ ĐỒ TỔ CHỨC HỆ THỐNG VÙNG KHÁNH VÂN (Nằm ngay đầu Chương 02) */}
+          {/* 2A. SƠ ĐỒ TỔ CHỨC HỆ THỐNG GREEN POWER (Nằm ngay đầu Chương 02) */}
           <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 lg:p-7 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-5 sm:space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-4 sm:pb-5 border-b border-[#ECE9E0]">
               <div className="space-y-1">
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold">
                   <GitBranch className="w-3.5 h-3.5 shrink-0" />
-                  <span>02 / SƠ ĐỒ TỔ CHỨC HỆ THỐNG VÙNG KHÁNH VÂN</span>
+                  <span>02 / SƠ ĐỒ TỔ CHỨC HỆ THỐNG GREEN POWER</span>
                 </span>
                 <h2 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold leading-snug">
                   Cấu trúc điều hành từ Giám đốc Vùng đến các nhánh chủ lực
@@ -1157,7 +1157,7 @@ export const RegionalSystemPage: React.FC = () => {
 
             <div className="space-y-2.5">
               <div className="flex sm:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
-                <span>4 khu vực trực thuộc Vùng Khánh Vân</span>
+                <span>4 khu vực trực thuộc Green Power</span>
                 <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
                   <span>Vuốt ngang</span>
                   <ArrowRight className="w-3 h-3" />
@@ -1506,7 +1506,7 @@ export const RegionalSystemPage: React.FC = () => {
                 Không tìm thấy hồ sơ phù hợp với bộ lọc hiện tại
               </p>
               <p className="text-xs text-[#56605B]">
-                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} hồ sơ quản lý của Vùng Khánh Vân.
+                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} hồ sơ quản lý của Green Power.
               </p>
               <button
                 type="button"
@@ -1853,7 +1853,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </span>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
                   Ba trụ cột làm nên uy tín của{' '}
-                  <span className="italic text-[#0A3622]">Vùng Khánh Vân</span>
+                  <span className="italic text-[#0A3622]">Green Power</span>
                 </h3>
               </div>
 
@@ -1902,7 +1902,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Tại Hệ thống Vùng Khánh Vân, không ai phải bước đi một mình. Từ phòng huấn luyện nghiệp vụ mỗi sáng đến những buổi rà soát hồ sơ thực chiến, tay nghề được bồi đắp mỗi ngày.
+                Tại Hệ thống Green Power, không ai phải bước đi một mình. Từ phòng huấn luyện nghiệp vụ mỗi sáng đến những buổi rà soát hồ sơ thực chiến, tay nghề được bồi đắp mỗi ngày.
               </p>
             </div>
 
@@ -1978,14 +1978,14 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="space-y-2.5 sm:space-y-3">
                 <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#E8D3A6] font-semibold">
                   <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>05 / ĐỒNG HÀNH CÙNG HỆ THỐNG VÙNG KHÁNH VÂN</span>
+                  <span>05 / ĐỒNG HÀNH CÙNG HỆ THỐNG GREEN POWER</span>
                 </span>
                 <h2 className="font-serif text-[26px] sm:text-5xl font-medium leading-tight text-white">
                   Điểm tựa tài chính gia đình, hoặc một{' '}
                   <span className="italic text-[#E8D3A6]">hành trình sự nghiệp mới</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D7E2DC] leading-relaxed">
-                  Mọi cuộc trò chuyện tại Vùng Khánh Vân đều bắt đầu bằng sự lắng nghe, không áp lực. Thông tin của bạn được bảo mật tuyệt đối. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
+                  Mọi cuộc trò chuyện tại Green Power đều bắt đầu bằng sự lắng nghe, không áp lực. Thông tin của bạn được bảo mật tuyệt đối. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
                 </p>
               </div>
 
@@ -2083,7 +2083,7 @@ export const RegionalSystemPage: React.FC = () => {
                       source: 'contact_form',
                       topic: formData.topic,
                       phone: formData.phone,
-                      textContext: `[Trang Vùng Khánh Vân] ${formData.fullName} ${formData.topic} ${formData.note}`,
+                      textContext: `[Trang Green Power] ${formData.fullName} ${formData.topic} ${formData.note}`,
                     });
                     fetch('/api/lead', {
                       method: 'POST',
@@ -2094,7 +2094,7 @@ export const RegionalSystemPage: React.FC = () => {
                         email: formData.email,
                         topic: formData.topic,
                         background: formData.background,
-                        note: `[Từ trang Hệ thống Vùng Khánh Vân] ${formData.note}`.trim(),
+                        note: `[Từ trang Hệ thống Green Power] ${formData.note}`.trim(),
                         source: 'contact_form',
                       }),
                     }).catch(() => {});
@@ -2202,7 +2202,7 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Hệ thống Vùng Khánh Vân • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
+              Hệ thống Green Power • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8FA398]">
@@ -2610,7 +2610,7 @@ export const RegionalSystemPage: React.FC = () => {
                         onClick={() => handleConnectFromLeader(selectedLeader)}
                         className="inline-flex items-center gap-2 px-5 py-3 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors cursor-pointer"
                       >
-                        <span>Đặt lịch trò chuyện cùng Vùng Khánh Vân</span>
+                        <span>Đặt lịch trò chuyện cùng Green Power</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
                     </div>

@@ -972,7 +972,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Tỷ lệ tái tục 97% là minh chứng cho chất lượng dịch vụ trong Hệ thống Vùng Khánh Vân.",
+    "summary": "Tỷ lệ tái tục 97% là minh chứng cho chất lượng dịch vụ trong Hệ thống Green Power.",
     "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
     "thumbnail": "/images/reels/1575825077173204.jpg"
   },
