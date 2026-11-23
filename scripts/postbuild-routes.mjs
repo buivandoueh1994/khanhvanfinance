@@ -104,7 +104,7 @@ fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtm
 const journeysHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Khánh Vân &amp; Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ &amp; Tổ ấm</title>'
+    '<title>Khánh Vân &amp; Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ &amp; Tổ ấm</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
