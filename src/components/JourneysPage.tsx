@@ -418,7 +418,7 @@ export const JourneysPage: React.FC = () => {
                   className="col-span-7 group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] aspect-[3/4] text-left cursor-pointer shadow-[0_18px_45px_-22px_rgba(10,54,34,0.35)]"
                 >
                   <img
-                    src="/images/journeys/nhat-ban-2026/01-kv_268.jpg"
+                    src="/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2"
                     alt="Chị Khánh Vân dưới chân núi Phú Sĩ trong chuyến M-Star Nhật Bản 2026"
                     className="w-full h-full object-cover object-[50%_26%] group-hover:scale-[1.03] transition-transform duration-700"
                   />
@@ -443,7 +443,7 @@ export const JourneysPage: React.FC = () => {
                     className="group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] flex-1 min-h-[135px] text-left cursor-pointer"
                   >
                     <img
-                      src="/images/journeys/ao-duc-2024/01-kv_226.jpg"
+                      src="/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2"
                       alt="Hồ Hallstatt trong hành trình M-Star Châu Âu"
                       className="w-full h-full object-cover object-[50%_40%] group-hover:scale-[1.04] transition-transform duration-700"
                     />
@@ -468,7 +468,7 @@ export const JourneysPage: React.FC = () => {
                     className="group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] flex-1 min-h-[135px] text-left cursor-pointer"
                   >
                     <img
-                      src="/images/journeys/yen-tu-vinh-danh-2025/02-kv_259.jpg"
+                      src="/images/journeys/yen-tu-vinh-danh-2025/02-kv_259.jpg?v=2"
                       alt="Vinh danh Top 1 DRD+ tại Yên Tử"
                       className="w-full h-full object-cover object-[50%_25%] group-hover:scale-[1.04] transition-transform duration-700"
                     />

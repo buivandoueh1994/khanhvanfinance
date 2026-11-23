@@ -99,7 +99,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đứng trước đỉnh Phú Sĩ phủ tuyết trắng giữa bầu trời quang đãng, Vân càng thấm thía rằng những giá trị vững chãi nhất luôn được bồi đắp từ kỷ luật thầm lặng mỗi ngày.",
     "companions": "Ông xã & Đội ngũ Quản lý đạt chuẩn M-Star",
     "milestoneBadge": "M-Star Nhật Bản 2026",
-    "heroImage": "/images/journeys/nhat-ban-2026/01-kv_268.jpg",
+    "heroImage": "/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2",
     "heroObjectPosition": "50% 28%",
     "photoCount": 11,
     "ctaMode": "career",
@@ -111,7 +111,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_268",
-        "src": "/images/journeys/nhat-ban-2026/01-kv_268.jpg",
+        "src": "/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -121,7 +121,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_269",
-        "src": "/images/journeys/nhat-ban-2026/02-kv_269.jpg",
+        "src": "/images/journeys/nhat-ban-2026/02-kv_269.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -131,7 +131,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_270",
-        "src": "/images/journeys/nhat-ban-2026/03-kv_270.jpg",
+        "src": "/images/journeys/nhat-ban-2026/03-kv_270.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -141,7 +141,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_271",
-        "src": "/images/journeys/nhat-ban-2026/04-kv_271.jpg",
+        "src": "/images/journeys/nhat-ban-2026/04-kv_271.jpg?v=2",
         "width": 986,
         "height": 1280,
         "orientation": "portrait",
@@ -151,7 +151,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_272",
-        "src": "/images/journeys/nhat-ban-2026/05-kv_272.jpg",
+        "src": "/images/journeys/nhat-ban-2026/05-kv_272.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -161,7 +161,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_273",
-        "src": "/images/journeys/nhat-ban-2026/06-kv_273.jpg",
+        "src": "/images/journeys/nhat-ban-2026/06-kv_273.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -171,7 +171,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_274",
-        "src": "/images/journeys/nhat-ban-2026/07-kv_274.jpg",
+        "src": "/images/journeys/nhat-ban-2026/07-kv_274.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -181,7 +181,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_275",
-        "src": "/images/journeys/nhat-ban-2026/08-kv_275.jpg",
+        "src": "/images/journeys/nhat-ban-2026/08-kv_275.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -191,7 +191,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_276",
-        "src": "/images/journeys/nhat-ban-2026/09-kv_276.jpg",
+        "src": "/images/journeys/nhat-ban-2026/09-kv_276.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -201,7 +201,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_277",
-        "src": "/images/journeys/nhat-ban-2026/10-kv_277.jpg",
+        "src": "/images/journeys/nhat-ban-2026/10-kv_277.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -211,7 +211,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_278",
-        "src": "/images/journeys/nhat-ban-2026/11-kv_278.jpg",
+        "src": "/images/journeys/nhat-ban-2026/11-kv_278.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -221,8 +221,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/nhat-ban-2026.mp4",
-      "poster": "/videos/journeys/nhat-ban-2026-poster.jpg",
+      "src": "/videos/journeys/nhat-ban-2026.mp4?v=2",
+      "poster": "/videos/journeys/nhat-ban-2026-poster.jpg?v=2",
       "durationLabel": "0:27",
       "title": "Khoảnh khắc dưới chân núi Phú Sĩ & nhịp sống Tokyo",
       "caption": "Trọn vẹn bầu trời xanh trong hiếm có tại núi Phú Sĩ và niềm vui của các chị em quản lý trong hành trình M-Star Nhật Bản 2026."
@@ -241,7 +241,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Chiếc cúp khiến Vân tự hào nhất là danh hiệu Top 1 DRD+ về tỷ lệ duy trì hợp đồng năm thứ hai, bởi đó là thước đo trung thực nhất cho niềm tin của khách hàng.",
     "companions": "Ban Lãnh đạo Manulife & Đội ngũ Quản lý cấp cao",
     "milestoneBadge": "Top 1 DRD+ Toàn Quốc",
-    "heroImage": "/images/journeys/yen-tu-vinh-danh-2025/01-kv_258.jpg",
+    "heroImage": "/images/journeys/yen-tu-vinh-danh-2025/01-kv_258.jpg?v=2",
     "heroObjectPosition": "50% 35%",
     "photoCount": 10,
     "ctaMode": "career",
@@ -253,7 +253,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_258",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/01-kv_258.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/01-kv_258.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -263,7 +263,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_259",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/02-kv_259.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/02-kv_259.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -273,7 +273,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_260",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/03-kv_260.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/03-kv_260.jpg?v=2",
         "width": 853,
         "height": 1280,
         "orientation": "portrait",
@@ -283,7 +283,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_261",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/04-kv_261.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/04-kv_261.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -293,7 +293,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_262",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/05-kv_262.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/05-kv_262.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -303,7 +303,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_263",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/06-kv_263.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/06-kv_263.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -313,7 +313,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_264",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/07-kv_264.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/07-kv_264.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -323,7 +323,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_265",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/08-kv_265.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/08-kv_265.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -333,7 +333,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_266",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/09-kv_266.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/09-kv_266.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -343,7 +343,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_267",
-        "src": "/images/journeys/yen-tu-vinh-danh-2025/10-kv_267.jpg",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/10-kv_267.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -353,8 +353,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/yen-tu-vinh-danh-2025.mp4",
-      "poster": "/videos/journeys/yen-tu-vinh-danh-2025-poster.jpg",
+      "src": "/videos/journeys/yen-tu-vinh-danh-2025.mp4?v=2",
+      "poster": "/videos/journeys/yen-tu-vinh-danh-2025-poster.jpg?v=2",
       "durationLabel": "0:29",
       "title": "Giây phút nhận cúp Top 1 DRD+ trên sân khấu ManPower Awards XXVII",
       "caption": "Từ khoảng sân tĩnh mặc của Legacy Yên Tử đến ánh đèn sân khấu vinh danh Top 1 DRD+ Quản lý Cấp cao dẫn đầu tỷ lệ duy trì hợp đồng."
@@ -373,7 +373,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đi giữa thành phố được xây dựng trên những triền núi dốc đứng, Vân nhận ra không có địa hình nào cản được bước chân khi con người có đủ khát vọng và tư duy mở.",
     "companions": "Đội ngũ Quản lý Vùng Khánh Vân đạt chuẩn M-Star Giữa Năm",
     "milestoneBadge": "M-Star Giữa Năm 2026",
-    "heroImage": "/images/journeys/trung-khanh-2026/01-kv_279.jpg",
+    "heroImage": "/images/journeys/trung-khanh-2026/01-kv_279.jpg?v=2",
     "heroObjectPosition": "50% 30%",
     "photoCount": 10,
     "ctaMode": "career",
@@ -385,7 +385,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_279",
-        "src": "/images/journeys/trung-khanh-2026/01-kv_279.jpg",
+        "src": "/images/journeys/trung-khanh-2026/01-kv_279.jpg?v=2",
         "width": 853,
         "height": 1280,
         "orientation": "portrait",
@@ -395,7 +395,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_280",
-        "src": "/images/journeys/trung-khanh-2026/02-kv_280.jpg",
+        "src": "/images/journeys/trung-khanh-2026/02-kv_280.jpg?v=2",
         "width": 853,
         "height": 1280,
         "orientation": "portrait",
@@ -405,7 +405,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_281",
-        "src": "/images/journeys/trung-khanh-2026/03-kv_281.jpg",
+        "src": "/images/journeys/trung-khanh-2026/03-kv_281.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -415,7 +415,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_282",
-        "src": "/images/journeys/trung-khanh-2026/04-kv_282.jpg",
+        "src": "/images/journeys/trung-khanh-2026/04-kv_282.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -425,7 +425,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_283",
-        "src": "/images/journeys/trung-khanh-2026/05-kv_283.jpg",
+        "src": "/images/journeys/trung-khanh-2026/05-kv_283.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -435,7 +435,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_284",
-        "src": "/images/journeys/trung-khanh-2026/06-kv_284.jpg",
+        "src": "/images/journeys/trung-khanh-2026/06-kv_284.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -445,7 +445,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_285",
-        "src": "/images/journeys/trung-khanh-2026/07-kv_285.jpg",
+        "src": "/images/journeys/trung-khanh-2026/07-kv_285.jpg?v=2",
         "width": 1280,
         "height": 1011,
         "orientation": "landscape",
@@ -455,7 +455,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_286",
-        "src": "/images/journeys/trung-khanh-2026/08-kv_286.jpg",
+        "src": "/images/journeys/trung-khanh-2026/08-kv_286.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -465,7 +465,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_287",
-        "src": "/images/journeys/trung-khanh-2026/09-kv_287.jpg",
+        "src": "/images/journeys/trung-khanh-2026/09-kv_287.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -475,7 +475,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_288",
-        "src": "/images/journeys/trung-khanh-2026/10-kv_288.jpg",
+        "src": "/images/journeys/trung-khanh-2026/10-kv_288.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -485,8 +485,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/trung-khanh-2026.mp4",
-      "poster": "/videos/journeys/trung-khanh-2026-poster.jpg",
+      "src": "/videos/journeys/trung-khanh-2026.mp4?v=2",
+      "poster": "/videos/journeys/trung-khanh-2026-poster.jpg?v=2",
       "durationLabel": "0:25",
       "title": "Cổ trấn Từ Khí Khẩu, trà đạo và đêm nghệ thuật biến diện Trùng Khánh",
       "caption": "Nhịp điệu giao thoa giữa văn hóa ngàn năm và năng lượng hiện đại trong chuyến M-Star Giữa Năm 2026 tại Trùng Khánh."
@@ -505,7 +505,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Có những khoảnh khắc đứng bên mặt hồ Hallstatt phẳng lặng cùng người bạn đời, mọi vất vả của những năm tháng gây dựng sự nghiệp bỗng hóa thành sự bình yên trọn vẹn.",
     "companions": "Ông xã & Đoàn M-Star Manulife Việt Nam",
     "milestoneBadge": "M-Star Châu Âu 2024",
-    "heroImage": "/images/journeys/ao-duc-2024/01-kv_226.jpg",
+    "heroImage": "/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2",
     "heroObjectPosition": "50% 42%",
     "photoCount": 12,
     "ctaMode": "family",
@@ -517,7 +517,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_226",
-        "src": "/images/journeys/ao-duc-2024/01-kv_226.jpg",
+        "src": "/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -527,7 +527,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_227",
-        "src": "/images/journeys/ao-duc-2024/02-kv_227.jpg",
+        "src": "/images/journeys/ao-duc-2024/02-kv_227.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -537,7 +537,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_228",
-        "src": "/images/journeys/ao-duc-2024/03-kv_228.jpg",
+        "src": "/images/journeys/ao-duc-2024/03-kv_228.jpg?v=2",
         "width": 1280,
         "height": 815,
         "orientation": "landscape",
@@ -547,7 +547,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_229",
-        "src": "/images/journeys/ao-duc-2024/04-kv_229.jpg",
+        "src": "/images/journeys/ao-duc-2024/04-kv_229.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -557,7 +557,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_230",
-        "src": "/images/journeys/ao-duc-2024/05-kv_230.jpg",
+        "src": "/images/journeys/ao-duc-2024/05-kv_230.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -567,7 +567,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_231",
-        "src": "/images/journeys/ao-duc-2024/06-kv_231.jpg",
+        "src": "/images/journeys/ao-duc-2024/06-kv_231.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -577,7 +577,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_232",
-        "src": "/images/journeys/ao-duc-2024/07-kv_232.jpg",
+        "src": "/images/journeys/ao-duc-2024/07-kv_232.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -587,7 +587,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_233",
-        "src": "/images/journeys/ao-duc-2024/08-kv_233.jpg",
+        "src": "/images/journeys/ao-duc-2024/08-kv_233.jpg?v=2",
         "width": 878,
         "height": 1280,
         "orientation": "portrait",
@@ -597,7 +597,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_234",
-        "src": "/images/journeys/ao-duc-2024/09-kv_234.jpg",
+        "src": "/images/journeys/ao-duc-2024/09-kv_234.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -607,7 +607,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_235",
-        "src": "/images/journeys/ao-duc-2024/10-kv_235.jpg",
+        "src": "/images/journeys/ao-duc-2024/10-kv_235.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -617,7 +617,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_236",
-        "src": "/images/journeys/ao-duc-2024/11-kv_236.jpg",
+        "src": "/images/journeys/ao-duc-2024/11-kv_236.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -627,7 +627,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_237",
-        "src": "/images/journeys/ao-duc-2024/12-kv_237.jpg",
+        "src": "/images/journeys/ao-duc-2024/12-kv_237.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -637,8 +637,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/ao-duc-2024.mp4",
-      "poster": "/videos/journeys/ao-duc-2024-poster.jpg",
+      "src": "/videos/journeys/ao-duc-2024.mp4?v=2",
+      "poster": "/videos/journeys/ao-duc-2024-poster.jpg?v=2",
       "durationLabel": "0:25",
       "title": "Dạo bước phố cổ Salzburg & nắng thu Munich",
       "caption": "Nhịp bước thảnh thơi trên con phố cổ Getreidegasse tại Salzburg (Áo) và hàng cây ngập nắng mùa thu nước Đức."
@@ -657,7 +657,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Phần thưởng quý giá nhất của những chuyến vinh danh không nằm ở tấm vé hạng sang, mà là ánh mắt háo hức của con khi được cùng cha mẹ bước ra thế giới.",
     "companions": "Ông xã, con gái Minh Châu & Đội ngũ Quản lý M-Star",
     "milestoneBadge": "M-Star Thượng Hải 2025",
-    "heroImage": "/images/journeys/thuong-hai-2025/01-kv_248.jpg",
+    "heroImage": "/images/journeys/thuong-hai-2025/01-kv_248.jpg?v=2",
     "heroObjectPosition": "50% 25%",
     "photoCount": 10,
     "ctaMode": "family",
@@ -669,7 +669,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_248",
-        "src": "/images/journeys/thuong-hai-2025/01-kv_248.jpg",
+        "src": "/images/journeys/thuong-hai-2025/01-kv_248.jpg?v=2",
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
@@ -679,7 +679,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_249",
-        "src": "/images/journeys/thuong-hai-2025/02-kv_249.jpg",
+        "src": "/images/journeys/thuong-hai-2025/02-kv_249.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -689,7 +689,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_250",
-        "src": "/images/journeys/thuong-hai-2025/03-kv_250.jpg",
+        "src": "/images/journeys/thuong-hai-2025/03-kv_250.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -699,7 +699,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_251",
-        "src": "/images/journeys/thuong-hai-2025/04-kv_251.jpg",
+        "src": "/images/journeys/thuong-hai-2025/04-kv_251.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -709,7 +709,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_252",
-        "src": "/images/journeys/thuong-hai-2025/05-kv_252.jpg",
+        "src": "/images/journeys/thuong-hai-2025/05-kv_252.jpg?v=2",
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
@@ -719,7 +719,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_253",
-        "src": "/images/journeys/thuong-hai-2025/06-kv_253.jpg",
+        "src": "/images/journeys/thuong-hai-2025/06-kv_253.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -729,7 +729,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_254",
-        "src": "/images/journeys/thuong-hai-2025/07-kv_254.jpg",
+        "src": "/images/journeys/thuong-hai-2025/07-kv_254.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -739,7 +739,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_255",
-        "src": "/images/journeys/thuong-hai-2025/08-kv_255.jpg",
+        "src": "/images/journeys/thuong-hai-2025/08-kv_255.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -749,7 +749,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_256",
-        "src": "/images/journeys/thuong-hai-2025/09-kv_256.jpg",
+        "src": "/images/journeys/thuong-hai-2025/09-kv_256.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -759,7 +759,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_257",
-        "src": "/images/journeys/thuong-hai-2025/10-kv_257.jpg",
+        "src": "/images/journeys/thuong-hai-2025/10-kv_257.jpg?v=2",
         "width": 1280,
         "height": 720,
         "orientation": "landscape",
@@ -769,8 +769,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/thuong-hai-2025.mp4",
-      "poster": "/videos/journeys/thuong-hai-2025-poster.jpg",
+      "src": "/videos/journeys/thuong-hai-2025.mp4?v=2",
+      "poster": "/videos/journeys/thuong-hai-2025-poster.jpg?v=2",
       "durationLabel": "0:26",
       "title": "Nắng thu Thượng Hải & cổ trấn sông nước Chu Gia Giác",
       "caption": "Vẻ đẹp cổ kính của khu phố cổ Thượng Hải và dòng kênh xanh bình yên tại cổ trấn ngàn năm Chu Gia Giác."
@@ -789,19 +789,19 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Sự nghiệp quản lý tài chính không phải là một cú nước rút ngắn hạn, mà giống hệt một cuộc chạy đường dài cần hơi thở đều đặn và những người đồng đội chạy cùng nhịp.",
     "companions": "Tập thể Quản lý Hệ thống Vùng Khánh Vân",
     "milestoneBadge": "Kick-off Giữa Năm 2026",
-    "heroImage": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg",
+    "heroImage": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg?v=2",
     "heroObjectPosition": "50% 24%",
     "photoCount": 8,
     "ctaMode": "career",
     "story": [
       "Một sự trùng hợp thật thú vị trong buổi sáng chạy bộ tại cung đường điện gió Bàu Trắng là Vân nhận được tấm Bib mang số 0069, đúng với con số thân thương của Khu vực HCM69 gắn bó cùng Vân từ những ngày đầu xây dựng hệ thống. Đón gió biển mát rượi lúc bình minh dưới những cánh quạt điện gió trắng khổng lồ, từng bước chạy bên anh chị em đồng nghiệp mang lại nguồn sinh lực thật sảng khoái.",
       "Trong khuôn khổ hội nghị với thông điệp Trải thảm Xanh đón tinh anh, toàn vùng đã cùng nhau rà soát chiến lược nửa cuối năm, cập nhật giải pháp liên kết đầu tư thế hệ mới Xanh Phú Quý và chia sẻ kinh nghiệm phát triển đội ngũ Quản lý chuyển ngành GTF.",
-      "Khi màn đêm buông xuống trên bãi biển Phan Thiết, tất cả khoảng cách chức danh đều nhường chỗ cho những cái khoác vai, tiếng cười giòn tan bên bàn tiệc hải sản trên cát và những thước phim kỷ niệm vui nhộn trong phòng nghỉ. Chính sự chân thành, trẻ trung ấy đã giữ lửa cho tập thể hơn 500 con người đi cùng nhau suốt nhiều năm."
+      "Khi màn đêm buông xuống trên bãi biển Phan Thiết, tất cả khoảng cách chức danh đều nhường chỗ cho những cái khoác vai, tiếng cười giòn tan và những khoảnh khắc sẻ chia ấm áp bên bàn tiệc hải sản trên bãi biển lộng gió. Chính sự chân thành, trẻ trung ấy đã giữ lửa cho tập thể hơn 500 con người đi cùng nhau suốt nhiều năm."
     ],
     "photos": [
       {
         "id": "KV_300",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg?v=2",
         "width": 853,
         "height": 1280,
         "orientation": "portrait",
@@ -811,7 +811,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_301",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/02-kv_301.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/02-kv_301.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -821,7 +821,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_302",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/03-kv_302.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/03-kv_302.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -831,7 +831,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_303",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/04-kv_303.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/04-kv_303.jpg?v=2",
         "width": 1280,
         "height": 853,
         "orientation": "landscape",
@@ -841,7 +841,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_304",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/05-kv_304.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/05-kv_304.jpg?v=2",
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
@@ -851,7 +851,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_305",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/06-kv_305.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/06-kv_305.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -861,7 +861,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_306",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/07-kv_306.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/07-kv_306.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -871,7 +871,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_307",
-        "src": "/images/journeys/kickoff-phan-thiet-2026/08-kv_307.jpg",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/08-kv_307.jpg?v=2",
         "width": 1280,
         "height": 720,
         "orientation": "landscape",
@@ -881,10 +881,10 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/kickoff-phan-thiet-2026.mp4",
-      "poster": "/videos/journeys/kickoff-phan-thiet-2026-poster.jpg",
+      "src": "/videos/journeys/kickoff-phan-thiet-2026.mp4?v=2",
+      "poster": "/videos/journeys/kickoff-phan-thiet-2026-poster.jpg?v=2",
       "durationLabel": "0:29",
-      "title": "Nhiệt huyết sân khấu, đêm tiệc biển & tiếng cười đồng đội Phan Thiết",
+      "title": "Cung đường điện gió Bib 0069, sân khấu hội nghị & đêm tiệc biển Phan Thiết",
       "caption": "Trọn vẹn tinh thần làm hết sức, gắn kết hết mình của đội ngũ quản lý Vùng Khánh Vân trong kỳ Kick-off Phan Thiết 2026."
     }
   },
@@ -901,7 +901,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Khi thành công được sẻ chia bằng tấm lòng chân thành, mỗi chuyến đi thiện nguyện lại dạy cho chính chúng ta biết trân trọng hơn cuộc sống bình an đang có.",
     "companions": "Đoàn Thiện nguyện Hệ thống Vùng Khánh Vân",
     "milestoneBadge": "Thiện Nguyện Đắk Lắk 2026",
-    "heroImage": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg",
+    "heroImage": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg?v=2",
     "heroObjectPosition": "50% 35%",
     "photoCount": 8,
     "ctaMode": "family",
@@ -913,7 +913,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_308",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -923,7 +923,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_309",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/02-kv_309.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/02-kv_309.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -933,7 +933,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_310",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/03-kv_310.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/03-kv_310.jpg?v=2",
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
@@ -943,7 +943,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_311",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/04-kv_311.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/04-kv_311.jpg?v=2",
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
@@ -953,7 +953,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_312",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/05-kv_312.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/05-kv_312.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -963,7 +963,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_313",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/06-kv_313.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/06-kv_313.jpg?v=2",
         "width": 1280,
         "height": 720,
         "orientation": "landscape",
@@ -973,7 +973,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_314",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/07-kv_314.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/07-kv_314.jpg?v=2",
         "width": 1280,
         "height": 720,
         "orientation": "landscape",
@@ -983,7 +983,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_315",
-        "src": "/images/journeys/thien-nguyen-dak-lak-2026/08-kv_315.jpg",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/08-kv_315.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -993,8 +993,8 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/thien-nguyen-dak-lak-2026.mp4",
-      "poster": "/videos/journeys/thien-nguyen-dak-lak-2026-poster.jpg",
+      "src": "/videos/journeys/thien-nguyen-dak-lak-2026.mp4?v=2",
+      "poster": "/videos/journeys/thien-nguyen-dak-lak-2026-poster.jpg?v=2",
       "durationLabel": "0:30",
       "title": "Hành trình Kết Nối Yêu Thương cùng các em nhỏ Krông Pắc, Đắk Lắk",
       "caption": "Từ chuyến xe sớm băng qua núi đồi Tây Nguyên đến khoảnh khắc trao tận tay từng chiếc ba lô mới và phần quà cho các em nhỏ."
@@ -1013,7 +1013,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đi một mình có thể đến đích nhanh, nhưng bước đi dưới tán hoa anh đào cùng những người cộng sự mình tin yêu mới mang lại niềm hạnh phúc trọn vẹn.",
     "companions": "Đội ngũ Nữ Quản lý Vùng Khánh Vân & Đoàn M-Star",
     "milestoneBadge": "M-Star Hàn Quốc 2024",
-    "heroImage": "/images/journeys/han-quoc-2024/01-kv_216.jpg",
+    "heroImage": "/images/journeys/han-quoc-2024/01-kv_216.jpg?v=2",
     "heroObjectPosition": "50% 35%",
     "photoCount": 10,
     "ctaMode": "career",
@@ -1025,7 +1025,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_216",
-        "src": "/images/journeys/han-quoc-2024/01-kv_216.jpg",
+        "src": "/images/journeys/han-quoc-2024/01-kv_216.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1035,7 +1035,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_217",
-        "src": "/images/journeys/han-quoc-2024/02-kv_217.jpg",
+        "src": "/images/journeys/han-quoc-2024/02-kv_217.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1045,7 +1045,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_218",
-        "src": "/images/journeys/han-quoc-2024/03-kv_218.jpg",
+        "src": "/images/journeys/han-quoc-2024/03-kv_218.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1055,7 +1055,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_219",
-        "src": "/images/journeys/han-quoc-2024/04-kv_219.jpg",
+        "src": "/images/journeys/han-quoc-2024/04-kv_219.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1065,7 +1065,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_220",
-        "src": "/images/journeys/han-quoc-2024/05-kv_220.jpg",
+        "src": "/images/journeys/han-quoc-2024/05-kv_220.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1075,7 +1075,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_221",
-        "src": "/images/journeys/han-quoc-2024/06-kv_221.jpg",
+        "src": "/images/journeys/han-quoc-2024/06-kv_221.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1085,7 +1085,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_222",
-        "src": "/images/journeys/han-quoc-2024/07-kv_222.jpg",
+        "src": "/images/journeys/han-quoc-2024/07-kv_222.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1095,7 +1095,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_223",
-        "src": "/images/journeys/han-quoc-2024/08-kv_223.jpg",
+        "src": "/images/journeys/han-quoc-2024/08-kv_223.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1105,7 +1105,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_224",
-        "src": "/images/journeys/han-quoc-2024/09-kv_224.jpg",
+        "src": "/images/journeys/han-quoc-2024/09-kv_224.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1115,7 +1115,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_225",
-        "src": "/images/journeys/han-quoc-2024/10-kv_225.jpg",
+        "src": "/images/journeys/han-quoc-2024/10-kv_225.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1138,7 +1138,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Dù đặt chân đến bất kỳ miền đất nào, nét dịu dàng của tà áo dài và sự chân tình của người phụ nữ Việt vẫn luôn tỏa sáng theo cách rất riêng.",
     "companions": "Tập thể Quản lý Kinh doanh Vùng Khánh Vân",
     "milestoneBadge": "Hành Trình Nam Ninh 2024",
-    "heroImage": "/images/journeys/nam-ninh-2024/01-kv_238.jpg",
+    "heroImage": "/images/journeys/nam-ninh-2024/01-kv_238.jpg?v=2",
     "heroObjectPosition": "50% 32%",
     "photoCount": 10,
     "ctaMode": "career",
@@ -1150,7 +1150,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_238",
-        "src": "/images/journeys/nam-ninh-2024/01-kv_238.jpg",
+        "src": "/images/journeys/nam-ninh-2024/01-kv_238.jpg?v=2",
         "width": 1280,
         "height": 1146,
         "orientation": "landscape",
@@ -1160,7 +1160,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_239",
-        "src": "/images/journeys/nam-ninh-2024/02-kv_239.jpg",
+        "src": "/images/journeys/nam-ninh-2024/02-kv_239.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1170,7 +1170,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_240",
-        "src": "/images/journeys/nam-ninh-2024/03-kv_240.jpg",
+        "src": "/images/journeys/nam-ninh-2024/03-kv_240.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1180,7 +1180,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_241",
-        "src": "/images/journeys/nam-ninh-2024/04-kv_241.jpg",
+        "src": "/images/journeys/nam-ninh-2024/04-kv_241.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1190,7 +1190,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_242",
-        "src": "/images/journeys/nam-ninh-2024/05-kv_242.jpg",
+        "src": "/images/journeys/nam-ninh-2024/05-kv_242.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1200,7 +1200,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_243",
-        "src": "/images/journeys/nam-ninh-2024/06-kv_243.jpg",
+        "src": "/images/journeys/nam-ninh-2024/06-kv_243.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1210,7 +1210,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_244",
-        "src": "/images/journeys/nam-ninh-2024/07-kv_244.jpg",
+        "src": "/images/journeys/nam-ninh-2024/07-kv_244.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1220,7 +1220,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_245",
-        "src": "/images/journeys/nam-ninh-2024/08-kv_245.jpg",
+        "src": "/images/journeys/nam-ninh-2024/08-kv_245.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1230,7 +1230,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_246",
-        "src": "/images/journeys/nam-ninh-2024/09-kv_246.jpg",
+        "src": "/images/journeys/nam-ninh-2024/09-kv_246.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1240,7 +1240,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_247",
-        "src": "/images/journeys/nam-ninh-2024/10-kv_247.jpg",
+        "src": "/images/journeys/nam-ninh-2024/10-kv_247.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1263,7 +1263,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đêm đầu tiên đứng dưới chân Tháp Eiffel rực sáng, Vân đã tự hứa rằng những chuyến đi sau này nhất định sẽ có thêm thật nhiều đồng đội của mình cùng đặt chân tới.",
     "companions": "Đoàn Danh hiệu M-Star Manulife Việt Nam 2019",
     "milestoneBadge": "M-Star Pháp 2019",
-    "heroImage": "/images/journeys/phap-2019/01-kv_206.jpg",
+    "heroImage": "/images/journeys/phap-2019/01-kv_206.jpg?v=2",
     "heroObjectPosition": "50% 32%",
     "photoCount": 10,
     "ctaMode": "career",
@@ -1275,7 +1275,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_206",
-        "src": "/images/journeys/phap-2019/01-kv_206.jpg",
+        "src": "/images/journeys/phap-2019/01-kv_206.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1285,7 +1285,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_207",
-        "src": "/images/journeys/phap-2019/02-kv_207.jpg",
+        "src": "/images/journeys/phap-2019/02-kv_207.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1295,7 +1295,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_208",
-        "src": "/images/journeys/phap-2019/03-kv_208.jpg",
+        "src": "/images/journeys/phap-2019/03-kv_208.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1305,7 +1305,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_209",
-        "src": "/images/journeys/phap-2019/04-kv_209.jpg",
+        "src": "/images/journeys/phap-2019/04-kv_209.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1315,7 +1315,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_210",
-        "src": "/images/journeys/phap-2019/05-kv_210.jpg",
+        "src": "/images/journeys/phap-2019/05-kv_210.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1325,7 +1325,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_211",
-        "src": "/images/journeys/phap-2019/06-kv_211.jpg",
+        "src": "/images/journeys/phap-2019/06-kv_211.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1335,7 +1335,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_212",
-        "src": "/images/journeys/phap-2019/07-kv_212.jpg",
+        "src": "/images/journeys/phap-2019/07-kv_212.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1345,7 +1345,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_213",
-        "src": "/images/journeys/phap-2019/08-kv_213.jpg",
+        "src": "/images/journeys/phap-2019/08-kv_213.jpg?v=2",
         "width": 962,
         "height": 1280,
         "orientation": "portrait",
@@ -1355,7 +1355,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_214",
-        "src": "/images/journeys/phap-2019/09-kv_214.jpg",
+        "src": "/images/journeys/phap-2019/09-kv_214.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1365,7 +1365,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_215",
-        "src": "/images/journeys/phap-2019/10-kv_215.jpg",
+        "src": "/images/journeys/phap-2019/10-kv_215.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1388,7 +1388,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đi qua bao nhiêu thành phố lớn trên thế giới, Vân càng tin rằng thành tựu rực rỡ nhất của người phụ nữ chính là nụ cười bình an của chồng con dưới mái nhà mình.",
     "companions": "Ông xã, con gái Minh Châu & con trai út",
     "milestoneBadge": "Tổ Ấm & Cân Bằng",
-    "heroImage": "/images/journeys/diem-tua-to-am/01-kv_289.jpg",
+    "heroImage": "/images/journeys/diem-tua-to-am/01-kv_289.jpg?v=2",
     "heroObjectPosition": "50% 30%",
     "photoCount": 19,
     "ctaMode": "family",
@@ -1400,7 +1400,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photos": [
       {
         "id": "KV_289",
-        "src": "/images/journeys/diem-tua-to-am/01-kv_289.jpg",
+        "src": "/images/journeys/diem-tua-to-am/01-kv_289.jpg?v=2",
         "width": 1280,
         "height": 852,
         "orientation": "landscape",
@@ -1410,7 +1410,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_290",
-        "src": "/images/journeys/diem-tua-to-am/02-kv_290.jpg",
+        "src": "/images/journeys/diem-tua-to-am/02-kv_290.jpg?v=2",
         "width": 1280,
         "height": 961,
         "orientation": "landscape",
@@ -1420,7 +1420,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_291",
-        "src": "/images/journeys/diem-tua-to-am/03-kv_291.jpg",
+        "src": "/images/journeys/diem-tua-to-am/03-kv_291.jpg?v=2",
         "width": 904,
         "height": 1280,
         "orientation": "portrait",
@@ -1430,7 +1430,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_292",
-        "src": "/images/journeys/diem-tua-to-am/04-kv_292.jpg",
+        "src": "/images/journeys/diem-tua-to-am/04-kv_292.jpg?v=2",
         "width": 863,
         "height": 1280,
         "orientation": "portrait",
@@ -1440,7 +1440,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_293",
-        "src": "/images/journeys/diem-tua-to-am/05-kv_293.jpg",
+        "src": "/images/journeys/diem-tua-to-am/05-kv_293.jpg?v=2",
         "width": 1280,
         "height": 904,
         "orientation": "landscape",
@@ -1450,7 +1450,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_294",
-        "src": "/images/journeys/diem-tua-to-am/06-kv_294.jpg",
+        "src": "/images/journeys/diem-tua-to-am/06-kv_294.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1460,7 +1460,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_295",
-        "src": "/images/journeys/diem-tua-to-am/07-kv_295.jpg",
+        "src": "/images/journeys/diem-tua-to-am/07-kv_295.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1470,7 +1470,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_296",
-        "src": "/images/journeys/diem-tua-to-am/08-kv_296.jpg",
+        "src": "/images/journeys/diem-tua-to-am/08-kv_296.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1480,7 +1480,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_297",
-        "src": "/images/journeys/diem-tua-to-am/09-kv_297.jpg",
+        "src": "/images/journeys/diem-tua-to-am/09-kv_297.jpg?v=2",
         "width": 1280,
         "height": 852,
         "orientation": "landscape",
@@ -1490,7 +1490,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_298",
-        "src": "/images/journeys/diem-tua-to-am/10-kv_298.jpg",
+        "src": "/images/journeys/diem-tua-to-am/10-kv_298.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1500,7 +1500,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_299",
-        "src": "/images/journeys/diem-tua-to-am/11-kv_299.jpg",
+        "src": "/images/journeys/diem-tua-to-am/11-kv_299.jpg?v=2",
         "width": 853,
         "height": 1280,
         "orientation": "portrait",
@@ -1510,7 +1510,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_316",
-        "src": "/images/journeys/diem-tua-to-am/12-kv_316.jpg",
+        "src": "/images/journeys/diem-tua-to-am/12-kv_316.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1520,7 +1520,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_317",
-        "src": "/images/journeys/diem-tua-to-am/13-kv_317.jpg",
+        "src": "/images/journeys/diem-tua-to-am/13-kv_317.jpg?v=2",
         "width": 852,
         "height": 1280,
         "orientation": "portrait",
@@ -1530,7 +1530,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_318",
-        "src": "/images/journeys/diem-tua-to-am/14-kv_318.jpg",
+        "src": "/images/journeys/diem-tua-to-am/14-kv_318.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1540,7 +1540,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_319",
-        "src": "/images/journeys/diem-tua-to-am/15-kv_319.jpg",
+        "src": "/images/journeys/diem-tua-to-am/15-kv_319.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1550,7 +1550,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_320",
-        "src": "/images/journeys/diem-tua-to-am/16-kv_320.jpg",
+        "src": "/images/journeys/diem-tua-to-am/16-kv_320.jpg?v=2",
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
@@ -1560,7 +1560,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_321",
-        "src": "/images/journeys/diem-tua-to-am/17-kv_321.jpg",
+        "src": "/images/journeys/diem-tua-to-am/17-kv_321.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1570,7 +1570,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_322",
-        "src": "/images/journeys/diem-tua-to-am/18-kv_322.jpg",
+        "src": "/images/journeys/diem-tua-to-am/18-kv_322.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
@@ -1580,7 +1580,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       },
       {
         "id": "KV_323",
-        "src": "/images/journeys/diem-tua-to-am/19-kv_323.jpg",
+        "src": "/images/journeys/diem-tua-to-am/19-kv_323.jpg?v=2",
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
