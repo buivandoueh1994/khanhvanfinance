@@ -95,9 +95,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "location": "Núi Phú Sĩ & Tokyo, Nhật Bản",
     "countryTag": "Nhật Bản",
     "title": "Dưới chân núi Phú Sĩ và bài học về sự tận tâm bền bỉ",
-    "subtitle": "Chuyến thưởng huấn M-Star 2026 đưa Vân cùng anh xã và những người chị em quản lý đặt chân đến xứ sở mặt trời mọc trong những ngày trời xanh trong vắt.",
+    "subtitle": "Chuyến thưởng huấn M-Star 2026 đưa Vân cùng các anh chị lãnh đạo và đội ngũ quản lý xuất sắc đặt chân đến xứ sở mặt trời mọc trong những ngày trời xanh trong vắt.",
     "pullQuote": "Đứng trước đỉnh Phú Sĩ phủ tuyết trắng giữa bầu trời quang đãng, Vân càng thấm thía rằng những giá trị vững chãi nhất luôn được bồi đắp từ kỷ luật thầm lặng mỗi ngày.",
-    "companions": "Ông xã & Đội ngũ Quản lý đạt chuẩn M-Star",
+    "companions": "Đoàn Lãnh đạo & Quản lý đạt chuẩn M-Star",
     "milestoneBadge": "M-Star Nhật Bản 2026",
     "heroImage": "/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2",
     "heroObjectPosition": "50% 28%",
@@ -106,7 +106,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "story": [
       "Người dân bản địa nói với đoàn rằng không phải ngày nào đến Kawaguchiko cũng may mắn gặp được đỉnh Phú Sĩ hiện ra trọn vẹn giữa nền trời xanh không gợn mây như thế. Khoảnh khắc đứng dưới vòm gạch đỏ nhìn ngọn núi tuyết trắng uy nghiêm phía xa, trong lòng Vân trào lên một cảm giác biết ơn thật nhẹ nhõm.",
       "Nhật Bản luôn khiến Vân nể phục ở sự chỉn chu trong từng chi tiết nhỏ. Từ cách người đầu bếp chuẩn bị bữa tối Wagyu ấm cúng, cách những con phố quanh nhà ga Tokyo trăm năm tuổi vẫn sạch sẽ ngăn nắp, cho đến thái độ trân trọng khách hàng bằng cả trái tim. Đó cũng chính là chuẩn mực nghề nghiệp mà Vân và đội ngũ quản lý tại Green Power luôn nhắc nhau gìn giữ khi đồng hành cùng từng gia đình khách hàng.",
-      "Niềm vui lớn nhất của chuyến đi là bên cạnh Vân vừa có người bạn đời thầm lặng sẻ chia, vừa có những người chị em quản lý gắn bó suốt nhiều năm. Khi khoác lên mình bộ Yukata truyền thống trong đêm tiệc vinh danh, nhìn nụ cười rạng ngời của từng thành viên, Vân tin rằng mọi nỗ lực bền bỉ đều nhận về phần thưởng xứng đáng."
+      "Niềm vui lớn nhất của chuyến đi là bên cạnh Vân luôn có những anh chị đồng nghiệp và những người chị em quản lý gắn bó suốt nhiều năm. Khi khoác lên mình bộ Yukata truyền thống trong đêm tiệc vinh danh, nhìn nụ cười rạng ngời của từng thành viên, Vân tin rằng mọi nỗ lực bền bỉ đều nhận về phần thưởng xứng đáng."
     ],
     "photos": [
       {
@@ -145,9 +145,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 986,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Đoàn M-Star cùng vợ chồng chị Khánh Vân chụp ảnh kỷ niệm trên cầu gỗ bên hồ nước phẳng lặng vùng Phú Sĩ.",
+        "caption": "Đoàn M-Star Manulife chụp ảnh kỷ niệm trên cây cầu gỗ bên mặt hồ phẳng lặng vùng núi Phú Sĩ.",
         "locationDetail": "Trên cây cầu gỗ bên mặt hồ Kawaguchiko thơ mộng tại Nhật Bản",
-        "people": "Vợ chồng chị Khánh Vân & đoàn quản lý M-Star"
+        "people": "Chị Khánh Vân & đoàn quản lý M-Star"
       },
       {
         "id": "KV_272",
@@ -185,9 +185,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
-        "caption": "Bữa tối thưởng thức ẩm thực Wagyu ấm cúng và rộn tiếng cười của vợ chồng chị Khánh Vân cùng các anh chị đồng nghiệp.",
+        "caption": "Bữa tối thưởng thức ẩm thực Wagyu ấm cúng và rộn tiếng cười của chị Khánh Vân cùng các anh chị lãnh đạo, đồng nghiệp.",
         "locationDetail": "Nhà hàng Teppanyaki bò Wagyu truyền thống ấm cúng tại Nhật Bản",
-        "people": "Vợ chồng chị Khánh Vân & các anh chị lãnh đạo"
+        "people": "Chị Khánh Vân & các anh chị lãnh đạo trong đoàn"
       },
       {
         "id": "KV_276",
@@ -502,15 +502,15 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "countryTag": "Áo & Đức",
     "title": "Mùa thu Trung Âu bên hồ Hallstatt và niềm tự hào dưới cờ Tổ quốc",
     "subtitle": "Hành trình M-Star Châu Âu đi qua ngôi làng cổ tích bên dãy Alps, quê hương âm nhạc Salzburg và thành phố Munich lịch lãm.",
-    "pullQuote": "Có những khoảnh khắc đứng bên mặt hồ Hallstatt phẳng lặng cùng người bạn đời, mọi vất vả của những năm tháng gây dựng sự nghiệp bỗng hóa thành sự bình yên trọn vẹn.",
-    "companions": "Ông xã & Đoàn M-Star Manulife Việt Nam",
+    "pullQuote": "Có những khoảnh khắc đứng bên mặt hồ Hallstatt phẳng lặng giữa dãy núi Alps, mọi vất vả của một năm miệt mài làm nghề bỗng hóa thành sự bình yên và tự hào trọn vẹn.",
+    "companions": "Đoàn Lãnh đạo & Quản lý M-Star Manulife Việt Nam",
     "milestoneBadge": "M-Star Châu Âu 2024",
     "heroImage": "/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2",
     "heroObjectPosition": "50% 42%",
     "photoCount": 12,
-    "ctaMode": "family",
+    "ctaMode": "career",
     "story": [
-      "Mùa thu Trung Âu đón đoàn bằng tiết trời se lạnh dịu dàng và những bức tường dây thường xuân chuyển sang sắc đỏ thắm. Khi đứng bên bờ hồ Hallstatt nhìn sương mỏng bảng lảng trên dãy núi Alps, bên cạnh là anh xã luôn lặng lẽ đồng hành, Vân cảm nhận rất rõ giá trị của sự cân bằng giữa khát vọng nghề nghiệp và điểm tựa gia đình.",
+      "Mùa thu Trung Âu đón đoàn bằng tiết trời se lạnh dịu dàng và những bức tường dây thường xuân chuyển sang sắc đỏ thắm. Khi đứng bên bờ hồ Hallstatt nhìn sương mỏng bảng lảng trên dãy núi Alps cùng những người đồng nghiệp chung chí hướng, Vân cảm nhận rất rõ giá trị xứng đáng của những năm tháng làm nghề tận tâm và kỷ luật.",
       "Hành trình đưa đoàn đi từ ngôi nhà màu vàng nơi thiên tài Mozart chào đời tại phố cổ Salzburg đến quảng trường Marienplatz cổ kính giữa lòng Munich. Đặc biệt nhất là khoảnh khắc cả đoàn cùng giương cao lá cờ đỏ sao vàng Việt Nam và lá cờ xanh Manulife trước sân vận động huyền thoại Allianz Arena. Niềm tự hào của những người con đất Việt bước ra thế giới bằng chính năng lực chuyên môn thật sự khó quên.",
       "Sau mỗi chuyến đi xa như thế, khi trở về văn phòng tại TP.HCM, Vân luôn mang theo nguồn cảm hứng mới để truyền lại cho đội ngũ. Thế giới rộng lớn lắm, và nghề tư vấn tài chính chân chính hoàn toàn có thể đưa chúng ta đến những chân trời đẹp nhất."
     ],
@@ -521,9 +521,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
-        "caption": "Vợ chồng chị Khánh Vân cùng các đồng nghiệp mỉm cười bình yên bên hồ Hallstatt thơ mộng dưới chân núi Alps nước Áo.",
+        "caption": "Chị Khánh Vân cùng các anh chị đồng nghiệp trong đoàn M-Star mỉm cười bình yên bên hồ Hallstatt thơ mộng dưới chân núi Alps nước Áo.",
         "locationDetail": "Bên mặt hồ Hallstatt phẳng lặng soi bóng dãy núi Alps hùng vĩ (Áo)",
-        "people": "Vợ chồng chị Khánh Vân & hai đồng nghiệp"
+        "people": "Chị Khánh Vân & các anh chị đồng nghiệp đoàn M-Star"
       },
       {
         "id": "KV_227",
@@ -533,7 +533,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "orientation": "landscape",
         "caption": "Đoàn M-Star lưu giữ bức ảnh kỷ niệm tuyệt đẹp tại quảng trường cổ tích Hallstatt (Áo).",
         "locationDetail": "Quảng trường trung tâm thị trấn cổ tích Hallstatt bao quanh bởi những ngôi nhà sắc màu và núi Alps",
-        "people": "Chị Khánh Vân, anh xã & đoàn M-Star"
+        "people": "Chị Khánh Vân & đoàn M-Star"
       },
       {
         "id": "KV_228",
@@ -571,9 +571,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Vợ chồng chị Khánh Vân sánh đôi tình cảm trước Tòa thị chính cổ kính tại quảng trường Marienplatz, Munich.",
+        "caption": "Chị Khánh Vân cùng đồng nghiệp ghi lại kỷ niệm trước Tòa thị chính cổ kính tại quảng trường Marienplatz, Munich.",
         "locationDetail": "Quảng trường trung tâm Marienplatz với Tòa thị chính cổ kính Gothic vươn cao tại Munich (Đức)",
-        "people": "Vợ chồng chị Khánh Vân"
+        "people": "Chị Khánh Vân & đồng nghiệp trong đoàn M-Star"
       },
       {
         "id": "KV_232",
@@ -593,7 +593,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "orientation": "portrait",
         "caption": "Tập thể đoàn M-Star rạng rỡ trước bức tường dây leo đỏ thắm đặc trưng của mùa thu Trung Âu.",
         "locationDetail": "Trước tòa nhà cổ phủ kín dây thường xuân chuyển sắc đỏ thắm mùa thu Châu Âu",
-        "people": "Tập thể đoàn M-Star & vợ chồng chị Khánh Vân"
+        "people": "Tập thể đoàn M-Star Manulife"
       },
       {
         "id": "KV_234",
@@ -621,9 +621,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Khoảnh khắc hòa mình vào không khí lễ hội văn hóa truyền thống vùng Bavaria (Đức) của vợ chồng chị Khánh Vân.",
+        "caption": "Chị Khánh Vân vui vẻ giao lưu và chụp ảnh kỷ niệm cùng người dân bản địa trong trang phục truyền thống tại lễ hội văn hóa vùng Bavaria (Munich, Đức).",
         "locationDetail": "Không gian lều lễ hội truyền thống vùng Bavaria rực rỡ sắc vàng trắng tại Munich",
-        "people": "Vợ chồng chị Khánh Vân & đồng nghiệp"
+        "people": "Chị Khánh Vân & người dân bản địa vùng Bavaria"
       },
       {
         "id": "KV_237",
@@ -652,19 +652,19 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "periodLabel": "Mùa thu 2025",
     "location": "Bến Thượng Hải & Cổ trấn Chu Gia Giác",
     "countryTag": "Trung Quốc",
-    "title": "Từ nhịp đập tài chính Bến Thượng Hải đến dòng kênh yên bình bên con gái",
-    "subtitle": "Chuyến đi M-Star 2025 đặc biệt khi Vân vừa hội ngộ các cộng sự tại trung tâm tài chính Châu Á, vừa đưa chồng và con gái Minh Châu cùng trải nghiệm.",
-    "pullQuote": "Phần thưởng quý giá nhất của những chuyến vinh danh không nằm ở tấm vé hạng sang, mà là ánh mắt háo hức của con khi được cùng cha mẹ bước ra thế giới.",
-    "companions": "Ông xã, con gái Minh Châu & Đội ngũ Quản lý M-Star",
+    "title": "Từ nhịp đập tài chính Bến Thượng Hải đến dòng kênh yên bình cổ trấn Chu Gia Giác",
+    "subtitle": "Hành trình M-Star 2025 đưa đoàn đi qua những đại lộ di sản sầm uất bên sông Hoàng Phố và lắng lại giữa nhịp sống trầm mặc của cổ trấn ngàn năm tuổi.",
+    "pullQuote": "Giữa một Thượng Hải vươn cao không ngừng và một Chu Gia Giác tĩnh lặng ngàn năm, Vân nhận ra sự phát triển bền vững nhất luôn cần cả tốc độ đổi mới lẫn chiều sâu gốc rễ.",
+    "companions": "Đoàn Lãnh đạo & Quản lý đạt chuẩn M-Star",
     "milestoneBadge": "M-Star Thượng Hải 2025",
     "heroImage": "/images/journeys/thuong-hai-2025/01-kv_248.jpg?v=2",
     "heroObjectPosition": "50% 25%",
     "photoCount": 10,
-    "ctaMode": "family",
+    "ctaMode": "career",
     "story": [
       "Đứng tại Bến Thượng Hải nhìn sang bờ Đông sông Hoàng Phố với Tháp Minh Châu Phương Đông và cụm cao ốc tài chính Lục Gia Chủy vươn thẳng lên bầu trời, bất kỳ ai làm trong lĩnh vực tài chính cũng cảm nhận được nguồn năng lượng phát triển mạnh mẽ của một trung tâm kinh tế hàng đầu khu vực.",
-      "Rời nhịp sống hiện đại của những con phố kiến trúc gạch đỏ phương Tây, cả gia đình Vân dành thời gian xuôi về cổ trấn sông nước Chu Gia Giác. Ngồi trên chiếc thuyền gỗ nhỏ trôi chậm qua những nhịp cầu đá ngàn năm tuổi, lắng nghe tiếng đàn guitar mộc mạc và nhìn con gái Minh Châu chăm chú quan sát từng nếp nhà cổ, Vân thấy lòng mình dịu lại thật bình yên.",
-      "Với Vân, cho con đi du lịch cùng cha mẹ trong những chuyến vinh danh cũng là một cách giáo dục tự nhiên nhất. Con nhìn thấy cha mẹ làm việc nghiêm túc như thế nào, đồng nghiệp của mẹ yêu thương và tôn trọng nhau ra sao, để từ đó con tự nuôi dưỡng ước mơ và tinh thần nỗ lực cho hành trình riêng của mình."
+      "Rời nhịp sống hiện đại của những con phố kiến trúc gạch đỏ phương Tây, cả đoàn dành thời gian xuôi về cổ trấn sông nước Chu Gia Giác. Ngồi bên dòng kênh xanh trôi chậm qua những nhịp cầu đá ngàn năm tuổi và lắng nghe tiếng đàn guitar mộc mạc vang lên trên mặt nước, lòng người như dịu lại sau những tháng ngày làm việc bận rộn.",
+      "Mỗi chuyến thưởng huấn M-Star tại những đô thị lớn của Châu Á luôn mang lại cho Vân và các anh chị em quản lý nhiều góc nhìn mới mẻ về tác phong dịch vụ chuyên nghiệp, đồng thời tiếp thêm nguồn năng lượng gắn kết cho chặng đường phía trước."
     ],
     "photos": [
       {
@@ -713,9 +713,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 720,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Gia đình chị Khánh Vân cùng chồng và con gái Minh Châu lưu giữ khoảnh khắc đáng nhớ tại cổ trấn Chu Gia Giác (Thượng Hải).",
+        "caption": "Chị Khánh Vân cùng các thành viên trong đoàn lưu giữ khoảnh khắc đáng nhớ tại cổng cổ trấn sông nước Chu Gia Giác (Thượng Hải).",
         "locationDetail": "Trước cổng khu du lịch cổ trấn sông nước Chu Gia Giác (Zhujiajiao, Thượng Hải)",
-        "people": "Chị Khánh Vân, anh xã & con gái lớn Minh Châu"
+        "people": "Chị Khánh Vân & các anh chị đồng nghiệp trong đoàn"
       },
       {
         "id": "KV_253",
@@ -723,9 +723,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 960,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Hai mẹ con chị Khánh Vân và Minh Châu mỉm cười rạng rỡ bên dòng kênh cổ kính dưới bầu trời thu Thượng Hải.",
+        "caption": "Khoảnh khắc rạng rỡ bên dòng kênh cổ kính dưới bầu trời thu trong lành tại cổ trấn Chu Gia Giác (Thượng Hải).",
         "locationDetail": "Trên nhịp cầu đá nhìn xuống dòng kênh xanh của cổ trấn ngàn năm Chu Gia Giác",
-        "people": "Chị Khánh Vân & con gái lớn Minh Châu"
+        "people": "Chị Khánh Vân & bạn đồng hành trong chuyến đi"
       },
       {
         "id": "KV_254",
@@ -733,9 +733,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 1280,
         "height": 960,
         "orientation": "landscape",
-        "caption": "Khoảnh khắc bình yên khi hai mẹ con ngồi thuyền gỗ lắng nghe tiếng đàn guitar mộc mạc giữa cổ trấn sông nước Chu Gia Giác.",
+        "caption": "Khoảnh khắc vui tươi khi lắng nghe giai điệu guitar mộc mạc bên dòng kênh cổ trấn Chu Gia Giác.",
         "locationDetail": "Trên chiếc thuyền gỗ trôi êm đềm dọc dòng kênh cổ trấn Chu Gia Giác",
-        "people": "Chị Khánh Vân, con gái Minh Châu & nghệ sĩ đàn guitar"
+        "people": "Chị Khánh Vân & các bạn trẻ biểu diễn guitar tại cổ trấn"
       },
       {
         "id": "KV_255",
@@ -1394,7 +1394,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "ctaMode": "family",
     "story": [
       "Nhiều khách hàng và bạn bè thường hỏi Vân làm thế nào để vừa điều hành một hệ thống kinh doanh hơn 500 nhân sự với lịch trình hội nghị, đào tạo dày đặc, vừa giữ được sự gắn kết gần gũi bên chồng và hai con. Câu trả lời của Vân nằm ở sự hiện diện trọn vẹn và sự thấu hiểu thầm lặng của người bạn đời.",
-      "Khi bước qua cánh cửa nhà vào buổi tối hay trong những kỳ nghỉ cuối tuần tại Đà Lạt, bên hồ nước yên ả, Vân gác lại các con số để chỉ làm một người vợ, một người mẹ bình dị. Cả nhà mặc áo thun đồng điệu nắm tay nhau đi dạo, mẹ cùng Minh Châu hái quýt trong vườn như hai người bạn gái, hay kiên nhẫn ngồi cạnh bé út tô màu và nhận cái ôm thật chặt trên ban công xanh mát.",
+      "Khi bước qua cánh cửa nhà vào buổi tối hay trong những kỳ nghỉ cuối tuần tại Đà Lạt, bên hồ nước yên ả, Vân gác lại các con số để chỉ làm một người vợ, một người mẹ bình dị. Cả nhà mặc áo thun đồng điệu nắm tay nhau đi dạo, mẹ cùng Minh Châu dạo bước giữa vườn hồng chín Đà Lạt như hai người bạn gái, hay kiên nhẫn ngồi cạnh bé út tô màu và nhận cái ôm thật chặt trên ban công xanh mát.",
       "Chính tình yêu thương dành cho gia đình nhỏ ấy giúp Vân thấu cảm sâu sắc tâm tư của mỗi vị khách hàng khi tìm đến mình. Bởi xét đến cùng, mọi bản kế hoạch bảo hiểm nhân thọ hay quỹ học vấn, quỹ hưu trí đều hướng về một mục đích duy nhất. Đó là giữ cho những chuyến đi của gia đình luôn trọn vẹn tiếng cười trước mọi biến thiên của cuộc sống."
     ],
     "photos": [
@@ -1414,7 +1414,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 1280,
         "height": 961,
         "orientation": "landscape",
-        "caption": "Bức ảnh gia đình rực rỡ sắc đỏ yêu thương bên chiếc xe đạp chở đầy quýt chín giữa thiên nhiên trong lành.",
+        "caption": "Bức ảnh gia đình rực rỡ sắc đỏ yêu thương bên chiếc xe đạp chở đầy hồng chín giữa thiên nhiên trong lành.",
         "locationDetail": "Bên chiếc xe đạp cổ chở giỏ quýt vàng ươm dưới hàng cây thông xanh",
         "people": "Vợ chồng chị Khánh Vân & hai con"
       },
@@ -1434,7 +1434,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 863,
         "height": 1280,
         "orientation": "portrait",
-        "caption": "Hai mẹ con chị Khánh Vân và Minh Châu dịu dàng trong sắc trắng tinh khôi cùng hái quýt chín giữa khu vườn xanh.",
+        "caption": "Hai mẹ con chị Khánh Vân và Minh Châu dịu dàng trong sắc trắng tinh khôi giữa vườn hồng chín đỏ Đà Lạt.",
         "locationDetail": "Giữa khu vườn quýt chín vàng trĩu quả xanh mướt",
         "people": "Chị Khánh Vân & con gái lớn Minh Châu"
       },
