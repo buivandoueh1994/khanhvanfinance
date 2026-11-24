@@ -1441,23 +1441,6 @@ export function App() {
     { id: 'goc-nhin', label: 'Góc nhìn', href: '#goc-nhin' },
   ];
 
-  const featuredPages = [
-    {
-      label: 'Những chuyến đi',
-      href: '/nhung-chuyen-di',
-      dotColor: 'bg-[#B8975A]',
-      eyebrow: 'Nhật ký 16+ Quốc gia',
-      mobileTitle: 'Những Chuyến Đi • 141 ảnh & TVC',
-    },
-    {
-      label: 'Green Power',
-      href: '/green-power',
-      dotColor: 'bg-[#008746]',
-      eyebrow: 'Hệ thống 500+ Nhân sự',
-      mobileTitle: 'Green Power • 4 Khu vực',
-    },
-  ];
-
   const mobileSectionNav = [
     { label: 'Câu chuyện & Dấu ấn', href: '#cau-chuyen' },
     { label: 'Thư viện Video', href: '#thu-vien-video' },
@@ -1565,7 +1548,7 @@ export function App() {
             </a>
           </div>
 
-          {/* Unified Minimalist Desktop Navigation: 3 Core Sections | 2 Flagship Pages */}
+          {/* Unified Minimalist Desktop Navigation: 3 Core Sections | Những chuyến đi */}
           <nav
             aria-label="Điều hướng chính"
             className="hidden lg:flex items-center gap-6 xl:gap-8"
@@ -1596,30 +1579,30 @@ export function App() {
 
             <span aria-hidden="true" className="w-px h-3.5 bg-[#D4CFC4]" />
 
-            <div className="flex items-center gap-5 xl:gap-6">
-              {featuredPages.map((page) => (
-                <a
-                  key={page.href}
-                  href={page.href}
-                  className="group inline-flex items-center gap-2 py-1.5 whitespace-nowrap text-[11px] xl:text-[11.5px] uppercase tracking-[0.15em] text-[#181F1C] hover:text-[#008746] font-semibold transition-colors"
-                >
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full ${page.dotColor} transition-transform duration-200 group-hover:scale-125 shrink-0`}
-                  />
-                  <span>{page.label}</span>
-                </a>
-              ))}
-            </div>
+            <a
+              href="/nhung-chuyen-di"
+              className="group inline-flex items-center gap-2 py-1.5 whitespace-nowrap text-[11px] xl:text-[11.5px] uppercase tracking-[0.15em] text-[#181F1C] hover:text-[#008746] font-medium transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8975A] transition-transform duration-200 group-hover:scale-125 shrink-0" />
+              <span>Những chuyến đi</span>
+            </a>
           </nav>
 
-          {/* Single Crisp Executive CTA */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Priority Right Cluster: Green Power (Flagship Pill) + Liên hệ riêng */}
+          <div className="flex items-center gap-2.5 sm:gap-5 shrink-0">
+            <a
+              href="/green-power"
+              className="group whitespace-nowrap inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-[2px] bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/25 hover:border-[#0A3622] text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#008746] group-hover:bg-[#E8D3A6] transition-colors shrink-0" />
+              <span>Green Power</span>
+            </a>
+
             <a
               href="#lien-he"
-              className="inline-flex whitespace-nowrap items-center gap-1.5 px-3.5 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[10.5px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.16em] font-semibold rounded-[3px] transition-colors"
+              className="hidden sm:inline-flex whitespace-nowrap items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-[#0A3622] border-b border-[#0A3622] pb-1 hover:text-[#008746] hover:border-[#008746] transition-colors font-medium"
             >
-              <span>Liên hệ</span>
-              <span className="hidden sm:inline">riêng</span>
+              <span>Liên hệ riêng</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -1634,42 +1617,39 @@ export function App() {
               className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
             >
               <div className="px-5 py-5 flex flex-col gap-2 max-h-[calc(100dvh-64px)] overflow-y-auto">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#7A847F] font-semibold mb-1">
-                  Chuyên trang nổi bật
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3">
-                  <a
-                    href="/nhung-chuyen-di"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-3.5 rounded-[4px] bg-[#061C12] text-[#FAF9F5] border border-[#B8975A]/50 flex items-center justify-between gap-3 active:opacity-95"
-                  >
-                    <div className="min-w-0">
-                      <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
-                        Nhật ký 16+ Quốc gia
-                      </span>
-                      <span className="font-serif text-[15.5px] font-medium text-white block truncate mt-0.5">
-                        Những Chuyến Đi &amp; TVC
-                      </span>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
-                  </a>
+                {/* #1 Priority Flagship Card: Hệ thống Green Power */}
+                <a
+                  href="/green-power"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-3.5 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
+                >
+                  <div className="min-w-0">
+                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
+                      Hệ Thống Kinh Doanh
+                    </span>
+                    <span className="font-serif text-base font-medium text-white block truncate mt-0.5">
+                      Green Power • 4 Khu vực
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                </a>
 
-                  <a
-                    href="/green-power"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-3.5 rounded-[4px] bg-[#EBF2EE] text-[#0A3622] border border-[#0A3622]/20 flex items-center justify-between gap-3 active:opacity-95"
-                  >
-                    <div className="min-w-0">
-                      <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#008746] font-semibold block">
-                        Hệ thống 500+ Nhân sự
-                      </span>
-                      <span className="font-serif text-[15.5px] font-semibold text-[#0A3622] block truncate mt-0.5">
-                        Green Power • 4 Khu vực
-                      </span>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#008746] shrink-0" />
-                  </a>
-                </div>
+                {/* #2 Secondary Showcase Card: Những Chuyến Đi */}
+                <a
+                  href="/nhung-chuyen-di"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mb-2 px-4 py-3 rounded-[3px] bg-[#FAF6EC] text-[#181F1C] border border-[#B8975A]/35 flex items-center justify-between gap-3 active:opacity-95"
+                >
+                  <div className="min-w-0">
+                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#8B6A2B] font-semibold block">
+                      Nhật ký 16+ Quốc gia
+                    </span>
+                    <span className="font-serif text-[15px] font-medium text-[#181F1C] block truncate mt-0.5">
+                      Những Chuyến Đi &amp; TVC
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-[#8B6A2B] shrink-0" />
+                </a>
 
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#7A847F] font-semibold mt-1">
                   Trên trang chủ
@@ -3207,18 +3187,18 @@ export function App() {
 
             <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-[11px] uppercase tracking-[0.18em] text-[#56605B]">
               <a
+                href="/green-power"
+                className="inline-flex items-center gap-2 text-[#0A3622] hover:text-[#008746] transition-colors font-semibold"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
+                <span>Green Power</span>
+              </a>
+              <a
                 href="/nhung-chuyen-di"
                 className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors font-medium"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B8975A]" />
                 <span>Những chuyến đi</span>
-              </a>
-              <a
-                href="/green-power"
-                className="inline-flex items-center gap-2 hover:text-[#0A3622] transition-colors font-medium"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
-                <span>Green Power</span>
               </a>
               <a
                 href={ZALO_URL}
