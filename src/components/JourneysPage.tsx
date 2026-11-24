@@ -1,31 +1,28 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
+  ArrowDown,
   ArrowLeft,
   ArrowUpRight,
+  Award,
   Camera,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  Compass,
   ExternalLink,
   Film,
   Heart,
   MapPin,
+  Pause,
   Play,
   Sparkles,
   Users,
   X,
 } from 'lucide-react';
-import {
-  JOURNEY_CHAPTERS,
-  JOURNEY_PILLARS,
-  JourneyChapter,
-  JourneyPhoto,
-  JourneyPillarKey,
-} from '../data/journeys';
+import { JOURNEY_CHAPTERS, JourneyChapter, JourneyPhoto } from '../data/journeys';
 import { VideoItem } from '../data/videos';
 import { AiAdvisorWidget } from './AiAdvisorWidget';
+import { JourneyMap } from './JourneyMap';
 import { trackEvent, trackLeadConversion } from '../utils/analytics';
 
 const ZALO_URL = 'https://zalo.me/0909679258';
@@ -45,11 +42,13 @@ interface LightboxState {
 }
 
 export const JourneysPage: React.FC = () => {
-  const [activePillar, setActivePillar] = useState<JourneyPillarKey>('ALL');
   const [selectedChapterSlug, setSelectedChapterSlug] = useState<string | null>(null);
+  const [showAllModalPhotos, setShowAllModalPhotos] = useState(false);
   const [activeReelSlug, setActiveReelSlug] = useState<string | null>(null);
+  const [loungeReelSlug, setLoungeReelSlug] = useState<string>('yen-tu-vinh-danh-2025');
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
+  const [heroPaused, setHeroPaused] = useState(false);
 
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -61,9 +60,11 @@ export const JourneysPage: React.FC = () => {
   });
 
   const modalScrollRef = useRef<HTMLDivElement>(null);
+  const heroDesktopRef = useRef<HTMLVideoElement>(null);
+  const heroMobileRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    document.title = 'Khánh Vân & Những Chuyến Đi | Dấu ấn M-Star, Đội ngũ & Tổ ấm';
+    document.title = 'Khánh Vân & Những Chuyến Đi | Nhật ký Hành trình 2019–2026';
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const qSlug = params.get('chuyen-di') || params.get('chapter');
@@ -73,33 +74,30 @@ export const JourneysPage: React.FC = () => {
     }
   }, []);
 
+  const toggleHeroPlayback = () => {
+    const nextPaused = !heroPaused;
+    setHeroPaused(nextPaused);
+    [heroDesktopRef.current, heroMobileRef.current].forEach((vid) => {
+      if (!vid) return;
+      if (nextPaused) vid.pause();
+      else vid.play().catch(() => {});
+    });
+  };
+
+  const chapterMap = useMemo(() => {
+    const map: Record<string, JourneyChapter> = {};
+    for (const c of JOURNEY_CHAPTERS) map[c.slug] = c;
+    return map;
+  }, []);
+
   const videoChapters = useMemo(
     () => JOURNEY_CHAPTERS.filter((c) => Boolean(c.video)),
     []
   );
 
-  const filteredChapters = useMemo(() => {
-    if (activePillar === 'ALL') return JOURNEY_CHAPTERS;
-    return JOURNEY_CHAPTERS.filter((c) => c.pillar === activePillar);
-  }, [activePillar]);
-
-  const pillarCounts = useMemo(() => {
-    const counts: Record<JourneyPillarKey, number> = {
-      ALL: JOURNEY_CHAPTERS.length,
-      'mstar-quoc-te': 0,
-      'dinh-cao-nhiet-huyet': 0,
-      'hanh-trinh-se-chia': 0,
-      'diem-tua-to-am': 0,
-    };
-    for (const c of JOURNEY_CHAPTERS) {
-      counts[c.pillar] += 1;
-    }
-    return counts;
-  }, []);
-
-  const totalPhotos = useMemo(
-    () => JOURNEY_CHAPTERS.reduce((acc, c) => acc + c.photoCount, 0),
-    []
+  const loungeChapter = useMemo(
+    () => videoChapters.find((c) => c.slug === loungeReelSlug) || videoChapters[0],
+    [videoChapters, loungeReelSlug]
   );
 
   const selectedChapterIndex = useMemo(
@@ -124,6 +122,7 @@ export const JourneysPage: React.FC = () => {
       (selectedChapterIndex + direction + JOURNEY_CHAPTERS.length) %
       JOURNEY_CHAPTERS.length;
     setSelectedChapterSlug(JOURNEY_CHAPTERS[nextIdx].slug);
+    setShowAllModalPhotos(false);
     if (modalScrollRef.current) {
       modalScrollRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -155,18 +154,12 @@ export const JourneysPage: React.FC = () => {
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        if (lightbox) {
-          setLightbox(null);
-        } else if (activeReelChapter) {
-          setActiveReelSlug(null);
-        } else if (activeVideo) {
-          setActiveVideo(null);
-        } else if (selectedChapter) {
-          setSelectedChapterSlug(null);
-        }
+        if (lightbox) setLightbox(null);
+        else if (activeReelChapter) setActiveReelSlug(null);
+        else if (activeVideo) setActiveVideo(null);
+        else if (selectedChapter) setSelectedChapterSlug(null);
         return;
       }
-
       if (lightbox) {
         if (e.key === 'ArrowRight') navigateLightbox(1);
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
@@ -187,6 +180,7 @@ export const JourneysPage: React.FC = () => {
   });
 
   const openChapter = (chapter: JourneyChapter) => {
+    setShowAllModalPhotos(false);
     setSelectedChapterSlug(chapter.slug);
     trackEvent('view_journey_chapter', {
       chapter_slug: chapter.slug,
@@ -217,13 +211,29 @@ export const JourneysPage: React.FC = () => {
     }, 90);
   };
 
-  const featuredChapter = filteredChapters[0] || JOURNEY_CHAPTERS[0];
-  const restChapters = filteredChapters.slice(1);
+  // Curated references for the 3-Act Editorial Narrative Arc
+  const chJapan = chapterMap['nhat-ban-2026'];
+  const chEurope = chapterMap['ao-duc-2024'];
+  const chShanghai = chapterMap['thuong-hai-2025'];
+  const chChongqing = chapterMap['trung-khanh-2026'];
+  const chKorea = chapterMap['han-quoc-2024'];
+  const chNanning = chapterMap['nam-ninh-2024'];
+  const chParis = chapterMap['phap-2019'];
+  const chYenTu = chapterMap['yen-tu-vinh-danh-2025'];
+  const chPhanThiet = chapterMap['kickoff-phan-thiet-2026'];
+  const chDakLak = chapterMap['thien-nguyen-dak-lak-2026'];
+  const chFamily = chapterMap['diem-tua-to-am'];
+
+  const modalPhotosVisible = selectedChapter
+    ? showAllModalPhotos
+      ? selectedChapter.photos
+      : selectedChapter.photos.slice(0, 6)
+    : [];
 
   return (
     <div className="min-h-screen w-full max-w-[100vw] [overflow-x:clip] bg-[#FAF9F5] text-[#181F1C] selection:bg-[#0A3622] selection:text-white">
       {/* =================================================================== */}
-      {/* STICKY EDITORIAL HEADER + MOBILE QUICK-JUMP BAR */}
+      {/* STICKY EDITORIAL HEADER + MOBILE QUICK-JUMP STRIP */}
       {/* =================================================================== */}
       <header className="sticky top-0 z-40 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8]">
         <div className="max-w-7xl w-full min-w-0 mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
@@ -234,26 +244,29 @@ export const JourneysPage: React.FC = () => {
                 KHÁNH VÂN
               </span>
               <span className="sm:hidden text-[9px] uppercase tracking-[0.12em] text-[#56605B] font-medium mt-1 truncate">
-                Những Chuyến Đi • Đồng Hành
+                Những Chuyến Đi • 2019–2026
               </span>
               <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
-                Những Chuyến Đi • Dấu Ấn Đồng Hành
+                Những Chuyến Đi • Monograph 2019–2026
               </span>
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-7 text-[11px] uppercase tracking-[0.16em] font-medium text-[#56605B]">
-            <a href="#dau-chan" className="hover:text-[#0A3622] transition-colors">
-              01. Dấu ấn hành trình
+          <nav className="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-[0.15em] font-medium text-[#56605B]">
+            <a href="#ban-do-hanh-trinh" className="hover:text-[#0A3622] transition-colors">
+              01. Bản đồ
             </a>
-            <a href="#thuoc-phim" className="hover:text-[#0A3622] transition-colors">
-              02. Thước phim ({videoChapters.length})
+            <a href="#hoi-1-nam-chau" className="hover:text-[#0A3622] transition-colors">
+              02. Năm châu
             </a>
-            <a href="#nhat-ky-chuyen-di" className="hover:text-[#0A3622] transition-colors">
-              03. Nhật ký ({JOURNEY_CHAPTERS.length})
+            <a href="#hoi-2-chieu-sau" className="hover:text-[#0A3622] transition-colors">
+              03. Bản lĩnh &amp; Sẻ chia
             </a>
-            <a href="#ket-noi-dong-hanh" className="hover:text-[#0A3622] transition-colors">
-              04. Cùng nhau đi xa
+            <a href="#hoi-3-to-am" className="hover:text-[#0A3622] transition-colors">
+              04. Điểm trở về
+            </a>
+            <a href="#phong-chieu" className="hover:text-[#0A3622] transition-colors">
+              05. Phòng chiếu ({videoChapters.length})
             </a>
           </nav>
 
@@ -282,274 +295,911 @@ export const JourneysPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Quick-Jump Bar */}
+        {/* Mobile Quick-Jump Strip */}
         <nav
-          aria-label="Điều hướng nhanh chuyên trang"
-          className="lg:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
+          aria-label="Điều hướng nhanh các hồi"
+          className="xl:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
         >
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-4 py-2 text-[11px] font-medium text-[#4A544F]">
             <a
-              href="#dau-chan"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+              href="#ban-do-hanh-trinh"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-[#EBF2EE] text-[#0A3622] font-semibold border border-[#008746]/30"
             >
-              01. Dấu ấn
+              01. Bản đồ
             </a>
             <a
-              href="#thuoc-phim"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+              href="#hoi-1-nam-chau"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              02. Thước phim ({videoChapters.length})
+              02. Năm châu
             </a>
             <a
-              href="#nhat-ky-chuyen-di"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-[#EBF2EE] text-[#0A3622] font-semibold border border-[#008746]/30 transition-colors"
+              href="#hoi-2-chieu-sau"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              03. Nhật ký ({JOURNEY_CHAPTERS.length})
+              03. Bản lĩnh &amp; Sẻ chia
             </a>
             <a
-              href="/green-power"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+              href="#hoi-3-to-am"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              Hệ thống Vùng
+              04. Điểm trở về
             </a>
             <a
-              href="#ket-noi-dong-hanh"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+              href="#phong-chieu"
+              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              04. Kết nối
+              05. Phòng chiếu ({videoChapters.length})
             </a>
           </div>
         </nav>
       </header>
 
       {/* =================================================================== */}
-      {/* CHƯƠNG 01: EDITORIAL HERO SPREAD & INTERACTIVE MILESTONE STRIP */}
+      {/* FULL-BLEED CINEMATIC AMBIENT HERO FILM (LIVING DOCUMENTARY COVER) */}
       {/* =================================================================== */}
-      <section
-        id="dau-chan"
-        className="scroll-mt-24 pt-8 pb-12 sm:pt-14 sm:pb-18 border-b border-[#E4E1D8]"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Editorial Monograph Copy */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EBF2EE] border border-[#008746]/25 text-[#0A3622] text-[10.5px] uppercase tracking-[0.18em] font-semibold">
-                <Compass className="w-3.5 h-3.5 text-[#008746]" />
-                <span>Chuyên Trang Đồng Hành • 2019–2026</span>
-              </div>
+      <section className="relative min-h-[78dvh] sm:min-h-[86vh] bg-[#061C12] text-[#FAF9F5] flex flex-col justify-end overflow-hidden">
+        {/* Desktop 16:9 Ambient Film */}
+        <video
+          ref={heroDesktopRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/videos/journeys/hero-monograph-desktop-poster.jpg"
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
+        >
+          <source src="/videos/journeys/hero-monograph-desktop.mp4" type="video/mp4" />
+        </video>
 
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[52px] text-[#181F1C] font-normal leading-[1.14] tracking-[-0.01em]">
-                Mỗi chuyến đi là một cột mốc của nỗ lực, tình đồng đội và sự bình an nơi tổ ấm.
-              </h1>
+        {/* Mobile Portrait Ambient Film */}
+        <video
+          ref={heroMobileRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/videos/journeys/hero-monograph-mobile-poster.jpg"
+          className="sm:hidden absolute inset-0 w-full h-full object-cover object-center"
+        >
+          <source src="/videos/journeys/hero-monograph-mobile.mp4" type="video/mp4" />
+        </video>
 
-              <div className="border-l-2 border-[#008746] pl-4 sm:pl-6 space-y-3">
-                <p className="font-serif italic text-lg sm:text-xl text-[#181F1C] leading-[1.55]">
-                  “Đi đến đâu không quan trọng bằng việc ta bước đi cùng ai, và trở về nhà với nụ cười nhẹ nhõm thế nào.”
-                </p>
-                <p className="text-sm sm:text-[15px] text-[#333D38] leading-[1.82]">
-                  Trang nhật ký nhỏ này lưu giữ những hành trình đáng nhớ của Khánh Vân từ đêm thu dưới chân Tháp Eiffel năm 2019, những mùa thưởng huấn M-Star tại Hàn Quốc, Áo, Đức, Thượng Hải, Nhật Bản, Trùng Khánh, đến đêm vinh danh Top 1 DRD+ tại non thiêng Yên Tử, chuyến xe thiện nguyện Đắk Lắk và khoảng trời bình yên bên chồng cùng hai con.
-                </p>
-              </div>
+        {/* Editorial Atmospheric Vignette for Crisp Typography */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061C12] via-[#061C12]/48 to-[#061C12]/35" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#061C12]/80 via-[#061C12]/25 to-transparent" />
 
-              {/* 4 Key Metrics */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-                <div className="bg-white border border-[#E4E1D8] rounded-[3px] p-3.5">
-                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-semibold">
-                    07
-                  </div>
-                  <div className="text-[11px] text-[#56605B] mt-0.5 leading-snug">
-                    Quốc gia &amp; điểm đến quốc tế
-                  </div>
-                </div>
-                <div className="bg-white border border-[#E4E1D8] rounded-[3px] p-3.5">
-                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-semibold">
-                    {JOURNEY_CHAPTERS.length}
-                  </div>
-                  <div className="text-[11px] text-[#56605B] mt-0.5 leading-snug">
-                    Chương ký ức thực tế
-                  </div>
-                </div>
-                <div className="bg-white border border-[#E4E1D8] rounded-[3px] p-3.5">
-                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-semibold">
-                    {totalPhotos}
-                  </div>
-                  <div className="text-[11px] text-[#56605B] mt-0.5 leading-snug">
-                    Khung hình chọn lọc
-                  </div>
-                </div>
-                <div className="bg-white border border-[#E4E1D8] rounded-[3px] p-3.5">
-                  <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-semibold">
-                    0{videoChapters.length}
-                  </div>
-                  <div className="text-[11px] text-[#56605B] mt-0.5 leading-snug">
-                    Thước phim hành trình
-                  </div>
-                </div>
-              </div>
+        {/* Top-Right Subtle Ambient Control */}
+        <div className="absolute top-4 right-4 sm:top-7 sm:right-8 z-20">
+          <button
+            type="button"
+            onClick={toggleHeroPlayback}
+            aria-label={heroPaused ? 'Phát phim nền' : 'Tạm dừng phim nền'}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/45 hover:bg-black/65 backdrop-blur-md border border-white/20 text-[10.5px] uppercase tracking-[0.14em] text-white/90 transition-colors cursor-pointer"
+          >
+            {heroPaused ? (
+              <>
+                <Play className="w-3 h-3 fill-current" />
+                <span>Phát phim nền</span>
+              </>
+            ) : (
+              <>
+                <Pause className="w-3 h-3" />
+                <span>Tạm dừng nền</span>
+              </>
+            )}
+          </button>
+        </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                <a
-                  href="#nhat-ky-chuyen-di"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
-                >
-                  <span>Khám phá 11 chương ký ức</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="#thuoc-phim"
-                  className="inline-flex items-center gap-2 px-4 py-3 bg-white hover:bg-[#F3F1EA] text-[#181F1C] border border-[#DCD8CE] hover:border-[#0A3622] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
-                >
-                  <Play className="w-3.5 h-3.5 text-[#008746] fill-[#008746]" />
-                  <span>Xem 7 thước phim</span>
-                </a>
-              </div>
+        {/* Hero Monograph Typography Spread */}
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-8 pt-24 pb-8 sm:pb-14 space-y-8 sm:space-y-10">
+          <div className="max-w-3xl space-y-5 sm:space-y-6">
+            <div className="inline-flex items-center gap-2.5 text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] text-[#E8D3A6] font-semibold">
+              <span className="w-7 h-px bg-[#E8D3A6]" />
+              <span>Monograph • Khánh Vân &amp; Những Chuyến Đi</span>
             </div>
 
-            {/* Right Asymmetric Triptych Collage */}
-            <div className="lg:col-span-5">
-              <div className="grid grid-cols-12 gap-3 sm:gap-4">
-                {/* Main Portrait: Mt Fuji 2026 */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    const ch = JOURNEY_CHAPTERS.find((c) => c.slug === 'nhat-ban-2026');
-                    if (ch) openChapter(ch);
-                  }}
-                  className="col-span-7 group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] aspect-[3/4] text-left cursor-pointer shadow-[0_18px_45px_-22px_rgba(10,54,34,0.35)]"
-                >
-                  <img
-                    src="/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2"
-                    alt="Chị Khánh Vân dưới chân núi Phú Sĩ trong chuyến M-Star Nhật Bản 2026"
-                    className="w-full h-full object-cover object-[50%_26%] group-hover:scale-[1.03] transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/75 via-black/30 to-transparent text-white">
-                    <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold block">
-                      M-Star Nhật Bản 2026
-                    </span>
-                    <span className="font-serif text-sm sm:text-base leading-snug block mt-0.5">
-                      Núi Phú Sĩ &amp; Tokyo
-                    </span>
-                  </div>
-                </button>
+            <h1 className="font-serif text-[34px] sm:text-5xl lg:text-[62px] text-white font-normal leading-[1.12] tracking-[-0.01em]">
+              Hai cuốn hộ chiếu, một đội ngũ tử tế và một mái nhà bình yên.
+            </h1>
 
-                {/* Right Stacked Pair: Hallstatt + Family */}
-                <div className="col-span-5 flex flex-col gap-3 sm:gap-4">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const ch = JOURNEY_CHAPTERS.find((c) => c.slug === 'ao-duc-2024');
-                      if (ch) openChapter(ch);
-                    }}
-                    className="group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] flex-1 min-h-[135px] text-left cursor-pointer"
-                  >
-                    <img
-                      src="/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2"
-                      alt="Hồ Hallstatt trong hành trình M-Star Châu Âu"
-                      className="w-full h-full object-cover object-[50%_40%] group-hover:scale-[1.04] transition-transform duration-700"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 p-2.5 sm:p-3 bg-gradient-to-t from-black/75 via-black/25 to-transparent text-white">
-                      <span className="text-[9px] uppercase tracking-[0.14em] text-[#E8D3A6] font-semibold block">
-                        Châu Âu 2024
-                      </span>
-                      <span className="font-serif text-xs sm:text-sm leading-tight block">
-                        Hồ Hallstatt, Áo
-                      </span>
-                    </div>
-                  </button>
+            <p className="text-sm sm:text-[16.5px] text-[#E2ECE6] leading-[1.82] max-w-2xl font-normal">
+              Từ chuyến bay đầu tiên năm 2019 đến hôm nay, Vân đã đi qua hai cuốn hộ chiếu. Nhưng điều khiến mình tự hào nhất chưa bao giờ là số con dấu nhập cảnh, mà là việc ngày càng có thêm nhiều đồng đội cùng bước ra thế giới, và sau mọi chuyến đi xa vẫn luôn có một tổ ấm bình an để trở về.
+            </p>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const ch = JOURNEY_CHAPTERS.find(
-                        (c) => c.slug === 'yen-tu-vinh-danh-2025'
-                      );
-                      if (ch) openChapter(ch);
-                    }}
-                    className="group relative overflow-hidden rounded-[4px] bg-[#EAE7DF] flex-1 min-h-[135px] text-left cursor-pointer"
-                  >
-                    <img
-                      src="/images/journeys/yen-tu-vinh-danh-2025/02-kv_259.jpg?v=2"
-                      alt="Vinh danh Top 1 DRD+ tại Yên Tử"
-                      className="w-full h-full object-cover object-[50%_25%] group-hover:scale-[1.04] transition-transform duration-700"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 p-2.5 sm:p-3 bg-gradient-to-t from-black/80 via-black/30 to-transparent text-white">
-                      <span className="text-[9px] uppercase tracking-[0.14em] text-[#E8D3A6] font-semibold block">
-                        Yên Tử 2025
-                      </span>
-                      <span className="font-serif text-xs sm:text-sm leading-tight block">
-                        Top 1 DRD+ Toàn Quốc
-                      </span>
-                    </div>
-                  </button>
-                </div>
-              </div>
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href="#ban-do-hanh-trinh"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#FAF9F5] hover:bg-[#E8D3A6] text-[#072116] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors"
+              >
+                <span>Mở bản đồ hành trình</span>
+                <ArrowDown className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="#phong-chieu"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
+              >
+                <Play className="w-3.5 h-3.5 fill-current text-[#E8D3A6]" />
+                <span>Phòng chiếu 7 thước phim</span>
+              </a>
             </div>
           </div>
 
-          {/* Interactive Destination Footsteps Strip */}
-          <div className="mt-10 sm:mt-12 pt-6 border-t border-[#E4E1D8]">
-            <div className="flex items-center justify-between gap-4 mb-3">
-              <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
-                Dấu chân qua từng năm • Chạm để mở nhanh từng chương
-              </span>
-              <span className="hidden sm:inline text-[11px] text-[#7A847F]">
-                Vuốt ngang để xem toàn bộ 11 cột mốc &rarr;
-              </span>
+          {/* Bottom Editorial Telemetry Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 pt-6 border-t border-white/15">
+            <div>
+              <div className="font-serif text-2xl sm:text-3xl text-[#E8D3A6] font-normal">
+                02 Cuốn
+              </div>
+              <div className="text-[11px] text-[#C4D6CC] mt-0.5">
+                Hộ chiếu đã ghi dấu từ năm 2019
+              </div>
             </div>
-
-            <div className="flex items-stretch gap-2.5 overflow-x-auto no-scrollbar pb-1 snap-x">
-              {JOURNEY_CHAPTERS.map((ch, idx) => (
-                <button
-                  key={ch.slug}
-                  type="button"
-                  onClick={() => openChapter(ch)}
-                  className="snap-start shrink-0 group flex items-center gap-2.5 px-3.5 py-2.5 bg-white hover:bg-[#0A3622] border border-[#E4E1D8] hover:border-[#0A3622] rounded-[3px] transition-all text-left cursor-pointer"
-                >
-                  <span className="w-6 h-6 rounded-full bg-[#EBF2EE] group-hover:bg-white/15 text-[#0A3622] group-hover:text-[#E8D3A6] text-[10px] font-bold flex items-center justify-center shrink-0">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.14em] text-[#008746] group-hover:text-[#E8D3A6] font-semibold">
-                      {ch.year} • {ch.countryTag}
-                    </div>
-                    <div className="text-xs font-medium text-[#181F1C] group-hover:text-white whitespace-nowrap">
-                      {ch.milestoneBadge}
-                    </div>
-                  </div>
-                </button>
-              ))}
+            <div>
+              <div className="font-serif text-2xl sm:text-3xl text-white font-normal">
+                07 Miền đất
+              </div>
+              <div className="text-[11px] text-[#C4D6CC] mt-0.5">
+                Pháp, Áo, Đức, Hàn, Nhật &amp; Trung Quốc
+              </div>
+            </div>
+            <div>
+              <div className="font-serif text-2xl sm:text-3xl text-white font-normal">
+                2 × Top 1
+              </div>
+              <div className="text-[11px] text-[#C4D6CC] mt-0.5">
+                FYP &amp; Duy trì hợp đồng năm 2025
+              </div>
+            </div>
+            <div>
+              <div className="font-serif text-2xl sm:text-3xl text-white font-normal">
+                11 Chương
+              </div>
+              <div className="text-[11px] text-[#C4D6CC] mt-0.5">
+                118 khung hình &amp; 7 thước phim thực tế
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* =================================================================== */}
-      {/* CHƯƠNG 02: 07 THƯỚC PHIM HÀNH TRÌNH THỰC TẾ (VERTICAL 9:16 REELS) */}
+      {/* CHƯƠNG 01: INTERACTIVE EURASIA & VIETNAM PASSPORT JOURNEY MAP */}
+      {/* =================================================================== */}
+      <JourneyMap onOpenChapter={openChapter} />
+
+      {/* =================================================================== */}
+      {/* HỒI I: VƯƠN RA THẾ GIỚI (2019 → 2026) — LIVING EDITORIAL MAGAZINE */}
       {/* =================================================================== */}
       <section
-        id="thuoc-phim"
-        className="scroll-mt-24 py-12 sm:py-16 bg-[#072618] text-[#FAF9F5] border-b border-white/10"
+        id="hoi-1-nam-chau"
+        className="scroll-mt-24 py-16 sm:py-24 bg-[#FAF9F5] border-b border-[#E4E1D8]"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7 sm:mb-9">
-            <div className="space-y-2 max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold">
-                <Film className="w-3.5 h-3.5" />
-                <span>02 / Thước Phim Sống Động</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-14 sm:space-y-20">
+          {/* Act I Manifesto Header */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+            <div className="lg:col-span-7 space-y-3">
+              <div className="inline-flex items-center gap-2.5 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
+                <span>02 / Hồi I • Vươn Ra Thế Giới</span>
+                <span className="w-8 h-px bg-[#B8975A]" />
+                <span className="text-[#6A756F]">2019–2026</span>
               </div>
-              <h2 className="font-serif text-2xl sm:text-4xl text-white font-normal leading-tight">
-                Bảy thước phim ghi lại nguyên vẹn cảm xúc trên từng cung đường
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
+                Từ bước chân đầu tiên dưới Tháp Eiffel đến sáu kỳ M-Star cùng đội ngũ Green Power
               </h2>
-              <p className="text-xs sm:text-sm text-[#C4D3CB] leading-relaxed">
-                Từ giây phút bước lên bục nhận cúp Top 1 DRD+ tại Yên Tử, khoảnh khắc xoay người dưới chân núi Phú Sĩ cho đến chuyến xe thiện nguyện lên với trẻ em Đắk Lắk.
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.82] border-l-2 border-[#008746] pl-4 sm:pl-5">
+                Bảy hành trình quốc tế không đơn thuần là những phần thưởng từ Manulife. Nhìn lại theo dòng thời gian, bạn sẽ thấy rõ nhất sự lớn mạnh của cả một tập thể: từ những ngày đầu Vân đi một mình, đến hôm nay mỗi chuyến đi đều có đông đảo quản lý ưu tú cùng sánh bước.
               </p>
             </div>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-[#9BB3A7] shrink-0">
-              Chạm vào thước phim để phát có âm thanh
-            </span>
           </div>
 
-          <div className="flex lg:grid lg:grid-cols-7 gap-3.5 sm:gap-4 overflow-x-auto lg:overflow-visible no-scrollbar snap-x pb-2">
+          {/* Growth Arc Contrast Diptych: 2019 Solo Origin vs 2024-2026 Green Power Scale */}
+          {chParis && chKorea && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
+              <article
+                onClick={() => openChapter(chParis)}
+                className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/50 rounded-[4px] overflow-hidden cursor-pointer transition-all"
+              >
+                <div className="grid grid-cols-12 h-full">
+                  <div className="col-span-5 relative bg-[#EAE7DF] min-h-[210px] overflow-hidden">
+                    <img
+                      src={chParis.heroImage}
+                      alt={chParis.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-[50%_28%] group-hover:scale-[1.03] transition-transform duration-700"
+                    />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-[#072116]/85 text-[#E8D3A6] text-[9.5px] uppercase tracking-[0.16em] font-semibold rounded-[2px]">
+                      Khởi điểm 2019
+                    </span>
+                  </div>
+                  <div className="col-span-7 p-4 sm:p-6 flex flex-col justify-between gap-3">
+                    <div className="space-y-2">
+                      <div className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
+                        M-Star Pháp 2019 • Paris
+                      </div>
+                      <h3 className="font-serif text-lg sm:text-xl text-[#181F1C] leading-snug group-hover:text-[#0A3622]">
+                        Một mình dưới chân Tháp Eiffel và lời tự hứa đường dài
+                      </h3>
+                      <p className="text-xs text-[#4A544F] leading-relaxed line-clamp-3">
+                        Đêm thu Paris năm 2019 đã mở ra tầm nhìn về sự nghiệp tài chính quốc tế và lời hẹn nhất định sẽ đưa đồng đội cùng đi ra thế giới.
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.14em] font-semibold text-[#0A3622]">
+                      <span>Xem 10 ảnh Paris 2019</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                onClick={() => openChapter(chKorea)}
+                className="group bg-[#0A3622] text-white border border-[#0A3622] rounded-[4px] overflow-hidden cursor-pointer transition-all"
+              >
+                <div className="grid grid-cols-12 h-full">
+                  <div className="col-span-5 relative bg-[#072116] min-h-[210px] overflow-hidden">
+                    <img
+                      src={chKorea.heroImage}
+                      alt={chKorea.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-[50%_35%] group-hover:scale-[1.03] transition-transform duration-700"
+                    />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-[#E8D3A6] text-[#072116] text-[9.5px] uppercase tracking-[0.16em] font-bold rounded-[2px]">
+                      2024–2026
+                    </span>
+                  </div>
+                  <div className="col-span-7 p-4 sm:p-6 flex flex-col justify-between gap-3">
+                    <div className="space-y-2">
+                      <div className="text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
+                        Sức mạnh Hệ thống Green Power
+                      </div>
+                      <h3 className="font-serif text-lg sm:text-xl text-white leading-snug">
+                        Đi cùng cả một đoàn quân quản lý bản lĩnh và tử tế
+                      </h3>
+                      <p className="text-xs text-[#C8DBD1] leading-relaxed line-clamp-3">
+                        Từ mùa hoa anh đào Seoul, sắc áo dài Việt tại Nam Ninh đến Phú Sĩ, Trùng Khánh, mỗi chuyến đi nay đều rộn ràng tiếng cười của các anh chị em quản lý.
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.14em] font-semibold text-[#E8D3A6]">
+                      <span>Xem hành trình Seoul 2024</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          )}
+
+          {/* Flagship Living Magazine Spread: Japan 2026 (Live Editorial Loop + Crisp Photography) */}
+          {chJapan && (
+            <article
+              onClick={() => openChapter(chJapan)}
+              className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/45 rounded-[5px] overflow-hidden shadow-[0_22px_55px_-30px_rgba(10,54,34,0.22)] cursor-pointer transition-all"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                {/* Left 7 cols: Living Silent B-roll Loop + Hero Portrait Pair */}
+                <div className="lg:col-span-7 grid grid-cols-12 gap-2.5 p-2.5 sm:p-3 bg-[#F3F1EA]">
+                  <div className="col-span-7 relative rounded-[3px] overflow-hidden bg-black aspect-[3/4]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster="/videos/journeys/loop-fuji-poster.jpg"
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/videos/journeys/loop-fuji.mp4" type="video/mp4" />
+                    </video>
+                    <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[9.5px] uppercase tracking-[0.15em] text-[#E8D3A6] font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse" />
+                      <span>Khung hình sống • Phú Sĩ</span>
+                    </span>
+                  </div>
+
+                  <div className="col-span-5 flex flex-col gap-2.5">
+                    <div className="flex-1 rounded-[3px] overflow-hidden bg-[#EAE7DF]">
+                      <img
+                        src={chJapan.photos[0].src}
+                        alt={chJapan.photos[0].caption}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-[50%_24%] group-hover:scale-[1.03] transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="flex-1 rounded-[3px] overflow-hidden bg-[#EAE7DF]">
+                      <img
+                        src={chJapan.photos[4].src}
+                        alt={chJapan.photos[4].caption}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-[50%_30%] group-hover:scale-[1.03] transition-transform duration-700"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right 5 cols: Editorial Monograph Copy */}
+                <div className="lg:col-span-5 p-6 sm:p-9 lg:p-10 flex flex-col justify-between gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between gap-2 text-[10.5px] uppercase tracking-[0.18em] text-[#008746] font-semibold">
+                      <span>Tiêu điểm M-Star • 2026</span>
+                      <span className="text-[#858E89]">Nhật Bản</span>
+                    </div>
+
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#181F1C] font-normal leading-[1.2] group-hover:text-[#0A3622] transition-colors">
+                      {chJapan.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-[#4A544F] leading-[1.82]">
+                      {chJapan.subtitle}
+                    </p>
+
+                    <blockquote className="border-l-2 border-[#B8975A] pl-4 py-0.5 font-serif italic text-base sm:text-[17px] text-[#181F1C] leading-[1.6]">
+                      “{chJapan.pullQuote}”
+                    </blockquote>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#ECE9E0] flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex items-center gap-3 text-xs text-[#56605B]">
+                      <span className="inline-flex items-center gap-1">
+                        <Camera className="w-3.5 h-3.5 text-[#008746]" />
+                        <span>{chJapan.photoCount} ảnh</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <Play className="w-3 h-3 fill-[#008746] text-[#008746]" />
+                        <span>Phim {chJapan.video?.durationLabel}</span>
+                      </span>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#0A3622] group-hover:text-[#008746]">
+                      <span>Đọc nhật ký Nhật Bản</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {/* Paired Living Contrast Spread: Europe 2024 + Shanghai 2025 (Each with Silent B-roll Loop) */}
+          {chEurope && chShanghai && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              {[
+                {
+                  ch: chEurope,
+                  loopSrc: '/videos/journeys/loop-salzburg.mp4',
+                  loopPoster: '/videos/journeys/loop-salzburg-poster.jpg',
+                  loopLabel: 'Phố cổ Salzburg',
+                },
+                {
+                  ch: chShanghai,
+                  loopSrc: '/videos/journeys/loop-shanghai.mp4',
+                  loopPoster: '/videos/journeys/loop-shanghai-poster.jpg',
+                  loopLabel: 'Cổ trấn Chu Gia Giác',
+                },
+              ].map(({ ch, loopSrc, loopPoster, loopLabel }) => (
+                <article
+                  key={ch.slug}
+                  onClick={() => openChapter(ch)}
+                  className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/45 rounded-[5px] overflow-hidden flex flex-col justify-between cursor-pointer transition-all"
+                >
+                  <div>
+                    {/* Visual Split: Hero Photo + Silent B-roll Loop */}
+                    <div className="grid grid-cols-12 gap-2 p-2 bg-[#F3F1EA]">
+                      <div className="col-span-7 relative rounded-[3px] overflow-hidden bg-[#EAE7DF] aspect-[4/4]">
+                        <img
+                          src={ch.heroImage}
+                          alt={ch.title}
+                          loading="lazy"
+                          style={{ objectPosition: ch.heroObjectPosition }}
+                          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                        />
+                        <span className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-[2px] bg-[#0A3622]/90 text-[#E8D3A6] text-[9.5px] uppercase tracking-[0.15em] font-semibold">
+                          {ch.milestoneBadge}
+                        </span>
+                      </div>
+                      <div className="col-span-5 relative rounded-[3px] overflow-hidden bg-black aspect-[4/4]">
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          poster={loopPoster}
+                          className="w-full h-full object-cover"
+                        >
+                          <source src={loopSrc} type="video/mp4" />
+                        </video>
+                        <span className="absolute bottom-2 left-2 right-2 px-2 py-0.5 rounded-[2px] bg-black/60 text-[9px] uppercase tracking-[0.12em] text-white/90 text-center truncate">
+                          {loopLabel}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-5 sm:p-7 space-y-3">
+                      <div className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
+                        {ch.periodLabel} • {ch.location}
+                      </div>
+                      <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C] leading-snug group-hover:text-[#0A3622] transition-colors">
+                        {ch.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13.5px] text-[#4A544F] leading-[1.76]">
+                        {ch.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="px-5 sm:px-7 pb-5 pt-3 border-t border-[#ECE9E0] flex items-center justify-between text-xs">
+                    <span className="text-[#56605B]">
+                      {ch.photoCount} ảnh • Phim {ch.video?.durationLabel}
+                    </span>
+                    <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] text-[11px] font-semibold text-[#0A3622]">
+                      <span>Mở chương này</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
+          {/* Curated 3-Destination Folio: Chongqing 2026, Korea 2024, Nanning 2024 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {[chChongqing, chKorea, chNanning].filter(Boolean).map((ch) => (
+              <article
+                key={ch.slug}
+                onClick={() => openChapter(ch)}
+                className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/45 rounded-[4px] overflow-hidden flex flex-col justify-between cursor-pointer transition-all"
+              >
+                <div>
+                  <div className="relative aspect-[4/3] bg-[#EAE7DF] overflow-hidden">
+                    <img
+                      src={ch.heroImage}
+                      alt={ch.title}
+                      loading="lazy"
+                      style={{ objectPosition: ch.heroObjectPosition }}
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-[2px] bg-[#072116]/85 text-[#E8D3A6] text-[9.5px] uppercase tracking-[0.15em] font-semibold">
+                      {ch.milestoneBadge}
+                    </span>
+                    {ch.video && (
+                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-[2px] bg-black/65 text-white text-[9.5px]">
+                        <Play className="w-2.5 h-2.5 fill-current text-[#34D399]" />
+                        <span>{ch.video.durationLabel}</span>
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-5 space-y-2.5">
+                    <div className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
+                      {ch.location}
+                    </div>
+                    <h3 className="font-serif text-lg sm:text-xl text-[#181F1C] leading-snug group-hover:text-[#0A3622]">
+                      {ch.title}
+                    </h3>
+                    <p className="text-xs text-[#4A544F] leading-relaxed line-clamp-3">
+                      “{ch.pullQuote}”
+                    </p>
+                  </div>
+                </div>
+                <div className="px-5 pb-4 pt-3 border-t border-[#ECE9E0] flex items-center justify-between text-[11px]">
+                  <span className="text-[#56605B]">{ch.photoCount} ảnh chọn lọc</span>
+                  <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] font-semibold text-[#0A3622]">
+                    <span>Xem chi tiết</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =================================================================== */}
+      {/* HỒI II: CHIỀU SÂU NGƯỜI DẪN ĐƯỜNG (THỰC LỰC • KỶ LUẬT • SẺ CHIA) */}
+      {/* =================================================================== */}
+      <section
+        id="hoi-2-chieu-sau"
+        className="scroll-mt-24 py-16 sm:py-24 bg-[#F1EEE6] border-b border-[#E0DCD0]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12 sm:space-y-16">
+          <div className="max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
+              <Award className="w-3.5 h-3.5" />
+              <span>03 / Hồi II • Chiều Sâu Của Người Dẫn Đường</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
+              Phía sau những chuyến đi xa là thực lực nghề, kỷ luật thể chất và lòng sẻ chia
+            </h2>
+            <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.82]">
+              Khách hàng và đồng đội gắn bó lâu dài không phải vì những tấm ảnh đẹp trên mạng xã hội, mà vì những giá trị bền vững phía sau: chất lượng duy trì hợp đồng đứng đầu toàn quốc, tinh thần bền bỉ trên đường chạy và những chuyến xe mang yêu thương đến vùng cao.
+            </p>
+          </div>
+
+          {/* Centerpiece Proof-of-Authority: Yên Tử Top 1 DRD+ with Living Stage Loop */}
+          {chYenTu && (
+            <article
+              onClick={() => openChapter(chYenTu)}
+              className="group bg-[#0A3622] text-[#FAF9F5] rounded-[5px] overflow-hidden shadow-[0_24px_60px_-28px_rgba(10,54,34,0.45)] cursor-pointer"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between gap-6">
+                  <div className="space-y-4">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#E8D3A6]/15 border border-[#E8D3A6]/40 text-[#E8D3A6] text-[10px] uppercase tracking-[0.18em] font-semibold">
+                      Trụ cột 01 • Thực Lực &amp; Chữ Tín Nghề Nghiệp
+                    </span>
+                    <h3 className="font-serif text-2xl sm:text-4xl text-white font-normal leading-[1.2]">
+                      {chYenTu.title}
+                    </h3>
+                    <blockquote className="border-l-2 border-[#E8D3A6] pl-4 font-serif italic text-base sm:text-lg text-[#F4ECE0] leading-relaxed">
+                      “{chYenTu.pullQuote}”
+                    </blockquote>
+                    <p className="text-xs sm:text-sm text-[#C8DBD1] leading-[1.82]">
+                      {chYenTu.story[1]}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
+                    <span className="text-xs text-[#A9C2B5]">
+                      Legacy Yên Tử • {chYenTu.photoCount} ảnh • Phim trao cúp {chYenTu.video?.durationLabel}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#E8D3A6] group-hover:text-white">
+                      <span>Mở chương Yên Tử 2025</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6 grid grid-cols-12 gap-2.5 p-2.5 sm:p-3 bg-[#072116]">
+                  <div className="col-span-6 relative rounded-[3px] overflow-hidden bg-black aspect-[3/4]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster="/videos/journeys/loop-yentu-poster.jpg"
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/videos/journeys/loop-yentu.mp4" type="video/mp4" />
+                    </video>
+                    <span className="absolute bottom-2.5 left-2.5 right-2.5 px-2 py-1 rounded-[2px] bg-black/65 text-[9.5px] uppercase tracking-[0.14em] text-[#E8D3A6] text-center">
+                      Sân khấu Top 1 DRD+
+                    </span>
+                  </div>
+                  <div className="col-span-6 flex flex-col gap-2.5">
+                    <div className="flex-1 rounded-[3px] overflow-hidden bg-[#0E3624]">
+                      <img
+                        src={chYenTu.photos[1].src}
+                        alt={chYenTu.photos[1].caption}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-[50%_22%] group-hover:scale-[1.03] transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="flex-1 rounded-[3px] overflow-hidden bg-[#0E3624]">
+                      <img
+                        src={chYenTu.photos[6].src}
+                        alt={chYenTu.photos[6].caption}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-[50%_24%] group-hover:scale-[1.03] transition-transform duration-700"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {/* Proof-of-Character Diptych: Phan Thiết (Discipline) & Đắk Lắk (Kindness) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            {[
+              { ch: chPhanThiet, pillarTag: 'Trụ cột 02 • Kỷ Luật & Sức Bền Đội Ngũ' },
+              { ch: chDakLak, pillarTag: 'Trụ cột 03 • Phụng Sự & Sẻ Chia Cộng Đồng' },
+            ].map(
+              ({ ch, pillarTag }) =>
+                ch && (
+                  <article
+                    key={ch.slug}
+                    onClick={() => openChapter(ch)}
+                    className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622]/50 rounded-[5px] overflow-hidden flex flex-col justify-between cursor-pointer transition-all"
+                  >
+                    <div>
+                      <div className="grid grid-cols-12 gap-1.5 p-2 bg-[#FAF9F5]">
+                        <div className="col-span-8 aspect-[4/3] rounded-[3px] overflow-hidden bg-[#EAE7DF]">
+                          <img
+                            src={ch.photos[0].src}
+                            alt={ch.photos[0].caption}
+                            loading="lazy"
+                            style={{ objectPosition: ch.heroObjectPosition }}
+                            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                          />
+                        </div>
+                        <div className="col-span-4 flex flex-col gap-1.5">
+                          <div className="flex-1 rounded-[3px] overflow-hidden bg-[#EAE7DF]">
+                            <img
+                              src={ch.photos[1].src}
+                              alt={ch.photos[1].caption}
+                              loading="lazy"
+                              className="w-full h-full object-cover object-[50%_28%]"
+                            />
+                          </div>
+                          <div className="flex-1 rounded-[3px] overflow-hidden bg-[#EAE7DF]">
+                            <img
+                              src={ch.photos[3].src}
+                              alt={ch.photos[3].caption}
+                              loading="lazy"
+                              className="w-full h-full object-cover object-[50%_28%]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-5 sm:p-7 space-y-3">
+                        <span className="text-[10px] uppercase tracking-[0.18em] text-[#008746] font-bold block">
+                          {pillarTag}
+                        </span>
+                        <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C] leading-snug group-hover:text-[#0A3622]">
+                          {ch.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#4A544F] leading-[1.78]">
+                          {ch.subtitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="px-5 sm:px-7 pb-5 pt-3 border-t border-[#ECE9E0] flex items-center justify-between text-xs">
+                      <span className="text-[#56605B]">
+                        {ch.photoCount} ảnh • Phim {ch.video?.durationLabel}
+                      </span>
+                      <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] text-[11px] font-semibold text-[#0A3622]">
+                        <span>Mở nhật ký</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </article>
+                )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* =================================================================== */}
+      {/* HỒI III: ĐIỂM TRỞ VỀ — SERENE KINFOLK FAMILY SANCTUARY SPREAD */}
+      {/* =================================================================== */}
+      {chFamily && (
+        <section
+          id="hoi-3-to-am"
+          className="scroll-mt-24 py-16 sm:py-24 bg-[#FAF9F5] border-b border-[#E4E1D8]"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-14">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+              <div className="lg:col-span-7 space-y-3">
+                <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
+                  <Heart className="w-3.5 h-3.5" />
+                  <span>04 / Hồi III • Điểm Trở Về</span>
+                </div>
+                <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
+                  {chFamily.title}
+                </h2>
+              </div>
+              <div className="lg:col-span-5">
+                <blockquote className="border-l-2 border-[#B8975A] pl-4 sm:pl-5 font-serif italic text-lg sm:text-xl text-[#181F1C] leading-[1.58]">
+                  “{chFamily.pullQuote}”
+                </blockquote>
+              </div>
+            </div>
+
+            {/* Kinfolk Asymmetric Family Photo Mosaic (100% Verified Real Family Photos) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+              {/* Wide Lead Family Walk (Blue Tees) */}
+              <figure
+                onClick={() =>
+                  setLightbox({
+                    chapterTitle: chFamily.milestoneBadge,
+                    photos: chFamily.photos,
+                    index: 0,
+                  })
+                }
+                className="lg:col-span-7 group relative rounded-[4px] overflow-hidden bg-[#EAE7DF] aspect-[4/3] lg:aspect-auto lg:min-h-[450px] cursor-zoom-in"
+              >
+                <img
+                  src={chFamily.photos[0].src}
+                  alt={chFamily.photos[0].caption}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[50%_30%] group-hover:scale-[1.02] transition-transform duration-700"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 p-4 sm:p-6 bg-gradient-to-t from-black/75 via-black/30 to-transparent text-white">
+                  <span className="text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold block">
+                    Tổ ấm bốn thành viên
+                  </span>
+                  <span className="font-serif text-base sm:text-xl leading-snug block mt-0.5">
+                    {chFamily.photos[0].caption}
+                  </span>
+                </figcaption>
+              </figure>
+
+              {/* Right 2x2 Intimate Family Grid */}
+              <div className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-5">
+                {[1, 3, 8, 10].map((photoIdx) => {
+                  const ph = chFamily.photos[photoIdx];
+                  if (!ph) return null;
+                  return (
+                    <figure
+                      key={ph.id}
+                      onClick={() =>
+                        setLightbox({
+                          chapterTitle: chFamily.milestoneBadge,
+                          photos: chFamily.photos,
+                          index: photoIdx,
+                        })
+                      }
+                      className="group relative rounded-[4px] overflow-hidden bg-[#EAE7DF] aspect-[4/5] cursor-zoom-in"
+                    >
+                      <img
+                        src={ph.src}
+                        alt={ph.caption}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-[50%_24%] group-hover:scale-[1.04] transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span className="text-[11px] text-white leading-snug line-clamp-2">
+                          {ph.caption}
+                        </span>
+                      </div>
+                    </figure>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Quiet Closing Reflection connecting Family Peace to Financial Protection */}
+            <div className="bg-white border border-[#E4E1D8] rounded-[5px] p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-8 space-y-3">
+                <p className="text-sm sm:text-[15.5px] text-[#28322D] leading-[1.85]">
+                  {chFamily.story[2]}
+                </p>
+              </div>
+              <div className="lg:col-span-4 flex lg:justify-end">
+                <button
+                  type="button"
+                  onClick={() => openChapter(chFamily)}
+                  className="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] transition-colors cursor-pointer"
+                >
+                  <span>Xem trọn 19 khoảnh khắc tổ ấm</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* =================================================================== */}
+      {/* CHƯƠNG 05: PHÒNG CHIẾU 07 THƯỚC PHIM THỰC TẾ (LUXURY SCREENING ROOM) */}
+      {/* =================================================================== */}
+      <section
+        id="phong-chieu"
+        className="scroll-mt-24 py-16 sm:py-24 bg-[#061C12] text-[#FAF9F5] border-b border-white/10"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8 sm:space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="space-y-2.5 max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold">
+                <Film className="w-3.5 h-3.5" />
+                <span>05 / Phòng Chiếu • 07 Thước Phim Thực Tế</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight">
+                Bảy thước phim ngắn trên nền piano acoustic êm dịu
+              </h2>
+              <p className="text-xs sm:text-sm text-[#BDD0C6] leading-relaxed">
+                Được dựng sạch từ tư liệu quay thật trên từng cung đường, giữ lại đúng nhịp thở và ánh sáng tự nhiên của mỗi chuyến đi.
+              </p>
+            </div>
+          </div>
+
+          {/* Desktop Interactive Cinema Screening Lounge */}
+          {loungeChapter && loungeChapter.video && (
+            <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-start">
+              {/* Left Cinema Frame */}
+              <div className="lg:col-span-5 bg-[#0A2B1C] border border-[#E8D3A6]/30 rounded-[6px] p-4 space-y-4 shadow-2xl">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
+                  <span>{loungeChapter.milestoneBadge}</span>
+                  <span>{loungeChapter.video.durationLabel} • Piano Acoustic</span>
+                </div>
+                <div className="rounded-[4px] overflow-hidden bg-black aspect-[9/16] max-h-[540px] mx-auto">
+                  <video
+                    key={loungeChapter.video.src}
+                    src={loungeChapter.video.src}
+                    poster={loungeChapter.video.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="space-y-2 pt-1">
+                  <h3 className="font-serif text-xl text-white leading-snug">
+                    {loungeChapter.video.title}
+                  </h3>
+                  <p className="text-xs text-[#C4D6CC] leading-relaxed">
+                    {loungeChapter.video.caption}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => openChapter(loungeChapter)}
+                    className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <span>
+                      Đọc bài viết &amp; xem {loungeChapter.photoCount} ảnh chương này
+                    </span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right 7-Film Program Playlist */}
+              <div className="lg:col-span-7 space-y-2.5">
+                {videoChapters.map((ch, idx) => {
+                  const isCurrent = ch.slug === loungeChapter.slug;
+                  return (
+                    <button
+                      key={ch.slug}
+                      type="button"
+                      onClick={() => {
+                        setLoungeReelSlug(ch.slug);
+                        trackEvent('select_cinema_reel', { chapter_slug: ch.slug });
+                      }}
+                      className={`w-full text-left p-4 rounded-[4px] border transition-all flex items-center gap-4 cursor-pointer ${
+                        isCurrent
+                          ? 'bg-[#0D3824] border-[#E8D3A6]/75 shadow-lg'
+                          : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-white/25'
+                      }`}
+                    >
+                      <div className="w-16 h-20 rounded-[3px] overflow-hidden bg-black shrink-0 relative">
+                        <img
+                          src={ch.video!.poster}
+                          alt={ch.milestoneBadge}
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                        <span className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                          <Play
+                            className={`w-4 h-4 fill-current ${
+                              isCurrent ? 'text-[#E8D3A6]' : 'text-white/80'
+                            }`}
+                          />
+                        </span>
+                      </div>
+
+                      <div className="flex-1 min-w-0 space-y-1">
+                        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.16em]">
+                          <span className="text-[#E8D3A6] font-bold">
+                            {String(idx + 1).padStart(2, '0')}
+                          </span>
+                          <span className="text-[#9AB5A7]">{ch.countryTag} • {ch.year}</span>
+                          {isCurrent && (
+                            <span className="px-2 py-0.5 rounded-full bg-[#E8D3A6]/20 text-[#E8D3A6] text-[9px] font-semibold">
+                              Đang chọn
+                            </span>
+                          )}
+                        </div>
+                        <div className="font-serif text-lg text-white leading-snug truncate">
+                          {ch.video!.title}
+                        </div>
+                        <p className="text-xs text-[#B5C9BE] line-clamp-1">
+                          {ch.video!.caption}
+                        </p>
+                      </div>
+
+                      <span className="text-xs font-mono text-[#E8D3A6] shrink-0">
+                        {ch.video!.durationLabel}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Mobile Horizontal Snap Cinema Cards */}
+          <div className="flex lg:hidden gap-3.5 overflow-x-auto no-scrollbar snap-x pb-2">
             {videoChapters.map((ch) => (
               <button
                 key={ch.slug}
@@ -558,37 +1208,33 @@ export const JourneysPage: React.FC = () => {
                   setActiveReelSlug(ch.slug);
                   trackEvent('play_journey_reel', { chapter_slug: ch.slug });
                 }}
-                className="snap-start shrink-0 w-[205px] sm:w-[225px] lg:w-auto group relative rounded-[5px] overflow-hidden bg-[#0E3B26] border border-white/15 hover:border-[#E8D3A6]/70 aspect-[9/16] text-left cursor-pointer shadow-lg"
+                className="snap-start shrink-0 w-[215px] group relative rounded-[5px] overflow-hidden bg-[#0E3B26] border border-white/15 aspect-[9/16] text-left cursor-pointer shadow-lg"
               >
                 <img
                   src={ch.video!.poster}
                   alt={ch.video!.title}
                   loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/25" />
-
                 <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1.5">
-                  <span className="px-2 py-0.5 rounded-[2px] bg-black/55 backdrop-blur-sm text-[9.5px] uppercase tracking-[0.12em] text-[#E8D3A6] font-semibold truncate">
+                  <span className="px-2 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] uppercase tracking-[0.12em] text-[#E8D3A6] font-semibold truncate">
                     {ch.countryTag} • {ch.year}
                   </span>
-                  <span className="px-1.5 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] text-white font-medium shrink-0">
+                  <span className="px-1.5 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] text-white shrink-0">
                     {ch.video!.durationLabel}
                   </span>
                 </div>
-
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="w-11 h-11 rounded-full bg-white/90 group-hover:bg-[#00A758] text-[#0A3622] group-hover:text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all">
+                  <span className="w-11 h-11 rounded-full bg-white/90 text-[#0A3622] flex items-center justify-center shadow-xl">
                     <Play className="w-4 h-4 fill-current ml-0.5" />
                   </span>
                 </div>
-
                 <div className="absolute inset-x-2.5 bottom-2.5 space-y-1">
-                  <div className="font-serif text-[13.5px] leading-snug text-white line-clamp-2">
+                  <div className="font-serif text-sm text-white leading-snug line-clamp-2">
                     {ch.milestoneBadge}
                   </div>
-                  <div className="text-[10.5px] text-white/75 line-clamp-2 leading-snug">
+                  <div className="text-[10.5px] text-white/75 line-clamp-2">
                     {ch.video!.title}
                   </div>
                 </div>
@@ -599,238 +1245,7 @@ export const JourneysPage: React.FC = () => {
       </section>
 
       {/* =================================================================== */}
-      {/* CHƯƠNG 03: NHẬT KÝ 11 CHƯƠNG HÀNH TRÌNH & BỘ ẢNH CHỌN LỌC */}
-      {/* =================================================================== */}
-      <section
-        id="nhat-ky-chuyen-di"
-        className="scroll-mt-24 py-12 sm:py-20 border-b border-[#E4E1D8]"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="max-w-3xl space-y-3 mb-7 sm:mb-10">
-            <span className="text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold block">
-              03 / Nhật Ký &amp; Bộ Sưu Tập Ảnh Thực Tế
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.15]">
-              Mười một chương ký ức trên hành trình sống và làm nghề
-            </h2>
-            <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.8]">
-              Mỗi chương là một câu chuyện thật được viết lại từ những trải nghiệm của Vân cùng gia đình và đội ngũ. Chạm vào từng chương để đọc trọn bài viết, xem thước phim và phóng lớn từng bức ảnh kỷ niệm.
-            </p>
-          </div>
-
-          {/* Pillar Filter Bar */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-8 sm:mb-10">
-            {JOURNEY_PILLARS.map((p) => {
-              const isActive = activePillar === p.key;
-              return (
-                <button
-                  key={p.key}
-                  type="button"
-                  onClick={() => setActivePillar(p.key)}
-                  className={`shrink-0 inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-[3px] text-xs font-medium transition-all cursor-pointer border ${
-                    isActive
-                      ? 'bg-[#0A3622] text-white border-[#0A3622] shadow-sm'
-                      : 'bg-white text-[#333D38] border-[#DCD8CE] hover:border-[#0A3622]'
-                  }`}
-                >
-                  <span>{p.shortLabel}</span>
-                  <span
-                    className={`px-1.5 py-0.5 rounded-full text-[10px] font-semibold ${
-                      isActive
-                        ? 'bg-white/20 text-[#E8D3A6]'
-                        : 'bg-[#F3F1EA] text-[#56605B]'
-                    }`}
-                  >
-                    {pillarCounts[p.key]}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Featured Lead Chapter Card */}
-          {featuredChapter && (
-            <article
-              onClick={() => openChapter(featuredChapter)}
-              className="group mb-8 sm:mb-12 bg-white border border-[#E4E1D8] hover:border-[#0A3622]/45 rounded-[5px] overflow-hidden shadow-[0_20px_50px_-28px_rgba(10,54,34,0.22)] cursor-pointer transition-all"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12">
-                <div className="lg:col-span-7 relative overflow-hidden bg-[#EAE7DF] aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[430px]">
-                  <img
-                    src={featuredChapter.heroImage}
-                    alt={featuredChapter.title}
-                    style={{ objectPosition: featuredChapter.heroObjectPosition }}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                  />
-                  <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-[2px] bg-[#0A3622]/90 backdrop-blur-sm text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
-                      {featuredChapter.milestoneBadge}
-                    </span>
-                    {featuredChapter.video && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-[2px] bg-black/65 backdrop-blur-sm text-[10px] uppercase tracking-[0.12em] text-white font-medium">
-                        <Play className="w-2.5 h-2.5 fill-current text-[#34D399]" />
-                        <span>Có video {featuredChapter.video.durationLabel}</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5 p-5 sm:p-8 lg:p-10 flex flex-col justify-between gap-6">
-                  <div className="space-y-3.5">
-                    <div className="flex flex-wrap items-center gap-2 text-[10.5px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
-                      <span>{featuredChapter.pillarLabel}</span>
-                      <span>•</span>
-                      <span>{featuredChapter.periodLabel}</span>
-                    </div>
-
-                    <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-normal leading-[1.22] group-hover:text-[#0A3622] transition-colors">
-                      {featuredChapter.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-[#4A544F] leading-[1.78]">
-                      {featuredChapter.subtitle}
-                    </p>
-
-                    <blockquote className="border-l-2 border-[#B8975A] pl-3.5 py-0.5 font-serif italic text-sm sm:text-[15.5px] text-[#222B26] leading-relaxed">
-                      “{featuredChapter.pullQuote}”
-                    </blockquote>
-                  </div>
-
-                  <div className="space-y-4 pt-3 border-t border-[#ECE9E0]">
-                    {/* Mini 4-photo preview strip */}
-                    <div className="grid grid-cols-4 gap-2">
-                      {featuredChapter.photos.slice(1, 5).map((ph) => (
-                        <div
-                          key={ph.id}
-                          className="aspect-square rounded-[2px] overflow-hidden bg-[#EAE7DF]"
-                        >
-                          <img
-                            src={ph.src}
-                            alt={ph.caption}
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover object-[50%_28%]"
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3 text-xs text-[#56605B]">
-                        <span className="inline-flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-[#008746]" />
-                          <span className="truncate max-w-[170px] sm:max-w-none">
-                            {featuredChapter.location}
-                          </span>
-                        </span>
-                        <span className="inline-flex items-center gap-1 shrink-0">
-                          <Camera className="w-3.5 h-3.5 text-[#008746]" />
-                          <span>{featuredChapter.photoCount} ảnh</span>
-                        </span>
-                      </div>
-
-                      <span className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.15em] font-semibold text-[#0A3622] group-hover:text-[#008746] shrink-0">
-                        <span>Mở chương này</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          )}
-
-          {/* Grid of Remaining Chapters */}
-          {restChapters.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {restChapters.map((ch) => (
-                <article
-                  key={ch.slug}
-                  onClick={() => openChapter(ch)}
-                  className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/45 rounded-[5px] overflow-hidden flex flex-col justify-between cursor-pointer transition-all shadow-[0_14px_36px_-26px_rgba(10,54,34,0.2)]"
-                >
-                  <div>
-                    <div className="relative overflow-hidden bg-[#EAE7DF] aspect-[4/3]">
-                      <img
-                        src={ch.heroImage}
-                        alt={ch.title}
-                        loading="lazy"
-                        decoding="async"
-                        style={{ objectPosition: ch.heroObjectPosition }}
-                        className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                      />
-                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-1 rounded-[2px] bg-[#0A3622]/90 backdrop-blur-sm text-[10px] uppercase tracking-[0.15em] text-[#E8D3A6] font-semibold">
-                          {ch.milestoneBadge}
-                        </span>
-                        <div className="flex items-center gap-1.5">
-                          {ch.video && (
-                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-[2px] bg-black/65 backdrop-blur-sm text-[10px] text-white font-medium">
-                              <Play className="w-2.5 h-2.5 fill-current text-[#34D399]" />
-                              <span>Video</span>
-                            </span>
-                          )}
-                          <span className="px-2 py-1 rounded-[2px] bg-black/60 backdrop-blur-sm text-[10px] text-white font-medium">
-                            {ch.photoCount} ảnh
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-5 sm:p-7 space-y-3">
-                      <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
-                        <span>{ch.pillarLabel}</span>
-                        <span>•</span>
-                        <span>{ch.location}</span>
-                      </div>
-
-                      <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C] font-normal leading-[1.26] group-hover:text-[#0A3622] transition-colors">
-                        {ch.title}
-                      </h3>
-
-                      <p className="text-xs sm:text-[13.5px] text-[#4A544F] leading-[1.75] line-clamp-3">
-                        {ch.subtitle}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="px-5 sm:px-7 pb-5 sm:pb-6 pt-3 border-t border-[#ECE9E0] space-y-3">
-                    <div className="grid grid-cols-3 gap-2">
-                      {ch.photos.slice(1, 4).map((ph) => (
-                        <div
-                          key={ph.id}
-                          className="aspect-[4/3] rounded-[2px] overflow-hidden bg-[#EAE7DF]"
-                        >
-                          <img
-                            src={ph.src}
-                            alt={ph.caption}
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover object-[50%_28%]"
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs pt-1">
-                      <span className="text-[#56605B] truncate pr-2">
-                        Đồng hành cùng {ch.companions}
-                      </span>
-                      <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] text-[11px] font-semibold text-[#0A3622] group-hover:text-[#008746] shrink-0">
-                        <span>Đọc &amp; xem ảnh</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* =================================================================== */}
-      {/* CHƯƠNG 04: CÙNG NHAU ĐI XA — DUAL PATHWAYS & CONCIERGE CONNECTION */}
+      {/* CHƯƠNG 06: ĐỒNG HÀNH CÙNG KHÁNH VÂN (DUAL PATHWAYS & CONCIERGE) */}
       {/* =================================================================== */}
       <section
         id="ket-noi-dong-hanh"
@@ -838,11 +1253,10 @@ export const JourneysPage: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Two Meaningful Companion Paths */}
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-3">
                 <span className="text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold block">
-                  04 / Đồng Hành Cùng Khánh Vân
+                  06 / Đồng Hành Cùng Khánh Vân
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-[1.16]">
                   Mỗi hành trình lớn đều bắt đầu từ một cuộc trò chuyện chân thành
@@ -901,7 +1315,6 @@ export const JourneysPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Concierge Form */}
             <div className="lg:col-span-6 bg-[#FAF9F5] text-[#181F1C] rounded-[4px] p-5 sm:p-9 border border-[#DCD8CE] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.45)]">
               {submitted ? (
                 <div className="py-8 sm:py-10 text-center space-y-4">
@@ -1046,7 +1459,7 @@ export const JourneysPage: React.FC = () => {
       {/* =================================================================== */}
       {/* FOOTER */}
       {/* =================================================================== */}
-      <footer className="bg-[#072618] text-[#B9C8C0] py-8 pb-24 sm:pb-10 border-t border-white/10">
+      <footer className="bg-[#061C12] text-[#B9C8C0] py-8 pb-24 sm:pb-10 border-t border-white/10">
         <div className="max-w-7xl w-full min-w-0 mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
@@ -1059,8 +1472,8 @@ export const JourneysPage: React.FC = () => {
               Trang chủ
             </a>
             <span>•</span>
-            <a href="/vung-khanh-van" className="hover:text-white transition-colors">
-              Hệ thống Vùng
+            <a href="/green-power" className="hover:text-white transition-colors">
+              Hệ thống Green Power
             </a>
             <span>•</span>
             <a
@@ -1100,39 +1513,35 @@ export const JourneysPage: React.FC = () => {
             : 'opacity-100 translate-y-0'
         }`}
       >
-        <div className="group relative flex items-center justify-start">
-          <a
-            href={ZALO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Chat trực tiếp qua Zalo với Khánh Vân: ${PHONE_DISPLAY}`}
-            className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:shadow-[0_10px_28px_rgba(0,167,88,0.5)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
-          >
-            <span className="manulife-halo absolute -inset-1 rounded-full bg-[#00A758]/35 pointer-events-none" />
-            <span className="relative z-10 font-sans font-extrabold tracking-tight text-[11px] sm:text-[13.5px] text-white leading-none select-none">
-              Zalo
-            </span>
-            <span className="absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full" />
-          </a>
-        </div>
+        <a
+          href={ZALO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Chat trực tiếp qua Zalo với Khánh Vân: ${PHONE_DISPLAY}`}
+          className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#00A758] via-[#008746] to-[#0A3622] text-white shadow-[0_6px_20px_rgba(0,167,88,0.34)] hover:-translate-y-0.5 transition-all duration-300 border-2 border-white"
+        >
+          <span className="manulife-halo absolute -inset-1 rounded-full bg-[#00A758]/35 pointer-events-none" />
+          <span className="relative z-10 font-sans font-extrabold tracking-tight text-[11px] sm:text-[13.5px] text-white leading-none">
+            Zalo
+          </span>
+          <span className="absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full" />
+        </a>
 
-        <div className="group relative flex items-center justify-start">
-          <a
-            href={FACEBOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Kết nối Facebook Khánh Vân"
-            className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:shadow-[0_10px_28px_rgba(0,135,70,0.48)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 border-2 border-white"
-          >
-            <span className="manulife-halo-delayed absolute -inset-1 rounded-full bg-[#008746]/32 pointer-events-none" />
-            <MessengerBrandSvg className="w-5 h-5 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
-            <span className="absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full" />
-          </a>
-        </div>
+        <a
+          href={FACEBOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Kết nối Facebook Khánh Vân"
+          className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:-translate-y-0.5 transition-all duration-300 border-2 border-white"
+        >
+          <span className="manulife-halo-delayed absolute -inset-1 rounded-full bg-[#008746]/32 pointer-events-none" />
+          <MessengerBrandSvg className="w-5 h-5 sm:w-[25px] sm:h-[25px] text-white relative z-10" />
+          <span className="absolute bottom-0 right-0 z-20 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#22C55E] border-2 border-white rounded-full" />
+        </a>
       </aside>
 
       {/* =================================================================== */}
-      {/* MODAL 1: FULL CHAPTER READER + VIDEO + GALLERY */}
+      {/* MODAL 1: CURATED EDITORIAL CHAPTER READER + EXPANDABLE GALLERY */}
       {/* =================================================================== */}
       <AnimatePresence>
         {selectedChapter && (
@@ -1141,7 +1550,7 @@ export const JourneysPage: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedChapterSlug(null)}
-            className="fixed inset-0 z-50 bg-[#121815]/80 backdrop-blur-sm flex items-end sm:items-center justify-center sm:p-5"
+            className="fixed inset-0 z-50 bg-[#121815]/82 backdrop-blur-sm flex items-end sm:items-center justify-center sm:p-5"
           >
             <motion.div
               ref={modalScrollRef}
@@ -1152,7 +1561,7 @@ export const JourneysPage: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-[#FAF9F5] w-full max-w-5xl h-[93dvh] sm:h-auto sm:max-h-[90vh] overflow-y-auto rounded-t-[10px] sm:rounded-[6px] border border-[#DCD8CE] shadow-2xl"
             >
-              {/* Sticky Modal Top Bar */}
+              {/* Sticky Top Bar */}
               <div className="sticky top-0 z-20 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8] px-4 sm:px-7 py-3 flex items-center justify-between gap-2">
                 <div className="text-[10.5px] uppercase tracking-[0.16em] text-[#56605B] font-semibold truncate">
                   Chương {selectedChapterIndex + 1}/{JOURNEY_CHAPTERS.length} •{' '}
@@ -1187,7 +1596,6 @@ export const JourneysPage: React.FC = () => {
               </div>
 
               <div className="p-5 sm:p-9 space-y-8 sm:space-y-10">
-                {/* Chapter Header & Essay + Optional Side Video */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-9 items-start">
                   <div
                     className={
@@ -1203,7 +1611,6 @@ export const JourneysPage: React.FC = () => {
                       </h2>
                     </div>
 
-                    {/* Metadata Box */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 bg-white border border-[#E4E1D8] rounded-[4px] text-xs">
                       <div className="flex items-start gap-2">
                         <MapPin className="w-4 h-4 text-[#008746] shrink-0 mt-0.5" />
@@ -1220,7 +1627,7 @@ export const JourneysPage: React.FC = () => {
                         <Users className="w-4 h-4 text-[#008746] shrink-0 mt-0.5" />
                         <div>
                           <span className="text-[10px] uppercase tracking-[0.14em] text-[#7A847F] block">
-                            Người đồng hành
+                            Đồng hành
                           </span>
                           <span className="font-medium text-[#181F1C]">
                             {selectedChapter.companions}
@@ -1240,9 +1647,8 @@ export const JourneysPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Inline 9:16 Video Player when Chapter has Video */}
                   {selectedChapter.video && (
-                    <div className="lg:col-span-5 bg-[#072618] text-white rounded-[5px] p-3.5 sm:p-4 border border-[#0A3622] space-y-3">
+                    <div className="lg:col-span-5 bg-[#072116] text-white rounded-[5px] p-3.5 sm:p-4 border border-[#0A3622] space-y-3">
                       <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
                         <span>Thước phim thực tế</span>
                         <span>{selectedChapter.video.durationLabel}</span>
@@ -1270,24 +1676,24 @@ export const JourneysPage: React.FC = () => {
                   )}
                 </div>
 
-                {/* Full Curated Photo Gallery */}
+                {/* Curated Editorial Gallery (Top 6 Asymmetric Spread + Expand Full Archive) */}
                 <div className="pt-6 border-t border-[#E4E1D8] space-y-5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                       <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
-                        Bộ Sưu Tập Khung Hình ({selectedChapter.photos.length} Ảnh)
+                        Tuyển Tập Khung Hình ({selectedChapter.photos.length} Ảnh)
                       </span>
                       <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C]">
                         Những khoảnh khắc đáng nhớ tại {selectedChapter.countryTag}
                       </h3>
                     </div>
                     <span className="text-xs text-[#66706B]">
-                      Chạm vào ảnh bất kỳ để phóng lớn toàn màn hình
+                      Chạm ảnh bất kỳ để xem toàn màn hình
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                    {selectedChapter.photos.map((photo, pIdx) => (
+                    {modalPhotosVisible.map((photo, pIdx) => (
                       <figure
                         key={photo.id}
                         onClick={() =>
@@ -1297,9 +1703,15 @@ export const JourneysPage: React.FC = () => {
                             index: pIdx,
                           })
                         }
-                        className="group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/50 rounded-[4px] overflow-hidden cursor-zoom-in flex flex-col justify-between transition-colors"
+                        className={`group bg-white border border-[#E4E1D8] hover:border-[#0A3622]/50 rounded-[4px] overflow-hidden cursor-zoom-in flex flex-col justify-between transition-colors ${
+                          pIdx === 0 && !showAllModalPhotos ? 'sm:col-span-2 lg:col-span-2' : ''
+                        }`}
                       >
-                        <div className="relative overflow-hidden bg-[#EAE7DF] aspect-[4/5]">
+                        <div
+                          className={`relative overflow-hidden bg-[#EAE7DF] ${
+                            pIdx === 0 && !showAllModalPhotos ? 'aspect-[16/10]' : 'aspect-[4/5]'
+                          }`}
+                        >
                           <img
                             src={photo.src}
                             alt={photo.caption}
@@ -1307,7 +1719,7 @@ export const JourneysPage: React.FC = () => {
                             decoding="async"
                             className="w-full h-full object-cover object-[50%_26%] group-hover:scale-[1.03] transition-transform duration-700"
                           />
-                          <span className="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-[2px] bg-black/60 text-[9.5px] uppercase tracking-[0.12em] text-white opacity-90 group-hover:opacity-100">
+                          <span className="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-[2px] bg-black/60 text-[9.5px] uppercase tracking-[0.12em] text-white">
                             Phóng lớn
                           </span>
                         </div>
@@ -1317,9 +1729,24 @@ export const JourneysPage: React.FC = () => {
                       </figure>
                     ))}
                   </div>
+
+                  {!showAllModalPhotos && selectedChapter.photos.length > 6 && (
+                    <div className="pt-2 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setShowAllModalPhotos(true)}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-[#0A3622] text-[#0A3622] hover:text-white border border-[#0A3622]/35 text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] transition-colors cursor-pointer"
+                      >
+                        <Camera className="w-3.5 h-3.5" />
+                        <span>
+                          Mở rộng xem thêm {selectedChapter.photos.length - 6} ảnh kỷ niệm khác
+                        </span>
+                      </button>
+                    </div>
+                  )}
                 </div>
 
-                {/* Contextual Soft CTA Footer inside Modal */}
+                {/* Contextual Soft CTA inside Chapter Modal */}
                 <div className="p-5 sm:p-7 rounded-[5px] bg-[#0A3622] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="space-y-1 max-w-xl">
                     <span className="text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
@@ -1349,7 +1776,7 @@ export const JourneysPage: React.FC = () => {
       </AnimatePresence>
 
       {/* =================================================================== */}
-      {/* MODAL 2: STANDALONE CINEMA REEL VIEWER (FOR SECTION 02) */}
+      {/* MODAL 2: MOBILE CINEMA REEL VIEWER */}
       {/* =================================================================== */}
       <AnimatePresence>
         {activeReelChapter && activeReelChapter.video && (
@@ -1388,7 +1815,7 @@ export const JourneysPage: React.FC = () => {
                         type="button"
                         onClick={() => navigateReelModal(-1)}
                         aria-label="Thước phim trước"
-                        className="p-1.5 border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] cursor-pointer"
+                        className="p-1.5 border border-[#DCD8CE] rounded-[2px] cursor-pointer"
                       >
                         <ChevronLeft className="w-3.5 h-3.5" />
                       </button>
@@ -1396,7 +1823,7 @@ export const JourneysPage: React.FC = () => {
                         type="button"
                         onClick={() => navigateReelModal(1)}
                         aria-label="Thước phim kế tiếp"
-                        className="p-1.5 border border-[#DCD8CE] hover:border-[#0A3622] rounded-[2px] cursor-pointer"
+                        className="p-1.5 border border-[#DCD8CE] rounded-[2px] cursor-pointer"
                       >
                         <ChevronRight className="w-3.5 h-3.5" />
                       </button>
@@ -1410,30 +1837,27 @@ export const JourneysPage: React.FC = () => {
                       </button>
                     </div>
                   </div>
-
                   <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C] leading-snug">
                     {activeReelChapter.video.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
                     {activeReelChapter.video.caption}
                   </p>
-                  <blockquote className="border-l-2 border-[#B8975A] pl-3 font-serif italic text-sm text-[#222B26] leading-relaxed">
-                    “{activeReelChapter.pullQuote}”
-                  </blockquote>
                 </div>
 
-                <div className="pt-3 border-t border-[#E4E1D8] flex flex-col gap-2">
+                <div className="pt-3 border-t border-[#E4E1D8]">
                   <button
                     type="button"
                     onClick={() => {
                       const slug = activeReelChapter.slug;
                       setActiveReelSlug(null);
+                      setShowAllModalPhotos(false);
                       setSelectedChapterSlug(slug);
                     }}
                     className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>
-                      Đọc câu chuyện &amp; xem {activeReelChapter.photoCount} ảnh chương này
+                      Đọc bài viết &amp; xem {activeReelChapter.photoCount} ảnh chương này
                     </span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
@@ -1498,12 +1922,12 @@ export const JourneysPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#E4E1D8] flex flex-col gap-2">
+                <div className="pt-3 border-t border-[#E4E1D8]">
                   <a
                     href={activeVideo.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#0A3622] text-white text-xs uppercase tracking-[0.14em] font-semibold rounded-[2px]"
+                    className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-3 bg-[#0A3622] text-white text-xs uppercase tracking-[0.14em] font-semibold rounded-[2px]"
                   >
                     <span>Mở trên Facebook Khánh Vân</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -1516,7 +1940,7 @@ export const JourneysPage: React.FC = () => {
       </AnimatePresence>
 
       {/* =================================================================== */}
-      {/* MODAL 4: FULL-SCREEN PHOTO LIGHTBOX WITH PREV/NEXT NAVIGATION */}
+      {/* MODAL 4: FULL-SCREEN PHOTO LIGHTBOX */}
       {/* =================================================================== */}
       <AnimatePresence>
         {lightbox && lightbox.photos[lightbox.index] && (
