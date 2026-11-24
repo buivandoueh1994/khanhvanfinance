@@ -29,6 +29,41 @@ const ZALO_URL = 'https://zalo.me/0909679258';
 const FACEBOOK_URL = 'https://www.facebook.com/KhanhVanManulife';
 const PHONE_DISPLAY = '0909 679 258';
 
+interface HeroSlide {
+  src: string;
+  label: string;
+  objectPosition: string;
+}
+
+// 5 crisp Upscayl-enhanced 1600px photographs (zero LED text clutter behind headline, pure 60fps GPU Ken Burns glide)
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    src: '/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2',
+    label: 'Hồ Hallstatt, Áo • 2024',
+    objectPosition: '50% 42%',
+  },
+  {
+    src: '/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2',
+    label: 'Đỉnh Phú Sĩ, Nhật Bản • 2026',
+    objectPosition: '50% 28%',
+  },
+  {
+    src: '/images/journeys/thuong-hai-2025/10-kv_257.jpg?v=2',
+    label: 'Hoàng hôn Sông Hoàng Phố • 2025',
+    objectPosition: '50% 50%',
+  },
+  {
+    src: '/images/journeys/phap-2019/01-kv_206.jpg?v=2',
+    label: 'Tháp Eiffel, Paris • 2019',
+    objectPosition: '50% 35%',
+  },
+  {
+    src: '/images/journeys/diem-tua-to-am/01-kv_289.jpg?v=2',
+    label: 'Điểm tựa Tổ ấm • 2024–2026',
+    objectPosition: '50% 32%',
+  },
+];
+
 const MessengerBrandSvg: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
     <path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.57.61.94 1.13.71l1.98-.87c.17-.08.36-.1.55-.06.91.25 1.87.38 2.88.38 5.64 0 10-4.13 10-9.68S17.64 2 12 2zm5.95 7.56-2.93 4.66c-.47.74-1.48.92-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.93-4.66c.47-.74 1.48-.92 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z" />
@@ -49,6 +84,13 @@ export const JourneysPage: React.FC = () => {
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
   const [heroPaused, setHeroPaused] = useState(false);
+  const [heroSlideIdx, setHeroSlideIdx] = useState(0);
+  const [heroMounted, setHeroMounted] = useState(false);
+
+  useEffect(() => {
+    const id = window.requestAnimationFrame(() => setHeroMounted(true));
+    return () => window.cancelAnimationFrame(id);
+  }, []);
 
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -60,8 +102,6 @@ export const JourneysPage: React.FC = () => {
   });
 
   const modalScrollRef = useRef<HTMLDivElement>(null);
-  const heroDesktopRef = useRef<HTMLVideoElement>(null);
-  const heroMobileRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     document.title = 'Khánh Vân & Những Chuyến Đi | Nhật ký Hành trình 2019–2026';
@@ -74,14 +114,17 @@ export const JourneysPage: React.FC = () => {
     }
   }, []);
 
+  // Silky 60fps/120fps GPU crossfade timer for Hero Monograph slides
+  useEffect(() => {
+    if (heroPaused) return;
+    const timer = window.setInterval(() => {
+      setHeroSlideIdx((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => window.clearInterval(timer);
+  }, [heroPaused]);
+
   const toggleHeroPlayback = () => {
-    const nextPaused = !heroPaused;
-    setHeroPaused(nextPaused);
-    [heroDesktopRef.current, heroMobileRef.current].forEach((vid) => {
-      if (!vid) return;
-      if (nextPaused) vid.pause();
-      else vid.play().catch(() => {});
-    });
+    setHeroPaused((prev) => !prev);
   };
 
   const chapterMap = useMemo(() => {
@@ -252,20 +295,20 @@ export const JourneysPage: React.FC = () => {
             </div>
           </a>
 
-          <nav className="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-[0.15em] font-medium text-[#56605B]">
-            <a href="#ban-do-hanh-trinh" className="hover:text-[#0A3622] transition-colors">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-[11px] uppercase tracking-[0.14em] font-medium text-[#56605B]">
+            <a href="#ban-do-hanh-trinh" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
               01. Bản đồ
             </a>
-            <a href="#hoi-1-nam-chau" className="hover:text-[#0A3622] transition-colors">
+            <a href="#hoi-1-nam-chau" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
               02. Năm châu
             </a>
-            <a href="#hoi-2-chieu-sau" className="hover:text-[#0A3622] transition-colors">
-              03. Bản lĩnh &amp; Sẻ chia
+            <a href="#hoi-2-chieu-sau" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
+              03. Bản lĩnh
             </a>
-            <a href="#hoi-3-to-am" className="hover:text-[#0A3622] transition-colors">
-              04. Điểm trở về
+            <a href="#hoi-3-to-am" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
+              04. Tổ ấm
             </a>
-            <a href="#phong-chieu" className="hover:text-[#0A3622] transition-colors">
+            <a href="#phong-chieu" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
               05. Phòng chiếu ({videoChapters.length})
             </a>
           </nav>
@@ -298,7 +341,7 @@ export const JourneysPage: React.FC = () => {
         {/* Mobile Quick-Jump Strip */}
         <nav
           aria-label="Điều hướng nhanh các hồi"
-          className="xl:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
+          className="lg:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
         >
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-4 py-2 text-[11px] font-medium text-[#4A544F]">
             <a
@@ -336,51 +379,58 @@ export const JourneysPage: React.FC = () => {
       </header>
 
       {/* =================================================================== */}
-      {/* FULL-BLEED CINEMATIC AMBIENT HERO FILM (LIVING DOCUMENTARY COVER) */}
+      {/* FULL-BLEED SILKY 60FPS GPU-COMPOSITED MONOGRAPH HERO STAGE */}
       {/* =================================================================== */}
       <section className="relative min-h-[78dvh] sm:min-h-[86vh] bg-[#061C12] text-[#FAF9F5] flex flex-col justify-end overflow-hidden">
-        {/* Desktop 16:9 Ambient Film */}
-        <video
-          ref={heroDesktopRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/videos/journeys/hero-monograph-desktop-poster.jpg"
-          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
-        >
-          <source src="/videos/journeys/hero-monograph-desktop.mp4" type="video/mp4" />
-        </video>
-
-        {/* Mobile Portrait Ambient Film */}
-        <video
-          ref={heroMobileRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/videos/journeys/hero-monograph-mobile-poster.jpg"
-          className="sm:hidden absolute inset-0 w-full h-full object-cover object-center"
-        >
-          <source src="/videos/journeys/hero-monograph-mobile.mp4" type="video/mp4" />
-        </video>
+        {/* Hardware-Accelerated Crossfade Ken Burns Stage (Zero Frame Jitter / Zero Text Clutter) */}
+        <div className="absolute inset-0 overflow-hidden bg-[#061C12]">
+          {HERO_SLIDES.map((slide, idx) => {
+            const isActive = idx === heroSlideIdx;
+            return (
+              <div
+                key={slide.src}
+                className={`absolute inset-0 transition-opacity duration-[1600ms] ease-in-out ${
+                  isActive ? 'opacity-100 z-[1]' : 'opacity-0 z-0 pointer-events-none'
+                }`}
+              >
+                <img
+                  src={slide.src}
+                  alt={slide.label}
+                  fetchPriority={idx === 0 ? 'high' : 'auto'}
+                  decoding="async"
+                  style={{
+                    objectPosition: slide.objectPosition,
+                    transform: isActive && heroMounted && !heroPaused ? 'scale(1.06)' : 'scale(1.0)',
+                    transition: 'transform 6500ms cubic-bezier(0.25, 0.1, 0.25, 1)',
+                  }}
+                  className="w-full h-full object-cover will-change-transform"
+                />
+              </div>
+            );
+          })}
+        </div>
 
         {/* Editorial Atmospheric Vignette for Crisp Typography */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061C12] via-[#061C12]/48 to-[#061C12]/35" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#061C12]/80 via-[#061C12]/25 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-[#061C12] via-[#061C12]/48 to-[#061C12]/35" />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-[#061C12]/82 via-[#061C12]/32 to-transparent" />
 
-        {/* Top-Right Subtle Ambient Control */}
-        <div className="absolute top-4 right-4 sm:top-7 sm:right-8 z-20">
+        {/* Top-Right Subtle Ambient Controls + Slide Indicator */}
+        <div className="absolute top-4 right-4 sm:top-7 sm:right-8 z-20 flex items-center gap-2">
+          <span className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.15em] text-[#E8D3A6]">
+            <span>0{heroSlideIdx + 1} / 0{HERO_SLIDES.length}</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/90">{HERO_SLIDES[heroSlideIdx].label}</span>
+          </span>
           <button
             type="button"
             onClick={toggleHeroPlayback}
-            aria-label={heroPaused ? 'Phát phim nền' : 'Tạm dừng phim nền'}
+            aria-label={heroPaused ? 'Tiếp tục chuyển ảnh nền' : 'Tạm dừng ảnh nền'}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/45 hover:bg-black/65 backdrop-blur-md border border-white/20 text-[10.5px] uppercase tracking-[0.14em] text-white/90 transition-colors cursor-pointer"
           >
             {heroPaused ? (
               <>
                 <Play className="w-3 h-3 fill-current" />
-                <span>Phát phim nền</span>
+                <span>Tiếp tục</span>
               </>
             ) : (
               <>
@@ -590,7 +640,7 @@ export const JourneysPage: React.FC = () => {
                       poster="/videos/journeys/loop-fuji-poster.jpg"
                       className="w-full h-full object-cover"
                     >
-                      <source src="/videos/journeys/loop-fuji.mp4" type="video/mp4" />
+                      <source src="/videos/journeys/loop-fuji.mp4?v=3" type="video/mp4" />
                     </video>
                     <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[9.5px] uppercase tracking-[0.15em] text-[#E8D3A6] font-semibold">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse" />
@@ -666,13 +716,13 @@ export const JourneysPage: React.FC = () => {
               {[
                 {
                   ch: chEurope,
-                  loopSrc: '/videos/journeys/loop-salzburg.mp4',
+                  loopSrc: '/videos/journeys/loop-salzburg.mp4?v=3',
                   loopPoster: '/videos/journeys/loop-salzburg-poster.jpg',
                   loopLabel: 'Phố cổ Salzburg',
                 },
                 {
                   ch: chShanghai,
-                  loopSrc: '/videos/journeys/loop-shanghai.mp4',
+                  loopSrc: '/videos/journeys/loop-shanghai.mp4?v=3',
                   loopPoster: '/videos/journeys/loop-shanghai-poster.jpg',
                   loopLabel: 'Cổ trấn Chu Gia Giác',
                 },
@@ -858,7 +908,7 @@ export const JourneysPage: React.FC = () => {
                       poster="/videos/journeys/loop-yentu-poster.jpg"
                       className="w-full h-full object-cover"
                     >
-                      <source src="/videos/journeys/loop-yentu.mp4" type="video/mp4" />
+                      <source src="/videos/journeys/loop-yentu.mp4?v=3" type="video/mp4" />
                     </video>
                     <span className="absolute bottom-2.5 left-2.5 right-2.5 px-2 py-1 rounded-[2px] bg-black/65 text-[9.5px] uppercase tracking-[0.14em] text-[#E8D3A6] text-center">
                       Sân khấu Top 1 DRD+

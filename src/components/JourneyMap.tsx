@@ -8,7 +8,7 @@ interface MapPinSpec {
   stampCode: string;
   stampYear: string;
   region: 'international' | 'vietnam';
-  // Coordinates on Eurasia viewBox 0..1000 x 0..500
+  // Coordinates aligned to accurate Eurasia-Pacific SVG viewBox (1000x520)
   x: number;
   y: number;
   labelDx?: number;
@@ -16,9 +16,8 @@ interface MapPinSpec {
   align?: 'start' | 'middle' | 'end';
 }
 
-const ORIGIN_HCMC = { x: 656, y: 404 };
+const ORIGIN_HCMC = { x: 706, y: 408 };
 
-// Carefully spaced cartographic pins on stylized Eurasia-Pacific viewBox (1000x500)
 const MAP_PINS: MapPinSpec[] = [
   {
     slug: 'phap-2019',
@@ -26,10 +25,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'PAR • FR',
     stampYear: '2019',
     region: 'international',
-    x: 132,
-    y: 162,
+    x: 118,
+    y: 168,
     labelDx: 0,
-    labelDy: -16,
+    labelDy: -15,
     align: 'middle',
   },
   {
@@ -38,9 +37,9 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'MUC • AUT',
     stampYear: '2024',
     region: 'international',
-    x: 204,
-    y: 170,
-    labelDx: 12,
+    x: 186,
+    y: 175,
+    labelDx: 10,
     labelDy: -15,
     align: 'start',
   },
@@ -50,10 +49,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'CKG • CN',
     stampYear: '2026',
     region: 'international',
-    x: 646,
+    x: 696,
     y: 266,
     labelDx: -12,
-    labelDy: -10,
+    labelDy: -8,
     align: 'end',
   },
   {
@@ -62,9 +61,9 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'NNG • CN',
     stampYear: '2024',
     region: 'international',
-    x: 668,
-    y: 318,
-    labelDx: -14,
+    x: 710,
+    y: 312,
+    labelDx: -13,
     labelDy: 4,
     align: 'end',
   },
@@ -74,10 +73,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'PVG • CN',
     stampYear: '2025',
     region: 'international',
-    x: 748,
+    x: 786,
     y: 262,
-    labelDx: 0,
-    labelDy: 22,
+    labelDx: -2,
+    labelDy: 20,
     align: 'middle',
   },
   {
@@ -86,10 +85,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'ICN • KR',
     stampYear: '2024',
     region: 'international',
-    x: 794,
+    x: 822,
     y: 214,
     labelDx: 0,
-    labelDy: -16,
+    labelDy: -15,
     align: 'middle',
   },
   {
@@ -98,22 +97,21 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'TYO • JP',
     stampYear: '2026',
     region: 'international',
-    x: 874,
+    x: 896,
     y: 230,
     labelDx: 0,
-    labelDy: -16,
+    labelDy: -15,
     align: 'middle',
   },
-  // Vietnam stops (rendered inside dedicated inset panel AND highlighted cleanly)
   {
     slug: 'yen-tu-vinh-danh-2025',
     shortName: 'Yên Tử',
     stampCode: 'QNH • VN',
     stampYear: '2025',
     region: 'vietnam',
-    x: 664,
-    y: 344,
-    labelDx: 14,
+    x: 704,
+    y: 336,
+    labelDx: 13,
     labelDy: 3,
     align: 'start',
   },
@@ -123,10 +121,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'BMV • VN',
     stampYear: '2026',
     region: 'vietnam',
-    x: 678,
+    x: 716,
     y: 382,
-    labelDx: 14,
-    labelDy: -2,
+    labelDx: 13,
+    labelDy: 0,
     align: 'start',
   },
   {
@@ -135,10 +133,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'BTH • VN',
     stampYear: '2026',
     region: 'vietnam',
-    x: 682,
-    y: 412,
-    labelDx: 14,
-    labelDy: 6,
+    x: 718,
+    y: 408,
+    labelDx: 13,
+    labelDy: 7,
     align: 'start',
   },
   {
@@ -147,10 +145,10 @@ const MAP_PINS: MapPinSpec[] = [
     stampCode: 'HOME • VN',
     stampYear: '2024–2026',
     region: 'vietnam',
-    x: 656,
+    x: 702,
     y: 404,
     labelDx: -14,
-    labelDy: 16,
+    labelDy: 15,
     align: 'end',
   },
 ];
@@ -184,7 +182,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
   const makeArcPath = (tx: number, ty: number) => {
     const mx = (ORIGIN_HCMC.x + tx) / 2;
     const dist = Math.hypot(tx - ORIGIN_HCMC.x, ty - ORIGIN_HCMC.y);
-    const lift = Math.min(145, Math.max(26, dist * 0.28));
+    const lift = Math.min(138, Math.max(24, dist * 0.26));
     const my = Math.min(ORIGIN_HCMC.y, ty) - lift;
     return `M ${ORIGIN_HCMC.x} ${ORIGIN_HCMC.y} Q ${mx.toFixed(1)} ${my.toFixed(1)} ${tx} ${ty}`;
   };
@@ -206,12 +204,12 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
               Từ TP. Hồ Chí Minh tỏa ra 7 điểm đến quốc tế và 4 miền ký ức Việt Nam
             </h2>
             <p className="text-xs sm:text-sm text-[#BDD0C6] leading-relaxed">
-              Chạm vào từng tọa độ vàng đồng trên bản đồ hoặc chọn nhanh tên điểm đến bên dưới để mở dấu mộc hộ chiếu và câu chuyện phía sau mỗi chuyến đi.
+              Chạm vào từng tọa độ vàng đồng trên bản đồ hoặc chọn nhanh tên điểm đến bên dưới để xem dấu mộc hộ chiếu và câu chuyện phía sau mỗi chuyến đi.
             </p>
           </div>
 
           {/* Region Toggle */}
-          <div className="inline-flex items-center p-1 rounded-[3px] bg-white/[0.06] border border-white/12 self-start lg:self-auto">
+          <div className="inline-flex items-center p-1 rounded-[3px] bg-white/[0.06] border border-white/12 self-start lg:self-auto shrink-0">
             {[
               { key: 'all' as const, label: 'Toàn bộ (11)' },
               { key: 'international' as const, label: 'Năm châu (7)' },
@@ -228,7 +226,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                       : MAP_PINS.find((p) => p.region === tab.key);
                   if (first) setActiveSlug(first.slug);
                 }}
-                className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] font-semibold rounded-[2px] transition-colors cursor-pointer ${
+                className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] font-semibold rounded-[2px] transition-colors cursor-pointer whitespace-nowrap ${
                   regionFilter === tab.key
                     ? 'bg-[#E8D3A6] text-[#072116]'
                     : 'text-[#C6D6CE] hover:text-white'
@@ -240,33 +238,35 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
           </div>
         </div>
 
-        {/* Main 12-Col Cartography + Passport Stamp Dossier */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-7 items-stretch">
-          {/* Left: Museum-Grade Stylized Eurasia & Pacific SVG Map */}
-          <div className="lg:col-span-8 bg-[#0A2C1D] border border-[#E8D3A6]/20 rounded-[5px] p-3 sm:p-5 flex flex-col justify-between relative overflow-hidden">
-            <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-[#9BB5A8] pb-2 border-b border-white/10">
+        {/* Fixed-Height 12-Col Grid: ZERO Layout Jump When Switching Pins or Tabs! */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-7 items-start">
+          {/* Left: Authentic Minimalist Eurasia & Pacific Cartography (Locked Height on Desktop) */}
+          <div className="lg:col-span-8 lg:h-[580px] bg-[#0A2C1D] border border-[#E8D3A6]/20 rounded-[5px] p-3.5 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-[#9BB5A8] pb-2.5 border-b border-white/10 shrink-0">
               <span>Lộ trình Á &amp; Âu • 2019–2026</span>
-              <span className="text-[#E8D3A6]">Đang xem: {activePin.shortName}</span>
+              <span className="text-[#E8D3A6] truncate ml-2">
+                Đang xem: {activePin.shortName}
+              </span>
             </div>
 
-            <div className="relative w-full aspect-[2/1] my-2 select-none">
+            <div className="relative w-full aspect-[1000/520] lg:aspect-auto lg:flex-1 my-2 select-none flex items-center justify-center">
               <svg
-                viewBox="0 0 1000 500"
-                className="w-full h-full"
+                viewBox="0 0 1000 520"
+                className="w-full h-full max-h-[450px]"
                 role="img"
                 aria-label="Bản đồ hành trình từ TP. Hồ Chí Minh đến Châu Âu, Đông Á và Việt Nam"
               >
                 <defs>
-                  <radialGradient id="mapGlow" cx="55%" cy="55%" r="60%">
-                    <stop offset="0%" stopColor="#124730" stopOpacity="0.55" />
+                  <radialGradient id="mapGlow" cx="56%" cy="54%" r="60%">
+                    <stop offset="0%" stopColor="#144F35" stopOpacity="0.52" />
                     <stop offset="100%" stopColor="#072116" stopOpacity="0" />
                   </radialGradient>
                 </defs>
 
-                <rect width="1000" height="500" fill="url(#mapGlow)" />
+                <rect width="1000" height="520" fill="url(#mapGlow)" />
 
-                {/* Fine Cartographic Graticule Lines */}
-                {[100, 200, 300, 400].map((gy) => (
+                {/* Fine Cartographic Graticule Grid */}
+                {[104, 208, 312, 416].map((gy) => (
                   <line
                     key={`h-${gy}`}
                     x1="0"
@@ -274,72 +274,89 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                     x2="1000"
                     y2={gy}
                     stroke="#E8D3A6"
-                    strokeOpacity="0.07"
+                    strokeOpacity="0.065"
                     strokeDasharray="3 6"
                   />
                 ))}
-                {[160, 330, 500, 670, 840].map((gx) => (
+                {[166, 332, 498, 664, 830].map((gx) => (
                   <line
                     key={`v-${gx}`}
                     x1={gx}
                     y1="0"
                     x2={gx}
-                    y2="500"
+                    y2="520"
                     stroke="#E8D3A6"
-                    strokeOpacity="0.07"
+                    strokeOpacity="0.065"
                     strokeDasharray="3 6"
                   />
                 ))}
 
-                {/* Stylized Clean Eurasia Landmass Silhouette (Minimalist Editorial Cartography) */}
+                {/* Geographically Accurate Minimalist Eurasia Landmass (Iberia, France, Alps, Italy, Balkans, Scandinavia, Russia, Arabia, India, Indochina & Vietnam S-curve, China) */}
                 <path
-                  d="M 62 215 L 88 182 L 112 152 L 145 130 L 185 110 L 235 92 L 308 82 L 405 72 L 515 74 L 628 84 L 740 104 L 832 135 L 845 162 L 802 184 L 778 216 L 762 246 L 758 282 L 732 315 L 694 334 L 678 358 L 688 394 L 676 426 L 650 434 L 634 405 L 626 370 L 600 356 L 575 376 L 552 356 L 515 322 L 478 345 L 444 306 L 402 276 L 368 292 L 325 272 L 292 248 L 245 246 L 210 232 L 175 242 L 138 232 L 94 238 Z"
-                  fill="#123C29"
-                  stroke="#296649"
+                  d="M 62 216 L 68 188 L 96 184 L 94 166 L 122 150 L 146 144 L 154 128 L 166 134 L 178 142 L 194 126 L 174 114 L 168 88 L 196 62 L 222 66 L 226 98 L 246 106 L 260 88 L 306 72 L 382 64 L 468 58 L 568 62 L 672 68 L 774 86 L 854 106 L 872 132 L 844 148 L 836 178 L 806 182 L 792 204 L 776 226 L 788 254 L 792 276 L 776 306 L 744 326 L 716 334 L 718 358 L 728 386 L 722 414 L 702 426 L 686 410 L 684 388 L 668 384 L 664 416 L 674 446 L 662 456 L 646 432 L 644 388 L 626 356 L 594 342 L 562 396 L 542 404 L 520 356 L 502 324 L 462 316 L 424 342 L 392 362 L 354 336 L 334 294 L 352 278 L 328 264 L 274 260 L 252 240 L 226 238 L 210 250 L 198 228 L 180 238 L 164 218 L 152 208 L 134 218 L 114 216 L 94 236 L 64 234 Z"
+                  fill="#123D2A"
+                  stroke="#2B6B4D"
                   strokeWidth="1.2"
+                  strokeLinejoin="round"
                 />
 
-                {/* UK & Ireland hint */}
+                {/* British Isles */}
                 <path
-                  d="M 96 122 L 114 114 L 122 138 L 100 144 Z"
-                  fill="#123C29"
-                  stroke="#296649"
+                  d="M 88 122 L 106 112 L 114 142 L 94 148 L 84 136 Z"
+                  fill="#14442F"
+                  stroke="#2B6B4D"
+                  strokeWidth="1.1"
+                />
+
+                {/* Korean Peninsula */}
+                <path
+                  d="M 812 196 L 828 198 L 834 232 L 818 236 L 812 222 Z"
+                  fill="#174D35"
+                  stroke="#327A58"
+                  strokeWidth="1.1"
+                />
+
+                {/* Japan Archipelago (Hokkaido, Honshu, Kyushu) */}
+                <path
+                  d="M 890 162 L 912 156 L 918 174 L 896 180 Z M 886 188 L 906 196 L 912 232 L 888 250 L 866 254 L 862 240 L 884 226 L 886 204 Z"
+                  fill="#174D35"
+                  stroke="#327A58"
+                  strokeWidth="1.1"
+                />
+
+                {/* Taiwan & Philippines subtle silhouettes */}
+                <path
+                  d="M 784 316 L 792 316 L 790 334 L 782 332 Z M 788 362 L 806 376 L 812 414 L 794 422 L 784 392 Z"
+                  fill="#123D2A"
+                  stroke="#2B6B4D"
                   strokeWidth="1"
                 />
 
-                {/* Korean Peninsula accent */}
+                {/* Vietnam Subtle Highlight Spine */}
                 <path
-                  d="M 784 196 L 802 200 L 806 232 L 788 234 Z"
-                  fill="#164A32"
-                  stroke="#2D7051"
-                  strokeWidth="1"
+                  d="M 696 330 L 714 334 L 716 358 L 726 386 L 720 414 L 702 424 L 698 408 L 708 386 L 702 356 Z"
+                  fill="#1B5B3E"
+                  stroke="#3A8E66"
+                  strokeWidth="1.1"
                 />
 
-                {/* Japanese Archipelago */}
-                <path
-                  d="M 852 178 L 878 164 L 892 184 L 896 226 L 876 254 L 848 262 L 844 244 L 866 228 L 868 198 Z"
-                  fill="#164A32"
-                  stroke="#2D7051"
-                  strokeWidth="1.2"
-                />
-
-                {/* Subtle Continent Labels */}
+                {/* Continent Watermarks */}
                 <text
-                  x="170"
-                  y="112"
+                  x="156"
+                  y="102"
                   fill="#8AB09E"
                   fillOpacity="0.45"
-                  fontSize="11"
+                  fontSize="10.5"
                   letterSpacing="4"
                   fontWeight="600"
                 >
                   CHÂU ÂU
                 </text>
                 <text
-                  x="510"
-                  y="165"
+                  x="530"
+                  y="168"
                   fill="#8AB09E"
-                  fillOpacity="0.38"
+                  fillOpacity="0.36"
                   fontSize="12"
                   letterSpacing="5"
                   fontWeight="600"
@@ -347,12 +364,12 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                   CHÂU Á
                 </text>
                 <text
-                  x="768"
-                  y="355"
+                  x="814"
+                  y="350"
                   fill="#8AB09E"
-                  fillOpacity="0.35"
-                  fontSize="10"
-                  letterSpacing="3.5"
+                  fillOpacity="0.32"
+                  fontSize="9.5"
+                  letterSpacing="3"
                 >
                   THÁI BÌNH DƯƠNG
                 </text>
@@ -374,7 +391,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                   );
                 })}
 
-                {/* Origin Heart Anchor: TP. Hồ Chí Minh */}
+                {/* Origin Anchor: TP. Hồ Chí Minh */}
                 <g>
                   <circle cx={ORIGIN_HCMC.x} cy={ORIGIN_HCMC.y} r="9" fill="#00A758" fillOpacity="0.22" />
                   <circle cx={ORIGIN_HCMC.x} cy={ORIGIN_HCMC.y} r="4" fill="#34D399" />
@@ -390,18 +407,10 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                       onMouseEnter={() => setActiveSlug(pin.slug)}
                       className="cursor-pointer"
                     >
-                      {/* Invisible generous touch hit area */}
                       <circle cx={pin.x} cy={pin.y} r="18" fill="transparent" />
-
                       {isSelected && (
                         <>
-                          <circle
-                            cx={pin.x}
-                            cy={pin.y}
-                            r="15"
-                            fill="#E8D3A6"
-                            fillOpacity="0.16"
-                          />
+                          <circle cx={pin.x} cy={pin.y} r="15" fill="#E8D3A6" fillOpacity="0.18" />
                           <circle
                             cx={pin.x}
                             cy={pin.y}
@@ -412,7 +421,6 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                           />
                         </>
                       )}
-
                       <circle
                         cx={pin.x}
                         cy={pin.y}
@@ -421,7 +429,6 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                         stroke="#072116"
                         strokeWidth="1.5"
                       />
-
                       <text
                         x={pin.x + (pin.labelDx || 0)}
                         y={pin.y + (pin.labelDy || -14)}
@@ -439,8 +446,8 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
               </svg>
             </div>
 
-            {/* Quick-Tap Destination Pill Strip (Effortless Mobile & Desktop Switching) */}
-            <div className="pt-3 border-t border-white/10 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+            {/* Quick-Tap Destination Pill Strip */}
+            <div className="pt-3 border-t border-white/10 flex items-center gap-1.5 overflow-x-auto no-scrollbar shrink-0">
               {visiblePins.map((pin) => {
                 const isSelected = pin.slug === activePin.slug;
                 return (
@@ -448,7 +455,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                     key={`pill-${pin.slug}`}
                     type="button"
                     onClick={() => setActiveSlug(pin.slug)}
-                    className={`shrink-0 px-2.5 py-1.5 rounded-[2px] text-[11px] font-medium transition-all cursor-pointer border ${
+                    className={`shrink-0 px-2.5 py-1.5 rounded-[2px] text-[11px] font-medium transition-colors cursor-pointer border whitespace-nowrap ${
                       isSelected
                         ? 'bg-[#E8D3A6] text-[#072116] border-[#E8D3A6] font-semibold'
                         : 'bg-white/[0.04] text-[#C8D9D0] border-white/12 hover:border-[#E8D3A6]/50 hover:text-white'
@@ -461,22 +468,29 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
             </div>
           </div>
 
-          {/* Right: Passport Stamp Preview Dossier Card */}
-          <div className="lg:col-span-4 bg-[#FAF9F5] text-[#181F1C] rounded-[5px] overflow-hidden border border-[#E8D3A6]/35 flex flex-col justify-between shadow-2xl">
-            <div>
-              {/* Hero Photo + Vintage Passport Stamp Overlay */}
-              <div className="relative aspect-[4/3] bg-[#EAE7DF] overflow-hidden">
-                <img
-                  key={activeChapter.heroImage}
-                  src={activeChapter.heroImage}
-                  alt={activeChapter.title}
-                  style={{ objectPosition: activeChapter.heroObjectPosition }}
-                  className="w-full h-full object-cover transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+          {/* Right: Locked-Height Passport Stamp Dossier Card (ZERO Layout Shift / ZERO Blank Flash) */}
+          <div className="lg:col-span-4 lg:h-[580px] bg-[#FAF9F5] text-[#181F1C] rounded-[5px] overflow-hidden border border-[#E8D3A6]/35 flex flex-col justify-between shadow-2xl">
+            <div className="flex flex-col flex-1 min-h-0">
+              {/* Fixed-Aspect Crossfade Image Stack (Pre-mounted so zero white flicker!) */}
+              <div className="relative h-[220px] sm:h-[245px] lg:h-[235px] shrink-0 bg-[#122B20] overflow-hidden">
+                {JOURNEY_CHAPTERS.map((ch) => {
+                  const isActive = ch.slug === activeChapter.slug;
+                  return (
+                    <img
+                      key={ch.slug}
+                      src={ch.heroImage}
+                      alt={ch.title}
+                      loading="eager"
+                      style={{ objectPosition: ch.heroObjectPosition }}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out ${
+                        isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                      }`}
+                    />
+                  );
+                })}
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-                {/* Archival Passport Stamp Badge */}
-                <div className="absolute top-3 right-3 px-2.5 py-1.5 rounded-[3px] border border-[#E8D3A6]/80 bg-[#072116]/85 backdrop-blur-sm text-center">
+                <div className="absolute top-3 right-3 z-30 px-2.5 py-1.5 rounded-[3px] border border-[#E8D3A6]/80 bg-[#072116]/85 backdrop-blur-sm text-center">
                   <div className="text-[9px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold leading-none">
                     {activePin.stampCode}
                   </div>
@@ -485,43 +499,46 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-3 left-3.5 right-3.5 text-white">
-                  <div className="text-[9.5px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
+                <div className="absolute bottom-3 left-3.5 right-3.5 z-30 text-white">
+                  <div className="text-[9.5px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold truncate">
                     {activeChapter.pillarLabel}
                   </div>
-                  <div className="font-serif text-lg sm:text-xl leading-snug mt-0.5">
+                  <div className="font-serif text-lg sm:text-xl leading-snug mt-0.5 truncate">
                     {activeChapter.milestoneBadge}
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6 space-y-3.5">
-                <div className="flex items-center gap-1.5 text-xs text-[#008746] font-medium">
+              {/* Strictly Fixed-Line Text Zone so Card Height Never Shifts */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3 flex-1 overflow-hidden">
+                <div className="flex items-center gap-1.5 text-xs text-[#008746] font-medium truncate shrink-0">
                   <MapPin className="w-3.5 h-3.5 shrink-0" />
-                  <span>{activeChapter.location}</span>
+                  <span className="truncate">{activeChapter.location}</span>
                 </div>
 
-                <h3 className="font-serif text-xl text-[#181F1C] leading-snug">
+                <h3 className="font-serif text-xl text-[#181F1C] leading-[1.3] line-clamp-2 min-h-[52px]">
                   {activeChapter.title}
                 </h3>
 
-                <blockquote className="border-l-2 border-[#B8975A] pl-3 font-serif italic text-[13.5px] text-[#333D38] leading-relaxed">
+                <blockquote className="border-l-2 border-[#B8975A] pl-3 font-serif italic text-[13.5px] text-[#333D38] leading-relaxed line-clamp-4">
                   “{activeChapter.pullQuote}”
                 </blockquote>
               </div>
             </div>
 
-            <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#E4E1D8] space-y-3">
-              <div className="flex items-center justify-between text-xs text-[#56605B]">
+            <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#E4E1D8] space-y-3 shrink-0 bg-[#FAF9F5]">
+              <div className="flex items-center justify-between text-xs text-[#56605B] h-5">
                 <span className="inline-flex items-center gap-1">
                   <Camera className="w-3.5 h-3.5 text-[#008746]" />
                   <span>{activeChapter.photoCount} khung hình chọn lọc</span>
                 </span>
-                {activeChapter.video && (
+                {activeChapter.video ? (
                   <span className="inline-flex items-center gap-1 text-[#0A3622] font-medium">
                     <Play className="w-3 h-3 fill-[#008746] text-[#008746]" />
                     <span>Phim {activeChapter.video.durationLabel}</span>
                   </span>
+                ) : (
+                  <span className="text-[11px] text-[#7A847F]">Bộ ảnh chọn lọc</span>
                 )}
               </div>
 
