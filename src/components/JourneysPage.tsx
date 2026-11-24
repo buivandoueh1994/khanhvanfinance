@@ -98,8 +98,8 @@ const SIGNATURE_FILM: ScreeningReel = {
   countryTag: 'Phim Thương Hiệu',
   year: '2019–2026',
   soundLabel: 'Cứ Đi Rồi Sẽ Đến',
-  src: '/videos/journeys/cu-di-roi-se-den.mp4?v=3',
-  poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=3',
+  src: '/videos/journeys/cu-di-roi-se-den.mp4?v=4',
+  poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=4',
   durationLabel: '0:30',
   title: 'Cứ Đi Rồi Sẽ Đến • Phim Thương Hiệu Hành Trình 2019–2026',
   caption:
