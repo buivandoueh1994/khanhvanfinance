@@ -125,3 +125,62 @@ h2.font-serif {
 h3.font-serif {
   font-weight: 500;
 }
+
+/* ============================================================================
+   LUXURY EDITORIAL MONOGRAPH TYPOGRAPHY (Scoped to /nhung-chuyen-di)
+   Authentic Playfair Display with full Vietnamese diacritics + subtle motion
+   ============================================================================ */
+.journeys-editorial .font-serif,
+.journeys-editorial h1.font-serif,
+.journeys-editorial h2.font-serif,
+.journeys-editorial h3.font-serif,
+.journeys-editorial blockquote.font-serif {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-variant-numeric: lining-nums;
+}
+
+.journeys-editorial h1.font-serif {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.journeys-editorial h2.font-serif {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.journeys-editorial h3.font-serif {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.journeys-editorial blockquote.font-serif {
+  font-weight: 400;
+}
+
+@keyframes mapBeaconPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.72;
+  }
+  70% {
+    transform: scale(1.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.85);
+    opacity: 0;
+  }
+}
+
+.map-beacon-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapBeaconPulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Subtle right-edge scroll fade affordance for horizontal mobile strips */
+.scroll-fade-right {
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, #000 88%, transparent 100%);
+}
