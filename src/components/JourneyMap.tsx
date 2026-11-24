@@ -218,7 +218,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
               <span>01 / Bản đồ, hai cuốn hộ chiếu</span>
             </div>
             <h2 className="font-serif text-[28px] sm:text-4xl lg:text-[42px] text-white font-medium leading-[1.16]">
-              Từ TP. Hồ Chí Minh đến 7 điểm quốc tế và 4 điểm trong nước
+              Đi qua hơn 16 quốc gia, lưu giữ 11 chặng tiêu biểu trong và ngoài nước
             </h2>
             <p className="text-[13px] sm:text-sm text-[#BDD0C6] leading-relaxed">
               Chọn từng điểm vàng trên bản đồ hoặc chạm tên điểm đến bên dưới để xem dấu mộc hộ chiếu và câu chuyện của chuyến đi.

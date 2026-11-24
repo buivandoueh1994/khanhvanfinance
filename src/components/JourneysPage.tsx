@@ -40,14 +40,14 @@ interface HeroSlide {
 // 5 crisp Upscayl-enhanced 1600px photographs (zero LED text clutter behind headline, pure 60fps GPU Ken Burns glide)
 const HERO_SLIDES: HeroSlide[] = [
   {
-    src: '/images/journeys/ao-duc-2024/02-kv_227.jpg?v=2',
-    label: 'Làng cổ Hallstatt, Áo • 2024',
-    objectPosition: '50% 50%',
-  },
-  {
     src: '/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2',
     label: 'Đỉnh Phú Sĩ, Nhật Bản • 2026',
-    objectPosition: '50% 28%',
+    objectPosition: '50% 24%',
+  },
+  {
+    src: '/images/journeys/ao-duc-2024/10-kv_235.jpg?v=2',
+    label: 'Làng cổ Hallstatt, Áo • 2024',
+    objectPosition: '50% 26%',
   },
   {
     src: '/images/journeys/thuong-hai-2025/10-kv_257.jpg?v=2',
@@ -62,7 +62,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     src: '/images/journeys/diem-tua-to-am/01-kv_289.jpg?v=2',
     label: 'Điểm tựa Tổ ấm • 2024–2026',
-    objectPosition: '50% 32%',
+    objectPosition: '50% 62%',
   },
 ];
 
@@ -238,6 +238,11 @@ export const JourneysPage: React.FC = () => {
   const toggleHeroPlayback = () => {
     setHeroPaused((prev) => !prev);
   };
+
+  const totalPhotos = useMemo(
+    () => JOURNEY_CHAPTERS.reduce((sum, ch) => sum + ch.photos.length, 0),
+    []
+  );
 
   const chapterMap = useMemo(() => {
     const map: Record<string, JourneyChapter> = {};
@@ -654,10 +659,10 @@ export const JourneysPage: React.FC = () => {
               </div>
               <div className="sm:border-l sm:border-white/12 sm:pl-6">
                 <div className="font-serif text-[24px] sm:text-3xl text-white font-medium leading-tight">
-                  07 Miền đất
+                  16+ Quốc gia
                 </div>
                 <div className="text-[11px] sm:text-xs text-[#C8DBD1] mt-1">
-                  Pháp, Áo, Đức, Hàn, Nhật &amp; Trung Quốc
+                  Đi qua trên hai cuốn hộ chiếu
                 </div>
               </div>
               <div className="sm:border-l sm:border-white/12 sm:pl-6">
@@ -673,7 +678,7 @@ export const JourneysPage: React.FC = () => {
                   11 Chương
                 </div>
                 <div className="text-[11px] sm:text-xs text-[#C8DBD1] mt-1">
-                  112 khung hình và {screeningReels.length} phim
+                  {totalPhotos} khung hình và {screeningReels.length} phim
                 </div>
               </div>
             </div>
@@ -708,7 +713,7 @@ export const JourneysPage: React.FC = () => {
             </div>
             <div className="lg:col-span-5">
               <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.82] border-l-2 border-[#008746] pl-4 sm:pl-5">
-                Bảy chuyến đi quốc tế này là phần thưởng từ Manulife, nhưng Vân thích nhìn nó theo cách khác. Chuyến đầu năm 2019, Vân đi một mình. Chuyến gần nhất, cả đoàn quản lý đi cùng.
+                Trong hơn 16 quốc gia Vân đã đi qua cùng hai cuốn hộ chiếu, bảy chặng M-Star tiêu biểu dưới đây ghi lại rõ nhất bước chuyển của mình: chuyến đầu năm 2019 đi một mình, những chuyến gần nhất cả đoàn quản lý đi cùng.
               </p>
             </div>
           </div>

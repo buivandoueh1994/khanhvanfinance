@@ -118,7 +118,7 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Nhật ký 11 chương hành trình, 112 khung hình thực tế và 8 thước phim sống động của Khánh Vân cùng gia đình và đội ngũ quản lý từ Paris, Seoul, Hallstatt, Thượng Hải, Phú Sĩ, Trùng Khánh đến Yên Tử, Phan Thiết và Đắk Lắk." />'
+    '<meta name="description" content="Nhật ký 11 chương hành trình qua hơn 16 quốc gia, 141 khung hình thực tế và 8 thước phim sống động của Khánh Vân cùng gia đình và đội ngũ quản lý từ Paris, Seoul, Hallstatt, Thượng Hải, Phú Sĩ, Trùng Khánh đến Yên Tử, Phan Thiết và Đắk Lắk." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
@@ -130,7 +130,7 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá 11 chương ký ức, 112 khung hình chọn lọc và 8 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
+    '<meta property="og:description" content="Khám phá 11 chương ký ức qua hơn 16 quốc gia, 141 khung hình chọn lọc và 8 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,

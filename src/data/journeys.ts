@@ -64,7 +64,7 @@ export const JOURNEY_PILLARS: {
     key: 'mstar-quoc-te',
     label: 'Các chuyến M-Star',
     shortLabel: 'M-Star Quốc tế',
-    description: 'Bảy chuyến M-Star ở Pháp, Hàn Quốc, Áo, Đức, Nhật Bản và Trung Quốc.',
+    description: 'Bảy chặng M-Star tiêu biểu trong hành trình hơn 16 quốc gia từ Châu Âu đến Đông Á.',
   },
   {
     key: 'dinh-cao-nhiet-huyet',
@@ -102,7 +102,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "M-Star Nhật Bản 2026",
     "heroImage": "/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2",
     "heroObjectPosition": "50% 28%",
-    "photoCount": 9,
+    "photoCount": 12,
     "ctaMode": "career",
     "story": [
       "Người dân địa phương nói với đoàn rằng không phải ngày nào ở Kawaguchiko cũng thấy rõ đỉnh Phú Sĩ như vậy, trời xanh không một gợn mây. Đứng dưới vòm gạch đỏ nhìn ngọn núi phủ tuyết ở xa, Vân thấy nhẹ lòng và biết ơn.",
@@ -119,6 +119,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Chị Khánh Vân mặc áo lông màu kem, đứng trước đỉnh Phú Sĩ phủ tuyết trong chuyến M-Star Nhật Bản 2026.",
         "locationDetail": "Khung vòm gạch đỏ nhìn thẳng ra đỉnh Phú Sĩ phủ tuyết, trời xanh (Nhật Bản)",
         "people": "Chị Khánh Vân"
+      },
+      {
+        "id": "KV_342",
+        "src": "/images/journeys/nhat-ban-2026/12-kv_342.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Bảy chị em quản lý rạng rỡ trước một quán ăn truyền thống Nhật Bản, lưu lại vẻ trẻ trung và gắn bó trong chuyến M-Star 2026.",
+        "locationDetail": "Mặt tiền quán ăn gỗ truyền thống treo lồng đèn và rèm noren đặc trưng Nhật Bản",
+        "people": "Chị Khánh Vân cùng 6 nữ quản lý trong chuyến M-Star Nhật Bản 2026"
+      },
+      {
+        "id": "KV_343",
+        "src": "/images/journeys/nhat-ban-2026/13-kv_343.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Năm chị em quản lý diện áo dài ánh bạc đồng điệu bên bảng hiệu M-Star 2026 Nhật Bản trước giờ khai tiệc vinh danh.",
+        "locationDetail": "Khán phòng dạ tiệc sang trọng bên backdrop Hội nghị M-Star 2026 Nhật Bản của Manulife",
+        "people": "Chị Khánh Vân cùng 4 nữ lãnh đạo đồng bộ áo dài dự tiệc M-Star Nhật Bản 2026"
+      },
+      {
+        "id": "KV_344",
+        "src": "/images/journeys/nhat-ban-2026/14-kv_344.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Sáu chị em quản lý cùng nhau tận hưởng nắng xuân trong trẻo dưới hành lang mái vòm nhìn ra bầu trời vùng núi Phú Sĩ.",
+        "locationDetail": "Hành lang mái vòm gạch ấm áp mở ra bầu trời xanh và núi đồi vùng Phú Sĩ, Nhật Bản",
+        "people": "Chị Khánh Vân cùng 5 chị em quản lý dưới mái vòm ngập nắng tại Nhật Bản"
       },
       {
         "id": "KV_269",
@@ -225,7 +255,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "Top 1 DRD+ Toàn Quốc",
     "heroImage": "/images/journeys/yen-tu-vinh-danh-2025/01-kv_258.jpg?v=2",
     "heroObjectPosition": "50% 35%",
-    "photoCount": 10,
+    "photoCount": 13,
     "ctaMode": "career",
     "story": [
       "Legacy Yên Tử có hành lang đá cuội, mái ngói mũi hài và tường gạch nung theo lối cung đình thời Trần. Không gian yên tĩnh ấy cho mọi người một lúc để nhìn lại cả năm đã qua.",
@@ -242,6 +272,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Vinh danh TOP 1 DRD+ Quản lý Cấp cao Dẫn đầu Tỷ lệ Hoàn thành Chỉ tiêu FYP Năm 2025 trên sân khấu ManPower Agency Awards XXVII tại Yên Tử.",
         "locationDetail": "Sân khấu ManPower Agency Awards XXVII, màn hình LED hiển thị TOP 1 DRD+ Dẫn đầu Tỷ lệ Hoàn thành Chỉ tiêu FYP 2025",
         "people": "Chị Khánh Vân & các lãnh đạo xuất sắc trên sân khấu"
+      },
+      {
+        "id": "KV_339",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/11-kv_339.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Khoảnh khắc chị Khánh Vân cùng các quản lý cấp cao bước lên sân khấu Yên Tử nhận danh hiệu Top 1 DRD+ dẫn đầu tỉ lệ duy trì hợp đồng năm 2.",
+        "locationDetail": "Sân khấu lớn Manulife tại Yên Tử với màn hình LED vinh danh Top 1 DRD+ Quản lý cấp cao dẫn đầu tỉ lệ duy trì hợp đồng năm 2 năm 2025",
+        "people": "Chị Khánh Vân cùng các nữ quản lý cấp cao xuất sắc trên sân khấu vinh danh Yên Tử"
+      },
+      {
+        "id": "KV_340",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/12-kv_340.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Tập thể các thành viên MDRT Life Member rạng rỡ trong tà áo dài trên sân khấu Yên Tử, nơi ghi nhận những năm tháng làm nghề bền bỉ.",
+        "locationDetail": "Sân khấu vinh danh MDRT 2026 Life Member rực sáng sắc xanh Manulife tại Yên Tử",
+        "people": "Chị Khánh Vân và tập thể các thành viên MDRT 2026 Life Member trên sân khấu Manulife"
+      },
+      {
+        "id": "KV_341",
+        "src": "/images/journeys/yen-tu-vinh-danh-2025/13-kv_341.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Chưa tới Yên Tử mà không khí trên khoang máy bay đã rộn ràng tiếng cười của các chị em Green Power cùng nhau đi nhận giải.",
+        "locationDetail": "Khoang máy bay rộn ràng tiếng cười trên hành trình bay ra miền Bắc dự lễ vinh danh Manulife",
+        "people": "Chị Khánh Vân và 10 chị em quản lý Green Power trên chuyến bay dự lễ vinh danh Yên Tử"
       },
       {
         "id": "KV_259",
@@ -358,7 +418,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "M-Star Giữa Năm 2026",
     "heroImage": "/images/journeys/trung-khanh-2026/01-kv_279.jpg?v=2",
     "heroObjectPosition": "50% 30%",
-    "photoCount": 10,
+    "photoCount": 13,
     "ctaMode": "career",
     "story": [
       "Trùng Khánh có nhiều thứ làm cả đoàn bất ngờ: đường tàu chạy xuyên qua tòa nhà cao tầng, cầu vượt nối nhau trên sườn núi, tòa nhà đũa đỏ của Trung tâm Nghệ thuật Quốc Thái và những chiếc taxi vàng.",
@@ -375,6 +435,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Chị Khánh Vân đứng cạnh chiếc taxi vàng, phía sau là tòa nhà đỏ của Trung tâm Nghệ thuật Quốc Thái ở Trùng Khánh.",
         "locationDetail": "Cạnh taxi vàng, trước tòa nhà đũa đỏ của Trung tâm Nghệ thuật Quốc Thái (Trùng Khánh)",
         "people": "Chị Khánh Vân"
+      },
+      {
+        "id": "KV_345",
+        "src": "/images/journeys/trung-khanh-2026/11-kv_345.jpg?v=2",
+        "width": 1600,
+        "height": 1066,
+        "orientation": "landscape",
+        "caption": "Tập thể đoàn M-Star Trùng Khánh 2026 quây quần đông đủ bên bờ sông giữa lòng thành phố sương mù hiện đại.",
+        "locationDetail": "Quảng trường ven sông rộng lớn nhìn ra những tòa cao ốc hiện đại của thành phố Trùng Khánh",
+        "people": "Đông đảo thành viên đoàn M-Star Trùng Khánh 2026 cùng chị Khánh Vân"
+      },
+      {
+        "id": "KV_346",
+        "src": "/images/journeys/trung-khanh-2026/12-kv_346.jpg?v=2",
+        "width": 1600,
+        "height": 1066,
+        "orientation": "landscape",
+        "caption": "Chín chị em cùng giơ tay ăn mừng giữa quảng trường Đại Lễ Đường Nhân Dân Trùng Khánh, lưu lại một buổi sáng thật nhiều năng lượng.",
+        "locationDetail": "Quảng trường lát đá soi bóng trước công trình Đại Lễ Đường Nhân Dân uy nghi tại Trùng Khánh",
+        "people": "Chị Khánh Vân và 8 chị em đồng đội tại quảng trường Đại Lễ Đường Trùng Khánh"
+      },
+      {
+        "id": "KV_347",
+        "src": "/images/journeys/trung-khanh-2026/13-kv_347.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Bữa lẩu cay nồng ấm áp giữa sân vườn đèn lồng đỏ Trùng Khánh, nơi chị Khánh Vân và các chị em cùng nhau trò chuyện suốt buổi tối.",
+        "locationDetail": "Sân vườn nhà hàng đèn lồng đỏ cổ kính thưởng thức đặc sản lẩu Trùng Khánh",
+        "people": "Chị Khánh Vân cùng 5 chị em quản lý bên bàn tiệc lẩu Trùng Khánh"
       },
       {
         "id": "KV_280",
@@ -489,9 +579,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "pullQuote": "Đứng bên hồ Hallstatt phẳng lặng giữa dãy Alps, Vân thấy một năm vất vả làm nghề đã đáng.",
     "companions": "Đoàn lãnh đạo & quản lý M-Star Manulife Việt Nam",
     "milestoneBadge": "M-Star Châu Âu 2024",
-    "heroImage": "/images/journeys/ao-duc-2024/02-kv_227.jpg?v=2",
-    "heroObjectPosition": "50% 48%",
-    "photoCount": 9,
+    "heroImage": "/images/journeys/ao-duc-2024/10-kv_235.jpg?v=2",
+    "heroObjectPosition": "50% 26%",
+    "photoCount": 11,
     "ctaMode": "career",
     "story": [
       "Mùa thu Trung Âu se lạnh, tường nhà phủ dây thường xuân chuyển sang đỏ. Đứng bên hồ Hallstatt nhìn sương mỏng trên dãy Alps cùng các đồng nghiệp, Vân thấy mấy năm làm nghề tận tâm và có kỷ luật đã đáng.",
@@ -499,16 +589,6 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       "Mỗi lần đi xa về văn phòng ở TP.HCM, Vân đều mang theo cảm hứng mới để kể lại cho đội ngũ. Thế giới rộng lắm, và nghề tư vấn tài chính làm đàng hoàng có thể đưa mình đi xa."
     ],
     "photos": [
-      {
-        "id": "KV_227",
-        "src": "/images/journeys/ao-duc-2024/02-kv_227.jpg?v=2",
-        "width": 1280,
-        "height": 853,
-        "orientation": "landscape",
-        "caption": "Đoàn M-Star chụp ảnh tại quảng trường Hallstatt (Áo).",
-        "locationDetail": "Quảng trường trung tâm Hallstatt, xung quanh là nhà nhiều màu và núi Alps",
-        "people": "Chị Khánh Vân & đoàn M-Star"
-      },
       {
         "id": "KV_228",
         "src": "/images/journeys/ao-duc-2024/03-kv_228.jpg?v=2",
@@ -518,6 +598,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Đoàn M-Star giương cờ đỏ sao vàng Việt Nam và cờ xanh Manulife trước sân vận động Allianz Arena (Munich, Đức).",
         "locationDetail": "Quảng trường trước sân vận động Allianz Arena tại Munich (Đức)",
         "people": "Đoàn M-Star Manulife Việt Nam"
+      },
+      {
+        "id": "KV_330",
+        "src": "/images/journeys/ao-duc-2024/13-kv_330.jpg?v=2",
+        "width": 1600,
+        "height": 899,
+        "orientation": "landscape",
+        "caption": "Đoàn lãnh đạo M-Star phủ sắc áo đồng phục giữa khán đài sân vận động Allianz Arena, giương cao lá cờ Việt Nam và cờ Manulife đầy tự hào.",
+        "locationDetail": "Khán đài sắc đỏ rực rỡ bên trong sân vận động Allianz Arena, Munich, Đức",
+        "people": "Đoàn lãnh đạo và quản lý M-Star Manulife Việt Nam tại Munich"
+      },
+      {
+        "id": "KV_331",
+        "src": "/images/journeys/ao-duc-2024/14-kv_331.jpg?v=2",
+        "width": 1600,
+        "height": 899,
+        "orientation": "landscape",
+        "caption": "Tập thể đại biểu M-Star lưu lại khung hình đông vui giữa nắng thu nước Đức bên bức tường lá đỏ cổ kính.",
+        "locationDetail": "Khuôn viên lâu đài cổ kính phủ kín tường dây leo lá đỏ rực nắng thu tại Đức",
+        "people": "Đoàn đại biểu Hội nghị M-Star châu Âu cùng chị Khánh Vân"
+      },
+      {
+        "id": "KV_332",
+        "src": "/images/journeys/ao-duc-2024/15-kv_332.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Chị Khánh Vân cùng đồng nghiệp thả tim vui vẻ trước tháp đồng hồ Marienplatz trong buổi sáng nắng trong veo ở Munich.",
+        "locationDetail": "Quảng trường Marienplatz với tòa thị chính kiến trúc Gothic tráng lệ dưới trời xanh Munich, Đức",
+        "people": "Chị Khánh Vân cùng hai anh chị đồng nghiệp tại trung tâm Munich"
       },
       {
         "id": "KV_229",
@@ -614,7 +724,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "M-Star Thượng Hải 2025",
     "heroImage": "/images/journeys/thuong-hai-2025/01-kv_248.jpg?v=2",
     "heroObjectPosition": "50% 25%",
-    "photoCount": 10,
+    "photoCount": 13,
     "ctaMode": "career",
     "story": [
       "Đứng ở Bến Thượng Hải nhìn sang bờ Đông sông Hoàng Phố, thấy Tháp Minh Châu Phương Đông và cụm cao ốc tài chính Lục Gia Chủy, ai làm tài chính cũng cảm nhận được sức phát triển của một trung tâm kinh tế lớn.",
@@ -631,6 +741,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Chị Khánh Vân tại Bến Thượng Hải, phía sau là Tháp Minh Châu Phương Đông.",
         "locationDetail": "Bến Thượng Hải (The Bund) bên sông Hoàng Phố, phía sau là Tháp Minh Châu Phương Đông",
         "people": "Chị Khánh Vân"
+      },
+      {
+        "id": "KV_336",
+        "src": "/images/journeys/thuong-hai-2025/11-kv_336.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Cả nhóm chị em quản lý tạo dáng đồng điệu trước mái đình cổ trấn Thượng Hải, lưu lại khoảnh khắc trẻ trung và hết mình.",
+        "locationDetail": "Sân mái ngói cong rêu phong tại cổ trấn sông nước ngoại ô Thượng Hải",
+        "people": "Chị Khánh Vân cùng tập thể 11 chị em lãnh đạo trong chuyến M-Star Thượng Hải 2025"
+      },
+      {
+        "id": "KV_337",
+        "src": "/images/journeys/thuong-hai-2025/12-kv_337.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Mười một chị em quản lý rạng rỡ dưới ánh đèn đêm Thượng Hải, mang theo phong thái tự tin của những người phụ nữ làm chủ sự nghiệp.",
+        "locationDetail": "Không gian trưng bày và phố đêm lung linh ánh đèn vàng tại Thượng Hải",
+        "people": "Chị Khánh Vân và 10 nữ quản lý trong buổi tối khám phá Thượng Hải"
+      },
+      {
+        "id": "KV_338",
+        "src": "/images/journeys/thuong-hai-2025/13-kv_338.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Nụ cười gần gũi của chị Khánh Vân và các chị em ngay trên chuyến xe đoàn, nơi những câu chuyện nghề và chuyện đời cứ nối dài không ngớt.",
+        "locationDetail": "Bên trong khoang xe du lịch đưa đoàn đi tham quan tại Thượng Hải",
+        "people": "Chị Khánh Vân cùng 5 chị em đồng đội thân thiết trên xe du lịch Thượng Hải"
       },
       {
         "id": "KV_249",
@@ -747,7 +887,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "Kick-off Giữa Năm 2026",
     "heroImage": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg?v=3",
     "heroObjectPosition": "50% 24%",
-    "photoCount": 8,
+    "photoCount": 11,
     "ctaMode": "career",
     "story": [
       "Sáng chạy bộ ở cung đường điện gió Bàu Trắng, Vân nhận tấm Bib số 0069, trùng với số Khu vực HCM69 đã gắn bó với Vân từ những ngày đầu xây dựng hệ thống. Gió biển mát lúc bình minh, những cánh quạt trắng rất lớn, và anh chị em đồng nghiệp chạy cùng.",
@@ -764,6 +904,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Chị Khánh Vân đeo số Bib 0069 (trùng số Khu vực HCM69) chạy dưới cánh quạt điện gió ở Phan Thiết lúc bình minh.",
         "locationDetail": "Đường chạy ven biển dưới cánh quạt điện gió lớn tại Bàu Trắng, Phan Thiết",
         "people": "Chị Khánh Vân"
+      },
+      {
+        "id": "KV_348",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/09-kv_348.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Tập thể Hệ thống Green Power rạng rỡ bên bảng vinh danh Tinh Anh Toàn Năng tại Hội nghị giữa năm 2026 ở Phan Thiết.",
+        "locationDetail": "Sân khấu Hội nghị giữa năm 2026 Stronger Faster với bảng vinh danh Tinh Anh Toàn Năng",
+        "people": "Chị Khánh Vân cùng hơn 35 quản lý và tư vấn viên Hệ thống Green Power"
+      },
+      {
+        "id": "KV_349",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/10-kv_349.jpg?v=2",
+        "width": 1200,
+        "height": 1600,
+        "orientation": "portrait",
+        "caption": "Đội ngũ chị em Green Power đồng bộ trong sắc áo sự kiện, lưu lại bức ảnh tập thể tràn đầy khí thế trước giờ vào hội nghị.",
+        "locationDetail": "Mặt tiền kiến trúc vòm trắng sang trọng tại khu tổ hợp nghỉ dưỡng Phan Thiết",
+        "people": "Chị Khánh Vân cùng hơn 20 nữ quản lý và thành viên Green Power"
+      },
+      {
+        "id": "KV_350",
+        "src": "/images/journeys/kickoff-phan-thiet-2026/11-kv_350.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Giữa khán phòng rực sáng sắc xanh ở Phan Thiết, chị Khánh Vân cùng anh chị em Green Power giơ cao gậy cổ vũ tiếp thêm lửa cho chặng đường mới.",
+        "locationDetail": "Khán phòng hội nghị Phan Thiết rực sáng ánh đèn xanh đầy nhiệt huyết",
+        "people": "Chị Khánh Vân cùng hàng chục đồng đội Green Power trong khán phòng hội nghị"
       },
       {
         "id": "KV_301",
@@ -860,7 +1030,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "Thiện Nguyện Đắk Lắk 2026",
     "heroImage": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg?v=2",
     "heroObjectPosition": "50% 35%",
-    "photoCount": 8,
+    "photoCount": 11,
     "ctaMode": "family",
     "story": [
       "Trời còn chưa sáng hẳn, anh chị em đoàn thiện nguyện Green Power đã có mặt đủ bên băng rôn Kết Nối Yêu Thương, xếp từng thùng sữa và ba lô xanh Manulife lên xe đi Krông Pắc, Đắk Lắk.",
@@ -877,6 +1047,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Đoàn thiện nguyện Green Power chụp ảnh cùng các em nhỏ tại Mái ấm xã Ea Kênh (Đắk Lắk) trong chương trình Kết Nối Yêu Thương 2026.",
         "locationDetail": "Hội trường Mái ấm xã Ea Kênh (Krông Pắc, Đắk Lắk), cạnh băng rôn Kết Nối Yêu Thương, Trao Hạt Vàng Gửi Bình An",
         "people": "Chị Khánh Vân, đoàn thiện nguyện & các em nhỏ"
+      },
+      {
+        "id": "KV_351",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/09-kv_351.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Tập thể Green Power cùng bà con xã Ea Yiêng lưu lại khoảnh khắc ý nghĩa bên băng rôn Hành trình Kết Nối Yêu Thương tại Đắk Lắk.",
+        "locationDetail": "Nhà sinh hoạt cộng đồng xã Ea Yiêng, Đắk Lắk cùng băng rôn Hành trình Kết Nối Yêu Thương",
+        "people": "Chị Khánh Vân cùng tập thể tình nguyện viên Hệ thống Green Power và bà con địa phương"
+      },
+      {
+        "id": "KV_352",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/10-kv_352.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Niềm hạnh phúc giản dị khi tận tay trao từng phần quà và đứng chụp ảnh cùng các em nhỏ vùng cao Đắk Lắk trong chuyến thiện nguyện.",
+        "locationDetail": "Hội trường nhà cộng đồng Đắk Lắk trong buổi trao quà học tập và nhu yếu phẩm",
+        "people": "Tập thể chị Khánh Vân, đội ngũ Green Power và hàng chục em nhỏ vùng cao Đắk Lắk"
+      },
+      {
+        "id": "KV_353",
+        "src": "/images/journeys/thien-nguyen-dak-lak-2026/11-kv_353.jpg?v=2",
+        "width": 1600,
+        "height": 900,
+        "orientation": "landscape",
+        "caption": "Cả đoàn thiện nguyện Green Power quây quần rạng rỡ tại Krông Pắc sau buổi trao quà, mang theo thật nhiều kỷ niệm đẹp về đất và người Tây Nguyên.",
+        "locationDetail": "Quảng trường xã Krông Pắc, Đắk Lắk trong hành trình thiện nguyện Tây Nguyên",
+        "people": "Chị Khánh Vân cùng hơn 30 thành viên đoàn thiện nguyện Green Power tại Krông Pắc"
       },
       {
         "id": "KV_309",
@@ -973,7 +1173,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "M-Star Hàn Quốc 2024",
     "heroImage": "/images/journeys/han-quoc-2024/01-kv_216.jpg?v=2",
     "heroObjectPosition": "50% 35%",
-    "photoCount": 9,
+    "photoCount": 12,
     "ctaMode": "career",
     "story": [
       "Seoul đón đoàn đúng tuần hoa anh đào nở rộ nhất năm. Từ những con dốc nhỏ đến bờ hồ Seokchon dưới tháp Lotte World, đâu cũng một màu trắng hồng dưới nắng xuân.",
@@ -990,6 +1190,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Các nữ quản lý Green Power giơ tay chào dưới hoa anh đào nở rộ ở Seoul trong chuyến M-Star 2024.",
         "locationDetail": "Con đường rợp hoa anh đào nở trắng ở Seoul (Hàn Quốc)",
         "people": "Chị Khánh Vân & 9 nữ quản lý đồng nghiệp"
+      },
+      {
+        "id": "KV_327",
+        "src": "/images/journeys/han-quoc-2024/11-kv_327.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Sắc xanh Manulife và tà áo dài Việt Nam rạng rỡ giữa không gian sông nước Hàn Quốc trong chuyến M-Star 2024.",
+        "locationDetail": "Khoang ngoài trời hướng sông rộng thoáng trong chuyến du lịch vinh danh tại Hàn Quốc",
+        "people": "Chị Khánh Vân cùng đông đảo lãnh đạo, quản lý Manulife Việt Nam tại Hàn Quốc"
+      },
+      {
+        "id": "KV_328",
+        "src": "/images/journeys/han-quoc-2024/12-kv_328.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Chị Khánh Vân cùng các chị em quản lý rạng rỡ dưới tán hoa anh đào Seoul, tận hưởng mùa xuân trọn vẹn sau một năm nỗ lực.",
+        "locationDetail": "Con đường hoa anh đào nở rộ trắng xóa tại Seoul, Hàn Quốc",
+        "people": "Chị Khánh Vân và nhóm nữ quản lý thân thiết trong đoàn M-Star Hàn Quốc 2024"
+      },
+      {
+        "id": "KV_329",
+        "src": "/images/journeys/han-quoc-2024/13-kv_329.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Khoảnh khắc chị Khánh Vân và các chị em đồng đội giơ tay đón gió biển cùng đàn hải âu trong hành trình M-Star Hàn Quốc 2024.",
+        "locationDetail": "Boong phà giữa biển trời Hàn Quốc với đàn hải âu bay lượn phía sau",
+        "people": "Chị Khánh Vân và nhóm đồng nghiệp nữ trên chuyến phà biển Hàn Quốc"
       },
       {
         "id": "KV_217",
@@ -1088,7 +1318,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "Hành Trình Nam Ninh 2024",
     "heroImage": "/images/journeys/nam-ninh-2024/01-kv_238.jpg?v=2",
     "heroObjectPosition": "50% 32%",
-    "photoCount": 10,
+    "photoCount": 13,
     "ctaMode": "career",
     "story": [
       "Nam Ninh được gọi là thành phố xanh của Quảng Tây: đại lộ nhiều cây cổ thụ, cổng thành đá, và dòng sông chảy qua dãy phố cổ mái ngói âm dương.",
@@ -1105,6 +1335,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Đội ngũ quản lý Green Power mặc áo dài truyền thống Việt Nam trước dãy nhà cổ ở Nam Ninh.",
         "locationDetail": "Trước dãy nhà gỗ kiến trúc cổ phương Đông tại Nam Ninh",
         "people": "Chị Khánh Vân & tập thể quản lý Green Power"
+      },
+      {
+        "id": "KV_333",
+        "src": "/images/journeys/nam-ninh-2024/11-kv_333.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Hàng chục anh chị em trong đoàn cùng ngồi lại chụp ảnh kỷ niệm tại quảng trường trung tâm Nam Ninh, rộn ràng tiếng cười đầu năm.",
+        "locationDetail": "Quảng trường trung tâm rộng lớn với tán cây xanh hình vòm nổi tiếng tại Nam Ninh, Trung Quốc",
+        "people": "Tập thể đông đảo thành viên Hệ thống Green Power trong chuyến đi Nam Ninh 2024"
+      },
+      {
+        "id": "KV_334",
+        "src": "/images/journeys/nam-ninh-2024/12-kv_334.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Đêm Gala áo dài ấm áp tại Nam Ninh, nơi cả tập thể cùng nâng ly chúc mừng sinh nhật và sẻ chia niềm vui gắn bó.",
+        "locationDetail": "Sân khấu Gala Dinner rực rỡ ánh đèn mừng sinh nhật thành viên trong đoàn tại Nam Ninh",
+        "people": "Chị Khánh Vân và tập thể các chị em quản lý trên sân khấu đêm tiệc Nam Ninh"
+      },
+      {
+        "id": "KV_335",
+        "src": "/images/journeys/nam-ninh-2024/13-kv_335.jpg?v=2",
+        "width": 1600,
+        "height": 1200,
+        "orientation": "landscape",
+        "caption": "Chị Khánh Vân và các chị em quản lý đứng thành hàng rạng rỡ trước cổng cổ Nam Ninh, ai cũng ánh lên niềm vui đồng hành.",
+        "locationDetail": "Bậc tam cấp trước cổng kiến trúc cổ uy nghi tại Nam Ninh, Trung Quốc",
+        "people": "Chị Khánh Vân cùng 10 chị em quản lý trong đoàn Nam Ninh 2024"
       },
       {
         "id": "KV_239",
@@ -1213,7 +1473,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "milestoneBadge": "M-Star Pháp 2019",
     "heroImage": "/images/journeys/phap-2019/01-kv_206.jpg?v=2",
     "heroObjectPosition": "50% 32%",
-    "photoCount": 10,
+    "photoCount": 13,
     "ctaMode": "career",
     "story": [
       "Xem lại ảnh chụp ở Paris mùa thu 2019, Vân nhớ lại cảm giác những năm đầu đi lấy danh hiệu quốc tế. Paris tháng mười có hàng phong chuyển vàng dọc đại lộ, sông Seine chảy chậm và Vương cung thánh đường Sacré-Cœur trên đồi Montmartre.",
@@ -1230,6 +1490,36 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "caption": "Chị Khánh Vân dang tay dưới chân Tháp Eiffel sáng đèn trong chuyến vinh danh M-Star Pháp 2019.",
         "locationDetail": "Quảng trường dưới chân Tháp Eiffel, đèn vàng ban đêm tại Paris (Pháp)",
         "people": "Chị Khánh Vân"
+      },
+      {
+        "id": "KV_324",
+        "src": "/images/journeys/phap-2019/11-kv_324.jpg?v=2",
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "caption": "Đoàn lãnh đạo và quản lý M-Star Pháp 2019 chụp ảnh tập thể rạng rỡ tại sân bay, mở đầu chuyến xuất ngoại đầu tiên đầy tự hào.",
+        "locationDetail": "Sảnh nhà ga sân bay quốc tế trước giờ khởi hành đến Pháp",
+        "people": "Chị Khánh Vân và tập thể đoàn lãnh đạo, quản lý M-Star Pháp 2019"
+      },
+      {
+        "id": "KV_325",
+        "src": "/images/journeys/phap-2019/12-kv_325.jpg?v=2",
+        "width": 1276,
+        "height": 956,
+        "orientation": "landscape",
+        "caption": "Tập thể đoàn M-Star 2019 quây quần giữa nắng sớm vùng đồi nho Champagne, lưu giữ kỷ niệm ngày đặt chân đến nước Pháp.",
+        "locationDetail": "Sườn đồi trồng nho xanh mướt vùng Champagne dưới bầu trời trong xanh nước Pháp",
+        "people": "Chị Khánh Vân và tập thể đoàn đại biểu M-Star Pháp 2019"
+      },
+      {
+        "id": "KV_326",
+        "src": "/images/journeys/phap-2019/13-kv_326.jpg?v=2",
+        "width": 960,
+        "height": 640,
+        "orientation": "landscape",
+        "caption": "Cả đoàn M-Star Pháp 2019 rạng rỡ trước Nhà hát lớn Palais Garnier giữa lòng Paris, ghi dấu một cột mốc đáng nhớ trong sự nghiệp.",
+        "locationDetail": "Quảng trường trước Nhà hát lớn Palais Garnier tráng lệ tại thủ đô Paris, Pháp",
+        "people": "Chị Khánh Vân cùng tập thể đoàn M-Star Việt Nam tại Paris"
       },
       {
         "id": "KV_207",
