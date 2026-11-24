@@ -458,21 +458,18 @@ export const RegionalSystemPage: React.FC = () => {
               className="lg:hidden bg-[#FAF9F5] border-t border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
             >
               <div className="px-4 py-4 flex flex-col gap-2">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold">
-                  Chuyển trang
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-1">
                   <a
                     href="/"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-3.5 py-3 rounded-[4px] bg-white border border-[#DCD8CE] flex items-center justify-between gap-2 text-[#181F1C]"
+                    className="px-3.5 py-3 rounded-[3px] bg-white border border-[#DCD8CE] flex items-center justify-between gap-2 text-[#181F1C]"
                   >
                     <div>
                       <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#7A847F] font-semibold block">
-                        Cổng chính
+                        Khánh Vân
                       </span>
                       <span className="font-serif text-[15px] font-medium">
-                        Trang chủ Khánh Vân
+                        Trang chủ
                       </span>
                     </div>
                     <ArrowLeft className="w-4 h-4 text-[#0A3622] shrink-0" />
@@ -480,23 +477,21 @@ export const RegionalSystemPage: React.FC = () => {
                   <a
                     href="/nhung-chuyen-di"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-3.5 py-3 rounded-[4px] bg-[#061C12] border border-[#B8975A]/50 flex items-center justify-between gap-2 text-white"
+                    className="px-3.5 py-3 rounded-[3px] bg-[#FAF6EC] border border-[#B8975A]/35 flex items-center justify-between gap-2 text-[#181F1C]"
                   >
                     <div>
-                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold block">
-                        Nhật ký 16+ Quốc gia
+                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#8B6A2B] font-semibold block">
+                        Hành trình 16+ Quốc gia
                       </span>
                       <span className="font-serif text-[15px] font-medium">
-                        Những Chuyến Đi &amp; TVC
+                        Những Chuyến Đi
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                    <ArrowUpRight className="w-4 h-4 text-[#8B6A2B] shrink-0" />
                   </a>
                 </div>
 
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold mt-1">
-                  Trong trang Hệ thống Green Power
-                </span>
+                <div className="border-t border-[#E4E1D8] my-1" />
                 {REGIONAL_SECTIONS.map((sec) => (
                   <a
                     key={sec.id}

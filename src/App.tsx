@@ -1638,22 +1638,20 @@ export function App() {
                 <a
                   href="/nhung-chuyen-di"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mb-2 px-4 py-3 rounded-[3px] bg-[#FAF6EC] text-[#181F1C] border border-[#B8975A]/35 flex items-center justify-between gap-3 active:opacity-95"
+                  className="mb-1 px-4 py-3 rounded-[3px] bg-[#FAF6EC] text-[#181F1C] border border-[#B8975A]/35 flex items-center justify-between gap-3 active:opacity-95"
                 >
                   <div className="min-w-0">
                     <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#8B6A2B] font-semibold block">
-                      Nhật ký 16+ Quốc gia
+                      Hành trình 16+ Quốc gia
                     </span>
                     <span className="font-serif text-[15px] font-medium text-[#181F1C] block truncate mt-0.5">
-                      Những Chuyến Đi &amp; TVC
+                      Những Chuyến Đi
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#8B6A2B] shrink-0" />
                 </a>
 
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#7A847F] font-semibold mt-1">
-                  Trên trang chủ
-                </span>
+                <div className="border-t border-[#E4E1D8] my-1.5" />
                 {mobileSectionNav.map((item) => (
                   <a
                     key={item.href}
@@ -2546,7 +2544,7 @@ export function App() {
                     Khánh Vân &amp; Những Chuyến Đi
                   </h3>
                   <p className="text-sm sm:text-[15.5px] text-[#C8DBD1] leading-[1.8] max-w-xl">
-                    Từ chuyến M-Star đầu tiên tại Paris năm 2019 đến Seoul, Hallstatt, Thượng Hải, núi Phú Sĩ và Trùng Khánh. Lưu giữ 11 chương kỷ niệm, 141 khung hình thực tế và phim thương hiệu tự sự cùng đội ngũ và tổ ấm.
+                    Từ chuyến M-Star đầu tiên tại Paris năm 2019 đến Seoul, Hallstatt, Thượng Hải, núi Phú Sĩ và Trùng Khánh. Lưu giữ 11 chặng hành trình cùng đội ngũ và những khoảnh khắc bình yên bên gia đình.
                   </p>
                 </div>
 
@@ -2555,7 +2553,7 @@ export function App() {
                     href="/nhung-chuyen-di"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#E8D3A6] hover:bg-[#FAF9F5] text-[#072116] text-[11px] uppercase tracking-[0.16em] font-bold rounded-[3px] transition-colors min-h-[46px]"
                   >
-                    <span>Khám phá những chuyến đi &amp; TVC</span>
+                    <span>Khám phá những chuyến đi</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                   <a
@@ -2584,7 +2582,7 @@ export function App() {
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/20 text-[10.5px] uppercase tracking-[0.14em] text-[#E8D3A6] font-semibold">
                     <Play className="w-3 h-3 fill-current" />
-                    <span>Phim thương hiệu • 0:49</span>
+                    <span>Cứ đi rồi sẽ đến</span>
                   </span>
                   <span className="text-[10.5px] uppercase tracking-[0.14em] text-white/90 font-medium hidden sm:inline">
                     11 Chương • 141 ảnh

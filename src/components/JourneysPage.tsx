@@ -19,7 +19,6 @@ import {
   Play,
   Sparkles,
   Users,
-  Volume2,
   X,
 } from 'lucide-react';
 import { JOURNEY_CHAPTERS, JourneyChapter, JourneyPhoto } from '../data/journeys';
@@ -91,16 +90,16 @@ interface ScreeningReel {
 const SIGNATURE_FILM: ScreeningReel = {
   slug: 'cu-di-roi-se-den',
   isSignature: true,
-  badge: 'Phim thương hiệu, 2018 đến nay',
-  countryTag: 'Phim thương hiệu',
+  badge: 'Hành trình 2018–2026',
+  countryTag: 'Hành trình',
   year: '2018–2026',
-  soundLabel: 'Giọng tự sự Khánh Vân & Warm Memories',
+  soundLabel: 'Khánh Vân',
   src: '/videos/journeys/cu-di-roi-se-den.mp4?v=5',
   poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=5',
   durationLabel: '0:49',
   title: 'Cứ Đi Rồi Sẽ Đến, chỉ cần hướng về phía mặt trời',
   caption:
-    'Bốn mươi chín giây tự sự bằng chính giọng đọc của Khánh Vân: từ những năm tháng làm ngân hàng, bước ngoặt 2018 bắt đầu lại từ chiếc mã số tư vấn viên nhỏ xíu, đến hành trình đi qua hơn 16 quốc gia cùng đội ngũ và những người đồng hành.',
+    'Câu chuyện của Khánh Vân từ những năm tháng làm ngân hàng, bước ngoặt 2018 bắt đầu lại từ chiếc mã số tư vấn viên nhỏ xíu, đến hành trình đi qua hơn 16 quốc gia cùng đội ngũ và những người đồng hành.',
 };
 
 const NAV_SECTIONS = [
@@ -534,18 +533,16 @@ export const JourneysPage: React.FC = () => {
                 >
                   <div>
                     <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#7A847F] font-semibold block">
-                      Cổng chính
+                      Khánh Vân
                     </span>
                     <span className="font-serif text-[15px] font-medium">
-                      Trang chủ Khánh Vân
+                      Trang chủ
                     </span>
                   </div>
                   <ArrowLeft className="w-4 h-4 text-[#0A3622] shrink-0" />
                 </a>
 
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold mt-1">
-                  Trong trang Những chuyến đi
-                </span>
+                <div className="border-t border-[#E4E1D8] my-1" />
                 {NAV_SECTIONS.map((sec) => (
                   <a
                     key={sec.id}
@@ -672,7 +669,7 @@ export const JourneysPage: React.FC = () => {
             ) : (
               <>
                 <Pause className="w-3 h-3" />
-                <span className="hidden sm:inline">Tạm dừng nền</span>
+                <span className="hidden sm:inline">Tạm dừng</span>
                 <span className="sm:hidden">Dừng</span>
               </>
             )}
@@ -705,7 +702,7 @@ export const JourneysPage: React.FC = () => {
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-5 py-3.5 bg-[#E8D3A6] hover:bg-[#FAF9F5] active:scale-[0.99] text-[#072116] text-xs uppercase tracking-[0.15em] font-bold rounded-[3px] transition-all shadow-[0_12px_32px_-12px_rgba(232,211,166,0.55)] cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 fill-current" />
-                <span>Xem phim thương hiệu (0:49)</span>
+                <span>Xem phim hành trình</span>
               </button>
               <a
                 href="#ban-do-hanh-trinh"
@@ -1415,10 +1412,10 @@ export const JourneysPage: React.FC = () => {
                 <span>05 / Phòng chiếu, {screeningReels.length} phim</span>
               </div>
               <h2 className="font-serif text-[28px] sm:text-4xl lg:text-[40px] text-white font-medium leading-[1.15]">
-                Phim mở màn “Cứ Đi Rồi Sẽ Đến” và bảy phim của từng chuyến đi
+                “Cứ Đi Rồi Sẽ Đến” và những thước phim từng chuyến đi
               </h2>
               <p className="text-[13px] sm:text-sm text-[#BDD0C6] leading-relaxed">
-                Mở đầu là phim thương hiệu gần một phút bằng chính giọng tự sự của Khánh Vân về hành trình từ bước ngoặt 2018 đến hôm nay. Tiếp theo là 7 phim quay thực tế giữ âm thanh gốc chọn lọc và nhạc nền riêng cho từng miền đất.
+                Mở đầu bằng câu chuyện của Khánh Vân từ bước ngoặt 2018 đến hôm nay, tiếp nối là những khoảnh khắc thực tế tại bảy miền đất đã đi qua.
               </p>
             </div>
           </div>
@@ -1446,9 +1443,8 @@ export const JourneysPage: React.FC = () => {
                       <div className="text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold truncate">
                         {String(currentLoungeIdx + 1).padStart(2, '0')}/{String(screeningReels.length).padStart(2, '0')} • {loungeReel.badge}
                       </div>
-                      <div className="inline-flex items-center gap-1.5 text-[11px] text-[#B7D0C2] mt-0.5 truncate max-w-full">
-                        <Volume2 className="w-3 h-3 text-[#34D399] shrink-0" />
-                        <span className="truncate">{loungeReel.soundLabel}</span>
+                      <div className="text-[11px] text-[#B7D0C2] mt-0.5 truncate max-w-full">
+                        {loungeReel.countryTag} • {loungeReel.year}
                       </div>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
@@ -1562,9 +1558,6 @@ export const JourneysPage: React.FC = () => {
                             <span className="text-[#9AB5A7]">
                               {reel.countryTag} • {reel.year}
                             </span>
-                            <span className="text-[#7E9C8D] hidden xl:inline">
-                              • {reel.soundLabel}
-                            </span>
                             {reel.isSignature && (
                               <span className="px-2 py-0.5 rounded-full bg-[#E8D3A6] text-[#061C12] text-[9px] font-bold">
                                 Phim mở màn
@@ -1595,8 +1588,7 @@ export const JourneysPage: React.FC = () => {
                 {/* Mobile Compact Filmstrip Selector (Tap Any Film to Play Inline Immediately) */}
                 <div className="lg:hidden space-y-2.5">
                   <div className="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-[#A9C2B5]">
-                    <span>Chọn phim trong danh sách ({screeningReels.length})</span>
-                    <span className="text-[#E8D3A6]">Vuốt ngang →</span>
+                    <span>Danh sách phim ({screeningReels.length})</span>
                   </div>
                   <div className="flex gap-2.5 overflow-x-auto no-scrollbar scroll-fade-right snap-x pb-1 pr-8">
                     {screeningReels.map((reel, idx) => {
