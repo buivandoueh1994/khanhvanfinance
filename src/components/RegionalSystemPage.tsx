@@ -18,6 +18,7 @@ import {
   GitBranch,
   Layers,
   MapPin,
+  Menu,
   Search,
   ShieldCheck,
   Sparkles,
@@ -106,6 +107,8 @@ interface LightboxState {
 }
 
 export const RegionalSystemPage: React.FC = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('tam-voc');
   const [activeTier, setActiveTier] = useState<'ALL' | LeaderTierKey>('ALL');
   const [activeArea, setActiveArea] = useState<string>('ALL');
   const [activeIndustry, setActiveIndustry] = useState<'ALL' | IndustryCategoryKey>('ALL');
@@ -328,66 +331,187 @@ export const RegionalSystemPage: React.FC = () => {
 
   const anyModalOpen = Boolean(selectedLeader || lightbox || activeVideo);
 
+  useEffect(() => {
+    const ids = ['tam-voc', 'cau-truc-vung', 'doi-ngu-quan-ly', 'van-hoa-he-thong'];
+    const onScroll = () => {
+      let current = 'tam-voc';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 160) current = id;
+      }
+      setActiveSection(current);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const REGIONAL_SECTIONS = [
+    { id: 'tam-voc', label: 'Tổng quan' },
+    { id: 'cau-truc-vung', label: 'Sơ đồ Vùng' },
+    { id: 'doi-ngu-quan-ly', label: `Đội ngũ (${REGIONAL_LEADERS.length})` },
+    { id: 'van-hoa-he-thong', label: 'Văn hóa' },
+  ];
+
   return (
     <div className="min-h-screen w-full max-w-[100vw] [overflow-x:clip] bg-[#FAF9F5] text-[#181F1C] selection:bg-[#0A3622] selection:text-white">
       {/* =================================================================== */}
       {/* STICKY EDITORIAL HEADER + MOBILE QUICK-JUMP CHAPTER STRIP */}
       {/* =================================================================== */}
       <header className="sticky top-0 z-40 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8]">
-        <div className="max-w-6xl w-full min-w-0 mx-auto px-4 sm:px-8 h-14 sm:h-[68px] flex items-center justify-between gap-2.5 sm:gap-4">
-          <a
-            href="/"
-            className="inline-flex items-center gap-2.5 sm:gap-3 group min-w-0"
-            title="Về trang chủ Khánh Vân"
-          >
-            <span className="w-[3px] h-5 bg-[#008746] inline-block shrink-0" />
-            <div className="flex flex-col min-w-0">
-              <span className="font-serif text-base sm:text-xl tracking-[0.06em] sm:tracking-[0.08em] text-[#181F1C] font-semibold leading-none truncate">
-                KHÁNH VÂN
-              </span>
-              <span className="sm:hidden text-[9px] uppercase tracking-[0.12em] text-[#56605B] font-medium mt-1 truncate">
-                Green Power • Manulife
-              </span>
-              <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
-                Hệ thống Green Power • Manulife Việt Nam
-              </span>
-            </div>
-          </a>
+        <div className="max-w-[1320px] w-full min-w-0 mx-auto px-4 sm:px-6 xl:px-10 h-[62px] sm:h-[72px] flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-3 min-w-0 shrink-0">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              className="lg:hidden p-2 text-[#181F1C] min-w-[44px] min-h-[44px] flex items-center justify-center -ml-2 rounded-[3px] hover:bg-[#ECE9E0]/60 transition-colors cursor-pointer"
+              aria-label={mobileMenuOpen ? 'Đóng menu' : 'Mở menu chuyển trang'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
 
-          <nav className="hidden lg:flex items-center gap-7 text-[11px] uppercase tracking-[0.16em] font-medium text-[#56605B]">
-            <a href="#tam-voc" className="hover:text-[#0A3622] transition-colors">
-              01. Tổng quan
-            </a>
-            <a href="#cau-truc-vung" className="hover:text-[#0A3622] transition-colors">
-              02. Sơ đồ tổ chức Vùng
-            </a>
-            <a href="#doi-ngu-quan-ly" className="hover:text-[#0A3622] transition-colors">
-              03. Đội ngũ ({REGIONAL_LEADERS.length})
-            </a>
-            <a href="#van-hoa-he-thong" className="hover:text-[#0A3622] transition-colors">
-              04. Người dẫn dắt &amp; văn hóa
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <a
               href="/"
-              aria-label="Về trang chủ"
-              className="inline-flex items-center justify-center gap-1.5 p-2 sm:px-3 sm:py-2 border border-[#DCD8CE] hover:border-[#0A3622] text-xs font-medium text-[#181F1C] rounded-[2px] transition-colors"
+              className="inline-flex items-center gap-2.5 sm:gap-3 group min-w-0"
+              title="Về trang chủ Khánh Vân"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Trang chủ</span>
+              <span className="w-[3px] h-7 sm:h-8 bg-[#008746] rounded-full shrink-0" />
+              <div className="flex flex-col min-w-0">
+                <span className="font-serif text-[17px] sm:text-[20px] xl:text-[21px] tracking-[0.06em] text-[#181F1C] font-semibold leading-none truncate">
+                  KHÁNH VÂN
+                </span>
+                <span className="text-[9px] sm:text-[9.5px] uppercase tracking-[0.12em] xl:tracking-[0.18em] text-[#56605B] font-medium mt-1 truncate">
+                  Green Power • Manulife
+                </span>
+              </div>
             </a>
+          </div>
+
+          {/* Unified Minimalist Desktop Navigation: 4 Concise Sections | 2 Other Site Pages */}
+          <nav
+            aria-label="Điều hướng chính"
+            className="hidden lg:flex items-center gap-3.5 xl:gap-7"
+          >
+            <div className="flex items-center gap-3.5 xl:gap-6">
+              {REGIONAL_SECTIONS.map((sec) => {
+                const isActive = activeSection === sec.id;
+                return (
+                  <a
+                    key={sec.id}
+                    href={`#${sec.id}`}
+                    className={`relative py-1.5 whitespace-nowrap text-[10.5px] xl:text-[11px] uppercase tracking-[0.11em] xl:tracking-[0.14em] transition-colors ${
+                      isActive
+                        ? 'text-[#0A3622] font-semibold'
+                        : 'text-[#56605B] hover:text-[#0A3622] font-medium'
+                    }`}
+                  >
+                    <span>{sec.label}</span>
+                    <span
+                      className={`absolute left-0 right-0 bottom-0 h-[2px] bg-[#008746] rounded-full transition-transform duration-300 origin-left ${
+                        isActive ? 'scale-x-100' : 'scale-x-0'
+                      }`}
+                    />
+                  </a>
+                );
+              })}
+            </div>
+
+            <span aria-hidden="true" className="w-px h-3.5 bg-[#D4CFC4]" />
+
+            <div className="flex items-center gap-3.5 xl:gap-5">
+              <a
+                href="/"
+                className="py-1.5 whitespace-nowrap text-[10.5px] xl:text-[11px] uppercase tracking-[0.11em] xl:tracking-[0.14em] text-[#56605B] hover:text-[#0A3622] font-medium transition-colors"
+              >
+                Trang chủ
+              </a>
+              <a
+                href="/nhung-chuyen-di"
+                className="group inline-flex items-center gap-1.5 xl:gap-2 py-1.5 whitespace-nowrap text-[10.5px] xl:text-[11px] uppercase tracking-[0.11em] xl:tracking-[0.14em] text-[#181F1C] hover:text-[#008746] font-semibold transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B8975A] transition-transform duration-200 group-hover:scale-125 shrink-0" />
+                <span>Những chuyến đi</span>
+              </a>
+            </div>
+          </nav>
+
+          {/* Single Crisp Executive CTA */}
+          <div className="flex items-center shrink-0">
             <a
               href="#ket-noi-vung"
-              className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.14em] font-semibold rounded-[2px] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3 xl:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[10.5px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.14em] font-semibold rounded-[3px] transition-colors whitespace-nowrap"
             >
               <span>Kết nối</span>
-              <span className="hidden sm:inline">Vùng</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
+
+        {/* Mobile Site Switcher Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-[#FAF9F5] border-t border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
+            >
+              <div className="px-4 py-4 flex flex-col gap-2">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold">
+                  Chuyển trang
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                  <a
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3.5 py-3 rounded-[4px] bg-white border border-[#DCD8CE] flex items-center justify-between gap-2 text-[#181F1C]"
+                  >
+                    <div>
+                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#7A847F] font-semibold block">
+                        Cổng chính
+                      </span>
+                      <span className="font-serif text-[15px] font-medium">
+                        Trang chủ Khánh Vân
+                      </span>
+                    </div>
+                    <ArrowLeft className="w-4 h-4 text-[#0A3622] shrink-0" />
+                  </a>
+                  <a
+                    href="/nhung-chuyen-di"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3.5 py-3 rounded-[4px] bg-[#061C12] border border-[#B8975A]/50 flex items-center justify-between gap-2 text-white"
+                  >
+                    <div>
+                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold block">
+                        Nhật ký 16+ Quốc gia
+                      </span>
+                      <span className="font-serif text-[15px] font-medium">
+                        Những Chuyến Đi &amp; TVC
+                      </span>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                  </a>
+                </div>
+
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold mt-1">
+                  Trong trang Hệ thống Green Power
+                </span>
+                {REGIONAL_SECTIONS.map((sec) => (
+                  <a
+                    key={sec.id}
+                    href={`#${sec.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs uppercase tracking-[0.16em] text-[#181F1C] py-2 min-h-[40px] flex items-center justify-between border-b border-[#E4E1D8]/60 last:border-b-0"
+                  >
+                    <span>{sec.label}</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-[#858E89]" />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Mobile Chapter Quick-Jump Bar */}
         <nav
@@ -395,35 +519,28 @@ export const RegionalSystemPage: React.FC = () => {
           className="lg:hidden border-t border-[#ECE9E0] bg-[#FAF9F5]/95"
         >
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-4 py-2 text-[11px] font-medium text-[#4A544F]">
+            {REGIONAL_SECTIONS.map((sec) => {
+              const isActive = activeSection === sec.id;
+              return (
+                <a
+                  key={sec.id}
+                  href={`#${sec.id}`}
+                  className={`shrink-0 px-2.5 py-1.5 rounded-[3px] border transition-colors whitespace-nowrap ${
+                    isActive
+                      ? 'bg-[#0A3622] text-[#FAF9F5] border-[#0A3622] font-semibold'
+                      : 'bg-white text-[#4A544F] border-[#E4E1D8]'
+                  }`}
+                >
+                  {sec.label}
+                </a>
+              );
+            })}
             <a
-              href="#tam-voc"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
+              href="/nhung-chuyen-di"
+              className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-[3px] bg-[#FAF6EC] text-[#7C5D24] border border-[#B8975A]/35 font-semibold whitespace-nowrap"
             >
-              01. Tổng quan
-            </a>
-            <a
-              href="#cau-truc-vung"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
-            >
-              02. Sơ đồ Vùng
-            </a>
-            <a
-              href="#doi-ngu-quan-ly"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-[#EBF2EE] text-[#0A3622] font-semibold border border-[#008746]/30 transition-colors"
-            >
-              03. Đội ngũ ({REGIONAL_LEADERS.length})
-            </a>
-            <a
-              href="#van-hoa-he-thong"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
-            >
-              04. Người dẫn dắt &amp; văn hóa
-            </a>
-            <a
-              href="#ket-noi-vung"
-              className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8] active:bg-[#0A3622] active:text-white transition-colors"
-            >
-              05. Kết nối
+              <span>Những chuyến đi</span>
+              <ArrowUpRight className="w-3 h-3" />
             </a>
           </div>
         </nav>
@@ -2206,6 +2323,14 @@ export const RegionalSystemPage: React.FC = () => {
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8FA398]">
+            <a href="/" className="hover:text-white transition-colors">
+              Trang chủ
+            </a>
+            <span>•</span>
+            <a href="/nhung-chuyen-di" className="hover:text-white transition-colors">
+              Những chuyến đi
+            </a>
+            <span>•</span>
             <a
               href={ZALO_URL}
               target="_blank"

@@ -14,6 +14,7 @@ import {
   Heart,
   MapPin,
   Maximize2,
+  Menu,
   Pause,
   Play,
   Sparkles,
@@ -124,6 +125,7 @@ export const JourneysPage: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [pastHero, setPastHero] = useState(false);
   const [contactVisible, setContactVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const mobileNavRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
   const touchStartXRef = useRef<number | null>(null);
@@ -410,73 +412,163 @@ export const JourneysPage: React.FC = () => {
       {/* STICKY EDITORIAL HEADER + READING PROGRESS + SCROLL-SPY NAV */}
       {/* =================================================================== */}
       <header className="sticky top-0 z-40 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8]">
-        <div className="max-w-7xl w-full min-w-0 mx-auto px-4 sm:px-8 h-[62px] sm:h-[74px] flex items-center justify-between gap-2 sm:gap-4">
-          <a href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
-            <span className="w-[3px] h-7 sm:h-8 bg-[#008746] rounded-full shrink-0" />
-            <div className="flex flex-col min-w-0">
-              <span className="font-serif text-[17px] sm:text-[21px] tracking-[0.04em] text-[#181F1C] font-semibold leading-none truncate">
-                KHÁNH VÂN
-              </span>
-              <span className="text-[9px] sm:text-[9.5px] uppercase tracking-[0.14em] sm:tracking-[0.2em] text-[#56605B] font-medium mt-1 truncate">
-                Những chuyến đi • 2019–2026
-              </span>
-            </div>
-          </a>
+        <div className="max-w-[1320px] w-full min-w-0 mx-auto px-4 sm:px-8 xl:px-10 h-[62px] sm:h-[72px] flex items-center justify-between gap-2 sm:gap-5">
+          <div className="flex items-center gap-1.5 sm:gap-3 min-w-0 shrink-0">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              className="lg:hidden p-2 text-[#181F1C] min-w-[44px] min-h-[44px] flex items-center justify-center -ml-2 rounded-[3px] hover:bg-[#ECE9E0]/60 transition-colors cursor-pointer"
+              aria-label={mobileMenuOpen ? 'Đóng menu' : 'Mở menu chuyển trang'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
 
+            <a href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+              <span className="w-[3px] h-7 sm:h-8 bg-[#008746] rounded-full shrink-0" />
+              <div className="flex flex-col min-w-0">
+                <span className="font-serif text-[17px] sm:text-[21px] tracking-[0.06em] text-[#181F1C] font-semibold leading-none truncate">
+                  KHÁNH VÂN
+                </span>
+                <span className="text-[9px] sm:text-[9.5px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[#56605B] font-medium mt-1 truncate">
+                  Những chuyến đi • 16+ Quốc gia
+                </span>
+              </div>
+            </a>
+          </div>
+
+          {/* Unified Minimalist Desktop Navigation: 4 Page Sections | 2 Other Site Pages */}
           <nav
-            aria-label="Mục lục các chương"
-            className="hidden lg:flex items-center gap-5 xl:gap-7 text-[11px] uppercase tracking-[0.14em] font-medium text-[#56605B]"
+            aria-label="Điều hướng chính"
+            className="hidden lg:flex items-center gap-5 xl:gap-7"
           >
-            {NAV_SECTIONS.map((sec) => {
-              const isActive = activeSection === sec.id;
-              return (
-                <a
-                  key={sec.id}
-                  href={`#${sec.id}`}
-                  className={`relative py-2 whitespace-nowrap transition-colors ${
-                    isActive
-                      ? 'text-[#0A3622] font-semibold'
-                      : 'text-[#56605B] hover:text-[#0A3622]'
-                  }`}
-                >
-                  <span>
-                    {sec.num}. {sec.label}
-                    {sec.id === 'phong-chieu' ? ` (${screeningReels.length})` : ''}
-                  </span>
-                  <span
-                    className={`absolute left-0 right-0 bottom-0 h-[2px] bg-[#008746] rounded-full transition-transform duration-300 origin-left ${
-                      isActive ? 'scale-x-100' : 'scale-x-0'
+            <div className="flex items-center gap-4 xl:gap-6">
+              {NAV_SECTIONS.filter((sec) => sec.id !== 'hoi-3-to-am').map((sec) => {
+                const isActive =
+                  activeSection === sec.id ||
+                  (sec.id === 'hoi-2-chieu-sau' && activeSection === 'hoi-3-to-am');
+                return (
+                  <a
+                    key={sec.id}
+                    href={`#${sec.id}`}
+                    className={`relative py-1.5 whitespace-nowrap text-[11px] uppercase tracking-[0.14em] transition-colors ${
+                      isActive
+                        ? 'text-[#0A3622] font-semibold'
+                        : 'text-[#56605B] hover:text-[#0A3622] font-medium'
                     }`}
-                  />
-                </a>
-              );
-            })}
+                  >
+                    <span>
+                      {sec.label}
+                      {sec.id === 'phong-chieu' ? ` (${screeningReels.length})` : ''}
+                    </span>
+                    <span
+                      className={`absolute left-0 right-0 bottom-0 h-[2px] bg-[#008746] rounded-full transition-transform duration-300 origin-left ${
+                        isActive ? 'scale-x-100' : 'scale-x-0'
+                      }`}
+                    />
+                  </a>
+                );
+              })}
+            </div>
+
+            <span aria-hidden="true" className="w-px h-3.5 bg-[#D4CFC4]" />
+
+            <div className="flex items-center gap-4 xl:gap-5">
+              <a
+                href="/"
+                className="py-1.5 whitespace-nowrap text-[11px] uppercase tracking-[0.14em] text-[#56605B] hover:text-[#0A3622] font-medium transition-colors"
+              >
+                Trang chủ
+              </a>
+              <a
+                href="/green-power"
+                className="group inline-flex items-center gap-2 py-1.5 whitespace-nowrap text-[11px] uppercase tracking-[0.14em] text-[#181F1C] hover:text-[#008746] font-semibold transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#008746] transition-transform duration-200 group-hover:scale-125 shrink-0" />
+                <span>Green Power</span>
+              </a>
+            </div>
           </nav>
 
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-            <a
-              href="/"
-              aria-label="Về trang chủ"
-              className="inline-flex items-center justify-center gap-1.5 p-2 sm:px-3 sm:py-2 border border-[#DCD8CE] hover:border-[#0A3622] text-xs font-medium text-[#181F1C] rounded-[3px] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Trang chủ</span>
-            </a>
-            <a
-              href="/green-power"
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/20 text-[11px] uppercase tracking-[0.14em] font-semibold rounded-[3px] transition-colors whitespace-nowrap"
-            >
-              <span>Green Power</span>
-            </a>
+          {/* Single Crisp Executive CTA */}
+          <div className="flex items-center shrink-0">
             <a
               href="#ket-noi-dong-hanh"
-              className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.14em] font-semibold rounded-[3px] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[10.5px] sm:text-[11px] uppercase tracking-[0.14em] font-semibold rounded-[3px] transition-colors whitespace-nowrap"
             >
               <span>Liên hệ</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
+
+        {/* Mobile Site Switcher Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-[#FAF9F5] border-t border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
+            >
+              <div className="px-4 py-4 flex flex-col gap-2">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold">
+                  Chuyển trang
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                  <a
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3.5 py-3 rounded-[4px] bg-white border border-[#DCD8CE] flex items-center justify-between gap-2 text-[#181F1C]"
+                  >
+                    <div>
+                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#7A847F] font-semibold block">
+                        Cổng chính
+                      </span>
+                      <span className="font-serif text-[15px] font-medium">
+                        Trang chủ Khánh Vân
+                      </span>
+                    </div>
+                    <ArrowLeft className="w-4 h-4 text-[#0A3622] shrink-0" />
+                  </a>
+                  <a
+                    href="/green-power"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3.5 py-3 rounded-[4px] bg-[#EBF2EE] border border-[#0A3622]/20 flex items-center justify-between gap-2 text-[#0A3622]"
+                  >
+                    <div>
+                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#008746] font-semibold block">
+                        Hệ thống 500+ Nhân sự
+                      </span>
+                      <span className="font-serif text-[15px] font-semibold">
+                        Green Power • 4 Khu vực
+                      </span>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-[#008746] shrink-0" />
+                  </a>
+                </div>
+
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A847F] font-semibold mt-1">
+                  Trong trang Những chuyến đi
+                </span>
+                {NAV_SECTIONS.map((sec) => (
+                  <a
+                    key={sec.id}
+                    href={`#${sec.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs uppercase tracking-[0.16em] text-[#181F1C] py-2 min-h-[40px] flex items-center justify-between border-b border-[#E4E1D8]/60 last:border-b-0"
+                  >
+                    <span>
+                      {sec.mobileLabel}
+                      {sec.id === 'phong-chieu' ? ` (${screeningReels.length})` : ''}
+                    </span>
+                    <ChevronRight className="w-3.5 h-3.5 text-[#858E89]" />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Mobile Quick-Jump Strip with Real Scroll-Spy & Scroll-Fade Cue */}
         <nav
@@ -499,7 +591,7 @@ export const JourneysPage: React.FC = () => {
                       : 'bg-white text-[#4A544F] border-[#E4E1D8]'
                   }`}
                 >
-                  {sec.mobileLabel}
+                  {sec.label}
                   {sec.id === 'phong-chieu' ? ` (${screeningReels.length})` : ''}
                 </a>
               );
