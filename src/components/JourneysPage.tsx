@@ -76,11 +76,41 @@ interface LightboxState {
   index: number;
 }
 
+interface ScreeningReel {
+  slug: string;
+  isSignature?: boolean;
+  badge: string;
+  countryTag: string;
+  year: string;
+  soundLabel: string;
+  src: string;
+  poster: string;
+  durationLabel: string;
+  title: string;
+  caption: string;
+  chapter?: JourneyChapter;
+}
+
+const SIGNATURE_FILM: ScreeningReel = {
+  slug: 'cu-di-roi-se-den',
+  isSignature: true,
+  badge: 'Phim Mở Màn Đặc Biệt • 2019–2026',
+  countryTag: 'Phim Thương Hiệu',
+  year: '2019–2026',
+  soundLabel: 'Cứ Đi Rồi Sẽ Đến',
+  src: '/videos/journeys/cu-di-roi-se-den.mp4?v=2',
+  poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=2',
+  durationLabel: '0:30',
+  title: 'Cứ Đi Rồi Sẽ Đến • Phim Thương Hiệu Hành Trình 2019–2026',
+  caption:
+    'Ba mươi giây gói trọn hai cuốn hộ chiếu của Khánh Vân từ Paris 2019, Salzburg, núi Phú Sĩ, tổ ấm gia đình, sân khấu Top 1 DRD+ Yên Tử đến tinh thần đồng hành của Hệ thống Green Power.',
+};
+
 export const JourneysPage: React.FC = () => {
   const [selectedChapterSlug, setSelectedChapterSlug] = useState<string | null>(null);
   const [showAllModalPhotos, setShowAllModalPhotos] = useState(false);
   const [activeReelSlug, setActiveReelSlug] = useState<string | null>(null);
-  const [loungeReelSlug, setLoungeReelSlug] = useState<string>('yen-tu-vinh-danh-2025');
+  const [loungeReelSlug, setLoungeReelSlug] = useState<string>(SIGNATURE_FILM.slug);
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
   const [heroPaused, setHeroPaused] = useState(false);
@@ -133,14 +163,28 @@ export const JourneysPage: React.FC = () => {
     return map;
   }, []);
 
-  const videoChapters = useMemo(
-    () => JOURNEY_CHAPTERS.filter((c) => Boolean(c.video)),
-    []
-  );
+  const screeningReels = useMemo<ScreeningReel[]>(() => {
+    const chapterReels: ScreeningReel[] = JOURNEY_CHAPTERS.filter((c) => Boolean(c.video)).map(
+      (c) => ({
+        slug: c.slug,
+        badge: c.milestoneBadge,
+        countryTag: c.countryTag,
+        year: c.year,
+        soundLabel: 'Piano Acoustic',
+        src: c.video!.src,
+        poster: c.video!.poster,
+        durationLabel: c.video!.durationLabel,
+        title: c.video!.title,
+        caption: c.video!.caption,
+        chapter: c,
+      })
+    );
+    return [SIGNATURE_FILM, ...chapterReels];
+  }, []);
 
-  const loungeChapter = useMemo(
-    () => videoChapters.find((c) => c.slug === loungeReelSlug) || videoChapters[0],
-    [videoChapters, loungeReelSlug]
+  const loungeReel = useMemo(
+    () => screeningReels.find((r) => r.slug === loungeReelSlug) || screeningReels[0],
+    [screeningReels, loungeReelSlug]
   );
 
   const selectedChapterIndex = useMemo(
@@ -152,12 +196,11 @@ export const JourneysPage: React.FC = () => {
     selectedChapterIndex >= 0 ? JOURNEY_CHAPTERS[selectedChapterIndex] : null;
 
   const activeReelIndex = useMemo(
-    () => videoChapters.findIndex((c) => c.slug === activeReelSlug),
-    [videoChapters, activeReelSlug]
+    () => screeningReels.findIndex((r) => r.slug === activeReelSlug),
+    [screeningReels, activeReelSlug]
   );
 
-  const activeReelChapter =
-    activeReelIndex >= 0 ? videoChapters[activeReelIndex] : null;
+  const activeReel = activeReelIndex >= 0 ? screeningReels[activeReelIndex] : null;
 
   const navigateChapterModal = (direction: -1 | 1) => {
     if (selectedChapterIndex < 0) return;
@@ -172,10 +215,10 @@ export const JourneysPage: React.FC = () => {
   };
 
   const navigateReelModal = (direction: -1 | 1) => {
-    if (activeReelIndex < 0 || videoChapters.length === 0) return;
+    if (activeReelIndex < 0 || screeningReels.length === 0) return;
     const nextIdx =
-      (activeReelIndex + direction + videoChapters.length) % videoChapters.length;
-    setActiveReelSlug(videoChapters[nextIdx].slug);
+      (activeReelIndex + direction + screeningReels.length) % screeningReels.length;
+    setActiveReelSlug(screeningReels[nextIdx].slug);
   };
 
   const navigateLightbox = (direction: -1 | 1) => {
@@ -187,7 +230,7 @@ export const JourneysPage: React.FC = () => {
   };
 
   const anyModalOpen = Boolean(
-    selectedChapter || activeReelChapter || lightbox || activeVideo
+    selectedChapter || activeReel || lightbox || activeVideo
   );
 
   useEffect(() => {
@@ -198,7 +241,7 @@ export const JourneysPage: React.FC = () => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         if (lightbox) setLightbox(null);
-        else if (activeReelChapter) setActiveReelSlug(null);
+        else if (activeReel) setActiveReelSlug(null);
         else if (activeVideo) setActiveVideo(null);
         else if (selectedChapter) setSelectedChapterSlug(null);
         return;
@@ -206,7 +249,7 @@ export const JourneysPage: React.FC = () => {
       if (lightbox) {
         if (e.key === 'ArrowRight') navigateLightbox(1);
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
-      } else if (activeReelChapter) {
+      } else if (activeReel) {
         if (e.key === 'ArrowRight') navigateReelModal(1);
         if (e.key === 'ArrowLeft') navigateReelModal(-1);
       } else if (selectedChapter) {
@@ -309,7 +352,7 @@ export const JourneysPage: React.FC = () => {
               04. Tổ ấm
             </a>
             <a href="#phong-chieu" className="whitespace-nowrap hover:text-[#0A3622] transition-colors">
-              05. Phòng chiếu ({videoChapters.length})
+              05. Phòng chiếu ({screeningReels.length})
             </a>
           </nav>
 
@@ -372,7 +415,7 @@ export const JourneysPage: React.FC = () => {
               href="#phong-chieu"
               className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              05. Phòng chiếu ({videoChapters.length})
+              05. Phòng chiếu ({screeningReels.length})
             </a>
           </div>
         </nav>
@@ -458,19 +501,23 @@ export const JourneysPage: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveReelSlug(SIGNATURE_FILM.slug);
+                  trackEvent('play_signature_film', { source: 'hero_cta' });
+                }}
+                className="inline-flex items-center gap-2.5 px-5 py-3.5 bg-[#E8D3A6] hover:bg-[#FAF9F5] text-[#072116] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors shadow-[0_12px_32px_-12px_rgba(232,211,166,0.55)] cursor-pointer"
+              >
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>Xem Phim Thương Hiệu (0:30)</span>
+              </button>
               <a
                 href="#ban-do-hanh-trinh"
-                className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#FAF9F5] hover:bg-[#E8D3A6] text-[#072116] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
               >
                 <span>Mở bản đồ hành trình</span>
                 <ArrowDown className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#phong-chieu"
-                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
-              >
-                <Play className="w-3.5 h-3.5 fill-current text-[#E8D3A6]" />
-                <span>Phòng chiếu 7 thước phim</span>
               </a>
             </div>
           </div>
@@ -506,7 +553,7 @@ export const JourneysPage: React.FC = () => {
                 11 Chương
               </div>
               <div className="text-[11px] text-[#C4D6CC] mt-0.5">
-                118 khung hình &amp; 7 thước phim thực tế
+                118 khung hình &amp; {screeningReels.length} thước phim chọn lọc
               </div>
             </div>
           </div>
@@ -1122,7 +1169,7 @@ export const JourneysPage: React.FC = () => {
       )}
 
       {/* =================================================================== */}
-      {/* CHƯƠNG 05: PHÒNG CHIẾU 07 THƯỚC PHIM THỰC TẾ (LUXURY SCREENING ROOM) */}
+      {/* CHƯƠNG 05: PHÒNG CHIẾU 08 THƯỚC PHIM CHỌN LỌC (LUXURY SCREENING ROOM) */}
       {/* =================================================================== */}
       <section
         id="phong-chieu"
@@ -1133,31 +1180,33 @@ export const JourneysPage: React.FC = () => {
             <div className="space-y-2.5 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold">
                 <Film className="w-3.5 h-3.5" />
-                <span>05 / Phòng Chiếu • 07 Thước Phim Thực Tế</span>
+                <span>05 / Phòng Chiếu • 08 Thước Phim Chọn Lọc</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight">
-                Bảy thước phim ngắn trên nền piano acoustic êm dịu
+                Phim mở màn “Cứ Đi Rồi Sẽ Đến” và bảy thước phim hành trình
               </h2>
               <p className="text-xs sm:text-sm text-[#BDD0C6] leading-relaxed">
-                Được dựng sạch từ tư liệu quay thật trên từng cung đường, giữ lại đúng nhịp thở và ánh sáng tự nhiên của mỗi chuyến đi.
+                Mở đầu bằng thước phim thương hiệu 30 giây gói trọn 7 năm bước ra thế giới cùng đội ngũ và tổ ấm, nối tiếp là 7 thước phim thực tế trên nền piano acoustic êm dịu.
               </p>
             </div>
           </div>
 
           {/* Desktop Interactive Cinema Screening Lounge */}
-          {loungeChapter && loungeChapter.video && (
+          {loungeReel && (
             <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-start">
               {/* Left Cinema Frame */}
-              <div className="lg:col-span-5 bg-[#0A2B1C] border border-[#E8D3A6]/30 rounded-[6px] p-4 space-y-4 shadow-2xl">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
-                  <span>{loungeChapter.milestoneBadge}</span>
-                  <span>{loungeChapter.video.durationLabel} • Piano Acoustic</span>
+              <div className="lg:col-span-5 bg-[#0A2B1C] border border-[#E8D3A6]/35 rounded-[6px] p-4 space-y-4 shadow-2xl">
+                <div className="flex items-center justify-between gap-2 text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
+                  <span className="truncate">{loungeReel.badge}</span>
+                  <span className="shrink-0">
+                    {loungeReel.durationLabel} • {loungeReel.soundLabel}
+                  </span>
                 </div>
                 <div className="rounded-[4px] overflow-hidden bg-black aspect-[9/16] max-h-[540px] mx-auto">
                   <video
-                    key={loungeChapter.video.src}
-                    src={loungeChapter.video.src}
-                    poster={loungeChapter.video.poster}
+                    key={loungeReel.src}
+                    src={loungeReel.src}
+                    poster={loungeReel.poster}
                     controls
                     playsInline
                     preload="metadata"
@@ -1166,64 +1215,83 @@ export const JourneysPage: React.FC = () => {
                 </div>
                 <div className="space-y-2 pt-1">
                   <h3 className="font-serif text-xl text-white leading-snug">
-                    {loungeChapter.video.title}
+                    {loungeReel.title}
                   </h3>
                   <p className="text-xs text-[#C4D6CC] leading-relaxed">
-                    {loungeChapter.video.caption}
+                    {loungeReel.caption}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => openChapter(loungeChapter)}
-                    className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <span>
-                      Đọc bài viết &amp; xem {loungeChapter.photoCount} ảnh chương này
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
+                  {loungeReel.chapter ? (
+                    <button
+                      type="button"
+                      onClick={() => openChapter(loungeReel.chapter!)}
+                      className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <span>
+                        Đọc bài viết &amp; xem {loungeReel.chapter.photoCount} ảnh chương này
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <a
+                      href="#ban-do-hanh-trinh"
+                      className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <span>Mở bản đồ toàn bộ 11 hành trình</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 </div>
               </div>
 
-              {/* Right 7-Film Program Playlist */}
+              {/* Right 8-Film Program Playlist */}
               <div className="lg:col-span-7 space-y-2.5">
-                {videoChapters.map((ch, idx) => {
-                  const isCurrent = ch.slug === loungeChapter.slug;
+                {screeningReels.map((reel, idx) => {
+                  const isCurrent = reel.slug === loungeReel.slug;
                   return (
                     <button
-                      key={ch.slug}
+                      key={reel.slug}
                       type="button"
                       onClick={() => {
-                        setLoungeReelSlug(ch.slug);
-                        trackEvent('select_cinema_reel', { chapter_slug: ch.slug });
+                        setLoungeReelSlug(reel.slug);
+                        trackEvent('select_cinema_reel', { reel_slug: reel.slug });
                       }}
-                      className={`w-full text-left p-4 rounded-[4px] border transition-all flex items-center gap-4 cursor-pointer ${
+                      className={`w-full text-left p-3.5 rounded-[4px] border transition-all flex items-center gap-4 cursor-pointer ${
                         isCurrent
-                          ? 'bg-[#0D3824] border-[#E8D3A6]/75 shadow-lg'
+                          ? 'bg-[#0D3824] border-[#E8D3A6]/80 shadow-lg'
+                          : reel.isSignature
+                          ? 'bg-[#E8D3A6]/[0.07] border-[#E8D3A6]/30 hover:bg-[#E8D3A6]/[0.12] hover:border-[#E8D3A6]/60'
                           : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-white/25'
                       }`}
                     >
                       <div className="w-16 h-20 rounded-[3px] overflow-hidden bg-black shrink-0 relative">
                         <img
-                          src={ch.video!.poster}
-                          alt={ch.milestoneBadge}
+                          src={reel.poster}
+                          alt={reel.badge}
                           loading="lazy"
                           className="w-full h-full object-cover"
                         />
                         <span className="absolute inset-0 bg-black/30 flex items-center justify-center">
                           <Play
                             className={`w-4 h-4 fill-current ${
-                              isCurrent ? 'text-[#E8D3A6]' : 'text-white/80'
+                              isCurrent || reel.isSignature ? 'text-[#E8D3A6]' : 'text-white/80'
                             }`}
                           />
                         </span>
                       </div>
 
                       <div className="flex-1 min-w-0 space-y-1">
-                        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.16em]">
+                        <div className="flex items-center flex-wrap gap-2 text-[10px] uppercase tracking-[0.16em]">
                           <span className="text-[#E8D3A6] font-bold">
                             {String(idx + 1).padStart(2, '0')}
                           </span>
-                          <span className="text-[#9AB5A7]">{ch.countryTag} • {ch.year}</span>
+                          <span className="text-[#9AB5A7]">
+                            {reel.countryTag} • {reel.year}
+                          </span>
+                          {reel.isSignature && (
+                            <span className="px-2 py-0.5 rounded-full bg-[#E8D3A6] text-[#061C12] text-[9px] font-bold">
+                              Phim Mở Màn
+                            </span>
+                          )}
                           {isCurrent && (
                             <span className="px-2 py-0.5 rounded-full bg-[#E8D3A6]/20 text-[#E8D3A6] text-[9px] font-semibold">
                               Đang chọn
@@ -1231,15 +1299,15 @@ export const JourneysPage: React.FC = () => {
                           )}
                         </div>
                         <div className="font-serif text-lg text-white leading-snug truncate">
-                          {ch.video!.title}
+                          {reel.title}
                         </div>
                         <p className="text-xs text-[#B5C9BE] line-clamp-1">
-                          {ch.video!.caption}
+                          {reel.caption}
                         </p>
                       </div>
 
                       <span className="text-xs font-mono text-[#E8D3A6] shrink-0">
-                        {ch.video!.durationLabel}
+                        {reel.durationLabel}
                       </span>
                     </button>
                   );
@@ -1250,42 +1318,56 @@ export const JourneysPage: React.FC = () => {
 
           {/* Mobile Horizontal Snap Cinema Cards */}
           <div className="flex lg:hidden gap-3.5 overflow-x-auto no-scrollbar snap-x pb-2">
-            {videoChapters.map((ch) => (
+            {screeningReels.map((reel) => (
               <button
-                key={ch.slug}
+                key={reel.slug}
                 type="button"
                 onClick={() => {
-                  setActiveReelSlug(ch.slug);
-                  trackEvent('play_journey_reel', { chapter_slug: ch.slug });
+                  setActiveReelSlug(reel.slug);
+                  trackEvent('play_journey_reel', { reel_slug: reel.slug });
                 }}
-                className="snap-start shrink-0 w-[215px] group relative rounded-[5px] overflow-hidden bg-[#0E3B26] border border-white/15 aspect-[9/16] text-left cursor-pointer shadow-lg"
+                className={`snap-start shrink-0 w-[215px] group relative rounded-[5px] overflow-hidden bg-[#0E3B26] border aspect-[9/16] text-left cursor-pointer shadow-lg ${
+                  reel.isSignature ? 'border-[#E8D3A6]/75' : 'border-white/15'
+                }`}
               >
                 <img
-                  src={ch.video!.poster}
-                  alt={ch.video!.title}
+                  src={reel.poster}
+                  alt={reel.title}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/25" />
                 <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1.5">
-                  <span className="px-2 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] uppercase tracking-[0.12em] text-[#E8D3A6] font-semibold truncate">
-                    {ch.countryTag} • {ch.year}
+                  <span
+                    className={`px-2 py-0.5 rounded-[2px] text-[9.5px] uppercase tracking-[0.12em] font-semibold truncate ${
+                      reel.isSignature
+                        ? 'bg-[#E8D3A6] text-[#061C12] font-bold'
+                        : 'bg-black/55 text-[#E8D3A6]'
+                    }`}
+                  >
+                    {reel.isSignature ? 'Phim Mở Màn' : `${reel.countryTag} • ${reel.year}`}
                   </span>
                   <span className="px-1.5 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] text-white shrink-0">
-                    {ch.video!.durationLabel}
+                    {reel.durationLabel}
                   </span>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="w-11 h-11 rounded-full bg-white/90 text-[#0A3622] flex items-center justify-center shadow-xl">
+                  <span
+                    className={`w-11 h-11 rounded-full flex items-center justify-center shadow-xl ${
+                      reel.isSignature
+                        ? 'bg-[#E8D3A6] text-[#061C12]'
+                        : 'bg-white/90 text-[#0A3622]'
+                    }`}
+                  >
                     <Play className="w-4 h-4 fill-current ml-0.5" />
                   </span>
                 </div>
                 <div className="absolute inset-x-2.5 bottom-2.5 space-y-1">
                   <div className="font-serif text-sm text-white leading-snug line-clamp-2">
-                    {ch.milestoneBadge}
+                    {reel.isSignature ? 'Cứ Đi Rồi Sẽ Đến' : reel.badge}
                   </div>
                   <div className="text-[10.5px] text-white/75 line-clamp-2">
-                    {ch.video!.title}
+                    {reel.title}
                   </div>
                 </div>
               </button>
@@ -1826,10 +1908,10 @@ export const JourneysPage: React.FC = () => {
       </AnimatePresence>
 
       {/* =================================================================== */}
-      {/* MODAL 2: MOBILE CINEMA REEL VIEWER */}
+      {/* MODAL 2: CINEMA REEL & SIGNATURE FILM VIEWER */}
       {/* =================================================================== */}
       <AnimatePresence>
-        {activeReelChapter && activeReelChapter.video && (
+        {activeReel && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -1843,9 +1925,9 @@ export const JourneysPage: React.FC = () => {
             >
               <div className="bg-black mx-auto shrink-0 w-full sm:w-[325px] aspect-[9/16] max-h-[62dvh] sm:max-h-[578px] flex items-center justify-center">
                 <video
-                  key={activeReelChapter.video.src}
-                  src={activeReelChapter.video.src}
-                  poster={activeReelChapter.video.poster}
+                  key={activeReel.src}
+                  src={activeReel.src}
+                  poster={activeReel.poster}
                   controls
                   autoPlay
                   playsInline
@@ -1857,8 +1939,8 @@ export const JourneysPage: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-bold">
-                      Thước phim {activeReelIndex + 1}/{videoChapters.length} •{' '}
-                      {activeReelChapter.year}
+                      Thước phim {activeReelIndex + 1}/{screeningReels.length} •{' '}
+                      {activeReel.year}
                     </span>
                     <div className="flex items-center gap-1">
                       <button
@@ -1888,29 +1970,46 @@ export const JourneysPage: React.FC = () => {
                     </div>
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C] leading-snug">
-                    {activeReelChapter.video.title}
+                    {activeReel.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
-                    {activeReelChapter.video.caption}
+                    {activeReel.caption}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-[#E4E1D8]">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const slug = activeReelChapter.slug;
-                      setActiveReelSlug(null);
-                      setShowAllModalPhotos(false);
-                      setSelectedChapterSlug(slug);
-                    }}
-                    className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <span>
-                      Đọc bài viết &amp; xem {activeReelChapter.photoCount} ảnh chương này
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
+                  {activeReel.chapter ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const slug = activeReel.chapter!.slug;
+                        setActiveReelSlug(null);
+                        setShowAllModalPhotos(false);
+                        setSelectedChapterSlug(slug);
+                      }}
+                      className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span>
+                        Đọc bài viết &amp; xem {activeReel.chapter.photoCount} ảnh chương này
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveReelSlug(null);
+                        setTimeout(() => {
+                          const el = document.getElementById('ban-do-hanh-trinh');
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 80);
+                      }}
+                      className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span>Khám phá bản đồ 11 hành trình</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
