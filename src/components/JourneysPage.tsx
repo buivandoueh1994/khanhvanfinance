@@ -90,16 +90,16 @@ interface ScreeningReel {
 const SIGNATURE_FILM: ScreeningReel = {
   slug: 'cu-di-roi-se-den',
   isSignature: true,
-  badge: 'Phim mở màn, 2019–2026',
+  badge: 'Phim thương hiệu, 2018 đến nay',
   countryTag: 'Phim thương hiệu',
-  year: '2019–2026',
-  soundLabel: 'Cứ Đi Rồi Sẽ Đến',
-  src: '/videos/journeys/cu-di-roi-se-den.mp4?v=4',
-  poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=4',
-  durationLabel: '0:30',
-  title: 'Cứ Đi Rồi Sẽ Đến, phim thương hiệu 2019 đến 2026',
+  year: '2018–2026',
+  soundLabel: 'Giọng tự sự Khánh Vân & Warm Memories',
+  src: '/videos/journeys/cu-di-roi-se-den.mp4?v=5',
+  poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=5',
+  durationLabel: '0:49',
+  title: 'Cứ Đi Rồi Sẽ Đến, chỉ cần hướng về phía mặt trời',
   caption:
-    'Ba mươi giây về hai cuốn hộ chiếu của Khánh Vân: từ Paris 2019, Salzburg, núi Phú Sĩ, tổ ấm gia đình, sân khấu Top 1 DRD+ Yên Tử, đến Hệ thống Green Power.',
+    'Bốn mươi chín giây tự sự bằng chính giọng đọc của Khánh Vân: từ những năm tháng làm ngân hàng, bước ngoặt 2018 bắt đầu lại từ chiếc mã số tư vấn viên nhỏ xíu, đến hành trình đi qua hơn 16 quốc gia cùng đội ngũ và những người đồng hành.',
 };
 
 const NAV_SECTIONS = [
@@ -609,7 +609,7 @@ export const JourneysPage: React.FC = () => {
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-5 py-3.5 bg-[#E8D3A6] hover:bg-[#FAF9F5] active:scale-[0.99] text-[#072116] text-xs uppercase tracking-[0.15em] font-bold rounded-[3px] transition-all shadow-[0_12px_32px_-12px_rgba(232,211,166,0.55)] cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 fill-current" />
-                <span>Xem phim thương hiệu (0:30)</span>
+                <span>Xem phim thương hiệu (0:49)</span>
               </button>
               <a
                 href="#ban-do-hanh-trinh"
@@ -1322,7 +1322,7 @@ export const JourneysPage: React.FC = () => {
                 Phim mở màn “Cứ Đi Rồi Sẽ Đến” và bảy phim của từng chuyến đi
               </h2>
               <p className="text-[13px] sm:text-sm text-[#BDD0C6] leading-relaxed">
-                Mở đầu là phim thương hiệu 30 giây về 7 năm đi ra thế giới cùng đội ngũ và tổ ấm. Tiếp theo là 7 phim quay thực tế giữ âm thanh gốc chọn lọc và nhạc nền riêng cho từng miền đất.
+                Mở đầu là phim thương hiệu gần một phút bằng chính giọng tự sự của Khánh Vân về hành trình từ bước ngoặt 2018 đến hôm nay. Tiếp theo là 7 phim quay thực tế giữ âm thanh gốc chọn lọc và nhạc nền riêng cho từng miền đất.
               </p>
             </div>
           </div>
