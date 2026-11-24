@@ -92,39 +92,39 @@ const ARTICLES: Article[] = [
     featured: true,
     image: '/images/articles/Article_XanhPhuQuy_CauTrucHaiGiaiDoan.jpg',
     imageCaption: 'Đội ngũ Quản lý Green Power rà soát kịch bản dòng tiền hai giai đoạn cho khách hàng hoạch định gia sản dài hạn.',
-    title: 'Rút Đủ Tiền Gốc Mà Tài Khoản Vẫn Còn Gấp Đôi: Cấu Trúc Hai Giai Đoạn Của Xanh Phú Quý',
+    title: 'Rút đủ tiền gốc mà tài khoản vẫn còn gấp đôi: cấu trúc hai giai đoạn của Xanh Phú Quý',
     excerpt:
-      'Đóng 2,5 tỷ đồng trong 10 năm đầu, rút ra đủ 2,5 tỷ trong 10 năm tiếp theo, đến năm thứ 20 tài khoản minh họa vẫn còn khoảng 5,36 tỷ. Bí quyết nằm ở nguyên tắc chỉ lấy đi phần hoa trái định kỳ để phần gốc tiếp tục hưởng lãi kép.',
-    content: `*2,5 tỷ đồng đóng vào đều đặn trong 10 năm đầu, rút ra đủ 2,5 tỷ đồng trong 10 năm tiếp theo, vậy mà đến năm thứ 20 giá trị tài khoản minh họa vẫn còn khoảng 5,36 tỷ đồng. Lần đầu ngồi xem bảng dòng tiền này, rất nhiều anh chị hỏi lại Vân rằng có nhầm lẫn ở con số nào không.*
+      'Đóng 2,5 tỷ đồng trong 10 năm đầu, rút ra đủ 2,5 tỷ trong 10 năm tiếp theo, đến năm thứ 20 tài khoản minh họa vẫn còn khoảng 5,36 tỷ. Mỗi năm chỉ rút một phần nhỏ, phần còn lại tiếp tục hưởng lãi kép.',
+    content: `*Đóng 2,5 tỷ đồng đều đặn trong 10 năm đầu, rút ra đủ 2,5 tỷ đồng trong 10 năm tiếp theo, vậy mà đến năm thứ 20 giá trị tài khoản minh họa vẫn còn khoảng 5,36 tỷ đồng. Lần đầu xem bảng dòng tiền này, nhiều anh chị hỏi lại Vân là có nhầm con số nào không.*
 
-## Lối Mòn Tư Duy Về Hai Chữ “Đáo Hạn”
+## Thói quen chờ đến ngày đáo hạn
 
-Băn khoăn ấy rất tự nhiên. Phần lớn chúng ta lớn lên cùng thói quen gửi tiết kiệm hoặc tích lũy một chiều: bỏ tiền vào đều đặn, khóa chặt trong suốt mười lăm hay hai mươi năm, chờ tới ngày đáo hạn mới được cầm trọn một cục tiền về.
+Băn khoăn đó rất tự nhiên. Phần lớn chúng ta quen với kiểu tích lũy một chiều: bỏ tiền vào đều đặn, khóa suốt mười lăm hay hai mươi năm, tới ngày đáo hạn mới nhận về một cục tiền.
 
-Trong lối nghĩ quen thuộc đó, việc rút tiền ra giữa chừng gần như đồng nghĩa với phá vỡ kế hoạch hoặc chịu phạt phí. Chính tâm lý sợ bị chôn vốn quá lâu khiến không ít gia đình chần chừ trước các giải pháp tích lũy dài hạn, dù trong thâm tâm ai cũng hiểu mình cần một kỷ luật giữ tiền cho tuổi hưu trí và tương lai của con cái.
+Với cách nghĩ đó, rút tiền giữa chừng gần như là phá kế hoạch hoặc chịu phạt phí. Nỗi sợ bị chôn vốn khiến không ít gia đình chần chừ với các giải pháp tích lũy dài hạn, dù ai cũng biết mình cần một khoản giữ cho tuổi hưu và tương lai của con.
 
-## Cấu Trúc Hai Nhịp: 10 Năm Nuôi Quỹ, 10 Năm Để Quỹ Nuôi Dự Định
+## Hai giai đoạn: 10 năm nuôi quỹ, 10 năm rút dùng
 
-Giải pháp bảo hiểm liên kết đơn vị Xanh Phú Quý được thiết kế theo một triết lý linh hoạt hơn, chia hành trình 20 năm thành hai giai đoạn tách biệt:
+Xanh Phú Quý là giải pháp bảo hiểm liên kết đơn vị, chia 20 năm thành hai giai đoạn:
 
-- **Giai đoạn 1 (Năm 1 đến năm 10, Kỷ luật gieo hạt):** Người tham gia đóng phí đều đặn mỗi năm để xây dựng nền vốn gốc vững chắc, đồng thời kích hoạt ngay hạn mức bảo vệ sinh mạng cho người trụ cột. Phần tiền phân bổ vào các quỹ liên kết đơn vị do Công ty Quản lý Quỹ Manulife vận hành bắt đầu tích lũy đơn vị quỹ qua từng chu kỳ thị trường.
-- **Giai đoạn 2 (Từ năm thứ 11 trở đi, Thu hoạch từng mùa):** Khách hàng được quyền rút tiền định kỳ mỗi năm một lần với mức tối đa **10% tổng phí bảo hiểm cơ bản đã đóng trong 10 năm đầu** để phục vụ học phí cho con, du lịch trải nghiệm hoặc bổ sung dòng tiền sinh hoạt, mà **không làm giảm các khoản Thưởng Tri Ân** của hợp đồng.
+- **Giai đoạn 1 (năm 1 đến năm 10):** Người tham gia đóng phí đều mỗi năm để xây nền vốn gốc, đồng thời có ngay quyền lợi bảo vệ sinh mạng cho người trụ cột. Phần tiền phân bổ vào các quỹ liên kết đơn vị do Công ty Quản lý Quỹ Manulife vận hành, tích lũy đơn vị quỹ qua từng chu kỳ thị trường.
+- **Giai đoạn 2 (từ năm thứ 11 trở đi):** Khách hàng được rút tiền định kỳ mỗi năm một lần, tối đa **10% tổng phí bảo hiểm cơ bản đã đóng trong 10 năm đầu**, để đóng học phí cho con, đi du lịch hoặc bổ sung dòng tiền sinh hoạt, mà **không làm giảm các khoản Thưởng Tri Ân** của hợp đồng.
 
-Lấy ví dụ thực tế từ hồ sơ một vị khách nam 35 tuổi mà Vân từng thiết kế lộ trình. Mỗi năm anh ủy thác 250 triệu đồng trong 10 năm, tổng vốn gốc đóng vào là 2,5 tỷ đồng. Bước sang giai đoạn từ năm thứ 11 đến năm thứ 20, mỗi năm anh rút ra đúng 250 triệu đồng. Sau 10 lần rút, anh đã thu hồi đủ 2,5 tỷ đồng tiền gốc ban đầu. Phần giá trị còn lại nằm trong Quỹ Tăng Trưởng vẫn tiếp tục sinh sôi nhờ lãi kép. Ở mức tỷ suất đầu tư minh họa 9%/năm, đến cuối năm thứ 20 giá trị tài khoản ước tính vẫn đạt khoảng **5,36 tỷ đồng**.
+Vân lấy ví dụ từ hồ sơ một khách nam 35 tuổi mà Vân từng thiết kế lộ trình. Mỗi năm anh đóng 250 triệu đồng trong 10 năm, tổng vốn gốc là 2,5 tỷ đồng. Từ năm thứ 11 đến năm thứ 20, mỗi năm anh rút đúng 250 triệu đồng. Sau 10 lần rút, anh đã thu hồi đủ 2,5 tỷ đồng tiền gốc. Phần còn lại nằm trong Quỹ Tăng Trưởng vẫn tiếp tục sinh lãi kép. Với tỷ suất đầu tư minh họa 9%/năm, đến cuối năm thứ 20 giá trị tài khoản ước tính vẫn đạt khoảng **5,36 tỷ đồng**.
 
-## Ba Nguyên Tắc Cần Đọc Kỹ Trước Khi Đặt Bút Ký
+## Ba điều cần đọc kỹ trước khi ký
 
-Con số 5,36 tỷ đồng nhìn rất đẹp, nhưng với tư duy quản trị rủi ro từ 8 năm làm ngân hàng quốc tế, Vân luôn nhắc khách hàng nhìn thấu ba điểm cốt lõi trước khi quyết định:
+Con số 5,36 tỷ đồng nhìn rất đẹp. Nhưng từ 8 năm làm ngân hàng quốc tế, Vân luôn nhắc khách xem kỹ ba điểm này trước khi quyết định:
 
-- **Thứ nhất, hiểu rõ bản chất của lãi suất minh họa:** Mức 9%/năm là giả định minh họa dựa trên hiệu quả đầu tư dài hạn của quỹ cổ phiếu, không phải mức lãi cam kết cố định. Khi ngồi cùng cố vấn, anh chị luôn nên yêu cầu mở song song cả cột kịch bản tỷ suất thấp để biết rõ biên độ dao động của tài sản trong những năm thị trường trầm lắng.
-- **Thứ hai, sức mạnh nằm ở việc không rút cạn một lần:** Sở dĩ tài khoản vẫn phình to dù đã rút đủ tiền gốc là vì mỗi năm mình chỉ lấy ra 10%, để phần lớn khối tài sản tích lũy từ 10 năm đầu tiếp tục ở lại làm việc trong quỹ.
-- **Thứ ba, kỷ luật 10 năm đầu là điều kiện tiên quyết:** Mọi trái ngọt từ năm thứ 11 chỉ mở ra trọn vẹn khi gia đình chọn mức phí vừa vặn từ 10% đến 15% thu nhập ổn định để đi hết 10 năm đầu tiên một cách nhẹ nhàng, không đứt gánh.
+- **Thứ nhất, hiểu đúng lãi suất minh họa:** Mức 9%/năm là giả định minh họa dựa trên hiệu quả đầu tư dài hạn của quỹ cổ phiếu, không phải mức lãi cam kết cố định. Khi ngồi với cố vấn, anh chị nên yêu cầu xem cả cột kịch bản tỷ suất thấp để biết tài sản có thể dao động đến đâu trong những năm thị trường trầm lắng.
+- **Thứ hai, không rút cạn một lần:** Tài khoản vẫn lớn dù đã rút đủ tiền gốc là vì mỗi năm mình chỉ lấy 10%, phần lớn tài sản tích lũy từ 10 năm đầu ở lại làm việc trong quỹ.
+- **Thứ ba, 10 năm đầu phải đóng đủ:** Quyền lợi từ năm thứ 11 chỉ có khi gia đình đi hết 10 năm đầu. Nên chọn mức phí từ 10% đến 15% thu nhập ổn định để đi cho nhẹ nhàng, không đứt gánh.
 
-Một kế hoạch tích lũy thông minh không bắt chúng ta phải nhịn chi tiêu đến tận cuối đời mới được tận hưởng. Mười năm đầu mình kiên nhẫn nuôi quỹ, để mười năm sau quỹ quay lại nuôi dưỡng những dự định đẹp nhất của gia đình đúng vào lúc mình cần.`,
+Tích lũy thông minh không bắt mình nhịn chi tiêu đến cuối đời mới được hưởng. Mười năm đầu mình kiên nhẫn nuôi quỹ, mười năm sau quỹ quay lại lo cho những dự định của gia đình đúng lúc cần.`,
     keyTakeaways: [
-      'Cấu trúc hai giai đoạn của Xanh Phú Quý giúp giải tỏa nỗi lo chôn vốn: 10 năm đầu kỷ luật đóng phí xây nền, từ năm thứ 11 được rút định kỳ tối đa 10% tổng phí cơ bản mỗi năm mà vẫn giữ nguyên Thưởng Tri Ân.',
-      'Việc chỉ rút từng phần 10% mỗi năm giúp thu hồi đủ tiền gốc sau một thập kỷ trong khi khối tài sản còn lại vẫn tiếp tục nhân lên nhờ hiệu ứng lãi kép.',
-      'Luôn đối chiếu song song kịch bản tỷ suất minh họa cao và thấp, đồng thời cân đối mức phí trong khoảng 10% đến 15% thu nhập để duy trì trọn vẹn kỷ luật 10 năm đầu.',
+      'Cấu trúc hai giai đoạn của Xanh Phú Quý giúp giải tỏa nỗi lo chôn vốn: 10 năm đầu đóng phí xây nền, từ năm thứ 11 được rút định kỳ tối đa 10% tổng phí cơ bản mỗi năm mà vẫn giữ nguyên Thưởng Tri Ân.',
+      'Mỗi năm chỉ rút 10% giúp thu hồi đủ tiền gốc sau một thập kỷ, trong khi phần tài sản còn lại vẫn tiếp tục nhân lên nhờ lãi kép.',
+      'Luôn đối chiếu kịch bản tỷ suất minh họa cao và thấp, đồng thời cân đối mức phí trong khoảng 10% đến 15% thu nhập để giữ được 10 năm đóng phí đầu.',
     ],
   },
   {
@@ -135,42 +135,42 @@ Một kế hoạch tích lũy thông minh không bắt chúng ta phải nhịn c
     readTime: '5 phút đọc',
     featured: true,
     image: '/images/articles/Article_RadicalCandor_ThangThanViThuong.jpg',
-    imageCaption: 'Văn hóa kèm cặp 1-1 tại Green Power: góp ý riêng tư, trực diện vào nghiệp vụ và cùng cộng sự hoàn thiện ngay trên tình huống thực tế.',
-    title: 'Thẳng Thắn Vì Thương: Góp Ý Để Cộng Sự Giỏi Lên Mà Không Thấy Mình Bị Phán Xét',
+    imageCaption: 'Kèm cặp 1-1 tại Green Power: góp ý riêng, nói thẳng vào nghiệp vụ và cùng cộng sự sửa ngay trên tình huống thực tế.',
+    title: 'Thẳng thắn vì thương: góp ý để cộng sự giỏi lên mà không thấy bị phán xét',
     excerpt:
-      'Góp ý sao cho người nghe không tự ái mà thực sự tiến bộ? Từ cuốn sách Radical Candor của Kim Scott đến thực tế dẫn dắt 64 quản lý, Vân chọn đứng giữa hai thái cực: quan tâm thật lòng đến con người và nói thẳng vào công việc.',
-    content: `*“Góp ý thế nào để một người giỏi lên mà không thấy mình bị phán xét?” Câu hỏi ấy đi theo Vân suốt những năm đầu tập làm quản lý. Và lời giải sáng rõ nhất lại đến từ cuốn sách Radical Candor của Kim Scott, cựu giám đốc điều hành tại Google và Apple, với tinh thần có thể gói gọn trong bốn chữ: thẳng thắn vì thương.*
+      'Góp ý sao cho người nghe không tự ái mà vẫn tiến bộ? Từ cuốn Radical Candor của Kim Scott và thực tế dẫn dắt 64 quản lý, Vân chọn đứng giữa hai thái cực: quan tâm thật lòng đến con người và nói thẳng vào công việc.',
+    content: `*“Góp ý thế nào để một người giỏi lên mà không thấy mình bị phán xét?” Câu hỏi ấy theo Vân suốt những năm đầu tập làm quản lý. Câu trả lời rõ nhất Vân tìm được là từ cuốn Radical Candor của Kim Scott, cựu giám đốc điều hành tại Google và Apple. Tinh thần của sách gói trong bốn chữ: thẳng thắn vì thương.*
 
-## Hai Cái Bẫy Phổ Biến Của Người Làm Sếp
+## Hai cái bẫy của người làm sếp
 
-Khi chuyển từ một người làm chuyên môn giỏi sang vị trí dẫn dắt đội ngũ, phần lớn quản lý trẻ thường vô tình rơi vào một trong hai thái cực đối lập:
+Khi từ người làm chuyên môn giỏi lên dẫn dắt đội ngũ, quản lý trẻ thường rơi vào một trong hai thái cực:
 
-- **Thái cực thứ nhất là sự gay gắt thiếu thấu cảm:** Vì quá sốt ruột trước chỉ tiêu hoặc cầu toàn về tiêu chuẩn, người sếp buông lời nhận xét nặng nề ngay trước mặt tập thể. Nhân sự có thể sửa lỗi ngay lúc đó vì sợ, nhưng sau vài lần như thế họ bắt đầu thu mình lại, giấu cái dốt và không còn dám thử những cách làm mới.
-- **Thái cực thứ hai là sự xuê xoa vì ngại va chạm:** Đây lại là cái bẫy tinh vi hơn ở những người quản lý hiền lành. Vì sợ mất lòng, sợ cộng sự buồn rồi nghỉ việc, mình chỉ khen xã giao cho êm chuyện. Bề ngoài phòng họp lúc nào cũng hòa thuận, nhưng cộng sự thì mãi dậm chân tại chỗ vì không ai chỉ cho họ biết điểm mù của mình nằm ở đâu.
+- **Gay gắt, thiếu thấu cảm:** Quá sốt ruột với chỉ tiêu hoặc cầu toàn, người sếp nhận xét nặng lời ngay trước tập thể. Nhân sự sửa lỗi ngay lúc đó vì sợ, nhưng sau vài lần họ thu mình lại, giấu cái dốt và không dám thử cách làm mới.
+- **Xuê xoa vì ngại va chạm:** Cái bẫy này tinh vi hơn, hay gặp ở những quản lý hiền. Sợ mất lòng, sợ cộng sự buồn rồi nghỉ, mình chỉ khen xã giao cho êm chuyện. Phòng họp lúc nào cũng hòa thuận, nhưng cộng sự dậm chân tại chỗ vì không ai chỉ cho họ điểm mù của mình.
 
-Nhìn lại chặng đường đồng hành cùng hơn 500 nhân sự, Vân nhận ra sự im lặng xuê xoa tuy dễ chịu ở hiện tại, nhưng về lâu dài lại là cách ứng xử thiếu tử tế nhất với một người đang gửi gắm thanh xuân để trưởng thành cùng mình.
+Qua chặng đường làm việc với hơn 500 nhân sự, Vân nhận ra im lặng xuê xoa thì dễ chịu trước mắt, nhưng về lâu dài lại là cách đối xử thiếu tử tế nhất với một người đang cùng mình trưởng thành.
 
-## Nguyên Tắc “Khen Trước Tập Thể, Chỉnh Sửa Riêng Tư”
+## Khen trước tập thể, chỉnh sửa riêng tư
 
-Áp dụng tinh thần Radical Candor vào thực tế vận hành Vùng, Vân rèn cho mình và các quản lý cấp cao thói quen giữ trọn hai vế song song: **quan tâm thật lòng đến con người**, và **trực diện vào chất lượng công việc**.
+Áp dụng Radical Candor vào vận hành Vùng, Vân tập cho mình và các quản lý cấp cao giữ song song hai vế: **quan tâm thật lòng đến con người** và **nói thẳng vào chất lượng công việc**.
 
-Trong từng buổi kèm cặp thực tế, nguyên tắc ấy được cụ thể hóa thành ba động tác nhỏ:
+Trong từng buổi kèm cặp, nguyên tắc ấy thành ba động tác nhỏ:
 
-- **Khen ngợi cụ thể trước tập thể:** Khi một bạn làm tốt, đừng chỉ nói chung chung *“Em giỏi lắm”*. Hãy gọi tên chính xác hành động đáng quý ấy trước cả nhóm, chẳng hạn cách bạn kiên nhẫn kiểm tra lại lịch sử y khoa cho khách hàng trước khi nộp hồ sơ thẩm định. Lời khen đúng chỗ sẽ trở thành tiêu chuẩn chung cho cả tập thể học theo.
-- **Góp ý riêng tư và tách bạch hành vi khỏi nhân cách:** Khi cần chỉnh sửa, Vân luôn mời bạn ngồi riêng ở một góc yên tĩnh. Mình nói về một tình huống cụ thể chưa chuẩn xác trong buổi tư vấn sáng nay, không quy chụp sang năng lực hay tính cách của bạn.
-- **Cùng sửa ngay trên một bài toán thật:** Góp ý xong không để bạn tự bơi trong cảm giác bối rối. Hai chị em sẽ mở lại đúng bộ giải pháp đó, làm mẫu lại từng câu hỏi khai thác nhu cầu để bạn thấy rõ con đường làm tốt hơn ngay trong tuần kế tiếp.
+- **Khen cụ thể trước tập thể:** Khi một bạn làm tốt, đừng chỉ nói *“Em giỏi lắm”*. Hãy gọi tên đúng hành động, chẳng hạn bạn kiên nhẫn kiểm tra lại lịch sử y khoa của khách trước khi nộp hồ sơ thẩm định. Lời khen đúng chỗ trở thành tiêu chuẩn chung cho cả nhóm học theo.
+- **Góp ý riêng, tách hành vi khỏi con người:** Khi cần chỉnh, Vân mời bạn ngồi riêng ở một góc yên tĩnh. Mình nói về một tình huống cụ thể chưa chuẩn trong buổi tư vấn sáng nay, không quy sang năng lực hay tính cách của bạn.
+- **Cùng sửa ngay trên một bài toán thật:** Góp ý xong không để bạn tự loay hoay. Hai chị em mở lại đúng bộ giải pháp đó, làm mẫu lại từng câu hỏi khai thác nhu cầu để bạn thấy cách làm tốt hơn ngay trong tuần sau.
 
-## Lòng Tin Là Tấm Đệm Đỡ Mọi Lời Nói Thẳng
+## Có lòng tin thì lời nói thẳng mới lọt tai
 
-Điều kỳ diệu trong quản trị con người là khi cộng sự cảm nhận được người đứng đầu thực sự thương mình, thực sự muốn thu nhập và vị thế của mình vững vàng hơn, thì những lời góp ý thẳng thắn nhất lại được đón nhận bằng thái độ biết ơn nhẹ nhàng nhất.
+Khi cộng sự cảm nhận được người đứng đầu thật sự thương mình, thật sự muốn thu nhập và vị thế của mình vững hơn, thì những lời góp ý thẳng nhất cũng được đón nhận nhẹ nhàng.
 
-Mối quan hệ bền chặt trong một tổ chức lớn không được xây bằng những lời khen lấy lòng. Nó được xây từ những buổi ngồi lại chân thành sau một ca làm việc chưa trọn vẹn, nơi người dẫn dắt đủ bao dung để không phán xét, và đủ trách nhiệm để không làm ngơ trước lỗi sai của người đi cùng.
+Quan hệ bền trong một tổ chức lớn không xây bằng những lời khen lấy lòng. Nó xây từ những buổi ngồi lại sau một ca làm việc chưa tốt, nơi người dẫn dắt đủ bao dung để không phán xét và đủ trách nhiệm để không làm ngơ trước lỗi sai của người đi cùng.
 
 Người ta hiếm khi sợ bị góp ý. Người ta chỉ sợ bị góp ý bởi một người không thật lòng muốn mình tốt lên.`,
     keyTakeaways: [
-      'Tránh cả hai cái bẫy của người làm quản lý: sự gay gắt làm nhân sự thu mình và sự im lặng xuê xoa khiến cộng sự mãi không nhận ra điểm mù.',
-      'Thực hành nguyên tắc khen cụ thể trước tập thể để nhân rộng chuẩn mực tốt, và góp ý riêng tư tập trung vào hành vi công việc thay vì phán xét con người.',
-      'Sau mỗi lời góp ý thẳng thắn luôn cần một phương án đồng hành sửa sai ngay trên tình huống thực tế để cộng sự tự tin bước tiếp.',
+      'Tránh hai cái bẫy của người làm quản lý: gay gắt làm nhân sự thu mình, xuê xoa khiến cộng sự mãi không thấy điểm mù.',
+      'Khen cụ thể trước tập thể để nhân rộng cách làm tốt, góp ý riêng tư và nhắm vào hành vi công việc thay vì phán xét con người.',
+      'Sau mỗi lời góp ý thẳng, cùng cộng sự sửa ngay trên tình huống thật để họ tự tin làm tiếp.',
     ],
   },
   {
@@ -181,43 +181,43 @@ Người ta hiếm khi sợ bị góp ý. Người ta chỉ sợ bị góp ý b�
     readTime: '5 phút đọc',
     featured: true,
     image: '/images/articles/Article_BaoPhiXanh_KeHoachCuaConVanDiTiep.jpg',
-    imageCaption: 'Niềm vui của những người mẹ làm nghề hoạch định tài chính bên các con nhỏ, nơi mỗi kế hoạch tương lai đều được khóa chặt bằng lớp đệm dự phòng.',
-    title: 'Khi Cha Mẹ Phải Tạm Dừng, Kế Hoạch Của Con Vẫn Đi Tiếp',
+    imageCaption: 'Những người mẹ làm nghề hoạch định tài chính bên các con nhỏ, nơi mỗi kế hoạch tương lai đều có lớp dự phòng đi kèm.',
+    title: 'Khi cha mẹ phải tạm dừng, kế hoạch của con vẫn đi tiếp',
     excerpt:
-      'Ngồi rà soát hợp đồng học vấn cho con, phần lớn phụ huynh nghĩ quyền lợi miễn đóng phí chỉ kích hoạt khi cha mẹ qua đời. Thực tế, kịch bản người trụ cột mất sức lao động toàn bộ còn tạo áp lực dòng tiền nặng nề hơn nhiều.',
-    content: `*Một người trụ cột đột ngột rời đi, và một người trụ cột vẫn còn ở bên gia đình nhưng không thể đi làm tạo ra thu nhập được nữa. Nếu nhìn thuần túy trên bảng cân đối dòng tiền của một tổ ấm, hoàn cảnh thứ hai nhiều khi còn tạo áp lực tài chính nặng nề và dai dẳng hơn rất nhiều.*
+      'Rà soát hợp đồng học vấn cho con, phần lớn phụ huynh nghĩ quyền lợi miễn đóng phí chỉ có khi cha mẹ qua đời. Thực tế, người trụ cột mất hoàn toàn sức lao động còn gây áp lực dòng tiền nặng hơn nhiều.',
+    content: `*Một người trụ cột đột ngột qua đời, và một người trụ cột còn ở bên gia đình nhưng không thể đi làm kiếm tiền nữa. Nhìn trên bảng dòng tiền của một gia đình, hoàn cảnh thứ hai nhiều khi tạo áp lực tài chính nặng và dai dẳng hơn.*
 
-## Câu Hỏi Bỏ Ngỏ Trong Những Cuốn Hợp Đồng Cho Con
+## Câu hỏi hay bị bỏ ngỏ khi lập hợp đồng cho con
 
-Là mẹ của hai bé đang tuổi lớn, mỗi khi ngồi rà soát danh mục tích lũy học vấn cùng các gia đình trẻ, Vân rất hay nhận được một câu hỏi thẳng thắn: *“Chị Vân ơi, mình lập kế hoạch đóng 15 năm cho con, nhỡ giữa đường bố mẹ gặp chuyện không may thì cuốn hợp đồng của con ai đóng tiếp?”*
+Là mẹ của hai bé đang tuổi lớn, mỗi lần rà soát danh mục tích lũy học vấn cùng các gia đình trẻ, Vân hay nghe một câu hỏi thẳng: *“Chị Vân ơi, mình lập kế hoạch đóng 15 năm cho con, nhỡ giữa đường bố mẹ gặp chuyện không may thì hợp đồng của con ai đóng tiếp?”*
 
-Đa số bố mẹ đều đã từng nghe thoáng qua cụm từ *“quyền lợi miễn đóng phí”*. Thế nhưng khi Vân hỏi sâu thêm một nhịp rằng quyền lợi ấy che chở gia đình trong những trường hợp nào, chín trên mười người vẫn mặc định nó chỉ kích hoạt khi cha mẹ không còn trên đời.
+Đa số bố mẹ đều từng nghe cụm *“quyền lợi miễn đóng phí”*. Nhưng khi Vân hỏi quyền lợi ấy che chở gia đình trong những trường hợp nào, chín trên mười người vẫn nghĩ nó chỉ có khi cha mẹ không còn nữa.
 
-Cuộc sống thực tế lại phức tạp hơn một kịch bản trắng đen như vậy. Một tai nạn giao thông nghiêm trọng, biến chứng sau đột quỵ hoặc một căn bệnh hiểm nghèo giai đoạn nặng có thể giữ lại sinh mạng, nhưng lấy đi vĩnh viễn khả năng làm việc của người cha hoặc người mẹ. Ngay tại thời điểm ấy, gia đình chịu tác động kép: nguồn thu nhập chính đứt gãy về số không, chi phí y tế và điều dưỡng dài hạn tăng vọt, trong khi kỳ đóng phí học vấn hàng năm của con vẫn đều đặn gõ cửa.
+Thực tế phức tạp hơn thế. Một tai nạn giao thông nghiêm trọng, biến chứng sau đột quỵ hoặc một bệnh hiểm nghèo giai đoạn nặng có thể giữ lại sinh mạng nhưng lấy đi vĩnh viễn khả năng làm việc của người cha hoặc người mẹ. Lúc đó gia đình chịu hai cú cùng lúc: thu nhập chính về số không, chi phí y tế và điều dưỡng dài hạn tăng vọt, trong khi phí học vấn của con vẫn đến hạn mỗi năm.
 
-## Cơ Chế Gỡ Nút Thắt Của Quyền Lợi Bảo Phí Xanh
+## Bảo Phí Xanh gỡ nút thắt này thế nào
 
-Trong cấu trúc hoạch định gia sản tại Manulife, sản phẩm bổ trợ **Bảo Phí Xanh** (và phiên bản nâng cấp Bảo Phí Xanh 2026) được thiết kế chuyên biệt để khóa chặt rủi ro đứt gãy dòng tiền đóng phí trước cả ba nhóm biến cố nghiêm trọng của người trụ cột:
+Trong cấu trúc hoạch định gia sản tại Manulife, sản phẩm bổ trợ **Bảo Phí Xanh** (và phiên bản nâng cấp Bảo Phí Xanh 2026) được thiết kế để dòng tiền đóng phí không bị đứt trước ba nhóm biến cố nghiêm trọng của người trụ cột:
 
-- **Trường hợp tử vong:** Công ty bảo hiểm lập tức tiếp nhận nghĩa vụ đóng toàn bộ các kỳ phí định kỳ còn lại của hợp đồng theo đúng lộ trình ban đầu.
-- **Mất bộ phận hoặc chức năng cơ thể vĩnh viễn:** Bao gồm các tổn thương không thể phục hồi ở hai tay, hai chân hoặc thị lực hai mắt theo quy định điều khoản.
-- **Tổn thương cơ thể nặng dẫn đến mất sức lao động hoàn toàn (Thương tật toàn bộ vĩnh viễn):** Khi tỷ lệ tổn thương cơ thể được hội đồng giám định y khoa xác nhận từ 81% trở lên theo quy tắc sản phẩm, hợp đồng được miễn hoàn toàn nghĩa vụ đóng phí cho suốt thời hạn hiệu lực của quyền lợi.
+- **Tử vong:** Công ty bảo hiểm lập tức tiếp nhận nghĩa vụ đóng toàn bộ các kỳ phí còn lại của hợp đồng theo lộ trình ban đầu.
+- **Mất bộ phận hoặc chức năng cơ thể vĩnh viễn:** Gồm các tổn thương không thể phục hồi ở hai tay, hai chân hoặc thị lực hai mắt, theo quy định điều khoản.
+- **Tổn thương cơ thể nặng dẫn đến mất sức lao động hoàn toàn (Thương tật toàn bộ vĩnh viễn):** Khi tỷ lệ tổn thương cơ thể được hội đồng giám định y khoa xác nhận từ 81% trở lên theo quy tắc sản phẩm, hợp đồng được miễn đóng phí trong suốt thời hạn hiệu lực của quyền lợi.
 
-Nhờ lớp chốt chặn này, thay vì phải ngậm ngùi dừng hợp đồng hoặc rút giá trị hoàn lại ít ỏi giữa chừng để trang trải biến cố, gia đình vẫn giữ nguyên được tài khoản tích lũy cho con trưởng thành đúng hẹn năm 18 hay 22 tuổi.
+Nhờ vậy, gia đình không phải dừng hợp đồng hay rút giá trị hoàn lại ít ỏi giữa chừng để lo biến cố. Tài khoản tích lũy của con vẫn giữ nguyên, đến năm 18 hay 22 tuổi con nhận đúng hẹn.
 
-## Cách Giữ Trọn Lời Hứa Của Cha Mẹ Bằng Con Số Cụ Thể
+## Kiểm tra hợp đồng bằng ba dòng thông tin
 
-Tình thương của cha mẹ dành cho con vốn không có điều kiện, nhưng dòng tiền nuôi con ăn học thì luôn bị ràng buộc bởi sức khỏe của người đi làm. Khi mở lại cuốn hợp đồng đang cất trong tủ của gia đình mình, Vân khuyên anh chị hãy dành năm phút kiểm tra ba dòng thông tin sau:
+Tình thương của cha mẹ dành cho con không có điều kiện, nhưng dòng tiền nuôi con ăn học thì phụ thuộc vào sức khỏe của người đi làm. Khi mở lại hợp đồng đang cất trong tủ, Vân khuyên anh chị dành năm phút kiểm tra ba dòng sau:
 
-- **Ai đang đứng tên Bên mua bảo hiểm:** Quyền lợi miễn đóng phí cần được gắn trực tiếp lên sinh mạng và sức khỏe lao động của người tạo ra thu nhập chính trong nhà.
-- **Phạm vi kích hoạt miễn đóng phí:** Đọc kỹ xem hợp đồng hiện tại mới chỉ miễn phí khi tử vong, hay đã bao gồm cả Thương tật toàn bộ vĩnh viễn và bệnh lý nghiêm trọng.
-- **Thời hạn bảo vệ của sản phẩm bổ trợ:** Đảm bảo thời hạn của Bảo Phí Xanh khớp trọn vẹn với số năm cha mẹ cam kết đóng phí tích lũy cho con.
+- **Ai đứng tên Bên mua bảo hiểm:** Quyền lợi miễn đóng phí cần gắn vào sinh mạng và sức khỏe lao động của người tạo ra thu nhập chính trong nhà.
+- **Phạm vi miễn đóng phí:** Đọc kỹ xem hợp đồng hiện tại mới chỉ miễn phí khi tử vong, hay đã gồm cả Thương tật toàn bộ vĩnh viễn và bệnh lý nghiêm trọng.
+- **Thời hạn bảo vệ của sản phẩm bổ trợ:** Thời hạn Bảo Phí Xanh phải khớp với số năm cha mẹ cam kết đóng phí cho con.
 
-Một kế hoạch dành cho con chỉ thực sự vững chãi khi nó có khả năng tự bước tiếp đến vạch đích, kể cả trong những ngày cha mẹ buộc phải tạm dừng lại để nghỉ ngơi và chữa lành.`,
+Kế hoạch cho con chỉ vững khi nó tự đi tiếp được đến cuối, kể cả những ngày cha mẹ buộc phải dừng lại để nghỉ ngơi và chữa bệnh.`,
     keyTakeaways: [
-      'Biến cố mất hoàn toàn khả năng lao động (Thương tật toàn bộ vĩnh viễn) thường gây áp lực dòng tiền nặng nề hơn vì gia đình vừa mất thu nhập vừa gánh chi phí chăm sóc dài hạn.',
-      'Quyền lợi bổ trợ Bảo Phí Xanh giúp Manulife đóng thay phần phí định kỳ còn lại cả khi cha mẹ tử vong lẫn khi bị Thương tật toàn bộ vĩnh viễn theo điều khoản.',
-      'Khi lập hợp đồng học vấn cho con, cần gắn quyền lợi miễn đóng phí đúng vào người tạo thu nhập chính và khớp trọn thời hạn đóng phí dự kiến.',
+      'Mất hoàn toàn khả năng lao động (Thương tật toàn bộ vĩnh viễn) thường gây áp lực dòng tiền nặng hơn vì gia đình vừa mất thu nhập vừa gánh chi phí chăm sóc dài hạn.',
+      'Quyền lợi bổ trợ Bảo Phí Xanh giúp Manulife đóng thay phần phí định kỳ còn lại, cả khi cha mẹ tử vong lẫn khi bị Thương tật toàn bộ vĩnh viễn theo điều khoản.',
+      'Khi lập hợp đồng học vấn cho con, cần gắn quyền lợi miễn đóng phí vào đúng người tạo thu nhập chính và cho khớp thời hạn đóng phí dự kiến.',
     ],
   },
   {
@@ -228,45 +228,45 @@ Một kế hoạch dành cho con chỉ thực sự vững chãi khi nó có kh�
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/articles/Article_LaChanXanh_BaoVeBenhLyTreEm.jpg',
-    imageCaption: 'Khoảnh khắc bình yên của các em nhỏ bên mẹ tại không gian văn phòng xanh. Chuẩn bị từ sớm là cách cha mẹ giữ trọn sự chủ động trước những rủi ro y tế đặc thù tuổi thiếu nhi.',
-    title: 'Ngoài Thẻ Khám Ốm Vặt, Con Còn Cần Lớp Bảo Vệ Trước Bệnh Lý Nặng Đặc Thù Của Trẻ Nhỏ',
+    imageCaption: 'Các em nhỏ bên mẹ tại văn phòng xanh. Chuẩn bị sớm giúp cha mẹ chủ động hơn trước những rủi ro y tế riêng của tuổi thiếu nhi.',
+    title: 'Ngoài thẻ khám ốm vặt, con còn cần lớp bảo vệ trước bệnh nặng đặc thù của trẻ nhỏ',
     excerpt:
-      'Phần lớn cha mẹ chuẩn bị bảo hiểm cho con đều bắt đầu từ chiếc thẻ khám sốt, viêm họng. Nhưng những bệnh lý đặc thù ở trẻ em như Kawasaki biến chứng tim hay thấp tim mới là bài toán cần một khoản dự phòng tiền mặt độc lập.',
-    content: `*Hầu hết các cặp vợ chồng trẻ khi nhắn cho Vân hỏi giải pháp bảo hiểm đầu đời cho bé đều bắt đầu bằng cùng một mong muốn: làm một chiếc thẻ sức khỏe để mỗi lần con ho sốt, viêm phế quản vào viện quốc tế đỡ xót tiền. Suy nghĩ ấy hoàn toàn thực tế, vì ốm vặt theo mùa là chuyện bố mẹ nhìn thấy thường xuyên nhất trong những năm đầu đời của con.*
+      'Phần lớn cha mẹ mua bảo hiểm cho con bắt đầu từ chiếc thẻ khám sốt, viêm họng. Nhưng những bệnh đặc thù ở trẻ em như Kawasaki biến chứng tim hay thấp tim mới cần một khoản dự phòng tiền mặt độc lập.',
+    content: `*Hầu hết các cặp vợ chồng trẻ nhắn hỏi Vân về bảo hiểm đầu đời cho bé đều bắt đầu từ một mong muốn: làm chiếc thẻ sức khỏe để mỗi lần con ho sốt, viêm phế quản vào viện quốc tế đỡ xót tiền. Suy nghĩ đó rất thực tế, vì ốm vặt theo mùa là chuyện bố mẹ gặp thường xuyên nhất trong những năm đầu đời của con.*
 
-## Khoảng Trống Giữa “Thẻ Thanh Toán Viện Phí” Và “Quỹ Dự Phòng Tiền Mặt”
+## Thẻ thanh toán viện phí và quỹ dự phòng tiền mặt khác nhau chỗ nào
 
-Làm mẹ của hai con, Vân rất thấu cảm giác an tâm khi cầm chiếc thẻ bảo lãnh viện phí đưa con đi khám. Tuy nhiên, dưới góc nhìn hoạch định rủi ro gia đình, thẻ chăm sóc sức khỏe mới giải quyết được vế thứ nhất: **thanh toán hóa đơn y tế thực tế cho bệnh viện**.
+Làm mẹ của hai con, Vân hiểu cảm giác yên tâm khi cầm thẻ bảo lãnh viện phí đưa con đi khám. Nhưng nhìn từ góc độ rủi ro gia đình, thẻ chăm sóc sức khỏe mới lo được vế thứ nhất: **thanh toán hóa đơn y tế cho bệnh viện**.
 
-Khi ngồi đọc kỹ danh mục bệnh học nhi khoa, nhiều phụ huynh mới giật mình nhận ra có một nhóm bệnh lý nặng chỉ xuất hiện đặc thù ở cơ thể trẻ nhỏ và thanh thiếu niên:
+Khi đọc kỹ danh mục bệnh nhi khoa, nhiều phụ huynh giật mình vì có một nhóm bệnh nặng chỉ xuất hiện ở trẻ nhỏ và thanh thiếu niên:
 
-- **Bệnh Kawasaki có biến chứng tim mạch:** Một hội chứng viêm mạch máu cấp tính ở trẻ nhỏ có thể gây phình động mạch vành nếu diễn tiến phức tạp.
+- **Bệnh Kawasaki có biến chứng tim mạch:** Hội chứng viêm mạch máu cấp tính ở trẻ nhỏ, có thể gây phình động mạch vành nếu diễn tiến phức tạp.
 - **Bệnh thấp tim có tổn thương van tim, sốt bại liệt, bệnh xương thủy tinh, hen suyễn cấp tính nặng hoặc đái tháo đường phụ thuộc insulin khởi phát sớm.**
 
-Những bệnh lý này hiếm gặp hơn viêm họng, sốt siêu vi hàng ngày rất nhiều. Nhưng một khi không may xảy ra, bài toán của gia đình không còn gói gọn trong hóa đơn giường bệnh. Bố hoặc mẹ thường phải xin nghỉ việc không lương hàng tháng trời để túc trực chăm con, cộng thêm chi phí dinh dưỡng chuyên biệt, phục hồi chức năng và đi lại theo dõi định kỳ suốt nhiều năm.
+Những bệnh này hiếm gặp hơn nhiều so với viêm họng, sốt siêu vi hằng ngày. Nhưng một khi xảy ra, bài toán của gia đình không còn nằm trong hóa đơn giường bệnh. Bố hoặc mẹ thường phải xin nghỉ không lương hàng tháng trời để túc trực chăm con, cộng thêm chi phí dinh dưỡng chuyên biệt, phục hồi chức năng và đi lại tái khám suốt nhiều năm.
 
-## Điểm Đáng Quý Trong Thiết Kế Của Lá Chắn Xanh Cho Trẻ Dưới 18 Tuổi
+## Lá Chắn Xanh cho trẻ dưới 18 tuổi có gì đáng chú ý
 
-Trước đây, nhiều sản phẩm bệnh lý nghiêm trọng trên thị trường thường dùng chung một danh sách bệnh của người trưởng thành (như nhồi máu cơ tim, tai biến mạch máu não, ung thư tuổi trung niên) rồi áp nguyên sang cho trẻ nhỏ, khiến xác suất bảo vệ thực tế ở lứa tuổi thiếu nhi chưa thực sự sát sườn.
+Trước đây, nhiều sản phẩm bệnh lý nghiêm trọng dùng chung một danh sách bệnh của người lớn (như nhồi máu cơ tim, tai biến mạch máu não, ung thư tuổi trung niên) rồi áp sang cho trẻ nhỏ, nên mức bảo vệ thực tế cho tuổi thiếu nhi chưa sát.
 
-Trong giải pháp bổ trợ **Lá Chắn Xanh** của Manulife, cấu trúc quyền lợi cho trẻ em dưới 18 tuổi được thiết kế nhân văn và thực tế hơn rất nhiều:
+Với sản phẩm bổ trợ **Lá Chắn Xanh** của Manulife, quyền lợi cho trẻ em dưới 18 tuổi được thiết kế sát thực tế hơn:
 
-- **Bảo vệ mặc định thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em:** Bên cạnh danh sách 56 bệnh lý nghiêm trọng giai đoạn cuối theo chuẩn chung, trẻ dưới 18 tuổi được tích hợp sẵn quyền lợi bảo vệ trước 10 bệnh lý đặc thù lứa tuổi thiếu nhi mà không phải đóng thêm phụ phí riêng.
-- **Chi trả một lần 100% Số tiền bảo hiểm (tối đa lên đến 1 tỷ đồng):** Khoản tiền mặt này giải ngân trực tiếp về tài khoản gia đình ngay khi có chẩn đoán thỏa điều kiện điều khoản, hoàn toàn độc lập với chiếc thẻ sức khỏe đang thanh toán viện phí tại bệnh viện.
-- **Tham gia sớm ngay từ 30 ngày tuổi:** Giúp bố mẹ khóa chặt quyền lợi bảo vệ cho bé ngay từ những tháng đầu đời với mức phí rủi ro còn rất nhẹ nhàng.
+- **Mặc định bảo vệ thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em:** Ngoài danh sách 56 bệnh lý nghiêm trọng giai đoạn cuối theo chuẩn chung, trẻ dưới 18 tuổi có sẵn quyền lợi bảo vệ trước 10 bệnh lý đặc thù của lứa tuổi thiếu nhi, không phải đóng thêm phụ phí riêng.
+- **Chi trả một lần 100% Số tiền bảo hiểm (tối đa 1 tỷ đồng):** Khoản tiền mặt được giải ngân về tài khoản gia đình ngay khi có chẩn đoán thỏa điều kiện điều khoản, độc lập với thẻ sức khỏe đang thanh toán viện phí.
+- **Tham gia sớm từ 30 ngày tuổi:** Bố mẹ có thể có quyền lợi bảo vệ cho bé từ những tháng đầu đời, với mức phí rủi ro còn rất nhẹ.
 
-## Công Thức Hai Lớp Áo Giáp Vừa Vặn Cho Con
+## Hai lớp bảo vệ vừa đủ cho con
 
-Chuẩn bị hành trang sức khỏe cho con không có nghĩa là mua thật nhiều hợp đồng đắt đỏ, mà là phối hợp đúng chức năng của từng lớp bảo vệ:
+Chuẩn bị sức khỏe cho con không có nghĩa là mua thật nhiều hợp đồng đắt tiền. Điều cần là phối hợp đúng chức năng của từng lớp bảo vệ:
 
-- **Lớp thứ nhất (Thẻ Chăm sóc Sức khỏe):** Đỡ đần những đợt ốm đau, nằm viện thường ngày để con được tiếp cận dịch vụ y tế chu đáo, sạch sẽ.
-- **Lớp thứ hai (Quỹ Bệnh lý Nghiêm trọng Trẻ em):** Một khoản tiền mặt dự phòng đủ lớn đứng sau lưng, để nếu biến cố y tế lớn ập đến, bố mẹ có thể gác lại công việc mà toàn tâm toàn ý nắm tay con đi qua đợt điều trị dài ngày.
+- **Lớp thứ nhất (Thẻ Chăm sóc Sức khỏe):** Lo những đợt ốm, nằm viện thường ngày để con được khám chữa ở nơi chu đáo, sạch sẽ.
+- **Lớp thứ hai (Quỹ Bệnh lý Nghiêm trọng Trẻ em):** Một khoản tiền mặt dự phòng đủ lớn, để nếu có biến cố y tế lớn, bố mẹ có thể gác công việc lại và ở bên con suốt đợt điều trị dài ngày.
 
-Những cơn sốt mọc răng hay cảm cúm chuyển mùa của con thì bố mẹ nào cũng nhìn thấy trước mắt. Còn những rủi ro lớn, hiếm gặp nhưng hệ trọng mới chính là điều cần sự nhìn xa và chuẩn bị từ lúc con đang khỏe mạnh, bình an nhất.`,
+Cơn sốt mọc răng hay cảm cúm chuyển mùa thì bố mẹ nào cũng thấy trước mắt. Còn những rủi ro lớn, hiếm gặp nhưng nặng nề thì cần chuẩn bị từ lúc con còn khỏe mạnh.`,
     keyTakeaways: [
-      'Thẻ chăm sóc sức khỏe giúp thanh toán hóa đơn bệnh viện, nhưng khi trẻ mắc bệnh nặng kéo dài, gia đình cần thêm một quỹ tiền mặt độc lập để bù đắp thu nhập khi cha mẹ nghỉ việc chăm con.',
-      'Lá Chắn Xanh tích hợp mặc định thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em (như Kawasaki biến chứng tim, thấp tim, xương thủy tinh) cho trẻ dưới 18 tuổi từ 30 ngày tuổi, chi trả 100% Số tiền bảo hiểm, tối đa 1 tỷ đồng.',
-      'Kết hợp hài hòa hai lớp bảo vệ gồm thẻ y tế nội trú và quyền lợi bệnh lý nghiêm trọng giúp cha mẹ chủ động trọn vẹn mà chi phí hàng năm vẫn rất hợp lý.',
+      'Thẻ chăm sóc sức khỏe thanh toán hóa đơn bệnh viện, nhưng khi trẻ mắc bệnh nặng kéo dài, gia đình cần thêm một quỹ tiền mặt độc lập để bù thu nhập khi cha mẹ nghỉ việc chăm con.',
+      'Lá Chắn Xanh mặc định bảo vệ thêm 10 Bệnh Lý Nghiêm Trọng Trẻ Em (như Kawasaki biến chứng tim, thấp tim, xương thủy tinh) cho trẻ dưới 18 tuổi từ 30 ngày tuổi, chi trả 100% Số tiền bảo hiểm, tối đa 1 tỷ đồng.',
+      'Kết hợp thẻ y tế nội trú với quyền lợi bệnh lý nghiêm trọng giúp cha mẹ chủ động hơn mà chi phí hằng năm vẫn hợp lý.',
     ],
   },
   {
@@ -277,40 +277,40 @@ Những cơn sốt mọc răng hay cảm cúm chuyển mùa của con thì bố 
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/articles/Article_KyLuatLamGuong_NguoiDanDauTamGioSang.jpg',
-    imageCaption: 'Khánh Vân cùng đội ngũ Quản lý nòng cốt. Sự chỉn chu, đúng giờ và nhất quán của người đứng đầu là thước đo rõ ràng nhất cho văn hóa tập thể.',
-    title: 'Đội Ngũ Không Đọc Khẩu Hiệu Trên Tường, Họ Nhìn Người Dẫn Đầu Lúc Tám Giờ Sáng',
+    imageCaption: 'Khánh Vân cùng đội ngũ Quản lý nòng cốt. Người đứng đầu chỉn chu, đúng giờ và nhất quán là thước đo rõ nhất cho văn hóa của tập thể.',
+    title: 'Đội ngũ không đọc khẩu hiệu trên tường, họ nhìn người dẫn đầu lúc tám giờ sáng',
     excerpt:
-      'Nhiều người nghĩ lãnh đạo bằng sự thấu cảm thì phải mềm mỏng, dễ dãi. Với Vân, sự ấm áp luôn dành cho con người, còn sự nghiêm khắc dành cho tiêu chuẩn nghề nghiệp bắt đầu từ tác phong lúc tám giờ sáng của chính người đứng đầu.',
-    content: `*Đội ngũ hiếm khi hành động theo những dòng khẩu hiệu in đẹp treo trên tường phòng họp. Họ quan sát xem người dẫn đầu xuất hiện thế nào và làm việc ra sao vào đúng tám giờ sáng thứ Hai đầu tuần.*
+      'Nhiều người nghĩ lãnh đạo bằng sự thấu cảm thì phải mềm mỏng, dễ dãi. Với Vân, sự ấm áp dành cho con người, còn sự nghiêm khắc dành cho tiêu chuẩn nghề nghiệp, và nó bắt đầu từ tác phong lúc tám giờ sáng của chính người đứng đầu.',
+    content: `*Đội ngũ hiếm khi làm theo những dòng khẩu hiệu in đẹp treo trong phòng họp. Họ quan sát người dẫn đầu xuất hiện thế nào và làm việc ra sao vào đúng tám giờ sáng thứ Hai đầu tuần.*
 
-## Hiểu Đúng Về Hai Chữ “Thấu Cảm” Trong Quản Trị
+## Thấu cảm không có nghĩa là dễ dãi
 
-Khi biết Vân theo đuổi phong cách lãnh đạo phụng sự và thấu cảm trong một hệ thống phần lớn là phụ nữ có gia đình, không ít người hình dung môi trường ấy hẳn phải mềm mỏng, xuề xòa và ít áp lực lắm.
+Khi biết Vân theo đuổi phong cách lãnh đạo thấu cảm trong một hệ thống phần lớn là phụ nữ có gia đình, không ít người nghĩ môi trường ấy hẳn mềm mỏng, xuề xòa và ít áp lực.
 
-Thực tế vận hành một vùng kinh doanh hơn 500 nhân sự suốt nhiều năm qua cho Vân thấy điều ngược lại. Một tập thể thiếu kỷ luật thì không thể có sự bình an dài lâu. Sự thấu cảm và tính kỷ luật hoàn toàn song hành được cùng nhau, miễn là người lãnh đạo phân định thật rạch ròi hai ranh giới:
+Điều hành một vùng kinh doanh hơn 500 nhân sự suốt nhiều năm cho Vân thấy điều ngược lại. Tập thể thiếu kỷ luật thì khó có sự bình yên lâu dài. Thấu cảm và kỷ luật đi cùng nhau được, miễn là người lãnh đạo phân định rõ hai ranh giới:
 
-- **Sự ấm áp và bao dung dành cho hoàn cảnh con người:** Khi con cái cộng sự ốm đau hay gia đình có việc đột xuất, tập thể sẵn sàng san sẻ và nâng đỡ nhau không tính toán.
-- **Sự nghiêm khắc và nhất quán dành cho tiêu chuẩn nghề nghiệp:** Từ đạo đức tư vấn trung thực, bảo mật thông tin khách hàng cho đến cam kết giờ giấc huấn luyện đều không có vùng xám nhân nhượng.
+- **Ấm áp, bao dung với hoàn cảnh con người:** Khi con cộng sự ốm hay gia đình có việc đột xuất, tập thể sẵn sàng san sẻ, không tính toán.
+- **Nghiêm khắc, nhất quán với tiêu chuẩn nghề nghiệp:** Từ đạo đức tư vấn trung thực, bảo mật thông tin khách hàng đến giờ giấc huấn luyện, không có vùng xám để nhân nhượng.
 
-## Ba Thói Quen Nhỏ Định Hình Văn Hóa Không Cần Lời Nhắc
+## Ba thói quen nhỏ tạo nên văn hóa
 
-Thừa hưởng tác phong làm việc chuẩn xác từ 8 năm ở ngân hàng quốc tế ANZ, Vân không thích quản trị bằng những bản nội quy dày đặc hình phạt. Thay vào đó, Vân tự đặt kỷ luật lên chính mình ở ba chi tiết nhỏ lặp lại hàng tuần:
+Vân học tác phong làm việc chuẩn xác từ 8 năm ở ngân hàng quốc tế ANZ, nên không thích quản bằng những bản nội quy dày đặc hình phạt. Vân tự đặt kỷ luật lên chính mình ở ba chi tiết nhỏ, lặp lại hằng tuần:
 
-- **Có mặt trước giờ bắt đầu mỗi buổi đào tạo sáng:** Dù tối hôm trước lịch họp kéo muộn hay sáng sớm phải thu xếp đưa hai con đến trường, khi đã ấn định buổi chia sẻ lúc 8h30 thì 8h15 Vân đã có mặt chỉnh lại bài giảng. Người đứng đầu tôn trọng thời gian của tập thể thì tự khắc không ai cho phép mình đi trễ.
-- **Chỉn chu từ trang phục đến số liệu trên bàn họp:** Dù là hội nghị hàng trăm người hay buổi ngồi kèm cặp ba bạn quản lý mới, trang phục, sổ tay và bảng số liệu phân tích đều được chuẩn bị tươm tất. Sự chỉn chu bên ngoài rèn cho tư duy bên trong thói quen không làm việc qua loa.
-- **Minh bạch tiêu chí thi đua và thăng tiến ngay từ ngày đầu:** Mọi chính sách tưởng thưởng trong Vùng đều được công bố rõ ràng bằng con số để bất kỳ nhân sự nào nhìn vào cũng biết mình đang được ghi nhận công bằng theo năng lực thật.
+- **Có mặt trước giờ bắt đầu buổi đào tạo sáng:** Dù tối hôm trước họp muộn hay sáng phải đưa hai con đến trường, đã hẹn chia sẻ lúc 8h30 thì 8h15 Vân có mặt chỉnh lại bài giảng. Người đứng đầu tôn trọng thời gian của tập thể thì tự khắc không ai cho phép mình đi trễ.
+- **Chỉn chu từ trang phục đến số liệu:** Dù là hội nghị hàng trăm người hay buổi kèm ba bạn quản lý mới, trang phục, sổ tay và bảng số liệu phân tích đều chuẩn bị tươm tất. Chỉn chu bên ngoài giúp mình quen không làm việc qua loa.
+- **Minh bạch tiêu chí thi đua và thăng tiến từ ngày đầu:** Mọi chính sách thưởng trong Vùng đều công bố rõ bằng con số, để ai nhìn vào cũng biết mình được ghi nhận công bằng theo năng lực thật.
 
-## Khi Lời Nói Và Việc Làm Lệch Nhau, Tập Thể Luôn Tin Vào Việc Làm
+## Lời nói và việc làm lệch nhau thì tập thể tin việc làm
 
-Vân từng chứng kiến có những đội nhóm hô khẩu hiệu quyết tâm rất vang dội ở đầu quý, nhưng người trưởng nhóm lại là người thường xuyên đến muộn nhất hoặc lỡ hẹn báo cáo mà không một lời giải thích. Một khi lời nói trên bục giảng và hành động ngoài đời thực lệch pha nhau, nhân sự sẽ lập tức sao chép hành động thực tế của người sếp.
+Vân từng thấy những đội hô khẩu hiệu quyết tâm rất vang đầu quý, nhưng người trưởng nhóm lại thường đến muộn nhất hoặc lỡ hẹn báo cáo mà không giải thích. Khi lời nói trên bục giảng và hành động ngoài đời lệch nhau, nhân sự sẽ sao chép hành động thực tế của người sếp.
 
-Ngược lại, các bạn tư vấn viên mới gia nhập Green Power thường hòa nhập vào nề nếp rất nhanh mà chẳng cần ai đôn đốc nặng lời. Các bạn nhìn cách các anh chị Giám đốc Khu vực, Trưởng Phòng chuẩn bị hồ sơ kỹ lưỡng lúc sáng sớm, nhìn cách mọi người ăn mặc thanh lịch và giữ chữ tín với từng cuộc hẹn khách hàng, rồi tự điều chỉnh nhịp bước của mình khớp vào guồng quay chung.
+Ngược lại, các bạn tư vấn viên mới vào Green Power thường hòa nhập nề nếp khá nhanh mà không cần ai nhắc nặng lời. Các bạn nhìn cách các anh chị Giám đốc Khu vực, Trưởng Phòng chuẩn bị hồ sơ kỹ từ sáng sớm, cách mọi người ăn mặc lịch sự và giữ chữ tín với từng cuộc hẹn khách, rồi tự điều chỉnh theo.
 
-Người dẫn đầu giữ được kỷ luật nghiêm cẩn với bản thân trước tiên thì không bao giờ phải quát tháo ai. Sự chuyên nghiệp cứ thế thấm dần xuống từng tầng quản lý, lặng lẽ, tự nguyện và bền bỉ hơn mọi tấm bảng khẩu hiệu treo trên tường.`,
+Người dẫn đầu giữ kỷ luật với bản thân trước thì không phải quát ai. Sự chuyên nghiệp cứ thế đi xuống từng tầng quản lý, lặng lẽ và bền hơn mọi tấm bảng khẩu hiệu.`,
     keyTakeaways: [
-      'Lãnh đạo thấu cảm không đồng nghĩa với dễ dãi. Hãy dành sự ấm áp cho hoàn cảnh con người và dành sự nghiêm khắc nhất quán cho tiêu chuẩn nghề nghiệp.',
-      'Ba hành động làm gương có sức nặng hơn mọi văn bản nội quy: luôn đến đúng giờ đào tạo sáng, xuất hiện chỉn chu trong mọi cuộc họp nhỏ và minh bạch hóa tiêu chí đánh giá.',
-      'Khi lời nói và hành động của người đứng đầu đồng nhất, văn hóa chuyên nghiệp sẽ tự nhiên thấm xuống đội ngũ mới mà không cần sự áp đặt.',
+      'Lãnh đạo thấu cảm không có nghĩa là dễ dãi. Dành sự ấm áp cho hoàn cảnh con người, dành sự nghiêm khắc nhất quán cho tiêu chuẩn nghề nghiệp.',
+      'Ba việc làm gương nặng hơn mọi bản nội quy: đến đúng giờ đào tạo sáng, chỉn chu trong mọi cuộc họp nhỏ và minh bạch tiêu chí đánh giá.',
+      'Khi lời nói và việc làm của người đứng đầu khớp nhau, văn hóa chuyên nghiệp tự đi xuống đội ngũ mới mà không cần áp đặt.',
     ],
   },
   {
@@ -321,42 +321,42 @@ Người dẫn đầu giữ được kỷ luật nghiêm cẩn với bản thân
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
-    imageCaption: 'Khánh Vân cùng Ban Điều Hành Hệ thống, nơi sự điềm đạm, chuẩn mực và năng lực lắng nghe sâu trở thành điểm tựa uy tín bền vững.',
-    title: 'Người Hướng Nội Làm Tư Vấn: Khi Sự Điềm Đạm Và Lắng Nghe Trở Thành Lợi Thế Cạnh Tranh',
+    imageCaption: 'Khánh Vân cùng Ban Điều Hành Hệ thống, nơi sự điềm đạm và khả năng lắng nghe là điểm tựa uy tín.',
+    title: 'Người hướng nội làm tư vấn: điềm đạm và biết lắng nghe là lợi thế cạnh tranh',
     excerpt:
-      'Có một câu Vân nghe rất nhiều từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy điều ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',
-    content: `*Có một câu Vân nghe rất nhiều từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Vân hiểu vì sao các bạn nghĩ vậy. Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân lại thấy điều ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ chỉ thiếu người nói đúng.*
+      'Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',
+    content: `*Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Vân hiểu vì sao các bạn nghĩ vậy. Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ chỉ thiếu người nói đúng.*
 
-## Khi Sự Trôi Chảy Không Còn Đủ Để Thuyết Phục
+## Nói trôi chảy chưa đủ để thuyết phục
 
-Hình ảnh người làm tư vấn trong suy nghĩ của số đông thường gắn liền với sự hoạt ngôn: nói nhanh, nói khéo, đứng giữa phòng họp không vấp một chữ. Định kiến ấy vô tình khiến nhiều người trầm tính, quen làm việc với con số và dữ liệu tự khép lại cánh cửa của chính mình trước khi thử bước vào nghề.
+Trong suy nghĩ của số đông, người làm tư vấn là người hoạt ngôn: nói nhanh, nói khéo, đứng giữa phòng họp không vấp chữ nào. Định kiến đó khiến nhiều người trầm tính, quen làm việc với con số và dữ liệu tự đóng cửa trước khi thử bước vào nghề.
 
-Nhưng thực tế thị trường tài chính hiện nay đã khác trước rất nhiều. Khách hàng ngày nay tự tìm hiểu, tự đọc tài liệu và so sánh rất kỹ trước khi ngồi lại với chuyên viên. Sự trôi chảy đơn thuần đôi khi chỉ mang lại cảm giác đang nghe một kịch bản tiếp thị, chứ không còn đủ sức làm khách hàng nể phục.
+Nhưng thị trường tài chính bây giờ đã khác. Khách tự tìm hiểu, tự đọc tài liệu và so sánh kỹ trước khi ngồi lại với chuyên viên. Nói trôi chảy thôi đôi khi chỉ giống đang nghe một kịch bản tiếp thị, chưa đủ để khách tin.
 
-## Sức Nặng Của Người Dám Nói “Chưa Chắc”
+## Người dám nói “chưa chắc”
 
-Đặt cùng một câu hỏi khó từ khách hàng lên bàn tư vấn, sự khác biệt giữa hai kiểu phản xạ lộ ra rất rõ:
+Cùng một câu hỏi khó từ khách, hai kiểu phản xạ khác nhau lộ ra rất rõ:
 
 - **Người quen phản xạ nhanh miệng:** Thường cố gắng trả lời ngay lập tức cho kịp nhịp cuộc trò chuyện.
-- **Người hướng nội, cẩn trọng:** Thường hỏi ngược lại một câu để hiểu khách hàng đang thật sự lo điều gì phía sau câu hỏi ấy, hoặc thẳng thắn nói: *"Chỗ này em kiểm tra lại rồi báo anh chị con số chính xác."*
+- **Người hướng nội, cẩn trọng:** Thường hỏi ngược lại để hiểu khách đang thật sự lo điều gì sau câu hỏi ấy, hoặc nói thẳng: *"Chỗ này em kiểm tra lại rồi báo anh chị con số chính xác."*
 
-Nghe qua tưởng như sự chững lại ấy là điểm yếu. Nhưng với một khách hàng đã tự so sánh đủ thứ trước khi gặp mình, đó lại là một tín hiệu đáng quý hiếm có. Người dám nói *"chưa chắc"* ở những chi tiết cần đối soát, thì mỗi lần họ nói *"chắc chắn"*, khách hàng tin ngay.
+Nghe qua thì tưởng chững lại là điểm yếu. Nhưng với một khách đã tự so sánh đủ thứ trước khi gặp mình, đó là tín hiệu hiếm và đáng quý. Người dám nói *"chưa chắc"* ở những chi tiết cần đối soát thì mỗi lần nói *"chắc chắn"*, khách tin ngay.
 
-## Giọng Có Thể Nhỏ, Nhưng Nền Phải Dày
+## Giọng nhỏ cũng được, nhưng nền phải dày
 
-Vì thế Vân không bắt bạn nào trong đội ngũ phải tập sôi nổi hơn. Thay vào đó, Vân kèm một động tác thực tế rất cụ thể qua ba bước:
+Vì vậy Vân không bắt bạn nào phải tập sôi nổi hơn. Vân kèm ba bước cụ thể:
 
-- **Chuẩn bị trước buổi gặp:** Các bạn viết ra bộ câu hỏi mình cần hiểu về khách hàng để đi thẳng vào trọng tâm mối lo của gia đình họ.
-- **Bài tập “Tóm gọn trong ba câu”:** Tập đúc kết vấn đề phức tạp nhất của buổi ấy trong đúng ba câu ngắn gọn, nói thành tiếng cho người kèm nghe. Ba câu mà chưa gọn nghĩa là mình chưa hiểu đủ sâu, và quay lại học tiếp còn tốt hơn là nói dài cho qua.
-- **Rà soát sau buổi gặp:** Cả hai ngồi lại xem chỗ nào mình đã trả lời chắc chắn, chỗ nào cần kiểm tra lại quy tắc điều khoản để phản hồi chuẩn xác nhất.
+- **Chuẩn bị trước buổi gặp:** Các bạn viết ra bộ câu hỏi cần hiểu về khách hàng, để đi thẳng vào mối lo của gia đình họ.
+- **Bài tập “Tóm gọn trong ba câu”:** Tập tóm vấn đề phức tạp nhất của buổi gặp trong đúng ba câu ngắn, nói thành tiếng cho người kèm nghe. Ba câu mà chưa gọn nghĩa là mình chưa hiểu đủ sâu, quay lại học tiếp còn hơn nói dài cho qua.
+- **Rà soát sau buổi gặp:** Hai người ngồi lại xem chỗ nào mình đã trả lời chắc, chỗ nào cần kiểm tra lại quy tắc điều khoản để phản hồi cho chính xác.
 
-Giọng nói có thể nhỏ, nhịp độ có thể chậm, nhưng nền tảng chuyên môn phải dày. Điểm tựa của người làm nghề tư vấn chưa bao giờ nằm ở tốc độ nói, mà nằm ở độ sâu của sự thấu hiểu.
+Giọng có thể nhỏ, nhịp có thể chậm, nhưng nền chuyên môn phải dày. Điểm tựa của người làm tư vấn không nằm ở tốc độ nói mà ở độ sâu của sự hiểu.
 
-Câu *"chắc em không hợp với nghề này"* Vân đã nghe đủ nhiều để nhận ra rằng đó thường chính là lời của người sẽ làm nghề này đáng tin cậy nhất.`,
+Câu *"chắc em không hợp với nghề này"* Vân đã nghe đủ nhiều để nhận ra: người nói câu đó thường sẽ là người làm nghề đáng tin nhất.`,
     keyTakeaways: [
-      'Khách hàng hiện đại không thiếu người nói hay mà cần người nói đúng. Sự điềm đạm và lắng nghe sâu mới là lợi thế tạo dựng niềm tin.',
-      'Sự cẩn trọng dám nói "để em kiểm tra lại con số chính xác" tạo nên sức nặng uy tín lớn hơn nhiều so với những lời hứa hẹn trôi chảy.',
-      'Không cần ép mình thành người hoạt náo. Giọng có thể nhỏ nhưng nền tảng chuyên môn phải dày thông qua kỷ luật chuẩn bị và đúc kết vấn đề.',
+      'Khách hàng bây giờ không thiếu người nói hay mà cần người nói đúng. Điềm đạm và biết lắng nghe là lợi thế tạo niềm tin.',
+      'Dám nói "để em kiểm tra lại con số chính xác" tạo uy tín nhiều hơn những lời hứa trôi chảy.',
+      'Không cần ép mình thành người hoạt náo. Giọng có thể nhỏ nhưng nền chuyên môn phải dày, nhờ chuẩn bị kỹ và biết tóm gọn vấn đề.',
     ],
   },
   {
@@ -367,46 +367,46 @@ Câu *"chắc em không hợp với nghề này"* Vân đã nghe đủ nhiều �
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/VanPhong_ChiVanCungDoiNgu_BanHopXanhLa.jpg',
-    imageCaption: 'Chiến lược quản trị tài sản và kỷ luật ủy thác dòng tiền dài hạn cùng các cộng sự nòng cốt.',
-    title: 'Âm 29,5% Trong Một Năm: Kỷ Luật Giữ Đủ 10 Năm Để Đạt Mức Sinh Lời 9,4%/Năm',
+    imageCaption: 'Cùng các cộng sự nòng cốt bàn về quản trị tài sản và kỷ luật ủy thác dòng tiền dài hạn.',
+    title: 'Âm 29,5% trong một năm: giữ đủ 10 năm để đạt mức sinh lời 9,4%/năm',
     excerpt:
-      'Cuối năm 2022, khi tài khoản đỏ gần 30%, câu hỏi phổ biến là: "Có nên cắt lỗ luôn không?" Nhưng khoản lỗ trên giấy chỉ thành lỗ thật khi ta bán tháo. Tách bạch ngăn ngắn hạn và dài hạn chính là chìa khóa để an tâm đi qua giông bão.',
+      'Cuối năm 2022, khi tài khoản đỏ gần 30%, câu hỏi phổ biến là: "Có nên cắt lỗ luôn không?" Nhưng lỗ trên giấy chỉ thành lỗ thật khi mình bán tháo. Tách riêng ngăn ngắn hạn và dài hạn là cách để yên tâm đi qua giai đoạn biến động.',
     content: `*Cuối năm 2022, Vân nhận khá nhiều tin nhắn từ bạn bè và khách hàng với câu hỏi na ná nhau: "Có nên cắt lỗ luôn không, mình không chịu nổi nữa?" Họ không thiếu hiểu biết, nhiều người là quản lý thu nhập rất tốt. Chỉ là khi tài khoản đỏ gần 30%, cảm xúc thường đi trước lý trí.*
 
-## Khi Một Khoản Tiền Phải Gánh Quá Nhiều Nhiệm Vụ
+## Một khoản tiền gánh quá nhiều nhiệm vụ
 
-Vân nghe nhiều hơn khuyên. Và khi gỡ từng lớp ra, câu chuyện thường chung một gốc rễ. Một khoản tiền đang bị bắt gánh cùng lúc quá nhiều trọng trách, vừa muốn là tiền tích lũy dài hạn cho tương lai, vừa muốn là tiền phòng bị rút ra khi cần chi gấp.
+Vân nghe nhiều hơn khuyên. Và khi gỡ từng lớp ra, chuyện thường có chung một gốc: một khoản tiền bị bắt gánh quá nhiều việc cùng lúc, vừa muốn là tiền tích lũy dài hạn cho tương lai, vừa muốn là tiền phòng bị rút ra khi cần chi gấp.
 
-Thử nhìn lại các con số thực tế trên thị trường:
+Thử nhìn các con số thực tế trên thị trường:
 
 - Quỹ Tăng Trưởng do Công ty Quản lý Quỹ Manulife quản lý (đơn vị đang quản lý danh mục khoảng 150.000 tỷ đồng tài sản) giảm **29,5%** trong năm biến động 2022.
-- Những nhà đầu tư không hoảng loạn bán tháo đã đón trọn nhịp phục hồi mạnh mẽ: **+11,8%** năm 2023, **+14,1%** năm 2024 và **+26,2%** năm 2025.
+- Những nhà đầu tư không bán tháo trong hoảng loạn đã hưởng trọn nhịp phục hồi: **+11,8%** năm 2023, **+14,1%** năm 2024 và **+26,2%** năm 2025.
 
-Tính chung chu kỳ 10 năm đến hết 2025, mức sinh lời trung bình đạt **9,4%/năm**, tương đương mức tăng trưởng lũy kế **145,5%**. Tất nhiên, đây là số liệu lịch sử và không hàm ý cam kết cho tương lai, nhưng phản ánh rõ nét quy luật vận động của thị trường vốn.
+Tính chung chu kỳ 10 năm đến hết 2025, mức sinh lời trung bình đạt **9,4%/năm**, tương đương mức tăng trưởng lũy kế **145,5%**. Tất nhiên đây là số liệu lịch sử, không hàm ý cam kết cho tương lai, nhưng cho thấy khá rõ quy luật vận động của thị trường vốn.
 
-## Hai Bài Học Đắt Giá Từ Thực Tế Đầu Tư Dài Hạn
+## Hai bài học từ đầu tư dài hạn
 
-Từ bức tranh số liệu ấy, có hai điều Vân thấy rất đáng suy ngẫm cho mỗi người làm chủ tài chính:
+Từ những con số ấy, Vân thấy có hai điều đáng nghĩ cho mỗi người đang tự quản lý tài chính của mình:
 
-- **Thứ nhất, lỗ trên giấy chỉ trở thành lỗ thật khi ta bán ra:** Người vội vã rời đi giữa năm 2022 đã tự tay hiện thực hóa phần thiệt hại, và vắng mặt đúng vào thời điểm thị trường phục hồi rực rỡ nhất.
-- **Thứ hai, tính kỷ luật quan trọng hơn nỗ lực đoán đáy thị trường:** Tích lũy đều đặn đồng nghĩa với việc ngay trong những năm thị trường định giá thấp, ta vẫn đang gom thêm tài sản ở vùng giá tốt cho bài toán 10 năm, thay vì sợ hãi dừng lại.
+- **Thứ nhất, lỗ trên giấy chỉ thành lỗ thật khi mình bán ra:** Người vội rời đi giữa năm 2022 đã tự tay biến thiệt hại thành thật, và vắng mặt đúng lúc thị trường phục hồi mạnh nhất.
+- **Thứ hai, kỷ luật quan trọng hơn việc đoán đáy:** Tích lũy đều đặn nghĩa là ngay trong những năm thị trường định giá thấp, mình vẫn gom thêm tài sản ở vùng giá tốt cho bài toán 10 năm, thay vì sợ rồi dừng lại.
 
-## Nguyên Tắc Tách Dòng Tiền Thành Hai Ngăn Rõ Ràng
+## Tách dòng tiền thành hai ngăn
 
-Lời khuyên Vân luôn chia sẻ với các gia đình là hãy thiết lập ranh giới tài chính minh bạch:
+Lời khuyên Vân hay chia sẻ với các gia đình là vạch ranh giới tài chính cho rõ:
 
-- **Ngăn ngắn hạn (Thanh khoản & Phòng vệ):** Dự phòng chi tiêu 6–12 tháng, học phí của con, nghĩa vụ tài chính sắp tới. Ngăn này phải thật sự ổn định và an toàn, không được phép phụ thuộc vào biến động lên xuống của thị trường.
-- **Ngăn dài hạn (Ủy thác & Tăng trưởng):** Khoản tiền bạn chắc chắn chưa cần đụng tới trong vòng 5–10 năm. Chỉ ngăn này mới đủ tư cách và kiên nhẫn để ngồi yên đi qua các chu kỳ giông bão.
+- **Ngăn ngắn hạn (thanh khoản & phòng vệ):** Dự phòng chi tiêu 6 đến 12 tháng, học phí của con, nghĩa vụ tài chính sắp tới. Ngăn này phải ổn định, an toàn, không phụ thuộc vào biến động lên xuống của thị trường.
+- **Ngăn dài hạn (ủy thác & tăng trưởng):** Khoản tiền bạn chắc chắn chưa cần đụng tới trong 5 đến 10 năm. Chỉ ngăn này mới đủ kiên nhẫn để ngồi yên đi qua các chu kỳ biến động.
 
-Khi mỗi đồng tiền đã được phân công đúng nhiệm vụ, một năm thị trường âm gần 30% dẫu khó chịu cũng không thể buộc ta phải đưa ra những quyết định bán tháo vội vàng trong hoảng loạn.
+Khi mỗi đồng tiền đã có nhiệm vụ riêng, một năm thị trường âm gần 30% dù khó chịu cũng không buộc mình phải bán tháo vội trong hoảng loạn.
 
-Thị trường luôn có những chu kỳ biến động. Người giữ được kỷ luật và biết ủy thác cho các định chế quản lý quỹ chuyên nghiệp sẽ tận dụng được sức mạnh của lãi kép dài hạn. Điều cốt tử là đừng bao giờ nhảy khỏi tàu ngay giữa cơn bão.
+Thị trường lúc nào cũng có chu kỳ biến động. Người giữ được kỷ luật và biết ủy thác cho các đơn vị quản lý quỹ chuyên nghiệp sẽ tận dụng được lãi kép dài hạn. Điều quan trọng là đừng nhảy khỏi tàu giữa cơn bão.
 
-Mỗi gia đình là một bài toán dòng tiền riêng biệt. Nếu bạn cũng đang cân nhắc rà soát lại cấu trúc tài chính cho gia đình mình, cứ nhắn tin trao đổi cùng Vân nhé. Những góc nhìn độc lập luôn giúp ta sáng tỏ thêm nhiều điều.`,
+Mỗi gia đình là một bài toán dòng tiền riêng. Nếu bạn cũng đang cân nhắc rà soát lại cấu trúc tài chính cho gia đình, cứ nhắn Vân trao đổi nhé. Một góc nhìn độc lập thường giúp mình thấy rõ hơn.`,
     keyTakeaways: [
-      'Khoản lỗ trên giấy chỉ trở thành lỗ thật khi bạn hoảng loạn bán tháo và bỏ lỡ chu kỳ phục hồi của thị trường.',
-      'Kỷ luật tích lũy định kỳ và ủy thác quỹ chuyên nghiệp quan trọng hơn nỗ lực đoán đỉnh, đoán đáy ngắn hạn.',
-      'Tách bạch dòng tiền: ngăn ngắn hạn giữ an toàn thanh khoản, ngăn dài hạn kiên nhẫn chờ lãi kép vượt giông bão.',
+      'Lỗ trên giấy chỉ thành lỗ thật khi bạn bán tháo trong hoảng loạn và bỏ lỡ đợt phục hồi của thị trường.',
+      'Tích lũy định kỳ có kỷ luật và ủy thác cho quỹ chuyên nghiệp quan trọng hơn việc đoán đỉnh, đoán đáy ngắn hạn.',
+      'Tách dòng tiền thành hai ngăn: ngăn ngắn hạn giữ an toàn thanh khoản, ngăn dài hạn kiên nhẫn chờ lãi kép.',
     ],
   },
   {
@@ -417,50 +417,50 @@ Mỗi gia đình là một bài toán dòng tiền riêng biệt. Nếu bạn c�
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/VanPhong_ChiVanCung5NuQuanLy_SanhVomTron.jpg',
-    imageCaption: 'Chị Khánh Vân ân cần hướng dẫn đội ngũ quản lý về quy trình thẩm định và giải quyết quyền lợi bồi thường cho khách hàng.',
-    title: '17 Triệu Và 171 Triệu: Câu Chuyện Bồi Thường Hy Hữu Từ Một Chiếc Xương Cá',
+    imageCaption: 'Chị Khánh Vân hướng dẫn đội ngũ quản lý quy trình thẩm định và giải quyết quyền lợi bồi thường cho khách hàng.',
+    title: '17 triệu và 171 triệu: ca bồi thường hy hữu từ một chiếc xương cá',
     excerpt:
-      'Nuốt phải xương cá làm thủng ruột non phải mổ cấp cứu. Viện phí 17 triệu được chi trả, nhưng điều khoản tai nạn bất ngờ kích hoạt thêm 150 triệu tiền mặt. Tổng chi trả vượt 171 triệu đồng. Định nghĩa “tai nạn” trong hợp đồng rộng hơn nhiều người vẫn nghĩ.',
-    content: `*17 triệu và 171 triệu. Hai con số chênh nhau hơn mười lần, và cả hai đều đến từ một chiếc xương cá trong bữa cơm gia đình thường nhật.*
+      'Nuốt phải xương cá làm thủng ruột non, phải mổ cấp cứu. Viện phí 17 triệu được chi trả, và điều khoản tai nạn bất ngờ chi thêm 150 triệu tiền mặt. Tổng chi trả vượt 171 triệu đồng. Định nghĩa “tai nạn” trong hợp đồng rộng hơn nhiều người vẫn nghĩ.',
+    content: `*17 triệu và 171 triệu. Hai con số chênh nhau hơn mười lần, và cả hai đều đến từ một chiếc xương cá trong bữa cơm gia đình.*
 
-## Ca Bồi Thường Hy Hữu Từ Bàn Ăn
+## Ca bồi thường bắt đầu từ bàn ăn
 
-Đây là ca bồi thường thực tế vừa được giải quyết tại Manulife mà Vân trực tiếp theo dõi. Khách hàng tham gia hợp đồng từ năm 2022. Trong một bữa cơm gia đình, người này chẳng may nuốt phải một chiếc xương cá. Chiếc xương trôi xuống làm thủng ruột non, khiến bệnh nhân phải nhập viện phẫu thuật khẩn cấp.
+Đây là ca bồi thường thực tế vừa được giải quyết tại Manulife mà Vân trực tiếp theo dõi. Khách hàng tham gia hợp đồng từ năm 2022. Trong một bữa cơm gia đình, người này chẳng may nuốt phải xương cá. Chiếc xương làm thủng ruột non, bệnh nhân phải nhập viện mổ khẩn cấp.
 
-Phần viện phí phẫu thuật khoảng **17 triệu đồng**, đi kèm các khoản hỗ trợ chi phí y tế, được bảo lãnh và thanh toán đầy đủ theo quyền lợi chăm sóc sức khỏe. Nhưng điều khiến Vân muốn chia sẻ câu chuyện này nằm ở phần quyền lợi thứ hai.
+Phần viện phí phẫu thuật khoảng **17 triệu đồng**, cùng các khoản hỗ trợ chi phí y tế, được bảo lãnh và thanh toán đầy đủ theo quyền lợi chăm sóc sức khỏe. Nhưng điều Vân muốn kể nằm ở quyền lợi thứ hai.
 
-Biến cố hóc dị vật gây tổn thương nội tạng nghiêm trọng này được xác định là sự kiện tai nạn khách quan, ngoài ý muốn. Do đó, hợp đồng lập tức kích hoạt điều khoản **Phẫu thuật nội tạng do tai nạn**, chi trả thêm một khoản tiền mặt lên tới **150 triệu đồng** chuyển thẳng vào tài khoản của khách hàng. Tổng số tiền chi trả thực tế vượt mốc **171 triệu đồng**.
+Việc hóc dị vật gây tổn thương nội tạng nghiêm trọng này được xác định là tai nạn khách quan, ngoài ý muốn. Vì vậy hợp đồng kích hoạt điều khoản **Phẫu thuật nội tạng do tai nạn**, chi trả thêm một khoản tiền mặt lên tới **150 triệu đồng** chuyển thẳng vào tài khoản khách hàng. Tổng số tiền chi trả thực tế vượt mốc **171 triệu đồng**.
 
-## Hiểu Lầm Phổ Biến Về Khái Niệm "Tai Nạn"
+## Hiểu lầm hay gặp về chữ "tai nạn"
 
-Hiểu lầm phổ biến nhất mà Vân thường gặp là nhiều người mặc định "tai nạn" chỉ là va quẹt xe cộ hay trượt ngã ngoài đường.
+Hiểu lầm Vân hay gặp nhất là nhiều người nghĩ "tai nạn" chỉ là va quẹt xe cộ hay trượt ngã ngoài đường.
 
-Trong quy tắc và điều khoản pháp lý của hợp đồng bảo hiểm, tai nạn được định nghĩa chặt chẽ và rộng hơn rất nhiều. **Đó là sự kiện bất ngờ, không lường trước được, do nguyên nhân bên ngoài tác động trực tiếp lên cơ thể và gây ra thương tổn.**
+Trong điều khoản pháp lý của hợp đồng bảo hiểm, tai nạn được định nghĩa chặt chẽ và rộng hơn nhiều. **Đó là sự kiện bất ngờ, không lường trước được, do nguyên nhân bên ngoài tác động trực tiếp lên cơ thể và gây ra thương tổn.**
 
-Một chiếc xương cá hay dị vật vô tình hóc phải trong bữa ăn hoàn toàn thỏa mãn đầy đủ các yếu tố của định nghĩa pháp lý này.
+Một chiếc xương cá hay dị vật vô tình hóc phải trong bữa ăn thỏa mãn đầy đủ các yếu tố của định nghĩa này.
 
-## Phân Biệt Hai Khoản Tiền Trong Một Ca Chi Trả
+## Hai khoản tiền khác nhau trong một ca chi trả
 
-Cần phân biệt rất rõ bản chất của hai khoản tiền trong trường hợp này để thấy rõ giá trị của một hợp đồng được thiết kế bài bản:
+Cần phân biệt rõ hai khoản tiền trong trường hợp này:
 
-- **Khoản 17 triệu đồng:** Là khoản thanh toán chi phí y tế thực tế phát sinh tại bệnh viện (nằm viện, phẫu thuật, thuốc men).
-- **Khoản 150 triệu đồng:** Là quyền lợi bồi thường khoán tiền mặt theo danh mục phẫu thuật do tai nạn, chi trả đúng theo hạn mức cam kết trong hợp đồng, hoàn toàn độc lập với hóa đơn viện phí.
+- **Khoản 17 triệu đồng:** Là chi phí y tế thực tế phát sinh tại bệnh viện (nằm viện, phẫu thuật, thuốc men).
+- **Khoản 150 triệu đồng:** Là quyền lợi bồi thường khoán tiền mặt theo danh mục phẫu thuật do tai nạn, chi trả đúng theo hạn mức cam kết trong hợp đồng, độc lập với hóa đơn viện phí.
 
-Khoản tiền mặt 150 triệu này đóng vai trò như một nguồn bù đắp thu nhập quý giá, giúp người bệnh và gia đình có thêm nguồn lực để yên tâm nghỉ ngơi, tĩnh dưỡng và phục hồi thể trạng mà không phải lo nghĩ về gánh nặng tài chính.
+Khoản tiền mặt 150 triệu này bù đắp thu nhập, giúp người bệnh và gia đình có thêm nguồn lực để nghỉ ngơi, tĩnh dưỡng và hồi phục mà không phải lo gánh nặng tài chính.
 
-## Ba Việc Nhỏ Giúp Bảo Vệ Quyền Lợi Của Chính Bạn
+## Ba việc nhỏ để giữ quyền lợi của chính bạn
 
-Từ ca bồi thường thực tế này, Vân có ba gợi ý thiết thực mà mọi gia đình đều nên thực hiện ngay:
+Từ ca bồi thường này, Vân có ba gợi ý mà gia đình nào cũng nên làm ngay:
 
-- **Một là mở hợp đồng đọc kỹ phần định nghĩa "tai nạn":** Đừng tự đoán theo cảm tính thông thường mà hãy căn cứ trên định nghĩa pháp lý chính thức.
-- **Hai là kiểm tra bảng tỷ lệ thương tật và danh mục phẫu thuật:** Để nắm rõ từng tình huống tổn thương cụ thể sẽ tương ứng với quyền lợi chi trả bao nhiêu tiền mặt.
-- **Ba là luôn nộp hồ sơ đầy đủ khi có biến cố y tế:** Hãy để bộ phận thẩm định đối chiếu theo điều khoản hợp đồng và hồ sơ bệnh án, thay vì tự tước bỏ quyền lợi của mình vì nghĩ "chắc chuyện này không được chi trả".
+- **Một là đọc kỹ phần định nghĩa "tai nạn" trong hợp đồng:** Đừng đoán theo cảm tính, hãy căn cứ vào định nghĩa pháp lý chính thức.
+- **Hai là kiểm tra bảng tỷ lệ thương tật và danh mục phẫu thuật:** Để biết từng tình huống tổn thương cụ thể tương ứng với bao nhiêu tiền mặt.
+- **Ba là luôn nộp hồ sơ đầy đủ khi có biến cố y tế:** Để bộ phận thẩm định đối chiếu theo điều khoản và hồ sơ bệnh án, đừng tự bỏ quyền lợi của mình vì nghĩ "chắc chuyện này không được chi trả".
 
-Bữa cơm gia đình vẫn cứ ngon và ấm cúng như thế, chẳng ai ngồi vào mâm mà phải bận tâm đến chiếc xương cá. Vân chỉ mong mỗi người đều hiểu thật rõ hợp đồng của mình, để lỡ khi có biến cố bất ngờ xảy đến, điều duy nhất gia đình cần bận tâm là nhanh chóng bình phục sức khỏe.`,
+Bữa cơm gia đình vẫn ngon như cũ, không ai ngồi vào mâm mà phải nghĩ đến chiếc xương cá. Vân chỉ mong mỗi người hiểu rõ hợp đồng của mình, để lỡ có biến cố bất ngờ, gia đình chỉ cần lo nhanh bình phục.`,
     keyTakeaways: [
-      'Định nghĩa tai nạn trong bảo hiểm bao gồm mọi biến cố bất ngờ từ bên ngoài gây thương tổn, không chỉ giới hạn ở giao thông.',
-      'Phân biệt rõ chi trả viện phí thực tế và quyền lợi tiền mặt khoán theo danh mục phẫu thuật tai nạn để tối ưu quyền lợi.',
-      'Khi có biến cố y tế, luôn chủ động nộp hồ sơ đầy đủ để thẩm định chuyên môn xét duyệt, tránh tự phán đoán làm mất quyền lợi.',
+      'Định nghĩa tai nạn trong bảo hiểm gồm mọi biến cố bất ngờ từ bên ngoài gây thương tổn, không chỉ tai nạn giao thông.',
+      'Cần phân biệt chi trả viện phí thực tế với quyền lợi tiền mặt khoán theo danh mục phẫu thuật tai nạn để dùng đủ quyền lợi.',
+      'Khi có biến cố y tế, nên nộp hồ sơ đầy đủ để bộ phận thẩm định xét, đừng tự đoán rồi bỏ mất quyền lợi.',
     ],
   },
   {
@@ -472,12 +472,12 @@ Bữa cơm gia đình vẫn cứ ngon và ấm cúng như thế, chẳng ai ng�
     featured: false,
     image: '/images/VanPhong_NhomQuanLy_TraoDoiCongViecBenTablet.jpg',
     imageCaption: 'Phân tích cơ cấu dòng tiền, bài toán thanh khoản và rà soát hợp đồng bảo vệ cùng các chuyên gia quản trị gia sản.',
-    title: 'Tiền Gửi Sinh Lời Ít Đi, Nhưng Nhiều Gia Đình Lại Bất An Nhiều Hơn',
+    title: 'Tiền gửi sinh lời ít đi, nhưng nhiều gia đình lại bất an hơn',
     excerpt:
-      'Lãi suất tiết kiệm càng thấp, người ta càng sốt ruột tìm nơi sinh lời cao hơn. Nhưng nghịch lý là càng sốt ruột kiếm lời, ta càng dễ tháo bỏ chính thứ giữ mình đứng vững. Khoản tiết kiệm không chỉ để sinh lời, nó là lớp đệm sống còn trước biến cố.',
-    content: `*Lãi suất tiết kiệm càng thấp, người ta càng muốn rút tiền ra đi tìm nơi sinh lời cao hơn. Nghịch lý là càng sốt ruột kiếm lời, ta càng dễ tháo bỏ chính thứ giữ mình đứng vững.*
+      'Lãi suất tiết kiệm càng thấp, người ta càng sốt ruột tìm nơi sinh lời cao hơn. Nghịch lý là càng sốt ruột kiếm lời, ta càng dễ bỏ đi chính thứ giữ mình đứng vững. Khoản tiết kiệm không chỉ để sinh lời, nó còn là lớp đệm trước biến cố.',
+    content: `*Lãi suất tiết kiệm càng thấp, người ta càng muốn rút tiền đi tìm nơi sinh lời cao hơn. Nghịch lý là càng sốt ruột kiếm lời, ta càng dễ bỏ đi chính thứ giữ mình đứng vững.*
 
-## Nghịch Lý Lãi Suất Giảm Và Cơn Sốt Ruột Tìm Kiếm Lợi Nhuận
+## Lãi suất giảm và cơn sốt ruột tìm lợi nhuận
 
 Việc 46/46 ngân hàng đồng loạt hạ lãi suất huy động chỉ là cái cớ để thấy rõ tâm lý đó. Mặt bằng lãi suất xuống, và nhiều nhà bắt đầu dồn gần hết khoản tích lũy sang những kênh kỳ vọng cao hơn.
 
@@ -485,33 +485,33 @@ Vân nhìn chuyện này ở một góc khác.
 
 Con số lãi suất là con số bình quân, dễ khiến ta thấy mình đang "ổn". Chúng ta theo dõi rất kỹ mức chênh lệch sinh lời vài phần trăm, nhưng hiếm khi tự hỏi: nếu ngày mai có biến cố sức khỏe lớn, mình phải bán tài sản nào, vào lúc nào, với giá nào?
 
-## Tiết Kiệm Không Chỉ Để Sinh Lời, Đó Là "Lớp Đệm" Sống Còn
+## Tiết kiệm là lớp đệm, không chỉ để sinh lời
 
 Khoản tiết kiệm nằm đó không chỉ để sinh lời. Nó là lớp đệm. Khi lớp đệm bị đem đi đầu tư hết, tài sản trông thì nhiều nhưng thực ra rất bấp bênh, vì đang kẹt ở những nơi không thể rút ra đúng lúc, đúng giá. Một hóa đơn điều trị bệnh nặng không hẹn trước, cũng không chờ thị trường hồi phục.
 
-Từ những năm làm ngân hàng đến nay, Vân giữ một triết lý khá giản dị: biết đủ là đủ. Tài chính suy cho cùng là công cụ để tâm trí được an yên và tự do, không phải cuộc đua xem ai sinh lời cao hơn ai. Làm nghề tử tế, tích lũy bền bỉ, khó trước dễ sau. Với Vân, "khó trước" là chịu trích một phần nhỏ để dựng hàng rào bảo vệ trước, rồi mới thong thả tính chuyện tăng trưởng.
+Từ những năm làm ngân hàng đến nay, Vân giữ một nguyên tắc khá giản dị: biết đủ là đủ. Tài chính là công cụ để tâm trí được yên và tự do, không phải cuộc đua xem ai sinh lời cao hơn ai. Làm nghề tử tế, tích lũy bền bỉ, khó trước dễ sau. Với Vân, "khó trước" là chịu trích một phần nhỏ để dựng hàng rào bảo vệ trước, rồi mới thong thả tính chuyện tăng trưởng.
 
-## Bản Chất Quỹ Dự Phòng Y Tế: Khóa Chặt Rủi Ro Bằng Tỷ Trọng Nhỏ
+## Quỹ dự phòng y tế: giữ rủi ro bằng một tỷ trọng nhỏ
 
-Bản chất của một quỹ dự phòng tài chính y tế rất rõ ràng. Mình đóng một khoản định kỳ nhỏ so với thu nhập, để đổi lấy quyền nhận về hàng tỷ đồng ngay khi rủi ro lớn xảy ra. Khoản này không cần sinh lời. Nhiệm vụ duy nhất của nó là giữ nguyên vẹn khối tài sản gia đình đã mất nhiều năm xây dựng, không bị bào mòn bởi những hóa đơn đột ngột.
+Quỹ dự phòng tài chính y tế có bản chất khá rõ. Mình đóng định kỳ một khoản nhỏ so với thu nhập, để đổi lấy quyền nhận về hàng tỷ đồng ngay khi rủi ro lớn xảy ra. Khoản này không cần sinh lời. Nhiệm vụ duy nhất của nó là giữ nguyên khối tài sản gia đình đã mất nhiều năm xây dựng, không bị bào mòn bởi những hóa đơn đột ngột.
 
-Chỉ cần một tỷ trọng rất nhỏ. Không phải giữ khư khư tiền mặt, cũng không phải tất tay. Phần còn lại cứ để đi làm việc của nó, với tâm thế nhẹ nhõm hơn.
+Chỉ cần một tỷ trọng rất nhỏ. Không cần giữ khư khư tiền mặt, cũng không cần tất tay. Phần còn lại cứ để đi làm việc của nó, với tâm thế nhẹ nhõm hơn.
 
-## "Khám Sức Khỏe" Cho Hợp Đồng Bảo Vệ Cũ
+## Rà lại hợp đồng bảo vệ cũ
 
-Nếu trong nhà đã có hợp đồng bảo vệ từ vài năm trước, đây là lúc hợp lý để mở ra xem lại:
+Nếu trong nhà đã có hợp đồng bảo vệ từ vài năm trước, đây là lúc nên mở ra xem lại:
 
 - Mức bảo vệ hiện tại còn theo kịp chi phí y tế ngày càng đắt đỏ không?
-- Người trụ cột tạo ra dòng tiền chính đã được che chắn đủ đầy chưa?
-- Các điều khoản bồi thường và bảo lãnh viện phí có đáp ứng nhu cầu thực tế của gia đình?
+- Người trụ cột tạo ra dòng tiền chính đã được bảo vệ đủ chưa?
+- Các điều khoản bồi thường và bảo lãnh viện phí có đáp ứng nhu cầu thực tế của gia đình không?
 
-Kiểm tra sức khỏe cho hợp đồng cũ cũng quan trọng không kém việc kiểm tra sức khỏe cho chính bản thân mình.
+Rà lại hợp đồng cũ cũng quan trọng không kém đi khám sức khỏe cho chính mình.
 
-Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông ngày càng hấp dẫn, bạn xác định phần "đủ" của mình ở đâu, và bằng cách nào? Vân rất muốn lắng nghe góc nhìn của mọi người ở phần bình luận.`,
+Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông ngày càng hấp dẫn, bạn xác định phần "đủ" của mình ở đâu, và bằng cách nào? Vân rất muốn nghe góc nhìn của mọi người ở phần bình luận.`,
     keyTakeaways: [
-      'Tiết kiệm không chỉ để sinh lời mà là “lớp đệm thanh khoản” sống còn bảo vệ gia đình trước các biến cố y tế bất ngờ.',
-      'Bản chất quỹ dự phòng y tế là dùng một tỷ trọng định kỳ nhỏ để khóa chặt rủi ro, giữ nguyên vẹn khối tài sản tích lũy qua nhiều năm.',
-      'Chủ động “khám sức khỏe hợp đồng bảo vệ cũ” định kỳ để đảm bảo mức bảo vệ người trụ cột luôn bắt kịp chi phí y tế thực tế.',
+      'Tiết kiệm không chỉ để sinh lời mà còn là “lớp đệm thanh khoản” bảo vệ gia đình trước các biến cố y tế bất ngờ.',
+      'Quỹ dự phòng y tế dùng một tỷ trọng định kỳ nhỏ để giữ rủi ro, giúp khối tài sản tích lũy qua nhiều năm không bị bào mòn.',
+      'Nên định kỳ “khám sức khỏe” cho hợp đồng bảo vệ cũ để mức bảo vệ người trụ cột theo kịp chi phí y tế thực tế.',
     ],
   },
   {
@@ -522,45 +522,45 @@ Còn gia đình bạn, khi lãi suất xuống và các kênh sinh lời trông 
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/VanPhong_NhomQuanLy_VoTayTanThuongBenCuaSo.jpg',
-    imageCaption: 'Khi thăng tiến từ công việc thị trường lên vị trí quản lý văn phòng, đừng quên rà soát và cập nhật lại nhóm nghề nghiệp trên hợp đồng bảo hiểm.',
-    title: 'Hợp Đồng Bảo Hiểm Cũng Cần “Update CV” Như Sự Nghiệp Của Bạn',
+    imageCaption: 'Khi thăng tiến từ công việc thị trường lên quản lý văn phòng, nên rà soát và cập nhật nhóm nghề nghiệp trên hợp đồng bảo hiểm.',
+    title: 'Hợp đồng bảo hiểm cũng cần “update CV” như sự nghiệp của bạn',
     excerpt:
-      'Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân phát hiện ra bạn ấy đã chuyển từ công việc Sales thị trường sang làm quản lý vận hành tại văn phòng được gần ba năm, nhưng hợp đồng bảo hiểm vẫn “đóng băng” ở nhóm nghề nghiệp cũ với mức phí rủi ro cao hơn.',
-    content: `*Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân phát hiện ra một điều khá thú vị. Bạn ấy đã chuyển từ công việc Sales thị trường sang làm quản lý vận hành tại văn phòng được gần ba năm, nhưng hợp đồng bảo hiểm vẫn "đóng băng" ở nhóm nghề nghiệp cũ. Nghĩa là suốt từng ấy thời gian, bạn vẫn trả phí rủi ro như thể ngày nào cũng ngoài đường, trong khi thực tế phần lớn thời gian chỉ ngồi bàn giấy.*
+      'Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân thấy bạn ấy đã chuyển từ công việc Sales thị trường sang quản lý vận hành tại văn phòng gần ba năm, nhưng hợp đồng bảo hiểm vẫn “đóng băng” ở nhóm nghề nghiệp cũ với mức phí rủi ro cao hơn.',
+    content: `*Có lần ngồi soát lại hợp đồng giúp một người bạn cũ, Vân phát hiện một chuyện khá thú vị. Bạn ấy đã chuyển từ Sales thị trường sang làm quản lý vận hành tại văn phòng được gần ba năm, nhưng hợp đồng vẫn "đóng băng" ở nhóm nghề nghiệp cũ. Nghĩa là suốt ngần ấy thời gian, bạn vẫn trả phí rủi ro như thể ngày nào cũng ở ngoài đường, trong khi phần lớn thời gian chỉ ngồi bàn giấy.*
 
-## Khi Thông Tin Cũ Âm Thầm "Ăn" Vào Túi Tiền
+## Thông tin cũ âm thầm ăn vào túi tiền
 
-Nhiều người nghĩ hợp đồng bảo hiểm một khi đã ký là xong, cứ thế đóng phí đều đặn mỗi năm mà không cần nhìn lại. Nhưng ít ai để ý rằng một trong những yếu tố quyết định mức phí bảo hiểm tai nạn hàng năm chính là **nhóm nghề nghiệp** tại thời điểm tham gia.
+Nhiều người nghĩ hợp đồng bảo hiểm ký xong là xong, cứ thế đóng phí mỗi năm mà không nhìn lại. Nhưng một trong những yếu tố quyết định mức phí bảo hiểm tai nạn hằng năm chính là **nhóm nghề nghiệp** tại thời điểm tham gia.
 
-Công việc càng tiềm ẩn rủi ro di chuyển, va chạm, tai nạn lao động thì mức phí rủi ro càng cao. Ngược lại, công việc hành chính, ít di chuyển sẽ được xếp vào nhóm rủi ro thấp hơn, kéo theo phí bảo hiểm tai nạn cũng giảm tương ứng.
+Công việc càng nhiều rủi ro di chuyển, va chạm, tai nạn lao động thì phí rủi ro càng cao. Công việc hành chính, ít di chuyển được xếp vào nhóm rủi ro thấp hơn, nên phí bảo hiểm tai nạn cũng giảm theo.
 
-Vấn đề nằm ở chỗ công ty bảo hiểm không tự động biết bạn đã đổi việc. Nếu bạn không chủ động thông báo, hệ thống vẫn mặc định tính phí theo nghề nghiệp cũ, dù thực tế rủi ro của bạn đã thay đổi hoàn toàn.
+Vấn đề là công ty bảo hiểm không tự biết bạn đã đổi việc. Nếu bạn không chủ động thông báo, hệ thống vẫn tính phí theo nghề nghiệp cũ, dù rủi ro thực tế của bạn đã khác.
 
-## Câu Chuyện Từ Nhóm Nghề 2 Sang Nhóm Nghề 1
+## Từ nhóm nghề 2 sang nhóm nghề 1
 
-Quay lại câu chuyện của người bạn kia. Ngày mới ký hợp đồng, bạn ấy làm công việc thường xuyên di chuyển ngoài hiện trường, kiểu công việc được xếp vào nhóm nghề nghiệp có mức độ rủi ro cao hơn, tương tự như một phóng viên hiện trường. Sau này chuyển hẳn sang vị trí quản lý vận hành tại văn phòng, công việc gần như chỉ xoay quanh bàn giấy, họp hành, báo cáo, giống tính chất công việc của một biên tập viên.
+Quay lại chuyện người bạn kia. Ngày mới ký hợp đồng, bạn ấy làm công việc thường xuyên di chuyển ngoài hiện trường, loại công việc được xếp vào nhóm nghề nghiệp rủi ro cao hơn, tương tự một phóng viên hiện trường. Sau đó bạn chuyển hẳn sang quản lý vận hành tại văn phòng, công việc gần như chỉ xoay quanh bàn giấy, họp hành, báo cáo, giống tính chất công việc của một biên tập viên.
 
-Về bản chất, đây là sự dịch chuyển từ nhóm nghề nghiệp rủi ro cao hơn sang nhóm rủi ro thấp hơn. Và điều thú vị là chỉ cần một thao tác đơn giản là gửi văn bản thông báo cập nhật nghề nghiệp cho công ty bảo hiểm, mức phí bảo hiểm tai nạn đã được điều chỉnh giảm ngay, từ **730.000đ** xuống còn **568.000đ** mỗi năm.
+Về bản chất, đây là bước chuyển từ nhóm nghề rủi ro cao hơn sang nhóm rủi ro thấp hơn. Chỉ cần gửi văn bản thông báo cập nhật nghề nghiệp cho công ty bảo hiểm, phí bảo hiểm tai nạn đã được điều chỉnh giảm ngay, từ **730.000đ** xuống còn **568.000đ** mỗi năm.
 
-Phần chênh lệch ấy không mất đi đâu cả. Nó được cộng thẳng vào tài khoản tích lũy trong hợp đồng, tiếp tục sinh lời theo thời gian. Quyền lợi bảo vệ không hề thay đổi, chỉ có chi phí rủi ro được tính đúng với thực tế công việc hiện tại.
+Phần chênh lệch ấy không mất đi đâu. Nó được cộng thẳng vào tài khoản tích lũy trong hợp đồng và tiếp tục sinh lời theo thời gian. Quyền lợi bảo vệ không đổi, chỉ có chi phí rủi ro được tính đúng với công việc hiện tại.
 
-## Tại Sao Việc Này Lại Dễ Bị Bỏ Quên?
+## Vì sao chuyện này dễ bị bỏ quên
 
-Phần lớn mọi người chỉ nhớ đến hợp đồng bảo hiểm vào lúc ký kết, rồi sau đó gần như "quên" sự tồn tại của nó cho đến khi cần giải quyết quyền lợi. Trong khi đó, sự nghiệp của mỗi người lại liên tục thay đổi: từ nhân viên kinh doanh lên quản lý, từ công việc ngoài hiện trường chuyển về văn phòng, từ ngành này sang ngành khác.
+Phần lớn mọi người chỉ nhớ hợp đồng bảo hiểm lúc ký, rồi gần như "quên" nó cho đến khi cần giải quyết quyền lợi. Trong khi đó, sự nghiệp thì liên tục thay đổi: từ nhân viên kinh doanh lên quản lý, từ công việc ngoài hiện trường về văn phòng, từ ngành này sang ngành khác.
 
-Hợp đồng bảo hiểm, suy cho cùng, giống như một bản hồ sơ cá nhân được "đóng băng" tại thời điểm ký. Nếu không chủ động cập nhật, nó sẽ không phản ánh đúng con người hiện tại của bạn, và trong trường hợp này, phần thiệt thòi lại thuộc về chính người đóng phí.
+Hợp đồng bảo hiểm giống một bản hồ sơ cá nhân bị "đóng băng" tại thời điểm ký. Nếu không chủ động cập nhật, nó không phản ánh đúng con người hiện tại của bạn, và phần thiệt thuộc về chính người đóng phí.
 
-Điều đáng nói là thủ tục cập nhật thường không phức tạp. Chỉ cần xác nhận công việc hiện tại qua giấy tờ đơn giản như hợp đồng lao động, quyết định bổ nhiệm, hoặc xác nhận từ phía công ty. Công ty bảo hiểm sẽ xem xét và điều chỉnh lại mức phí tương ứng với nhóm nghề nghiệp mới.
+Thủ tục cập nhật thường không phức tạp. Chỉ cần xác nhận công việc hiện tại qua giấy tờ đơn giản như hợp đồng lao động, quyết định bổ nhiệm hoặc xác nhận từ công ty. Công ty bảo hiểm sẽ xem xét và điều chỉnh phí theo nhóm nghề nghiệp mới.
 
-## Một Thói Quen Nhỏ, Một Khoản Tối Ưu Không Nhỏ
+## Một thói quen nhỏ, một khoản tiết kiệm không nhỏ
 
-Nhìn rộng ra, đây không chỉ là chuyện của riêng người bạn kia. Rất nhiều người làm trong các ngành có tính chất công việc thay đổi theo thời gian (từ bán hàng thị trường lên quản lý khu vực, từ kỹ thuật hiện trường chuyển sang đào tạo nội bộ, từ phóng viên sang biên tập) đều có khả năng đang đóng phí rủi ro cao hơn mức cần thiết mà không hề hay biết.
+Chuyện này không chỉ của riêng người bạn kia. Nhiều người làm ở những ngành có tính chất công việc đổi theo thời gian (từ bán hàng thị trường lên quản lý khu vực, từ kỹ thuật hiện trường sang đào tạo nội bộ, từ phóng viên sang biên tập) có thể đang đóng phí rủi ro cao hơn mức cần thiết mà không hay.
 
-Khi sự nghiệp thay đổi theo hướng tích cực hơn, ít rủi ro hơn, đó cũng là lúc nên dành vài phút nhìn lại hợp đồng bảo hiểm của mình, giống như cách người ta cập nhật lại CV mỗi khi có một vị trí mới, một kỹ năng mới. Khác biệt là CV cập nhật để tìm kiếm cơ hội, còn hợp đồng bảo hiểm cập nhật để không bỏ lỡ quyền lợi tài chính đang nằm sẵn trong tay.`,
+Khi sự nghiệp đổi theo hướng ít rủi ro hơn, đó là lúc nên dành vài phút nhìn lại hợp đồng bảo hiểm, giống như cập nhật CV mỗi khi có vị trí hay kỹ năng mới. Khác ở chỗ CV cập nhật để tìm cơ hội, còn hợp đồng bảo hiểm cập nhật để không bỏ lỡ quyền lợi tài chính đang nằm sẵn trong tay.`,
     keyTakeaways: [
-      'Mức phí bảo hiểm tai nạn phụ thuộc vào nhóm nghề nghiệp tại thời điểm tham gia, không tự động điều chỉnh khi công việc thay đổi.',
-      'Khi chuyển từ công việc có mức độ rủi ro cao sang công việc văn phòng ít rủi ro hơn, chủ động thông báo cập nhật nghề nghiệp giúp giảm phí rủi ro và tăng phần tích lũy mà vẫn giữ nguyên quyền lợi.',
-      'Hãy xem việc rà soát lại hợp đồng bảo hiểm mỗi khi thăng tiến hoặc đổi vị trí công việc là một thói quen tài chính cần thiết, tương tự như việc cập nhật CV.',
+      'Phí bảo hiểm tai nạn phụ thuộc vào nhóm nghề nghiệp lúc tham gia và không tự điều chỉnh khi công việc thay đổi.',
+      'Khi chuyển từ công việc nhiều rủi ro sang công việc văn phòng ít rủi ro, chủ động báo cập nhật nghề nghiệp giúp giảm phí rủi ro và tăng phần tích lũy mà vẫn giữ nguyên quyền lợi.',
+      'Nên rà lại hợp đồng bảo hiểm mỗi khi thăng tiến hoặc đổi vị trí, giống như cập nhật CV.',
     ],
   },
   {
@@ -571,44 +571,44 @@ Khi sự nghiệp thay đổi theo hướng tích cực hơn, ít rủi ro hơn,
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/VanPhong_NhomQuanLy_BanHopDaiXanhLa.jpg',
-    imageCaption: 'Hoạch định cấu trúc tài sản cho gia đình, kết hợp hài hòa giữa tăng trưởng dài hạn và tầng phòng thủ chủ động.',
-    title: '500 Tấn Vàng Nằm Im Và Nỗi Sợ Vô Hình Của Tầng Lớp Trung Lưu',
+    imageCaption: 'Hoạch định cấu trúc tài sản cho gia đình, kết hợp tăng trưởng dài hạn với tầng phòng thủ chủ động.',
+    title: '500 tấn vàng nằm im và nỗi sợ vô hình của tầng lớp trung lưu',
     excerpt:
-      'Giữa nghị trường Quốc hội, một con số được xướng lên khiến không ít người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Đó là bức chân dung tâm lý của cả một thế hệ đang chọn cách “phòng thủ” trước khi dám “tấn công”.',
-    content: `*Giữa nghị trường Quốc hội, một con số được xướng lên khiến không ít người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Đó không phải là thống kê khô khan, mà là bức chân dung tâm lý của cả một thế hệ đang chọn cách "phòng thủ" trước khi dám "tấn công".*
+      'Tại Quốc hội, một con số khiến nhiều người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Con số ấy cho thấy nhiều gia đình đang chọn “phòng thủ” trước khi dám “tấn công”.',
+    content: `*Tại Quốc hội, một con số khiến nhiều người giật mình: 11,2 triệu tỷ đồng tiền gửi dân cư, cộng thêm 500 tấn vàng đang nằm trong dân, tương đương 12% GDP. Với Vân, con số này nói lên tâm lý của cả một thế hệ đang chọn "phòng thủ" trước khi dám "tấn công".*
 
-## Khi Tiền Có Sẵn Nhưng Không Ai Dám Tiêu
+## Tiền Có Sẵn Nhưng Không Ai Dám Tiêu
 
-Đại biểu Lê Hoàng Anh (đoàn Gia Lai) gọi đây là một nghịch lý: vốn không thiếu, chỉ thiếu đường dẫn. Trong khi ngân sách Nhà nước phải vay gần 1,28 triệu tỷ đồng cho năm 2027, trái phiếu Chính phủ mới đạt 43% kế hoạch phát hành, thì hàng chục triệu tỷ đồng của người dân vẫn nằm yên trong tài khoản tiết kiệm, và 500 tấn vàng vẫn được khóa kỹ trong két sắt.
+Đại biểu Lê Hoàng Anh (đoàn Gia Lai) gọi đây là một nghịch lý: vốn không thiếu, chỉ thiếu đường dẫn. Ngân sách Nhà nước phải vay gần 1,28 triệu tỷ đồng cho năm 2027, trái phiếu Chính phủ mới đạt 43% kế hoạch phát hành. Trong khi đó, hàng chục triệu tỷ đồng của người dân vẫn nằm yên trong tài khoản tiết kiệm, và 500 tấn vàng vẫn cất trong két sắt.
 
-Nhìn từ góc độ vĩ mô, đây là bài toán về cơ chế: thiếu công cụ tài chính đủ tin cậy để biến tiền nhàn rỗi thành vốn sản xuất. Nhưng nhìn từ góc độ một người từng ngồi ở bàn tư vấn tài sản cho hàng trăm khách hàng tại một ngân hàng nước ngoài, con số 11,2 triệu tỷ đồng còn kể một câu chuyện khác. Đó là biểu hiện của một nỗi sợ rất con người: sợ mất trắng, sợ biến động, sợ không kiểm soát được tương lai.
+Ở tầm vĩ mô, đây là bài toán cơ chế: thiếu công cụ tài chính đủ tin cậy để biến tiền nhàn rỗi thành vốn sản xuất. Nhưng Vân từng ngồi ở bàn tư vấn tài sản cho hàng trăm khách hàng tại một ngân hàng nước ngoài, và nhìn con số 11,2 triệu tỷ đồng, Vân thấy thêm một chuyện khác. Đó là nỗi sợ rất người: sợ mất trắng, sợ biến động, sợ không kiểm soát được tương lai.
 
-## Tiết Kiệm Không Phải Là Chiến Lược, Mà Là Phản Xạ
+## Tiết Kiệm Là Phản Xạ, Chưa Phải Chiến Lược
 
-Phần lớn người Việt lớn lên với niềm tin "có tiền mặt trong tay là an toàn nhất". Niềm tin ấy không sai, nhưng nó dừng lại ở mức phản xạ sinh tồn, chưa phải là một chiến lược tài chính. Giữ 500 tấn vàng không tạo ra dòng tiền. Để 11,2 triệu tỷ đồng nằm trong ngân hàng với lãi suất thực tế gần như hòa vốn sau lạm phát là cách con người chọn sự an toàn tức thời, đánh đổi bằng sự bào mòn giá trị tài sản trong dài hạn.
+Phần lớn người Việt lớn lên với niềm tin "có tiền mặt trong tay là an toàn nhất". Niềm tin ấy không sai, nhưng mới dừng ở phản xạ tự vệ, chưa thành chiến lược tài chính. Giữ 500 tấn vàng thì không tạo ra dòng tiền. Để 11,2 triệu tỷ đồng trong ngân hàng, với lãi suất thực tế gần như hòa vốn sau lạm phát, là chọn sự an toàn trước mắt và chấp nhận để giá trị tài sản mòn dần về lâu dài.
 
-Điều đáng nói là tâm lý phòng thủ cực đoan này không chỉ xuất hiện ở người ít tiền. Qua nhiều năm làm việc trong Khối Quản lý Tài sản, không hiếm trường hợp khách hàng có tài sản hàng chục tỷ đồng nhưng vẫn giữ nguyên tư duy "an toàn là giữ tiền mặt", bỏ lỡ hàng loạt cơ hội tăng trưởng vì không có một khung tư duy rõ ràng về việc nên giữ bao nhiêu, đầu tư bao nhiêu, và bảo vệ bằng cách nào.
+Tâm lý phòng thủ này không chỉ có ở người ít tiền. Qua nhiều năm làm trong Khối Quản lý Tài sản, Vân gặp không ít khách có tài sản hàng chục tỷ đồng mà vẫn nghĩ "an toàn là giữ tiền mặt". Họ bỏ lỡ nhiều cơ hội tăng trưởng vì chưa có khung rõ ràng: giữ bao nhiêu, đầu tư bao nhiêu, bảo vệ bằng cách nào.
 
 ## Giữ Tiền Khó Hơn Kiếm Tiền
 
-Một quan sát xuyên suốt tám năm làm việc với khách hàng có tài sản lớn là người giàu bền vững không bao giờ dồn toàn bộ tiền vào các kênh "tấn công" như bất động sản, cổ phiếu hay mở rộng kinh doanh. Họ luôn dành một phần tài sản vừa vặn nhưng chắc chắn để khóa chặt vào một **"tầng phòng thủ"**: bảo vệ sức khỏe, bảo vệ sinh mạng, và các quỹ hưu trí có kỷ luật.
+Tám năm làm việc với khách hàng có tài sản lớn, Vân thấy một điều lặp lại: người giàu bền không dồn hết tiền vào các kênh "tấn công" như bất động sản, cổ phiếu hay mở rộng kinh doanh. Họ luôn dành một phần vừa đủ cho **"tầng phòng thủ"**, gồm bảo vệ sức khỏe, bảo vệ sinh mạng và quỹ hưu trí có kỷ luật.
 
-Lý do rất thực tế. Biến cố không chờ ai chuẩn bị xong mới xảy ra. Một khách hàng từng chia sẻ rằng khoản bảo hiểm sức khỏe mà họ coi là "chi phí thừa" nhiều năm trước, hóa ra lại là thứ duy nhất giúp họ không phải bán tháo cổ phần công ty khi gặp biến cố y tế bất ngờ. Nếu không có tầng phòng thủ đó, toàn bộ phần tài sản "tấn công" vốn cần thời gian để sinh lời buộc phải cắt bán ở đúng thời điểm bất lợi nhất.
+Lý do khá thực tế. Biến cố không chờ ai chuẩn bị xong mới xảy ra. Có khách từng kể, khoản bảo hiểm sức khỏe mà họ coi là "chi phí thừa" nhiều năm trước lại là thứ duy nhất giúp họ không phải bán cổ phần công ty khi gặp biến cố y tế bất ngờ. Không có tầng phòng thủ đó, phần tài sản "tấn công" vốn cần thời gian để sinh lời sẽ buộc phải bán đúng lúc bất lợi nhất.
 
-Đây chính là điểm khác biệt giữa tích trữ và quản trị tài sản:
+Đây là chỗ khác nhau giữa tích trữ và quản trị tài sản:
 
-- **Tích trữ thụ động:** Co cụm tất cả vào một hình thái (tiền mặt, vàng) và hy vọng nó đủ sức chống chọi mọi tình huống.
-- **Quản trị tài sản chủ động:** Phân bổ rõ ràng một phần để tăng trưởng, một phần để phòng thủ, và một phần luôn sẵn sàng ứng phó khẩn cấp mà không cần đụng đến phần còn lại.
+- **Tích trữ thụ động:** Dồn tất cả vào một dạng (tiền mặt, vàng) và hy vọng nó đủ sức chống chọi mọi tình huống.
+- **Quản trị tài sản chủ động:** Chia rõ một phần để tăng trưởng, một phần để phòng thủ, và một phần luôn sẵn sàng cho tình huống khẩn cấp mà không phải đụng đến phần còn lại.
 
 ## Xây Móng Trước Khi Xây Lầu
 
-Câu chuyện 500 tấn vàng và 11,2 triệu tỷ đồng tiền gửi, suy cho cùng, không chỉ là vấn đề của nền kinh tế vĩ mô mà còn là tấm gương phản chiếu cách mỗi gia đình đang quản lý tài sản của chính mình. Trước khi nghĩ đến việc nhân đôi, nhân ba tài sản ở những kênh đầu tư nhiều sóng gió, có lẽ câu hỏi cần đặt ra trước tiên là: gia đình mình đã có một vành đai phòng thủ đủ vững để không bao giờ phải bán rẻ tài sản khi ốm đau hay khủng hoảng ập đến hay chưa?
+Chuyện 500 tấn vàng và 11,2 triệu tỷ đồng tiền gửi cũng phản chiếu cách mỗi gia đình đang quản lý tài sản của mình. Trước khi nghĩ đến chuyện nhân đôi, nhân ba tài sản ở những kênh nhiều sóng gió, câu hỏi nên đặt ra trước là: gia đình mình đã có đủ vành đai phòng thủ để không phải bán rẻ tài sản khi ốm đau hay khủng hoảng chưa?
 
-Dòng vốn quốc gia cần đường dẫn để chảy vào sản xuất. Nhưng trước hết, mỗi dòng tiền cá nhân cũng cần một kiến trúc rõ ràng, nơi phòng thủ và tấn công không mâu thuẫn, mà bổ trợ cho nhau. Đó là nền móng để bất kỳ ai, dù giữ vàng hay giữ cổ phiếu, cũng có thể yên tâm đi đường dài.`,
+Dòng vốn quốc gia cần đường dẫn để chảy vào sản xuất. Dòng tiền của mỗi nhà cũng cần một cấu trúc rõ ràng, nơi phòng thủ và tấn công bổ trợ cho nhau. Có nền móng đó, dù giữ vàng hay giữ cổ phiếu, mình cũng yên tâm đi đường dài.`,
     keyTakeaways: [
-      'Tiền mặt và vàng là lớp đệm an toàn, nhưng không phải là chiến lược tài sản toàn diện. Chúng cần được đặt trong một cấu trúc tổng thể có mục tiêu rõ ràng.',
-      'Một “tầng phòng thủ” chủ động (bảo vệ sức khỏe, sinh mạng, quỹ hưu trí kỷ luật) giúp tài sản đầu tư không bị bán tháo khi biến cố xảy ra.',
-      'Trước khi tìm kênh sinh lời nhanh, hãy đảm bảo gia đình đã có vành đai an toàn để không bao giờ phải đánh đổi tài sản tích lũy lấy một khoản chi phí khẩn cấp.',
+      'Tiền mặt và vàng là lớp đệm an toàn, nhưng chưa phải chiến lược tài sản đầy đủ. Chúng cần nằm trong một cấu trúc tổng thể có mục tiêu rõ ràng.',
+      'Một “tầng phòng thủ” chủ động (bảo vệ sức khỏe, sinh mạng, quỹ hưu trí có kỷ luật) giúp tài sản đầu tư không bị bán tháo khi có biến cố.',
+      'Trước khi tìm kênh sinh lời nhanh, hãy bảo đảm gia đình đã có vành đai an toàn để không phải bán tài sản tích lũy chỉ vì một khoản chi khẩn cấp.',
     ],
   },
   {
@@ -619,41 +619,41 @@ Dòng vốn quốc gia cần đường dẫn để chảy vào sản xuất. Nh�
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg',
-    imageCaption: 'Chị Khánh Vân chủ trì buổi làm việc chuyên sâu về cơ chế bảo vệ và chuyển giao gia sản.',
-    title: 'Khi Tài Sản Thừa Kế Trở Thành Vết Nứt Gia Đình: Bài Học Từ Một Cơ Chế Chuyển Giao Văn Minh',
+    imageCaption: 'Chị Khánh Vân chủ trì buổi làm việc về bảo vệ và chuyển giao gia sản.',
+    title: 'Khi Tài Sản Thừa Kế Gây Rạn Nứt Gia Đình: Bài Học Từ Các Vụ Tranh Chấp Ở Trung Quốc',
     excerpt:
-      'Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản. Đứng từ góc nhìn quản trị tài sản, câu chuyện này đặt ra một vấn đề lớn hơn: làm sao để gia sản được chuyển giao êm thấm giữa các thế hệ mà không đánh đổi bằng tình thân.',
-    content: `*Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản, loại tài sản khó phân chia và dễ phát sinh mâu thuẫn nhất. Đứng từ góc nhìn quản trị tài sản, câu chuyện này đặt ra một vấn đề lớn hơn: làm sao để gia sản được chuyển giao êm thấm giữa các thế hệ mà không đánh đổi bằng tình thân.*
+      'Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản. Nhìn từ góc độ quản trị tài sản, câu hỏi đặt ra là làm sao chuyển gia sản giữa các thế hệ êm thấm mà không đánh đổi tình thân.',
+    content: `*Tỷ lệ tranh chấp thừa kế tại Trung Quốc tăng gấp ba lần trong 5 năm, phần lớn xoay quanh bất động sản, loại tài sản khó chia và dễ gây mâu thuẫn nhất. Nhìn từ góc độ quản trị tài sản, câu hỏi đặt ra là làm sao chuyển gia sản giữa các thế hệ êm thấm mà không đánh đổi tình thân.*
 
-## Khi Tài Sản Vật Chất Trở Thành Nguồn Cơn Chia Rẽ
+## Khi Tài Sản Trở Thành Nguồn Cơn Chia Rẽ
 
-Số liệu từ Tòa án Nhân dân Trung cấp số 2 Bắc Kinh cho thấy một xu hướng đáng suy ngẫm. Tỷ lệ án phân chia tài sản của người cao tuổi tăng từ 4,4% năm 2021 lên 15,5% năm 2025, trong đó bất động sản chiếm đến 94,6% giá trị tài sản tranh chấp. Những con số này không đơn thuần phản ánh lòng tham, mà cho thấy một lỗ hổng mang tính cấu trúc, khi tài sản được tích lũy qua nhiều năm nhưng không có cơ chế chuyển giao rõ ràng ngay từ đầu.
+Số liệu từ Tòa án Nhân dân Trung cấp số 2 Bắc Kinh cho thấy một xu hướng đáng suy nghĩ. Tỷ lệ án phân chia tài sản của người cao tuổi tăng từ 4,4% năm 2021 lên 15,5% năm 2025, trong đó bất động sản chiếm đến 94,6% giá trị tài sản tranh chấp. Những con số này không chỉ nói về lòng tham. Chúng cho thấy một lỗ hổng về cấu trúc: tài sản tích lũy qua nhiều năm nhưng không có cơ chế chuyển giao rõ ràng ngay từ đầu.
 
-Những vụ việc được dẫn chứng đều có điểm chung. Hai anh em tranh giành ba tòa nhà vì không có văn bản nào ghi nhận tỷ lệ đóng góp tài chính. Bảy anh chị em kiện nhau vì cổ phần công ty hợp tác nông thôn, trong đó bốn người chị từng trực tiếp chăm sóc cha mẹ lại bị gạt ra ngoài chỉ vì đã lập gia đình riêng. Một người đàn ông 60 tuổi phải khởi kiện toàn bộ 12 người thân chỉ để bảo vệ quyền thừa kế căn nhà trị giá 700.000 USD. Tất cả đều xuất phát từ cùng một gốc. Tài sản tồn tại ở dạng "một cục" như nhà đất, cổ phần, tiền mặt mà không có cơ chế phân bổ minh bạch, nên dễ bị diễn giải theo nhiều hướng khi người để lại tài sản không còn.
+Các vụ việc được dẫn đều có điểm chung. Hai anh em tranh giành ba tòa nhà vì không có văn bản nào ghi tỷ lệ đóng góp tài chính. Bảy anh chị em kiện nhau vì cổ phần công ty hợp tác nông thôn, trong đó bốn người chị từng trực tiếp chăm sóc cha mẹ lại bị gạt ra ngoài chỉ vì đã lập gia đình riêng. Một người đàn ông 60 tuổi phải khởi kiện toàn bộ 12 người thân để bảo vệ quyền thừa kế căn nhà trị giá 700.000 USD. Tất cả đều có chung một gốc. Tài sản nằm ở dạng "một cục" như nhà đất, cổ phần, tiền mặt, không có cơ chế phân bổ minh bạch, nên khi người để lại tài sản không còn, mỗi người hiểu một kiểu.
 
-## Gốc Rễ Vấn Đề: Thiếu Một "Kế Hoạch Chuyển Giao" Minh Bạch
+## Gốc Rễ Là Thiếu Một Kế Hoạch Chuyển Giao Minh Bạch
 
-Trong ngành tài chính, ngân hàng, đây gọi là rủi ro chuyển giao thế hệ (generational transfer risk). Tài sản càng lớn, càng tập trung vào bất động sản hay cổ phần không thể chia nhỏ, thì rủi ro xung đột khi chuyển giao càng cao. Thực tế xét xử tại Trung Quốc cũng cho thấy điều này. Tòa án đang dần ưu tiên người trực tiếp chăm sóc thay vì chia theo huyết thống thuần túy, như vụ người em trai chăm chị gái bệnh tâm thần suốt 30 năm được hưởng 70% tài sản, trong khi người con ruột đứt liên lạc nhiều năm chỉ nhận 30%. Điều này cho thấy công lý đang cố gắng vá lại những lỗ hổng mà bản thân gia đình đã không chủ động thiết lập từ trước.
+Trong ngành ngân hàng và tài chính, đây gọi là rủi ro chuyển giao thế hệ (generational transfer risk). Tài sản càng lớn, càng tập trung vào bất động sản hay cổ phần khó chia nhỏ thì rủi ro xung đột càng cao. Thực tế xét xử tại Trung Quốc cũng cho thấy điều này. Tòa án đang dần ưu tiên người trực tiếp chăm sóc thay vì chia thuần theo huyết thống. Ví dụ, người em trai chăm chị gái bệnh tâm thần suốt 30 năm được hưởng 70% tài sản, còn người con ruột đứt liên lạc nhiều năm chỉ nhận 30%. Tòa đang phải vá những lỗ hổng mà gia đình không tự lấp từ trước.
 
-Vấn đề không nằm ở việc ai xứng đáng hơn ai, mà nằm ở việc gia đình thiếu một công cụ pháp lý và tài chính đủ linh hoạt để phân định ý chí của người để lại tài sản một cách rõ ràng, minh bạch và được bảo vệ ngay từ lúc còn sống. Đừng chờ đến khi mọi chuyện đã muộn và chỉ còn biết trông cậy vào tòa án.
+Vấn đề không nằm ở chuyện ai xứng đáng hơn ai. Vấn đề là gia đình thiếu một công cụ pháp lý và tài chính đủ linh hoạt để ý chí của người để lại tài sản được ghi rõ, minh bạch và được bảo vệ ngay từ lúc còn sống. Đừng chờ đến khi muộn rồi mới trông vào tòa án.
 
-## Bài Học Từ Cơ Chế Chuyển Giao Quyền Lợi Trong Hợp Đồng Tích Lũy Dài Hạn
+## Cơ Chế Chuyển Giao Quyền Lợi Trong Hợp Đồng Tích Lũy Dài Hạn
 
-Trong hoạch định tài chính gia đình hiện đại, có một hướng tiếp cận đáng tham khảo. Thay vì dồn toàn bộ tài sản vào bất động sản hay tiền mặt vốn dễ bị phân mảnh, tranh chấp hoặc mất giá trị theo thời gian, gia đình có thể dùng các hợp đồng tích lũy tài sản dài hạn (bảo vệ đến 99 tuổi) để thiết lập sẵn cơ chế chuyển giao quyền lợi giữa các thế hệ ngay từ ban đầu.
+Trong hoạch định tài chính gia đình, có một hướng đáng tham khảo. Thay vì dồn hết tài sản vào bất động sản hay tiền mặt, vốn dễ bị chia nhỏ, tranh chấp hoặc mất giá theo thời gian, gia đình có thể dùng hợp đồng tích lũy tài sản dài hạn (bảo vệ đến 99 tuổi) để lập sẵn cơ chế chuyển giao quyền lợi giữa các thế hệ.
 
-Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi con trưởng thành, quyền sở hữu hợp đồng được chuyển giao một cách hợp pháp, có ghi nhận rõ ràng. Tương tự, ông bà có thể mua cho con, sau đó thay đổi người được bảo hiểm sang cháu khi cần. Toàn bộ quá trình chuyển giao này diễn ra trong khuôn khổ hợp đồng đã ký kết, không phải tranh luận hay thỏa thuận lại từ đầu như với bất động sản hay cổ phần. Điều quan trọng hơn cả là dòng vốn tích lũy không bị gián đoạn, lãi kép tiếp tục sinh lời xuyên suốt qua các lần chuyển giao. Nó giống như một dòng chảy tài chính được nối liền từ đời này sang đời khác, thay vì bị chia cắt, rút ra giữa chừng mỗi khi gia đình có biến cố.
+Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi con trưởng thành, quyền sở hữu hợp đồng được chuyển giao hợp pháp, có ghi nhận rõ ràng. Tương tự, ông bà có thể mua cho con, sau đó đổi người được bảo hiểm sang cháu khi cần. Cả quá trình nằm trong khuôn khổ hợp đồng đã ký, không phải tranh luận hay thỏa thuận lại từ đầu như với nhà đất hay cổ phần. Quan trọng hơn, dòng vốn tích lũy không bị gián đoạn, lãi kép tiếp tục sinh lời qua các lần chuyển giao, thay vì bị rút ra giữa chừng mỗi khi gia đình có biến cố.
 
-Đây chính là điểm khác biệt căn bản so với việc để lại một căn nhà hay một khoản tiền mặt. Tài sản được "lập trình" sẵn đường đi, thay vì để ngỏ cho sự diễn giải và tranh cãi của người ở lại.
+Đây là khác biệt lớn so với việc để lại một căn nhà hay một khoản tiền mặt. Đường đi của tài sản được định sẵn, không để người ở lại tự diễn giải và tranh cãi.
 
 ## Đúc Kết Thực Tế
 
-- Minh bạch hóa đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để lại cho tòa án phán xét sau này.
-- Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, nhằm giảm áp lực tranh chấp khi tài sản khó chia nhỏ.
-- Chủ động thiết lập lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được tiếp nối liên tục mà không đứt gãy lãi kép hay tình thân.`,
+- Ghi rõ đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để tòa án phán xét sau này.
+- Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, để giảm tranh chấp khi tài sản khó chia nhỏ.
+- Lập sớm lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được nối tiếp mà lãi kép và tình thân không bị đứt.`,
     keyTakeaways: [
-      'Minh bạch hóa đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để lại cho tòa án phán xét sau này.',
-      'Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, nhằm giảm áp lực tranh chấp khi tài sản khó chia nhỏ.',
-      'Chủ động thiết lập lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được tiếp nối liên tục mà không đứt gãy lãi kép hay tình thân.',
+      'Ghi rõ đóng góp tài chính và công sức phụng dưỡng bằng văn bản ngay từ khi còn sống, thay vì để tòa án phán xét sau này.',
+      'Ưu tiên các tài sản tài chính có cơ chế chuyển giao rõ ràng (hợp đồng tích lũy, bảo hiểm nhân thọ dài hạn) song song với bất động sản, để giảm tranh chấp khi tài sản khó chia nhỏ.',
+      'Lập sớm lộ trình chuyển giao quyền lợi từ bố mẹ sang con, từ ông bà sang cháu khi còn minh mẫn, để gia sản được nối tiếp mà lãi kép và tình thân không bị đứt.',
     ],
   },
   {
@@ -664,52 +664,52 @@ Cụ thể, cha mẹ có thể đứng tên mua hợp đồng cho con, và khi c
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/VanPhong_NhomQuanLy_ThaoLuanTaiLieuThucChien.jpg',
-    imageCaption: 'Phân tích bảng minh họa dòng tiền thực chiến và cấu trúc phí cùng các cộng sự chuyên môn.',
-    title: 'Phí Năm Đầu “Bốc Hơi”: Hiểu Đúng Để Không Đánh Mất Cơ Hội Tối Ưu Dòng Tiền',
+    imageCaption: 'Phân tích bảng minh họa dòng tiền và cấu trúc phí cùng các cộng sự chuyên môn.',
+    title: 'Phí Năm Đầu Cao Có Thật Sự Là Mất Trắng? Cách Nhìn Đúng Về Dòng Tiền',
     excerpt:
-      'Có lần một người bạn làm trong ngành tài chính hỏi Vân một câu rất thẳng: “Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?” Câu hỏi này không mới, nhưng cách trả lời thì cần nhìn lại cho đúng với bối cảnh hiện tại.',
-    content: `*Có lần một người bạn làm trong ngành tài chính hỏi Vân một câu rất thẳng: "Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?" Câu hỏi này không mới, nhưng cách trả lời thì cần nhìn lại cho đúng với bối cảnh hiện tại.*
+      'Có lần một người bạn làm trong ngành tài chính hỏi Vân rất thẳng: “Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?” Câu hỏi này không mới, nhưng cách trả lời cần cập nhật theo sản phẩm hiện nay.',
+    content: `*Có lần một người bạn làm trong ngành tài chính hỏi Vân rất thẳng: "Năm đầu đóng bảo hiểm, tiền mất gần hết vào phí, vậy thực chất mình đang tích lũy hay đang nuôi ai?" Câu hỏi này không mới, nhưng cách trả lời cần cập nhật theo sản phẩm hiện nay.*
 
 ## Khi "Mất Trắng" Chỉ Là Ấn Tượng Cũ
 
-Định kiến về việc năm đầu đóng bảo hiểm gần như "bay sạch" vào phí không phải tự nhiên mà có. Ở các thế hệ sản phẩm liên kết đơn vị trước đây, tỷ lệ phí ban đầu từng ở mức 80–90%, nghĩa là trong 100 đồng khách hàng đóng vào, chỉ có 10–20 đồng thực sự được đưa vào quỹ đầu tư để sinh lời. Phần còn lại dùng để chi trả cho các cấu phần vận hành của hợp đồng.
+Định kiến năm đầu đóng bảo hiểm gần như "bay sạch" vào phí không tự nhiên mà có. Ở các thế hệ sản phẩm liên kết đơn vị trước đây, tỷ lệ phí ban đầu từng ở mức 80 đến 90%. Nghĩa là trong 100 đồng khách đóng vào, chỉ có 10 đến 20 đồng thật sự được đưa vào quỹ đầu tư để sinh lời. Phần còn lại dùng cho các chi phí vận hành của hợp đồng.
 
-Với một người quen nhìn dòng tiền theo logic "bỏ vào bao nhiêu, làm việc ngay bấy nhiêu" như dân tài chính, con số 80–90% phí ban đầu rõ ràng là một cú sốc. Nhưng nếu dừng lại ở ấn tượng đó mà không cập nhật cấu trúc sản phẩm thế hệ mới, câu chuyện sẽ bị nhìn lệch.
+Với người quen nhìn dòng tiền theo kiểu "bỏ vào bao nhiêu, làm việc ngay bấy nhiêu" như dân tài chính, mức 80 đến 90% phí ban đầu là một cú sốc. Nhưng nếu dừng ở ấn tượng đó mà không cập nhật cấu trúc sản phẩm thế hệ mới thì sẽ nhìn lệch.
 
-## Cấu Trúc Phí Thế Hệ Mới: Tiền "Lăn Bánh" Sớm Hơn
+## Cấu Trúc Phí Thế Hệ Mới, Tiền Vào Quỹ Sớm Hơn
 
-Ở dòng liên kết đơn vị thế hệ mới, ví dụ như Xanh Phú Quý Flex, tỷ lệ phí ban đầu được thiết kế lại theo hướng giảm dần và giảm sâu ngay từ năm đầu tiên:
+Ở dòng liên kết đơn vị thế hệ mới, ví dụ Xanh Phú Quý Flex, tỷ lệ phí ban đầu được thiết kế lại theo hướng giảm dần và giảm mạnh ngay từ năm đầu tiên:
 
 - Năm 1: phí ban đầu chỉ 30%, tức 70% dòng tiền được đưa thẳng vào quỹ đầu tư để sinh lời ngay.
 - Năm 2: phí ban đầu còn 20%.
 - Năm 3 đến năm 5: phí ban đầu chỉ còn 10%.
 - Từ năm thứ 6 trở đi: phí ban đầu bằng 0%.
 
-Nhìn vào bảng tỷ lệ này, điều đáng chú ý nhất không phải là con số 30% ở năm đầu, mà là tốc độ giảm. Chỉ sau ba năm, phần lớn dòng tiền khách hàng đóng vào đã được "lăn bánh" trong quỹ đầu tư thay vì bị giữ lại ở phần chi phí. Đây là sự khác biệt căn bản so với cấu trúc cũ, nơi phải mất nhiều năm hơn mới đạt được tỷ lệ tương tự.
+Nhìn bảng tỷ lệ này, điều đáng chú ý nhất là tốc độ giảm hơn là con số 30% ở năm đầu. Chỉ sau ba năm, phần lớn tiền khách đóng vào đã nằm trong quỹ đầu tư thay vì bị giữ ở phần chi phí. Cấu trúc cũ phải mất nhiều năm hơn mới đạt tỷ lệ tương tự.
 
-## Tài Khoản Tri Ân: Phí Ban Đầu Không Hẳn Là "Mất"
+## Tài Khoản Tri Ân, Phí Ban Đầu Không Hẳn Là "Mất"
 
-Điều khiến nhiều người bạn làm tài chính thay đổi góc nhìn khi tìm hiểu kỹ chính là cơ chế Tài Khoản Tri Ân. Toàn bộ khoản phí ban đầu được khấu trừ qua các năm không biến mất khỏi hệ thống, mà được ghi nhận vào một tài khoản riêng để tính lãi cam kết, và khoản này sẽ được hoàn trả lại cho khách hàng.
+Nhiều bạn làm tài chính đổi cách nhìn khi tìm hiểu kỹ cơ chế Tài Khoản Tri Ân. Toàn bộ khoản phí ban đầu được khấu trừ qua các năm không biến mất khỏi hệ thống. Nó được ghi vào một tài khoản riêng để tính lãi cam kết, và khoản này sẽ được hoàn trả lại cho khách hàng.
 
-Nói cách khác, phần phí ban đầu không hoàn toàn là một khoản chi ra không quay lại. Nó được "giữ hộ" dưới một hình thức khác, vẫn sinh lãi theo cam kết, và trở về với khách hàng ở một thời điểm nhất định trong hành trình hợp đồng. Đây là lý do khiến việc gọi phí ban đầu là "mất trắng" trở nên thiếu chính xác khi áp dụng cho các sản phẩm thế hệ mới.
+Nói cách khác, phí ban đầu không hoàn toàn là khoản chi ra rồi không quay lại. Nó được "giữ hộ" dưới một hình thức khác, vẫn sinh lãi theo cam kết, và trở về với khách hàng ở một thời điểm nhất định trong hợp đồng. Vì vậy, gọi phí ban đầu là "mất trắng" là thiếu chính xác với các sản phẩm thế hệ mới.
 
-## Vì Sao Điều Này Quan Trọng Với Người Lập Kế Hoạch Tài Chính Dài Hạn
+## Vì Sao Điều Này Quan Trọng Với Kế Hoạch Tài Chính Dài Hạn
 
-Với những ai quen làm việc với dòng tiền và lãi kép, ba năm đầu tiên của một kênh tích lũy dài hạn mang ý nghĩa đặc biệt. Đó là giai đoạn mà khoản tiền đầu tư cần thời gian dài nhất để tích lũy lợi nhuận, nên tỷ lệ tiền thực sự được đưa vào quỹ đầu tư sớm hay muộn sẽ ảnh hưởng trực tiếp đến hiệu quả cuối chặng đường.
+Với người quen làm việc với dòng tiền và lãi kép, ba năm đầu của một kênh tích lũy dài hạn rất quan trọng. Đây là giai đoạn khoản tiền cần nhiều thời gian nhất để tích lũy lợi nhuận, nên tỷ lệ tiền vào quỹ đầu tư sớm hay muộn sẽ ảnh hưởng trực tiếp đến kết quả cuối chặng.
 
-Khi phí ban đầu giảm từ 80–90% xuống còn 30% ngay năm đầu, và tiếp tục giảm nhanh trong các năm kế tiếp, bài toán không còn đơn thuần là "đóng bảo hiểm có lợi hay không", mà trở thành "cấu trúc phí này cho phép dòng tiền làm việc sớm đến mức nào". Đó mới là câu hỏi đúng khi đánh giá một sản phẩm tích lũy dài hạn.
+Khi phí ban đầu giảm từ 80 đến 90% xuống còn 30% ngay năm đầu, rồi tiếp tục giảm nhanh ở các năm sau, câu hỏi không còn là "đóng bảo hiểm có lợi hay không". Câu hỏi đúng hơn là "cấu trúc phí này cho dòng tiền làm việc sớm đến mức nào".
 
 ## Nhìn Vào Bản Chất Thay Vì Cảm Giác Ban Đầu
 
-Câu chuyện phí năm đầu, nếu chỉ nhìn qua con số phần trăm đầu tiên, dễ khiến người ta vội kết luận. Nhưng khi đặt trong toàn cảnh, gồm tốc độ giảm phí qua các năm, tỷ lệ tiền vào quỹ đầu tư sớm và cơ chế hoàn lại qua Tài Khoản Tri Ân, bức tranh trở nên đầy đủ hơn rất nhiều.
+Nếu chỉ nhìn con số phần trăm đầu tiên, rất dễ kết luận vội. Khi đặt vào toàn cảnh, gồm tốc độ giảm phí qua các năm, tỷ lệ tiền vào quỹ đầu tư sớm và cơ chế hoàn lại qua Tài Khoản Tri Ân, bức tranh đầy đủ hơn nhiều.
 
-Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải là con số phí ở năm đầu tiên trông "xấu" hay "đẹp", mà là tỷ lệ tiền thực tế được đưa vào quỹ đầu tư trong ba năm đầu, và liệu phần phí đã khấu trừ có được ghi nhận, tính lãi và hoàn lại hay không. Đó mới là cách đọc đúng "luật chơi" của một sản phẩm tài chính dài hơi.
+Với một kênh tích lũy dài hạn, điều cần quan tâm không phải phí năm đầu trông "xấu" hay "đẹp". Cần xem tỷ lệ tiền thực tế vào quỹ đầu tư trong ba năm đầu, và phần phí đã khấu trừ có được ghi nhận, tính lãi và hoàn lại hay không. Đó mới là cách đọc đúng "luật chơi" của một sản phẩm tài chính dài hơi.
 
 ## Đúc Kết Thực Tế
 
 - Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.
 - Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.
-- Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.
+- Khi chọn kênh tích lũy dài hạn, nên nhìn tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ nhìn phí năm đầu.
 
 ---
 
@@ -717,7 +717,7 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
     keyTakeaways: [
       'Phí ban đầu của sản phẩm liên kết đơn vị thế hệ mới đã giảm đáng kể so với trước đây, cho phép dòng tiền được đầu tư sớm hơn.',
       'Cơ chế Tài Khoản Tri Ân giúp phần phí đã khấu trừ không mất đi hoàn toàn mà được tính lãi và hoàn lại cho khách hàng.',
-      'Khi chọn kênh tích lũy dài hạn, nên nhìn vào tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ dừng lại ở con số phí năm đầu tiên.',
+      'Khi chọn kênh tích lũy dài hạn, nên nhìn tỷ lệ tiền vào quỹ đầu tư trong ba năm đầu và cơ chế hoàn phí cuối chặng, thay vì chỉ nhìn phí năm đầu.',
     ],
   },
   {
@@ -728,53 +728,53 @@ Với một kênh tích lũy dài hạn, điều đáng quan tâm không phải 
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/Studio_ChiVanCungDoiNgu_KhoanhKhacVuiVe.jpg',
-    imageCaption: 'Khoảnh khắc chân thành cùng các cộng sự thân thiết, minh chứng cho giá trị của sự tử tế và chữ Tín bền lâu.',
-    title: 'Ba Tháng Trắng Tay Và Bài Học Về Vốn Liếng Không Nằm Trong Sổ Sách',
+    imageCaption: 'Chị Vân cùng các cộng sự thân thiết trong một buổi gặp vui.',
+    title: 'Ba Tháng Trắng Tay Và Bài Học Về Vốn Không Nằm Trong Sổ Sách',
     excerpt:
-      'Có những giai đoạn sự nghiệp mà mọi nỗ lực dường như không mang lại kết quả gì. Với Vân, đó là ba tháng đầu tiên rời bàn giấy để bước ra làm Sales, những ngày tháng mà bài học lớn nhất lại không đến từ kỹ năng bán hàng, mà từ những gì mình đã gieo từ rất lâu trước đó.',
-    content: `*Có những giai đoạn sự nghiệp mà mọi nỗ lực dường như không mang lại kết quả gì. Với Vân, đó là ba tháng đầu tiên rời bàn giấy để bước ra làm Sales, những ngày tháng mà bài học lớn nhất lại không đến từ kỹ năng bán hàng, mà từ những gì mình đã gieo từ rất lâu trước đó.*
+      'Với Vân, ba tháng đầu rời bàn giấy để làm Sales là ba tháng không chốt được khách nào. Bài học lớn nhất lúc đó không đến từ kỹ năng bán hàng, mà từ cách Vân đối xử với đồng nghiệp suốt nhiều năm trước.',
+    content: `*Có những giai đoạn làm nghề mà mọi nỗ lực dường như không ra kết quả. Với Vân, đó là ba tháng đầu rời bàn giấy để làm Sales. Bài học lớn nhất của giai đoạn ấy không đến từ kỹ năng bán hàng, mà từ những gì Vân đã làm từ rất lâu trước đó.*
 
 ## Bước Ra Khỏi Vùng An Toàn
 
-Thời còn làm việc tại ngân hàng ANZ, Vân từng có một vị trí ổn định ở bộ phận hỗ trợ (support). Công việc đều đặn, ít áp lực doanh số, và quan trọng nhất là an toàn. Nhưng đến một lúc nào đó, cảm giác muốn thử thách bản thân lớn hơn nỗi sợ thất bại. Vân quyết định chuyển sang làm Sales vay thế chấp, một lĩnh vực hoàn toàn khác, nơi kết quả được đo đếm bằng những con số cụ thể, không có chỗ cho sự mơ hồ.
+Thời còn làm ở ngân hàng ANZ, Vân có một vị trí ổn định ở bộ phận hỗ trợ (support). Việc đều đặn, ít áp lực doanh số, và quan trọng nhất là an toàn. Nhưng đến một lúc, muốn thử sức lớn hơn nỗi sợ thất bại. Vân chuyển sang làm Sales vay thế chấp, một lĩnh vực hoàn toàn khác, nơi kết quả đo bằng con số cụ thể, không có chỗ cho sự mơ hồ.
 
-Ngày đầu tiên bước vào vai trò mới, Vân mang theo sự hào hứng của người muốn chứng minh năng lực. Nhưng thực tế nhanh chóng dội một gáo nước lạnh.
+Ngày đầu vào vai trò mới, Vân hào hứng, muốn chứng minh năng lực. Nhưng thực tế nhanh chóng dội một gáo nước lạnh.
 
-## Khi Mọi Nỗ Lực Dường Như Vô Nghĩa
+## Khi Mọi Nỗ Lực Như Công Cốc
 
-Ba tháng đầu tiên, Vân không chốt được một khách hàng nào. Không phải vì thiếu cố gắng, mà vì thế giới Sales vận hành theo những quy luật mà một người mới hoàn toàn chưa nắm được. Áp lực càng lúc càng lớn, đến mức Vân đứng trước nguy cơ bị ngân hàng cắt code, nói cách khác là bị đào thải khỏi cuộc chơi trước khi kịp bắt đầu.
+Ba tháng đầu, Vân không chốt được khách nào. Không phải vì thiếu cố gắng, mà vì người mới chưa nắm được cách thế giới Sales vận hành. Áp lực ngày một lớn, đến mức Vân đứng trước nguy cơ bị ngân hàng cắt code, tức là bị loại khỏi cuộc chơi trước khi kịp bắt đầu.
 
-Đó là một trong những giai đoạn cô đơn nhất trong sự nghiệp. Mỗi buổi sáng thức dậy là một câu hỏi. Liệu mình có đang đi sai đường? Liệu quyết định rời khỏi vùng an toàn có phải là một sai lầm?
+Đó là một trong những giai đoạn cô đơn nhất của Vân. Sáng nào thức dậy cũng tự hỏi: mình có đang đi sai đường không, rời vùng an toàn có phải là sai lầm không?
 
-Nhưng giữa những ngày tháng mờ mịt ấy, một điều bất ngờ đã xảy ra.
+Rồi giữa những ngày mờ mịt ấy, có một chuyện bất ngờ xảy ra.
 
-## Bước Ngoặt Đến Từ Những Điều Tưởng Như Nhỏ Bé
+## Bước Ngoặt Đến Từ Những Việc Nhỏ
 
-Những đồng nghiệp cũ ở chi nhánh, những người từng làm việc cùng Vân trong suốt những năm ở vị trí vận hành, bắt đầu giới thiệu khách hàng. Không phải vì họ có nghĩa vụ, cũng không phải vì một thỏa thuận nào. Đơn giản là họ thương và tin tưởng.
+Những đồng nghiệp cũ ở chi nhánh, từng làm việc cùng Vân suốt những năm ở vị trí vận hành, bắt đầu giới thiệu khách cho Vân. Họ không có nghĩa vụ gì, cũng không có thỏa thuận nào. Đơn giản là họ thương và tin Vân.
 
-Nhìn lại, Vân nhận ra những năm tháng làm công việc hỗ trợ chưa bao giờ là vô ích. Những lần giúp đỡ đồng nghiệp xử lý hồ sơ, những buổi trò chuyện chân thành, những lần sẵn sàng giúp một tay dù không phải trách nhiệm của mình, tất cả tưởng như là việc nhỏ nhặt, không ai ghi nhận, lại trở thành thứ cứu Vân trong thời khắc khó khăn nhất.
+Nhìn lại, Vân nhận ra những năm làm hỗ trợ chưa bao giờ là vô ích. Những lần giúp đồng nghiệp xử lý hồ sơ, những buổi trò chuyện thật lòng, những lần giúp một tay dù không phải trách nhiệm của mình, tưởng là chuyện nhỏ, không ai ghi nhận, vậy mà lại cứu Vân lúc khó khăn nhất.
 
-Khách hàng đầu tiên đến từ sự giới thiệu ấy đã mở ra một chuỗi kết quả tiếp theo. Và đến năm 2017, Vân đạt vị trí Top 1 doanh số toàn quốc, một hành trình mà nếu nhìn vào ba tháng đầu tiên, không ai có thể đoán trước được.
+Khách hàng đầu tiên đến từ sự giới thiệu ấy mở ra những khách tiếp theo. Đến năm 2017, Vân đạt vị trí Top 1 doanh số toàn quốc. Nhìn vào ba tháng đầu, không ai đoán được điều đó.
 
-## Vốn Liếng Thật Sự Không Nằm Trong Kỹ Xảo
+## Vốn Thật Sự Không Nằm Ở Kỹ Xảo
 
-Nhiều người nghĩ rằng thành công trong Sales đến từ kỹ năng thuyết phục, từ chiến lược tiếp cận khách hàng, hay từ sự khéo léo trong đàm phán. Những điều đó quan trọng, nhưng với Vân, bài học lớn nhất từ giai đoạn ấy lại khác. Uy tín cá nhân, thứ được tích lũy âm thầm qua từng hành động nhỏ và từng mối quan hệ được xây dựng bằng sự chân thành, mới chính là vốn liếng bền vững nhất.
+Nhiều người nghĩ thành công trong Sales đến từ kỹ năng thuyết phục, chiến lược tiếp cận hay sự khéo léo khi đàm phán. Những điều đó quan trọng, nhưng với Vân, bài học lớn nhất lại khác. Uy tín cá nhân, thứ được tích lũy âm thầm qua từng việc nhỏ và từng mối quan hệ làm bằng sự chân thành, mới là vốn bền nhất.
 
-Chẳng có con đường nào tự nhiên trải sẵn hoa hồng. Những hạt mầm tử tế mình gieo ở những việc nhỏ nhất hôm nay có khi phải rất lâu sau mới nở hoa. Nhưng khi cần đến, chúng chính là chiếc phao cứu sinh giúp mình vượt qua những thử thách tưởng chừng không lối thoát.
+Không có con đường nào tự nhiên trải sẵn hoa hồng. Những việc tử tế mình làm từ chuyện nhỏ nhất hôm nay có khi rất lâu sau mới có kết quả. Nhưng khi cần, chúng là chiếc phao giúp mình vượt qua lúc tưởng như hết đường.
 
-Giai đoạn chuyển mình nào cũng có vùng tối của nó. Nhưng nếu nhìn kỹ, thứ giúp ta đi qua vùng tối ấy không phải là sự may mắn ngẫu nhiên, mà là những gì ta đã âm thầm xây dựng từ rất lâu trước khi vùng tối ấy xuất hiện.
+Giai đoạn chuyển nghề nào cũng có lúc tối. Thứ giúp mình đi qua không phải may mắn, mà là những gì mình đã làm từ lâu trước khi lúc tối ấy đến.
 
-Mỗi người đều có một "ba tháng trắng tay" của riêng mình, những giai đoạn mà kết quả chưa đến, mà niềm tin bị thử thách. Câu hỏi đặt ra không phải là làm sao để tránh những giai đoạn ấy, mà là: trước khi bước vào vùng tối, mình đã gieo đủ những hạt mầm tử tế để có thể dựa vào khi cần hay chưa?
+Ai cũng có "ba tháng trắng tay" của riêng mình, khi kết quả chưa đến và niềm tin bị thử thách. Câu hỏi không phải làm sao tránh giai đoạn đó, mà là: trước khi bước vào, mình đã làm đủ những việc tử tế để có thể dựa vào chưa?
 
 ## Đúc Kết Thực Tế
 
-- Uy tín cá nhân được xây dựng qua năm tháng, không phải qua một vài hành động nhất thời, nhưng lại là thứ bền vững nhất khi đối mặt với khó khăn.
-- Những việc tử tế tưởng chừng nhỏ bé, không ai ghi nhận ngay, thường là nền tảng âm thầm cho những bước ngoặt lớn trong sự nghiệp.
-- Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật. Đôi khi điều cần nhất là nhìn lại những mối quan hệ và giá trị mình đã dày công vun đắp.`,
+- Uy tín cá nhân được xây qua năm tháng, không phải qua vài hành động nhất thời, và là thứ bền nhất khi gặp khó khăn.
+- Những việc tử tế tưởng nhỏ, không ai ghi nhận ngay, thường là nền cho những bước ngoặt lớn trong sự nghiệp.
+- Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật. Đôi khi cần nhất là nhìn lại các mối quan hệ mình đã dày công giữ gìn.`,
     keyTakeaways: [
-      'Uy tín cá nhân được xây dựng qua năm tháng, không phải qua một vài hành động nhất thời, nhưng lại là thứ bền vững nhất khi đối mặt với khó khăn.',
-      'Những việc tử tế tưởng chừng nhỏ bé, không ai ghi nhận ngay, thường là nền tảng âm thầm cho những bước ngoặt lớn trong sự nghiệp.',
-      'Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật. Đôi khi điều cần nhất là nhìn lại những mối quan hệ và giá trị mình đã dày công vun đắp.',
+      'Uy tín cá nhân được xây qua năm tháng, không phải qua vài hành động nhất thời, và là thứ bền nhất khi gặp khó khăn.',
+      'Những việc tử tế tưởng nhỏ, không ai ghi nhận ngay, thường là nền cho những bước ngoặt lớn trong sự nghiệp.',
+      'Giai đoạn khó khăn nhất không phải lúc nào cũng cần một giải pháp kỹ thuật. Đôi khi cần nhất là nhìn lại các mối quan hệ mình đã dày công giữ gìn.',
     ],
   },
   {
@@ -785,57 +785,57 @@ Mỗi người đều có một "ba tháng trắng tay" của riêng mình, nh�
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/Studio_ChiVanCungNuQuanLy_NuCuoiTuoiTan.jpg',
-    imageCaption: 'Khánh Vân cùng thế hệ nữ quản lý bản lĩnh bước ra khỏi vùng an toàn công sở để làm chủ sự nghiệp tài chính chuyên nghiệp.',
-    title: 'Chuẩn Bị Gì Về Tài Chính Trước Khi Bước Ra Khỏi Vùng An Toàn Công Sở?',
+    imageCaption: 'Chị Khánh Vân cùng các nữ quản lý trong đội ngũ.',
+    title: 'Cần Chuẩn Bị Gì Về Tài Chính Trước Khi Rời Công Sở Để Làm Độc Lập?',
     excerpt:
-      'Đầu năm 2018, khi quyết định khép lại 8 năm tại ngân hàng quốc tế ANZ ngay lúc đang đứng Top 1 doanh số toàn quốc, cú rẽ hướng ấy không bắt đầu bằng cảm tính nhất thời mà được nâng đỡ bởi một cấu trúc dòng tiền kỷ luật.',
-    content: `*Nhiều anh chị quản lý cấp trung ở ngân hàng hoặc tập đoàn đa quốc gia thường tâm sự với Vân: “Em rất muốn bứt ra để xây dựng sự nghiệp độc lập, nhưng nhìn vào khoản lương cố định hàng tháng và chi phí học hành của con cái, em lại chùn bước.” Thật ra, dũng khí bước ra khỏi vùng an toàn không đến từ sự liều lĩnh, mà đến từ một bảng cân đối tài chính cá nhân được chuẩn bị kỹ lưỡng trước giờ khởi hành.*
+      'Đầu năm 2018, Vân rời ngân hàng quốc tế ANZ sau 8 năm, đúng lúc đang đứng Top 1 doanh số toàn quốc. Quyết định đó dựa trên một cấu trúc dòng tiền đã chuẩn bị kỹ, không phải cảm hứng nhất thời.',
+    content: `*Nhiều anh chị quản lý cấp trung ở ngân hàng hoặc tập đoàn đa quốc gia tâm sự với Vân: “Em rất muốn ra làm độc lập, nhưng nhìn khoản lương cố định hàng tháng và học phí của con, em lại chùn bước.” Thật ra, dũng khí rời vùng an toàn không đến từ sự liều lĩnh. Nó đến từ một bảng cân đối tài chính cá nhân được chuẩn bị kỹ trước ngày ra đi.*
 
-## Sự Thật Phía Sau “Chiếc Lồng Sơn Son Thiếp Vàng” Của Thu Nhập Cố Định
+## Thu Nhập Cố Định Có Thật Sự Chắc Chắn?
 
-Gắn bó với ngân hàng quốc tế ANZ suốt 8 năm (2009–2017), đi từ vị trí Vận hành (Operations) sang Khối Tín dụng Thế chấp (Mortgage) và chạm tay vào danh hiệu **Top 1 Doanh số Toàn quốc**, Vân hiểu rất rõ sức hút của môi trường công sở chuẩn quốc tế. Một mức thu nhập cao đều đặn mỗi tháng, chế độ phúc lợi tốt và danh xưng sang trọng dễ khiến chúng ta tin rằng mình đang ở vùng an toàn tuyệt đối.
+Vân gắn bó với ngân hàng quốc tế ANZ 8 năm (từ 2009 đến 2017), đi từ vị trí Vận hành (Operations) sang Khối Tín dụng Thế chấp (Mortgage) và đạt danh hiệu **Top 1 Doanh số Toàn quốc**. Vân hiểu rất rõ sức hút của môi trường công sở chuẩn quốc tế: thu nhập cao đều mỗi tháng, phúc lợi tốt, danh xưng đẹp. Những thứ đó dễ khiến mình tin rằng mình đang ở vùng an toàn tuyệt đối.
 
-Nhưng dưới góc nhìn quản trị rủi ro của một Banker, một cấu trúc tài chính gia đình phụ thuộc 100% vào một nguồn lương cố định duy nhất thực chất lại rất mong manh. Khi thị trường tái cấu trúc, hoặc khi chính chúng ta chạm tới “trần thu nhập” và “trần thời gian” ở tuổi ngoài 30, chiếc áo công sở từng rất vừa vặn bỗng trở nên chật chội.
+Nhưng nhìn bằng mắt quản trị rủi ro của một Banker, một gia đình phụ thuộc 100% vào một nguồn lương cố định thì khá mong manh. Khi thị trường tái cấu trúc, hoặc khi mình chạm “trần thu nhập” và “trần thời gian” ở tuổi ngoài 30, chiếc áo công sở từng rất vừa bỗng trở nên chật.
 
-Năm 2018, khi quyết định chuyển sang Manulife Việt Nam để gây dựng doanh nghiệp tài chính của riêng mình, Vân không bước đi bằng sự bốc đồng. Trước ngày nộp đơn nghỉ việc, Vân đã dành nhiều tháng để thiết lập 3 lớp đệm tài chính cốt lõi cho gia đình.
+Năm 2018, khi chuyển sang Manulife Việt Nam để gây dựng doanh nghiệp tài chính của riêng mình, Vân không làm theo cảm hứng. Trước ngày nộp đơn nghỉ việc, Vân đã dành nhiều tháng lập 3 lớp đệm tài chính cho gia đình.
 
-## Lớp Đệm Thứ Nhất: Quỹ Dự Phòng Thanh Khoản 6–12 Tháng Chi Phí Thiết Yếu
+## Lớp Đệm Thứ Nhất: Quỹ Dự Phòng Thanh Khoản 6 Đến 12 Tháng Chi Phí Thiết Yếu
 
-Sai lầm lớn nhất của nhiều người khi chuyển từ làm công ăn lương sang làm chủ hoặc tư vấn tài chính độc lập là bước đi với tài khoản dự phòng mỏng manh. Khi áp lực cơm áo gạo tiền đè nặng ngay từ tháng thứ hai, thứ ba, người làm nghề rất dễ đánh mất sự điềm tĩnh, dẫn đến tâm lý nôn nóng chốt hợp đồng bằng mọi giá, hoặc bỏ cuộc ngay trước khi kịp hái quả ngọt.
+Sai lầm lớn nhất của nhiều người khi chuyển từ làm công ăn lương sang làm chủ hoặc tư vấn tài chính độc lập là bước đi với tài khoản dự phòng mỏng. Khi áp lực cơm áo đè nặng từ tháng thứ hai, thứ ba, người làm nghề rất dễ mất bình tĩnh, nôn nóng chốt hợp đồng bằng mọi giá, hoặc bỏ cuộc ngay trước khi kịp có kết quả.
 
-Nguyên tắc bất di bất dịch mà Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Green Power trước khi các bạn toàn tâm chuyển nghề là:
+Nguyên tắc Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Green Power trước khi các bạn chuyển nghề hẳn là:
 
-- **Tính toán chính xác định mức chi tiêu thiết yếu (Survival Number):** Bao gồm học phí của con, chi phí sinh hoạt gia đình, phụng dưỡng cha mẹ và các nghĩa vụ trả góp cố định mỗi tháng.
-- **Khóa chặt 6 đến 12 tháng chi phí này vào một tài khoản thanh khoản riêng biệt:** Khoản tiền này không dùng để đầu tư mạo hiểm hay chi tiêu phát sinh.
+- **Tính chính xác mức chi tiêu thiết yếu (Survival Number):** Gồm học phí của con, chi phí sinh hoạt gia đình, phụng dưỡng cha mẹ và các khoản trả góp cố định mỗi tháng.
+- **Để riêng 6 đến 12 tháng chi phí này trong một tài khoản thanh khoản:** Khoản tiền này không dùng để đầu tư mạo hiểm hay chi tiêu phát sinh.
 
-Khi biết chắc chắn rằng dù 6 tháng đầu ở môi trường mới thu nhập chưa về ngay, bữa cơm của gia đình và nhịp học tập của các con vẫn không mảy may xáo trộn, bạn sẽ có được một thứ vũ khí vô giá: **sự đĩnh đạc và lòng tự trọng nghề nghiệp**. Bạn tư vấn cho khách hàng bằng tâm thế của một chuyên gia muốn trao giải pháp đúng, chứ không phải một người đang cần hoa hồng để trang trải hóa đơn cuối tháng.
+Khi biết chắc rằng 6 tháng đầu ở môi trường mới thu nhập chưa về ngay mà bữa cơm gia đình và việc học của các con vẫn yên ổn, bạn có được thứ rất quý: **sự vững vàng và lòng tự trọng nghề nghiệp**. Bạn tư vấn cho khách bằng tâm thế của chuyên gia muốn đưa ra giải pháp đúng, không phải người đang cần hoa hồng để trả hóa đơn cuối tháng.
 
-## Lớp Đệm Thứ Hai: Tách Bạch Dòng Tiền Gia Đình Và Vốn Đầu Tư Sự Nghiệp
+## Lớp Đệm Thứ Hai: Tách Dòng Tiền Gia Đình Khỏi Vốn Đầu Tư Cho Sự Nghiệp
 
-Bước ra xây dựng hệ thống kinh doanh đồng nghĩa với việc bạn phải nhìn nhận bản thân như một doanh nghiệp thu nhỏ. Ở giai đoạn khởi tạo, bạn sẽ cần ngân sách để nâng cấp kiến thức chuyên môn, xây dựng hình ảnh chuyên nghiệp, gặp gỡ đối tác và chăm sóc đội ngũ.
+Ra làm kinh doanh nghĩa là bạn phải nhìn mình như một doanh nghiệp nhỏ. Giai đoạn đầu, bạn cần ngân sách để học thêm chuyên môn, xây hình ảnh chuyên nghiệp, gặp gỡ đối tác và chăm sóc đội ngũ.
 
-Tại gia đình Vân, ngay từ đầu năm 2018, hai vợ chồng đã ngồi lại cùng nhau với những con số minh bạch:
+Ở nhà Vân, ngay từ đầu năm 2018, hai vợ chồng đã ngồi lại với nhau và đặt các con số lên bàn:
 
-- **Ngân sách vận hành tổ ấm:** Được bảo toàn nguyên vẹn, không bị xâm phạm bởi bất kỳ hoạt động thử nghiệm kinh doanh nào.
-- **Quỹ đầu tư phát triển sự nghiệp mới:** Được trích lập một khoản rõ ràng từ tiền tích lũy cá nhân, có lộ trình hoàn vốn và mục tiêu theo từng quý.
+- **Ngân sách vận hành gia đình:** Giữ nguyên vẹn, không đụng đến cho bất kỳ thử nghiệm kinh doanh nào.
+- **Quỹ đầu tư cho sự nghiệp mới:** Trích một khoản rõ ràng từ tiền tích lũy cá nhân, có lộ trình hoàn vốn và mục tiêu theo từng quý.
 
-Chính sự rạch ròi và kỷ luật tài chính ấy đã giúp người bạn đời của Vân hoàn toàn an tâm, từ chỗ lo lắng rất tự nhiên đã trở thành hậu phương vững chắc nhất trong suốt hành trình Vân gây dựng khu vực từ con số 0 lên hơn 500 nhân sự.
+Nhờ sự rạch ròi và kỷ luật đó, người bạn đời của Vân hoàn toàn yên tâm. Từ chỗ lo lắng rất tự nhiên, người ấy trở thành hậu phương vững nhất trong những năm Vân gây dựng khu vực từ con số 0 lên hơn 500 nhân sự.
 
-## Lớp Đệm Thứ Ba: Khóa Chặt Rủi Ro Bằng Bảo Hiểm Trước Khi Rời Phúc Lợi Công Ty
+## Lớp Đệm Thứ Ba: Có Bảo Hiểm Riêng Trước Khi Rời Phúc Lợi Công Ty
 
-Một chi tiết mà rất nhiều nhân sự cấp cao bỏ quên khi rời tập đoàn lớn. Ngay khoảnh khắc bạn bàn giao thẻ nhân viên, gói bảo hiểm sức khỏe và bảo hiểm sinh mạng doanh nghiệp cấp cho bạn cũng chấm dứt hiệu lực.
+Có một chi tiết nhiều nhân sự cấp cao bỏ quên khi rời tập đoàn lớn. Ngay lúc bạn bàn giao thẻ nhân viên, gói bảo hiểm sức khỏe và bảo hiểm sinh mạng do doanh nghiệp cấp cũng hết hiệu lực.
 
-Trong giai đoạn chuyển giao sự nghiệp, lúc cơ thể và tâm trí làm việc với cường độ cao nhất, gia đình bạn không được phép rơi vào “khoảng trống bảo vệ”. Trước khi rời ngân hàng, hãy đảm bảo bạn đã tự trang bị một cấu trúc bảo hiểm nhân thọ và thẻ chăm sóc y tế độc lập đứng tên chính mình. Đó là chốt chặn giữ cho toàn bộ Quỹ dự phòng thanh khoản của bạn không bị cuốn phăng nếu chẳng may có biến cố sức khỏe bất ngờ.
+Trong giai đoạn chuyển nghề, khi cơ thể và đầu óc làm việc hết công suất, gia đình bạn không được rơi vào “khoảng trống bảo vệ”. Trước khi rời ngân hàng, hãy tự trang bị bảo hiểm nhân thọ và thẻ chăm sóc y tế đứng tên chính mình. Đó là chốt chặn để Quỹ dự phòng thanh khoản của bạn không bị cuốn đi nếu chẳng may có biến cố sức khỏe.
 
-## Vốn Liếng Lớn Nhất Mang Theo: Chữ “Tín” Của Người Làm Nghề Tử Tế
+## Vốn Lớn Nhất Mang Theo Là Chữ “Tín”
 
-Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhất giúp một người bước ra khỏi vùng an toàn mà không bị chới với chính là **Vốn Uy Tín (Reputation Capital)** đã tích lũy suốt những năm tháng làm công sở.
+Sau tất cả những con số trong bảng tính, tài sản lớn nhất giúp một người rời vùng an toàn mà không chới với là **Vốn Uy Tín (Reputation Capital)** đã tích lũy suốt những năm đi làm công sở.
 
-Đừng đợi đến ngày nghỉ việc mới bắt đầu xây dựng thương hiệu cá nhân. Cách bạn xử lý trọn vẹn từng hồ sơ tín dụng ở ngân hàng, cách bạn giữ lời hứa với đồng nghiệp và bàn giao công việc chu đáo đến ngày cuối cùng chính là tấm giấy thông hành đắt giá nhất. Khi bạn có một bệ phóng tài chính kỷ luật bên dưới và một chữ “Tín” vẹn nguyên bên trên, bước nhảy ra khỏi vùng an toàn sẽ không còn là một cú rơi tự do, mà là sải cánh vững chãi để chạm tới tự do tài chính thực thụ.`,
+Đừng đợi đến ngày nghỉ việc mới bắt đầu xây thương hiệu cá nhân. Cách bạn xử lý từng hồ sơ tín dụng ở ngân hàng, cách bạn giữ lời hứa với đồng nghiệp và bàn giao công việc chu đáo đến ngày cuối cùng chính là tấm giấy thông hành giá trị nhất. Khi bên dưới có bệ phóng tài chính kỷ luật và bên trên có chữ “Tín” còn nguyên, bước ra khỏi vùng an toàn sẽ không phải là cú rơi tự do.`,
     keyTakeaways: [
-      'Thiết lập Quỹ dự phòng thanh khoản từ 6–12 tháng chi phí thiết yếu để giữ vững sự đĩnh đạc và chuẩn mực đạo đức nghề nghiệp trong giai đoạn đầu chuyển hướng.',
-      'Minh bạch và tách bạch hoàn toàn ngân sách sinh hoạt gia đình với quỹ đầu tư phát triển sự nghiệp mới để tạo sự đồng thuận trọn vẹn từ người bạn đời.',
-      'Chủ động trang bị lá chắn bảo hiểm sức khỏe và nhân thọ cá nhân trước khi rời bỏ chế độ phúc lợi của tập đoàn.',
+      'Lập Quỹ dự phòng thanh khoản từ 6 đến 12 tháng chi phí thiết yếu để giữ vững tinh thần và sự chuẩn mực nghề nghiệp trong giai đoạn đầu chuyển hướng.',
+      'Tách bạch ngân sách sinh hoạt gia đình với quỹ đầu tư cho sự nghiệp mới, và trao đổi rõ với người bạn đời để có sự đồng thuận.',
+      'Chủ động trang bị bảo hiểm sức khỏe và nhân thọ cá nhân trước khi rời chế độ phúc lợi của tập đoàn.',
     ],
   },
   {
@@ -846,45 +846,45 @@ Sau tất cả những con số trên bảng tính Excel, tài sản lớn nhấ
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/SuKien_ChiVanCungDoiNguMTA_NangCupHuanLuyen.jpg',
-    imageCaption: 'Niềm tự hào lớn nhất của người dẫn dắt là cùng đội ngũ quản lý kế cận đứng chung trên bục vinh danh Manulife Talent Attractor (MTA).',
-    title: 'Ba Phẩm Chất Của Người Quản Lý Dẫn Dắt Bằng Sự Thấu Cảm',
+    imageCaption: 'Chị Vân cùng đội ngũ quản lý kế cận trên bục vinh danh Manulife Talent Attractor (MTA).',
+    title: 'Ba Phẩm Chất Của Người Quản Lý Giỏi Theo Kinh Nghiệm Của Vân',
     excerpt:
-      'Đồng hành cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Green Power, Vân nhận ra thước đo của một nhà lãnh đạo không nằm ở việc tự mình tỏa sáng rực rỡ nhất, mà là năng lực đánh thức thế mạnh độc bản của từng cộng sự.',
-    content: `*Khi mới bước từ vị trí ngôi sao bán hàng (Top Sales) lên vai trò quản lý, cái bẫy dễ mắc phải nhất là cố gắng biến tất cả nhân sự dưới quyền thành “bản sao” của chính mình. Nhưng suốt hành trình xây dựng hệ thống từ những viên gạch đầu tiên năm 2018 đến khi vinh dự nhận giải thưởng “Nhà Quản lý Xuất sắc và Đáng tin cậy nhất Châu Á” (2021), Vân thấm thía rằng quyền lực áp đặt chỉ tạo ra sự tuân phục ngắn hạn, còn sự thấu cảm kết hợp cùng kỷ luật mới tạo nên một tổ chức tự vận hành bền vững.*
+      'Làm việc cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Green Power, Vân thấy thước đo của người lãnh đạo không phải là tự mình sáng nhất, mà là giúp từng cộng sự phát huy thế mạnh riêng của họ.',
+    content: `*Khi mới lên quản lý từ vị trí ngôi sao bán hàng (Top Sales), cái bẫy dễ mắc nhất là cố biến tất cả nhân sự thành “bản sao” của mình. Từ những viên gạch đầu tiên năm 2018 đến khi nhận giải “Nhà Quản lý Xuất sắc và Đáng tin cậy nhất Châu Á” (2021), Vân rút ra một điều: quyền lực áp đặt chỉ tạo ra sự tuân phục ngắn hạn, còn sự thấu cảm đi cùng kỷ luật mới tạo ra một tổ chức tự vận hành bền.*
 
-## 1. Lắng Nghe Để “Đọc Vị” Và Đặt Đúng Người Vào Đúng Chỗ
+## 1. Lắng Nghe Để Hiểu Người Và Đặt Đúng Người Vào Đúng Chỗ
 
-Một khu vườn đẹp không thể chỉ trồng một loài hoa, và một đội ngũ hơn 500 con người càng không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) trực tiếp đồng hành cùng Vân tại Hệ thống Green Power, mỗi người bước vào nghề với một xuất phát điểm và cá tính hoàn toàn khác biệt: có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, lại có những người mẹ bỉm sữa sở hữu sự dịu dàng và khả năng lắng nghe vô cùng sâu sắc.
+Một đội ngũ hơn 500 người không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) làm việc trực tiếp với Vân tại Hệ thống Green Power, mỗi người vào nghề với xuất phát điểm và tính cách khác nhau. Có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, có những người mẹ bỉm sữa dịu dàng và rất biết lắng nghe.
 
-Nếu người lãnh đạo chỉ dùng một thước đo duy nhất để phán xét, chúng ta sẽ vô tình làm thui chột tài năng của cộng sự. Lãnh đạo bằng sự thấu cảm bắt đầu từ việc quan sát sâu và lắng nghe không định kiến:
+Nếu người lãnh đạo chỉ dùng một thước đo để đánh giá, mình sẽ vô tình làm thui chột tài năng của cộng sự. Lãnh đạo bằng sự thấu cảm bắt đầu từ quan sát kỹ và lắng nghe không định kiến:
 
-- **Với những nhân sự mạnh về tư duy logic và phân tích:** Vân khuyến khích các bạn đào sâu vào nghiệp vụ hoạch định gia sản, cấu trúc dòng tiền doanh nghiệp và thẩm định điều khoản hợp đồng chuyên sâu.
-- **Với những nhân sự giàu cảm xúc và khả năng kết nối:** Vân hướng dẫn các bạn phát triển thế mạnh chăm sóc trải nghiệm khách hàng, tổ chức các buổi trò chuyện bàn tròn ấm cúng và gắn kết đội ngũ.
+- **Với người mạnh về tư duy logic và phân tích:** Vân khuyến khích các bạn đi sâu vào hoạch định gia sản, cấu trúc dòng tiền doanh nghiệp và thẩm định điều khoản hợp đồng.
+- **Với người giàu cảm xúc và khả năng kết nối:** Vân hướng các bạn vào chăm sóc trải nghiệm khách hàng, tổ chức các buổi trò chuyện nhỏ và gắn kết đội ngũ.
 
-Khi một nhân sự cảm nhận được người lãnh đạo thực sự thấu hiểu nỗi sợ hãi lẫn khát vọng thầm kín của mình, và được đặt vào đúng vị trí để phát huy sở trường, năng lượng tự thân của họ sẽ bùng nổ mạnh mẽ hơn bất kỳ mệnh lệnh hành chính nào.
+Khi một người thấy lãnh đạo hiểu nỗi lo lẫn mong muốn của mình, và được đặt vào đúng chỗ để dùng sở trường, họ tự có động lực nhiều hơn bất kỳ mệnh lệnh hành chính nào.
 
-## 2. Kỷ Luật Làm Gương: Uy Quyền Đến Từ Sự Nhất Quán Mỗi Ngày
+## 2. Kỷ Luật Làm Gương, Uy Quyền Đến Từ Sự Nhất Quán Mỗi Ngày
 
-Thấu cảm không có nghĩa là dễ dãi hay thỏa hiệp với sự hời hợt. Trong ngành tài chính và bảo hiểm, sự dễ dãi của người quản lý ngày hôm nay sẽ phải trả giá bằng uy tín của nhân sự và quyền lợi của khách hàng vào ngày mai.
+Thấu cảm không có nghĩa là dễ dãi hay bỏ qua sự hời hợt. Trong ngành tài chính và bảo hiểm, sự dễ dãi của người quản lý hôm nay sẽ phải trả bằng uy tín của nhân sự và quyền lợi của khách hàng ngày mai.
 
-Triết lý điều hành mà Vân theo đuổi là **“Lãnh đạo Phục vụ (Servant Leadership) dựa trên nền tảng Kỷ luật Làm gương”**. Đội ngũ không làm theo những khẩu hiệu treo trên tường phòng họp. Họ nhìn vào cách người dẫn đầu hành xử mỗi ngày để định hình tiêu chuẩn cho chính mình:
+Cách điều hành Vân theo đuổi là **“Lãnh đạo Phục vụ (Servant Leadership) dựa trên Kỷ luật Làm gương”**. Đội ngũ không làm theo khẩu hiệu treo trên tường phòng họp. Họ nhìn cách người dẫn đầu hành xử mỗi ngày để đặt tiêu chuẩn cho chính mình:
 
-- **Chuẩn mực trong từng chi tiết nhỏ:** Từ việc có mặt đúng giờ trong các buổi huấn luyện sáng, tác phong trang phục chỉn chu, cho đến sự minh bạch, sòng phẳng trong mọi chính sách thi đua của khu vực.
-- **Truyền nghề theo quy trình “4 Bước Thực Chiến”:** Thay vì chỉ giao chỉ tiêu rồi ngồi chờ báo cáo, Vân cùng các Giám đốc và Quản lý cấp cao áp dụng nguyên tắc: *Nói cho nghe, làm mẫu cho xem, cùng làm thực tế, đúc kết và tháo gỡ tại chỗ*.
+- **Chuẩn mực trong từng chi tiết nhỏ:** Từ việc có mặt đúng giờ ở các buổi huấn luyện sáng, tác phong chỉn chu, đến sự minh bạch, sòng phẳng trong mọi chính sách thi đua của khu vực.
+- **Truyền nghề theo quy trình “4 Bước Thực Chiến”:** Thay vì chỉ giao chỉ tiêu rồi ngồi chờ báo cáo, Vân cùng các Giám đốc và Quản lý cấp cao áp dụng nguyên tắc: *Nói cho nghe, làm mẫu cho xem, cùng làm thực tế, rút kinh nghiệm và tháo gỡ tại chỗ*.
 
-Chính sự rèn giũa tỉ mỉ và đồng hành sát sao ấy đã giúp Hệ thống Green Power đạt được kỳ tích hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi cực kỳ chắc chắn, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
+Cách rèn kỹ và kèm sát đó giúp Hệ thống Green Power đạt kết quả hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi chắc, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
 
-## 3. Lấy Sự Trưởng Thành Của Cộng Sự Làm Thước Đo Thành Tựu
+## 3. Lấy Sự Trưởng Thành Của Cộng Sự Làm Thước Đo
 
-Ở giai đoạn đầu sự nghiệp, niềm vui của Vân là những chiếc cúp cá nhân. Nhưng khi đã đi qua hơn 17 năm trong ngành tài chính, hạnh phúc lớn nhất của Vân lại nằm ở những khoảnh khắc đứng dưới khán đài hoặc đứng cạnh các cộng sự của mình trên sân khấu vinh danh **Manulife Talent Attractor (MTA)**. Đó là lúc nhìn thấy những người em, người bạn đồng hành từng rụt rè ngày nào nay tự tin nâng cao chiếc cúp Quản lý xuất sắc.
+Đầu sự nghiệp, niềm vui của Vân là những chiếc cúp cá nhân. Nhưng sau hơn 17 năm trong ngành tài chính, điều Vân vui nhất là được đứng dưới khán đài hoặc cạnh các cộng sự trên sân khấu vinh danh **Manulife Talent Attractor (MTA)**. Đó là lúc thấy những người em, người bạn từng rụt rè ngày nào nay tự tin nâng chiếc cúp Quản lý xuất sắc.
 
-Một người quản lý thực thụ không bao giờ sợ nhân sự giỏi hơn mình, càng không giữ lại những “bí quyết nghề nghiệp” cho riêng bản thân. Ngược lại, Vân luôn tâm niệm phải đóng gói toàn bộ kiến thức, kinh nghiệm xương máu của mình thành hệ thống quy trình đơn giản, dễ sao chép nhất để trao quyền cho thế hệ kế cận.
+Một người quản lý đúng nghĩa không sợ nhân sự giỏi hơn mình, càng không giữ “bí quyết nghề nghiệp” cho riêng mình. Vân luôn cố đóng gói kiến thức và kinh nghiệm của mình thành quy trình đơn giản, dễ sao chép nhất để trao cho thế hệ kế cận.
 
-Bởi suy cho cùng, di sản lớn nhất của một nhà lãnh đạo không phải là số lượng danh hiệu ghi trên danh thiếp của riêng mình, mà là bao nhiêu cuộc đời, bao nhiêu gia đình của các cộng sự đã thay đổi tốt đẹp hơn, vững vàng hơn nhờ có sự đồng hành của mình trên chặng đường sự nghiệp.`,
+Với Vân, thành tựu lớn nhất của một người lãnh đạo không phải số danh hiệu trên danh thiếp, mà là bao nhiêu gia đình của cộng sự đã vững vàng hơn nhờ đi cùng mình trên đường nghề.`,
     keyTakeaways: [
-      'Thấu cảm trong quản trị là lắng nghe sâu để đọc vị đúng thế mạnh độc bản của từng nhân sự, thay vì ép đội ngũ vào một khuôn mẫu cứng nhắc.',
-      'Kết hợp sự ấm áp của Lãnh đạo Phục vụ (Servant Leadership) với kỷ luật làm gương và quy trình kèm cặp thực chiến 4 bước.',
-      'Đo lường thành công của người dẫn đầu bằng số lượng quản lý kế cận trưởng thành, tự chủ và tỏa sáng bền vững.',
+      'Thấu cảm trong quản lý là lắng nghe kỹ để nhìn đúng thế mạnh riêng của từng nhân sự, thay vì ép cả đội vào một khuôn.',
+      'Kết hợp Lãnh đạo Phục vụ (Servant Leadership) với kỷ luật làm gương và quy trình kèm cặp thực chiến 4 bước.',
+      'Đo thành công của người dẫn đầu bằng số quản lý kế cận trưởng thành, tự chủ và đứng vững.',
     ],
   },
   {
@@ -895,47 +895,47 @@ Bởi suy cho cùng, di sản lớn nhất của một nhà lãnh đạo không 
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
-    imageCaption: 'Tổ ấm bình yên bên người bạn đời tri kỷ và hai con, điểm tựa lớn nhất phía sau hành trình sự nghiệp của Khánh Vân.',
-    title: 'Nghệ Thuật “Hiện Diện Trọn Vẹn” Giữa Sự Nghiệp Và Tổ Ấm',
+    imageCaption: 'Chị Khánh Vân cùng người bạn đời và hai con tại nhà, điểm tựa phía sau sự nghiệp của chị.',
+    title: 'Cân Bằng Sự Nghiệp Và Gia Đình Bằng Cách Có Mặt Thật Sự',
     excerpt:
-      'Đầu năm 2018, khi quyết định khép lại 8 năm tại ngân hàng ANZ ngay lúc đang đứng Top 1 doanh số, điều Vân tìm kiếm không chỉ là thu nhập cao hơn mà là quyền làm chủ thời gian để vừa dẫn dắt sự nghiệp độc lập, vừa có mặt trọn vẹn trong tuổi thơ của hai con.',
-    content: `*Phụ nữ ở vị trí quản lý thường đối diện với một nỗi trăn trở vô hình: khi ngồi trong phòng họp lại thấp thỏm nghĩ về bữa tối của con, lúc ngồi bên con lại bận tâm chuyện chỉ tiêu, tin nhắn công việc. Sau nhiều năm đi qua áp lực ấy, Vân nhận ra cân bằng không phải là chia đôi quỹ thời gian 50–50 một cách cơ học, mà là nghệ thuật “Hiện diện trọn vẹn” ở nơi mình đang thuộc về.*
+      'Đầu năm 2018, Vân rời ANZ sau 8 năm khi đang đứng Top 1 doanh số. Điều Vân tìm không chỉ là thu nhập cao hơn, mà là quyền chủ động thời gian để vừa làm sự nghiệp độc lập, vừa có mặt trong tuổi thơ của hai con.',
+    content: `*Phụ nữ làm quản lý thường mang một nỗi băn khoăn khó gọi tên: ngồi trong phòng họp thì lo nghĩ bữa tối của con, ngồi bên con thì lo chỉ tiêu và tin nhắn công việc. Sau nhiều năm đi qua áp lực đó, Vân nhận ra cân bằng không phải là chia thời gian 50/50 một cách máy móc. Cân bằng là có mặt thật sự ở nơi mình đang ở.*
 
-## Bước Ngoặt 2018 Và Khát Khao Làm Chủ Quỹ Thời Gian
+## Năm 2018 Và Mong Muốn Làm Chủ Thời Gian Của Mình
 
-Đầu năm 2018, sau 8 năm gắn bó với ngân hàng quốc tế ANZ (2009–2017) và vừa chạm cột mốc Top 1 doanh số thế chấp toàn quốc, Vân đưa ra một quyết định khiến nhiều đồng nghiệp bất ngờ: rời vùng an toàn của môi trường ngân hàng nước ngoài để bắt đầu hành trình độc lập tại Manulife Việt Nam.
+Đầu năm 2018, sau 8 năm gắn bó với ngân hàng quốc tế ANZ (từ 2009 đến 2017) và vừa đạt Top 1 doanh số thế chấp toàn quốc, Vân đưa ra một quyết định khiến nhiều đồng nghiệp bất ngờ: rời môi trường ngân hàng nước ngoài để bắt đầu làm độc lập tại Manulife Việt Nam.
 
-Lý do không phải vì công việc cũ không tốt. Ngược lại, ANZ đã rèn cho Vân kỷ luật kiểm soát rủi ro và tư duy quản lý tài sản bài bản. Nhưng ở ngưỡng tuổi 30, khi nhìn vào con gái lớn và con trai nhỏ đang lớn lên từng ngày, Vân nhìn thấy hai giới hạn của con đường làm công ăn lương truyền thống: một là trần thu nhập cố định, và hai là quỹ thời gian bị đóng khung từ sáng sớm đến tối muộn.
+Lý do không phải vì công việc cũ không tốt. ANZ đã rèn cho Vân kỷ luật kiểm soát rủi ro và tư duy quản lý tài sản bài bản. Nhưng ở tuổi 30, nhìn con gái lớn và con trai nhỏ lớn lên từng ngày, Vân thấy hai giới hạn của con đường làm công ăn lương: thu nhập có trần cố định, và thời gian bị đóng khung từ sáng sớm đến tối muộn.
 
-Vân khao khát một sự nghiệp mà ở đó mình được làm chủ nhịp điệu làm việc: vừa có thể phát triển hệ thống kinh doanh không giới hạn, vừa chủ động sắp xếp thời gian để không bỏ lỡ những cột mốc trưởng thành quan trọng của các con.
+Vân muốn một sự nghiệp mà mình chủ động nhịp làm việc: vừa phát triển được hệ thống kinh doanh không giới hạn, vừa sắp xếp được thời gian để không lỡ những cột mốc lớn của các con.
 
-## Thoát Khỏi Cảm Giác “Mắc Nợ Hai Đầu” Bằng Nguyên Tắc Đóng Mở Rõ Ràng
+## Bớt Cảm Giác “Mắc Nợ Hai Đầu” Bằng Ranh Giới Rõ Ràng
 
-Rất nhiều cha mẹ đi làm rơi vào trạng thái kiệt sức vì luôn cảm thấy mình mắc nợ cả công việc lẫn gia đình. Giải pháp giúp Vân điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao mà vẫn giữ được sự thong dong nằm ở kỷ luật phân bổ thời gian (Time-blocking) và ranh giới tâm trí rõ ràng:
+Nhiều cha mẹ đi làm kiệt sức vì lúc nào cũng thấy mình nợ cả công việc lẫn gia đình. Điều giúp Vân điều hành hơn 500 nhân sự và 64 quản lý cấp cao mà vẫn thong thả là kỷ luật phân bổ thời gian (Time-blocking) và ranh giới rõ trong đầu:
 
-- **Từ 8h30 đến 17h30, toàn tâm cho đội ngũ và khách hàng:** Trong khung giờ làm việc, đào tạo F1 hoặc thẩm định hồ sơ gia sản cho khách hàng, Vân dành 100% sự tập trung cao độ, giải quyết dứt điểm từng đầu việc theo thứ tự ưu tiên thay vì để công việc kéo dài lê thê.
-- **Khoảnh khắc bước qua cánh cửa nhà, chủ động gác lại thiết bị:** Khi trở về nhà vào buổi tối, Vân tập thói quen tắt thông báo công việc để thực sự thuộc về gia đình. Đó là giờ phút lắng nghe những câu chuyện nhỏ ở trường của hai chị em, cùng con đọc sách, hay cùng nhau tưới nước cho những chậu cây xanh ngoài ban công.
+- **Từ 8h30 đến 17h30, dành toàn bộ cho đội ngũ và khách hàng:** Trong giờ làm việc, dù đang đào tạo F1 hay thẩm định hồ sơ gia sản cho khách, Vân tập trung 100%, giải quyết dứt điểm từng việc theo thứ tự ưu tiên thay vì để kéo dài.
+- **Bước qua cửa nhà là gác thiết bị lại:** Buổi tối về nhà, Vân tập thói quen tắt thông báo công việc. Đó là giờ nghe hai chị em kể chuyện ở trường, cùng con đọc sách, hay cùng tưới mấy chậu cây ngoài ban công.
 
-Trẻ con có một sự nhạy cảm rất kỳ diệu. Các con không đếm bố mẹ ở nhà bao nhiêu tiếng đồng hồ, nhưng các con cảm nhận được ngay ánh mắt và tâm trí của bố mẹ có đang thực sự hướng về mình hay vẫn đang dán vào màn hình điện thoại. Ba mươi phút trò chuyện sâu sắc trước giờ đi ngủ giá trị hơn rất nhiều một buổi tối ngồi cạnh nhau nhưng mỗi người một thế giới riêng.
+Trẻ con nhạy lắm. Các con không đếm bố mẹ ở nhà bao nhiêu tiếng, nhưng cảm nhận được ngay bố mẹ có thật sự hướng về mình hay vẫn dán mắt vào điện thoại. Ba mươi phút trò chuyện thật sự trước giờ đi ngủ giá trị hơn nhiều so với một buổi tối ngồi cạnh nhau mà mỗi người một thế giới.
 
-## Sự Đồng Thuận Của Người Bạn Đời: Biến Tổ Ấm Thành Hậu Phương
+## Sự Đồng Thuận Của Người Bạn Đời
 
-Đằng sau danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) hay những mùa vinh danh Top 1 toàn quốc chưa bao giờ là nỗ lực đơn độc của riêng Vân. Đó là sự thấu hiểu và đồng hành thầm lặng của người chồng tri kỷ, người đã luôn tin tưởng và ủng hộ Vân từ những ngày đầu bước ra khỏi vùng an toàn.
+Danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) hay những mùa Top 1 toàn quốc chưa bao giờ là nỗ lực của riêng Vân. Phía sau là sự thấu hiểu và đồng hành thầm lặng của người chồng, người đã tin tưởng và ủng hộ Vân từ những ngày đầu rời vùng an toàn.
 
-Trong đời sống hôn nhân của những người làm quản lý, sai lầm dễ mắc phải nhất là mang gương mặt căng thẳng về nhà nhưng lại chọn cách im lặng tự gồng gánh. Ngược lại, Vân chọn sự minh bạch và sẻ chia thẳng thắn với chồng:
+Trong hôn nhân của người làm quản lý, sai lầm dễ mắc nhất là mang gương mặt căng thẳng về nhà rồi im lặng tự gồng. Vân chọn nói thẳng và chia sẻ với chồng:
 
-- **Chia sẻ trước về những giai đoạn cao điểm:** Khi bước vào các tháng chạy chỉ tiêu lớn của vùng hoặc lịch trình sự kiện dày đặc, Vân luôn trao đổi trước để hai vợ chồng chủ động san sẻ lịch đưa đón và đồng hành cùng con.
-- **Tôn trọng không gian và cùng chung tầm nhìn tài chính:** Khi người bạn đời hiểu rõ mục tiêu mình đang theo đuổi không chỉ là danh hiệu nghề nghiệp, mà là xây dựng nền tảng tương lai vững chắc cho cả gia đình, tổ ấm sẽ trở thành trạm sạc năng lượng bình yên nhất.
+- **Báo trước những giai đoạn cao điểm:** Vào các tháng chạy chỉ tiêu lớn của vùng hoặc khi lịch sự kiện dày, Vân trao đổi trước để hai vợ chồng chủ động chia nhau việc đưa đón và ở bên con.
+- **Tôn trọng không gian của nhau và chung tầm nhìn tài chính:** Khi người bạn đời hiểu mục tiêu của mình không chỉ là danh hiệu nghề nghiệp mà là nền tảng vững cho cả gia đình, tổ ấm sẽ là nơi nạp lại năng lượng tốt nhất.
 
-## Khi Công Việc Tử Tế Chính Là Bài Học Sống Động Nhất Dành Cho Con
+## Làm Việc Tử Tế Cũng Là Bài Học Cho Con
 
-Nhiều người thường đặt công việc và cuộc sống lên hai đầu bàn cân đối lập. Nhưng với Vân, hai mảnh ghép ấy hòa quyện và nâng đỡ lẫn nhau.
+Nhiều người đặt công việc và cuộc sống lên hai đầu bàn cân. Với Vân, hai thứ này nâng đỡ nhau.
 
-Khi các con nhìn thấy bố mẹ làm việc bằng sự tử tế, giữ chữ Tín với từng khách hàng và đồng nghiệp, chính các con cũng đang hấp thụ bài học tự nhiên nhất về lòng tự trọng và tinh thần trách nhiệm. Và ở chiều ngược lại, khi mỗi ngày đi làm Vân giúp hàng trăm gia đình thiết lập quỹ học vấn và lá chắn bảo vệ người trụ cột, Vân càng thấm thía rằng tình yêu thương dành cho con cái sẽ trọn vẹn nhất khi đi kèm một cơ chế tài chính kỷ luật. Có như vậy, dù cuộc đời có những biến số bất ngờ, hành trình trưởng thành của các con vẫn luôn được bảo toàn nguyên vẹn.`,
+Khi các con thấy bố mẹ làm việc tử tế, giữ chữ Tín với từng khách hàng và đồng nghiệp, các con tự học được lòng tự trọng và tinh thần trách nhiệm. Ngược lại, mỗi ngày đi làm Vân giúp hàng trăm gia đình lập quỹ học vấn và lá chắn bảo vệ người trụ cột, nên Vân càng hiểu rằng tình thương dành cho con sẽ đầy đủ nhất khi có một cơ chế tài chính kỷ luật đi kèm. Như vậy, dù đời có biến số bất ngờ, đường trưởng thành của các con vẫn được giữ nguyên.`,
     keyTakeaways: [
-      'Cân bằng không phải là chia đôi thời gian cơ học, mà là hiện diện trọn vẹn 100% tâm trí ở nơi mình đang thuộc về.',
-      'Thiết lập kỷ luật Time-blocking ở văn phòng và chủ động gác lại thiết bị khi về nhà để lắng nghe, kết nối sâu sắc cùng các con.',
-      'Trò chuyện minh bạch với người bạn đời về mục tiêu sự nghiệp và chuẩn bị sẵn cấu trúc tài chính dài hạn để giữ trọn sự bình an cho tổ ấm.',
+      'Cân bằng không phải là chia đôi thời gian máy móc, mà là có mặt thật sự, trọn tâm trí ở nơi mình đang ở.',
+      'Dùng Time-blocking ở văn phòng và gác thiết bị khi về nhà để lắng nghe và gần gũi các con.',
+      'Trao đổi rõ với người bạn đời về mục tiêu sự nghiệp và chuẩn bị sẵn cấu trúc tài chính dài hạn để tổ ấm yên tâm.',
     ],
   },
   {
@@ -946,49 +946,49 @@ Khi các con nhìn thấy bố mẹ làm việc bằng sự tử tế, giữ ch�
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/VanPhong_ChiVanCungDoiNgu_QuyetTamHanhTrinhToaSang.jpg',
-    imageCaption: 'Mỗi bộ hợp đồng được hoạch định bài bản là một "đê chắn sóng" bảo vệ nguyên vẹn dòng tiền và tương lai học vấn cho cả gia đình.',
+    imageCaption: 'Mỗi bộ hợp đồng được hoạch định kỹ giống một đê chắn sóng, giữ dòng tiền và tương lai học vấn cho cả gia đình.',
     title: 'Ba Nguyên Tắc Bảo Toàn Dòng Tiền Gia Đình Từ Góc Nhìn Cựu Banker',
     excerpt:
-      'Tạo ra thu nhập cao là năng lực kiếm tiền ở hiện tại, nhưng thiết lập cấu trúc "Kiềng 3 chân" để bảo vệ tương lai học vấn của con cái và dòng tiền gia đình trước mọi biến cố mới là bản lĩnh giữ tiền bền vững.',
-    content: `*Suốt 8 năm làm việc tại ngân hàng quốc tế ANZ và hơn 8 năm điều hành tại Manulife Việt Nam, Vân đã có dịp trực tiếp thẩm định hàng ngàn hồ sơ tài chính của các gia đình trung lưu và chủ doanh nghiệp. Một nghịch lý khiến Vân trăn trở mãi là rất nhiều người cực kỳ xuất sắc ở khâu "Tấn công" (kiếm tiền và nhân bản tài sản khi thị trường thuận lợi), nhưng lại gần như bỏ trống hoàn toàn "Hàng phòng thủ" trước những rủi ro sức khỏe và biến cố dòng tiền.*
+      'Kiếm được thu nhập cao là năng lực của hiện tại. Giữ được tiền thì cần cấu trúc “Kiềng 3 chân” để bảo vệ tương lai học vấn của con và dòng tiền gia đình trước mọi biến cố.',
+    content: `*Suốt 8 năm làm việc tại ngân hàng quốc tế ANZ và hơn 8 năm điều hành tại Manulife Việt Nam, Vân đã trực tiếp thẩm định hàng ngàn hồ sơ tài chính của các gia đình trung lưu và chủ doanh nghiệp. Có một nghịch lý Vân nhớ mãi: rất nhiều người cực giỏi khâu "Tấn công" (kiếm tiền và nhân tài sản khi thị trường thuận lợi), nhưng gần như bỏ trống "Hàng phòng thủ" trước rủi ro sức khỏe và biến cố dòng tiền.*
 
 ## Nguyên Tắc 1: Bảo Vệ “Máy In Tiền” Của Gia Đình Và Quỹ Học Vấn Của Con Trước Khi Đầu Tư Mạo Hiểm
 
-Trong bảng cân đối tài sản của một gia đình, đâu là tài sản quý giá nhất? Nhiều người sẽ chỉ vào căn biệt thự đang ở, mảnh đất vùng ven hay danh mục cổ phiếu đang nắm giữ. Nhưng thực chất, mọi khối tài sản đó đều được sinh ra từ một nguồn gốc duy nhất: **Sức khỏe, trí tuệ và khả năng tạo ra dòng tiền đều đặn mỗi ngày của người trụ cột**.
+Trong bảng cân đối tài sản của một gia đình, tài sản quý nhất là gì? Nhiều người sẽ chỉ vào căn nhà đang ở, mảnh đất vùng ven hay danh mục cổ phiếu. Nhưng mọi khối tài sản đó đều đến từ một nguồn: **Sức khỏe, trí tuệ và khả năng tạo ra dòng tiền đều đặn mỗi ngày của người trụ cột**.
 
-Khi "chiếc máy in tiền" ấy vận hành trơn tru, cả gia đình tận hưởng cuộc sống sung túc. Nhưng nếu chẳng may người trụ cột phải dừng lại đột ngột vì biến cố y tế nghiêm trọng hoặc tai nạn:
+Khi "chiếc máy in tiền" ấy chạy tốt, cả nhà sống thoải mái. Nhưng nếu người trụ cột phải dừng đột ngột vì biến cố y tế nghiêm trọng hoặc tai nạn:
 
-- Dòng thu nhập chủ động lập tức đứt gãy về 0, trong khi chi phí sinh hoạt, lãi vay ngân hàng và học phí của con vẫn đều đặn gõ cửa mỗi tháng.
-- Gia đình buộc phải bán tháo các tài sản đầu tư (bất động sản, chứng khoán) ngay lúc thị trường thanh khoản kém nhất để lấy tiền mặt chữa bệnh.
+- Thu nhập chủ động đứt về 0, trong khi chi phí sinh hoạt, lãi vay ngân hàng và học phí của con vẫn đến đều mỗi tháng.
+- Gia đình buộc phải bán tháo tài sản đầu tư (bất động sản, chứng khoán) đúng lúc thị trường khó bán nhất để có tiền chữa bệnh.
 
-Vì vậy, nguyên tắc đầu tiên của một cựu Banker luôn là: **Khóa chặt tầng Đáy của tháp tài sản trước khi xây tầng Đỉnh**. Quỹ học vấn 15–18 năm của các con và Quỹ dự phòng y tế chất lượng cao cho bố mẹ phải được đặt ở vùng an toàn tuyệt đối, tách biệt hoàn toàn với những biến động lên xuống của chu kỳ kinh tế.
+Vì vậy, nguyên tắc đầu tiên của một cựu Banker là: **Làm chắc tầng Đáy của tháp tài sản trước khi xây tầng Đỉnh**. Quỹ học vấn 15 đến 18 năm của các con và quỹ dự phòng y tế chất lượng cao cho bố mẹ cần để ở vùng an toàn tuyệt đối, tách khỏi biến động lên xuống của chu kỳ kinh tế.
 
-## Nguyên Tắc 2: Cấu Trúc “Kiềng 3 Chân” Và Kỷ Luật Phân Bổ “Đúng & Đủ” (10%–15% Thu Nhập)
+## Nguyên Tắc 2: Kiềng 3 Chân Và Phân Bổ “Đúng & Đủ” (10 Đến 15% Thu Nhập)
 
-Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt đỏ nhất, mà là hợp đồng **được duy trì trọn vẹn đến đúng thời điểm gia đình cần đến nó**. Đó cũng là lý do suốt nhiều năm qua, Hệ thống Green Power luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với chỉ số doanh thu.
+Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt nhất, mà là hợp đồng **được duy trì đủ lâu đến đúng lúc gia đình cần**. Vì vậy, nhiều năm qua Hệ thống Green Power luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với doanh thu.
 
-Để dòng tiền gia đình luôn thông suốt và nhẹ nhàng trong suốt hành trình 15–20 năm, Vân luôn khuyên khách hàng thiết lập mô hình **“Kiềng 3 Chân Tài Chính”**:
+Để dòng tiền gia đình thông suốt trong 15 đến 20 năm, Vân luôn khuyên khách hàng lập mô hình **“Kiềng 3 Chân Tài Chính”**:
 
-- **Chân thứ nhất, Thanh khoản ngắn hạn (Ngân hàng):** Duy trì quỹ tiền gửi tương đương 6–12 tháng chi phí sinh hoạt để xử lý tức thời mọi nhu cầu phát sinh hàng ngày.
-- **Chân thứ hai, Đê chắn rủi ro và Kỷ luật hưu trí (Bảo hiểm Nhân thọ, Sức khỏe):** Chỉ trích lập một tỷ lệ vừa vặn từ **10% đến tối đa 15% tổng thu nhập ổn định hàng năm** của gia đình. Khoản 10–15% này không làm ảnh hưởng đến chất lượng sống hiện tại, nhưng ngay lập tức kích hoạt một hạn mức bảo vệ sinh mạng, bệnh lý nghiêm trọng và y tế lớn gấp hàng chục lần số tiền đóng vào.
-- **Chân thứ ba, Gia tăng tài sản dài hạn (Đầu tư & Kinh doanh):** Khi đã có Chân thứ nhất và Chân thứ hai bảo vệ vững chắc cho tổ ấm, bạn hoàn toàn an tâm dùng 85% dòng tiền còn lại để sinh hoạt và đầu tư sinh lời với tâm thế vững vàng nhất.
+- **Chân thứ nhất, Thanh khoản ngắn hạn (Ngân hàng):** Giữ quỹ tiền gửi tương đương 6 đến 12 tháng chi phí sinh hoạt để xử lý ngay mọi nhu cầu phát sinh.
+- **Chân thứ hai, Đê chắn rủi ro và Kỷ luật hưu trí (Bảo hiểm Nhân thọ, Sức khỏe):** Chỉ trích một tỷ lệ vừa phải, từ **10% đến tối đa 15% tổng thu nhập ổn định hàng năm** của gia đình. Khoản 10 đến 15% này không làm ảnh hưởng chất lượng sống hiện tại, nhưng mở ra ngay một hạn mức bảo vệ sinh mạng, bệnh lý nghiêm trọng và y tế lớn gấp hàng chục lần số tiền đóng vào.
+- **Chân thứ ba, Gia tăng tài sản dài hạn (Đầu tư & Kinh doanh):** Khi đã có Chân thứ nhất và Chân thứ hai che chắn cho tổ ấm, bạn yên tâm dùng 85% dòng tiền còn lại để sinh hoạt và đầu tư sinh lời.
 
-## Nguyên Tắc 3: “Khám Sức Khỏe Tài Chính” Định Kỳ Mỗi Năm Một Lần
+## Nguyên Tắc 3: “Khám Sức Khỏe Tài Chính” Mỗi Năm Một Lần
 
-Một sai lầm rất phổ biến của các gia đình Việt là sau khi ký xong hợp đồng bảo hiểm hoặc lập sổ tiết kiệm thì cất kỹ vào két sắt suốt 5–10 năm không một lần mở ra xem lại.
+Một sai lầm rất phổ biến ở các gia đình Việt là ký xong hợp đồng bảo hiểm hoặc lập xong sổ tiết kiệm thì cất vào két sắt 5 đến 10 năm không mở ra xem lại.
 
-Thực tế, cuộc sống của mỗi gia đình luôn vận động không ngừng:
+Thực tế, đời sống mỗi gia đình luôn thay đổi:
 
-- Năm 30 tuổi, bạn mới đón đứa con đầu lòng, thu nhập và trách nhiệm tài chính ở một mức khác.
-- Năm 38 tuổi, bạn đón thêm bé thứ hai, chuyển sang ngôi nhà lớn hơn kèm một khoản dư nợ tín dụng mới, hoặc cha mẹ hai bên bắt đầu bước vào tuổi già cần chăm sóc y tế đặc biệt.
+- Năm 30 tuổi, bạn vừa có đứa con đầu lòng, thu nhập và trách nhiệm tài chính ở một mức.
+- Năm 38 tuổi, bạn có thêm bé thứ hai, chuyển sang nhà lớn hơn kèm một khoản dư nợ tín dụng mới, hoặc cha mẹ hai bên bắt đầu già và cần chăm sóc y tế đặc biệt.
 
-Một cấu trúc bảo vệ được thiết kế từ 5 năm trước có thể đã trở nên quá chật so với quy mô tài sản và trách nhiệm hiện tại của bạn. Do đó, nguyên tắc thứ ba mà Vân luôn thực hiện cùng khách hàng của mình là **Rà soát danh mục định kỳ hàng năm (Annual Policy Review)**: kiểm tra lại thông tin người thụ hưởng, cập nhật các quyền lợi y tế thế hệ mới, tối ưu hóa dòng tiền đóng phí và điều chỉnh mệnh giá bảo vệ sao cho luôn khớp với từng nấc thang trưởng thành của gia đình.
+Một cấu trúc bảo vệ thiết kế từ 5 năm trước có thể đã quá chật so với tài sản và trách nhiệm hiện tại. Vì vậy, nguyên tắc thứ ba Vân luôn làm cùng khách hàng là **Rà soát danh mục định kỳ hàng năm (Annual Policy Review)**: kiểm tra lại thông tin người thụ hưởng, cập nhật quyền lợi y tế thế hệ mới, tối ưu dòng tiền đóng phí và chỉnh mệnh giá bảo vệ cho khớp với từng giai đoạn của gia đình.
 
-Kiếm được nhiều tiền giúp gia đình có một cuộc sống tiện nghi ở hiện tại. Nhưng quản trị dòng tiền bằng sự bài bản và kỷ luật mới là chìa khóa giữ cho sự thịnh vượng ấy bình an đi qua mọi giông bão của cuộc đời.`,
+Kiếm được nhiều tiền giúp gia đình sống tiện nghi ở hiện tại. Quản lý dòng tiền bài bản và kỷ luật mới giúp sự khấm khá ấy đi qua được những lúc khó khăn.`,
     keyTakeaways: [
-      'Ưu tiên bảo vệ "máy in tiền" (sức khỏe và thu nhập của người trụ cột) cùng quỹ học vấn của con cái ở vùng an toàn tuyệt đối trước khi đầu tư mạo hiểm.',
-      'Vận hành cấu trúc "Kiềng 3 chân" (Ngân hàng, Bảo hiểm, Đầu tư) với nguyên tắc Đúng & Đủ: chỉ phân bổ 10%–15% thu nhập cho lá chắn bảo hiểm để duy trì bền vững 15–20 năm.',
-      'Thực hiện rà soát hồ sơ tài chính và hợp đồng bảo hiểm định kỳ mỗi năm một lần để nâng cấp quyền lợi tương xứng với từng giai đoạn phát triển của gia đình.',
+      'Ưu tiên bảo vệ “máy in tiền” (sức khỏe và thu nhập của người trụ cột) cùng quỹ học vấn của con ở vùng an toàn tuyệt đối trước khi đầu tư mạo hiểm.',
+      'Dùng cấu trúc “Kiềng 3 chân” (Ngân hàng, Bảo hiểm, Đầu tư) với nguyên tắc Đúng & Đủ: chỉ phân bổ 10 đến 15% thu nhập cho lá chắn bảo hiểm để duy trì bền 15 đến 20 năm.',
+      'Rà soát hồ sơ tài chính và hợp đồng bảo hiểm mỗi năm một lần để quyền lợi theo kịp từng giai đoạn của gia đình.',
     ],
   },
   {
@@ -999,54 +999,54 @@ Kiếm được nhiều tiền giúp gia đình có một cuộc sống tiện n
     readTime: '6 phút đọc',
     featured: false,
     image: '/images/DoiThuong_ChiVan_PhongTapGym_Ngang.jpg',
-    imageCaption: 'Duy trì kỷ luật tập luyện thể lực đều đặn mỗi tuần, nền tảng cho sự minh mẫn, điềm tĩnh và sức bền trong quản trị đường dài.',
-    title: 'Kỷ Luật Rèn Luyện Thể Chất Và Bài Học Về Sức Bền Của Người Lãnh Đạo',
+    imageCaption: 'Chị Vân tập luyện thể lực đều đặn mỗi tuần, giúp giữ đầu óc tỉnh táo và sức bền khi làm quản lý.',
+    title: 'Tập Gym Đều Và Bài Học Về Sức Bền Của Người Dẫn Đầu Đội Ngũ',
     excerpt:
-      'Điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao đòi hỏi một nền tảng thể lực dẻo dai. Với Vân, phòng tập, khu vườn xanh và quản trị tài chính đều vận hành theo chung một quy luật. Mọi thành quả vững chãi đều được xây từ những thói quen kỷ luật lặp lại mỗi ngày.',
-    content: `*Nhiều bạn bè và cộng sự thường hỏi Vân: “Làm thế nào để luôn giữ được nguồn năng lượng tích cực và sự điềm tĩnh khi vừa trực tiếp điều hành vùng kinh doanh hơn 500 nhân sự, vừa cố vấn cho khách hàng và chăm sóc gia đình?” Câu trả lời của Vân không nằm ở những kỹ thuật quản trị phức tạp, mà bắt đầu từ những giờ tập luyện đổ mồ hôi đều đặn mỗi tuần.*
+      'Điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao cần thể lực dẻo dai. Với Vân, phòng tập, khu vườn nhỏ và quản lý tài chính đều theo chung một quy luật: kết quả vững đến từ thói quen lặp lại mỗi ngày.',
+    content: `*Bạn bè và cộng sự hay hỏi Vân: “Làm sao chị luôn giữ được năng lượng tốt và sự điềm tĩnh khi vừa điều hành vùng kinh doanh hơn 500 nhân sự, vừa cố vấn khách hàng và chăm sóc gia đình?” Câu trả lời của Vân không nằm ở kỹ thuật quản trị phức tạp. Nó bắt đầu từ những giờ tập đổ mồ hôi đều đặn mỗi tuần.*
 
-## Quy Luật Chung Giữa Phòng Tập Và Quản Trị: Sức Mạnh Của Sự Lặp Lại
+## Phòng Tập Và Quản Lý Có Chung Một Quy Luật: Lặp Lại Đều
 
-Cường độ làm việc của một Giám đốc Vùng với các lịch trình đào tạo, họp chiến lược cùng các quản lý F1 và hoạch định gia sản đòi hỏi một nền tảng thể lực thực sự bền bỉ. Một tư duy sắc bén và khả năng ra quyết định sáng suốt không thể tồn tại lâu dài trong một cơ thể mệt mỏi.
+Một Giám đốc Vùng phải lo lịch đào tạo, họp chiến lược với các quản lý F1 và hoạch định gia sản, nên cần thể lực thật sự bền. Đầu óc sắc và khả năng quyết định tốt không thể tồn tại lâu trong một cơ thể mệt mỏi.
 
-Nhưng hơn cả câu chuyện vóc dáng hay thể lực, phòng tập là nơi rèn luyện tính kỷ luật tự giác khắt khe nhất:
+Nhưng hơn chuyện vóc dáng hay thể lực, phòng tập là nơi rèn tính tự giác khắt khe nhất:
 
-- **Không có thành quả nào được tạo ra sau một đêm:** Bạn không thể nâng mức tạ nặng hay có một cơ thể dẻo dai chỉ sau một vài buổi tập đầy hứng khởi. Sự thay đổi chỉ đến khi bạn kiên trì lặp lại các bài tập đúng kỹ thuật ngay cả vào những buổi sáng cơ thể uể oải nhất và không có ai đứng cạnh giám sát.
-- **Chiến thắng sự trì hoãn của chính mình:** Mỗi lần xỏ giày bước vào phòng tập sau một ngày làm việc căng thẳng là một lần rèn luyện bản lĩnh vượt qua sự dễ dãi của bản thân.
+- **Không có kết quả nào đến sau một đêm:** Bạn không thể nâng mức tạ nặng hay có cơ thể dẻo dai chỉ sau vài buổi tập hứng khởi. Thay đổi chỉ đến khi bạn kiên trì lặp lại bài tập đúng kỹ thuật, kể cả những buổi sáng người uể oải nhất và không ai đứng cạnh giám sát.
+- **Thắng sự trì hoãn của chính mình:** Mỗi lần xỏ giày vào phòng tập sau một ngày làm việc căng thẳng là một lần luyện cách vượt qua sự dễ dãi của bản thân.
 
-Trong quản trị đội ngũ và tích lũy tài sản cũng hoàn toàn tương tự. Thành tựu Top 1 toàn quốc không đến từ những cú bứt phá ngẫu hứng ngắn hạn, mà là kết quả tất yếu của những thói quen tốt được duy trì bền bỉ từ ngày này qua tháng khác.
+Quản lý đội ngũ và tích lũy tài sản cũng như vậy. Top 1 toàn quốc không đến từ những cú bứt tốc ngẫu hứng, mà từ những thói quen tốt được giữ đều qua ngày này sang tháng khác.
 
-## Từ “Ba Tháng Trắng Tay” Đến Đỉnh Cao: Sức Bền Tâm Lý Bắt Nguồn Từ Thể Lực
+## Từ “Ba Tháng Trắng Tay” Đến Đỉnh Cao, Sức Bền Tinh Thần Bắt Đầu Từ Thể Lực
 
-Nhìn lại gần hai thập kỷ làm nghề, từ những ngày đầu chuyển sang bộ phận kinh doanh tại ngân hàng ANZ với 3 tháng liên tiếp không có nổi một khách hàng, cho đến giai đoạn dẫn dắt hệ thống vượt qua đại dịch năm 2021 để chạm tới giải thưởng Nhà Quản lý Xuất sắc nhất Châu Á, bài học lớn nhất của Vân là: **Người đi xa nhất không phải người chạy nhanh nhất ở vạch xuất phát, mà là người có sức bền tốt nhất để không bỏ cuộc giữa chừng.**
+Nhìn lại gần hai thập kỷ làm nghề, từ những ngày đầu chuyển sang bộ phận kinh doanh tại ngân hàng ANZ với 3 tháng liên tiếp không có nổi một khách hàng, đến lúc dẫn dắt hệ thống vượt qua đại dịch năm 2021 và nhận giải Nhà Quản lý Xuất sắc nhất Châu Á, bài học lớn nhất của Vân là: **Người đi xa nhất không phải người chạy nhanh nhất ở vạch xuất phát, mà là người đủ sức bền để không bỏ cuộc giữa chừng.**
 
-Khi cơ thể khỏe mạnh và nhịp sinh học được làm chủ, cách chúng ta đối diện với áp lực cũng thay đổi hoàn toàn. Đứng trước một biến động của thị trường hay một bài toán nhân sự khó, một người lãnh đạo có nền tảng thể chất tốt sẽ giữ được nhịp thở điềm tĩnh, không hoảng loạn và không truyền sự căng thẳng sang tập thể. Như câu nói mà Vân luôn giữ làm kim chỉ nam suốt nhiều năm qua: *“Cứ đi rồi sẽ đến, chỉ cần hướng về mặt trời”*.
+Khi cơ thể khỏe và nhịp sinh học ổn định, cách mình đối diện áp lực cũng khác. Trước một biến động thị trường hay một bài toán nhân sự khó, người lãnh đạo có thể lực tốt giữ được nhịp thở bình tĩnh, không hoảng và không truyền căng thẳng sang cả đội. Vân vẫn giữ một câu làm kim chỉ nam nhiều năm nay: *“Cứ đi rồi sẽ đến, chỉ cần hướng về mặt trời”*.
 
-## Bài Học Từ Khu Vườn Nhỏ: Giai Đoạn Đâm Rễ Âm Thầm Trước Khi Vươn Cao
+## Bài Học Từ Khu Vườn Nhỏ: Cây Đâm Rễ Âm Thầm Trước Khi Vươn Cao
 
-Ngoài những giờ rèn luyện trong phòng tập, một thói quen tĩnh lặng khác giúp Vân cân bằng năng lượng ở tuổi U40 là tự tay trồng cây và chăm sóc khu vườn nhỏ ngoài ban công.
+Ngoài phòng tập, một thói quen yên tĩnh khác giúp Vân cân bằng ở tuổi U40 là tự tay trồng cây và chăm khu vườn nhỏ ngoài ban công.
 
-Trồng cây dạy cho người làm tài chính sự kiên nhẫn trước quy luật của tự nhiên:
+Trồng cây dạy người làm tài chính biết kiên nhẫn:
 
-- Có những giai đoạn suốt nhiều tháng liền, nhìn bề ngoài cái cây gần như không cao thêm một centimet nào. Nhưng thực chất, nó không hề ngừng lớn mà đang dồn toàn bộ nhựa sống xuống lòng đất để đâm bộ rễ thật sâu và thật chắc.
-- Chỉ khi bộ rễ dưới lòng đất đã đủ vững vàng, cây mới bắt đầu vươn cành lá xanh tốt và đủ sức đứng vững trước những cơn mưa bão lớn.
+- Có những giai đoạn nhiều tháng liền, nhìn bên ngoài cái cây gần như không cao thêm một centimet. Nhưng thật ra nó vẫn lớn, đang dồn sức xuống đất để đâm bộ rễ sâu và chắc.
+- Chỉ khi rễ đã đủ vững, cây mới bắt đầu vươn cành lá và đứng được trước mưa bão.
 
-Rèn luyện thể lực, xây dựng uy tín nghề nghiệp hay tích lũy tài chính dài hạn cho gia đình đều cần một “giai đoạn đâm rễ” âm thầm như thế. Đừng sốt ruột khi những tháng đầu tập luyện hay những năm đầu tích lũy chưa thấy kết quả nhảy vọt. Chính sự kiên định trong giai đoạn âm thầm ấy mới là thứ quyết định độ bền vững của cả chục năm sau.
+Rèn thể lực, xây uy tín nghề nghiệp hay tích lũy tài chính dài hạn cho gia đình đều cần một “giai đoạn đâm rễ” âm thầm như vậy. Đừng sốt ruột khi những tháng đầu tập hay những năm đầu tích lũy chưa thấy kết quả nhảy vọt. Sự kiên định trong giai đoạn âm thầm ấy quyết định độ bền của cả chục năm sau.
 
-## Hai Mặt Của Sự Chủ Động: Rèn Luyện Cơ Thể Và Khóa Chặt Rủi Ro Y Tế
+## Chủ Động Hai Việc: Rèn Cơ Thể Và Chuẩn Bị Cho Rủi Ro Y Tế
 
-Đứng ở góc nhìn của một người làm quản trị rủi ro, Vân luôn tâm niệm sức khỏe là con số 1 đứng đầu, còn tài sản, sự nghiệp hay những chuyến du lịch trải nghiệm thế giới là những con số 0 đứng sau. Có số 1 thì những số 0 mới mang đầy đủ ý nghĩa.
+Làm quản trị rủi ro, Vân luôn nghĩ sức khỏe là con số 1 đứng đầu, còn tài sản, sự nghiệp hay những chuyến du lịch là các con số 0 đứng sau. Có số 1 thì các số 0 mới có nghĩa.
 
-Vì vậy, thương bản thân và bảo vệ sức khỏe một cách trí tuệ luôn cần hai mặt song hành như hai cánh của một chú chim:
+Vì vậy, chăm sóc sức khỏe cần hai việc đi cùng nhau như hai cánh của một con chim:
 
-- **Mặt thứ nhất là chủ động rèn luyện mỗi ngày:** Tập thể dục đều đặn, ăn uống lành mạnh và giữ tâm trí an nhiên để cơ thể luôn dẻo dai, giảm thiểu tối đa xác suất bệnh tật.
-- **Mặt thứ hai là chủ động chuẩn bị quỹ dự phòng y tế từ lúc đang khỏe mạnh:** Bởi dù ta có kỷ luật đến đâu, cuộc sống vẫn luôn tồn tại những rủi ro y tế khách quan không báo trước. Chuẩn bị sẵn thẻ chăm sóc sức khỏe và quỹ dự phòng bệnh lý nghiêm trọng chính là cách khóa chặt rủi ro tài chính, để nếu biến cố xảy ra, gia đình được tiếp cận điều trị y tế tốt nhất mà không bao giờ phải chạm vào khoản tích lũy tương lai của các con.
+- **Việc thứ nhất là rèn luyện mỗi ngày:** Tập thể dục đều, ăn uống lành mạnh và giữ tâm trí thoải mái để cơ thể dẻo dai, giảm tối đa khả năng bệnh tật.
+- **Việc thứ hai là chuẩn bị quỹ dự phòng y tế từ lúc còn khỏe:** Vì dù kỷ luật đến đâu, vẫn có những rủi ro y tế không báo trước. Có sẵn thẻ chăm sóc sức khỏe và quỹ dự phòng bệnh lý nghiêm trọng là cách làm chắc phần tài chính, để nếu có biến cố, gia đình được điều trị tốt nhất mà không phải đụng đến khoản tích lũy cho tương lai của các con.
 
-Suy cho cùng, tập thể dục mỗi ngày là để cơ thể khỏe mạnh, còn thiết lập sẵn một lớp đệm dự phòng y tế từ sớm là để tâm trí luôn được thảnh thơi và bình an.`,
+Tập thể dục mỗi ngày để cơ thể khỏe. Lập sẵn lớp đệm dự phòng y tế từ sớm để đầu óc được yên.`,
     keyTakeaways: [
-      'Thể lực bền bỉ và nhịp sinh học kỷ luật là nền tảng giúp người lãnh đạo giữ được sự minh mẫn, điềm tĩnh trước mọi áp lực.',
-      'Thể thao, trồng cây và quản trị gia sản đều có chung quy luật: cần giai đoạn kiên trì bám rễ âm thầm trước khi hái quả ngọt dài hạn.',
-      'Chăm sóc sức khỏe toàn diện gồm hai vế không tách rời: rèn luyện thể chất mỗi ngày và chuẩn bị sẵn quỹ dự phòng y tế ngay từ lúc đang khỏe mạnh.',
+      'Thể lực bền và nhịp sinh hoạt kỷ luật giúp người lãnh đạo giữ được sự tỉnh táo, điềm tĩnh trước áp lực.',
+      'Thể thao, trồng cây và quản lý gia sản có chung quy luật: cần giai đoạn kiên trì đâm rễ âm thầm trước khi có kết quả dài hạn.',
+      'Chăm sóc sức khỏe gồm hai việc không tách rời: rèn luyện thể chất mỗi ngày và chuẩn bị quỹ dự phòng y tế từ lúc còn khỏe.',
     ],
   },
 ];
@@ -1068,8 +1068,8 @@ const BOOKS: BookItem[] = [
     author: 'Jim Collins',
     theme: 'Triết lý Lãnh đạo',
     cover: '/images/books/book_01_good_to_great.jpg',
-    note: 'Hình mẫu “Lãnh đạo Cấp độ 5”, sự kết hợp giữa lòng khiêm nhường cá nhân và ý chí chuyên nghiệp kiên định, bắt đầu từ nguyên tắc “Ai trước, cái gì sau”.',
-    reflection: 'Khi xây dựng đội ngũ, bài học lớn nhất Vân mang theo từ Jim Collins là không vội mở rộng số lượng, mà chọn đúng những cộng sự có chung chữ “Tín” và sự tử tế.',
+    note: 'Hình mẫu “Lãnh đạo Cấp độ 5”: người khiêm nhường nhưng quyết liệt với công việc, và luôn chọn đúng người trước khi tính đến việc gì.',
+    reflection: 'Khi xây đội ngũ, Vân nhớ nhất bài học của Jim Collins: đừng vội tăng số lượng, hãy chọn người có chung chữ “Tín”.',
   },
   {
     num: '02',
@@ -1077,8 +1077,8 @@ const BOOKS: BookItem[] = [
     author: 'Morgan Housel',
     theme: 'Quản trị Gia sản',
     cover: '/images/books/book_02_psychology_of_money.jpg',
-    note: 'Sự thịnh vượng bền vững không nằm ở những công thức phức tạp, mà ở kỷ luật kiểm soát hành vi và luôn giữ một biên độ an toàn dự phòng cho gia đình.',
-    reflection: 'Gần hai thập kỷ làm việc với dòng tiền từ ANZ đến Manulife củng cố trong Vân một nguyên tắc: quản trị gia sản là để gia đình không bao giờ bị động khi biến cố xảy ra.',
+    note: 'Giàu bền không nhờ công thức phức tạp. Cái cần là kiểm soát hành vi của chính mình và luôn chừa một khoản dự phòng cho gia đình.',
+    reflection: 'Gần hai mươi năm làm việc với dòng tiền, từ ANZ đến Manulife, Vân rút ra một điều: quản lý gia sản là để gia đình không bị động khi có biến cố.',
   },
   {
     num: '03',
@@ -1086,17 +1086,17 @@ const BOOKS: BookItem[] = [
     author: 'James Clear',
     theme: 'Kỷ luật Thói quen',
     cover: '/images/books/book_03_atomic_habits.jpg',
-    note: 'Cốt lõi của phương châm “Đi chắc để đi xa” là mọi thành quả lớn đều bắt nguồn từ những thói quen nhỏ được lặp lại kiên trì mỗi ngày.',
-    reflection: 'Ba tháng đầu làm Sales mà chưa có khách nào cũng không làm Vân nản lòng, bởi thành quả Top 1 toàn quốc là kết quả của những việc nhỏ được làm chỉn chu mỗi ngày.',
+    note: 'Ý chính khớp với phương châm “Đi chắc để đi xa”: thành quả lớn đến từ những thói quen nhỏ, ngày nào cũng lặp lại.',
+    reflection: 'Ba tháng đầu làm Sales chưa có khách nào, Vân vẫn không bỏ cuộc. Top 1 toàn quốc sau này cũng đến từ những việc nhỏ làm đều mỗi ngày.',
   },
   {
     num: '04',
     title: 'Servant Leadership: Phụng Sự Để Dẫn Đầu',
     author: 'Robert K. Greenleaf',
-    theme: 'Tâm thức Phụng sự',
+    theme: 'Lãnh đạo biết phục vụ',
     cover: '/images/books/book_04_servant_leadership.jpg',
-    note: 'Lãnh đạo đích thực không bắt đầu bằng mong muốn quyền lực, mà bắt nguồn từ khát khao tự nhiên muốn được chăm sóc, nâng đỡ và phụng sự người khác.',
-    reflection: 'Sự trưởng thành của 64 nhà quản lý F1 hôm nay cho Vân thấy rằng mình chỉ thực sự dẫn đầu khi giúp những người đi cùng chạm tới thành công của riêng họ.',
+    note: 'Người lãnh đạo thật sự bắt đầu từ mong muốn giúp đỡ người khác, không phải từ ham muốn quyền lực.',
+    reflection: 'Nhìn 64 nhà quản lý F1 trưởng thành, Vân thấy mình chỉ dẫn đầu đúng nghĩa khi giúp từng người đạt được thành công của riêng họ.',
   },
 ];
 
@@ -1459,7 +1459,7 @@ export function App() {
       sourceType: 'Tạp chí Bảo hiểm Châu Á • Singapore',
       badge: 'Quốc tế',
       headline: 'Rookie Insurance Agency Leader of the Year 2021: Khanh Van',
-      summary: 'Bài vinh danh chính thức từ Hội đồng Giám khảo Quốc tế, ghi nhận năng lực lãnh đạo và những đóng góp trong việc nâng cao nhận thức cộng đồng.',
+      summary: 'Bài vinh danh chính thức của Hội đồng Giám khảo Quốc tế, ghi nhận năng lực lãnh đạo và đóng góp trong việc nâng cao nhận thức cộng đồng về bảo hiểm.',
       url: 'https://www.asiaadvisersnetwork.com/Article/aid/77267/Rookie-Insurance-Agency-Leader-of-the-Year-2021-Nguyen-Thi-Van',
     },
     {
@@ -1470,7 +1470,7 @@ export function App() {
       sourceType: 'Báo VietNamNet • Chuyên đề Banker',
       badge: 'Từ Banker sang Bảo hiểm',
       headline: 'Từ ngân hàng đến bảo hiểm: Khi những banker chọn rẽ hướng, biến sự chỉn chu thành lợi thế dẫn dắt',
-      summary: 'Khánh Vân chia sẻ cách chị mang tư duy hệ thống và kỷ luật vận hành từ 8 năm ở ANZ Bank vào việc xây dựng sự nghiệp bảo hiểm bền vững.',
+      summary: 'Khánh Vân kể cách chị mang tư duy hệ thống và kỷ luật vận hành từ 8 năm ở ANZ Bank sang nghề bảo hiểm.',
       url: 'https://vietnamnet.vn/tu-ngan-hang-den-bao-hiem-khi-nhung-banker-chon-re-huong-2523056.html',
     },
     {
@@ -1487,12 +1487,12 @@ export function App() {
   ];
 
   const metrics = [
-    { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản và tín dụng quốc tế' },
+    { figure: '08+', unit: 'Năm tại ANZ Bank', detail: 'Quản lý tài sản và tín dụng tại ngân hàng quốc tế' },
     { figure: 'Top 1', unit: 'Toàn quốc ANZ', detail: 'Dẫn đầu doanh số thế chấp năm 2017' },
     { figure: 'Top 1', unit: 'Lãnh đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
-    { figure: '64', unit: 'Quản lý cấp cao', detail: 'Đội ngũ lãnh đạo kế cận trực tiếp dẫn dắt' },
-    { figure: '500+', unit: 'Nhân sự hệ thống', detail: 'Vận hành bài bản và gắn kết' },
-    { figure: '2 × Top 1', unit: 'FYP & Duy trì 2025', detail: 'Dẫn đầu cả doanh số lẫn tỷ lệ duy trì hợp đồng' },
+    { figure: '64', unit: 'Quản lý cấp cao', detail: 'Chị trực tiếp dẫn dắt' },
+    { figure: '500+', unit: 'Nhân sự hệ thống', detail: 'Chị cùng điều hành' },
+    { figure: '2 × Top 1', unit: 'FYP & Duy trì 2025', detail: 'Dẫn đầu cả FYP lẫn tỷ lệ duy trì hợp đồng' },
   ];
 
   return (
@@ -1649,7 +1649,7 @@ export function App() {
               />
               <img fetchPriority="high" decoding="async"
                 src="/images/ChanDung_ChiVan_VestXanhNgoc_TrietLyNghe_Mobile.jpg?v=2"
-                alt="Khánh Vân: Đi chắc để đi xa. Làm nghề bằng sự chuẩn mực, đồng hành bằng cả trái tim."
+                alt="Khánh Vân: Đi chắc để đi xa. Làm nghề chuẩn mực, đồng hành bằng cả trái tim."
                 className="w-full h-full block object-cover object-center group-hover:scale-[1.01] transition-transform duration-1000 ease-editorial"
               />
             </picture>
@@ -1679,13 +1679,13 @@ export function App() {
                 </h1>
                 <div className="border-l-2 border-[#008746] pl-4 sm:pl-5 py-1">
                   <p className="font-serif italic text-xl sm:text-2xl text-[#0A3622] font-normal leading-[1.4]">
-                    &ldquo;Kiến tạo tốc độ từ sự chuẩn mực, giữ trọn chữ Tín trên mọi hành trình dài hạn.&rdquo;
+                    &ldquo;Làm đúng chuẩn thì tự khắc nhanh. Chữ Tín giữ từ ngày đầu đến ngày cuối.&rdquo;
                   </p>
                 </div>
               </div>
 
               <p className="text-[15px] sm:text-base text-[#38433E] leading-[1.8] font-normal">
-                Gần hai thập kỷ làm nghề, khởi đầu với 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ, sau đó là danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và nhiều năm liền giữ vị trí Top 1 tại Manulife Việt Nam. Hiện nay, Vân đồng hành cùng các gia đình Việt trong việc giữ vững dòng tiền và hoạch định gia sản dài hạn, đồng thời trực tiếp dẫn dắt 64 nhà quản lý kế cận và hơn 500 tư vấn viên.
+                Gần hai mươi năm làm nghề. Vân bắt đầu với 8 năm quản lý tài sản tại ngân hàng quốc tế ANZ, sau đó nhận danh hiệu Nhà Quản lý Xuất sắc nhất Châu Á (2021) và nhiều năm liền giữ vị trí Top 1 tại Manulife Việt Nam. Hiện Vân giúp các gia đình Việt giữ vững dòng tiền, hoạch định gia sản dài hạn, và trực tiếp dẫn dắt 64 nhà quản lý kế cận cùng hơn 500 tư vấn viên.
               </p>
 
               <div className="pt-1 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-5">
@@ -1700,7 +1700,7 @@ export function App() {
                   href="#cau-chuyen"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#181F1C] hover:text-[#008746] border border-[#DCD8CE] hover:border-[#008746]/50 bg-white/70 hover:bg-white rounded-[3px] transition-all font-medium min-h-[44px]"
                 >
-                  <span>Hành trình sự nghiệp</span>
+                  <span>Xem chặng đường nghề</span>
                 </a>
               </div>
 
@@ -1738,7 +1738,7 @@ export function App() {
                 <div className="overflow-hidden aspect-[3/2] bg-[#EAE7DF] rounded-[5px] shadow-[0_20px_48px_-18px_rgba(10,54,34,0.20)] ring-1 ring-inset ring-[#181F1C]/[0.08] relative">
                   <img loading="lazy" decoding="async"
                     src="/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg"
-                    alt="Khánh Vân cùng đội ngũ quản lý tinh hoa Manulife Việt Nam"
+                    alt="Khánh Vân cùng đội ngũ quản lý Manulife Việt Nam"
                     className="w-full h-full object-cover group-hover:scale-[1.018] transition-transform duration-700 ease-editorial"
                   />
 
@@ -1756,7 +1756,7 @@ export function App() {
                     Đội ngũ quản lý Manulife
                   </span>
                   <span className="text-[10px] sm:text-[11px] text-[#008746] font-medium">
-                    64 quản lý &middot; 500+ nhân sự
+                    64 quản lý, 500+ nhân sự
                   </span>
                 </figcaption>
               </figure>
@@ -1772,14 +1772,14 @@ export function App() {
             <div className="space-y-1.5">
               <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
-                Báo chí nói về chị Vân
+                Báo chí viết về chị Vân
               </div>
               <h2 className="font-serif text-xl sm:text-2xl text-[#0A3622] font-normal tracking-tight">
-                Được báo chí trong nước và quốc tế đưa tin
+                Báo trong nước và quốc tế đã đưa tin
               </h2>
             </div>
             <p className="text-xs text-[#56605B] max-w-md font-normal leading-relaxed">
-              Những bài viết về cách chị làm nghề, cách dẫn dắt đội ngũ và giải thưởng lãnh đạo cấp khu vực Châu Á.
+              Các bài viết về cách chị làm nghề, dẫn dắt đội ngũ và giải thưởng lãnh đạo khu vực Châu Á.
             </p>
           </div>
 
@@ -1864,15 +1864,15 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 mb-14 sm:mb-24 lg:mb-32 items-end">
             <div className="lg:col-span-4">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                01 / HÀNH TRÌNH SỰ NGHIỆP
+                01 / CHẶNG ĐƯỜNG NGHỀ
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-                Từ ngân hàng quốc tế đến đỉnh cao Châu Á
+                Từ ngân hàng quốc tế đến giải thưởng Châu Á
               </h2>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <p className="font-serif italic text-xl sm:text-[26px] text-[#181F1C] leading-[1.5]">
-                “Làm thật tốt từ những việc nhỏ nhất mỗi ngày. Khi mình đủ chân thành và chuẩn mực, những người đồng hành tử tế sẽ tự tìm đến.”
+                “Làm thật tốt từ những việc nhỏ nhất mỗi ngày. Mình chân thành và đúng chuẩn thì người tốt sẽ tự tìm đến.”
               </p>
             </div>
           </div>
@@ -1884,13 +1884,13 @@ export function App() {
                 CHƯƠNG I &bull; 2009 ĐẾN 2017
               </span>
               <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                Nền tảng ANZ Bank và bài học về chữ “Tín”
+                8 năm ở ANZ Bank và bài học về chữ “Tín”
               </h3>
               <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                Trước khi vươn lên vị trí Top 1 toàn quốc của ANZ năm 2017 ở mảng tín dụng thế chấp mua nhà, Khánh Vân từng trải qua 3 tháng đầu tiên ở bộ phận kinh doanh mà không có nổi một khách hàng, đứng trước nguy cơ bị cắt mã số.
+                Trước khi đạt Top 1 toàn quốc của ANZ năm 2017 ở mảng tín dụng thế chấp mua nhà, Khánh Vân có 3 tháng đầu ở bộ phận kinh doanh mà không có nổi một khách hàng, và đứng trước nguy cơ bị cắt mã số.
               </p>
               <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                Chị không chọn cách bán hàng bất chấp. Chính uy tín, sự cẩn trọng và tận tâm suốt những năm làm Vận hành (Operations) trước đó đã khiến đồng nghiệp và đối tác chủ động giới thiệu khách hàng cho chị. Bài học về sức mạnh của sự tử tế trở thành kim chỉ nam xuyên suốt sự nghiệp của chị.
+                Chị không chọn cách bán hàng bằng mọi giá. Những năm làm Vận hành (Operations) trước đó, chị giữ uy tín và cẩn thận trong từng việc, nên đồng nghiệp và đối tác tự giới thiệu khách cho chị. Từ đó, chị lấy sự tử tế làm nguyên tắc cho cả sự nghiệp.
               </p>
             </div>
 
@@ -1901,7 +1901,7 @@ export function App() {
                     src: '/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg',
                     fig: 'TÁC PHONG LÀM VIỆC',
                     title: 'Tác phong chỉn chu tại bàn họp',
-                    subtitle: 'Bài học từ 8 năm làm ngân hàng quốc tế: lấy uy tín và sự cẩn trọng làm nền tảng.',
+                    subtitle: 'Bài học từ 8 năm làm ngân hàng quốc tế: lấy uy tín và sự cẩn thận làm nền.',
                   })
                 }
                 className="cursor-zoom-in group"
@@ -1909,12 +1909,12 @@ export function App() {
                 <div className="overflow-hidden aspect-[16/10] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img loading="lazy" decoding="async"
                     src="/images/VanPhong_ChiVan_HuongDanDoiNguBanHop.jpg"
-                    alt="Khánh Vân hướng dẫn đội ngũ bên bàn họp chiến lược"
+                    alt="Khánh Vân hướng dẫn đội ngũ bên bàn họp"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Tác phong chỉn chu và bài học về chữ “Tín” từ nền tảng banker
+                  Tác phong chỉn chu và bài học về chữ “Tín” từ thời làm banker
                 </figcaption>
               </figure>
             </div>
@@ -1933,7 +1933,7 @@ export function App() {
                       src: '/images/SanKhau_ChiVan_ManHinhLED_Top1FYP2025.jpg',
                       fig: 'TOP 1 FYP 2025',
                       title: 'Top 1 DRD+ về tỷ lệ hoàn thành chỉ tiêu FYP (2025)',
-                      subtitle: 'Dẫn đầu toàn quốc về mức độ hoàn thành chỉ tiêu doanh số khai thác mới tại Manulife Việt Nam.',
+                      subtitle: 'Dẫn đầu toàn quốc về mức hoàn thành chỉ tiêu doanh số khai thác mới tại Manulife Việt Nam.',
                     })
                   }
                   className="cursor-zoom-in group"
@@ -1957,7 +1957,7 @@ export function App() {
                       src: '/images/SanKhau_ChiVan_NhanGiaiTop1DuyTriHopDong2025.jpg',
                       fig: 'NIỀM TIN KHÁCH HÀNG',
                       title: 'Top 1 DRD+ về tỷ lệ duy trì hợp đồng năm thứ 2 (2025)',
-                      subtitle: 'Dấu ấn của chất lượng tư vấn và niềm tin lâu dài từ khách hàng.',
+                      subtitle: 'Kết quả của chất lượng tư vấn và niềm tin lâu dài từ khách hàng.',
                     })
                   }
                   className="cursor-zoom-in group"
@@ -1983,10 +1983,10 @@ export function App() {
                   Năm 2025: dẫn đầu cả chỉ tiêu FYP lẫn tỷ lệ duy trì
                 </h3>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Năm 2018, chị rời ngân hàng nước ngoài để xây dựng sự nghiệp độc lập tại Manulife Việt Nam, mang theo kỷ luật kiểm soát rủi ro của một banker: tư vấn đúng và đủ, coi sự gắn bó lâu dài của khách hàng là danh dự nghề nghiệp.
+                  Năm 2018, chị rời ngân hàng nước ngoài sang Manulife Việt Nam để xây sự nghiệp riêng. Chị mang theo thói quen kiểm soát rủi ro của một banker: tư vấn đúng và đủ, và coi việc khách gắn bó lâu dài là danh dự nghề.
                 </p>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Năm 2025, chị cùng hệ thống đạt hai vị trí dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ hoàn thành chỉ tiêu doanh số mới (FYP)</strong> và <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ tỷ lệ duy trì hợp đồng năm 2</strong>. Với Vân, đó là minh chứng rằng tăng trưởng bền vững luôn bắt đầu từ sự chuẩn mực và chữ Tín.
+                  Năm 2025, chị cùng hệ thống giữ hai vị trí dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ hoàn thành chỉ tiêu doanh số mới (FYP)</strong> và <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ tỷ lệ duy trì hợp đồng năm 2</strong>. Với Vân, kết quả này cho thấy muốn tăng trưởng bền thì phải làm đúng chuẩn và giữ chữ Tín.
                 </p>
               </div>
             </div>
@@ -1998,10 +1998,10 @@ export function App() {
                   CHƯƠNG III &bull; 2018 ĐẾN NAY
                 </span>
                 <h3 className="font-sans font-semibold text-2xl sm:text-[28px] text-[#181F1C] leading-[1.3] tracking-tight">
-                  Nhà Quản lý Xuất sắc nhất Châu Á và hệ thống hơn 500 nhân sự
+                  Nhà Quản lý Xuất sắc nhất Châu Á và hơn 500 nhân sự
                 </h3>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Năm 2021, chị trở thành đại diện duy nhất tại Việt Nam đoạt giải thưởng “Nhà Quản lý Xuất sắc nhất Châu Á” (Asia Trusted Life Agent &amp; Advisers Awards), đồng thời trực tiếp ươm mầm 64 Quản lý cấp cao và hơn 500 cộng sự.
+                  Năm 2021, chị là đại diện duy nhất tại Việt Nam đoạt giải thưởng “Nhà Quản lý Xuất sắc nhất Châu Á” (Asia Trusted Life Agent &amp; Advisers Awards), đồng thời trực tiếp xây dựng đội ngũ 64 Quản lý cấp cao và hơn 500 cộng sự.
                 </p>
               </div>
 
@@ -2010,8 +2010,8 @@ export function App() {
                   setLightbox({
                     src: '/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg',
                     fig: 'GẶP GỠ BAN ĐIỀU HÀNH',
-                    title: 'Gặp gỡ Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife',
-                    subtitle: 'Khoảnh khắc cùng lãnh đạo cấp cao của Manulife Việt Nam trong buổi tiệc tối.',
+                    title: 'Chị Vân chụp cùng Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife',
+                    subtitle: 'Chị Vân chụp cùng lãnh đạo cấp cao của Manulife Việt Nam trong buổi tiệc tối.',
                   })
                 }
                 className="cursor-zoom-in group"
@@ -2019,12 +2019,12 @@ export function App() {
                 <div className="overflow-hidden aspect-[3/4] bg-[#EAE7DF] rounded-[3px] shadow-sm">
                   <img loading="lazy" decoding="async"
                     src="/images/SuKien_ChiVanCungCEOvaCAO_ChupAnhTiecToi.jpg"
-                    alt="Chị Khánh Vân cùng Tổng Giám đốc và Phó Tổng Giám đốc Điều hành Kênh Đại lý Manulife Việt Nam trong tiệc tối thân mật"
+                    alt="Chị Khánh Vân cùng Tổng Giám đốc và Phó Tổng Giám đốc Điều hành Kênh Đại lý Manulife Việt Nam trong buổi tiệc tối"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-editorial"
                   />
                 </div>
                 <figcaption className="mt-3.5 pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                  Gặp gỡ Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife
+                  Chị Vân chụp cùng Tổng Giám đốc (CEO) và Phó Tổng Giám đốc Điều hành Kênh Đại lý (CAO) Manulife
                 </figcaption>
               </figure>
             </div>
@@ -2049,7 +2049,7 @@ export function App() {
                 03 / GÓC NHÌN &amp; BÀI VIẾT
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C]">
-                Chia sẻ về tài chính, quản trị và cuộc sống
+                Bài viết về tài chính, quản lý đội ngũ và cuộc sống
               </h2>
             </div>
 
@@ -2206,11 +2206,11 @@ export function App() {
                 04 / TỦ SÁCH
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#181F1C] leading-[1.15]">
-                Tủ sách gối đầu giường của chị Vân
+                Những cuốn sách chị Vân đọc đi đọc lại
               </h2>
             </div>
             <p className="text-xs sm:text-[13.5px] text-[#56605B] font-normal leading-[1.7] max-w-md">
-              4 cuốn sách đã định hình cách Khánh Vân quản trị rủi ro, giữ kỷ luật thói quen và dẫn dắt đội ngũ bằng tinh thần phụng sự.
+              4 cuốn sách ảnh hưởng đến cách Khánh Vân quản lý rủi ro, giữ thói quen kỷ luật và dẫn dắt đội ngũ.
             </p>
           </div>
 
@@ -2288,19 +2288,19 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 mb-12 sm:mb-20 items-end">
             <div className="lg:col-span-5">
               <span className="text-[11px] uppercase tracking-[0.24em] text-[#008746] block mb-3">
-                05 / ĐIỂM TỰA CUỘC SỐNG
+                05 / CUỘC SỐNG
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#181F1C] leading-[1.15]">
-                Người phụ nữ trong gia đình và sự cân bằng
+                Chị Vân ngoài giờ làm việc
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 space-y-4">
               <div className="border-l-2 border-l-[#008746] pl-5 sm:pl-6 space-y-3">
                 <p className="font-serif italic text-xl sm:text-2xl text-[#181F1C] leading-[1.5]">
-                  “Đỉnh cao sự nghiệp không nằm ở những chiếc cúp, mà là sự bình an khi trở về nhà bên chồng và hai con.”
+                  “Điều quý nhất với Vân không phải những chiếc cúp, mà là được về nhà bên chồng và hai con.”
                 </p>
                 <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
-                  Phía sau những cột mốc dẫn đầu Châu Á là sự thấu hiểu và đồng hành thầm lặng của người chồng, người luôn ủng hộ chị bước ra khỏi vùng an toàn để sống trọn với đam mê.
+                  Phía sau những mốc dẫn đầu Châu Á là người chồng luôn thấu hiểu, âm thầm ủng hộ chị bước ra khỏi vùng an toàn để theo đuổi nghề mình thích.
                 </p>
               </div>
 
@@ -2310,7 +2310,7 @@ export function App() {
                   Cách Vân nuôi dạy con
                 </span>
                 <p className="text-sm sm:text-[15px] text-[#28322D] font-normal leading-[1.85]">
-                  Với hai con (Minh Châu đang học lớp 7 và bé út học lớp 1), Vân chọn cách đồng hành thay vì áp đặt. Các con vẫn được kèm cặp và rèn nề nếp, nhưng được tự do phát triển theo đam mê, sở thích của mình. Việc của cha mẹ là cùng con tìm ra thế mạnh riêng, rồi tiếp sức để con đi xa nhất trên con đường ấy.
+                  Với hai con (Minh Châu đang học lớp 7 và bé út học lớp 1), Vân chọn đi cùng con thay vì áp đặt. Các con vẫn được kèm cặp, rèn nề nếp, nhưng được tự do theo đam mê và sở thích của mình. Việc của cha mẹ là cùng con tìm ra thế mạnh riêng, rồi hỗ trợ để con đi hết con đường đó.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {['Kèm cặp có nề nếp', 'Theo đam mê & sở thích', 'Phát huy thế mạnh riêng'].map((k) => (
@@ -2334,7 +2334,7 @@ export function App() {
                   src: '/images/GiaDinh_ChiVan_NgoiSofaPhongKhach.jpg',
                   fig: 'TỔ ẤM',
                   title: 'Tổ ấm bên chồng và hai con',
-                  subtitle: 'Điểm tựa tinh thần lớn nhất phía sau hành trình sự nghiệp.',
+                  subtitle: 'Chỗ dựa tinh thần lớn nhất phía sau sự nghiệp của chị.',
                 })
               }
               className="lg:col-span-7 cursor-zoom-in group"
@@ -2356,7 +2356,7 @@ export function App() {
                 setLightbox({
                   src: '/images/GiaDinh_ChiVan_AuYemConBenSanVuon.jpg',
                   fig: 'LÀM MẸ',
-                  title: 'Trọn vẹn từng khoảnh khắc bên con',
+                  title: 'Thời gian bên con',
                   subtitle: 'Kèm cặp có nề nếp, nhưng luôn để con được lớn lên theo đam mê và thế mạnh của riêng mình.',
                 })
               }
@@ -2370,7 +2370,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Khoảnh khắc yêu thương ngày thường
+                Một ngày bình thường bên con
               </figcaption>
             </figure>
           </div>
@@ -2387,7 +2387,7 @@ export function App() {
               fig: 'BÌNH MINH CAPPADOCIA',
               title: 'Đón bình minh trên khinh khí cầu',
               subtitle:
-                'Khoảnh khắc đón bình minh trên khinh khí cầu tại thung lũng Cappadocia: “Mỗi ngày mới là một hành trình đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
+                'Đón bình minh trên khinh khí cầu tại thung lũng Cappadocia: “Mỗi ngày mới đều đáng trân trọng. Cứ đi chắc từng bước, bình minh sẽ luôn ở phía trước.”',
             })
           }
           className="cursor-zoom-in group relative block w-full"
@@ -2443,8 +2443,8 @@ export function App() {
                 setLightbox({
                   src: '/images/DuLich_ChiVanCungChong_ChupAnhBenCangBien.jpg',
                   fig: 'ĐỒNG HÀNH',
-                  title: 'Đồng hành cùng người bạn đời',
-                  subtitle: 'Sánh bước bên nhau trên mọi hành trình trong và ngoài nước.',
+                  title: 'Cùng người bạn đời trên đường đi',
+                  subtitle: 'Những chuyến đi trong và ngoài nước của hai vợ chồng.',
                 })
               }
               className="lg:col-span-7 cursor-zoom-in group"
@@ -2457,7 +2457,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-3 pt-2.5 sm:mt-3.5 sm:pt-3 border-t border-[#E4E1D8] text-[11px] uppercase tracking-[0.12em] text-[#858E89]">
-                Người bạn đời luôn đồng hành
+                Cùng người bạn đời đi nhiều nơi
               </figcaption>
             </figure>
           </div>
@@ -2475,7 +2475,7 @@ export function App() {
               Ba cách cùng làm việc với Khánh Vân
             </h2>
             <p className="text-[15px] sm:text-base text-[#28322D] font-normal leading-[1.85] pt-1">
-              Dù bạn là chủ gia đình muốn chuyển giao tài sản một cách yên tâm, một chuyên viên tài chính muốn bứt phá trong sự nghiệp, hay một tổ chức đang tìm diễn giả truyền cảm hứng, Khánh Vân sẵn sàng đồng hành bằng sự chỉn chu và tận tâm.
+              Bạn có thể là chủ gia đình muốn chuyển giao tài sản cho yên tâm, chuyên viên tài chính muốn đi xa hơn trong nghề, hoặc đơn vị đang tìm diễn giả. Khánh Vân làm việc với cả ba.
             </p>
           </div>
 
@@ -2501,7 +2501,7 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Thiết kế lộ trình tích lũy tài sản dài hạn đến 99 tuổi, với khung pháp lý rõ ràng để gia sản được trao lại êm thấm giữa các thế hệ, không để tranh chấp làm tổn thương tình thân.
+                  Thiết kế lộ trình tích lũy tài sản dài hạn đến 99 tuổi, có khung pháp lý rõ ràng để gia sản được trao lại êm giữa các thế hệ và không gây tranh chấp trong nhà.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
@@ -2557,7 +2557,7 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Chương trình kèm cặp 1-1 trực tiếp cùng Khánh Vân, chia sẻ toàn bộ quy trình vận hành và cách xây dựng một hệ thống kinh doanh độc lập theo chuẩn Top 1 Châu Á.
+                  Chương trình kèm cặp 1-1 trực tiếp với Khánh Vân: quy trình vận hành và cách xây một hệ thống kinh doanh độc lập theo chuẩn Top 1 Châu Á.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
@@ -2567,7 +2567,7 @@ export function App() {
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Phương pháp tuyển dụng, đào tạo và giữ chân một đội ngũ gắn kết.</span>
+                    <span>Cách tuyển dụng, đào tạo và giữ chân đội ngũ.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
@@ -2613,7 +2613,7 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Chia sẻ thực tế tại hội nghị, hội thảo lãnh đạo và chương trình đào tạo nội bộ về bán hàng bằng sự tử tế, văn hóa dịch vụ chuẩn mực và lãnh đạo thấu cảm.
+                  Chia sẻ thực tế tại hội nghị, hội thảo lãnh đạo và các buổi đào tạo nội bộ về bán hàng, văn hóa dịch vụ và cách lãnh đạo đội nhóm.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
@@ -2623,7 +2623,7 @@ export function App() {
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
-                    <span>Workshop truyền cảm hứng về vượt giới hạn và xây dựng kỷ luật bền bỉ.</span>
+                    <span>Workshop về vượt giới hạn và giữ kỷ luật bền bỉ.</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[#008746] font-bold">&bull;</span>
@@ -2681,7 +2681,7 @@ export function App() {
                   src: '/images/SuKien_ChiVanCungDoiNgu_ChucMungThangCapSM.jpg',
                   fig: 'THĂNG CẤP',
                   title: 'Chúc mừng các quản lý mới thăng cấp',
-                  subtitle: 'Niềm tự hào khi đồng hành cùng cộng sự vươn lên vị trí Quản lý (SM).',
+                  subtitle: 'Chị Vân chúc mừng các cộng sự lên vị trí Quản lý (SM).',
                 })
               }
               className="cursor-zoom-in group"
@@ -2749,7 +2749,7 @@ export function App() {
                 setLightbox({
                   src: '/images/GanKet_DoiNguCoVu_ChucMungChiVan.jpg',
                   fig: 'GẮN KẾT',
-                  title: 'Sự đồng lòng và tình cảm của đội ngũ',
+                  title: 'Cả đội đón và chúc mừng chị Vân',
                   subtitle: 'Hơn 30 cộng sự nồng nhiệt chào đón và chúc mừng chị Vân.',
                 })
               }
@@ -2763,7 +2763,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Văn hóa gắn kết và sự đồng lòng của đội ngũ
+                Đội ngũ chúc mừng chị Vân
               </figcaption>
             </figure>
 
@@ -2772,7 +2772,7 @@ export function App() {
                 setLightbox({
                   src: '/images/SanKhau_ChiVan_NangCupManPowerQuyenLuc.jpg',
                   fig: 'VINH DANH',
-                  title: 'Khoảnh khắc nâng cúp ManPower',
+                  title: 'Chị Vân nâng cúp ManPower',
                   subtitle: 'Chị Vân nâng cúp vàng ManPower trong bộ đầm dạ hội xanh lục bảo.',
                 })
               }
@@ -2786,7 +2786,7 @@ export function App() {
                 />
               </div>
               <figcaption className="mt-2 sm:mt-3.5 pt-2 sm:pt-3 border-t border-[#E4E1D8] text-[9.5px] sm:text-[11px] leading-[1.35] uppercase tracking-[0.08em] sm:tracking-[0.12em] text-[#858E89]">
-                Khoảnh khắc nâng cúp vinh danh
+                Nâng cúp vinh danh
               </figcaption>
             </figure>
           </div>
@@ -2804,7 +2804,7 @@ export function App() {
                 Gửi lời nhắn đến Khánh Vân
               </h3>
               <p className="text-sm text-[#28322D] font-normal leading-[1.8]">
-                Mọi thông tin bạn chia sẻ về kế hoạch tài chính gia đình hoặc định hướng sự nghiệp đều được bảo mật tuyệt đối.
+                Thông tin bạn chia sẻ về kế hoạch tài chính gia đình hoặc định hướng nghề nghiệp đều được bảo mật.
               </p>
 
               {/* Direct Executive Channels (Zalo & Facebook) */}
@@ -2829,7 +2829,7 @@ export function App() {
                       </span>
                       <div>
                         <span className="text-[10px] uppercase tracking-[0.18em] text-[#858E89] block">
-                          Zalo &bull; Điện thoại
+                          Zalo, điện thoại
                         </span>
                         <span className="font-serif text-xl text-[#181F1C] group-hover:text-[#008746] transition-colors">
                           {PHONE_DISPLAY}
@@ -3261,7 +3261,7 @@ export function App() {
 
                 <div className="mt-10 pt-6 pb-6 px-5 sm:px-6 bg-[#0A3622]/[0.04] border border-[#0A3622]/15 rounded-[4px] space-y-4">
                   <span className="text-[11px] uppercase tracking-[0.22em] text-[#008746] font-medium block">
-                    ĐÚC KẾT THỰC TẾ &bull; BÀI HỌC CỐT LÕI
+                    ĐIỀU CẦN NHỚ
                   </span>
                   <ul className="space-y-3 text-sm sm:text-[15px] text-[#181F1C] font-normal leading-[1.75]">
                     {activeArticle.keyTakeaways.map((pt, idx) => (
@@ -3277,7 +3277,7 @@ export function App() {
                 <div className="mt-8 pt-6 border-t border-[#E4E1D8] space-y-3.5">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] uppercase tracking-[0.2em] text-[#008746] font-medium">
-                      VIDEO CHIA SẺ TRỰC TIẾP TỪ KHÁNH VÂN CÙNG CHỦ ĐỀ
+                      VIDEO CỦA KHÁNH VÂN CÙNG CHỦ ĐỀ
                     </span>
                     <button
                       type="button"
@@ -3328,7 +3328,7 @@ export function App() {
                 <div className="mt-8 pt-6 border-t border-[#DCD8CE] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F2EFE9]/60 p-5 sm:p-6 rounded-[4px] mb-8">
                   <div>
                     <span className="text-[11px] uppercase tracking-[0.18em] text-[#008746] block mb-1">
-                      CỐ VẤN RIÊNG TƯ &bull; KHÁNH VÂN
+                      CỐ VẤN RIÊNG CÙNG KHÁNH VÂN
                     </span>
                     <p className="text-xs sm:text-sm text-[#28322D] font-normal leading-relaxed">
                       Bạn quan tâm đến cơ chế chuyển giao gia sản hoặc tối ưu dòng tiền dài hạn?
@@ -3339,7 +3339,7 @@ export function App() {
                     onClick={() => closeArticle()}
                     className="inline-flex items-center justify-center px-5 py-3.5 sm:py-2.5 bg-[#0A3622] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] hover:bg-[#008746] active:scale-[0.98] transition-all rounded-[2px] shrink-0 text-center font-medium min-h-[44px]"
                   >
-                    Đặt Lịch Tham Vấn 1-1
+                    Đặt lịch tư vấn 1-1
                   </a>
                 </div>
               </div>

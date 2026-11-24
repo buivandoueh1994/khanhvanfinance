@@ -38,9 +38,9 @@ interface HeroSlide {
 // 5 crisp Upscayl-enhanced 1600px photographs (zero LED text clutter behind headline, pure 60fps GPU Ken Burns glide)
 const HERO_SLIDES: HeroSlide[] = [
   {
-    src: '/images/journeys/ao-duc-2024/01-kv_226.jpg?v=2',
-    label: 'Hồ Hallstatt, Áo • 2024',
-    objectPosition: '50% 42%',
+    src: '/images/journeys/ao-duc-2024/02-kv_227.jpg?v=2',
+    label: 'Làng cổ Hallstatt, Áo • 2024',
+    objectPosition: '50% 50%',
   },
   {
     src: '/images/journeys/nhat-ban-2026/01-kv_268.jpg?v=2',
@@ -94,16 +94,16 @@ interface ScreeningReel {
 const SIGNATURE_FILM: ScreeningReel = {
   slug: 'cu-di-roi-se-den',
   isSignature: true,
-  badge: 'Phim Mở Màn Đặc Biệt • 2019–2026',
-  countryTag: 'Phim Thương Hiệu',
+  badge: 'Phim mở màn, 2019–2026',
+  countryTag: 'Phim thương hiệu',
   year: '2019–2026',
   soundLabel: 'Cứ Đi Rồi Sẽ Đến',
   src: '/videos/journeys/cu-di-roi-se-den.mp4?v=4',
   poster: '/videos/journeys/cu-di-roi-se-den-poster.jpg?v=4',
   durationLabel: '0:30',
-  title: 'Cứ Đi Rồi Sẽ Đến • Phim Thương Hiệu Hành Trình 2019–2026',
+  title: 'Cứ Đi Rồi Sẽ Đến, phim thương hiệu 2019 đến 2026',
   caption:
-    'Ba mươi giây gói trọn hai cuốn hộ chiếu của Khánh Vân từ Paris 2019, Salzburg, núi Phú Sĩ, tổ ấm gia đình, sân khấu Top 1 DRD+ Yên Tử đến tinh thần đồng hành của Hệ thống Green Power.',
+    'Ba mươi giây về hai cuốn hộ chiếu của Khánh Vân: từ Paris 2019, Salzburg, núi Phú Sĩ, tổ ấm gia đình, sân khấu Top 1 DRD+ Yên Tử, đến Hệ thống Green Power.',
 };
 
 export const JourneysPage: React.FC = () => {
@@ -134,7 +134,7 @@ export const JourneysPage: React.FC = () => {
   const modalScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = 'Khánh Vân & Những Chuyến Đi | Nhật ký Hành trình 2019–2026';
+    document.title = 'Khánh Vân và những chuyến đi, 2019 đến 2026';
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const qSlug = params.get('chuyen-di') || params.get('chapter');
@@ -170,7 +170,7 @@ export const JourneysPage: React.FC = () => {
         badge: c.milestoneBadge,
         countryTag: c.countryTag,
         year: c.year,
-        soundLabel: 'Piano Acoustic',
+        soundLabel: c.video!.soundLabel || 'Nhạc nền chọn lọc',
         src: c.video!.src,
         poster: c.video!.poster,
         durationLabel: c.video!.durationLabel,
@@ -330,10 +330,10 @@ export const JourneysPage: React.FC = () => {
                 KHÁNH VÂN
               </span>
               <span className="sm:hidden text-[9px] uppercase tracking-[0.12em] text-[#56605B] font-medium mt-1 truncate">
-                Những Chuyến Đi • 2019–2026
+                Những chuyến đi • 2019–2026
               </span>
               <span className="hidden sm:inline text-[9.5px] uppercase tracking-[0.2em] text-[#56605B] font-medium mt-1">
-                Những Chuyến Đi • Monograph 2019–2026
+                Những chuyến đi • 2019–2026
               </span>
             </div>
           </a>
@@ -375,7 +375,7 @@ export const JourneysPage: React.FC = () => {
               href="#ket-noi-dong-hanh"
               className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-[11px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.14em] font-semibold rounded-[2px] transition-colors whitespace-nowrap"
             >
-              <span>Đồng hành</span>
+              <span>Liên hệ</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -403,13 +403,13 @@ export const JourneysPage: React.FC = () => {
               href="#hoi-2-chieu-sau"
               className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              03. Bản lĩnh &amp; Sẻ chia
+              03. Bản lĩnh và sẻ chia
             </a>
             <a
               href="#hoi-3-to-am"
               className="shrink-0 px-2.5 py-1 rounded-[2px] bg-white border border-[#E4E1D8]"
             >
-              04. Điểm trở về
+              04. Tổ ấm
             </a>
             <a
               href="#phong-chieu"
@@ -489,15 +489,15 @@ export const JourneysPage: React.FC = () => {
           <div className="max-w-3xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2.5 text-[10.5px] sm:text-[11px] uppercase tracking-[0.24em] text-[#E8D3A6] font-semibold">
               <span className="w-7 h-px bg-[#E8D3A6]" />
-              <span>Monograph • Khánh Vân &amp; Những Chuyến Đi</span>
+              <span>Khánh Vân &amp; những chuyến đi</span>
             </div>
 
             <h1 className="font-serif text-[34px] sm:text-5xl lg:text-[62px] text-white font-normal leading-[1.12] tracking-[-0.01em]">
-              Hai cuốn hộ chiếu, một đội ngũ tử tế và một mái nhà bình yên.
+              Hai cuốn hộ chiếu, một đội ngũ và một mái nhà để về.
             </h1>
 
             <p className="text-sm sm:text-[16.5px] text-[#E2ECE6] leading-[1.82] max-w-2xl font-normal">
-              Từ chuyến bay đầu tiên năm 2019 đến hôm nay, Vân đã đi qua hai cuốn hộ chiếu. Nhưng điều khiến mình tự hào nhất chưa bao giờ là số con dấu nhập cảnh, mà là việc ngày càng có thêm nhiều đồng đội cùng bước ra thế giới, và sau mọi chuyến đi xa vẫn luôn có một tổ ấm bình an để trở về.
+              Từ chuyến bay đầu tiên năm 2019 đến nay, Vân đã đi qua hai cuốn hộ chiếu. Điều Vân tự hào nhất không phải số con dấu nhập cảnh, mà là ngày càng nhiều đồng đội cùng đi, và sau mỗi chuyến xa vẫn có nhà để về.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
@@ -510,13 +510,13 @@ export const JourneysPage: React.FC = () => {
                 className="inline-flex items-center gap-2.5 px-5 py-3.5 bg-[#E8D3A6] hover:bg-[#FAF9F5] text-[#072116] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors shadow-[0_12px_32px_-12px_rgba(232,211,166,0.55)] cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 fill-current" />
-                <span>Xem Phim Thương Hiệu (0:30)</span>
+                <span>Xem phim thương hiệu (0:30)</span>
               </button>
               <a
                 href="#ban-do-hanh-trinh"
                 className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-colors"
               >
-                <span>Mở bản đồ hành trình</span>
+                <span>Xem bản đồ chuyến đi</span>
                 <ArrowDown className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -529,7 +529,7 @@ export const JourneysPage: React.FC = () => {
                 02 Cuốn
               </div>
               <div className="text-[11px] text-[#C4D6CC] mt-0.5">
-                Hộ chiếu đã ghi dấu từ năm 2019
+                Hộ chiếu, dùng từ năm 2019
               </div>
             </div>
             <div>
@@ -553,7 +553,7 @@ export const JourneysPage: React.FC = () => {
                 11 Chương
               </div>
               <div className="text-[11px] text-[#C4D6CC] mt-0.5">
-                118 khung hình &amp; {screeningReels.length} thước phim chọn lọc
+                112 khung hình và {screeningReels.length} phim
               </div>
             </div>
           </div>
@@ -577,17 +577,17 @@ export const JourneysPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
             <div className="lg:col-span-7 space-y-3">
               <div className="inline-flex items-center gap-2.5 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
-                <span>02 / Hồi I • Vươn Ra Thế Giới</span>
+                <span>02 / Hồi I, ra thế giới</span>
                 <span className="w-8 h-px bg-[#B8975A]" />
                 <span className="text-[#6A756F]">2019–2026</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
-                Từ bước chân đầu tiên dưới Tháp Eiffel đến sáu kỳ M-Star cùng đội ngũ Green Power
+                Từ Tháp Eiffel năm 2019 đến sáu kỳ M-Star cùng đội ngũ Green Power
               </h2>
             </div>
             <div className="lg:col-span-5">
               <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.82] border-l-2 border-[#008746] pl-4 sm:pl-5">
-                Bảy hành trình quốc tế không đơn thuần là những phần thưởng từ Manulife. Nhìn lại theo dòng thời gian, bạn sẽ thấy rõ nhất sự lớn mạnh của cả một tập thể: từ những ngày đầu Vân đi một mình, đến hôm nay mỗi chuyến đi đều có đông đảo quản lý ưu tú cùng sánh bước.
+                Bảy chuyến đi quốc tế này là phần thưởng từ Manulife, nhưng Vân thích nhìn nó theo cách khác. Chuyến đầu năm 2019, Vân đi một mình. Chuyến gần nhất, cả đoàn quản lý đi cùng.
               </p>
             </div>
           </div>
@@ -614,13 +614,13 @@ export const JourneysPage: React.FC = () => {
                   <div className="col-span-7 p-4 sm:p-6 flex flex-col justify-between gap-3">
                     <div className="space-y-2">
                       <div className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-semibold">
-                        M-Star Pháp 2019 • Paris
+                        M-Star Pháp 2019, Paris
                       </div>
                       <h3 className="font-serif text-lg sm:text-xl text-[#181F1C] leading-snug group-hover:text-[#0A3622]">
-                        Một mình dưới chân Tháp Eiffel và lời tự hứa đường dài
+                        Một mình dưới Tháp Eiffel và lời hẹn với chính mình
                       </h3>
                       <p className="text-xs text-[#4A544F] leading-relaxed line-clamp-3">
-                        Đêm thu Paris năm 2019 đã mở ra tầm nhìn về sự nghiệp tài chính quốc tế và lời hẹn nhất định sẽ đưa đồng đội cùng đi ra thế giới.
+                        Đêm thu Paris năm 2019 mở ra hướng đi trong nghề tài chính quốc tế, cùng lời hẹn sẽ đưa đồng đội đi cùng.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.14em] font-semibold text-[#0A3622]">
@@ -650,17 +650,17 @@ export const JourneysPage: React.FC = () => {
                   <div className="col-span-7 p-4 sm:p-6 flex flex-col justify-between gap-3">
                     <div className="space-y-2">
                       <div className="text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
-                        Sức mạnh Hệ thống Green Power
+                        Hệ thống Green Power
                       </div>
                       <h3 className="font-serif text-lg sm:text-xl text-white leading-snug">
-                        Đi cùng cả một đoàn quân quản lý bản lĩnh và tử tế
+                        Giờ đi cả đoàn quản lý
                       </h3>
                       <p className="text-xs text-[#C8DBD1] leading-relaxed line-clamp-3">
-                        Từ mùa hoa anh đào Seoul, sắc áo dài Việt tại Nam Ninh đến Phú Sĩ, Trùng Khánh, mỗi chuyến đi nay đều rộn ràng tiếng cười của các anh chị em quản lý.
+                        Từ Seoul mùa hoa anh đào, Nam Ninh với áo dài Việt, đến Phú Sĩ và Trùng Khánh, chuyến nào giờ cũng có đông anh chị em quản lý đi cùng.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.14em] font-semibold text-[#E8D3A6]">
-                      <span>Xem hành trình Seoul 2024</span>
+                      <span>Xem chuyến Seoul 2024</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -691,7 +691,7 @@ export const JourneysPage: React.FC = () => {
                     </video>
                     <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[9.5px] uppercase tracking-[0.15em] text-[#E8D3A6] font-semibold">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse" />
-                      <span>Khung hình sống • Phú Sĩ</span>
+                      <span>Cảnh quay Phú Sĩ</span>
                     </span>
                   </div>
 
@@ -719,7 +719,7 @@ export const JourneysPage: React.FC = () => {
                 <div className="lg:col-span-5 p-6 sm:p-9 lg:p-10 flex flex-col justify-between gap-6">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between gap-2 text-[10.5px] uppercase tracking-[0.18em] text-[#008746] font-semibold">
-                      <span>Tiêu điểm M-Star • 2026</span>
+                      <span>Tiêu điểm M-Star 2026</span>
                       <span className="text-[#858E89]">Nhật Bản</span>
                     </div>
 
@@ -748,7 +748,7 @@ export const JourneysPage: React.FC = () => {
                       </span>
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#0A3622] group-hover:text-[#008746]">
-                      <span>Đọc nhật ký Nhật Bản</span>
+                      <span>Xem chuyến Nhật Bản</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </div>
@@ -826,7 +826,7 @@ export const JourneysPage: React.FC = () => {
 
                   <div className="px-5 sm:px-7 pb-5 pt-3 border-t border-[#ECE9E0] flex items-center justify-between text-xs">
                     <span className="text-[#56605B]">
-                      {ch.photoCount} ảnh • Phim {ch.video?.durationLabel}
+                      {ch.photoCount} ảnh, phim {ch.video?.durationLabel}
                     </span>
                     <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] text-[11px] font-semibold text-[#0A3622]">
                       <span>Mở chương này</span>
@@ -901,13 +901,13 @@ export const JourneysPage: React.FC = () => {
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
               <Award className="w-3.5 h-3.5" />
-              <span>03 / Hồi II • Chiều Sâu Của Người Dẫn Đường</span>
+              <span>03 / Hồi II, đằng sau chuyến đi</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
-              Phía sau những chuyến đi xa là thực lực nghề, kỷ luật thể chất và lòng sẻ chia
+              Đằng sau những chuyến đi là nghề, sức khỏe và việc cho đi
             </h2>
             <p className="text-sm sm:text-[15px] text-[#3B4640] leading-[1.82]">
-              Khách hàng và đồng đội gắn bó lâu dài không phải vì những tấm ảnh đẹp trên mạng xã hội, mà vì những giá trị bền vững phía sau: chất lượng duy trì hợp đồng đứng đầu toàn quốc, tinh thần bền bỉ trên đường chạy và những chuyến xe mang yêu thương đến vùng cao.
+              Người ở lại lâu với Vân thường không phải vì ảnh đẹp trên mạng. Họ ở lại vì hợp đồng của khách được giữ bền, vì cả đội cùng chạy, và vì những chuyến xe mang quà lên vùng cao.
             </p>
           </div>
 
@@ -921,7 +921,7 @@ export const JourneysPage: React.FC = () => {
                 <div className="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between gap-6">
                   <div className="space-y-4">
                     <span className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#E8D3A6]/15 border border-[#E8D3A6]/40 text-[#E8D3A6] text-[10px] uppercase tracking-[0.18em] font-semibold">
-                      Trụ cột 01 • Thực Lực &amp; Chữ Tín Nghề Nghiệp
+                      Trụ cột 01: nghề và chữ tín
                     </span>
                     <h3 className="font-serif text-2xl sm:text-4xl text-white font-normal leading-[1.2]">
                       {chYenTu.title}
@@ -936,7 +936,7 @@ export const JourneysPage: React.FC = () => {
 
                   <div className="pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
                     <span className="text-xs text-[#A9C2B5]">
-                      Legacy Yên Tử • {chYenTu.photoCount} ảnh • Phim trao cúp {chYenTu.video?.durationLabel}
+                      Yên Tử, {chYenTu.photoCount} ảnh, phim trao cúp {chYenTu.video?.durationLabel}
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#E8D3A6] group-hover:text-white">
                       <span>Mở chương Yên Tử 2025</span>
@@ -987,8 +987,8 @@ export const JourneysPage: React.FC = () => {
           {/* Proof-of-Character Diptych: Phan Thiết (Discipline) & Đắk Lắk (Kindness) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {[
-              { ch: chPhanThiet, pillarTag: 'Trụ cột 02 • Kỷ Luật & Sức Bền Đội Ngũ' },
-              { ch: chDakLak, pillarTag: 'Trụ cột 03 • Phụng Sự & Sẻ Chia Cộng Đồng' },
+              { ch: chPhanThiet, pillarTag: 'Trụ cột 02: kỷ luật và sức bền của đội' },
+              { ch: chDakLak, pillarTag: 'Trụ cột 03: chia sẻ với cộng đồng' },
             ].map(
               ({ ch, pillarTag }) =>
                 ch && (
@@ -1043,10 +1043,10 @@ export const JourneysPage: React.FC = () => {
 
                     <div className="px-5 sm:px-7 pb-5 pt-3 border-t border-[#ECE9E0] flex items-center justify-between text-xs">
                       <span className="text-[#56605B]">
-                        {ch.photoCount} ảnh • Phim {ch.video?.durationLabel}
+                        {ch.photoCount} ảnh, phim {ch.video?.durationLabel}
                       </span>
                       <span className="inline-flex items-center gap-1 uppercase tracking-[0.14em] text-[11px] font-semibold text-[#0A3622]">
-                        <span>Mở nhật ký</span>
+                        <span>Xem chuyến này</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
@@ -1070,7 +1070,7 @@ export const JourneysPage: React.FC = () => {
               <div className="lg:col-span-7 space-y-3">
                 <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#008746] font-semibold">
                   <Heart className="w-3.5 h-3.5" />
-                  <span>04 / Hồi III • Điểm Trở Về</span>
+                  <span>04 / Hồi III, tổ ấm</span>
                 </div>
                 <h2 className="font-serif text-3xl sm:text-5xl text-[#181F1C] font-normal leading-[1.14]">
                   {chFamily.title}
@@ -1159,7 +1159,7 @@ export const JourneysPage: React.FC = () => {
                   onClick={() => openChapter(chFamily)}
                   className="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] transition-colors cursor-pointer"
                 >
-                  <span>Xem trọn 19 khoảnh khắc tổ ấm</span>
+                  <span>Xem 19 ảnh tổ ấm</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
@@ -1180,13 +1180,13 @@ export const JourneysPage: React.FC = () => {
             <div className="space-y-2.5 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold">
                 <Film className="w-3.5 h-3.5" />
-                <span>05 / Phòng Chiếu • 08 Thước Phim Chọn Lọc</span>
+                <span>05 / Phòng chiếu, 8 phim</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight">
-                Phim mở màn “Cứ Đi Rồi Sẽ Đến” và bảy thước phim hành trình
+                Phim mở màn “Cứ Đi Rồi Sẽ Đến” và bảy phim của từng chuyến đi
               </h2>
               <p className="text-xs sm:text-sm text-[#BDD0C6] leading-relaxed">
-                Mở đầu bằng thước phim thương hiệu 30 giây gói trọn 7 năm bước ra thế giới cùng đội ngũ và tổ ấm, nối tiếp là 7 thước phim thực tế trên nền piano acoustic êm dịu.
+                Mở đầu là phim thương hiệu 30 giây về 7 năm đi ra thế giới cùng đội ngũ và tổ ấm. Tiếp theo là 7 phim quay thực tế, mỗi chuyến đi có một sắc thái nhạc riêng.
               </p>
             </div>
           </div>
@@ -1227,7 +1227,7 @@ export const JourneysPage: React.FC = () => {
                       className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>
-                        Đọc bài viết &amp; xem {loungeReel.chapter.photoCount} ảnh chương này
+                        Đọc bài và xem {loungeReel.chapter.photoCount} ảnh của chương này
                       </span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
@@ -1236,7 +1236,7 @@ export const JourneysPage: React.FC = () => {
                       href="#ban-do-hanh-trinh"
                       className="mt-2 w-full py-2.5 px-4 bg-[#E8D3A6] hover:bg-white text-[#061C12] text-xs uppercase tracking-[0.15em] font-bold rounded-[2px] inline-flex items-center justify-center gap-1.5 transition-colors"
                     >
-                      <span>Mở bản đồ toàn bộ 11 hành trình</span>
+                      <span>Xem bản đồ 11 chương</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   )}
@@ -1289,7 +1289,7 @@ export const JourneysPage: React.FC = () => {
                           </span>
                           {reel.isSignature && (
                             <span className="px-2 py-0.5 rounded-full bg-[#E8D3A6] text-[#061C12] text-[9px] font-bold">
-                              Phim Mở Màn
+                              Phim mở màn
                             </span>
                           )}
                           {isCurrent && (
@@ -1345,7 +1345,7 @@ export const JourneysPage: React.FC = () => {
                         : 'bg-black/55 text-[#E8D3A6]'
                     }`}
                   >
-                    {reel.isSignature ? 'Phim Mở Màn' : `${reel.countryTag} • ${reel.year}`}
+                    {reel.isSignature ? 'Phim mở màn' : `${reel.countryTag} • ${reel.year}`}
                   </span>
                   <span className="px-1.5 py-0.5 rounded-[2px] bg-black/55 text-[9.5px] text-white shrink-0">
                     {reel.durationLabel}
@@ -1388,13 +1388,13 @@ export const JourneysPage: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-3">
                 <span className="text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold block">
-                  06 / Đồng Hành Cùng Khánh Vân
+                  06 / Liên hệ Khánh Vân
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-[1.16]">
-                  Mỗi hành trình lớn đều bắt đầu từ một cuộc trò chuyện chân thành
+                  Muốn đi cùng Vân, mình bắt đầu bằng một cuộc trò chuyện
                 </h2>
                 <p className="text-sm text-[#C8D6CE] leading-[1.8]">
-                  Dù bạn đang muốn chuẩn bị một điểm tựa tài chính vững vàng cho những chuyến đi tương lai của gia đình, hay đang tìm kiếm một môi trường chuyên nghiệp để bứt phá sự nghiệp và cùng chinh phục những kỳ M-Star tiếp theo, Vân luôn sẵn lòng lắng nghe.
+                  Dù bạn muốn chuẩn bị nền tài chính vững cho những chuyến đi sau của gia đình, hay đang tìm một môi trường làm nghề chuyên nghiệp để cùng đi các kỳ M-Star tiếp theo, Vân đều sẵn lòng lắng nghe.
                 </p>
               </div>
 
@@ -1402,20 +1402,20 @@ export const JourneysPage: React.FC = () => {
                 <div className="p-4 sm:p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-1.5">
                   <div className="flex items-center gap-2 text-[#E8D3A6] text-xs uppercase tracking-[0.16em] font-semibold">
                     <Heart className="w-4 h-4" />
-                    <span>Dành cho Khách hàng &amp; Gia đình</span>
+                    <span>Dành cho khách hàng và gia đình</span>
                   </div>
                   <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Thiết kế quỹ dự phòng y tế cao cấp, quỹ học vấn cho con và quỹ hưu trí thảnh thơi, hoặc rà soát lại các hợp đồng hiện hữu để gia đình an tâm tận hưởng trọn vẹn từng chuyến đi.
+                    Lập quỹ dự phòng y tế, quỹ học vấn cho con và quỹ hưu trí, hoặc rà lại các hợp đồng đang có để cả nhà yên tâm đi những chuyến sau.
                   </p>
                 </div>
 
                 <div className="p-4 sm:p-5 rounded-[4px] bg-white/[0.06] border border-white/15 space-y-2">
                   <div className="flex items-center gap-2 text-[#E8D3A6] text-xs uppercase tracking-[0.16em] font-semibold">
                     <Sparkles className="w-4 h-4" />
-                    <span>Dành cho Ứng viên Quản lý GTF &amp; Cộng sự</span>
+                    <span>Dành cho ứng viên quản lý GTF và cộng sự</span>
                   </div>
                   <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Gia nhập Hệ thống Green Power (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến để xây dựng đội ngũ bền vững và cùng có mặt trên những hành trình vinh danh M-Star, MDRT năm châu.
+                    Gia nhập Hệ thống Green Power (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến, để cùng xây đội ngũ và cùng có mặt trong các chuyến vinh danh M-Star, MDRT năm châu.
                   </p>
                   <a
                     href="/green-power"
@@ -1457,7 +1457,7 @@ export const JourneysPage: React.FC = () => {
                     Cảm ơn bạn đã gửi lời nhắn cho Vân
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A544F] max-w-md mx-auto leading-relaxed">
-                    Khánh Vân đã nhận được thông tin của bạn và sẽ chủ động liên hệ qua điện thoại hoặc Zalo trong thời gian sớm nhất.
+                    Khánh Vân đã nhận thông tin của bạn và sẽ liên hệ lại qua điện thoại hoặc Zalo sớm nhất có thể.
                   </p>
                   <button
                     type="button"
@@ -1498,7 +1498,7 @@ export const JourneysPage: React.FC = () => {
                       TRÒ CHUYỆN CÙNG KHÁNH VÂN
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold">
-                      Để lại thông tin kết nối 1-1
+                      Để lại thông tin để Vân liên hệ
                     </h3>
                   </div>
 
@@ -1578,7 +1578,7 @@ export const JourneysPage: React.FC = () => {
                     type="submit"
                     className="w-full py-3.5 px-6 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.18em] font-bold rounded-[2px] transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>Gửi lời nhắn kết nối</span>
+                    <span>Gửi lời nhắn</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </form>
@@ -1596,7 +1596,7 @@ export const JourneysPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Khánh Vân &amp; Những Chuyến Đi • Hệ thống Green Power (Manulife Việt Nam)
+              Khánh Vân và những chuyến đi, Hệ thống Green Power (Manulife Việt Nam)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#9BB0A5]">
@@ -1638,7 +1638,7 @@ export const JourneysPage: React.FC = () => {
       />
 
       <aside
-        aria-label="Kênh kết nối trực tiếp Khánh Vân"
+        aria-label="Liên hệ trực tiếp Khánh Vân"
         className={`fixed bottom-[calc(0.875rem+env(safe-area-inset-bottom,0px))] sm:bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] left-3.5 sm:left-6 z-40 flex flex-col gap-2.5 sm:gap-4 items-start pointer-events-auto select-none transition-all duration-300 ${
           anyModalOpen
             ? 'opacity-0 pointer-events-none translate-y-4'
@@ -1663,7 +1663,7 @@ export const JourneysPage: React.FC = () => {
           href={FACEBOOK_URL}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Kết nối Facebook Khánh Vân"
+          aria-label="Facebook Khánh Vân"
           className="relative w-10 h-10 sm:w-[50px] sm:h-[50px] rounded-full flex items-center justify-center bg-gradient-to-br from-[#0D5C38] via-[#0A3622] to-[#062316] text-white shadow-[0_6px_20px_rgba(10,54,34,0.34)] hover:-translate-y-0.5 transition-all duration-300 border-2 border-white"
         >
           <span className="manulife-halo-delayed absolute -inset-1 rounded-full bg-[#008746]/32 pointer-events-none" />
@@ -1696,7 +1696,7 @@ export const JourneysPage: React.FC = () => {
               {/* Sticky Top Bar */}
               <div className="sticky top-0 z-20 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#E4E1D8] px-4 sm:px-7 py-3 flex items-center justify-between gap-2">
                 <div className="text-[10.5px] uppercase tracking-[0.16em] text-[#56605B] font-semibold truncate">
-                  Chương {selectedChapterIndex + 1}/{JOURNEY_CHAPTERS.length} •{' '}
+                  Chương {selectedChapterIndex + 1}/{JOURNEY_CHAPTERS.length}:{' '}
                   {selectedChapter.milestoneBadge}
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
@@ -1759,7 +1759,7 @@ export const JourneysPage: React.FC = () => {
                         <Users className="w-4 h-4 text-[#008746] shrink-0 mt-0.5" />
                         <div>
                           <span className="text-[10px] uppercase tracking-[0.14em] text-[#7A847F] block">
-                            Đồng hành
+                            Đi cùng
                           </span>
                           <span className="font-medium text-[#181F1C]">
                             {selectedChapter.companions}
@@ -1782,7 +1782,7 @@ export const JourneysPage: React.FC = () => {
                   {selectedChapter.video && (
                     <div className="lg:col-span-5 bg-[#072116] text-white rounded-[5px] p-3.5 sm:p-4 border border-[#0A3622] space-y-3">
                       <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
-                        <span>Thước phim thực tế</span>
+                        <span>Phim của chuyến đi</span>
                         <span>{selectedChapter.video.durationLabel}</span>
                       </div>
                       <div className="rounded-[4px] overflow-hidden bg-black aspect-[9/16] max-h-[460px] mx-auto">
@@ -1813,14 +1813,14 @@ export const JourneysPage: React.FC = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                       <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
-                        Tuyển Tập Khung Hình ({selectedChapter.photos.length} Ảnh)
+                        Ảnh chuyến đi ({selectedChapter.photos.length} ảnh)
                       </span>
                       <h3 className="font-serif text-xl sm:text-2xl text-[#181F1C]">
-                        Những khoảnh khắc đáng nhớ tại {selectedChapter.countryTag}
+                        Ảnh chụp tại {selectedChapter.countryTag}
                       </h3>
                     </div>
                     <span className="text-xs text-[#66706B]">
-                      Chạm ảnh bất kỳ để xem toàn màn hình
+                      Bấm vào ảnh để xem toàn màn hình
                     </span>
                   </div>
 
@@ -1871,7 +1871,7 @@ export const JourneysPage: React.FC = () => {
                       >
                         <Camera className="w-3.5 h-3.5" />
                         <span>
-                          Mở rộng xem thêm {selectedChapter.photos.length - 6} ảnh kỷ niệm khác
+                          Xem thêm {selectedChapter.photos.length - 6} ảnh nữa
                         </span>
                       </button>
                     </div>
@@ -1883,13 +1883,13 @@ export const JourneysPage: React.FC = () => {
                   <div className="space-y-1 max-w-xl">
                     <span className="text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
                       {selectedChapter.ctaMode === 'career'
-                        ? 'Đồng hành sự nghiệp cùng Green Power'
-                        : 'Hoạch định điểm tựa bình an cho gia đình'}
+                        ? 'Làm nghề cùng Green Power'
+                        : 'Lập kế hoạch tài chính cho gia đình'}
                     </span>
                     <p className="font-serif text-lg sm:text-xl text-white leading-snug">
                       {selectedChapter.ctaMode === 'career'
-                        ? 'Bạn mong muốn xây dựng sự nghiệp quản lý chuyên nghiệp và cùng chinh phục những chuyến M-Star tiếp theo?'
-                        : 'Bạn muốn thiết kế một kế hoạch tài chính vững vàng cho những hành trình dài hạn của gia đình mình?'}
+                        ? 'Bạn muốn làm quản lý chuyên nghiệp và cùng đi những chuyến M-Star tiếp theo?'
+                        : 'Bạn muốn có một kế hoạch tài chính vững cho những chuyến đi dài hạn của gia đình?'}
                     </p>
                   </div>
                   <button
@@ -1939,14 +1939,14 @@ export const JourneysPage: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] uppercase tracking-[0.16em] text-[#008746] font-bold">
-                      Thước phim {activeReelIndex + 1}/{screeningReels.length} •{' '}
+                      Phim {activeReelIndex + 1}/{screeningReels.length}:{' '}
                       {activeReel.year}
                     </span>
                     <div className="flex items-center gap-1">
                       <button
                         type="button"
                         onClick={() => navigateReelModal(-1)}
-                        aria-label="Thước phim trước"
+                        aria-label="Phim trước"
                         className="p-1.5 border border-[#DCD8CE] rounded-[2px] cursor-pointer"
                       >
                         <ChevronLeft className="w-3.5 h-3.5" />
@@ -1954,7 +1954,7 @@ export const JourneysPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => navigateReelModal(1)}
-                        aria-label="Thước phim kế tiếp"
+                        aria-label="Phim tiếp theo"
                         className="p-1.5 border border-[#DCD8CE] rounded-[2px] cursor-pointer"
                       >
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -1990,7 +1990,7 @@ export const JourneysPage: React.FC = () => {
                       className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <span>
-                        Đọc bài viết &amp; xem {activeReel.chapter.photoCount} ảnh chương này
+                        Đọc bài và xem {activeReel.chapter.photoCount} ảnh của chương này
                       </span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
@@ -2006,7 +2006,7 @@ export const JourneysPage: React.FC = () => {
                       }}
                       className="w-full py-2.5 px-4 bg-[#0A3622] hover:bg-[#008746] text-white text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
                     >
-                      <span>Khám phá bản đồ 11 hành trình</span>
+                      <span>Xem bản đồ 11 chương</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
                   )}

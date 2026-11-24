@@ -81,20 +81,20 @@ const SYSTEM_PILLARS = [
   {
     number: '01',
     icon: ShieldCheck,
-    title: 'Minh Bạch Từ Trang Đầu Tiên',
-    desc: 'Tư vấn bắt đầu từ việc cùng khách hàng đọc kỹ điều khoản loại trừ, thời gian chờ và chọn mức đóng phù hợp, trong khoảng 10–15% thu nhập ổn định. Nền tảng ấy giúp toàn vùng giữ vị trí Top 1 toàn quốc về tỷ lệ duy trì hợp đồng.',
+    title: 'Minh Bạch Ngay Từ Buổi Đầu',
+    desc: 'Buổi tư vấn bắt đầu bằng việc cùng khách đọc kỹ điều khoản loại trừ, thời gian chờ, rồi chọn mức đóng khoảng 10 đến 15% thu nhập ổn định. Cách làm này giúp cả vùng giữ vị trí Top 1 toàn quốc về tỷ lệ duy trì hợp đồng.',
   },
   {
     number: '02',
     icon: Building2,
-    title: 'Đội Ngũ Giàu Chuyên Môn Từ Nhiều Ngành',
-    desc: 'Đội ngũ quản lý quy tụ những người trưởng thành từ Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp, mang đến góc nhìn hoạch định dòng tiền thực chất cho từng gia đình.',
+    title: 'Đội Ngũ Đến Từ Nhiều Ngành',
+    desc: 'Đội ngũ quản lý có người từng làm Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp, nên nhìn dòng tiền của từng gia đình khá thực tế.',
   },
   {
     number: '03',
     icon: Compass,
-    title: 'Luôn Có Hệ Thống Đồng Hành Phía Sau',
-    desc: 'Mỗi gia đình khách hàng không làm việc với một tư vấn viên đơn lẻ, mà luôn có đội ngũ quản lý nhiều tầng của Green Power cùng đồng hành và giám sát chất lượng tại Manulife Việt Nam.',
+    title: 'Luôn Có Đội Ngũ Hỗ Trợ Phía Sau',
+    desc: 'Mỗi gia đình không chỉ làm việc với một tư vấn viên. Phía sau còn có các tầng quản lý của Green Power hỗ trợ và giám sát chất lượng tại Manulife Việt Nam.',
   },
 ];
 
@@ -451,7 +451,7 @@ export const RegionalSystemPage: React.FC = () => {
             </h1>
 
             <p className="text-[14.5px] sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl">
-              Hình thành từ năm 2018 trên nền tảng kỷ luật quản trị tài sản của ngân hàng quốc tế, Green Power hôm nay có hơn 500 cộng sự cùng 64 quản lý kinh doanh tại 4 khu vực, chung một kim chỉ nam:{' '}
+              Green Power hình thành từ năm 2018, trên nền kỷ luật quản trị tài sản của ngân hàng quốc tế. Hôm nay hệ thống có hơn 500 cộng sự và 64 quản lý kinh doanh tại 4 khu vực, cùng theo một phương châm:{' '}
               <span className="font-medium text-[#0A3622] italic font-serif text-[17px] sm:text-2xl block sm:inline mt-1 sm:mt-0">
                 “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
@@ -466,9 +466,9 @@ export const RegionalSystemPage: React.FC = () => {
                   src: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
                   tag: 'BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER',
                   title:
-                    'Giám đốc Vùng Cấp cao Khánh Vân cùng tập thể quản lý nòng cốt tại Manulife Plaza',
+                    'Giám đốc Vùng Cấp cao Khánh Vân cùng các quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
-                    'Những quản lý trưởng thành từ Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
+                    'Các quản lý từng làm Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
                 })
               }
               className="cursor-zoom-in group"
@@ -494,7 +494,7 @@ export const RegionalSystemPage: React.FC = () => {
                     BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER
                   </span>
                   <p className="font-serif italic text-[14.5px] sm:text-xl text-[#FAF9F5] leading-snug mt-0.5">
-                    Thế hệ quản lý bản lĩnh, chuyên môn sâu và làm nghề bài bản tại Manulife Việt Nam
+                    Quản lý có chuyên môn sâu, làm nghề bài bản tại Manulife Việt Nam
                   </p>
                 </div>
                 <span className="hidden md:inline-block text-[10.5px] uppercase tracking-[0.16em] text-[#B9C8C0] shrink-0">
@@ -513,7 +513,7 @@ export const RegionalSystemPage: React.FC = () => {
                   Nhân sự toàn vùng
                 </span>
                 <p className="text-[11px] sm:text-xs text-[#56605B] leading-snug">
-                  Phát triển bền vững từ 2018
+                  Hoạt động từ 2018
                 </p>
               </div>
 
@@ -575,11 +575,11 @@ export const RegionalSystemPage: React.FC = () => {
                   <span>02 / SƠ ĐỒ TỔ CHỨC HỆ THỐNG GREEN POWER</span>
                 </span>
                 <h2 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold leading-snug">
-                  Cấu trúc điều hành từ Giám đốc Vùng đến các nhánh chủ lực
+                  Cơ cấu điều hành từ Giám đốc Vùng đến các nhánh chính
                 </h2>
               </div>
               <span className="text-[11px] text-[#56605B] bg-[#FAF9F5] border border-[#E4E1D8] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-[2px] self-start sm:self-auto">
-                Chạm vào từng người để xem hồ sơ
+                Bấm vào từng người để xem hồ sơ
               </span>
             </div>
 
@@ -600,7 +600,7 @@ export const RegionalSystemPage: React.FC = () => {
                     Khánh Vân
                   </p>
                   <p className="text-[11px] sm:text-xs text-[#D7E2DC] mt-0.5 leading-snug">
-                    Giám đốc Vùng Cấp cao • 4 khu vực trực thuộc
+                    Giám đốc Vùng Cấp cao, 4 khu vực trực thuộc
                   </p>
                 </div>
               </div>
@@ -1147,11 +1147,11 @@ export const RegionalSystemPage: React.FC = () => {
                 </div>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
                   Bốn khu vực kinh doanh,{' '}
-                  <span className="italic text-[#0A3622]">một chuẩn mực chung</span>
+                  <span className="italic text-[#0A3622]">một cách làm chung</span>
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Từ đơn vị hạt nhân HCM69, mô hình quản trị chuyên nghiệp đã được nhân rộng sang MN111, SG168 và SG169.
+                Từ đơn vị hạt nhân HCM69, cách quản lý này được áp dụng sang MN111, SG168 và SG169.
               </p>
             </div>
 
@@ -1220,7 +1220,7 @@ export const RegionalSystemPage: React.FC = () => {
                               <img
                                 src={hub.coLeadPortrait}
                                 alt={hub.coLeadName || ''}
-                                title={`${hub.coLeadName} • ${hub.coLeadRole}`}
+                                title={`${hub.coLeadName}, ${hub.coLeadRole}`}
                                 className="w-[58px] h-[58px] sm:w-16 sm:h-16 rounded-full object-cover object-center border-2 border-[#FAF9F5] bg-[#EFECE5] shadow-sm"
                               />
                             </div>
@@ -1315,14 +1315,14 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="space-y-2 sm:space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
               <Users className="w-3.5 h-3.5 shrink-0" />
-              <span>03 / ĐỘI NGŨ QUẢN LÝ • {REGIONAL_LEADERS.length} HỒ SƠ</span>
+              <span>03 / ĐỘI NGŨ QUẢN LÝ, {REGIONAL_LEADERS.length} HỒ SƠ</span>
             </div>
             <h2 className="font-serif text-[26px] sm:text-5xl text-[#181F1C] font-medium leading-tight">
-              Những người đồng hành{' '}
-              <span className="italic text-[#0A3622]">tận tâm và bản lĩnh</span>
+              Những người cùng làm nghề{' '}
+              <span className="italic text-[#0A3622]">tận tâm với nghề</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#4A544F] leading-relaxed">
-              Mỗi người bước vào nghề từ một chuyên môn riêng như Ngân hàng, Kế toán, Chứng khoán, Luật, Giáo dục, Y Dược, nhưng gặp nhau ở chữ “Tâm” và sự minh bạch trong tư vấn. Chạm vào từng hồ sơ để đọc câu chuyện nghề của họ.
+              Mỗi người vào nghề từ một chuyên môn riêng như Ngân hàng, Kế toán, Chứng khoán, Luật, Giáo dục, Y Dược, và cùng coi trọng chữ “Tâm” và sự minh bạch khi tư vấn. Bấm vào từng hồ sơ để đọc câu chuyện nghề của họ.
             </p>
           </div>
 
@@ -1396,18 +1396,18 @@ export const RegionalSystemPage: React.FC = () => {
                 },
                 {
                   key: 'DM' as const,
-                  mobileLabel: `Trưởng Phòng • SDM/DM (${tierCounts.DM})`,
-                  desktopLabel: `Trưởng Phòng • SDM/DM (${tierCounts.DM})`,
+                  mobileLabel: `Trưởng Phòng SDM/DM (${tierCounts.DM})`,
+                  desktopLabel: `Trưởng Phòng SDM/DM (${tierCounts.DM})`,
                 },
                 {
                   key: 'SUM' as const,
                   mobileLabel: `SUM (${tierCounts.SUM})`,
-                  desktopLabel: `Trưởng Nhóm Cấp cao • SUM (${tierCounts.SUM})`,
+                  desktopLabel: `Trưởng Nhóm Cấp cao SUM (${tierCounts.SUM})`,
                 },
                 {
                   key: 'UM' as const,
                   mobileLabel: `UM (${tierCounts.UM})`,
-                  desktopLabel: `Trưởng Nhóm • UM (${tierCounts.UM})`,
+                  desktopLabel: `Trưởng Nhóm UM (${tierCounts.UM})`,
                 },
                 {
                   key: 'ADVISOR' as const,
@@ -1641,7 +1641,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                             <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-[#0A3622] group-hover:text-[#008746] transition-colors">
                               <span className="sm:hidden">Đọc hồ sơ chi tiết</span>
-                              <span className="hidden sm:inline">Đọc câu chuyện và hồ sơ chi tiết</span>
+                              <span className="hidden sm:inline">Xem hồ sơ chi tiết</span>
                               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
                             </div>
                           </div>
@@ -1660,14 +1660,14 @@ export const RegionalSystemPage: React.FC = () => {
                   <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1.5 sm:gap-2 pb-3 border-b border-[#DCD8CE]">
                     <div>
                       <span className="text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold block">
-                        ĐỘI NGŨ QUẢN LÝ NHÓM • SUM &amp; UM
+                        QUẢN LÝ NHÓM, SUM &amp; UM
                       </span>
                       <h3 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold mt-0.5">
                         Trưởng Nhóm Cấp cao &amp; Trưởng Nhóm Kinh doanh ({compactFiltered.length})
                       </h3>
                     </div>
                     <p className="text-xs text-[#56605B]">
-                      Chạm vào từng thẻ để xem câu chuyện nghề và danh hiệu
+                      Bấm vào từng thẻ để xem hồ sơ và danh hiệu
                     </p>
                   </div>
 
@@ -1805,23 +1805,23 @@ export const RegionalSystemPage: React.FC = () => {
                   />
                   <div className="space-y-0.5 sm:space-y-1 min-w-0">
                     <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.16em] text-[#008746] font-bold block">
-                      04 / NGƯỜI SÁNG LẬP &amp; DẪN DẮT VÙNG
+                      04 / NGƯỜI SÁNG LẬP
                     </span>
                     <h2 className="font-serif text-xl sm:text-[28px] text-[#181F1C] font-semibold leading-tight">
                       Khánh Vân
                     </h2>
                     <p className="text-[11.5px] sm:text-xs text-[#56605B] font-medium leading-snug">
-                      Giám đốc Vùng Cấp cao (SRD) • Cựu Quản lý Tài sản ANZ Bank
+                      Giám đốc Vùng Cấp cao (SRD), cựu Quản lý Tài sản ANZ Bank
                     </p>
                   </div>
                 </div>
 
                 <blockquote className="font-serif italic text-[16px] sm:text-[19px] text-[#0A3622] leading-relaxed border-l-2 border-[#B8975A] pl-3.5 sm:pl-4">
-                  “Một hệ thống mạnh không được đo bằng những lời hứa hào nhoáng, mà bằng phẩm chất của người tư vấn đứng sau từng hợp đồng và tỷ lệ khách hàng vẫn an tâm đồng hành sau 5 năm, 10 năm, 20 năm.”
+                  “Hệ thống mạnh hay không nằm ở người tư vấn đứng sau từng hợp đồng, và ở tỷ lệ khách hàng vẫn an tâm sau 5 năm, 10 năm, 20 năm.”
                 </blockquote>
 
                 <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed">
-                  Sau 8 năm làm Quản lý tại ngân hàng quốc tế ANZ, chị Khánh Vân bắt đầu lại từ con số 0 tại Manulife. Chị xây dựng vùng kinh doanh theo tiêu chuẩn khắt khe của ngành ngân hàng: chọn cộng sự tử tế, rèn nghiệp vụ thực chất và trao quyền để mỗi quản lý tỏa sáng bằng thế mạnh riêng.
+                  Sau 8 năm làm Quản lý tại ngân hàng quốc tế ANZ, chị Khánh Vân bắt đầu lại từ con số 0 tại Manulife. Chị xây dựng vùng kinh doanh theo tiêu chuẩn khắt khe của ngành ngân hàng: chọn cộng sự kỹ, rèn nghiệp vụ thật và để mỗi quản lý phát huy thế mạnh riêng.
                 </p>
               </div>
 
@@ -1849,10 +1849,10 @@ export const RegionalSystemPage: React.FC = () => {
             <div className="lg:col-span-7 flex flex-col justify-between gap-4 sm:gap-6">
               <div className="space-y-1.5">
                 <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold block">
-                  BẢN SẮC &amp; CHUẨN MỰC VẬN HÀNH
+                  BẢN SẮC &amp; CÁCH VẬN HÀNH
                 </span>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
-                  Ba trụ cột làm nên uy tín của{' '}
+                  Ba nguyên tắc của{' '}
                   <span className="italic text-[#0A3622]">Green Power</span>
                 </h3>
               </div>
@@ -1894,21 +1894,21 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="space-y-1.5 sm:space-y-2.5 max-w-2xl">
                 <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#008746] font-semibold">
                   <Sparkles className="w-3.5 h-3.5 shrink-0" />
-                  <span>VĂN HÓA ĐÀO TẠO &amp; ĐỒNG HÀNH THỰC CHIẾN</span>
+                  <span>VĂN HÓA ĐÀO TẠO &amp; THỰC CHIẾN</span>
                 </div>
                 <h3 className="font-serif text-[26px] sm:text-4xl text-[#181F1C] font-medium leading-tight">
-                  Đằng sau mỗi hợp đồng là{' '}
-                  <span className="italic text-[#0A3622]">một tập thể rèn nghề</span>
+                  Mỗi hợp đồng đều có{' '}
+                  <span className="italic text-[#0A3622]">cả đội cùng làm</span>
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Tại Hệ thống Green Power, không ai phải bước đi một mình. Từ phòng huấn luyện nghiệp vụ mỗi sáng đến những buổi rà soát hồ sơ thực chiến, tay nghề được bồi đắp mỗi ngày.
+                Ở Green Power, không ai làm nghề một mình. Mỗi sáng có buổi huấn luyện nghiệp vụ, rồi đến những buổi rà soát hồ sơ thực tế.
               </p>
             </div>
 
             <div className="space-y-2.5">
               <div className="flex md:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
-                <span>Chạm vào ảnh để phóng lớn</span>
+                <span>Bấm vào ảnh để phóng to</span>
                 <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
                   <span>Vuốt xem ảnh</span>
                   <ArrowRight className="w-3 h-3" />
@@ -1978,14 +1978,14 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="space-y-2.5 sm:space-y-3">
                 <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#E8D3A6] font-semibold">
                   <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>05 / ĐỒNG HÀNH CÙNG HỆ THỐNG GREEN POWER</span>
+                  <span>05 / LIÊN HỆ GREEN POWER</span>
                 </span>
                 <h2 className="font-serif text-[26px] sm:text-5xl font-medium leading-tight text-white">
-                  Điểm tựa tài chính gia đình, hoặc một{' '}
-                  <span className="italic text-[#E8D3A6]">hành trình sự nghiệp mới</span>
+                  Bảo vệ tài chính gia đình, hoặc một{' '}
+                  <span className="italic text-[#E8D3A6]">hướng đi nghề nghiệp mới</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D7E2DC] leading-relaxed">
-                  Mọi cuộc trò chuyện tại Green Power đều bắt đầu bằng sự lắng nghe, không áp lực. Thông tin của bạn được bảo mật tuyệt đối. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
+                  Cuộc trò chuyện nào ở Green Power cũng bắt đầu bằng việc lắng nghe, không áp lực. Thông tin của bạn được giữ kín. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
                 </p>
               </div>
 
@@ -1998,7 +1998,7 @@ export const RegionalSystemPage: React.FC = () => {
                     Hoạch định Bảo vệ &amp; Gia sản
                   </h3>
                   <p className="text-xs text-[#D7E2DC] leading-relaxed">
-                    Rà soát hợp đồng hiện có hoặc thiết kế giải pháp y tế, học vấn, hưu trí trong khoảng 10–15% thu nhập gia đình.
+                    Rà soát hợp đồng hiện có hoặc thiết kế giải pháp y tế, học vấn, hưu trí trong khoảng 10 đến 15% thu nhập gia đình.
                   </p>
                 </div>
 
@@ -2010,7 +2010,7 @@ export const RegionalSystemPage: React.FC = () => {
                     Lộ trình trở thành quản lý
                   </h3>
                   <p className="text-xs text-[#D7E2DC] leading-relaxed">
-                    Dành cho bạn đang làm trong lĩnh vực Ngân hàng, Kế toán, Luật, Y tế hay Quản trị doanh nghiệp và đang tìm một môi trường làm nghề tử tế, đào tạo thực chất.
+                    Dành cho bạn đang làm trong lĩnh vực Ngân hàng, Kế toán, Luật, Y tế hay Quản trị doanh nghiệp và đang tìm môi trường làm nghề rõ ràng, được đào tạo bài bản.
                   </p>
                 </div>
               </div>
@@ -2202,7 +2202,7 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Hệ thống Green Power • Manulife Việt Nam (HCM69 • SG168 • SG169 • MN111)
+              Hệ thống Green Power, Manulife Việt Nam (HCM69, SG168, SG169, MN111)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8FA398]">
@@ -2363,7 +2363,7 @@ export const RegionalSystemPage: React.FC = () => {
                           if (current) {
                             setLightbox({
                               src: current.src,
-                              tag: `${selectedLeader.displayName.toUpperCase()} • KHU VỰC ${selectedLeader.unitCode}`,
+                              tag: `${selectedLeader.displayName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
                               title: current.caption,
                             });
                           }
@@ -2444,7 +2444,7 @@ export const RegionalSystemPage: React.FC = () => {
                           if (current) {
                             setLightbox({
                               src: current.src,
-                              tag: `${selectedLeader.displayName.toUpperCase()} • KHU VỰC ${selectedLeader.unitCode}`,
+                              tag: `${selectedLeader.displayName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
                               title: current.caption,
                             });
                           }
@@ -2537,7 +2537,7 @@ export const RegionalSystemPage: React.FC = () => {
 
                       <div className="hidden sm:block space-y-0.5 sm:border-l sm:border-[#ECE9E0] sm:pl-3.5">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
-                          Thâm niên &amp; gắn bó
+                          Thâm niên
                         </span>
                         <p className="text-xs font-medium text-[#181F1C] leading-snug">
                           {selectedLeader.tenureLabel}
@@ -2549,13 +2549,13 @@ export const RegionalSystemPage: React.FC = () => {
                           Khu vực &amp; quản lý trực tiếp
                         </span>
                         <p className="text-xs font-semibold text-[#0A3622] leading-snug">
-                          Khu vực {selectedLeader.unitCode} • {selectedLeader.directLeader}
+                          Khu vực {selectedLeader.unitCode}, {selectedLeader.directLeader}
                         </p>
                       </div>
 
                       <div className="space-y-0.5 pt-2.5 border-t border-[#ECE9E0] sm:border-l sm:pl-3.5">
                         <span className="text-[10px] uppercase tracking-[0.16em] text-[#56605B] font-semibold block">
-                          Dấu ấn nổi bật
+                          Điểm nổi bật
                         </span>
                         <p className="text-xs font-semibold text-[#0A3622] leading-snug">
                           {selectedLeader.highlightNote}

@@ -23,35 +23,35 @@ export interface VideoItem {
     code: 'ALL',
     name: 'Tất cả chuyên đề',
     shortName: 'Tất cả (109)',
-    desc: 'Toàn bộ 109 video phân tích thực chiến và đúc kết từ Khánh Vân'
+    desc: 'Toàn bộ 109 video của Khánh Vân'
   },
   {
     id: 'minh-bach-bao-hiem',
     code: '01',
     name: '01. Minh Bạch Bảo Hiểm',
     shortName: 'Minh Bạch Bảo Hiểm',
-    desc: 'Bản chất hợp đồng, cơ chế dòng phí, giá trị hoàn lại và quy tắc bồi thường'
+    desc: 'Hợp đồng bảo hiểm vận hành ra sao: dòng phí, giá trị hoàn lại và quy tắc bồi thường'
   },
   {
     id: 'dong-tien-huu-tri',
     code: '02',
     name: '02. Hoạch Định Dòng Tiền & Hưu Trí',
     shortName: 'Dòng Tiền & Hưu Trí',
-    desc: 'Thiết kế quỹ học vấn cho con, hưu trí an nhàn và kỷ luật tích sản dài hạn'
+    desc: 'Quỹ học vấn cho con, hưu trí và tích lũy dài hạn'
   },
   {
     id: 'quan-tri-rui-ro',
     code: '03',
     name: '03. Quản Trị Rủi Ro & Sức Khỏe',
     shortName: 'Rủi Ro & Sức Khỏe',
-    desc: 'Bảo vệ quỹ dự phòng y tế, bệnh hiểm nghèo và lá chắn tài chính trước biến cố'
+    desc: 'Quỹ dự phòng y tế, bệnh hiểm nghèo và chuẩn bị tài chính khi có biến cố'
   },
   {
     id: 'chuyen-nghe-lanh-dao',
     code: '04',
     name: '04. Chuyện Nghề & Lãnh Đạo',
     shortName: 'Chuyện Nghề & Lãnh Đạo',
-    desc: 'Đạo đức nghề tư vấn, quản trị đội ngũ 500+ nhân sự và triết lý sống tỉnh thức'
+    desc: 'Đạo đức nghề tư vấn, quản lý đội ngũ 500+ nhân sự và chuyện sống, chuyện nghề'
   }
 ] as const;
 
@@ -61,35 +61,35 @@ export const VIDEO_FOLDERS = [
     code: 'ALL',
     name: 'Tất cả chuyên đề',
     shortName: 'Tất cả (109)',
-    desc: 'Toàn bộ 109 video phân tích thực chiến và đúc kết từ Khánh Vân'
+    desc: 'Toàn bộ 109 video của Khánh Vân'
   },
   {
     id: 'minh-bach-bao-hiem',
     code: '01',
     name: '01. Minh Bạch Bảo Hiểm',
     shortName: 'Minh Bạch Bảo Hiểm',
-    desc: 'Bản chất hợp đồng, cơ chế dòng phí, giá trị hoàn lại và quy tắc bồi thường'
+    desc: 'Hợp đồng bảo hiểm vận hành ra sao: dòng phí, giá trị hoàn lại và quy tắc bồi thường'
   },
   {
     id: 'dong-tien-huu-tri',
     code: '02',
     name: '02. Hoạch Định Dòng Tiền & Hưu Trí',
     shortName: 'Dòng Tiền & Hưu Trí',
-    desc: 'Thiết kế quỹ học vấn cho con, hưu trí an nhàn và kỷ luật tích sản dài hạn'
+    desc: 'Quỹ học vấn cho con, hưu trí và tích lũy dài hạn'
   },
   {
     id: 'quan-tri-rui-ro',
     code: '03',
     name: '03. Quản Trị Rủi Ro & Sức Khỏe',
     shortName: 'Rủi Ro & Sức Khỏe',
-    desc: 'Bảo vệ quỹ dự phòng y tế, bệnh hiểm nghèo và lá chắn tài chính trước biến cố'
+    desc: 'Quỹ dự phòng y tế, bệnh hiểm nghèo và chuẩn bị tài chính khi có biến cố'
   },
   {
     id: 'chuyen-nghe-lanh-dao',
     code: '04',
     name: '04. Chuyện Nghề & Lãnh Đạo',
     shortName: 'Chuyện Nghề & Lãnh Đạo',
-    desc: 'Đạo đức nghề tư vấn, quản trị đội ngũ 500+ nhân sự và triết lý sống tỉnh thức'
+    desc: 'Đạo đức nghề tư vấn, quản lý đội ngũ 500+ nhân sự và chuyện sống, chuyện nghề'
   }
 ] as const;
 
@@ -108,8 +108,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Làm rõ dòng tiền của 1,5 triệu khách hàng tại Manulife được sử dụng ra sao, giúp giải tỏa hoài nghi và củng cố niềm tin vào quỹ bảo hiểm.",
-    "cta": "Tìm hiểu cơ chế bảo vệ tài chính an toàn cùng Khánh Vân",
+    "summary": "Giải thích dòng tiền của 1,5 triệu khách hàng tại Manulife được sử dụng ra sao.",
+    "cta": "Tìm hiểu cơ chế bảo vệ tài chính",
     "thumbnail": "/images/reels/1047431547259894.jpg"
   },
   {
@@ -126,8 +126,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Kinh tế khó khăn không phải là lý do từ bỏ bảo hiểm, mà là thời điểm quan trọng nhất để kiểm chứng sự cần thiết của quỹ dự phòng.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Kinh tế khó khăn không phải lý do để bỏ bảo hiểm. Đây là lúc thấy rõ quỹ dự phòng cần thiết thế nào.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1530853344747478.jpg"
   },
   {
@@ -144,8 +144,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Chia sẻ chiến lược tìm kiếm nguồn khách hàng bền vững giúp tư vấn viên gắn bó và phát triển lâu dài trong ngành bảo hiểm.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Cách tìm khách hàng bền vững để tư vấn viên làm nghề lâu dài trong ngành bảo hiểm.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/825944796583419.jpg"
   },
   {
@@ -162,8 +162,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Cảnh báo thiệt hại khi hủy hợp đồng bảo hiểm sớm (3–4 năm đầu) vì nhầm tưởng bảo hiểm giống như gửi tiết kiệm.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ của bạn ngay hôm nay",
+    "summary": "Hủy hợp đồng sớm (3 đến 4 năm đầu) thường thiệt, vì nhiều người nhầm bảo hiểm giống gửi tiết kiệm.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ của bạn",
     "thumbnail": "/images/reels/2757832901085284.jpg"
   },
   {
@@ -180,8 +180,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Phân tích thiệt hơn và đưa ra lời khuyên thực tế về việc có nên rút giá trị tài khoản sau 10 năm tham gia bảo hiểm hay không.",
-    "cta": "Nhận tư vấn chuyên sâu về thời điểm rút giá trị tài khoản hợp đồng",
+    "summary": "Thiệt hơn của việc rút giá trị tài khoản sau 10 năm tham gia, và lời khuyên thực tế.",
+    "cta": "Nhận tư vấn về thời điểm rút giá trị tài khoản hợp đồng",
     "thumbnail": "/images/reels/855860643809575.jpg"
   },
   {
@@ -198,8 +198,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Đính chính thông tin chưa đầy đủ trên truyền thông về mốc đáo hạn năm 2086, giúp khách hàng hiểu đúng bản chất hợp đồng trọn đời.",
-    "cta": "Kiểm tra kỹ điều khoản hợp đồng của bạn cùng chuyên gia Manulife",
+    "summary": "Đính chính thông tin chưa đầy đủ trên truyền thông về mốc đáo hạn năm 2086, và giải thích hợp đồng trọn đời.",
+    "cta": "Kiểm tra kỹ điều khoản hợp đồng của bạn",
     "thumbnail": "/images/reels/862254653272371.jpg"
   },
   {
@@ -216,7 +216,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Dùng số liệu thực tế về 12 triệu hợp đồng tại Việt Nam để làm rõ định kiến “bảo hiểm là lừa đảo” và củng cố niềm tin vào ngành.",
+    "summary": "Dùng số liệu về 12 triệu hợp đồng tại Việt Nam để trả lời định kiến “bảo hiểm là lừa đảo”.",
     "cta": "Trò chuyện trực tiếp với Khánh Vân để hiểu đúng về bảo hiểm nhân thọ",
     "thumbnail": "/images/reels/1526322548389297.jpg"
   },
@@ -224,7 +224,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "id": "video-007-855658",
     "reelId": "1573172987855658",
     "url": "https://www.facebook.com/reel/1573172987855658",
-    "title": "Đã đóng phí 15–20 năm: Có nên rút giá trị tài khoản và tất toán hợp đồng?",
+    "title": "Đã đóng phí 15 đến 20 năm: Có nên rút giá trị tài khoản và tất toán hợp đồng?",
     "views": "17K",
     "viewsNum": 17000,
     "likes": 258,
@@ -234,8 +234,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải đáp thắc mắc thường gặp của khách hàng về việc có nên rút tiền và tất toán hợp đồng sau 15–20 năm tham gia.",
-    "cta": "Đặt lịch tư vấn tối ưu hóa quyền lợi hợp đồng dài hạn cùng Khánh Vân",
+    "summary": "Câu hỏi khách hay gặp: có nên rút tiền và tất toán hợp đồng sau 15 đến 20 năm tham gia không.",
+    "cta": "Đặt lịch tư vấn quyền lợi hợp đồng dài hạn",
     "thumbnail": "/images/reels/1573172987855658.jpg"
   },
   {
@@ -252,8 +252,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ bản chất thời hạn đóng phí trong hợp đồng để gỡ bỏ nỗi lo “đóng bảo hiểm tới 99 tuổi” do hiểu lầm điều khoản.",
-    "cta": "Tải cẩm nang giải mã điều khoản bảo hiểm cùng Khánh Vân",
+    "summary": "Giải thích thời hạn đóng phí trong hợp đồng, gỡ nỗi lo “đóng bảo hiểm tới 99 tuổi” do hiểu nhầm điều khoản.",
+    "cta": "Tải cẩm nang giải mã điều khoản bảo hiểm",
     "thumbnail": "/images/reels/4157714254548179.jpg"
   },
   {
@@ -270,7 +270,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải thích thời gian ân hạn đóng phí, một quy định nhân văn giúp khách hàng vượt qua giai đoạn khó khăn tài chính tạm thời.",
+    "summary": "Giải thích thời gian ân hạn đóng phí, giúp khách vượt qua giai đoạn khó khăn tài chính tạm thời.",
     "cta": "Kiểm tra thời hạn đóng phí và trạng thái hợp đồng của bạn",
     "thumbnail": "/images/reels/831932759489082.jpg"
   },
@@ -288,8 +288,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Phân tích khía cạnh pháp lý và rủi ro đạo đức qua một vụ trục lợi bảo hiểm, từ đó nhấn mạnh tầm quan trọng của sự minh bạch.",
-    "cta": "Tìm hiểu quy trình bồi thường minh bạch, chuẩn mực của Manulife",
+    "summary": "Khía cạnh pháp lý và rủi ro đạo đức qua một vụ trục lợi bảo hiểm, và vì sao minh bạch quan trọng.",
+    "cta": "Tìm hiểu quy trình bồi thường minh bạch, của Manulife",
     "thumbnail": "/images/reels/841324271956373.jpg"
   },
   {
@@ -306,8 +306,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải mã các quyền lợi tai nạn đặc biệt trong hợp đồng bảo hiểm và hướng dẫn khách hàng tự kiểm tra lại quyền lợi thực tế của mình.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Các quyền lợi tai nạn đặc biệt trong hợp đồng và cách tự kiểm tra quyền lợi thực tế của mình.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2248098998997828.jpg"
   },
   {
@@ -324,15 +324,15 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ tham gia bảo hiểm là có lợi hay có lời, giúp khách hàng nhìn nhận đúng giá trị bảo vệ tài chính.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Phân biệt có lợi và có lời khi tham gia bảo hiểm.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/25137432125917000.jpg"
   },
   {
     "id": "video-018-069383",
     "reelId": "1091779363069383",
     "url": "https://www.facebook.com/reel/1091779363069383",
-    "title": "Khi biến cố ập đến, điều gì sẽ giữ vững sự bình an cho tổ ấm của bạn?",
+    "title": "Khi có biến cố, gia đình bạn dựa vào đâu?",
     "views": "11K",
     "viewsNum": 11000,
     "likes": 228,
@@ -342,8 +342,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Chuyển hóa cảm giác bất an thành sự bình an cho tổ ấm thông qua việc sở hữu một hợp đồng bảo hiểm đúng và đủ.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Một hợp đồng bảo hiểm đúng và đủ giúp gia đình bớt bất an khi có biến cố.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1091779363069383.jpg"
   },
   {
@@ -360,8 +360,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải đáp nỗi lo công ty bảo hiểm phá sản dựa trên khung pháp lý minh bạch và sự quản lý chặt chẽ của Bộ Tài chính.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Giải đáp nỗi lo công ty bảo hiểm phá sản, dựa trên khung pháp lý và sự quản lý của Bộ Tài chính.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/666882872939011.jpg"
   },
   {
@@ -378,8 +378,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Tổng hợp 4 điều cốt lõi cần nắm rõ trước khi quyết định tham gia bất kỳ hợp đồng bảo hiểm nhân thọ nào.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "4 điều cần nắm trước khi quyết định tham gia hợp đồng bảo hiểm nhân thọ.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1068035375633480.jpg"
   },
   {
@@ -396,8 +396,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Phân tích vì sao bảo hiểm y tế nhà nước chưa đủ khi đối mặt với chi phí điều trị bệnh hiểm nghèo.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Vì sao bảo hiểm y tế nhà nước chưa đủ khi điều trị bệnh hiểm nghèo.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2300186437090462.jpg"
   },
   {
@@ -414,8 +414,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Trường hợp thực tế khách hàng phải phẫu thuật ruột non do hóc xương cá và được chi trả quyền lợi y tế hơn 171 triệu đồng.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Khách phẫu thuật ruột non do hóc xương cá, được chi trả quyền lợi y tế hơn 171 triệu đồng.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/4271139669770346.jpg"
   },
   {
@@ -432,8 +432,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Làm rõ vai trò và sự cần thiết của bảo hiểm gắn liền với các khoản vay ngân hàng qua câu chuyện thực tế của khách hàng VIP.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Bảo hiểm gắn với khoản vay ngân hàng có cần thiết không, qua câu chuyện của một khách hàng VIP.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1543446270354903.jpg"
   },
   {
@@ -450,8 +450,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giới thiệu giải pháp tài chính toàn diện, tích hợp học vấn, hưu trí và di sản, lần đầu có mặt tại thị trường Việt Nam.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Giải pháp tài chính tích hợp học vấn, hưu trí và di sản, lần đầu có mặt tại thị trường Việt Nam.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/3485023858321745.jpg"
   },
   {
@@ -468,8 +468,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải thích nguyên lý và cách xử lý khi gặp điều khoản loại trừ bệnh có sẵn trước khi tham gia bảo hiểm.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Điều khoản loại trừ bệnh có sẵn là gì và nên xử lý thế nào trước khi tham gia.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/999454989840936.jpg"
   },
   {
@@ -486,8 +486,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Chỉ rõ 5 điều “không” cần tránh khi mua bảo hiểm để có quyết định tài chính sáng suốt và bền vững.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "5 điều “không” cần tránh khi mua bảo hiểm để quyết định tài chính đúng.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1755404226202946.jpg"
   },
   {
@@ -504,8 +504,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Chia sẻ các lưu ý cốt lõi khi tham gia bảo hiểm để khách hàng yên tâm, tránh rủi ro mất tiền oan do thiếu hiểu biết.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Các lưu ý khi tham gia bảo hiểm để không mất tiền oan do thiếu hiểu biết.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/807436631770680.jpg"
   },
   {
@@ -522,8 +522,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Bảo hiểm không ngăn được bệnh tật nhưng mang lại nguồn tài chính để mua sự sống và giữ lại quyền lựa chọn trong cơn hoạn nạn.",
-    "cta": "Đặt lịch tư vấn giải pháp bảo vệ sức khỏe cùng Khánh Vân",
+    "summary": "Bảo hiểm không ngăn được bệnh tật, nhưng cho mình nguồn tài chính để chữa trị và giữ quyền lựa chọn khi hoạn nạn.",
+    "cta": "Đặt lịch tư vấn giải pháp bảo vệ sức khỏe",
     "thumbnail": "/images/reels/1135262889675748.jpg"
   },
   {
@@ -540,7 +540,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Bài học thực tế về việc kê khai và chuẩn bị hồ sơ minh bạch giúp khách hàng nhận trọn vẹn 1 tỷ đồng quyền lợi bảo hiểm.",
+    "summary": "Bài học về kê khai và chuẩn bị hồ sơ minh bạch giúp khách nhận đủ 1 tỷ đồng quyền lợi bảo hiểm.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1483427437137301.jpg"
   },
@@ -558,8 +558,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Phân tích bài toán tài chính khi đóng bảo hiểm 15 năm, rút 80% giá trị tài khoản và giữ lại 20% bảo vệ trọn đời.",
-    "cta": "Nhận bản tính toán dòng tiền cá nhân hóa cùng Khánh Vân",
+    "summary": "Bài toán đóng bảo hiểm 15 năm, rút 80% giá trị tài khoản và giữ lại 20% để được bảo vệ trọn đời.",
+    "cta": "Nhận bản tính toán dòng tiền cá nhân",
     "thumbnail": "/images/reels/909121445123384.jpg"
   },
   {
@@ -576,8 +576,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ cơ chế chi trả đồng thời giữa Bảo hiểm y tế (BHYT) và Bảo hiểm nhân thọ (BHNT) dựa trên danh mục thực tế.",
-    "cta": "Đặt lịch tư vấn tối ưu quyền lợi y tế cùng Khánh Vân",
+    "summary": "Cơ chế chi trả đồng thời giữa Bảo hiểm y tế (BHYT) và Bảo hiểm nhân thọ (BHNT), dựa trên danh mục thực tế.",
+    "cta": "Đặt lịch tư vấn tối ưu quyền lợi y tế",
     "thumbnail": "/images/reels/1394822378698768.jpg"
   },
   {
@@ -594,15 +594,15 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Minh chứng thực tế về quyền lợi tai nạn trong hợp đồng bảo hiểm giúp khách hàng nhận bồi thường 270 triệu đồng từ một tai nạn nhỏ.",
-    "cta": "Kiểm tra gói bảo vệ tai nạn của bạn ngay hôm nay",
+    "summary": "Một tai nạn nhỏ, khách vẫn nhận bồi thường 270 triệu đồng nhờ quyền lợi tai nạn trong hợp đồng.",
+    "cta": "Kiểm tra gói bảo vệ tai nạn của bạn",
     "thumbnail": "/images/reels/1579005710533691.jpg"
   },
   {
     "id": "video-032-901614",
     "reelId": "4239889922901614",
     "url": "https://www.facebook.com/reel/4239889922901614",
-    "title": "Hành trình từ Zero đến Hero",
+    "title": "Từ tư vấn viên đến Giám đốc Kinh doanh tại Manulife",
     "views": "7.3K",
     "viewsNum": 7300,
     "likes": 210,
@@ -612,8 +612,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Câu chuyện từ tư vấn viên trở thành Giám đốc Kinh doanh hàng đầu tại Manulife Việt Nam.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Chuyện từ tư vấn viên trở thành Giám đốc Kinh doanh hàng đầu tại Manulife Việt Nam.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/4239889922901614.jpg"
   },
   {
@@ -630,7 +630,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải thích nguyên nhân vì sao hủy hợp đồng bảo hiểm sớm (sau 4 năm) dẫn đến việc giá trị nhận lại thấp do đã trừ chi phí rủi ro.",
+    "summary": "Hủy hợp đồng sớm (sau 4 năm) nhận về thấp vì đã trừ chi phí rủi ro.",
     "cta": "Đọc thêm cẩm nang minh bạch hợp đồng bảo hiểm",
     "thumbnail": "/images/reels/820731530702796.jpg"
   },
@@ -648,8 +648,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn phụ huynh cách kê khai trung thực và lưu ý quan trọng khi tham gia bảo hiểm cho trẻ em mắc chứng tự kỷ.",
-    "cta": "Nhận tư vấn bảo hiểm cho con cùng chuyên gia",
+    "summary": "Cách kê khai trung thực và lưu ý khi mua bảo hiểm cho trẻ mắc chứng tự kỷ.",
+    "cta": "Nhận tư vấn bảo hiểm cho con",
     "thumbnail": "/images/reels/2875323149323600.jpg"
   },
   {
@@ -666,7 +666,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn xử lý các sai sót hoặc thông tin bệnh lý phát sinh ngoài ý muốn trên hệ thống VssID khi làm hồ sơ bảo hiểm.",
+    "summary": "Cách xử lý sai sót hoặc thông tin bệnh lý ngoài ý muốn trên VssID khi làm hồ sơ bảo hiểm.",
     "cta": "Liên hệ Khánh Vân để được hỗ trợ rà soát hồ sơ y tế",
     "thumbnail": "/images/reels/1148949060442780.jpg"
   },
@@ -684,8 +684,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "pillar",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Câu chuyện của những người đến từ nhiều ngành nghề khác nhau, cùng chọn gắn bó và thành công lâu dài tại Manulife.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Những người từ nhiều ngành nghề khác nhau cùng chọn làm lâu dài tại Manulife.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1183720620556953.jpg"
   },
   {
@@ -702,15 +702,15 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Kê khai thông tin sức khỏe trung thực, chính xác và đầy đủ là yếu tố quan trọng nhất để đảm bảo hợp đồng bảo hiểm có hiệu lực lâu dài và bảo vệ quyền lợi tối đa cho khách hàng.",
-    "cta": "Kiểm tra lại sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Kê khai sức khỏe trung thực, chính xác và đầy đủ là điều quan trọng nhất để hợp đồng có hiệu lực lâu dài và giữ được quyền lợi của khách hàng.",
+    "cta": "Kiểm tra lại sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1508566573921985.jpg"
   },
   {
     "id": "video-039-876950",
     "reelId": "727017536876950",
     "url": "https://www.facebook.com/reel/727017536876950",
-    "title": "Bí quyết sử dụng thẻ bảo hiểm sức khỏe đúng cách để an tâm điều trị nội trú",
+    "title": "Dùng thẻ bảo hiểm sức khỏe đúng cách khi điều trị nội trú",
     "views": "5.7K",
     "viewsNum": 5700,
     "likes": 106,
@@ -720,8 +720,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Hiểu đúng bản chất và cách sử dụng các loại thẻ bảo hiểm sức khỏe trên thị trường giúp người tham gia đi viện thực tế không lo gánh nặng viện phí.",
-    "cta": "Nhận tư vấn giải pháp thẻ sức khỏe tối ưu cùng Khánh Vân",
+    "summary": "Hiểu đúng bản chất và cách dùng các loại thẻ bảo hiểm sức khỏe trên thị trường để đi viện không lo gánh nặng viện phí.",
+    "cta": "Nhận tư vấn giải pháp thẻ sức khỏe tối ưu",
     "thumbnail": "/images/reels/727017536876950.jpg"
   },
   {
@@ -738,7 +738,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Không nhận được tiền bồi thường khi đi viện thường xuất phát từ việc mua sai quyền lợi, chưa hiểu rõ điều khoản hoặc sản phẩm bảo hiểm đã chọn.",
+    "summary": "Không nhận được tiền bồi thường khi đi viện thường do mua sai quyền lợi, chưa hiểu điều khoản hoặc sản phẩm đã chọn.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2121080828835145.jpg"
   },
@@ -757,7 +757,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
     "summary": "Khách hàng từng mắc ung thư tuyến giáp, sau khi điều trị ổn định, vẫn có thể được xem xét tham gia lại bảo hiểm tùy theo đánh giá thực tế của công ty.",
-    "cta": "Đặt lịch tư vấn trường hợp sức khỏe đặc biệt cùng Khánh Vân",
+    "cta": "Đặt lịch tư vấn trường hợp sức khỏe đặc biệt",
     "thumbnail": "/images/reels/1458318636152454.jpg"
   },
   {
@@ -774,8 +774,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Sản phẩm “Xanh Phú Quý” của Manulife cho phép ông bà dễ dàng mua bảo hiểm tích lũy tương lai cho cháu mà không cần làm thủ tục giám hộ phức tạp.",
-    "cta": "Tìm hiểu giải pháp quỹ tương lai cho con cháu cùng Khánh Vân",
+    "summary": "Sản phẩm “Xanh Phú Quý” của Manulife cho phép ông bà mua bảo hiểm tích lũy cho cháu mà không cần thủ tục giám hộ phức tạp.",
+    "cta": "Tìm hiểu giải pháp quỹ tương lai cho con cháu",
     "thumbnail": "/images/reels/1243243361117310.jpg"
   },
   {
@@ -792,7 +792,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Chỉ mua bảo hiểm hỗ trợ nằm viện thay vì thẻ chăm sóc sức khỏe toàn diện là lý do khiến số tiền được chi trả thấp hơn nhiều so với viện phí thực tế.",
+    "summary": "Chỉ mua bảo hiểm hỗ trợ nằm viện thay vì thẻ chăm sóc sức khỏe nên số tiền chi trả thấp hơn nhiều so với viện phí thực tế.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1413794420116751.jpg"
   },
@@ -810,8 +810,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giá trị tài khoản sau nhiều năm tham gia bảo hiểm nhân thọ cao hay thấp phụ thuộc hoàn toàn vào cấu trúc sản phẩm, mức phí và mục tiêu bảo vệ của mỗi người.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Giá trị tài khoản sau nhiều năm cao hay thấp phụ thuộc cấu trúc sản phẩm, mức phí và mục tiêu bảo vệ của mỗi người.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1566677681794222.jpg"
   },
   {
@@ -828,7 +828,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bản chất & Cơ chế Hợp đồng",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Khi tư vấn viên nghỉ việc, quyền lợi hợp đồng của khách hàng tại Manulife vẫn luôn được đảm bảo và chuyển giao phục vụ bởi đội ngũ chuyên nghiệp.",
+    "summary": "Khi tư vấn viên nghỉ việc, quyền lợi hợp đồng của khách hàng tại Manulife vẫn được đảm bảo và chuyển cho đội ngũ khác phục vụ.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/857226420175076.jpg"
   },
@@ -864,7 +864,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Ba lỗi phổ biến khiến khách hàng bức xúc khi tham gia bảo hiểm là không hiểu điều khoản, bỏ qua loại trừ và không nắm rõ thời gian chờ.",
+    "summary": "Ba lỗi phổ biến gây bức xúc: không hiểu điều khoản, bỏ qua loại trừ và không nắm thời gian chờ.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/810453428664714.jpg"
   },
@@ -882,8 +882,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Thời điểm rút tiền bảo hiểm có lợi nhất phụ thuộc vào việc phân bổ dòng tiền ban đầu giữa mục tiêu bảo vệ thuần túy hay tích lũy đầu tư.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Thời điểm rút tiền có lợi nhất phụ thuộc cách phân bổ dòng tiền ban đầu giữa mục tiêu bảo vệ thuần túy và tích lũy đầu tư.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1101715575630344.jpg"
   },
   {
@@ -900,7 +900,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giải thích lý do thời gian chi trả bồi thường bảo hiểm nhanh hay chậm phụ thuộc vào tính đầy đủ và hợp lệ của hồ sơ thực tế.",
+    "summary": "Thời gian chi trả nhanh hay chậm phụ thuộc hồ sơ có đầy đủ và hợp lệ hay không.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1121824397174274.jpg"
   },
@@ -918,8 +918,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Phân tích sự khác biệt cốt lõi giữa thẻ sức khỏe rời và bảo hiểm nhân thọ để khách hàng hiểu vì sao cần kết hợp cả hai.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Khác biệt giữa thẻ sức khỏe rời và bảo hiểm nhân thọ, và vì sao nên kết hợp cả hai.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1522149942189693.jpg"
   },
   {
@@ -936,7 +936,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bản chất & Cơ chế Hợp đồng",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn chỉ định người thụ hưởng trong hợp đồng bảo hiểm một cách chuẩn xác để bảo vệ tốt nhất tài sản của gia đình.",
+    "summary": "Cách chỉ định người thụ hưởng cho đúng để bảo vệ tài sản của gia đình.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2363525894102774.jpg"
   },
@@ -954,7 +954,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Câu chuyện thực tế về cơ chế giá trị tài khoản duy trì hiệu lực hợp đồng, giúp khách hàng nhận bồi thường 2 tỷ đồng dù đã ngưng đóng phí 5 năm.",
+    "summary": "Chuyện thực tế: hợp đồng bị bỏ quên 5 năm không đóng phí vẫn giữ hiệu lực nhờ giá trị tài khoản, khách nhận bồi thường 2 tỷ đồng.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1228391072746701.jpg"
   },
@@ -972,8 +972,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Tỷ lệ tái tục 97% là minh chứng cho chất lượng dịch vụ trong Hệ thống Green Power.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Tỷ lệ tái tục 97% cho thấy chất lượng phục vụ trong Hệ thống Green Power.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1575825077173204.jpg"
   },
   {
@@ -990,7 +990,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ sự khác biệt dễ gây hiểu lầm giữa thời hạn đóng phí và thời hạn bảo vệ trong hợp đồng bảo hiểm nhân thọ.",
+    "summary": "Phân biệt thời hạn đóng phí với thời hạn bảo vệ trong hợp đồng bảo hiểm nhân thọ, chỗ dễ gây hiểu nhầm.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1129936336108972.jpg"
   },
@@ -1008,7 +1008,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Góc nhìn chuyên gia về các vụ trục lợi bảo hiểm và cách quy định pháp luật quản lý chặt chẽ các tình huống gian lận.",
+    "summary": "Góc nhìn chuyên gia về các vụ trục lợi bảo hiểm và cách pháp luật quản lý gian lận.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1223750929675083.jpg"
   },
@@ -1026,8 +1026,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Chia sẻ kinh nghiệm thực chiến 8 năm trong ngành về cách tiếp cận và thấu hiểu tâm lý khách hàng thực sự chủ động mua bảo hiểm.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Kinh nghiệm 8 năm trong ngành về cách tiếp cận khách hàng chủ động tìm mua bảo hiểm và tâm lý của họ.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/837676288848709.jpg"
   },
   {
@@ -1044,8 +1044,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Phân tích vì sao bảo hiểm nhân thọ là kênh chuyển giao tài sản thừa kế có tính thanh khoản nhanh và ưu việt nhất.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Vì sao bảo hiểm nhân thọ là kênh chuyển giao tài sản thừa kế có tính thanh khoản nhanh.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1497641367986318.jpg"
   },
   {
@@ -1062,7 +1062,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ cơ chế dòng tiền của các sản phẩm ngắn hạn và quyền lợi bảo vệ được duy trì sau khi ngưng đóng phí.",
+    "summary": "Cơ chế dòng tiền của sản phẩm ngắn hạn và quyền lợi bảo vệ vẫn duy trì sau khi ngưng đóng phí.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1753631509221970.jpg"
   },
@@ -1080,8 +1080,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Thẻ sức khỏe của công ty chỉ hỗ trợ viện phí ngắn hạn, trong khi bảo hiểm nhân thọ bảo vệ tài chính toàn diện trước các rủi ro lớn và dài hạn.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Thẻ sức khỏe của công ty chỉ hỗ trợ viện phí ngắn hạn, còn bảo hiểm nhân thọ bảo vệ tài chính trước rủi ro lớn và dài hạn.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1370073081783573.jpg"
   },
   {
@@ -1098,8 +1098,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Một tai nạn sinh hoạt hy hữu do hóc xương cá đã được Manulife chi trả quyền lợi tai nạn lên tới hơn 171 triệu đồng.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Một tai nạn sinh hoạt do hóc xương cá được Manulife chi trả quyền lợi tai nạn hơn 171 triệu đồng.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1910270197027125.jpg"
   },
   {
@@ -1116,8 +1116,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hiểu rõ các loại thẻ sức khỏe và hạn mức cho bệnh lý nghiêm trọng giúp khách hàng yên tâm điều trị mà không lo thâm hụt tài chính.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Các loại thẻ sức khỏe và hạn mức cho bệnh lý nghiêm trọng, để điều trị mà không thâm hụt tài chính.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1693017081347894.jpg"
   },
   {
@@ -1134,8 +1134,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Công ty bảo hiểm không tự kiểm tra hồ sơ y tế trước khi thẩm định vì lý do bảo mật thông tin cá nhân và nghĩa vụ kê khai trung thực của khách hàng.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Công ty bảo hiểm không tự tra hồ sơ y tế trước khi thẩm định vì bảo mật thông tin cá nhân và nghĩa vụ kê khai trung thực của khách hàng.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2022869871926419.jpg"
   },
   {
@@ -1152,15 +1152,15 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Quyền lợi miễn đóng phí giúp duy trì hiệu lực hợp đồng bảo hiểm ngay cả khi người tham gia không may mắc bệnh lý nghiêm trọng.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Quyền lợi miễn đóng phí giúp hợp đồng vẫn có hiệu lực ngay cả khi người tham gia mắc bệnh lý nghiêm trọng.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1773329283977345.jpg"
   },
   {
     "id": "video-069-847309",
     "reelId": "1373691314847309",
     "url": "https://www.facebook.com/reel/1373691314847309",
-    "title": "Nội lực đường dài: Không ai bước vào nghề tư vấn với sẵn tất cả câu trả lời",
+    "title": "Không ai vào nghề tư vấn đã có sẵn mọi câu trả lời",
     "views": "3K",
     "viewsNum": 3000,
     "likes": 93,
@@ -1170,8 +1170,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Nội lực đi đường dài trong nghề tư vấn tài chính được tôi luyện qua những va vấp, trải nghiệm thực tế và giá trị nghề nghiệp cốt lõi.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Sức bền trong nghề tư vấn tài chính đến từ những va vấp và trải nghiệm thực tế.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1373691314847309.jpg"
   },
   {
@@ -1188,8 +1188,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "hero",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Gửi tiết kiệm và mua bảo hiểm nhân thọ là hai công cụ tài chính hoàn toàn khác biệt, trong đó bảo hiểm đóng vai trò bảo vệ dự phòng rủi ro dài hạn.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Gửi tiết kiệm và bảo hiểm nhân thọ là hai công cụ khác nhau. Bảo hiểm dùng để dự phòng rủi ro dài hạn.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1562229885483196.jpg"
   },
   {
@@ -1206,8 +1206,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Sự hỗ trợ kịp thời từ chuyên gia giúp khách hàng tránh bỏ lỡ 1,25 tỷ đồng quyền lợi bảo hiểm tai nạn trong tình huống thực tế.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Vân hỗ trợ kịp thời để khách không bỏ lỡ 1,25 tỷ đồng quyền lợi bảo hiểm tai nạn.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/857561100228665.jpg"
   },
   {
@@ -1224,15 +1224,15 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hợp đồng bảo hiểm nhân thọ dài hạn có nhiều quyền lợi linh hoạt ít người biết, như thay đổi số tiền bảo hiểm theo điều kiện tài chính thực tế.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Hợp đồng nhân thọ dài hạn có nhiều quyền lợi linh hoạt ít người biết, như đổi số tiền bảo hiểm theo tài chính thực tế.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1478080051047198.jpg"
   },
   {
     "id": "video-076-451334",
     "reelId": "1363266331451334",
     "url": "https://www.facebook.com/reel/1363266331451334",
-    "title": "Sự ổn định thực sự không đến từ công việc bên ngoài mà đến từ năng lực và tư duy làm chủ bản thân",
+    "title": "Ổn định đến từ năng lực và tư duy làm chủ, không đến từ công việc bên ngoài",
     "views": "2.7K",
     "viewsNum": 2700,
     "likes": 84,
@@ -1242,8 +1242,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Sự ổn định thực sự không đến từ công việc bên ngoài mà đến từ năng lực và tư duy làm chủ bản thân.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Sự ổn định đến từ năng lực và cách mình làm chủ bản thân, không phải từ công việc bên ngoài.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1363266331451334.jpg"
   },
   {
@@ -1260,8 +1260,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Cơ hội nghề nghiệp tại Manulife rộng mở cho những ai có khát khao tạo ra thu nhập không giới hạn.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Manulife mở cửa cho người muốn có thu nhập không giới hạn.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1549795952929481.jpg"
   },
   {
@@ -1278,8 +1278,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Sự kiên trì mới là chìa khóa quan trọng nhất giúp người mới thành công trong nghề tư vấn bảo hiểm.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Người mới thành công trong nghề tư vấn bảo hiểm trước hết nhờ sự kiên trì.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1396299482683634.jpg"
   },
   {
@@ -1296,8 +1296,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Triết lý Sống & Phát triển Bản thân",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Góc nhìn và động lực chuyển đổi sự nghiệp thành công từ Giám đốc Ngân hàng sang ngành Bảo hiểm nhân thọ.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Lý do một cựu Giám đốc Ngân hàng chuyển sang bảo hiểm nhân thọ, và cảm nhận sau 6 năm.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/4295582314063720.jpg"
   },
   {
@@ -1314,8 +1314,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Bí quyết chuyển hóa áp lực duy trì vị trí Top 1 thành động lực phát triển bản thân và sự nghiệp.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Cách biến áp lực giữ vị trí Top 1 thành động lực.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1019857483803998.jpg"
   },
   {
@@ -1332,7 +1332,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Lý do thẻ sức khỏe Kim Cương có quyền lợi lớn, mức phí hợp lý và được nhiều khách hàng cao cấp tin chọn.",
+    "summary": "Vì sao thẻ sức khỏe Kim Cương có quyền lợi lớn, phí hợp lý và được nhiều khách hàng cao cấp chọn.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/3769272586714829.jpg"
   },
@@ -1350,7 +1350,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn chi tiết thủ tục hồ sơ nhập viện để được bảo lãnh viện phí nhanh chóng và trọn vẹn.",
+    "summary": "Hướng dẫn chuẩn bị hồ sơ nhập viện để được bảo lãnh viện phí nhanh.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1091536246877755.jpg"
   },
@@ -1368,8 +1368,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giải pháp lập quỹ học vấn vững chắc cho con chỉ với 5 năm chuẩn bị tài chính.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Cách lập quỹ học vấn cho con chỉ trong 5 năm chuẩn bị tài chính.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/2663477307359675.jpg"
   },
   {
@@ -1386,8 +1386,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Công thức đạt thu nhập xuất sắc sau 9 năm kiên trì với nghề tư vấn tài chính.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Công thức có thu nhập tốt sau 9 năm kiên trì với nghề tư vấn tài chính.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/2216391312435509.jpg"
   },
   {
@@ -1404,7 +1404,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Quy trình và danh mục giấy tờ cần thiết để hoàn tất thủ tục chi trả bảo hiểm sức khỏe suôn sẻ.",
+    "summary": "Quy trình và giấy tờ cần có để hoàn tất thủ tục chi trả bảo hiểm sức khỏe.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1731096921473591.jpg"
   },
@@ -1422,8 +1422,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Lộ trình thăng tiến quản lý tại Manulife đòi hỏi nỗ lực để trở thành tư vấn viên xuất sắc trước khi dẫn dắt đội ngũ.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Muốn lên quản lý tại Manulife, trước hết phải là tư vấn viên giỏi rồi mới dẫn dắt đội ngũ.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/2461455204224409.jpg"
   },
   {
@@ -1440,7 +1440,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Hủy hợp đồng bảo hiểm giữa chừng trong những năm đầu sẽ khiến số tiền nhận về thấp hơn số tiền đã đóng do các khoản phí ban đầu và chi phí rủi ro.",
+    "summary": "Hủy hợp đồng giữa chừng trong những năm đầu, số tiền nhận về thấp hơn số đã đóng do phí ban đầu và chi phí rủi ro.",
     "cta": "Cùng Khánh Vân kiểm tra sức khỏe hợp đồng trước khi quyết định hủy",
     "thumbnail": "/images/reels/1625829615866235.jpg"
   },
@@ -1458,8 +1458,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Chi phí cho một ca nằm viện tối thiểu từ 20 đến 30 triệu đồng, tạo áp lực tài chính lớn nếu không có sự chuẩn bị từ bảo hiểm.",
-    "cta": "Hoạch định quỹ dự phòng y tế và chăm sóc sức khỏe cùng Khánh Vân",
+    "summary": "Một ca nằm viện tốn tối thiểu từ 20 đến 30 triệu đồng, áp lực tài chính lớn nếu không có bảo hiểm.",
+    "cta": "Hoạch định quỹ dự phòng y tế và chăm sóc sức khỏe",
     "thumbnail": "/images/reels/1821063878597158.jpg"
   },
   {
@@ -1476,8 +1476,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Không kê khai trung thực tình trạng sức khỏe trước khi tham gia là nguyên nhân chính khiến khách hàng bị từ chối chi trả quyền lợi bảo hiểm.",
-    "cta": "Nhận tư vấn kê khai hồ sơ sức khỏe trung thực, minh bạch cùng Khánh Vân",
+    "summary": "Không kê khai trung thực tình trạng sức khỏe là nguyên nhân chính khiến khách bị từ chối chi trả quyền lợi.",
+    "cta": "Nhận tư vấn kê khai hồ sơ sức khỏe trung thực, minh bạch",
     "thumbnail": "/images/reels/1441613410651889.jpg"
   },
   {
@@ -1494,8 +1494,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Thực tế hỗ trợ khách hàng nhận quyền lợi chi phí y tế hơn 104 triệu đồng khẳng định sự đồng hành tận tâm của chuyên gia.",
-    "cta": "Đặt lịch rà soát quyền lợi hợp đồng và giải đáp thắc mắc bồi thường cùng Khánh Vân",
+    "summary": "Vân hỗ trợ khách nhận hơn 104 triệu đồng quyền lợi chi phí y tế.",
+    "cta": "Đặt lịch rà soát quyền lợi hợp đồng và giải đáp thắc mắc bồi thường",
     "thumbnail": "/images/reels/1368157261880083.jpg"
   },
   {
@@ -1512,8 +1512,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Khách hàng cần kiểm tra ngay ứng dụng VssID để phát hiện và chỉnh sửa kịp thời những sai sót trong lịch sử hồ sơ bệnh án.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Nên kiểm tra ngay VssID để phát hiện và chỉnh sai sót trong lịch sử hồ sơ bệnh án.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1549594260222361.jpg"
   },
   {
@@ -1530,8 +1530,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quản lý Dòng tiền & Tích sản",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Nghịch lý sẵn sàng chi tiền bảo vệ tài sản vật chất nhưng lại tiếc tiền bảo vệ chính bản thân, người tạo ra tài sản.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền và bảo vệ bản thân cùng Khánh Vân",
+    "summary": "Nhiều người chịu chi để bảo vệ tài sản nhưng tiếc tiền bảo vệ chính mình, người làm ra tài sản.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền và bảo vệ bản thân",
     "thumbnail": "/images/reels/1333788788686799.jpg"
   },
   {
@@ -1549,7 +1549,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Quyền lợi bảo hiểm tai nạn có hiệu lực ngay sau khi hợp đồng được cấp, không có thời gian chờ.",
-    "cta": "Nhận tư vấn giải pháp bảo vệ rủi ro tai nạn toàn diện cùng Khánh Vân",
+    "cta": "Nhận tư vấn giải pháp bảo vệ rủi ro tai nạn toàn diện",
     "thumbnail": "/images/reels/2896860660647614.jpg"
   },
   {
@@ -1566,8 +1566,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Nhận diện 3 lý do khiến 90% tư vấn viên mới không tìm được khách hàng thông qua chương trình huấn luyện chuẩn quốc tế LIMRA.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "3 lý do khiến 90% tư vấn viên mới khó tìm khách hàng, theo chương trình huấn luyện chuẩn quốc tế LIMRA.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1481823693582659.jpg"
   },
   {
@@ -1584,8 +1584,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bản chất & Cơ chế Hợp đồng",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Bảo hiểm nhân thọ có điều kiện tuyển chọn khắt khe và sức khỏe là yếu tố tiên quyết được công ty thẩm định trước khi chấp thuận.",
-    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ cùng Khánh Vân",
+    "summary": "Bảo hiểm nhân thọ có điều kiện tuyển chọn chặt, sức khỏe là yếu tố công ty thẩm định trước tiên.",
+    "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1740214740579270.jpg"
   },
   {
@@ -1603,7 +1603,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
     "summary": "Có thể gộp gia đình vào chung một hợp đồng bảo hiểm khi tài chính chưa cho phép, nhưng người trụ cột cần được ưu tiên bảo vệ cao nhất.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cho gia đình cùng Khánh Vân",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cho gia đình",
     "thumbnail": "/images/reels/1014329744988072.jpg"
   },
   {
@@ -1620,8 +1620,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Quy trình và lộ trình đào tạo chuyên nghiệp cho các ứng viên muốn trở thành tư vấn viên tài chính tại Manulife.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Quy trình và lộ trình đào tạo cho ứng viên muốn làm tư vấn viên tài chính tại Manulife.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/748688371074470.jpg"
   },
   {
@@ -1638,8 +1638,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Cơ hội gia tăng thu nhập và thăng tiến sự nghiệp trong ngành tài chính bảo hiểm cùng Manulife trong năm mới.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Cơ hội tăng thu nhập và thăng tiến trong ngành tài chính bảo hiểm cùng Manulife năm 2026.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1170676325242877.jpg"
   },
   {
@@ -1656,7 +1656,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Bảo hiểm nhân thọ bản chất là công cụ bảo vệ rủi ro, không phải là kênh tiết kiệm thuần túy để đòi hỏi lời lãi.",
+    "summary": "Bảo hiểm nhân thọ về bản chất là công cụ bảo vệ rủi ro, không phải kênh tiết kiệm thuần túy để kỳ vọng lời lãi.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2063307071222841.jpg"
   },
@@ -1664,7 +1664,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "id": "video-103-359089",
     "reelId": "1600032904359089",
     "url": "https://www.facebook.com/reel/1600032904359089",
-    "title": "Cách thiết lập quỹ di sản thừa kế hợp pháp và tối ưu cho thế hệ tương lai",
+    "title": "Lập quỹ di sản thừa kế hợp pháp cho thế hệ sau",
     "views": "2K",
     "viewsNum": 2000,
     "likes": 39,
@@ -1674,8 +1674,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "pillar",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Sử dụng bảo hiểm nhân thọ như một giải pháp thông minh để tạo lập và chuyển giao di sản bền vững cho thế hệ sau.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Dùng bảo hiểm nhân thọ để lập và chuyển giao di sản cho thế hệ sau.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1600032904359089.jpg"
   },
   {
@@ -1746,8 +1746,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giải pháp chuẩn bị “của hồi môn” và quỹ tài chính vững chắc cho con ngay từ khi còn nhỏ.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Cách chuẩn bị “của hồi môn” và quỹ tài chính cho con từ khi còn nhỏ.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1676054700073743.jpg"
   },
   {
@@ -1764,8 +1764,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "hero",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Minh chứng thực tế về việc chi trả nhanh chóng quyền lợi bảo hiểm tai nạn nâng cao cho khách hàng gặp chấn thương.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Chi trả nhanh quyền lợi bảo hiểm tai nạn nâng cao cho khách bị chấn thương.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/3925260364271559.jpg"
   },
   {
@@ -1782,7 +1782,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Dự phòng Bệnh hiểm nghèo",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Nguyên nhân khách hàng không được chi trả quyền lợi bệnh hiểm nghèo là do gói sản phẩm bảo vệ chưa được thiết kế đúng nhu cầu.",
+    "summary": "Khách không được chi trả quyền lợi bệnh hiểm nghèo vì gói sản phẩm chưa thiết kế đúng nhu cầu.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/2070885720323478.jpg"
   },
@@ -1800,8 +1800,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Tầm quan trọng của việc trang bị kiến thức nền tảng trước khi gặp tư vấn viên để sở hữu bản hợp đồng tối ưu nhất.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Cần có kiến thức nền trước khi gặp tư vấn viên để chọn được hợp đồng phù hợp.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1391580676243003.jpg"
   },
   {
@@ -1818,8 +1818,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Chỉ ra 3 thời điểm vàng để tham gia bảo hiểm cho con giúp tối ưu chi phí và trọn vẹn quyền lợi.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "3 thời điểm nên mua bảo hiểm cho con để tối ưu chi phí và đủ quyền lợi.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1438797828151884.jpg"
   },
   {
@@ -1836,8 +1836,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Quỹ Học vấn Con cái",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Sử dụng công cụ tài chính thông minh để tạo di sản tiền tỷ cho con ngay cả khi tài chính ban đầu còn hạn chế.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Dùng công cụ tài chính phù hợp để tạo di sản tiền tỷ cho con dù tài chính ban đầu còn hạn chế.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/849840667886842.jpg"
   },
   {
@@ -1854,7 +1854,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Làm rõ bản chất thực sự của bảo hiểm nhân thọ là mua quỹ dự phòng tài chính trước những biến cố lớn về y tế.",
+    "summary": "Bản chất của bảo hiểm nhân thọ là mua quỹ dự phòng tài chính trước các biến cố lớn về y tế.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1140666971650450.jpg"
   },
@@ -1872,7 +1872,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn khách hàng cách kiểm tra và xử lý hợp đồng bảo hiểm khi đại lý cũ nghỉ việc.",
+    "summary": "Cách kiểm tra và xử lý hợp đồng khi đại lý cũ nghỉ việc.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1937541230963724.jpg"
   },
@@ -1890,7 +1890,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Làm rõ quy định thời điểm phát sinh hiệu lực bồi thường của hợp đồng bảo hiểm đối với từng loại rủi ro.",
+    "summary": "Quy định về thời điểm phát sinh hiệu lực bồi thường theo từng loại rủi ro.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1195294572515211.jpg"
   },
@@ -1908,8 +1908,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Câu chuyện từ chuyên gia ngân hàng ANZ đến sự nghiệp gắn bó lâu dài và thành công tại Manulife.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Từ chuyên gia ngân hàng ANZ đến gắn bó lâu dài và thành công tại Manulife.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1194630552815957.jpg"
   },
   {
@@ -1926,8 +1926,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Chia sẻ quy trình tuyển dụng và xây dựng văn hóa đội ngũ đoàn kết, phát triển vững mạnh tại Vùng kinh doanh lớn nhất nước.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Quy trình tuyển dụng và xây dựng văn hóa đội ngũ đoàn kết tại Vùng kinh doanh lớn nhất nước.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1303508521271349.jpg"
   },
   {
@@ -1944,7 +1944,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Khách hàng bị gãy xương không nằm viện vẫn được chi trả viện phí và nhận tiền mặt từ quyền lợi tai nạn nâng cao.",
+    "summary": "Khách gãy xương không nằm viện vẫn được chi trả viện phí và nhận tiền mặt từ quyền lợi tai nạn nâng cao.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1300921268512635.jpg"
   },
@@ -1952,7 +1952,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "id": "video-121-165728",
     "reelId": "1502145125165728",
     "url": "https://www.facebook.com/reel/1502145125165728",
-    "title": "Đóng bảo hiểm 10–15 năm: Làm sao để tra cứu giá trị tài khoản và rút tiền minh bạch?",
+    "title": "Đóng bảo hiểm 10 đến 15 năm: Làm sao để tra cứu giá trị tài khoản và rút tiền minh bạch?",
     "views": "1.4K",
     "viewsNum": 1400,
     "likes": 30,
@@ -1962,7 +1962,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Dòng phí & Giá trị hoàn lại",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Hướng dẫn cách kiểm tra giá trị tài khoản và rút tiền bảo hiểm minh bạch sau 10–15 năm tham gia.",
+    "summary": "Cách kiểm tra giá trị tài khoản và rút tiền bảo hiểm sau 10 đến 15 năm tham gia.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1502145125165728.jpg"
   },
@@ -1980,7 +1980,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Giải thích vì sao tư duy “đợi có bệnh mới mua bảo hiểm” là sai lầm và vì sao nên tham gia khi còn khỏe mạnh.",
+    "summary": "Vì sao nghĩ “đợi có bệnh mới mua bảo hiểm” là sai lầm, và nên tham gia khi còn khỏe.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1739425513948815.jpg"
   },
@@ -1998,8 +1998,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Làm rõ tính chất công việc tại Manulife theo kênh agency, kết hợp giữa quản lý và bán hàng cá nhân.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Công việc tại Manulife theo kênh agency, kết hợp quản lý và bán hàng cá nhân.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1330083138593794.jpg"
   },
   {
@@ -2016,8 +2016,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Bồi thường & Thẩm định",
     "tier": "deep",
     "format": "Hỏi Đáp Chuyên Gia (FAQ)",
-    "summary": "Giải đáp thắc mắc về việc được đền bù từ nhiều hợp đồng bảo hiểm khác nhau và phân biệt quyền lợi chi trả.",
-    "cta": "Đặt lịch tư vấn hoạch định dòng tiền cùng Khánh Vân",
+    "summary": "Được đền bù từ nhiều hợp đồng bảo hiểm khác nhau không, và phân biệt quyền lợi chi trả.",
+    "cta": "Đặt lịch tư vấn hoạch định dòng tiền",
     "thumbnail": "/images/reels/1424668426222733.jpg"
   },
   {
@@ -2034,7 +2034,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Thẻ Chăm sóc Sức khỏe & Y tế",
     "tier": "deep",
     "format": "Câu Chuyện Thực Tế (Case Study)",
-    "summary": "Minh chứng thực tế về việc bảo hiểm chi trả chi phí phẫu thuật nạo VA hơn 31 triệu đồng cho bé 6 tuổi.",
+    "summary": "Thực tế bảo hiểm chi trả chi phí phẫu thuật nạo VA hơn 31 triệu đồng cho bé 6 tuổi.",
     "cta": "Kiểm tra sức khỏe hợp đồng bảo hiểm cũ",
     "thumbnail": "/images/reels/1390792253250529.jpg"
   },
@@ -2042,7 +2042,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "id": "video-126-165531",
     "reelId": "809064868165531",
     "url": "https://www.facebook.com/reel/809064868165531",
-    "title": "Văn hóa tổ chức là nền tảng của mọi thành công",
+    "title": "Vì sao văn hóa tổ chức giữ được nhân sự",
     "views": "1K",
     "viewsNum": 1000,
     "likes": 33,
@@ -2052,8 +2052,8 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "pillar",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Khẳng định văn hóa tổ chức dựa trên tình yêu thương và sự chân thành là yếu tố tiên quyết giữ chân nhân sự.",
-    "cta": "Tham gia đội ngũ MDRT cùng Khánh Vân",
+    "summary": "Văn hóa tổ chức dựa trên tình yêu thương và sự chân thành là yếu tố giữ chân nhân sự.",
+    "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/809064868165531.jpg"
   }
 ];

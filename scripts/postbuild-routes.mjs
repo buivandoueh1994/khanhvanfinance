@@ -118,7 +118,7 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Nhật ký 11 chương hành trình, 118 khung hình thực tế và 7 thước phim sống động của Khánh Vân cùng gia đình và đội ngũ quản lý từ Paris, Seoul, Hallstatt, Thượng Hải, Phú Sĩ, Trùng Khánh đến Yên Tử, Phan Thiết và Đắk Lắk." />'
+    '<meta name="description" content="Nhật ký 11 chương hành trình, 112 khung hình thực tế và 8 thước phim sống động của Khánh Vân cùng gia đình và đội ngũ quản lý từ Paris, Seoul, Hallstatt, Thượng Hải, Phú Sĩ, Trùng Khánh đến Yên Tử, Phan Thiết và Đắk Lắk." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
@@ -130,15 +130,15 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá 11 chương ký ức, 118 khung hình chọn lọc và 7 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
+    '<meta property="og:description" content="Khám phá 11 chương ký ức, 112 khung hình chọn lọc và 8 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
-    '<meta property="og:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg" />'
+    '<meta property="og:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg?v=2" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:image"[^>]*>/,
-    '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg" />'
+    '<meta name="twitter:image" content="https://www.khanhvanfinance.com/images/journeys/nhung-chuyen-di-og.jpg?v=2" />'
   );
 
 fs.writeFileSync(path.join(distDir, 'nhung-chuyen-di.html'), journeysHtml, 'utf8');

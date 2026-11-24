@@ -198,13 +198,13 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
           <div className="space-y-2.5 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-[#E8D3A6] font-semibold">
               <Compass className="w-3.5 h-3.5" />
-              <span>01 / Bản Đồ Dấu Chân • Hai Cuốn Hộ Chiếu</span>
+              <span>01 / Bản đồ, hai cuốn hộ chiếu</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-[1.16]">
-              Từ TP. Hồ Chí Minh tỏa ra 7 điểm đến quốc tế và 4 miền ký ức Việt Nam
+              Từ TP. Hồ Chí Minh đến 7 điểm quốc tế và 4 điểm trong nước
             </h2>
             <p className="text-xs sm:text-sm text-[#BDD0C6] leading-relaxed">
-              Chạm vào từng tọa độ vàng đồng trên bản đồ hoặc chọn nhanh tên điểm đến bên dưới để xem dấu mộc hộ chiếu và câu chuyện phía sau mỗi chuyến đi.
+              Bấm vào từng điểm vàng trên bản đồ, hoặc chọn tên điểm đến bên dưới, để xem dấu mộc hộ chiếu và câu chuyện của chuyến đi.
             </p>
           </div>
 
@@ -243,7 +243,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
           {/* Left: Authentic Minimalist Eurasia & Pacific Cartography (Locked Height on Desktop) */}
           <div className="lg:col-span-8 lg:h-[580px] bg-[#0A2C1D] border border-[#E8D3A6]/20 rounded-[5px] p-3.5 sm:p-5 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-[#9BB5A8] pb-2.5 border-b border-white/10 shrink-0">
-              <span>Lộ trình Á &amp; Âu • 2019–2026</span>
+              <span>Lộ trình Á và Âu, 2019–2026</span>
               <span className="text-[#E8D3A6] truncate ml-2">
                 Đang xem: {activePin.shortName}
               </span>
@@ -530,7 +530,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
               <div className="flex items-center justify-between text-xs text-[#56605B] h-5">
                 <span className="inline-flex items-center gap-1">
                   <Camera className="w-3.5 h-3.5 text-[#008746]" />
-                  <span>{activeChapter.photoCount} khung hình chọn lọc</span>
+                  <span>{activeChapter.photoCount} ảnh chọn lọc</span>
                 </span>
                 {activeChapter.video ? (
                   <span className="inline-flex items-center gap-1 text-[#0A3622] font-medium">
@@ -547,7 +547,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ onOpenChapter }) => {
                 onClick={() => onOpenChapter(activeChapter)}
                 className="w-full py-3 px-4 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] inline-flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
-                <span>Mở nhật ký &amp; bộ ảnh chương này</span>
+                <span>Xem bài viết và ảnh của chương này</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
