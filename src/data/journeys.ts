@@ -202,10 +202,10 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/nhat-ban-2026.mp4?v=3",
+      "src": "/videos/journeys/nhat-ban-2026.mp4?v=4",
       "poster": "/videos/journeys/nhat-ban-2026-poster.jpg?v=2",
       "durationLabel": "0:26",
-      "soundLabel": "Acoustic Nhật Bản",
+      "soundLabel": "Âm Thanh Thực Tế & Acoustic",
       "title": "Dưới chân núi Phú Sĩ và phố Tokyo",
       "caption": "Núi Phú Sĩ trong ngày trời quang và các chị em quản lý trong chuyến M-Star Nhật Bản 2026."
     }
@@ -335,10 +335,10 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/yen-tu-vinh-danh-2025.mp4?v=3",
+      "src": "/videos/journeys/yen-tu-vinh-danh-2025.mp4?v=4",
       "poster": "/videos/journeys/yen-tu-vinh-danh-2025-poster.jpg?v=2",
       "durationLabel": "0:28",
-      "soundLabel": "Giao Hưởng Vinh Danh",
+      "soundLabel": "Âm Thanh Sân Khấu & Giao Hưởng",
       "title": "Nhận cúp Top 1 DRD+ trên sân khấu ManPower Awards XXVII",
       "caption": "Từ sân Legacy Yên Tử đến sân khấu vinh danh Top 1 DRD+ Quản lý Cấp cao dẫn đầu tỷ lệ duy trì hợp đồng."
     }
@@ -468,10 +468,10 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/trung-khanh-2026.mp4?v=3",
+      "src": "/videos/journeys/trung-khanh-2026.mp4?v=4",
       "poster": "/videos/journeys/trung-khanh-2026-poster.jpg?v=2",
       "durationLabel": "0:27",
-      "soundLabel": "Âm Hưởng Á Đông",
+      "soundLabel": "Nhạc Gốc Cổ Trấn & Kinh Kịch",
       "title": "Cổ trấn Từ Khí Khẩu, trà và đêm Kinh kịch biến diện ở Trùng Khánh",
       "caption": "Cổ trấn, quán trà và đêm biến diện trong chuyến M-Star Giữa Năm 2026 tại Trùng Khánh."
     }
@@ -837,10 +837,10 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
       }
     ],
     "video": {
-      "src": "/videos/journeys/kickoff-phan-thiet-2026.mp4?v=3",
+      "src": "/videos/journeys/kickoff-phan-thiet-2026.mp4?v=4",
       "poster": "/videos/journeys/kickoff-phan-thiet-2026-poster.jpg?v=3",
       "durationLabel": "0:26",
-      "soundLabel": "Guitar Năng Lượng",
+      "soundLabel": "Âm Thanh Thực Tế & Guitar",
       "title": "Đường chạy điện gió Bib 0069, hội nghị và tiệc biển Phan Thiết",
       "caption": "Buổi chạy sáng, hội nghị và đêm tiệc của đội ngũ quản lý Green Power trong Kick-off Phan Thiết 2026."
     }
