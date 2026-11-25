@@ -39,6 +39,7 @@
     { "source": "/form-leader", "destination": "/" },
     { "source": "/quan-ly-ho-so-leader", "destination": "/" },
     { "source": "/green-power", "destination": "/" },
+    { "source": "/green-power-group", "destination": "/" },
     { "source": "/vung-green-power", "destination": "/" },
     { "source": "/vung-khanh-van", "destination": "/" },
     { "source": "/xem-truoc-vung-khanh-van", "destination": "/" },

@@ -99,6 +99,7 @@ const previewHtml = baseWithoutHeroPreload
   );
 
 fs.writeFileSync(path.join(distDir, 'green-power.html'), previewHtml, 'utf8');
+fs.writeFileSync(path.join(distDir, 'green-power-group.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'vung-green-power.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'vung-khanh-van.html'), previewHtml, 'utf8');
 fs.writeFileSync(path.join(distDir, 'xem-truoc-vung-khanh-van.html'), previewHtml, 'utf8');

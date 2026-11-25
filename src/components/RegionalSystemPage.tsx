@@ -458,47 +458,34 @@ export const RegionalSystemPage: React.FC = () => {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-[#FAF9F5] border-t border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
             >
-              <div className="px-4 py-4 flex flex-col gap-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-1">
-                  <a
-                    href="/"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-3.5 py-3 rounded-[3px] bg-white border border-[#DCD8CE] flex items-center justify-between gap-2 text-[#181F1C]"
-                  >
-                    <div>
-                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#7A847F] font-semibold block">
-                        Khánh Vân
-                      </span>
-                      <span className="font-serif text-[15px] font-medium">
-                        Trang chủ
-                      </span>
-                    </div>
-                    <ArrowLeft className="w-4 h-4 text-[#0A3622] shrink-0" />
-                  </a>
-                  <a
-                    href="/nhung-chuyen-di"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-3.5 py-3 rounded-[3px] bg-[#FAF6EC] border border-[#B8975A]/35 flex items-center justify-between gap-2 text-[#181F1C]"
-                  >
-                    <div>
-                      <span className="text-[9.5px] uppercase tracking-[0.16em] text-[#8B6A2B] font-semibold block">
-                        Hành trình 16+ Quốc gia
-                      </span>
-                      <span className="font-serif text-[15px] font-medium">
-                        Những Chuyến Đi
-                      </span>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#8B6A2B] shrink-0" />
-                  </a>
-                </div>
+              <div className="px-5 py-3 flex flex-col">
+                <a
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xs uppercase tracking-[0.18em] text-[#181F1C] font-medium py-2.5 min-h-[44px] flex items-center justify-between border-b border-[#E4E1D8]/70 active:text-[#008746] transition-colors"
+                >
+                  <span>Trang chủ Khánh Vân</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#858E89]" />
+                </a>
 
-                <div className="border-t border-[#E4E1D8] my-1" />
+                <a
+                  href="/nhung-chuyen-di"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xs uppercase tracking-[0.18em] text-[#181F1C] font-medium py-2.5 min-h-[44px] flex items-center justify-between border-b border-[#E4E1D8]/70 active:text-[#008746] transition-colors"
+                >
+                  <span className="inline-flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B8975A] shrink-0" />
+                    <span>Những Chuyến Đi</span>
+                  </span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#858E89]" />
+                </a>
+
                 {REGIONAL_SECTIONS.map((sec) => (
                   <a
                     key={sec.id}
                     href={`#${sec.id}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs uppercase tracking-[0.16em] text-[#181F1C] py-2 min-h-[40px] flex items-center justify-between border-b border-[#E4E1D8]/60 last:border-b-0"
+                    className="text-xs uppercase tracking-[0.16em] text-[#181F1C] py-2.5 min-h-[42px] flex items-center justify-between border-b border-[#E4E1D8]/60 last:border-b-0"
                   >
                     <span>{sec.label}</span>
                     <ChevronRight className="w-3.5 h-3.5 text-[#858E89]" />

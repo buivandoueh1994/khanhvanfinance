@@ -1616,42 +1616,31 @@ export function App() {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
             >
-              <div className="px-5 py-5 flex flex-col gap-2 max-h-[calc(100dvh-64px)] overflow-y-auto">
-                {/* #1 Priority Flagship Card: Green Power Group */}
+              <div className="px-5 py-4 flex flex-col max-h-[calc(100dvh-64px)] overflow-y-auto">
                 <a
                   href="/green-power"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-3.5 rounded-[3px] bg-[#0A3622] text-[#FAF9F5] border border-[#B8975A]/60 flex items-center justify-between gap-3 active:opacity-95"
+                  className="text-xs uppercase tracking-[0.18em] text-[#0A3622] font-semibold py-2.5 min-h-[46px] flex items-center justify-between border-b border-[#E4E1D8]/70 active:text-[#008746] transition-colors"
                 >
-                  <div className="min-w-0">
-                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
-                      Ban Điều Hành & Đội Ngũ
-                    </span>
-                    <span className="font-serif text-base font-medium text-white block truncate mt-0.5">
-                      Green Power Group • 4 Khu vực
-                    </span>
-                  </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
+                  <span className="inline-flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#008746] shrink-0" />
+                    <span>Green Power Group</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#008746]" />
                 </a>
 
-                {/* #2 Secondary Showcase Card: Những Chuyến Đi */}
                 <a
                   href="/nhung-chuyen-di"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mb-1 px-4 py-3 rounded-[3px] bg-[#FAF6EC] text-[#181F1C] border border-[#B8975A]/35 flex items-center justify-between gap-3 active:opacity-95"
+                  className="text-xs uppercase tracking-[0.18em] text-[#181F1C] font-medium py-2.5 min-h-[46px] flex items-center justify-between border-b border-[#E4E1D8]/70 active:text-[#008746] transition-colors"
                 >
-                  <div className="min-w-0">
-                    <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#8B6A2B] font-semibold block">
-                      Hành trình 16+ Quốc gia
-                    </span>
-                    <span className="font-serif text-[15px] font-medium text-[#181F1C] block truncate mt-0.5">
-                      Những Chuyến Đi
-                    </span>
-                  </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#8B6A2B] shrink-0" />
+                  <span className="inline-flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B8975A] shrink-0" />
+                    <span>Những Chuyến Đi</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#858E89]" />
                 </a>
 
-                <div className="border-t border-[#E4E1D8] my-1.5" />
                 {mobileSectionNav.map((item) => (
                   <a
                     key={item.href}

@@ -42,6 +42,7 @@ function RootRouter() {
 
   const isRegionalPreview =
     pathname === '/green-power' ||
+    pathname === '/green-power-group' ||
     pathname === '/vung-green-power' ||
     pathname === '/vung-khanh-van' ||
     pathname === '/xem-truoc-vung-khanh-van' ||
