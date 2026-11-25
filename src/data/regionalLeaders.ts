@@ -256,7 +256,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Nguyễn Thị Ngọc Đầy, Lương Thị Thanh Huyền, Nguyễn Thị Hoa, Nguyễn Thanh Thiên Vân, Tằng Thị Hoài Linh, Nguyễn Cao Tường Dung, Bùi Thị Thu Thảo, Lê Thị Cẩm Hương, Hà Đỗ, Vũ Thị Ngọc Anh...)',
+      'Cùng các quản lý UM (Nguyễn Thị Ngọc Đầy, Tằng Thị Hoài Linh, Nguyễn Cao Tường Dung, Hà Phi Yến, Nguyễn Thị Thủy Triều, Võ Thị Quỳnh Thi, Tâm Hoài, Vũ Ngọc Thảo Phương, Bùi Thị Thu Thảo, Hà Đỗ, Vũ Thị Ngọc Anh, Lê Thị Cẩm Hương, Văn Thụy Hồng Khánh, Dương Thị Xuân Sương) và SUM (Lương Thị Thanh Huyền, Nguyễn Thị Hoa, Nguyễn Thanh Thiên Vân) trực thuộc HCM69.',
   },
   {
     code: 'MN111',
@@ -317,7 +317,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhóm UM Vũ Thị Nhuần, Băng Tâm, Nguyễn Ngọc Trâm, Trần Xuân Mai...',
+      'Cùng các quản lý UM Vũ Thị Nhuần, Băng Tâm (Minh Phương), Nguyễn Ngọc Trâm, Trần Xuân Mai trực thuộc SG168.',
   },
   {
     code: 'SG169',
@@ -382,7 +382,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhánh SUM Bùi Phước Ngoan, UM Sen Nguyễn, UM Thuỳ Dương, UM Tâm Nguyễn, UM Nguyễn Hương Giang...',
+      'Cùng các quản lý UM (Nguyễn Thị Sen, Tôn Nữ Thuỳ Dương, Nguyễn Thị Ngọc Tâm, Nguyễn Thị Hương Giang) và SUM Bùi Phước Ngoan trực thuộc SG169.',
   },
 ];
 
