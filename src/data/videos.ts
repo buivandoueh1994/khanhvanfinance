@@ -972,7 +972,7 @@ export const VIDEO_LIBRARY: VideoItem[] = [
     "subtag": "Chuyện nghề Tư vấn & Đội ngũ",
     "tier": "hero",
     "format": "Video + Bài Viết Sâu",
-    "summary": "Tỷ lệ tái tục 97% cho thấy chất lượng phục vụ trong Hệ thống Green Power.",
+    "summary": "Tỷ lệ tái tục 97% cho thấy chất lượng phục vụ trong Green Power Group.",
     "cta": "Tham gia đội ngũ MDRT",
     "thumbnail": "/images/reels/1575825077173204.jpg"
   },

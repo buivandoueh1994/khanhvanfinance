@@ -131,18 +131,18 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
   {
     code: 'MN111',
     title: 'Khu Vực Kinh Doanh MN111',
-    subtitle: 'Trực thuộc Hệ thống Vùng',
+    subtitle: 'Trực thuộc Green Power Group',
     leadName: 'Ngân Vũ',
     leadRole: 'Giám đốc Khu vực Cấp cao (PSSM)',
     leadPortrait: '/images/leaders/avatars/ngan-vu.jpg',
     scaleBadge: 'Khu vực Cấp cao',
     description:
-      'Khu vực trực thuộc Hệ thống Green Power, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành lâu dài cùng khách hàng.',
+      'Khu vực trực thuộc Green Power Group, phát triển đội ngũ tư vấn tài chính chuyên nghiệp với kỷ luật đào tạo bài bản và cam kết đồng hành lâu dài cùng khách hàng.',
   },
   {
     code: 'SG168',
     title: 'Khu Vực Kinh Doanh SG168',
-    subtitle: 'Trực thuộc Hệ thống Vùng',
+    subtitle: 'Trực thuộc Green Power Group',
     leadName: 'Đào Minh Phương',
     leadRole: 'Giám đốc Khu vực (SM)',
     leadPortrait: '/images/leaders/avatars/dao-minh-phuong.jpg',
@@ -154,8 +154,8 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
   {
     code: 'SG169',
     title: 'Khu Vực Kinh Doanh SG169',
-    subtitle: 'Trực thuộc Hệ thống Vùng',
-    leadName: 'Huyền Trang',
+    subtitle: 'Trực thuộc Green Power Group',
+    leadName: 'Trương Thị Huyền Trang',
     leadRole: 'Giám đốc Khu vực (SM)',
     leadPortrait: '/images/leaders/avatars/huyen-trang.jpg',
     leadProfileId: 'huyen-trang',
@@ -181,7 +181,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         subNote: 'Trưởng Phòng Cấp cao • Trực thuộc SRD Khánh Vân',
         children: [
           {
-            name: 'Trà My',
+            name: 'Nguyễn Thị Trà My',
             role: 'DM',
             avatar: '/images/leaders/avatars/tra-my.jpg',
             leaderId: 'tra-my',
@@ -196,7 +196,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         subNote: 'Trưởng Phòng Cấp cao • Trực thuộc SRD Khánh Vân',
         children: [
           {
-            name: 'Tiền Lê (Bích Tiền)',
+            name: 'Lê Thị Bích Tiền',
             role: 'DM',
             avatar: '/images/leaders/avatars/bich-tien.jpg',
             leaderId: 'bich-tien',
@@ -205,7 +205,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         ],
       },
       {
-        name: 'Diễm Ly',
+        name: 'Hồ Thị Diễm Ly',
         role: 'SDM',
         avatar: '/images/leaders/avatars/diem-ly.jpg',
         leaderId: 'diem-ly',
@@ -220,35 +220,35 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         ],
       },
       {
-        name: 'Lê Huyên',
+        name: 'Lê Thị Huyên',
         role: 'SDM',
         avatar: '/images/leaders/avatars/le-huyen.jpg',
         leaderId: 'le-huyen',
         subNote: 'Từ 2018 • MDRT • FC • MBA',
       },
       {
-        name: 'Minh Kiều (Kiều Nguyễn)',
+        name: 'Nguyễn Thị Minh Kiều',
         role: 'DM',
         avatar: '/images/leaders/avatars/kieu-nguyen.jpg',
         leaderId: 'kieu-nguyen',
         subNote: 'Đại sứ MDRT 2026',
       },
       {
-        name: 'Đào Trần',
+        name: 'Trần Thị Đào',
         role: 'SUM',
         avatar: '/images/leaders/avatars/tran-dao.jpg',
         leaderId: 'tran-dao',
         subNote: '3x MDRT • 3x MBA Pro',
       },
       {
-        name: 'Loan Trần',
+        name: 'Trần Thị Loan',
         role: 'SUM',
         avatar: '/images/leaders/avatars/loan-tran.jpg',
         leaderId: 'loan-tran',
         subNote: '3x MDRT • MBA Pro',
       },
       {
-        name: 'Dương Quỳnh',
+        name: 'Nguyễn Ngọc Dương Quỳnh',
         role: 'UM',
         avatar: '/images/leaders/avatars/duong-quynh.jpg',
         leaderId: 'duong-quynh',
@@ -256,7 +256,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Ngọc Đầy, Huyền Lương, Nguyễn Hoa, Thiên Vân, Linh Tằng, Dung Grace, Thảo Bùi, Cẩm Hương, Hà Đỗ, Ngọc Anh...)',
+      'Cùng các quản lý SUM & UM trực thuộc HCM69 (Nguyễn Thị Ngọc Đầy, Lương Thị Thanh Huyền, Nguyễn Thị Hoa, Nguyễn Thanh Thiên Vân, Tằng Thị Hoài Linh, Nguyễn Cao Tường Dung, Bùi Thị Thu Thảo, Lê Thị Cẩm Hương, Hà Đỗ, Vũ Thị Ngọc Anh...)',
   },
   {
     code: 'MN111',
@@ -277,21 +277,21 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
     headLeaderId: 'dao-minh-phuong',
     keyManagers: [
       {
-        name: 'Thuỳ Liêm',
+        name: 'Võ Thị Thùy Liêm',
         role: 'SDM',
         avatar: '/images/leaders/avatars/thuy-liem.jpg',
         leaderId: 'thuy-liem',
         subNote: 'MDRT • MBA Pro Bạch Kim',
         children: [
           {
-            name: 'Thiên Thanh',
+            name: 'Nguyễn Thị Thiên Thanh',
             role: 'SUM',
             avatar: '/images/leaders/avatars/thien-thanh.jpg',
             leaderId: 'thien-thanh',
             subNote: 'MBA Pro • 22 năm Kế toán trưởng',
             children: [
               {
-                name: 'Vân Nguyễn',
+                name: 'Nguyễn Thị Vân',
                 role: 'SUM',
                 avatar: '/images/leaders/avatars/van-nguyen.jpg',
                 leaderId: 'van-nguyen',
@@ -300,7 +300,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
             ],
           },
           {
-            name: 'Dương Thanh Hoa',
+            name: 'Dương Thị Thanh Hoa',
             role: 'SUM',
             avatar: '/images/leaders/avatars/duong-thanh-hoa.jpg',
             leaderId: 'duong-thanh-hoa',
@@ -309,7 +309,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         ],
       },
       {
-        name: 'Anh Thơ',
+        name: 'Nguyễn Tố Anh Thơ',
         role: 'SUM',
         avatar: '/images/leaders/avatars/anh-tho.jpg',
         leaderId: 'anh-tho',
@@ -317,7 +317,7 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
       },
     ],
     moreCountNote:
-      'Cùng các nhóm UM Nhuần Vũ, Băng Tâm, Ngọc Trâm, Xuân Mai...',
+      'Cùng các nhóm UM Vũ Thị Nhuần, Băng Tâm, Nguyễn Ngọc Trâm, Trần Xuân Mai...',
   },
   {
     code: 'SG169',
@@ -328,28 +328,28 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
     headLeaderId: 'huyen-trang',
     keyManagers: [
       {
-        name: 'Thuý Hoàng',
+        name: 'Hoàng Thị Kim Thuý',
         role: 'SDM',
         avatar: '/images/leaders/avatars/hoang-thuy.jpg',
         leaderId: 'hoang-thuy',
         subNote: 'MDRT • MBA Vàng',
         children: [
           {
-            name: 'Bé Nguyễn',
+            name: 'Nguyễn Thị Bé',
             role: 'DM',
             avatar: '/images/leaders/avatars/be-nguyen.jpg',
             leaderId: 'be-nguyen',
             subNote: '2x MBA Pro • 12 năm HCNS',
             children: [
               {
-                name: 'Huyền Nguyễn',
+                name: 'Nguyễn Thị Huyền',
                 role: 'SUM',
                 avatar: '/images/leaders/avatars/huyen-nguyen.jpg',
                 leaderId: 'huyen-nguyen',
                 subNote: 'Nền tảng Luật sư',
               },
               {
-                name: 'Dương Lên',
+                name: 'Dương Thị Lên',
                 role: 'UM',
                 avatar: '/images/leaders/avatars/duong-len.jpg',
                 leaderId: 'duong-len',
@@ -360,21 +360,21 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
         ],
       },
       {
-        name: 'Trâm Lê',
+        name: 'Lê Bảo Trâm',
         role: 'SUM',
         avatar: '/images/leaders/avatars/tram-le.jpg',
         leaderId: 'tram-le',
         subNote: '15 năm Tập đoàn Nhật Bản',
       },
       {
-        name: 'Tiên Tiên',
+        name: 'Huỳnh Thị Tiên',
         role: 'UM',
         avatar: '/images/leaders/avatars/tien-tien.jpg',
         leaderId: 'tien-tien',
         subNote: 'Quản lý Xuất sắc',
       },
       {
-        name: 'Thi Đỗ (Kim Thi)',
+        name: 'Đỗ Thị Kim Thi',
         role: 'UM',
         avatar: '/images/leaders/avatars/kim-thi.jpg',
         leaderId: 'kim-thi',
@@ -403,7 +403,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tenureLabel: 'Gia nhập 03/2020 • Hơn 6 năm dẫn dắt tại Manulife',
     industryKey: 'FINANCE_ACC',
     priorBackgroundShort: 'Nghiệp vụ Kế toán Doanh nghiệp',
-    priorBackgroundFull: 'Chuyên môn Kế toán doanh nghiệp • Quản trị và phát triển hệ thống kinh doanh',
+    priorBackgroundFull: 'Chuyên môn Kế toán doanh nghiệp • Quản trị và phát triển đội ngũ kinh doanh',
     teamScaleBadge: 'Giám đốc Khu vực SG168',
     highlightNote: 'MDRT & MBA nhiều năm liền • Dẫn dắt Khu vực SG168 từ năm 2020',
     quote: 'Muốn có điều mà mình chưa bao giờ có, hãy dám làm những việc mình chưa bao giờ làm.',
@@ -467,7 +467,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/huyen-trang-3.jpg',
-        caption: 'Dấu ấn trên hành trình xây dựng hệ sinh thái bảo hiểm chuẩn mực cùng Hệ thống Green Power',
+        caption: 'Dấu ấn trên hành trình xây dựng hệ sinh thái bảo hiểm chuẩn mực cùng Green Power Group',
       },
     ],
   },
@@ -537,7 +537,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chị có 5 năm làm việc với bảng cân đối doanh nghiệp, rồi 8 năm hoạch định dòng tiền an toàn cho từng cá nhân, gắn bó từ những ngày đầu thành lập HCM69.',
     editorialBio: [
       'Lê Huyên tốt nghiệp chuyên ngành Kế toán, Kiểm toán tại Trường Đại học Kinh tế - Luật, làm kế toán tổng hợp 5 năm rồi vào Manulife từ năm 2018. Hai chặng nghề đều gắn với kỷ luật của những con số. Trước đây chị làm việc với báo cáo tài chính của doanh nghiệp và tập đoàn, còn 8 năm qua chị làm việc với dòng tiền của từng cá nhân và gia đình.',
-      'Lê Huyên là một trong những quản lý gắn bó với Khu vực HCM69 thuộc Hệ thống Green Power từ giai đoạn đầu. Chị tin sự tỉ mỉ và chân thành là cách để đi lâu với khách hàng.',
+      'Lê Huyên là một trong những quản lý gắn bó với Khu vực HCM69 thuộc Green Power Group từ giai đoạn đầu. Chị tin sự tỉ mỉ và chân thành là cách để đi lâu với khách hàng.',
     ],
     badges: ['MDRT', 'FC', 'MBA Pro', 'Gắn bó từ 2018'],
     specialties: ['Hoạch định Hưu trí & Học vấn', 'Chăm sóc Sức khỏe Cao cấp'],
@@ -568,7 +568,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chị bắt đầu từ năm 2019 vì muốn chủ động thời gian chăm sóc gia đình. Nay chị là một trong những Trưởng phòng trụ cột, phát triển nhiều thế hệ quản lý tại HCM69.',
     editorialBio: [
       'Xuất thân từ Quản trị Nhân sự (HR), Hồ Thị Diễm Ly đến với Manulife năm 2019 với mong muốn giản dị: có một nghề phát huy năng lực làm việc với con người mà vẫn chủ động thời gian chăm sóc gia đình.',
-      'Suốt 7 năm làm việc trực tiếp cùng Giám đốc Vùng Cấp cao Khánh Vân tại Khu vực hạt nhân HCM69, Diễm Ly giữ nguyên tắc xem khách hàng như người thân. Chị đạt danh hiệu quốc tế MDRT và MBA Pro, đồng thời phát triển nhiều Trưởng phòng và Trưởng nhóm kinh doanh kế cận trong hệ thống.',
+      'Suốt 7 năm làm việc trực tiếp cùng Giám đốc Vùng Cấp cao Khánh Vân tại Khu vực hạt nhân HCM69, Diễm Ly giữ nguyên tắc xem khách hàng như người thân. Chị đạt danh hiệu quốc tế MDRT và MBA Pro, đồng thời phát triển nhiều Trưởng phòng và Trưởng nhóm kinh doanh kế cận tại Green Power Group.',
     ],
     badges: ['MDRT', 'MBA Pro', 'Quản lý Xuất sắc', 'Gắn bó từ 2019'],
     specialties: [
@@ -591,7 +591,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierLabel: 'Trưởng Phòng Cấp cao',
     isSeniorLeadership: true,
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2020',
     tenureLabel: 'Gia nhập 2020 • 10 năm kinh nghiệm Ngân hàng',
     industryKey: 'BANKING',
@@ -707,7 +707,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chị có bằng Cử nhân Tài chính Doanh nghiệp UEH, bằng Thạc sĩ và 11 năm quản trị chuỗi cung ứng, nay xây dựng đội ngũ chất lượng cao tại HCM69.',
     editorialBio: [
       'Bích Tiền tốt nghiệp Cử nhân Tài chính Doanh nghiệp (UEH), có bằng Thạc sĩ, 11 năm quản lý vận hành, mua hàng (Procurement) và 4 năm giảng dạy nghiệp vụ Logistics. Chị vào Manulife tháng 10/2020 vì tin tưởng người quản lý trực tiếp và môi trường có nhiều đồng nghiệp giỏi ở các lĩnh vực khác nhau.',
-      'Điều giữ chị ở lại Hệ thống Green Power là văn hóa chia sẻ kinh nghiệm chân thành, không tính toán. Chị đề cao uy tín đường dài, đạt danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu MBA, MDRT, FC và nhận Giải thưởng Lãnh đạo Thực chiến GAMA Global. Đội ngũ của chị có nhiều MBA Pro, Manulife Pro Vàng và Bạc.',
+      'Điều giữ chị ở lại Green Power Group là văn hóa chia sẻ kinh nghiệm chân thành, không tính toán. Chị đề cao uy tín đường dài, đạt danh hiệu MBA Pro Bạch Kim, 2 năm liên tiếp đạt bộ ba danh hiệu MBA, MDRT, FC và nhận Giải thưởng Lãnh đạo Thực chiến GAMA Global. Đội ngũ của chị có nhiều MBA Pro, Manulife Pro Vàng và Bạc.',
     ],
     badges: [
       'MBA Pro Bạch Kim',
@@ -746,7 +746,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierLabel: 'Trưởng Phòng Kinh doanh',
     isSeniorLeadership: true,
     unitCode: 'SG169',
-    directLeader: 'SDM Thuý Hoàng • SM Huyền Trang',
+    directLeader: 'SDM Hoàng Thị Kim Thuý • SM Trương Thị Huyền Trang',
     joinedYear: '2021',
     tenureLabel: 'Gia nhập 2021 • Hơn 12 năm Hành chính Nhân sự & 5 năm BHNT',
     industryKey: 'HR_EDU',
@@ -758,7 +758,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Sau hơn 12 năm làm Trưởng phòng Nhân sự, chị đến với nghề chỉ vì muốn tìm hiểu bảo hiểm cho gia đình. Nay chị đã 2 năm liên tiếp đạt danh hiệu Nhà kiến tạo đội ngũ MBA Pro.',
     editorialBio: [
-      'Sau hơn 12 năm làm Trưởng phòng Hành chính Nhân sự, Nguyễn Thị Bé đến với Manulife từ mong muốn tìm hiểu kỹ một giải pháp bảo vệ cho gia đình mình. Khi trực tiếp tiếp xúc với môi trường đào tạo và văn hóa chia sẻ không tính toán tại Hệ thống Green Power, chị nhận ra đây là sự nghiệp dài hạn mình tìm.',
+      'Sau hơn 12 năm làm Trưởng phòng Hành chính Nhân sự, Nguyễn Thị Bé đến với Manulife từ mong muốn tìm hiểu kỹ một giải pháp bảo vệ cho gia đình mình. Khi trực tiếp tiếp xúc với môi trường đào tạo và văn hóa chia sẻ không tính toán tại Green Power Group, chị nhận ra đây là sự nghiệp dài hạn mình tìm.',
       'Ngay từ đầu, bài học “Phải làm đúng trước, làm giỏi sau” đã là nguyên tắc nền của chị. Tư vấn đúng bản chất sản phẩm thì mới làm nghề bền được. Đây cũng là điều Bé Nguyễn truyền lại cho các tư vấn viên mới, trong 2 năm liên tiếp đạt danh hiệu MBA Pro.',
     ],
     badges: ['2x MBA Pro Liên Tiếp', 'Trưởng Phòng Kinh doanh (DM)', '12+ Năm Quản trị Nhân sự'],
@@ -815,7 +815,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     ],
     badges: [
       'Trưởng Phòng Kinh doanh (DM)',
-      'Quản trị & Vận hành Hệ thống',
+      'Quản trị & Vận hành Đội ngũ',
     ],
     specialties: [
       'Xây dựng & Đào tạo Đội ngũ',
@@ -892,7 +892,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Chị mang tư duy quản trị 12 năm từ Hyundai và Cargill vào việc xây dựng đội ngũ tư vấn chuẩn chỉnh, góp phần cho ngành bảo hiểm xanh tại Việt Nam.',
     editorialBio: [
       'Loan Trần có 12 năm trong lĩnh vực tài chính và điều hành doanh nghiệp, từng là Phó Giám đốc tại Hyundai và phụ trách chiến lược định giá tại Tập đoàn đa quốc gia Cargill. Chị đến với Manulife từ trải nghiệm thuyết phục khi còn là khách hàng.',
-      'Tại Hệ thống Green Power, chị thấy những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần chia sẻ. Chị đạt danh hiệu MDRT 3 năm liên tiếp (từ 2024 đến 2026) và xây dựng được một đội ngũ ưu tú. Chị theo đuổi các giải pháp tài chính chuẩn chỉnh, góp phần làm ngành bảo hiểm tại Việt Nam văn minh và bền vững hơn.',
+      'Tại Green Power Group, chị thấy những nhà tư vấn có trình độ thực chất, tư duy minh bạch và tinh thần chia sẻ. Chị đạt danh hiệu MDRT 3 năm liên tiếp (từ 2024 đến 2026) và xây dựng được một đội ngũ ưu tú. Chị theo đuổi các giải pháp tài chính chuẩn chỉnh, góp phần làm ngành bảo hiểm tại Việt Nam văn minh và bền vững hơn.',
     ],
     badges: ['MDRT 2024–2026', 'MBA Pro', 'Cựu Phó Giám đốc Hyundai'],
     specialties: [
@@ -935,8 +935,8 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Chị xử lý hồ sơ pháp lý khi chị Khánh Vân là khách hàng của công ty luật. Sau 2 năm quan sát, chị quyết định về xây dựng đội ngũ tại HCM69.',
     editorialBio: [
-      'Luật sư Lương Thị Thanh Huyền biết đến Hệ thống Green Power theo chiều ngược lại. Trước đây, chị Khánh Vân là khách hàng tại công ty của Huyền. Qua những buổi trực tiếp xử lý hồ sơ, phong thái chuẩn mực và lời mời chân thành của chị Vân tạo thiện cảm. Sau đúng 2 năm quan sát kỹ, Huyền quyết định gia nhập đội ngũ năm 2022.',
-      'Với con mắt khắt khe của một Luật sư, điều Huyền Lương nể nhất ở HCM69 và Hệ thống Green Power là sự nhất quán hiếm có giữa lời nói trên truyền thông và việc làm thực tế, từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch khi tư vấn và phục vụ khách hàng. Chị dẫn dắt đội ngũ của mình với ba giá trị: Thấu hiểu, Tin tưởng, Trách nhiệm.',
+      'Luật sư Lương Thị Thanh Huyền biết đến Green Power Group theo chiều ngược lại. Trước đây, chị Khánh Vân là khách hàng tại công ty của Huyền. Qua những buổi trực tiếp xử lý hồ sơ, phong thái chuẩn mực và lời mời chân thành của chị Vân tạo thiện cảm. Sau đúng 2 năm quan sát kỹ, Huyền quyết định gia nhập đội ngũ năm 2022.',
+      'Với con mắt khắt khe của một Luật sư, điều Huyền Lương nể nhất ở HCM69 và Green Power Group là sự nhất quán hiếm có giữa lời nói trên truyền thông và việc làm thực tế, từ cách phối hợp nội bộ giữa các phòng ban đến sự minh bạch khi tư vấn và phục vụ khách hàng. Chị dẫn dắt đội ngũ của mình với ba giá trị: Thấu hiểu, Tin tưởng, Trách nhiệm.',
     ],
     badges: ['Nền tảng Luật sư', 'Trưởng Nhóm Cấp cao (SUM)'],
     specialties: [
@@ -957,7 +957,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/huyen-luong-3.jpg',
-        caption: 'Khoảnh khắc gắn kết văn hóa tập thể tại Hệ thống Green Power',
+        caption: 'Khoảnh khắc gắn kết văn hóa tập thể tại Green Power Group',
       },
     ],
   },
@@ -971,7 +971,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG168',
-    directLeader: 'SDM Thuỳ Liêm • SM Đào Minh Phương',
+    directLeader: 'SDM Võ Thị Thùy Liêm • SM Đào Minh Phương',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • 22 năm Tài chính, Kế toán',
     industryKey: 'FINANCE_ACC',
@@ -981,9 +981,9 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: 'MBA Pro • Quản lý Xuất sắc • Bề dày 22 năm Kế toán trưởng doanh nghiệp FDI và nội địa',
     quote: 'Tư vấn đúng nhu cầu, bảo vệ đủ giá trị, đồng hành đến cùng.',
     cardSummary:
-      'Hơn hai thập kỷ làm Kế toán trưởng tại các công ty trong và ngoài nước, nay chị gắn bó với môi trường “Đúng, Đủ, Đều” giàu tình người của Hệ thống Green Power.',
+      'Hơn hai thập kỷ làm Kế toán trưởng tại các công ty trong và ngoài nước, nay chị gắn bó với môi trường “Đúng, Đủ, Đều” giàu tình người của Green Power Group.',
     editorialBio: [
-      'Có 22 năm làm Tài chính, Kế toán và giữ cương vị Kế toán trưởng tại nhiều doanh nghiệp trong và ngoài nước, Nguyễn Thị Thiên Thanh thấy hợp với Khu vực SG168 thuộc Hệ thống Green Power khi gia nhập từ năm 2022.',
+      'Có 22 năm làm Tài chính, Kế toán và giữ cương vị Kế toán trưởng tại nhiều doanh nghiệp trong và ngoài nước, Nguyễn Thị Thiên Thanh thấy hợp với Khu vực SG168 thuộc Green Power Group khi gia nhập từ năm 2022.',
       'Chị đề cao văn hóa làm nghề “Đúng, Đủ, Đều, Chuyên nghiệp” và sự quan tâm của Giám đốc Vùng Cấp cao Khánh Vân, người luôn nhớ thông tin và hoàn cảnh của từng thành viên để kịp thời nâng đỡ khi cần. Nền tảng đó giúp chị yên tâm xây dựng đội ngũ và đưa giải pháp bảo vệ phù hợp đến từng gia đình.',
     ],
     badges: ['MBA Pro', 'Quản lý Xuất sắc', '22 Năm Kế Toán Trưởng'],
@@ -1005,7 +1005,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thien-thanh-3.jpg',
-        caption: 'Đồng hành cùng Ban Điều hành Hệ thống Green Power',
+        caption: 'Đồng hành cùng Ban Điều hành Green Power Group',
       },
     ],
   },
@@ -1019,7 +1019,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG168',
-    directLeader: 'SDM Thuỳ Liêm • SM Đào Minh Phương',
+    directLeader: 'SDM Võ Thị Thùy Liêm • SM Đào Minh Phương',
     joinedYear: '2026',
     tenureLabel: '15 năm kinh nghiệm Tài chính, Ngân hàng',
     industryKey: 'BANKING',
@@ -1031,7 +1031,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Chị khép lại hơn 15 năm làm Trưởng nhóm Kiểm soát sau trong ngành ngân hàng để chọn nghề hoạch định bảo vệ gia đình, với chữ tín làm nền.',
     editorialBio: [
-      'Sau hơn 15 năm trong ngành ngân hàng ở vị trí Trưởng nhóm Kiểm soát sau, Dương Thị Thanh Hoa từng nghĩ mình sẽ làm ngân hàng đến hết sự nghiệp. Nhưng qua những cuộc trò chuyện và hiểu thêm vai trò của bảo hiểm trước biến cố gia đình, chị vượt qua do dự ban đầu để bước sang hướng mới cùng Hệ thống Green Power.',
+      'Sau hơn 15 năm trong ngành ngân hàng ở vị trí Trưởng nhóm Kiểm soát sau, Dương Thị Thanh Hoa từng nghĩ mình sẽ làm ngân hàng đến hết sự nghiệp. Nhưng qua những cuộc trò chuyện và hiểu thêm vai trò của bảo hiểm trước biến cố gia đình, chị vượt qua do dự ban đầu để bước sang hướng mới cùng Green Power Group.',
       'Giữ tác phong cẩn trọng của người làm kiểm soát ngân hàng, chị đặt ra bốn nguyên tắc: tư vấn đúng nhu cầu và vừa khả năng tài chính, tuyệt đối không hứa vượt quá điều khoản, không bao giờ vì doanh số mà đánh đổi lợi ích khách hàng, và luôn đồng hành cả trước lẫn sau khi hợp đồng phát hành.',
     ],
     badges: ['MDRT', 'MBA Pro', '15 Năm Ngân Hàng'],
@@ -1062,8 +1062,8 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Chị từng dè dặt với bảo hiểm, cho đến sau biến cố gia đình. Nay chị là người quản lý truyền văn hóa “Làm ĐÚNG và làm có TÂM”.',
     editorialBio: [
-      'Từng hơn 10 năm làm Phiên dịch viên, Giảng viên tiếng Tây Ban Nha và Chuyên gia đào tạo (Trainer), Anh Thơ thẳng thắn kể trước đây chị e ngại bảo hiểm. Bước ngoặt đến khi gia đình gặp biến cố và chị được Giám đốc Khu vực Đào Minh Phương đồng hành. Chị vừa trở thành khách hàng được bảo vệ tại Manulife, vừa tìm được hướng đi nghề nghiệp mới trong Hệ thống Green Power.',
-      'Điều Anh Thơ tâm đắc nhất ở hệ thống là lời chị Khánh Vân luôn nhắc cả đội: làm việc gì cũng phải “làm ĐÚNG và làm có TÂM”. Trong tư vấn, đó là tư vấn đúng nhu cầu và minh bạch đúng điều khoản sản phẩm. Trong phát triển đội ngũ, đó là tuyển đúng người và đi cùng họ đúng định hướng nghề nghiệp.',
+      'Từng hơn 10 năm làm Phiên dịch viên, Giảng viên tiếng Tây Ban Nha và Chuyên gia đào tạo (Trainer), Anh Thơ thẳng thắn kể trước đây chị e ngại bảo hiểm. Bước ngoặt đến khi gia đình gặp biến cố và chị được Giám đốc Khu vực Đào Minh Phương đồng hành. Chị vừa trở thành khách hàng được bảo vệ tại Manulife, vừa tìm được hướng đi nghề nghiệp mới trong Green Power Group.',
+      'Điều Anh Thơ tâm đắc nhất ở Green Power Group là lời chị Khánh Vân luôn nhắc cả đội: làm việc gì cũng phải “làm ĐÚNG và làm có TÂM”. Trong tư vấn, đó là tư vấn đúng nhu cầu và minh bạch đúng điều khoản sản phẩm. Trong phát triển đội ngũ, đó là tuyển đúng người và đi cùng họ đúng định hướng nghề nghiệp.',
     ],
     badges: ['Manulife Pro Vàng', 'Quản lý Xuất sắc'],
     specialties: [
@@ -1128,7 +1128,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2025',
     tenureLabel: 'Gia nhập 2025 • 15 năm Tập đoàn Thương mại & Đầu tư Nhật Bản',
     industryKey: 'CORP_BIZ',
@@ -1139,10 +1139,10 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: '15 năm tác phong Tập đoàn Nhật Bản • Trưởng Nhóm Kinh doanh Cấp cao SG169',
     quote: 'Luôn lắng nghe thấu đáo và đặt lợi ích dài hạn của khách hàng lên hàng đầu.',
     cardSummary:
-      'Chị kết hợp kỷ luật tỉ mỉ sau 15 năm làm việc tại các tập đoàn đầu tư Nhật Bản với văn hóa biết ơn của Hệ thống Green Power.',
+      'Chị kết hợp kỷ luật tỉ mỉ sau 15 năm làm việc tại các tập đoàn đầu tư Nhật Bản với văn hóa biết ơn của Green Power Group.',
     editorialBio: [
       'Trâm Lê có 15 năm làm việc tại các tập đoàn thương mại, đầu tư của Nhật Bản và điều hành doanh nghiệp gia đình trong mảng xuất nhập khẩu. Chị ấn tượng với hệ thống đào tạo bài bản, chuẩn quốc tế của Manulife Việt Nam.',
-      'Khi làm việc với Hệ thống Green Power tại Khu vực SG169, điều chị tâm đắc nhất là “văn hóa biết ơn” và sự tử tế giữa đồng đội. Trong mỗi cuộc tư vấn, chị giữ cách lắng nghe kỹ của phong cách Nhật Bản để đặt lợi ích khách hàng lên hàng đầu.',
+      'Khi làm việc với Green Power Group tại Khu vực SG169, điều chị tâm đắc nhất là “văn hóa biết ơn” và sự tử tế giữa đồng đội. Trong mỗi cuộc tư vấn, chị giữ cách lắng nghe kỹ của phong cách Nhật Bản để đặt lợi ích khách hàng lên hàng đầu.',
     ],
     badges: ['Trưởng Nhóm Cấp cao (SUM)', '15 Năm Tập Đoàn Nhật Bản'],
     specialties: [
@@ -1154,7 +1154,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     gallery: [
       {
         src: '/images/leaders/gallery/tram-le-1.jpg',
-        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trâm Lê tại sự kiện chuyên môn của Hệ thống Green Power',
+        caption: 'Trưởng Nhóm Kinh doanh Cấp cao Trâm Lê tại sự kiện chuyên môn của Green Power Group',
       },
       {
         src: '/images/leaders/gallery/tram-le-2.jpg',
@@ -1172,7 +1172,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG168',
-    directLeader: 'SUM Thiên Thanh • SDM Thuỳ Liêm • SM Đào Minh Phương',
+    directLeader: 'SUM Thiên Thanh • SDM Võ Thị Thùy Liêm • SM Đào Minh Phương',
     joinedYear: '2025',
     tenureLabel: 'Gia nhập 2025 • 19 năm Quản trị Hành chính Nhân sự',
     industryKey: 'HR_EDU',
@@ -1202,7 +1202,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'HCM69',
-    directLeader: 'DM Kiều Nguyễn • SRD Khánh Vân',
+    directLeader: 'DM Nguyễn Thị Minh Kiều • SRD Khánh Vân',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • 16 năm Thư ký Hành chính & Trưởng phòng Kế hoạch Vận hành',
     industryKey: 'CORP_BIZ',
@@ -1217,7 +1217,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Chị mang 16 năm kinh nghiệm Trưởng phòng Kế hoạch Vận hành vào việc xây dựng một đội ngũ đoàn kết, làm điều đúng đắn tại HCM69.',
     editorialBio: [
-      'Có 16 năm làm Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chọn Manulife từ năm 2022. Làm việc tại Khu vực HCM69 thuộc Hệ thống Green Power, chị thấy tự hào khi thuộc tập thể giữ vị thế Top 1 nhiều năm liền, với văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
+      'Có 16 năm làm Thư ký Hành chính và giữ cương vị Trưởng phòng Kế hoạch Vận hành, Thiên Vân chọn Manulife từ năm 2022. Làm việc tại Khu vực HCM69 thuộc Green Power Group, chị thấy tự hào khi thuộc tập thể giữ vị thế Top 1 nhiều năm liền, với văn hóa yêu thương và kỷ luật làm điều đúng đắn.',
       'Khi dẫn dắt đội ngũ của mình, Thiên Vân lấy văn hóa phát triển lâu dài, minh bạch và tử tế của toàn vùng làm kim chỉ nam, cả trong từng bản kế hoạch bảo vệ thu nhập cho khách hàng lẫn khi kèm cặp đồng đội.',
     ],
     badges: [
@@ -1243,7 +1243,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG169',
-    directLeader: 'DM Bé Nguyễn • SM Huyền Trang',
+    directLeader: 'DM Nguyễn Thị Bé • SM Trương Thị Huyền Trang',
     joinedYear: '2025',
     tenureLabel: 'Gia nhập 2025 • Nền tảng Luật sư chuyên nghiệp',
     industryKey: 'LAW_MED_INS',
@@ -1258,7 +1258,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ một Luật sư tự tìm hiểu hợp đồng bảo hiểm cho gia đình mình, chị gắn bó và phát triển đội ngũ tại Khu vực SG169.',
     editorialBio: [
       'Nguyễn Thị Huyền là Luật sư. Chị đến với Manulife vì muốn tự đọc kỹ các điều khoản hợp đồng bảo hiểm cho gia đình mình. Càng tìm hiểu dưới góc nhìn pháp lý, chị càng thấy bảo hiểm nhân thọ thực sự bảo vệ được người thân.',
-      'Văn hóa chân thành và nguyên tắc “Làm đúng trước, làm giỏi sau” tại Hệ thống Green Power đã giữ chị ở lại, và chị phát triển lên Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại Khu vực SG169. Chị lắng nghe khách hàng và giải thích rõ ràng các điều khoản pháp lý.',
+      'Văn hóa chân thành và nguyên tắc “Làm đúng trước, làm giỏi sau” tại Green Power Group đã giữ chị ở lại, và chị phát triển lên Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại Khu vực SG169. Chị lắng nghe khách hàng và giải thích rõ ràng các điều khoản pháp lý.',
     ],
     badges: [
       'Trưởng Nhóm Cấp cao (SUM)',
@@ -1283,13 +1283,13 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'SUM',
     tierLabel: 'Trưởng Nhóm Cấp cao',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2025',
-    tenureLabel: 'Gia nhập 2025 • Trưởng thành từ Thư ký Vận hành Hệ thống',
+    tenureLabel: 'Gia nhập 2025 • Trưởng thành từ Thư ký Vận hành Đội ngũ',
     industryKey: 'CORP_BIZ',
     priorBackgroundShort: 'Thư ký Vận hành & Hỗ trợ Phát triển Đội ngũ Kinh doanh',
     priorBackgroundFull:
-      'Khởi đầu từ vị trí Thư ký vận hành tại Hệ thống Green Power khi còn là sinh viên năm 3 đại học',
+      'Khởi đầu từ vị trí Thư ký vận hành tại Green Power Group khi còn là sinh viên năm 3 đại học',
     teamScaleBadge: 'Thế hệ Quản lý Trẻ SG169',
     highlightNote:
       'Quản lý trẻ đi lên từ công tác vận hành nội bộ đến Trưởng Nhóm Kinh doanh Cấp cao (SUM) tại SG169',
@@ -1298,7 +1298,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Bắt đầu từ vị trí Thư ký khi còn là sinh viên năm 3, chị trở thành Trưởng Nhóm Kinh doanh Cấp cao tại SG169.',
     editorialBio: [
-      'Bùi Phước Ngoan bắt đầu công việc đầu tiên tại Manulife khi vẫn còn là sinh viên năm 3 đại học ở vị trí Thư ký vận hành, từ đó học hỏi trực tiếp trong môi trường làm việc nề nếp của Hệ thống Green Power và Khu vực SG169.',
+      'Bùi Phước Ngoan bắt đầu công việc đầu tiên tại Manulife khi vẫn còn là sinh viên năm 3 đại học ở vị trí Thư ký vận hành, từ đó học hỏi trực tiếp trong môi trường làm việc nề nếp của Green Power Group và Khu vực SG169.',
       'Sự chuyên nghiệp và việc các thế hệ quản lý sẵn sàng hỗ trợ nhau giúp chị hiểu rõ giá trị thực của bảo hiểm nhân thọ. Ở vị trí Trưởng Nhóm Kinh doanh Cấp cao (SUM), Phước Ngoan làm việc tận tâm và chỉn chu với từng hồ sơ khách hàng.',
     ],
     badges: [
@@ -1337,7 +1337,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ Kế toán trưởng đến 4 lần đạt danh hiệu MDRT (Bàn tròn Triệu đô), giữa một tập thể đồng đội giỏi và kỷ luật tại HCM69.',
     editorialBio: [
       'Nguyễn Thị Ngọc Đầy chuyển từ vị trí Kế toán trưởng doanh nghiệp sang hoạch định tài chính cá nhân từ năm 2020. Điều giữ chị lại suốt 7 năm qua trước hết là quyền lợi bảo vệ thực tế mà bảo hiểm mang lại cho gia đình khách hàng.',
-      'Tại Khu vực HCM69 thuộc Hệ thống Green Power, Ngọc Đầy làm việc giữa những người giỏi nhưng sẵn lòng nâng đỡ nhau, nên chị không cho phép mình dừng lại. Việc học thêm mỗi ngày và nguyên tắc “cứ làm đúng trước đã” giúp chị đạt 4 danh hiệu MDRT và cột mốc Quản lý MBA Pro.',
+      'Tại Khu vực HCM69 thuộc Green Power Group, Ngọc Đầy làm việc giữa những người giỏi nhưng sẵn lòng nâng đỡ nhau, nên chị không cho phép mình dừng lại. Việc học thêm mỗi ngày và nguyên tắc “cứ làm đúng trước đã” giúp chị đạt 4 danh hiệu MDRT và cột mốc Quản lý MBA Pro.',
     ],
     badges: ['4x MDRT', 'MBA Pro', 'Quản lý Xuất sắc'],
     specialties: [
@@ -1354,7 +1354,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ngoc-day-2.jpg',
-        caption: 'Lễ vinh danh danh hiệu quốc tế MDRT cùng tập thể Hệ thống Green Power',
+        caption: 'Lễ vinh danh danh hiệu quốc tế MDRT cùng tập thể Green Power Group',
       },
       {
         src: '/images/leaders/gallery/ngoc-day-3.jpg',
@@ -1387,7 +1387,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ một khách hàng ký 2 hợp đồng bảo vệ gia đình với chị Khánh Vân, chị mang kỷ luật kiểm soát nội bộ ngân hàng vào nghề tư vấn.',
     editorialBio: [
       'Dương Quỳnh xuất thân từ nghiệp vụ Kiểm soát nội bộ ngân hàng, nơi đòi hỏi sự chính xác và tuân thủ nghiêm ngặt. Chị đến với nghề khá tự nhiên: chủ động liên hệ chị Khánh Vân để lập hai hợp đồng bảo vệ cho gia đình mình. Thấy cách làm việc rõ ràng, kỹ lưỡng ấy, chị quyết định học nghề bài bản và gắn bó với HCM69 từ năm 2020.',
-      'Với tư duy quản trị rủi ro ngân hàng và Chứng chỉ Hoạch định Di sản Tài chính Quốc tế LIMRA, Dương Quỳnh làm mỗi bản kế hoạch tài chính đầy đủ, minh bạch để theo khách hàng lâu dài. Chị quý văn hóa làm nghề nghiêm túc mà thân tình của hệ thống.',
+      'Với tư duy quản trị rủi ro ngân hàng và Chứng chỉ Hoạch định Di sản Tài chính Quốc tế LIMRA, Dương Quỳnh làm mỗi bản kế hoạch tài chính đầy đủ, minh bạch để theo khách hàng lâu dài. Chị quý văn hóa làm nghề nghiêm túc mà thân tình của Green Power Group.',
     ],
     badges: [
       'MDRT',
@@ -1427,7 +1427,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'SDM Diễm Ly • SRD Khánh Vân',
+    directLeader: 'SDM Hồ Thị Diễm Ly • SRD Khánh Vân',
     joinedYear: '2021',
     tenureLabel: 'Gia nhập 2021 • 19 năm FMCG & 5 năm Tài chính',
     industryKey: 'CORP_BIZ',
@@ -1439,7 +1439,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Thành viên Bàn Tròn Triệu Đô MDRT, đại biểu Hội nghị Toàn cầu MDRT tại Sydney (Úc)',
     quote: 'Tận tâm, chuyên nghiệp.',
     cardSummary:
-      'Sau hơn hai thập kỷ làm FMCG và tài chính, chị thấy hợp với văn hóa chia sẻ và nâng đỡ nhau của Hệ thống Green Power.',
+      'Sau hơn hai thập kỷ làm FMCG và tài chính, chị thấy hợp với văn hóa chia sẻ và nâng đỡ nhau của Green Power Group.',
     editorialBio: [
       'Trước khi bước sang lĩnh vực hoạch định tài chính và bảo hiểm năm 2021, Dung Grace đã có 19 năm đảm nhiệm vị trí Quản lý Tiếp thị Thương mại (Trade Marketing) trong ngành hàng tiêu dùng nhanh (FMCG) năng động. Kinh nghiệm thực chiến giúp chị nhìn kế hoạch kỹ và hiểu nhu cầu của từng gia đình.',
       'Dung Grace đạt danh hiệu quốc tế MDRT và trực tiếp dự Hội nghị Toàn cầu MDRT tại Sydney (Úc). Chị ở lại Khu vực HCM69 vì văn hóa “cho đi”: sẵn lòng chia sẻ kinh nghiệm và hỗ trợ từng thành viên trong đội.',
@@ -1472,7 +1472,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'DM Bé Nguyễn • SM Huyền Trang',
+    directLeader: 'DM Nguyễn Thị Bé • SM Trương Thị Huyền Trang',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 07/2022 • 8 năm Tài chính, Ngân hàng',
     industryKey: 'BANKING',
@@ -1485,7 +1485,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Sau 8 năm trong ngành Tài chính, Ngân hàng, chị tìm được chỗ phát triển lâu dài và văn hóa nâng đỡ chân thành tại Khu vực SG169.',
     editorialBio: [
-      'Dương Thị Lên có 8 năm làm trong ngành Tài chính, Ngân hàng trước khi gia nhập Manulife tháng 07/2022. Chị xem việc vào Hệ thống Green Power là một may mắn lớn của sự nghiệp.',
+      'Dương Thị Lên có 8 năm làm trong ngành Tài chính, Ngân hàng trước khi gia nhập Manulife tháng 07/2022. Chị xem việc vào Green Power Group là một may mắn lớn của sự nghiệp.',
       'Chị đạt danh hiệu quốc tế MDRT và Quản lý Xuất sắc tại Khu vực SG169. Chị đặt quyền lợi dài hạn của khách hàng lên hàng đầu, và muốn là người truyền động lực để từng cộng sự trong nhóm cùng vững vàng.',
     ],
     badges: ['MDRT', 'Quản lý Xuất sắc', '8 Năm Ngân Hàng'],
@@ -1551,7 +1551,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2021',
     tenureLabel: 'Gia nhập 2021 • 6 năm gắn bó cùng Manulife Việt Nam',
     industryKey: 'CORP_BIZ',
@@ -1586,7 +1586,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2021',
     tenureLabel: 'Gia nhập 09/2021 • 13 năm Kế toán (7 năm Kế toán trưởng)',
     industryKey: 'FINANCE_ACC',
@@ -1597,10 +1597,10 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: '13 năm Kế toán, Tài chính, 5 năm hoạch định bảo vệ gia đình tại Khu vực SG169',
     quote: 'Làm nghề tử tế, làm việc có trách nhiệm.',
     cardSummary:
-      'Sau 7 năm làm Kế toán trưởng doanh nghiệp sản xuất và bất động sản, chị vào Hệ thống Green Power trong mùa dịch 2021 để có thời gian bên con khi con vào lớp 1.',
+      'Sau 7 năm làm Kế toán trưởng doanh nghiệp sản xuất và bất động sản, chị vào Green Power Group trong mùa dịch 2021 để có thời gian bên con khi con vào lớp 1.',
     editorialBio: [
       'Đỗ Thị Kim Thi có 13 năm làm kế toán tài chính doanh nghiệp, trong đó 7 năm là Kế toán trưởng tại các doanh nghiệp sản xuất và bất động sản. Chị đến với Manulife tháng 09/2021, khi con vào lớp 1 và chị cần một công việc chủ động được thời gian.',
-      'Văn hóa làm nghề “có tâm, có tầm, chuẩn chỉnh, cho đi vô điều kiện” của Hệ thống Green Power đã giữ chị suốt 5 năm qua. Với tư duy mạch lạc của một Kế toán trưởng, Kim Thi giúp khách hàng nhìn rõ bức tranh tài chính tổng thể, và tìm những cộng sự cùng cách nghĩ để đi đường dài.',
+      'Văn hóa làm nghề “có tâm, có tầm, chuẩn chỉnh, cho đi vô điều kiện” của Green Power Group đã giữ chị suốt 5 năm qua. Với tư duy mạch lạc của một Kế toán trưởng, Kim Thi giúp khách hàng nhìn rõ bức tranh tài chính tổng thể, và tìm những cộng sự cùng cách nghĩ để đi đường dài.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '7 Năm Kế Toán Trưởng'],
     specialties: [
@@ -1617,7 +1617,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/kim-thi-2.jpg',
-        caption: 'Cùng tập thể quản lý Khu vực SG169, Hệ thống Green Power',
+        caption: 'Cùng tập thể quản lý Khu vực SG169, Green Power Group',
       },
       {
         src: '/images/leaders/gallery/kim-thi-3.jpg',
@@ -1635,7 +1635,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'SDM Lê Huyên • SRD Khánh Vân',
+    directLeader: 'SDM Lê Thị Huyên • SRD Khánh Vân',
     joinedYear: '2024',
     tenureLabel: 'Gia nhập 2024 • 10 năm Tài chính, Kế toán',
     industryKey: 'FINANCE_ACC',
@@ -1664,7 +1664,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ha-phi-yen-3.jpg',
-        caption: 'Cùng đội ngũ Hệ thống Green Power',
+        caption: 'Cùng đội ngũ Green Power Group',
       },
     ],
   },
@@ -1678,7 +1678,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'DM Hồng Hòa • SDM Diễm Ly',
+    directLeader: 'DM Hồng Hòa • SDM Hồ Thị Diễm Ly',
     joinedYear: '2024',
     tenureLabel: 'Gia nhập 2024 • 12 năm công tác trong lĩnh vực Y tế',
     industryKey: 'LAW_MED_INS',
@@ -1707,7 +1707,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thuy-trieu-2.jpg',
-        caption: 'Cùng tập thể quản lý Khu vực HCM69, Hệ thống Green Power',
+        caption: 'Cùng tập thể quản lý Khu vực HCM69, Green Power Group',
       },
       {
         src: '/images/leaders/gallery/thuy-trieu-3.jpg',
@@ -1735,7 +1735,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     highlightNote: '5 năm tại HCM69, tư duy chuẩn xác từ bộ phận QA ngân hàng quốc tế',
     quote: 'Làm đúng thì sẽ làm giỏi. Mỗi chữ ký trên hợp đồng là một lời hứa với cả gia đình.',
     cardSummary:
-      'Ban đầu chỉ định làm thêm khi còn ở bộ phận QA của Shinhan Bank, sau 5 năm bảo hiểm trở thành sự nghiệp chị gắn bó nhất, nhờ sự rõ ràng và đạo đức nghề của hệ thống.',
+      'Ban đầu chỉ định làm thêm khi còn ở bộ phận QA của Shinhan Bank, sau 5 năm bảo hiểm trở thành sự nghiệp chị gắn bó nhất, nhờ sự rõ ràng và đạo đức nghề của Green Power Group.',
     editorialBio: [
       'Võ Thị Quỳnh Thi từng làm ở bộ phận Đảm bảo Chất lượng (QA) của Ngân hàng Shinhan Việt Nam, rồi đến với Manulife năm 2021 qua lời giới thiệu của một đồng nghiệp. Ban đầu chị chỉ định làm thêm, nhưng sau 5 năm, đây là nghề chị muốn theo lâu dài nhất.',
       'Một người từng làm QA ngân hàng tin ở HCM69 vì sự rõ ràng, chủ động và đạo đức nghề. Với Quỳnh Thi, tư vấn là nói đúng sự thật để khách hàng hiểu rõ quyền lợi của mình và không thổi phồng, vì mỗi tên người thụ hưởng trên hợp đồng là một lời hứa với cả gia đình.',
@@ -1777,7 +1777,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Anh mang kinh nghiệm của một Giám đốc Kinh doanh với 15 năm trong sản xuất, thương mại vào môi trường có tâm và có tầm tại HCM69.',
     editorialBio: [
-      'Sau 15 năm làm Sale, Marketing và giữ vị trí Giám đốc Kinh doanh tại các doanh nghiệp sản xuất và thương mại, Tâm Hoài gia nhập Hệ thống Green Power tháng 09/2025. Anh tìm một môi trường vừa chủ động thời gian, vừa dùng được kinh nghiệm quản trị kinh doanh.',
+      'Sau 15 năm làm Sale, Marketing và giữ vị trí Giám đốc Kinh doanh tại các doanh nghiệp sản xuất và thương mại, Tâm Hoài gia nhập Green Power Group tháng 09/2025. Anh tìm một môi trường vừa chủ động thời gian, vừa dùng được kinh nghiệm quản trị kinh doanh.',
       'Sự nhiệt tình, chuyên nghiệp và cách làm nghề đàng hoàng của chị Khánh Vân và tập thể HCM69 đã giữ anh ở lại. Với Tâm Hoài, mỗi giải pháp là một cam kết và trách nhiệm trước những cột mốc lớn của gia đình khách hàng, chứ không chỉ là một sản phẩm tài chính.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', '15 Năm Giám Đốc Kinh Doanh'],
@@ -1795,7 +1795,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/tam-hoai-2.jpg',
-        caption: 'Phát triển đội ngũ tại Khu vực HCM69, Hệ thống Green Power',
+        caption: 'Phát triển đội ngũ tại Khu vực HCM69, Green Power Group',
       },
     ],
   },
@@ -1823,7 +1823,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từng làm tại phòng Bồi thường bảo hiểm phi nhân thọ, chị hiểu từng chữ trong điều khoản để thiết kế giải pháp “đúng và đủ”.',
     editorialBio: [
       'Khác nhiều người chuyển ngành từ lĩnh vực khác, Băng Tâm (Minh Phương) đã có chuyên môn tại Phòng Bồi thường của một doanh nghiệp bảo hiểm phi nhân thọ. Từng trực tiếp xử lý hồ sơ sự kiện bảo hiểm, chị biết rõ một hợp đồng chỉ bảo vệ được khi kê khai trung thực và thiết kế đúng bản chất ngay từ ngày ký.',
-      'Chị tìm một tập thể làm nghề đàng hoàng, thân tình và hỗ trợ lẫn nhau, nên gia nhập Hệ thống Green Power từ năm 2022 để tiếp tục làm bảo hiểm một cách chỉn chu.',
+      'Chị tìm một tập thể làm nghề đàng hoàng, thân tình và hỗ trợ lẫn nhau, nên gia nhập Green Power Group từ năm 2022 để tiếp tục làm bảo hiểm một cách chỉn chu.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Chuyên môn Bồi thường Bảo hiểm'],
     specialties: [
@@ -1856,7 +1856,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Tận mắt thấy người thân nhận quyền lợi bảo hiểm, chị từ tò mò thử sức thành gắn bó lâu dài với nghề.',
     editorialBio: [
       'Nhuần Vũ đến với bảo hiểm nhân thọ từ một trải nghiệm ngay trong gia đình. Thấy người thân nhận quyền lợi chi trả kịp thời từ hợp đồng, chị mới hiểu giá trị thật sau những trang điều khoản.',
-      'Chị nghỉ công việc kế toán để thử sức tại Khu vực SG168 thuộc Hệ thống Green Power từ năm 2022. Sự cẩn trọng của người làm kế toán cùng niềm tin vào sản phẩm đã giữ chị suốt 4 năm qua. Chị làm việc với khách hàng tận tâm và giản dị.',
+      'Chị nghỉ công việc kế toán để thử sức tại Khu vực SG168 thuộc Green Power Group từ năm 2022. Sự cẩn trọng của người làm kế toán cùng niềm tin vào sản phẩm đã giữ chị suốt 4 năm qua. Chị làm việc với khách hàng tận tâm và giản dị.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Quyền lợi Thực tế'],
     specialties: [
@@ -1886,7 +1886,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SDM Thuý Hoàng • SM Huyền Trang',
+    directLeader: 'SDM Hoàng Thị Kim Thuý • SM Trương Thị Huyền Trang',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • 9 năm Chăm sóc Khách hàng & 4 năm Manulife',
     industryKey: 'LAW_MED_INS',
@@ -1921,7 +1921,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'UM Ngọc Anh • DM Trà My • SRD Khánh Vân',
+    directLeader: 'UM Ngọc Anh • DM Nguyễn Thị Trà My • SRD Khánh Vân',
     joinedYear: '2026',
     tenureLabel: '5 năm Truyền thông & Tổ chức Sự kiện',
     industryKey: 'CORP_BIZ',
@@ -1964,7 +1964,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ Quản lý Nhân sự doanh nghiệp đến xây dựng nhóm kinh doanh theo nguyên tắc “hiểu đúng, làm đúng từ đầu”.',
     editorialBio: [
       'Từng công tác ở vị trí Quản lý Nhân sự doanh nghiệp, Nguyễn Ngọc Trâm biết đến cơ hội nghề nghiệp tại Manulife qua sự giới thiệu từ gia đình của Giám đốc Khu vực Đào Minh Phương.',
-      'Khi vào Khu vực SG168 thuộc Hệ thống Green Power, Ngọc Trâm ấn tượng với văn hóa hỗ trợ nhau và cách rèn nền tảng “hiểu đúng, làm đúng ngay từ đầu”. Hiện chị trực tiếp dẫn dắt đội ngũ, cam kết làm việc minh bạch với cả khách hàng lẫn cộng sự.',
+      'Khi vào Khu vực SG168 thuộc Green Power Group, Ngọc Trâm ấn tượng với văn hóa hỗ trợ nhau và cách rèn nền tảng “hiểu đúng, làm đúng ngay từ đầu”. Hiện chị trực tiếp dẫn dắt đội ngũ, cam kết làm việc minh bạch với cả khách hàng lẫn cộng sự.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Quản lý trẻ SG168'],
     specialties: ['Xây dựng & Đào tạo Đội ngũ', 'Hoạch định Bảo vệ Gia đình Trẻ'],
@@ -1980,7 +1980,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/ngoc-tram-3.jpg',
-        caption: 'Sinh hoạt tập thể tại Hệ thống Green Power',
+        caption: 'Sinh hoạt tập thể tại Green Power Group',
       },
     ],
   },
@@ -2006,9 +2006,9 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Đưa sự chính xác, cẩn trọng của 20 năm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM vào nghề tư vấn tài chính',
     quote: 'Tư vấn tử tế, giải pháp vững, theo khách hàng đến cùng.',
     cardSummary:
-      'Sau 20 năm công tác tại Viện Kiểm nghiệm Thuốc TP.HCM, chị tìm được động lực mới trong tập thể gồm người của nhiều ngành nghề tại Hệ thống Green Power.',
+      'Sau 20 năm công tác tại Viện Kiểm nghiệm Thuốc TP.HCM, chị tìm được động lực mới trong tập thể gồm người của nhiều ngành nghề tại Green Power Group.',
     editorialBio: [
-      'Sau 20 năm làm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM, Bùi Thị Thu Thảo đến với Manulife qua lời mời tìm hiểu giải pháp bảo vệ người trụ cột của một đồng nghiệp cũ, nay là tư vấn viên thuộc Hệ thống Green Power. Khi thử môi trường mới, chị nhanh chóng bị thuyết phục bởi sự hướng dẫn tận tình, văn hóa chia sẻ giữa các đồng nghiệp giỏi từ nhiều ngành nghề, và cách làm việc nghiêm túc của chị Khánh Vân.',
+      'Sau 20 năm làm Kiểm nghiệm Dược tại Viện Kiểm nghiệm Thuốc TP.HCM, Bùi Thị Thu Thảo đến với Manulife qua lời mời tìm hiểu giải pháp bảo vệ người trụ cột của một đồng nghiệp cũ, nay là tư vấn viên thuộc Green Power Group. Khi thử môi trường mới, chị nhanh chóng bị thuyết phục bởi sự hướng dẫn tận tình, văn hóa chia sẻ giữa các đồng nghiệp giỏi từ nhiều ngành nghề, và cách làm việc nghiêm túc của chị Khánh Vân.',
       'Ở vị trí Trưởng Nhóm Kinh doanh (UM) tại HCM69, điều Thảo Bùi coi trọng nhất là thiết kế giải pháp bảo vệ vừa với từng hoàn cảnh gia đình, để khách hàng hiểu rõ và tự giới thiệu cho người quen. Chị xây dựng đội ngũ theo phương châm “Dẫn dắt bằng sự chân thành, phát triển bằng năng lực, gắn kết bằng trách nhiệm”.',
     ],
     badges: [
@@ -2029,7 +2029,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/thao-bui-2.jpg',
-        caption: 'Cùng tập thể quản lý và đồng nghiệp Khu vực HCM69, Hệ thống Green Power',
+        caption: 'Cùng tập thể quản lý và đồng nghiệp Khu vực HCM69, Green Power Group',
       },
       {
         src: '/images/leaders/gallery/thao-bui-3.jpg',
@@ -2062,7 +2062,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Sau 18 năm trong ngành Tài chính, Chứng khoán, chị dám thử sức ở môi trường mới và đạt Manulife Pro Bạc chỉ sau 3 tháng, bằng số liệu rõ ràng và lời nói thật.',
     editorialBio: [
       'Hà Đỗ có 18 năm kinh nghiệm trong Tài chính, Chứng khoán và Kế toán Quản trị. Chị gia nhập Manulife để thử sức ở mảng hoạch định tài chính gần gũi hơn với từng gia đình. Nhờ làm đúng quy trình và học bài bản tại Khu vực HCM69, chị đạt cột mốc Manulife Pro Bạc chỉ sau 3 tháng.',
-      'Điều chị quý nhất tại Hệ thống Green Power là sự minh bạch và cách coi khách hàng như người thân. Nguyên tắc của Hà Đỗ là tư vấn bằng số liệu rõ ràng và lời nói thật: người tư vấn dám nói điều khách hàng cần nghe, kể cả khi họ chưa muốn nghe, thì mới có được niềm tin lâu dài.',
+      'Điều chị quý nhất tại Green Power Group là sự minh bạch và cách coi khách hàng như người thân. Nguyên tắc của Hà Đỗ là tư vấn bằng số liệu rõ ràng và lời nói thật: người tư vấn dám nói điều khách hàng cần nghe, kể cả khi họ chưa muốn nghe, thì mới có được niềm tin lâu dài.',
     ],
     badges: [
       'MBA Pro',
@@ -2088,7 +2088,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'HCM69',
-    directLeader: 'DM Trà My • SRD Khánh Vân',
+    directLeader: 'DM Nguyễn Thị Trà My • SRD Khánh Vân',
     joinedYear: '2026',
     tenureLabel: 'Gia nhập 2026 • 12 năm Đối tác Nhân sự Chiến lược (HRBP)',
     industryKey: 'HR_EDU',
@@ -2097,12 +2097,12 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       '12 năm kinh nghiệm Đối tác Nhân sự Chiến lược (HR Business Partner) tại các doanh nghiệp',
     teamScaleBadge: '12 năm HRBP • MBA Pro',
     highlightNote:
-      'Chủ động tìm đến Hệ thống Green Power sau 12 năm làm HR Business Partner, danh hiệu MBA Pro',
+      'Chủ động tìm đến Green Power Group sau 12 năm làm HR Business Partner, danh hiệu MBA Pro',
     quote: 'Phương án bảo hiểm tốt nhất là phương án bảo vệ phù hợp nhất.',
     cardSummary:
-      'Với 12 năm làm HR Business Partner, chị chủ động tìm đến Hệ thống Green Power vì hợp về sự chính trực và cách đối xử với con người.',
+      'Với 12 năm làm HR Business Partner, chị chủ động tìm đến Green Power Group vì hợp về sự chính trực và cách đối xử với con người.',
     editorialBio: [
-      'Sau 12 năm đảm nhiệm vai trò Đối tác Nhân sự Chiến lược (HR Business Partner) chuyên làm việc với ban lãnh đạo doanh nghiệp về nhân sự và phúc lợi, Vũ Thị Ngọc Anh chủ động tìm hiểu rồi gia nhập Khu vực HCM69 thuộc Hệ thống Green Power.',
+      'Sau 12 năm đảm nhiệm vai trò Đối tác Nhân sự Chiến lược (HR Business Partner) chuyên làm việc với ban lãnh đạo doanh nghiệp về nhân sự và phúc lợi, Vũ Thị Ngọc Anh chủ động tìm hiểu rồi gia nhập Khu vực HCM69 thuộc Green Power Group.',
       'Tại đây, chị thấy hợp với tinh thần đoàn kết và hỗ trợ lẫn nhau giữa các thành viên. Ở vị trí Trưởng Nhóm Kinh doanh (UM) và quản lý MBA Pro, Ngọc Anh đặt sự chính trực, biết lắng nghe và lợi ích thực của khách hàng lẫn đội ngũ lên hàng đầu.',
     ],
     badges: [
@@ -2143,7 +2143,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Chị đến với Khu vực SG168 qua sự dẫn dắt của Giám đốc Khu vực Đào Minh Phương, và quý văn hóa sẵn sàng nâng đỡ nhau tiến bộ mỗi ngày.',
     editorialBio: [
-      'Trần Xuân Mai đến với Manulife Việt Nam nhờ sự dẫn dắt trực tiếp của Giám đốc Khu vực Đào Minh Phương tại SG168. Điều giữ chị ở lại Hệ thống Green Power là văn hóa tập thể sẵn sàng giúp nhau, chia sẻ nghiệp vụ và tiếp thêm động lực trong từng giai đoạn làm nghề.',
+      'Trần Xuân Mai đến với Manulife Việt Nam nhờ sự dẫn dắt trực tiếp của Giám đốc Khu vực Đào Minh Phương tại SG168. Điều giữ chị ở lại Green Power Group là văn hóa tập thể sẵn sàng giúp nhau, chia sẻ nghiệp vụ và tiếp thêm động lực trong từng giai đoạn làm nghề.',
       'Ở vai trò Trưởng Nhóm Kinh doanh (UM), Xuân Mai theo đuổi mục tiêu tìm hiểu kỹ nhu cầu thực tế để đưa ra giải pháp bảo vệ minh bạch và lâu dài cho từng khách hàng.',
     ],
     badges: ['Trưởng Nhóm Kinh doanh (UM)', 'Khu vực SG168'],
@@ -2175,7 +2175,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     cardSummary:
       'Từ 10 năm công tác ngoại giao tại Tổng Lãnh sự quán Kuwait và điều hành công ty nhập khẩu đến danh hiệu MDRT 2027, chị muốn nhân rộng cách làm bảo hiểm xanh, sạch tại HCM69.',
     editorialBio: [
-      'Lê Thị Cẩm Hương có 10 năm công tác ngoại giao tại Tổng Lãnh sự quán Kuwait và tự điều hành một doanh nghiệp nhập khẩu, nên hiểu rõ việc chủ động chuẩn bị tài chính cho cá nhân và gia đình. Trước khi vào nghề, chị là khách hàng của nhiều công ty bảo hiểm khác nhau. Góc nhìn khắt khe của một người mua có kinh nghiệm đã đưa chị đến với Manulife, và chị gắn bó gần 6 năm qua tại Khu vực HCM69 thuộc Hệ thống Green Power.',
+      'Lê Thị Cẩm Hương có 10 năm công tác ngoại giao tại Tổng Lãnh sự quán Kuwait và tự điều hành một doanh nghiệp nhập khẩu, nên hiểu rõ việc chủ động chuẩn bị tài chính cho cá nhân và gia đình. Trước khi vào nghề, chị là khách hàng của nhiều công ty bảo hiểm khác nhau. Góc nhìn khắt khe của một người mua có kinh nghiệm đã đưa chị đến với Manulife, và chị gắn bó gần 6 năm qua tại Khu vực HCM69 thuộc Green Power Group.',
       'Điều giữ Cẩm Hương ở lại lâu dài là cách làm nghề đặt chữ Tâm và quyền lợi lâu dài của khách hàng lên trước. Chị lần lượt đạt MDRT 2023, Quản lý MBA 2023, Manulife Pro Bạch Kim và sớm hoàn thành tiêu chí MDRT 2027. Với tâm niệm “Làm đúng trước, làm giỏi sau; làm người trước, làm nghề sau”, chị muốn có thêm nhiều tư vấn viên làm nghề xanh, sạch, đúng chuẩn tại Việt Nam.',
     ],
     badges: ['2x MDRT (2023, 2027)', 'MBA 2023', 'Manulife Pro Bạch Kim', 'M-Star 2026'],
@@ -2224,7 +2224,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từ Quản lý Nhân sự quen lắng nghe đến 2 năm liên tiếp đạt MDRT, trong môi trường hỗ trợ nhau không vụ lợi tại HCM69.',
     editorialBio: [
       'Giai đoạn từ 2020 đến 2021, đại dịch khiến Hồng Khánh (khi ấy là Quản lý Nhân sự) nghĩ nhiều hơn về việc dự phòng rủi ro cuộc sống. Nghe một đồng nghiệp cũ chia sẻ, chị quyết định tìm hiểu bài bản và thử sức với hoạch định bảo hiểm nhân thọ.',
-      'Sau các chương trình huấn luyện tại Khu vực HCM69 thuộc Hệ thống Green Power, chị bị thuyết phục bởi sự nhiệt tình, tinh thần nâng đỡ nhau không vụ lợi và chữ “TÂM” làm nghề của tập thể lãnh đạo. Chị chọn nơi đây làm nghề lâu dài và lần lượt đạt MDRT, FC Platinum.',
+      'Sau các chương trình huấn luyện tại Khu vực HCM69 thuộc Green Power Group, chị bị thuyết phục bởi sự nhiệt tình, tinh thần nâng đỡ nhau không vụ lợi và chữ “TÂM” làm nghề của tập thể lãnh đạo. Chị chọn nơi đây làm nghề lâu dài và lần lượt đạt MDRT, FC Platinum.',
     ],
     badges: ['2x MDRT', 'FC Platinum', 'MBA', 'Quản lý Xuất sắc'],
     specialties: [
@@ -2287,7 +2287,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2022',
     tenureLabel: 'Gia nhập 2022 • 5 năm BHNT & 3 năm Biên phiên dịch BH',
     industryKey: 'LAW_MED_INS',
@@ -2301,7 +2301,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Từng trải qua nỗi vất vả khi gia đình mất người trụ cột kinh tế từ năm cấp 2, cùng 3 năm dịch thuật chuyên ngành bảo hiểm, chị theo nghề tư vấn tài chính theo chuẩn quốc tế LIMRA.',
     editorialBio: [
       'Từ khi còn học cấp 2, Tôn Nữ Thuỳ Dương đã biết gia đình chật vật thế nào khi thiếu người trụ cột kinh tế. Trải nghiệm ấy cùng 3 năm làm Biên phiên dịch ngành bảo hiểm phi nhân thọ khiến chị tin bảo hiểm nhân thọ là sự bảo vệ cần thiết cho người mình thương, không phải thứ xa xỉ.',
-      'Thuỳ Dương chọn Manulife và Khu vực SG169 thuộc Hệ thống Green Power từ năm 2022 vì chương trình đào tạo bài bản. Chị đạt danh hiệu Manulife Pro và Chứng nhận Quốc tế MFA do LIMRA cấp, phục vụ khách hàng tận tâm và đúng chuyên môn.',
+      'Thuỳ Dương chọn Manulife và Khu vực SG169 thuộc Green Power Group từ năm 2022 vì chương trình đào tạo bài bản. Chị đạt danh hiệu Manulife Pro và Chứng nhận Quốc tế MFA do LIMRA cấp, phục vụ khách hàng tận tâm và đúng chuyên môn.',
     ],
     badges: ['Chứng nhận MFA của LIMRA', 'Manulife Pro', '8 Năm Ngành Bảo Hiểm'],
     specialties: [
@@ -2322,7 +2322,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2025',
     tenureLabel: 'Gia nhập 2025 • Controller Maersk & 3 năm tại Nhật Bản',
     industryKey: 'FINANCE_ACC',
@@ -2356,7 +2356,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       },
       {
         src: '/images/leaders/gallery/tam-nguyen-3.jpg',
-        caption: 'Cùng đội ngũ Khu vực SG169, Hệ thống Green Power',
+        caption: 'Cùng đội ngũ Khu vực SG169, Green Power Group',
       },
     ],
   },
@@ -2370,7 +2370,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
     tierKey: 'UM',
     tierLabel: 'Trưởng Nhóm Kinh doanh',
     unitCode: 'SG169',
-    directLeader: 'SM Huyền Trang',
+    directLeader: 'SM Trương Thị Huyền Trang',
     joinedYear: '2024',
     tenureLabel: 'Gia nhập 2024 • 7 năm Thẩm định Ngân hàng & 11 năm Doanh nghiệp',
     industryKey: 'BANKING',
@@ -2385,7 +2385,7 @@ export const REGIONAL_LEADERS: RegionalLeader[] = [
       'Sau 18 năm làm thẩm định ngân hàng và doanh nghiệp, cùng 2 lần gia đình trực tiếp nhận quyền lợi bồi thường, chị theo đuổi “Bảo hiểm tử tế” tại SG169.',
     editorialBio: [
       'Nguyễn Thị Hương Giang có 7 năm làm Chuyên viên Thẩm định Tài chính tại ngân hàng và 11 năm làm việc trong doanh nghiệp, quen đánh giá mọi kế hoạch tài chính bằng con số thực. Bước ngoặt đưa chị đến với nghề tư vấn là trải nghiệm của chính mình: hai lần bản thân và gia đình nhận quyền lợi bồi thường y tế, chị thấy bảo hiểm là chỗ dựa đúng lúc cần nhất.',
-      'Hương Giang gia nhập Khu vực SG169 thuộc Hệ thống Green Power từ năm 2024 cùng Giám đốc Khu vực Huyền Trang. Chị thấy hợp với tập thể lấy “Bảo hiểm tử tế” làm kim chỉ nam, đúng với cách sống tử tế và văn minh mà chị giữ.',
+      'Hương Giang gia nhập Khu vực SG169 thuộc Green Power Group từ năm 2024 cùng Giám đốc Khu vực Huyền Trang. Chị thấy hợp với tập thể lấy “Bảo hiểm tử tế” làm kim chỉ nam, đúng với cách sống tử tế và văn minh mà chị giữ.',
     ],
     badges: ['7 Năm Thẩm Định Ngân Hàng', '11 Năm Doanh Nghiệp', 'Khu vực SG169'],
     specialties: [
@@ -2413,7 +2413,7 @@ export const REGIONAL_CULTURE_MOMENTS: RegionalCultureMoment[] = [
   {
     id: 'hop-ban-dieu-hanh',
     src: '/images/VanPhong_ChiVanDieuHanhCuocHopBanBauDuc.jpg',
-    tag: 'QUẢN TRỊ HỆ THỐNG',
+    tag: 'QUẢN TRỊ ĐỘI NGŨ',
     title: 'Họp điều hành cùng đội ngũ quản lý các khu vực',
     subtitle:
       'Định hướng tư vấn và tiêu chuẩn chăm sóc khách hàng được thống nhất từ Ban Điều hành đến từng khu vực.',

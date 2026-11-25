@@ -377,7 +377,7 @@ export const JourneysPage: React.FC = () => {
       note: prev.note
         ? prev.note
         : chapter.ctaMode === 'career'
-        ? `Tôi vừa xem chương "${chapter.milestoneBadge}" và mong muốn tìm hiểu lộ trình phát triển sự nghiệp cùng Hệ thống Green Power.`
+        ? `Tôi vừa xem chương "${chapter.milestoneBadge}" và mong muốn tìm hiểu lộ trình phát triển sự nghiệp cùng Green Power Group.`
         : `Tôi vừa xem chuyên trang Những Chuyến Đi và mong muốn trao đổi thêm về kế hoạch tài chính cho gia đình.`,
     }));
     setTimeout(() => {
@@ -487,7 +487,7 @@ export const JourneysPage: React.FC = () => {
               className="group whitespace-nowrap inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-[2px] bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/25 hover:border-[#0A3622] text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold transition-colors"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#008746] group-hover:bg-[#E8D3A6] transition-colors shrink-0" />
-              <span>Green Power</span>
+              <span>Green Power Group</span>
             </a>
             <a
               href="#ket-noi-dong-hanh"
@@ -517,10 +517,10 @@ export const JourneysPage: React.FC = () => {
                 >
                   <div>
                     <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
-                      Hệ Thống Kinh Doanh
+                      Ban Điều Hành & Đội Ngũ
                     </span>
                     <span className="font-serif text-base font-medium text-white">
-                      Green Power • 4 Khu vực
+                      Green Power Group • 4 Khu vực
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
@@ -869,7 +869,7 @@ export const JourneysPage: React.FC = () => {
                   <div className="sm:col-span-7 p-5 sm:p-6 flex flex-col justify-between gap-4">
                     <div className="space-y-2">
                       <div className="text-[10px] uppercase tracking-[0.16em] text-[#E8D3A6] font-semibold">
-                        Hệ thống Green Power
+                        Green Power Group
                       </div>
                       <h3 className="font-serif text-[20px] sm:text-xl text-white leading-[1.3]">
                         Giờ đi cả đoàn quản lý
@@ -1683,13 +1683,13 @@ export const JourneysPage: React.FC = () => {
                     <span>Dành cho ứng viên quản lý GTF và cộng sự</span>
                   </div>
                   <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Gia nhập Hệ thống Green Power (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến, để cùng xây đội ngũ và cùng có mặt trong các chuyến vinh danh M-Star, MDRT năm châu.
+                    Gia nhập Green Power Group (HCM69, SG168, SG169, MN111) với lộ trình kèm cặp thực chiến, để cùng xây đội ngũ và cùng có mặt trong các chuyến vinh danh M-Star, MDRT năm châu.
                   </p>
                   <a
                     href="/green-power"
                     className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#E8D3A6] hover:text-white font-semibold pt-1"
                   >
-                    <span>Xem hồ sơ 48 Quản lý Green Power</span>
+                    <span>Xem hồ sơ 48 Quản lý Green Power Group</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -1864,7 +1864,7 @@ export const JourneysPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Khánh Vân và những chuyến đi, Hệ thống Green Power (Manulife Việt Nam)
+              Khánh Vân và những chuyến đi, Green Power Group (Manulife Việt Nam)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#9BB0A5]">
@@ -1873,7 +1873,7 @@ export const JourneysPage: React.FC = () => {
             </a>
             <span>•</span>
             <a href="/green-power" className="hover:text-white transition-colors">
-              Hệ thống Green Power
+              Green Power Group
             </a>
             <span>•</span>
             <a
@@ -2145,7 +2145,7 @@ export const JourneysPage: React.FC = () => {
                   <div className="space-y-1 max-w-xl">
                     <span className="text-[10px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
                       {selectedChapter.ctaMode === 'career'
-                        ? 'Làm nghề cùng Green Power'
+                        ? 'Làm nghề cùng Green Power Group'
                         : 'Lập kế hoạch tài chính cho gia đình'}
                     </span>
                     <p className="font-serif text-lg sm:text-xl text-white leading-snug">

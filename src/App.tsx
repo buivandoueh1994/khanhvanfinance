@@ -285,7 +285,7 @@ Cơn sốt mọc răng hay cảm cúm chuyển mùa thì bố mẹ nào cũng th
 
 ## Thấu cảm không có nghĩa là dễ dãi
 
-Khi biết Vân theo đuổi phong cách lãnh đạo thấu cảm trong một hệ thống phần lớn là phụ nữ có gia đình, không ít người nghĩ môi trường ấy hẳn mềm mỏng, xuề xòa và ít áp lực.
+Khi biết Vân theo đuổi phong cách lãnh đạo thấu cảm trong một đội ngũ phần lớn là phụ nữ có gia đình, không ít người nghĩ môi trường ấy hẳn mềm mỏng, xuề xòa và ít áp lực.
 
 Điều hành một vùng kinh doanh hơn 500 nhân sự suốt nhiều năm cho Vân thấy điều ngược lại. Tập thể thiếu kỷ luật thì khó có sự bình yên lâu dài. Thấu cảm và kỷ luật đi cùng nhau được, miễn là người lãnh đạo phân định rõ hai ranh giới:
 
@@ -321,11 +321,11 @@ Người dẫn đầu giữ kỷ luật với bản thân trước thì không p
     readTime: '5 phút đọc',
     featured: false,
     image: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
-    imageCaption: 'Khánh Vân cùng Ban Điều Hành Hệ thống, nơi sự điềm đạm và khả năng lắng nghe là điểm tựa uy tín.',
+    imageCaption: 'Khánh Vân cùng Ban Điều Hành Green Power Group, nơi sự điềm đạm và khả năng lắng nghe là điểm tựa uy tín.',
     title: 'Người hướng nội làm tư vấn: điềm đạm và biết lắng nghe là lợi thế cạnh tranh',
     excerpt:
-      'Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',
-    content: `*Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Vân hiểu vì sao các bạn nghĩ vậy. Nhưng quan sát hơn 500 nhân sự trong hệ thống, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ chỉ thiếu người nói đúng.*
+      'Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Nhưng quan sát hơn 500 nhân sự trong đội ngũ, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ thiếu người nói đúng.',
+    content: `*Vân nghe rất nhiều câu này từ các bạn làm chuyên môn sâu: “Em hướng nội, ngại đám đông, chắc em không hợp với nghề tư vấn chị ạ.” Vân hiểu vì sao các bạn nghĩ vậy. Nhưng quan sát hơn 500 nhân sự trong đội ngũ, Vân thấy ngược lại. Khách hàng bây giờ không thiếu người nói hay, họ chỉ thiếu người nói đúng.*
 
 ## Nói trôi chảy chưa đủ để thuyết phục
 
@@ -803,7 +803,7 @@ Năm 2018, khi chuyển sang Manulife Việt Nam để gây dựng doanh nghiệ
 
 Sai lầm lớn nhất của nhiều người khi chuyển từ làm công ăn lương sang làm chủ hoặc tư vấn tài chính độc lập là bước đi với tài khoản dự phòng mỏng. Khi áp lực cơm áo đè nặng từ tháng thứ hai, thứ ba, người làm nghề rất dễ mất bình tĩnh, nôn nóng chốt hợp đồng bằng mọi giá, hoặc bỏ cuộc ngay trước khi kịp có kết quả.
 
-Nguyên tắc Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Hệ thống Green Power trước khi các bạn chuyển nghề hẳn là:
+Nguyên tắc Vân luôn chia sẻ với 64 Quản lý cấp cao (F1) trong Green Power Group trước khi các bạn chuyển nghề hẳn là:
 
 - **Tính chính xác mức chi tiêu thiết yếu (Survival Number):** Gồm học phí của con, chi phí sinh hoạt gia đình, phụng dưỡng cha mẹ và các khoản trả góp cố định mỗi tháng.
 - **Để riêng 6 đến 12 tháng chi phí này trong một tài khoản thanh khoản:** Khoản tiền này không dùng để đầu tư mạo hiểm hay chi tiêu phát sinh.
@@ -849,12 +849,12 @@ Sau tất cả những con số trong bảng tính, tài sản lớn nhất giú
     imageCaption: 'Chị Vân cùng đội ngũ quản lý kế cận trên bục vinh danh Manulife Talent Attractor (MTA).',
     title: 'Ba Phẩm Chất Của Người Quản Lý Giỏi Theo Kinh Nghiệm Của Vân',
     excerpt:
-      'Làm việc cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Hệ thống Green Power, Vân thấy thước đo của người lãnh đạo không phải là tự mình sáng nhất, mà là giúp từng cộng sự phát huy thế mạnh riêng của họ.',
+      'Làm việc cùng 64 Quản lý cấp cao và hơn 500 nhân sự tại Green Power Group, Vân thấy thước đo của người lãnh đạo không phải là tự mình sáng nhất, mà là giúp từng cộng sự phát huy thế mạnh riêng của họ.',
     content: `*Khi mới lên quản lý từ vị trí ngôi sao bán hàng (Top Sales), cái bẫy dễ mắc nhất là cố biến tất cả nhân sự thành “bản sao” của mình. Từ những viên gạch đầu tiên năm 2018 đến khi nhận giải “Nhà Quản lý Xuất sắc và Đáng tin cậy nhất Châu Á” (2021), Vân rút ra một điều: quyền lực áp đặt chỉ tạo ra sự tuân phục ngắn hạn, còn sự thấu cảm đi cùng kỷ luật mới tạo ra một tổ chức tự vận hành bền.*
 
 ## 1. Lắng Nghe Để Hiểu Người Và Đặt Đúng Người Vào Đúng Chỗ
 
-Một đội ngũ hơn 500 người không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) làm việc trực tiếp với Vân tại Hệ thống Green Power, mỗi người vào nghề với xuất phát điểm và tính cách khác nhau. Có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, có những người mẹ bỉm sữa dịu dàng và rất biết lắng nghe.
+Một đội ngũ hơn 500 người không thể vận hành bằng một công thức rập khuôn. Trong 64 anh chị Quản lý cấp cao (F1) làm việc trực tiếp với Vân tại Green Power Group, mỗi người vào nghề với xuất phát điểm và tính cách khác nhau. Có người từng là cán bộ ngân hàng sắc bén về con số, có người là chủ doanh nghiệp quyết đoán, có những người mẹ bỉm sữa dịu dàng và rất biết lắng nghe.
 
 Nếu người lãnh đạo chỉ dùng một thước đo để đánh giá, mình sẽ vô tình làm thui chột tài năng của cộng sự. Lãnh đạo bằng sự thấu cảm bắt đầu từ quan sát kỹ và lắng nghe không định kiến:
 
@@ -872,7 +872,7 @@ Cách điều hành Vân theo đuổi là **“Lãnh đạo Phục vụ (Servant
 - **Chuẩn mực trong từng chi tiết nhỏ:** Từ việc có mặt đúng giờ ở các buổi huấn luyện sáng, tác phong chỉn chu, đến sự minh bạch, sòng phẳng trong mọi chính sách thi đua của khu vực.
 - **Truyền nghề theo quy trình “4 Bước Thực Chiến”:** Thay vì chỉ giao chỉ tiêu rồi ngồi chờ báo cáo, Vân cùng các Giám đốc và Quản lý cấp cao áp dụng nguyên tắc: *Nói cho nghe, làm mẫu cho xem, cùng làm thực tế, rút kinh nghiệm và tháo gỡ tại chỗ*.
 
-Cách rèn kỹ và kèm sát đó giúp Hệ thống Green Power đạt kết quả hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi chắc, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
+Cách rèn kỹ và kèm sát đó giúp Green Power Group đạt kết quả hiếm có trong ngành vào năm 2025: cùng lúc giữ vị trí **Top 1 Toàn quốc về Doanh số (FYP)** và **Top 1 về Tỷ lệ Duy trì Hợp đồng (Persistency)**. Đi nhanh nhưng phải đi chắc, đó là văn hóa được truyền từ người đứng đầu xuống từng tư vấn viên mới vào nghề.
 
 ## 3. Lấy Sự Trưởng Thành Của Cộng Sự Làm Thước Đo
 
@@ -907,7 +907,7 @@ Với Vân, thành tựu lớn nhất của một người lãnh đạo không p
 
 Lý do không phải vì công việc cũ không tốt. ANZ đã rèn cho Vân kỷ luật kiểm soát rủi ro và tư duy quản lý tài sản bài bản. Nhưng ở tuổi 30, nhìn con gái lớn và con trai nhỏ lớn lên từng ngày, Vân thấy hai giới hạn của con đường làm công ăn lương: thu nhập có trần cố định, và thời gian bị đóng khung từ sáng sớm đến tối muộn.
 
-Vân muốn một sự nghiệp mà mình chủ động nhịp làm việc: vừa phát triển được hệ thống kinh doanh không giới hạn, vừa sắp xếp được thời gian để không lỡ những cột mốc lớn của các con.
+Vân muốn một sự nghiệp mà mình chủ động nhịp làm việc: vừa phát triển được đội ngũ kinh doanh không giới hạn, vừa sắp xếp được thời gian để không lỡ những cột mốc lớn của các con.
 
 ## Bớt Cảm Giác “Mắc Nợ Hai Đầu” Bằng Ranh Giới Rõ Ràng
 
@@ -965,7 +965,7 @@ Vì vậy, nguyên tắc đầu tiên của một cựu Banker là: **Làm chắ
 
 ## Nguyên Tắc 2: Kiềng 3 Chân Và Phân Bổ “Đúng & Đủ” (10 Đến 15% Thu Nhập)
 
-Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt nhất, mà là hợp đồng **được duy trì đủ lâu đến đúng lúc gia đình cần**. Vì vậy, nhiều năm qua Hệ thống Green Power luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với doanh thu.
+Một hợp đồng bảo hiểm hay kế hoạch tài chính tốt nhất không phải là hợp đồng đắt nhất, mà là hợp đồng **được duy trì đủ lâu đến đúng lúc gia đình cần**. Vì vậy, nhiều năm qua Green Power Group luôn đặt chỉ số **Tỷ lệ Duy trì Hợp đồng (Persistency Top 1 Toàn quốc)** ngang hàng với doanh thu.
 
 Để dòng tiền gia đình thông suốt trong 15 đến 20 năm, Vân luôn khuyên khách hàng lập mô hình **“Kiềng 3 Chân Tài Chính”**:
 
@@ -1002,7 +1002,7 @@ Kiếm được nhiều tiền giúp gia đình sống tiện nghi ở hiện t�
     imageCaption: 'Chị Vân tập luyện thể lực đều đặn mỗi tuần, giúp giữ đầu óc tỉnh táo và sức bền khi làm quản lý.',
     title: 'Tập Gym Đều Và Bài Học Về Sức Bền Của Người Dẫn Đầu Đội Ngũ',
     excerpt:
-      'Điều hành hệ thống hơn 500 nhân sự và 64 quản lý cấp cao cần thể lực dẻo dai. Với Vân, phòng tập, khu vườn nhỏ và quản lý tài chính đều theo chung một quy luật: kết quả vững đến từ thói quen lặp lại mỗi ngày.',
+      'Điều hành đội ngũ hơn 500 nhân sự và 64 quản lý cấp cao cần thể lực dẻo dai. Với Vân, phòng tập, khu vườn nhỏ và quản lý tài chính đều theo chung một quy luật: kết quả vững đến từ thói quen lặp lại mỗi ngày.',
     content: `*Bạn bè và cộng sự hay hỏi Vân: “Làm sao chị luôn giữ được năng lượng tốt và sự điềm tĩnh khi vừa điều hành vùng kinh doanh hơn 500 nhân sự, vừa cố vấn khách hàng và chăm sóc gia đình?” Câu trả lời của Vân không nằm ở kỹ thuật quản trị phức tạp. Nó bắt đầu từ những giờ tập đổ mồ hôi đều đặn mỗi tuần.*
 
 ## Phòng Tập Và Quản Lý Có Chung Một Quy Luật: Lặp Lại Đều
@@ -1018,7 +1018,7 @@ Quản lý đội ngũ và tích lũy tài sản cũng như vậy. Top 1 toàn q
 
 ## Từ “Ba Tháng Trắng Tay” Đến Đỉnh Cao, Sức Bền Tinh Thần Bắt Đầu Từ Thể Lực
 
-Nhìn lại gần hai thập kỷ làm nghề, từ những ngày đầu chuyển sang bộ phận kinh doanh tại ngân hàng ANZ với 3 tháng liên tiếp không có nổi một khách hàng, đến lúc dẫn dắt hệ thống vượt qua đại dịch năm 2021 và nhận giải Nhà Quản lý Xuất sắc nhất Châu Á, bài học lớn nhất của Vân là: **Người đi xa nhất không phải người chạy nhanh nhất ở vạch xuất phát, mà là người đủ sức bền để không bỏ cuộc giữa chừng.**
+Nhìn lại gần hai thập kỷ làm nghề, từ những ngày đầu chuyển sang bộ phận kinh doanh tại ngân hàng ANZ với 3 tháng liên tiếp không có nổi một khách hàng, đến lúc dẫn dắt đội ngũ vượt qua đại dịch năm 2021 và nhận giải Nhà Quản lý Xuất sắc nhất Châu Á, bài học lớn nhất của Vân là: **Người đi xa nhất không phải người chạy nhanh nhất ở vạch xuất phát, mà là người đủ sức bền để không bỏ cuộc giữa chừng.**
 
 Khi cơ thể khỏe và nhịp sinh học ổn định, cách mình đối diện áp lực cũng khác. Trước một biến động thị trường hay một bài toán nhân sự khó, người lãnh đạo có thể lực tốt giữ được nhịp thở bình tĩnh, không hoảng và không truyền căng thẳng sang cả đội. Vân vẫn giữ một câu làm kim chỉ nam nhiều năm nay: *“Cứ đi rồi sẽ đến, chỉ cần hướng về mặt trời”*.
 
@@ -1510,7 +1510,7 @@ export function App() {
     { figure: 'Top 1', unit: 'Toàn quốc ANZ', detail: 'Dẫn đầu doanh số thế chấp năm 2017' },
     { figure: 'Top 1', unit: 'Lãnh đạo Châu Á', detail: 'Asia Trusted Awards Winner 2021' },
     { figure: '64', unit: 'Quản lý cấp cao', detail: 'Chị trực tiếp dẫn dắt' },
-    { figure: '500+', unit: 'Nhân sự hệ thống', detail: 'Chị cùng điều hành' },
+    { figure: '500+', unit: 'Nhân sự Green Power', detail: 'Chị cùng điều hành' },
     { figure: '2 × Top 1', unit: 'FYP & Duy trì 2025', detail: 'Dẫn đầu cả FYP lẫn tỷ lệ duy trì hợp đồng' },
   ];
 
@@ -1595,7 +1595,7 @@ export function App() {
               className="group whitespace-nowrap inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-[2px] bg-[#EBF2EE] hover:bg-[#0A3622] text-[#0A3622] hover:text-[#FAF9F5] border border-[#0A3622]/25 hover:border-[#0A3622] text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.16em] font-semibold transition-colors"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#008746] group-hover:bg-[#E8D3A6] transition-colors shrink-0" />
-              <span>Green Power</span>
+              <span>Green Power Group</span>
             </a>
 
             <a
@@ -1617,7 +1617,7 @@ export function App() {
               className="lg:hidden bg-[#FAF9F5] border-b border-[#E4E1D8] overflow-hidden shadow-[0_18px_36px_-18px_rgba(10,54,34,0.22)]"
             >
               <div className="px-5 py-5 flex flex-col gap-2 max-h-[calc(100dvh-64px)] overflow-y-auto">
-                {/* #1 Priority Flagship Card: Hệ thống Green Power */}
+                {/* #1 Priority Flagship Card: Green Power Group */}
                 <a
                   href="/green-power"
                   onClick={() => setMobileMenuOpen(false)}
@@ -1625,10 +1625,10 @@ export function App() {
                 >
                   <div className="min-w-0">
                     <span className="text-[9.5px] uppercase tracking-[0.18em] text-[#E8D3A6] font-semibold block">
-                      Hệ Thống Kinh Doanh
+                      Ban Điều Hành & Đội Ngũ
                     </span>
                     <span className="font-serif text-base font-medium text-white block truncate mt-0.5">
-                      Green Power • 4 Khu vực
+                      Green Power Group • 4 Khu vực
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#E8D3A6] shrink-0" />
@@ -1785,7 +1785,7 @@ export function App() {
                 </div>
                 <div className="border-l border-[#E4E1D8] pl-4">
                   <div className="font-serif text-2xl sm:text-3xl text-[#0A3622] font-normal leading-none">500+</div>
-                  <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Nhân Sự Hệ Thống</div>
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-[#858E89] mt-1.5 font-medium">Nhân Sự Đội Ngũ</div>
                 </div>
               </div>
             </div>
@@ -1797,7 +1797,7 @@ export function App() {
                   setLightbox({
                     src: '/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg',
                     fig: 'ĐỘI NGŨ QUẢN LÝ',
-                    title: 'Khánh Vân cùng hơn 35 quản lý cấp cao và hệ thống hơn 500 nhân sự',
+                    title: 'Khánh Vân cùng hơn 35 quản lý cấp cao và đội ngũ hơn 500 nhân sự',
                     subtitle:
                       'Chị Khánh Vân (áo vest trắng, ngồi giữa) cùng đội ngũ quản lý và chuyên viên tại văn phòng Manulife Việt Nam.',
                   })
@@ -2055,7 +2055,7 @@ export function App() {
                   Năm 2018, chị rời ngân hàng nước ngoài sang Manulife Việt Nam để xây sự nghiệp riêng. Chị mang theo thói quen kiểm soát rủi ro của một banker: tư vấn đúng và đủ, và coi việc khách gắn bó lâu dài là danh dự nghề.
                 </p>
                 <p className="text-[15px] text-[#28322D] leading-[1.85] font-normal">
-                  Năm 2025, chị cùng hệ thống giữ hai vị trí dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ hoàn thành chỉ tiêu doanh số mới (FYP)</strong> và <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ tỷ lệ duy trì hợp đồng năm 2</strong>. Với Vân, kết quả này cho thấy muốn tăng trưởng bền thì phải làm đúng chuẩn và giữ chữ Tín.
+                  Năm 2025, chị cùng Green Power Group giữ hai vị trí dẫn đầu toàn quốc: <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ hoàn thành chỉ tiêu doanh số mới (FYP)</strong> và <strong className="font-semibold text-[#0A3622]">Top 1 DRD+ tỷ lệ duy trì hợp đồng năm 2</strong>. Với Vân, kết quả này cho thấy muốn tăng trưởng bền thì phải làm đúng chuẩn và giữ chữ Tín.
                 </p>
               </div>
             </div>
@@ -2560,7 +2560,7 @@ export function App() {
                     href="/green-power"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-white/8 hover:bg-white/15 text-[#FAF9F5] border border-white/20 text-[11px] uppercase tracking-[0.16em] font-semibold rounded-[3px] transition-colors min-h-[46px]"
                   >
-                    <span>Xem Hệ thống Green Power</span>
+                    <span>Xem Green Power Group</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -2687,7 +2687,7 @@ export function App() {
                 </div>
 
                 <p className="text-sm text-[#28322D] font-normal leading-[1.75]">
-                  Chương trình kèm cặp 1-1 trực tiếp với Khánh Vân: quy trình vận hành và cách xây một hệ thống kinh doanh độc lập theo chuẩn Top 1 Châu Á.
+                  Chương trình kèm cặp 1-1 trực tiếp với Khánh Vân: quy trình vận hành và cách xây một đội ngũ kinh doanh độc lập theo chuẩn Top 1 Châu Á.
                 </p>
 
                 <div className="space-y-2.5 pt-4 border-t border-[#EAE7DF] text-xs text-[#28322D] font-normal">
@@ -3189,7 +3189,7 @@ export function App() {
                 className="inline-flex items-center gap-2 text-[#0A3622] hover:text-[#008746] transition-colors font-semibold"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#008746]" />
-                <span>Green Power</span>
+                <span>Green Power Group</span>
               </a>
               <a
                 href="/nhung-chuyen-di"

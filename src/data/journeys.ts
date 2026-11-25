@@ -260,7 +260,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "story": [
       "Legacy Yên Tử có hành lang đá cuội, mái ngói mũi hài và tường gạch nung theo lối cung đình thời Trần. Không gian yên tĩnh ấy cho mọi người một lúc để nhìn lại cả năm đã qua.",
       "Tên Vân được xướng lên trên sân khấu ManPower Agency Awards XXVII ở hai hạng mục: Top 1 DRD+ hoàn thành chỉ tiêu FYP và Top 1 DRD+ dẫn đầu tỷ lệ duy trì hợp đồng năm thứ hai. Vân xúc động thật sự. Doanh số cho thấy tốc độ, còn tỷ lệ duy trì hợp đồng cho thấy mình tư vấn đúng, đủ và còn chăm sóc khách sau khi hợp đồng đã trao tay.",
-      "Mặc áo dài gấm vàng, đứng giữa các anh chị lãnh đạo xuất sắc trên toàn quốc, Vân gửi lời cảm ơn đến hơn 500 nhân sự và 64 quản lý của Hệ thống Green Power. Thành quả trên sân khấu là của cả tập thể."
+      "Mặc áo dài gấm vàng, đứng giữa các anh chị lãnh đạo xuất sắc trên toàn quốc, Vân gửi lời cảm ơn đến hơn 500 nhân sự và 64 quản lý của Green Power Group. Thành quả trên sân khấu là của cả tập thể."
     ],
     "photos": [
       {
@@ -412,7 +412,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "location": "Trùng Khánh, Trung Quốc",
     "countryTag": "Trung Quốc",
     "title": "Phố núi Trùng Khánh và các bạn quản lý trẻ",
-    "subtitle": "Chuyến M-Star Giữa Năm 2026 đến Trùng Khánh, thành phố nhiều tầng bên sông Trường Giang, cùng các quản lý trẻ của hệ thống.",
+    "subtitle": "Chuyến M-Star Giữa Năm 2026 đến Trùng Khánh, thành phố nhiều tầng bên sông Trường Giang, cùng các quản lý trẻ của Green Power Group.",
     "pullQuote": "Đi giữa thành phố xây trên sườn núi dốc, Vân thấy địa hình nào cũng không cản được người đã muốn đi tới.",
     "companions": "Đội ngũ quản lý Green Power đạt chuẩn M-Star Giữa Năm",
     "milestoneBadge": "M-Star Giữa Năm 2026",
@@ -423,7 +423,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "story": [
       "Trùng Khánh có nhiều thứ làm cả đoàn bất ngờ: đường tàu chạy xuyên qua tòa nhà cao tầng, cầu vượt nối nhau trên sườn núi, tòa nhà đũa đỏ của Trung tâm Nghệ thuật Quốc Thái và những chiếc taxi vàng.",
       "Vân nhớ nhất mấy buổi tối cả đoàn ngồi quanh nồi lẩu Tứ Xuyên dưới hàng vạn đèn lồng ở Tỳ Bà Viên, và lúc uống trà cái chén trong buổi xem Kinh kịch biến diện.",
-      "Các bạn quản lý trẻ của hệ thống tự tin đi trên con dốc phố cổ Từ Khí Khẩu, chia sẻ mục tiêu cho nửa cuối năm. Nhìn họ, Vân thấy thế hệ kế cận đã lớn lên. Với Vân, chuyến M-Star còn là dịp để người làm quản lý đi xa và nhìn rộng hơn."
+      "Các bạn quản lý trẻ của đội ngũ tự tin đi trên con dốc phố cổ Từ Khí Khẩu, chia sẻ mục tiêu cho nửa cuối năm. Nhìn họ, Vân thấy thế hệ kế cận đã lớn lên. Với Vân, chuyến M-Star còn là dịp để người làm quản lý đi xa và nhìn rộng hơn."
     ],
     "photos": [
       {
@@ -883,14 +883,14 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "title": "Chạy bộ dưới điện gió Bàu Trắng với tấm Bib 0069",
     "subtitle": "Kick-off Giữa Năm 2026 của quản lý Green Power: chạy buổi sáng ở Bàu Trắng, họp chiến lược, rồi đêm biển Stronger Together.",
     "pullQuote": "Làm quản lý tài chính giống chạy đường dài hơn là nước rút: cần hơi thở đều và những người chạy cùng nhịp.",
-    "companions": "Tập thể quản lý Hệ thống Green Power",
+    "companions": "Tập thể quản lý Green Power Group",
     "milestoneBadge": "Kick-off Giữa Năm 2026",
     "heroImage": "/images/journeys/kickoff-phan-thiet-2026/01-kv_300.jpg?v=3",
     "heroObjectPosition": "50% 24%",
     "photoCount": 11,
     "ctaMode": "career",
     "story": [
-      "Sáng chạy bộ ở cung đường điện gió Bàu Trắng, Vân nhận tấm Bib số 0069, trùng với số Khu vực HCM69 đã gắn bó với Vân từ những ngày đầu xây dựng hệ thống. Gió biển mát lúc bình minh, những cánh quạt trắng rất lớn, và anh chị em đồng nghiệp chạy cùng.",
+      "Sáng chạy bộ ở cung đường điện gió Bàu Trắng, Vân nhận tấm Bib số 0069, trùng với số Khu vực HCM69 đã gắn bó với Vân từ những ngày đầu xây dựng đội ngũ. Gió biển mát lúc bình minh, những cánh quạt trắng rất lớn, và anh chị em đồng nghiệp chạy cùng.",
       "Trong hội nghị với thông điệp Trải thảm Xanh đón tinh anh, toàn vùng rà soát chiến lược nửa cuối năm, cập nhật giải pháp liên kết đầu tư thế hệ mới Xanh Phú Quý và chia sẻ kinh nghiệm phát triển đội ngũ quản lý chuyển ngành GTF.",
       "Tối đến trên bãi biển Phan Thiết, khoảng cách chức danh nhường chỗ cho tiếng cười và bữa hải sản bên bờ biển. Tập thể hơn 500 người đi cùng nhau nhiều năm nhờ sự chân thành đó."
     ],
@@ -911,9 +911,9 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "width": 1600,
         "height": 1200,
         "orientation": "landscape",
-        "caption": "Tập thể Hệ thống Green Power rạng rỡ bên bảng vinh danh Tinh Anh Toàn Năng tại Hội nghị giữa năm 2026 ở Phan Thiết.",
+        "caption": "Tập thể Green Power Group rạng rỡ bên bảng vinh danh Tinh Anh Toàn Năng tại Hội nghị giữa năm 2026 ở Phan Thiết.",
         "locationDetail": "Sân khấu Hội nghị giữa năm 2026 Stronger Faster với bảng vinh danh Tinh Anh Toàn Năng",
-        "people": "Chị Khánh Vân cùng hơn 35 quản lý và tư vấn viên Hệ thống Green Power"
+        "people": "Chị Khánh Vân cùng hơn 35 quản lý và tư vấn viên Green Power Group"
       },
       {
         "id": "KV_349",
@@ -1026,7 +1026,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "title": "Chuyến thiện nguyện Kết Nối Yêu Thương ở Krông Pắc, Đắk Lắk",
     "subtitle": "Đoàn Green Power khởi hành từ sáng sớm, mang ba lô đi học, sữa và quà đến các em nhỏ ở Đắk Lắk.",
     "pullQuote": "Đi thiện nguyện nhắc mình biết quý hơn cuộc sống bình yên đang có.",
-    "companions": "Đoàn thiện nguyện Hệ thống Green Power",
+    "companions": "Đoàn thiện nguyện Green Power Group",
     "milestoneBadge": "Thiện Nguyện Đắk Lắk 2026",
     "heroImage": "/images/journeys/thien-nguyen-dak-lak-2026/01-kv_308.jpg?v=2",
     "heroObjectPosition": "50% 35%",
@@ -1056,7 +1056,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "orientation": "landscape",
         "caption": "Tập thể Green Power cùng bà con xã Ea Yiêng lưu lại khoảnh khắc ý nghĩa bên băng rôn Hành trình Kết Nối Yêu Thương tại Đắk Lắk.",
         "locationDetail": "Nhà sinh hoạt cộng đồng xã Ea Yiêng, Đắk Lắk cùng băng rôn Hành trình Kết Nối Yêu Thương",
-        "people": "Chị Khánh Vân cùng tập thể tình nguyện viên Hệ thống Green Power và bà con địa phương"
+        "people": "Chị Khánh Vân cùng tập thể tình nguyện viên Green Power Group và bà con địa phương"
       },
       {
         "id": "KV_352",
@@ -1344,7 +1344,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
         "orientation": "landscape",
         "caption": "Hàng chục anh chị em trong đoàn cùng ngồi lại chụp ảnh kỷ niệm tại quảng trường trung tâm Nam Ninh, rộn ràng tiếng cười đầu năm.",
         "locationDetail": "Quảng trường trung tâm rộng lớn với tán cây xanh hình vòm nổi tiếng tại Nam Ninh, Trung Quốc",
-        "people": "Tập thể đông đảo thành viên Hệ thống Green Power trong chuyến đi Nam Ninh 2024"
+        "people": "Tập thể đông đảo thành viên Green Power Group trong chuyến đi Nam Ninh 2024"
       },
       {
         "id": "KV_334",
@@ -1478,7 +1478,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "story": [
       "Xem lại ảnh chụp ở Paris mùa thu 2019, Vân nhớ lại cảm giác những năm đầu đi lấy danh hiệu quốc tế. Paris tháng mười có hàng phong chuyển vàng dọc đại lộ, sông Seine chảy chậm và Vương cung thánh đường Sacré-Cœur trên đồi Montmartre.",
       "Vân nhớ nhất lúc dang tay dưới chân Tháp Eiffel sáng đèn vàng trong đêm thu se lạnh. Chuyến đi cho Vân thấy rõ tầm của một tập đoàn tài chính toàn cầu, và thêm tin vào con đường mình chọn.",
-      "Lời hứa dưới chân Tháp Eiffel năm 2019 nay đã thành thật. Hồi đó Vân đi một mình trong những chuyến vinh danh đầu tiên, còn bây giờ mỗi kỳ M-Star đều có đông anh chị em quản lý của Hệ thống Green Power đi cùng."
+      "Lời hứa dưới chân Tháp Eiffel năm 2019 nay đã thành thật. Hồi đó Vân đi một mình trong những chuyến vinh danh đầu tiên, còn bây giờ mỗi kỳ M-Star đều có đông anh chị em quản lý của Green Power Group đi cùng."
     ],
     "photos": [
       {
@@ -1631,7 +1631,7 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     "photoCount": 19,
     "ctaMode": "family",
     "story": [
-      "Khách hàng và bạn bè hay hỏi Vân làm sao vừa điều hành hệ thống hơn 500 nhân sự, với lịch hội nghị và đào tạo dày đặc, vừa giữ được sự gần gũi với chồng và hai con. Vân trả lời là phải có mặt thật sự khi ở nhà, và có người bạn đời hiểu mình.",
+      "Khách hàng và bạn bè hay hỏi Vân làm sao vừa điều hành đội ngũ hơn 500 nhân sự, với lịch hội nghị và đào tạo dày đặc, vừa giữ được sự gần gũi với chồng và hai con. Vân trả lời là phải có mặt thật sự khi ở nhà, và có người bạn đời hiểu mình.",
       "Buổi tối về nhà hay những cuối tuần nghỉ ở Đà Lạt bên hồ, Vân gác con số lại, chỉ làm vợ và làm mẹ. Cả nhà mặc áo thun giống nhau nắm tay đi dạo. Vân cùng Minh Châu đi giữa vườn trái chín ở Đà Lạt như hai người bạn. Vân ngồi cạnh bé út tô màu rồi nhận cái ôm thật chặt trên ban công.",
       "Thương gia đình nhỏ này giúp Vân hiểu tâm tư của khách khi họ tìm đến. Quỹ học vấn, quỹ hưu trí hay một hợp đồng bảo hiểm nhân thọ đều nhằm một việc: giữ cho gia đình còn đi chơi được với nhau khi có biến cố."
     ],

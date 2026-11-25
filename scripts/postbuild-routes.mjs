@@ -12,7 +12,7 @@ const baseWithoutHeroPreload = baseHtml.replace(
 const leaderFormHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Green Power Group</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -24,19 +24,19 @@ const leaderFormHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Green Power (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta name="description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Green Power Group (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power" />'
+    '<meta property="og:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Green Power Group" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Hệ thống Green Power" />'
+    '<meta name="twitter:title" content="Hồ sơ Ban Điều Hành & Đội ngũ Quản lý | Green Power Group" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Hệ thống Green Power (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
+    '<meta property="og:description" content="Cổng thông tin dành riêng để Ban Điều Hành và đội ngũ quản lý Green Power Group (Manulife Việt Nam) cập nhật hồ sơ thương hiệu và ảnh chân dung HD." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
@@ -63,7 +63,7 @@ for (const page of pages) {
 const previewHtml = baseWithoutHeroPreload
   .replace(
     /<title>[\s\S]*?<\/title>/,
-    '<title>Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
+    '<title>Green Power Group | Ban Điều Hành & Đội ngũ Quản lý</title>\n    <meta name="robots" content="noindex, nofollow" />'
   )
   .replace(
     /<link\s+rel="canonical"[^>]*>/,
@@ -75,19 +75,19 @@ const previewHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*name="description"[^>]*>/,
-    '<meta name="description" content="Khám phá Hệ thống Green Power tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
+    '<meta name="description" content="Khám phá Green Power Group tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:title"[^>]*>/,
-    '<meta property="og:title" content="Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý" />'
+    '<meta property="og:title" content="Green Power Group | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*name="twitter:title"[^>]*>/,
-    '<meta name="twitter:title" content="Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý" />'
+    '<meta name="twitter:title" content="Green Power Group | Ban Điều Hành & Đội ngũ Quản lý" />'
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá Hệ thống Green Power tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
+    '<meta property="og:description" content="Khám phá Green Power Group tại Manulife Việt Nam: hơn 500 nhân sự, 64 quản lý kinh doanh tại 4 khu vực HCM69, SG168, SG169, MN111 cùng hồ sơ chi tiết của đội ngũ lãnh đạo và quản lý." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,
@@ -130,7 +130,7 @@ const journeysHtml = baseWithoutHeroPreload
   )
   .replace(
     /<meta\s+[^>]*property="og:description"[^>]*>/,
-    '<meta property="og:description" content="Khám phá 11 chương ký ức qua hơn 16 quốc gia, 141 khung hình chọn lọc và 8 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Hệ thống Green Power." />'
+    '<meta property="og:description" content="Khám phá 11 chương ký ức qua hơn 16 quốc gia, 141 khung hình chọn lọc và 8 thước phim hành trình thực tế của Khánh Vân cùng gia đình và Green Power Group." />'
   )
   .replace(
     /<meta\s+[^>]*property="og:image"[^>]*>/,

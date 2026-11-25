@@ -33,7 +33,7 @@ const HOME_STARTER_QUESTIONS = [
 
 const REGIONAL_STARTER_QUESTIONS = [
   'Lộ trình chuyển ngành sang làm Quản lý GTF 2026 cần điều kiện gì?',
-  'Gia nhập trực tiếp Hệ thống Green Power có lợi thế gì?',
+  'Gia nhập trực tiếp Green Power Group có lợi thế gì?',
   'Doanh nghiệp mua bảo hiểm cho nhân sự và người thân trên ePOS thế nào?',
   'Thẻ sức khỏe dùng nhiều lần trong năm có bị từ chối tái tục không?',
 ];
@@ -71,7 +71,7 @@ export const AiAdvisorWidget: React.FC<AiAdvisorWidgetProps> = ({
       content: isJourneysPage
         ? 'Chào bạn! Cảm ơn bạn đã ghé thăm chuyên trang Những Chuyến Đi. Bạn đang muốn tìm hiểu lộ trình chinh phục M-Star & Quản lý GTF tại Green Power, hay thiết kế kế hoạch bảo vệ và hưu trí cho gia đình? Hãy chọn câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
         : isRegionalPage
-        ? 'Chào bạn! Bạn đang quan tâm đến lộ trình Quản lý chuyển ngành (GTF 2026) tại Hệ thống Green Power, giải pháp bảo hiểm cho doanh nghiệp hay hoạch định tài chính gia đình? Bạn có thể chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
+        ? 'Chào bạn! Bạn đang quan tâm đến lộ trình Quản lý chuyển ngành (GTF 2026) tại Green Power Group, giải pháp bảo hiểm cho doanh nghiệp hay hoạch định tài chính gia đình? Bạn có thể chọn nhanh câu hỏi bên dưới hoặc nhắn trực tiếp cho Vân nhé.'
         : 'Chào bạn! Bạn muốn tìm hiểu về hợp đồng bảo hiểm, điều kiện tái tục thẻ sức khỏe, bảo hiểm cho doanh nghiệp hay lộ trình Quản lý GTF tại Manulife? Bạn có thể chọn câu hỏi bên dưới hoặc nhắn trực tiếp tình huống của mình cho Vân nhé.',
       timestamp: 'Vừa xong',
     },

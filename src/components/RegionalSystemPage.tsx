@@ -95,7 +95,7 @@ const SYSTEM_PILLARS = [
     number: '03',
     icon: Compass,
     title: 'Luôn Có Đội Ngũ Hỗ Trợ Phía Sau',
-    desc: 'Mỗi gia đình không chỉ làm việc với một tư vấn viên. Phía sau còn có các tầng quản lý của Green Power hỗ trợ và giám sát chất lượng tại Manulife Việt Nam.',
+    desc: 'Mỗi gia đình không chỉ làm việc với một tư vấn viên. Phía sau còn có các tầng quản lý của Green Power Group hỗ trợ và giám sát chất lượng tại Manulife Việt Nam.',
   },
 ];
 
@@ -134,7 +134,7 @@ export const RegionalSystemPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = 'Hệ thống Green Power | Ban Điều Hành & Đội ngũ Quản lý';
+    document.title = 'Green Power Group | Ban Điều Hành & Đội ngũ Quản lý';
     window.scrollTo(0, 0);
   }, []);
 
@@ -232,7 +232,7 @@ export const RegionalSystemPage: React.FC = () => {
     return [
       {
         src: selectedLeader.portrait,
-        caption: `${selectedLeader.displayName}, ${selectedLeader.roleTitle} (Khu vực ${selectedLeader.unitCode})`,
+        caption: `${selectedLeader.fullName}, ${selectedLeader.roleTitle} (Khu vực ${selectedLeader.unitCode})`,
       },
       ...selectedLeader.gallery,
     ];
@@ -314,7 +314,7 @@ export const RegionalSystemPage: React.FC = () => {
       ...prev,
       note: prev.note
         ? prev.note
-        : `Tôi mong muốn được tư vấn và trao đổi cùng Hệ thống Green Power (quan tâm hồ sơ ${leader.displayName}, Khu vực ${leader.unitCode}).`,
+        : `Tôi mong muốn được tư vấn và trao đổi cùng Green Power Group (quan tâm hồ sơ ${leader.fullName}, Khu vực ${leader.unitCode}).`,
     }));
     setTimeout(() => {
       const el = document.getElementById('ket-noi-vung');
@@ -382,7 +382,8 @@ export const RegionalSystemPage: React.FC = () => {
                   KHÁNH VÂN
                 </span>
                 <span className="text-[9px] sm:text-[9.5px] uppercase tracking-[0.12em] xl:tracking-[0.18em] text-[#56605B] font-medium mt-1 truncate">
-                  Green Power • Manulife
+                  <span className="xl:hidden">Green Power Group</span>
+                  <span className="hidden xl:inline">Green Power Group • Manulife</span>
                 </span>
               </div>
             </a>
@@ -558,12 +559,12 @@ export const RegionalSystemPage: React.FC = () => {
             </div>
 
             <h1 className="font-serif text-[32px] sm:text-6xl lg:text-[66px] leading-[1.12] sm:leading-[1.06] font-medium text-[#181F1C] tracking-[-0.01em]">
-              Hệ thống{' '}
-              <span className="italic text-[#0A3622]">Green Power</span>
+              Green Power{' '}
+              <span className="italic text-[#0A3622]">Group</span>
             </h1>
 
             <p className="text-[14.5px] sm:text-lg text-[#28322D] font-normal leading-relaxed max-w-3xl">
-              Green Power hình thành từ năm 2018, trên nền kỷ luật quản trị tài sản của ngân hàng quốc tế. Hôm nay hệ thống có hơn 500 cộng sự và 64 quản lý kinh doanh tại 4 khu vực, cùng theo một phương châm:{' '}
+              Green Power Group hình thành từ năm 2018, trên nền kỷ luật quản trị tài sản của ngân hàng quốc tế. Hôm nay đội ngũ có hơn 500 cộng sự và 64 quản lý kinh doanh tại 4 khu vực, cùng theo một phương châm:{' '}
               <span className="font-medium text-[#0A3622] italic font-serif text-[17px] sm:text-2xl block sm:inline mt-1 sm:mt-0">
                 “Đi chắc để đi xa, kiến tạo tốc độ từ sự chuẩn mực.”
               </span>
@@ -576,7 +577,7 @@ export const RegionalSystemPage: React.FC = () => {
               onClick={() =>
                 setLightbox({
                   src: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
-                  tag: 'BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER',
+                  tag: 'BAN ĐIỀU HÀNH GREEN POWER GROUP',
                   title:
                     'Giám đốc Vùng Cấp cao Khánh Vân cùng các quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
@@ -590,7 +591,7 @@ export const RegionalSystemPage: React.FC = () => {
                   fetchPriority="high"
                   decoding="async"
                   src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Hệ thống Green Power"
+                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Green Power Group"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
                 />
                 <span className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/55 backdrop-blur-sm border border-white/25 rounded-[2px] text-[9.5px] sm:text-[10px] uppercase tracking-[0.14em] text-[#FAF9F5]">
@@ -603,7 +604,7 @@ export const RegionalSystemPage: React.FC = () => {
               <figcaption className="bg-[#0A3622] text-[#FAF9F5] px-4 py-3.5 sm:px-7 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 border-b border-[#0A3622]">
                 <div>
                   <span className="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] text-[#E8D3A6] font-bold block">
-                    BAN ĐIỀU HÀNH HỆ THỐNG GREEN POWER
+                    BAN ĐIỀU HÀNH GREEN POWER GROUP
                   </span>
                   <p className="font-serif italic text-[14.5px] sm:text-xl text-[#FAF9F5] leading-snug mt-0.5">
                     Quản lý có chuyên môn sâu, làm nghề bài bản tại Manulife Việt Nam
@@ -678,13 +679,13 @@ export const RegionalSystemPage: React.FC = () => {
         className="scroll-mt-28 sm:scroll-mt-20 py-12 sm:py-20 bg-[#F2EFE9]/60 border-b border-[#E4E1D8]"
       >
         <div className="max-w-[1220px] w-full min-w-0 mx-auto px-4 sm:px-8 space-y-10 sm:space-y-14">
-          {/* 2A. SƠ ĐỒ TỔ CHỨC HỆ THỐNG GREEN POWER (Nằm ngay đầu Chương 02) */}
+          {/* 2A. SƠ ĐỒ TỔ CHỨC GREEN POWER GROUP (Nằm ngay đầu Chương 02) */}
           <div className="bg-white border border-[#DCD8CE] rounded-[4px] p-4 sm:p-6 lg:p-7 shadow-[0_20px_50px_-30px_rgba(10,54,34,0.2)] space-y-5 sm:space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-4 sm:pb-5 border-b border-[#ECE9E0]">
               <div className="space-y-1">
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#008746] font-bold">
                   <GitBranch className="w-3.5 h-3.5 shrink-0" />
-                  <span>02 / SƠ ĐỒ TỔ CHỨC HỆ THỐNG GREEN POWER</span>
+                  <span>02 / SƠ ĐỒ TỔ CHỨC GREEN POWER GROUP</span>
                 </span>
                 <h2 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold leading-snug">
                   Cơ cấu điều hành từ Giám đốc Vùng đến các nhánh chính
@@ -863,8 +864,8 @@ export const RegionalSystemPage: React.FC = () => {
                                   />
                                 )}
                                 <div className="min-w-0 flex-1">
-                                  <div className="flex items-center justify-between gap-1.5">
-                                    <span className="text-[12.5px] font-bold text-[#181F1C] truncate">
+                                  <div className="flex items-start justify-between gap-1.5">
+                                    <span className="text-[12.5px] font-bold text-[#181F1C] leading-snug">
                                       {mgr.name}
                                     </span>
                                     <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
@@ -905,8 +906,8 @@ export const RegionalSystemPage: React.FC = () => {
                                             />
                                           )}
                                           <div className="min-w-0 flex-1">
-                                            <div className="flex items-center justify-between gap-1.5">
-                                              <span className="text-[12px] font-bold text-[#181F1C] truncate">
+                                            <div className="flex items-start justify-between gap-1.5">
+                                              <span className="text-[12px] font-bold text-[#181F1C] leading-snug">
                                                 {child.name}
                                               </span>
                                               <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.08em] rounded-[2px] shrink-0">
@@ -944,8 +945,8 @@ export const RegionalSystemPage: React.FC = () => {
                                                     />
                                                   )}
                                                   <div className="min-w-0 flex-1">
-                                                    <div className="flex items-center justify-between gap-1.5">
-                                                      <span className="text-[11.5px] font-bold text-[#181F1C] truncate">
+                                                    <div className="flex items-start justify-between gap-1.5">
+                                                      <span className="text-[11.5px] font-bold text-[#181F1C] leading-snug">
                                                         {grandchild.name}
                                                       </span>
                                                       <span className="px-1.5 py-0.5 bg-[#FAF9F5] text-[#0A3622] border border-[#DCE5E0] text-[8.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
@@ -1110,8 +1111,8 @@ export const RegionalSystemPage: React.FC = () => {
                                     />
                                   )}
                                   <div className="min-w-0 flex-1">
-                                    <div className="flex items-center justify-between gap-1">
-                                      <span className="text-[12.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                    <div className="flex items-start justify-between gap-1">
+                                      <span className="text-[12px] font-bold text-[#181F1C] group-hover:text-[#0A3622] leading-snug">
                                         {mgr.name}
                                       </span>
                                       <span className="px-1.5 py-0.5 bg-[#EBF2EE] text-[#0A3622] text-[9.5px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
@@ -1152,8 +1153,8 @@ export const RegionalSystemPage: React.FC = () => {
                                               />
                                             )}
                                             <div className="min-w-0 flex-1">
-                                              <div className="flex items-center justify-between gap-1">
-                                                <span className="text-[11.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                              <div className="flex items-start justify-between gap-1">
+                                                <span className="text-[11.5px] font-bold text-[#181F1C] group-hover:text-[#0A3622] leading-snug">
                                                   {child.name}
                                                 </span>
                                                 <span className="px-1.5 py-0.5 bg-white text-[#0A3622] border border-[#DCE5E0] text-[9px] font-bold uppercase tracking-[0.06em] rounded-[2px] shrink-0">
@@ -1191,8 +1192,8 @@ export const RegionalSystemPage: React.FC = () => {
                                                       />
                                                     )}
                                                     <div className="min-w-0 flex-1">
-                                                      <div className="flex items-center justify-between gap-1">
-                                                        <span className="text-[11px] font-bold text-[#181F1C] group-hover:text-[#0A3622] truncate">
+                                                      <div className="flex items-start justify-between gap-1">
+                                                        <span className="text-[11px] font-bold text-[#181F1C] group-hover:text-[#0A3622] leading-snug">
                                                           {grandchild.name}
                                                         </span>
                                                         <span className="px-1.5 py-0.5 bg-[#FAF9F5] text-[#0A3622] border border-[#DCE5E0] text-[8.5px] font-bold uppercase tracking-[0.05em] rounded-[2px] shrink-0">
@@ -1269,7 +1270,7 @@ export const RegionalSystemPage: React.FC = () => {
 
             <div className="space-y-2.5">
               <div className="flex sm:hidden items-center justify-between text-[11px] text-[#56605B] font-medium">
-                <span>4 khu vực trực thuộc Green Power</span>
+                <span>4 khu vực trực thuộc Green Power Group</span>
                 <span className="text-[#008746] font-semibold inline-flex items-center gap-1">
                   <span>Vuốt ngang</span>
                   <ArrowRight className="w-3 h-3" />
@@ -1618,7 +1619,7 @@ export const RegionalSystemPage: React.FC = () => {
                 Không tìm thấy hồ sơ phù hợp với bộ lọc hiện tại
               </p>
               <p className="text-xs text-[#56605B]">
-                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} hồ sơ quản lý của Green Power.
+                Hãy đặt lại bộ lọc để xem toàn bộ {REGIONAL_LEADERS.length} hồ sơ quản lý của Green Power Group.
               </p>
               <button
                 type="button"
@@ -1662,7 +1663,7 @@ export const RegionalSystemPage: React.FC = () => {
                         }}
                         tabIndex={0}
                         role="button"
-                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName}, ${leader.roleTitle}`}
+                        aria-label={`Xem hồ sơ chi tiết của ${leader.fullName}, ${leader.roleTitle}`}
                         className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622]/65 rounded-[4px] overflow-hidden flex flex-row sm:flex-col justify-between shadow-[0_12px_32px_-24px_rgba(10,54,34,0.2)] hover:shadow-[0_24px_50px_-24px_rgba(10,54,34,0.28)] transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
                       >
                         {/* Left Column on Mobile / Top Portrait on sm+ */}
@@ -1671,7 +1672,7 @@ export const RegionalSystemPage: React.FC = () => {
                             loading="lazy"
                             decoding="async"
                             src={leader.portrait}
-                            alt={`${leader.displayName} (${leader.fullName}), ${leader.roleTitle}`}
+                            alt={`${leader.fullName}, ${leader.roleTitle}`}
                             className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                           />
                           <div className="hidden sm:block absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 via-black/15 to-transparent pointer-events-none" />
@@ -1714,14 +1715,9 @@ export const RegionalSystemPage: React.FC = () => {
                               <span className="text-[9.5px] sm:text-[11px] uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#008746] font-bold block leading-snug">
                                 {leader.roleTitle}
                               </span>
-                              <h4 className="font-serif text-[19px] sm:text-[27px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-tight transition-colors">
-                                {leader.displayName}
+                              <h4 className="font-serif text-[17.5px] sm:text-[23px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-snug transition-colors">
+                                {leader.fullName}
                               </h4>
-                              {leader.fullName !== leader.displayName && (
-                                <p className="hidden sm:block text-xs text-[#56605B]">
-                                  {leader.fullName}
-                                </p>
-                              )}
                             </div>
 
                             <div className="p-2 sm:p-3 bg-[#FAF9F5] border border-[#ECE9E0] rounded-[3px] space-y-0.5">
@@ -1796,7 +1792,7 @@ export const RegionalSystemPage: React.FC = () => {
                         }}
                         tabIndex={0}
                         role="button"
-                        aria-label={`Xem hồ sơ chi tiết của ${leader.displayName}, ${leader.roleTitle}`}
+                        aria-label={`Xem hồ sơ chi tiết của ${leader.fullName}, ${leader.roleTitle}`}
                         className="group bg-white border border-[#DCD8CE] hover:border-[#0A3622] rounded-[4px] overflow-hidden flex flex-col justify-between shadow-[0_10px_26px_-20px_rgba(10,54,34,0.18)] hover:shadow-[0_18px_36px_-20px_rgba(10,54,34,0.28)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0A3622]"
                       >
                         <div>
@@ -1805,7 +1801,7 @@ export const RegionalSystemPage: React.FC = () => {
                               loading="lazy"
                               decoding="async"
                               src={leader.portrait}
-                              alt={`${leader.displayName}, ${leader.roleTitle}`}
+                              alt={`${leader.fullName}, ${leader.roleTitle}`}
                               className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                             />
                             <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
@@ -1838,8 +1834,8 @@ export const RegionalSystemPage: React.FC = () => {
                               <span className="hidden sm:block text-[10px] uppercase tracking-[0.12em] text-[#008746] font-bold truncate">
                                 {leader.roleTitle}
                               </span>
-                              <h4 className="font-serif text-[15.5px] sm:text-[20px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-snug line-clamp-2 mt-0.5">
-                                {leader.displayName}
+                              <h4 className="font-serif text-[14.5px] sm:text-[17.5px] text-[#181F1C] group-hover:text-[#0A3622] font-semibold leading-snug line-clamp-2 mt-0.5">
+                                {leader.fullName}
                               </h4>
                             </div>
 
@@ -1929,7 +1925,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </div>
 
                 <blockquote className="font-serif italic text-[16px] sm:text-[19px] text-[#0A3622] leading-relaxed border-l-2 border-[#B8975A] pl-3.5 sm:pl-4">
-                  “Hệ thống mạnh hay không nằm ở người tư vấn đứng sau từng hợp đồng, và ở tỷ lệ khách hàng vẫn an tâm sau 5 năm, 10 năm, 20 năm.”
+                  “Một tập thể mạnh hay không nằm ở người tư vấn đứng sau từng hợp đồng, và ở tỷ lệ khách hàng vẫn an tâm sau 5 năm, 10 năm, 20 năm.”
                 </blockquote>
 
                 <p className="text-xs sm:text-[13.5px] text-[#28322D] leading-relaxed">
@@ -1965,7 +1961,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </span>
                 <h3 className="font-serif text-2xl sm:text-4xl text-[#181F1C] font-medium leading-tight">
                   Ba nguyên tắc của{' '}
-                  <span className="italic text-[#0A3622]">Green Power</span>
+                  <span className="italic text-[#0A3622]">Green Power Group</span>
                 </h3>
               </div>
 
@@ -2014,7 +2010,7 @@ export const RegionalSystemPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-[#4A544F] max-w-md leading-relaxed">
-                Ở Green Power, không ai làm nghề một mình. Mỗi sáng có buổi huấn luyện nghiệp vụ, rồi đến những buổi rà soát hồ sơ thực tế.
+                Ở Green Power Group, không ai làm nghề một mình. Mỗi sáng có buổi huấn luyện nghiệp vụ, rồi đến những buổi rà soát hồ sơ thực tế.
               </p>
             </div>
 
@@ -2090,14 +2086,14 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="space-y-2.5 sm:space-y-3">
                 <span className="inline-flex items-center gap-2 text-[10.5px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#E8D3A6] font-semibold">
                   <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>05 / LIÊN HỆ GREEN POWER</span>
+                  <span>05 / LIÊN HỆ GREEN POWER GROUP</span>
                 </span>
                 <h2 className="font-serif text-[26px] sm:text-5xl font-medium leading-tight text-white">
                   Bảo vệ tài chính gia đình, hoặc một{' '}
                   <span className="italic text-[#E8D3A6]">hướng đi nghề nghiệp mới</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D7E2DC] leading-relaxed">
-                  Cuộc trò chuyện nào ở Green Power cũng bắt đầu bằng việc lắng nghe, không áp lực. Thông tin của bạn được giữ kín. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
+                  Cuộc trò chuyện nào ở Green Power Group cũng bắt đầu bằng việc lắng nghe, không áp lực. Thông tin của bạn được giữ kín. Chị Khánh Vân cùng Ban Điều Hành sẽ trực tiếp phản hồi.
                 </p>
               </div>
 
@@ -2206,7 +2202,7 @@ export const RegionalSystemPage: React.FC = () => {
                         email: formData.email,
                         topic: formData.topic,
                         background: formData.background,
-                        note: `[Từ trang Hệ thống Green Power] ${formData.note}`.trim(),
+                        note: `[Từ trang Green Power Group] ${formData.note}`.trim(),
                         source: 'contact_form',
                       }),
                     }).catch(() => {});
@@ -2314,7 +2310,7 @@ export const RegionalSystemPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A758] shrink-0" />
             <span>
-              Hệ thống Green Power, Manulife Việt Nam (HCM69, SG168, SG169, MN111)
+              Green Power Group, Manulife Việt Nam (HCM69, SG168, SG169, MN111)
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#8FA398]">
@@ -2425,7 +2421,7 @@ export const RegionalSystemPage: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
-              aria-label={`Hồ sơ chi tiết ${selectedLeader.displayName}`}
+              aria-label={`Hồ sơ chi tiết ${selectedLeader.fullName}`}
               className="relative w-full max-w-full sm:max-w-5xl max-h-[86vh] max-h-[calc(100dvh-4.5rem)] sm:max-h-[88vh] bg-[#FAF9F5] border-t sm:border border-[#DCD8CE] rounded-t-[16px] sm:rounded-[4px] overflow-hidden shadow-2xl flex flex-col"
             >
               {/* Modal Sticky Top Bar */}
@@ -2483,7 +2479,7 @@ export const RegionalSystemPage: React.FC = () => {
                           if (current) {
                             setLightbox({
                               src: current.src,
-                              tag: `${selectedLeader.displayName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
+                              tag: `${selectedLeader.fullName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
                               title: current.caption,
                             });
                           }
@@ -2495,7 +2491,7 @@ export const RegionalSystemPage: React.FC = () => {
                             modalPhotos[activeModalPhotoIdx]?.src ||
                             selectedLeader.portrait
                           }
-                          alt={selectedLeader.displayName}
+                          alt={selectedLeader.fullName}
                           className="w-full h-full object-cover object-top"
                         />
                         <span className="absolute bottom-1.5 right-1.5 p-1 bg-black/60 text-white rounded-[2px]">
@@ -2512,14 +2508,9 @@ export const RegionalSystemPage: React.FC = () => {
                         <p className="text-[11px] uppercase tracking-[0.1em] text-[#008746] font-bold leading-snug">
                           {selectedLeader.roleTitle}
                         </p>
-                        <h2 className="font-serif text-2xl sm:text-3xl text-[#181F1C] font-semibold leading-tight">
-                          {selectedLeader.displayName}
+                        <h2 className="font-serif text-xl sm:text-2xl text-[#181F1C] font-semibold leading-snug">
+                          {selectedLeader.fullName}
                         </h2>
-                        {selectedLeader.fullName !== selectedLeader.displayName && (
-                          <p className="text-xs text-[#56605B]">
-                            {selectedLeader.fullName}
-                          </p>
-                        )}
                         <p className="text-[11.5px] text-[#4A544F] pt-0.5 leading-snug">
                           {selectedLeader.tenureLabel}
                         </p>
@@ -2564,7 +2555,7 @@ export const RegionalSystemPage: React.FC = () => {
                           if (current) {
                             setLightbox({
                               src: current.src,
-                              tag: `${selectedLeader.displayName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
+                              tag: `${selectedLeader.fullName.toUpperCase()}, KHU VỰC ${selectedLeader.unitCode}`,
                               title: current.caption,
                             });
                           }
@@ -2576,7 +2567,7 @@ export const RegionalSystemPage: React.FC = () => {
                             modalPhotos[activeModalPhotoIdx]?.src ||
                             selectedLeader.portrait
                           }
-                          alt={selectedLeader.displayName}
+                          alt={selectedLeader.fullName}
                           className="w-full h-full object-cover object-top"
                         />
                         <span className="absolute bottom-2.5 right-2.5 px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] uppercase tracking-[0.14em] rounded-[2px] inline-flex items-center gap-1">
@@ -2634,14 +2625,9 @@ export const RegionalSystemPage: React.FC = () => {
                       </div>
 
                       <div className="flex flex-wrap items-baseline gap-3">
-                        <h2 className="font-serif text-3xl sm:text-4xl text-[#181F1C] font-semibold">
-                          {selectedLeader.displayName}
+                        <h2 className="font-serif text-2xl sm:text-[34px] text-[#181F1C] font-semibold leading-snug">
+                          {selectedLeader.fullName}
                         </h2>
-                        {selectedLeader.fullName !== selectedLeader.displayName && (
-                          <span className="text-sm text-[#56605B]">
-                            ({selectedLeader.fullName})
-                          </span>
-                        )}
                       </div>
                     </div>
 
@@ -2730,7 +2716,7 @@ export const RegionalSystemPage: React.FC = () => {
                         onClick={() => handleConnectFromLeader(selectedLeader)}
                         className="inline-flex items-center gap-2 px-5 py-3 bg-[#0A3622] hover:bg-[#008746] text-[#FAF9F5] text-xs uppercase tracking-[0.16em] font-bold rounded-[2px] transition-colors cursor-pointer"
                       >
-                        <span>Đặt lịch trò chuyện cùng Green Power</span>
+                        <span>Đặt lịch trò chuyện cùng Green Power Group</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
