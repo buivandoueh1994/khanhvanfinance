@@ -132,7 +132,7 @@ export const REGIONAL_EXECUTIVE_HUBS: RegionalExecutiveHub[] = [
     code: 'MN111',
     title: 'Khu Vực Kinh Doanh MN111',
     subtitle: 'Trực thuộc Green Power Group',
-    leadName: 'Ngân Vũ',
+    leadName: 'Vũ Kim Ngân',
     leadRole: 'Giám đốc Khu vực Cấp cao (PSSM)',
     leadPortrait: '/images/leaders/avatars/ngan-vu.jpg',
     scaleBadge: 'Khu vực Cấp cao',
@@ -261,12 +261,12 @@ export const REGIONAL_ORG_BRANCHES: OrgAreaBranch[] = [
   {
     code: 'MN111',
     areaLabel: 'Khu Vực MN111',
-    headName: 'Ngân Vũ',
+    headName: 'Vũ Kim Ngân',
     headRole: 'PSSM • Giám đốc Khu vực Cấp cao',
     headAvatar: '/images/leaders/avatars/ngan-vu.jpg',
     keyManagers: [],
     moreCountNote:
-      'Đội ngũ quản lý trực thuộc PSSM Ngân Vũ tại khu vực MN111 gồm DM (Lê Thị Phương Linh, Nguyễn Thị Bích Quyên, Nguyễn Ngọc Thùy Nương, Lê Vũ Anh Kha), UM (Bùi Thị Đạo, Lương Thị Ánh Nga, Ngụy Văn Minh) và SUM (Huỳnh Mai, Võ Thị Bích Trang).',
+      'Đội ngũ quản lý trực thuộc PSSM Vũ Kim Ngân tại khu vực MN111 gồm DM (Lê Thị Phương Linh, Nguyễn Thị Bích Quyên, Nguyễn Ngọc Thùy Nương, Lê Vũ Anh Kha), UM (Bùi Thị Đạo, Lương Thị Ánh Nga, Ngụy Văn Minh) và SUM (Huỳnh Mai, Võ Thị Bích Trang).',
   },
   {
     code: 'SG168',

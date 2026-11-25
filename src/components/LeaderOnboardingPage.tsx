@@ -1098,7 +1098,7 @@ export const LeaderOnboardingPage: React.FC = () => {
                   required
                   value={form.displayName}
                   onChange={(e) => updateField('displayName', e.target.value)}
-                  placeholder="VD: Ngân Vũ / Huyền Trang / Minh Phương..."
+                  placeholder="VD: Vũ Kim Ngân / Trương Thị Huyền Trang / Đào Minh Phương..."
                   className="w-full px-3.5 py-3 text-sm bg-[#FAF9F5] border border-[#DCD8CE] rounded-[2px] focus:bg-white focus:outline-none focus:border-[#0A3622]"
                 />
                 <p className="text-[11px] text-[#858E89]">

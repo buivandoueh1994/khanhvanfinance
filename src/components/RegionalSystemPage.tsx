@@ -768,10 +768,8 @@ export const RegionalSystemPage: React.FC = () => {
                           {b.code === 'HCM69'
                             ? 'Hạt nhân'
                             : b.code === 'MN111'
-                              ? 'Ngân Vũ'
-                              : b.code === 'SG168'
-                                ? 'M.Phương'
-                                : 'H.Trang'}
+                              ? 'PSSM'
+                              : 'SM'}
                         </span>
                       </button>
                     );
@@ -975,7 +973,7 @@ export const RegionalSystemPage: React.FC = () => {
                       </div>
                     ) : (
                       <div className="p-3 rounded-[3px] bg-white border border-dashed border-[#DCD8CE] text-xs text-[#56605B] leading-relaxed">
-                        Các nhánh Trưởng Phòng &amp; Trưởng Nhóm trực thuộc PSSM Ngân Vũ tại khu vực MN111.
+                        Các nhánh Trưởng Phòng &amp; Trưởng Nhóm trực thuộc PSSM Vũ Kim Ngân tại khu vực MN111.
                       </div>
                     )}
 
@@ -1221,7 +1219,7 @@ export const RegionalSystemPage: React.FC = () => {
                           })
                         ) : (
                           <div className="p-3 rounded-[3px] bg-white border border-dashed border-[#DCD8CE] text-xs text-[#56605B] leading-relaxed">
-                            Các nhánh Trưởng Phòng &amp; Trưởng Nhóm trực thuộc PSSM Ngân Vũ tại khu vực MN111.
+                            Các nhánh Trưởng Phòng &amp; Trưởng Nhóm trực thuộc PSSM Vũ Kim Ngân tại khu vực MN111.
                           </div>
                         )}
                       </div>
