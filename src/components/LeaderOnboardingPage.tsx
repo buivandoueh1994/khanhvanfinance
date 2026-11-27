@@ -113,7 +113,7 @@ const EMPTY_FORM: LeaderProfileData = {
   roleCode: 'DM',
   roleTitle: 'Trưởng Phòng Kinh doanh',
   unitCode: '',
-  directLeader: 'Chị Khánh Vân (SRD)',
+  directLeader: 'Chị Khánh Vân (Territory Head)',
   joinedYear: '',
   experienceSummary: '',
   priorBackground: '',

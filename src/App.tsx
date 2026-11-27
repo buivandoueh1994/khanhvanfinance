@@ -1007,7 +1007,7 @@ Kiếm được nhiều tiền giúp gia đình sống tiện nghi ở hiện t�
 
 ## Phòng Tập Và Quản Lý Có Chung Một Quy Luật: Lặp Lại Đều
 
-Một Giám đốc Vùng phải lo lịch đào tạo, họp chiến lược với các quản lý F1 và hoạch định gia sản, nên cần thể lực thật sự bền. Đầu óc sắc và khả năng quyết định tốt không thể tồn tại lâu trong một cơ thể mệt mỏi.
+Ở vị trí Territory Head, phải lo lịch đào tạo, họp chiến lược với các quản lý F1 và hoạch định gia sản, nên cần thể lực thật sự bền. Đầu óc sắc và khả năng quyết định tốt không thể tồn tại lâu trong một cơ thể mệt mỏi.
 
 Nhưng hơn chuyện vóc dáng hay thể lực, phòng tập là nơi rèn tính tự giác khắt khe nhất:
 
@@ -1306,8 +1306,8 @@ export function App() {
       window.history.pushState({}, '', cleanUrl);
     }
     updateMetaTags(
-      'Khánh Vân | Giám đốc Vùng Cấp cao',
-      'Khánh Vân, Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
+      'Khánh Vân | Territory Head',
+      'Khánh Vân, Territory Head tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
       typeof window !== 'undefined' ? `${window.location.origin}/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` : undefined
     );
   }, []);
@@ -1360,8 +1360,8 @@ export function App() {
       window.history.pushState({}, '', cleanUrl);
     }
     updateMetaTags(
-      'Khánh Vân | Giám đốc Vùng Cấp cao',
-      'Khánh Vân, Giám đốc Vùng Cấp cao tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
+      'Khánh Vân | Territory Head',
+      'Khánh Vân, Territory Head tại Manulife Việt Nam, Nhà Quản lý Xuất sắc nhất Châu Á (2021), cựu Quản lý Tài sản ANZ Bank.',
       typeof window !== 'undefined' ? `${window.location.origin}/images/VanPhong_ChiVanCungTapThe_AnhSangTuNhien.jpg` : undefined
     );
   }, []);
@@ -1694,7 +1694,7 @@ export function App() {
               fig: 'CHÂN DUNG & TRIẾT LÝ NGHỀ',
               title: 'Khánh Vân: Đi chắc để đi xa, đồng hành bằng cả trái tim',
               subtitle:
-                'Chân dung chị Khánh Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam, cùng triết lý làm nghề của chị.',
+                'Chân dung chị Khánh Vân, Territory Head tại Manulife Việt Nam, cùng triết lý làm nghề của chị.',
             })
           }
           className="cursor-zoom-in group relative block w-full"
@@ -1728,7 +1728,7 @@ export function App() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#008746] shrink-0" />
                 <span className="whitespace-nowrap">Cựu banker ANZ</span>
                 <span className="text-[#858E89]">&bull;</span>
-                <span className="whitespace-nowrap">Giám đốc Vùng Cấp cao Manulife</span>
+                <span className="whitespace-nowrap">Territory Head Manulife</span>
               </div>
 
               <div className="space-y-3">
@@ -3168,7 +3168,7 @@ export function App() {
                 Khánh Vân
               </span>
               <span className="text-[11px] uppercase tracking-[0.2em] text-[#56605B] mt-1 block">
-                Giám đốc Vùng Cấp cao tại Manulife Việt Nam
+                Territory Head tại Manulife Việt Nam
               </span>
             </div>
 
@@ -3212,7 +3212,7 @@ export function App() {
           <div className="py-8 border-b border-[#DCD8CE]/70 text-[11px] text-[#858E89] leading-[1.85] font-light space-y-2">
             <p>
               <strong className="text-[#56605B] font-medium uppercase tracking-[0.1em]">Tuyên bố miễn trừ trách nhiệm &amp; Tuân thủ:</strong>{' '}
-              Website <span className="text-[#56605B]">khanhvanfinance.com</span> là trang thông tin và thương hiệu cá nhân của bà Nguyễn Thị Vân (Khánh Vân), Giám đốc Vùng Cấp cao (Đại lý bảo hiểm độc lập thuộc Manulife Việt Nam). Các nội dung và góc nhìn chia sẻ trên website mang tính chất tham khảo chuyên môn và hoạch định tài chính cá nhân, không đại diện cho phát ngôn chính thức của Công ty TNHH Manulife (Việt Nam).
+              Website <span className="text-[#56605B]">khanhvanfinance.com</span> là trang thông tin và thương hiệu cá nhân của bà Nguyễn Thị Vân (Khánh Vân), Territory Head (Đại lý bảo hiểm độc lập thuộc Manulife Việt Nam). Các nội dung và góc nhìn chia sẻ trên website mang tính chất tham khảo chuyên môn và hoạch định tài chính cá nhân, không đại diện cho phát ngôn chính thức của Công ty TNHH Manulife (Việt Nam).
             </p>
             <p>
               Mọi quyền lợi, điều khoản và điều kiện sản phẩm bảo hiểm được áp dụng theo Quy tắc và Điều khoản hợp đồng do Manulife Việt Nam phát hành và được Bộ Tài chính phê chuẩn. Các nhãn hiệu, logo và tên thương mại liên quan thuộc quyền sở hữu trí tuệ hợp pháp của Công ty TNHH Manulife (Việt Nam) và các tổ chức liên quan.

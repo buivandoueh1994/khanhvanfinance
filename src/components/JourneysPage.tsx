@@ -27,9 +27,9 @@ import { AiAdvisorWidget } from './AiAdvisorWidget';
 import { JourneyMap } from './JourneyMap';
 import { trackEvent, trackLeadConversion } from '../utils/analytics';
 
-const ZALO_URL = 'https://zalo.me/0909679258';
-const FACEBOOK_URL = 'https://www.facebook.com/KhanhVanManulife';
-const PHONE_DISPLAY = '0909 679 258';
+const ZALO_URL = 'https://zalo.me/0931579771';
+const FACEBOOK_URL = 'https://www.facebook.com/nguyen.t.van.9250?locale=vi_VN';
+const PHONE_DISPLAY = '0931 579 771';
 
 interface HeroSlide {
   src: string;

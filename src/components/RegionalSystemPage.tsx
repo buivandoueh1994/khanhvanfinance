@@ -566,7 +566,7 @@ export const RegionalSystemPage: React.FC = () => {
                   src: '/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg',
                   tag: 'BAN ĐIỀU HÀNH GREEN POWER GROUP',
                   title:
-                    'Giám đốc Vùng Cấp cao Khánh Vân cùng các quản lý nòng cốt tại Manulife Plaza',
+                    'Territory Head Khánh Vân cùng các quản lý nòng cốt tại Manulife Plaza',
                   subtitle:
                     'Các quản lý từng làm Ngân hàng, Kế toán, Kiểm toán, Luật, Y tế, Giáo dục và Quản trị doanh nghiệp.',
                 })
@@ -578,7 +578,7 @@ export const RegionalSystemPage: React.FC = () => {
                   fetchPriority="high"
                   decoding="async"
                   src="/images/BanDieuHanh_ChiVanCungTapTheQuanLy_SanhVom2026.jpg"
-                  alt="Giám đốc Vùng Cấp cao Khánh Vân cùng Ban Điều Hành Green Power Group"
+                  alt="Territory Head Khánh Vân cùng Ban Điều Hành Green Power Group"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
                 />
                 <span className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/55 backdrop-blur-sm border border-white/25 rounded-[2px] text-[9.5px] sm:text-[10px] uppercase tracking-[0.14em] text-[#FAF9F5]">
@@ -675,7 +675,7 @@ export const RegionalSystemPage: React.FC = () => {
                   <span>02 / SƠ ĐỒ TỔ CHỨC GREEN POWER GROUP</span>
                 </span>
                 <h2 className="font-serif text-xl sm:text-3xl text-[#181F1C] font-semibold leading-snug">
-                  Cơ cấu điều hành từ Giám đốc Vùng đến các nhánh chính
+                  Cơ cấu điều hành từ Territory Head đến các nhánh chính
                 </h2>
               </div>
               <span className="text-[11px] text-[#56605B] bg-[#FAF9F5] border border-[#E4E1D8] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-[2px] self-start sm:self-auto">
@@ -683,24 +683,24 @@ export const RegionalSystemPage: React.FC = () => {
               </span>
             </div>
 
-            {/* Root Node: SRD Khánh Vân */}
+            {/* Root Node: Territory Head Khánh Vân */}
             <div className="flex flex-col items-center">
               <div className="w-full sm:w-auto inline-flex items-center gap-3.5 sm:gap-4 px-4 py-3.5 sm:px-6 sm:py-4 bg-[#0A3622] text-[#FAF9F5] rounded-[4px] border-2 border-[#B8975A] shadow-[0_16px_36px_-18px_rgba(10,54,34,0.55)]">
                 <img
                   decoding="async"
                   src="/images/leaders/avatars/khanh-van.jpg"
-                  alt="SRD Khánh Vân, Giám đốc Vùng Cấp cao"
+                  alt="Territory Head Khánh Vân"
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center border-2 border-[#E8D3A6] shadow-[0_6px_16px_rgba(0,0,0,0.3)] shrink-0"
                 />
                 <div className="min-w-0">
                   <span className="text-[9.5px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#E8D3A6] font-bold block">
-                    SENIOR REGIONAL DIRECTOR • SRD
+                    TERRITORY HEAD • MANULIFE VIỆT NAM
                   </span>
                   <p className="font-serif text-lg sm:text-2xl font-semibold text-white leading-tight mt-0.5">
                     Khánh Vân
                   </p>
                   <p className="text-[11px] sm:text-xs text-[#D7E2DC] mt-0.5 leading-snug">
-                    Giám đốc Vùng Cấp cao, 4 khu vực trực thuộc
+                    Territory Head, 4 khu vực trực thuộc
                   </p>
                 </div>
               </div>
@@ -1893,7 +1893,7 @@ export const RegionalSystemPage: React.FC = () => {
                   <img
                     decoding="async"
                     src="/images/ChanDung_ChiVan_VestXanhNgoc_ThanhLich.jpg"
-                    alt="Khánh Vân, Giám đốc Vùng Cấp cao Manulife Việt Nam"
+                    alt="Khánh Vân, Territory Head Manulife Việt Nam"
                     className="w-16 h-20 sm:w-20 sm:h-24 rounded-[3px] object-cover object-top border border-[#DCD8CE] shrink-0"
                   />
                   <div className="space-y-0.5 sm:space-y-1 min-w-0">
@@ -1904,7 +1904,7 @@ export const RegionalSystemPage: React.FC = () => {
                       Khánh Vân
                     </h2>
                     <p className="text-[11.5px] sm:text-xs text-[#56605B] font-medium leading-snug">
-                      Giám đốc Vùng Cấp cao (SRD), cựu Quản lý Tài sản ANZ Bank
+                      Territory Head, cựu Quản lý Tài sản ANZ Bank
                     </p>
                   </div>
                 </div>
@@ -2112,7 +2112,7 @@ export const RegionalSystemPage: React.FC = () => {
               <div className="pt-4 border-t border-white/15 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div className="space-y-2">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#B9C8C0] font-semibold block">
-                    KẾT NỐI TRỰC TIẾP VỚI CHỊ KHÁNH VÂN (SRD)
+                    KẾT NỐI TRỰC TIẾP VỚI CHỊ KHÁNH VÂN (TERRITORY HEAD)
                   </span>
                   <div className="flex flex-wrap items-center gap-4">
                     <a
